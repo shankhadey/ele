@@ -1,0 +1,24 @@
+{
+  "title": "Healthcare Subsidiary Entity Consolidation at Renewal",
+  "category": "entity_resolution",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario": "Context from CRM (Salesforce): Account: 'Nexus Health Solutions' | Industry: Healthcare | ARR: $450K | Primary Contact: Sarah Chen, VP of Operations | Last activity: 45 days ago.\n\nContext from Billing (Stripe): Customer: 'Nexus Healthcare Inc.' | Monthly spend: $38,200 | Payment method: ACH from 'Nexus Holdings LLC' | Status: Active.\n\nContext from Support (Zendesk): Organization: 'NexusHealth' | 3 open tickets, 1 critical | Primary contact: Sarah Chen (sarah.c@nexus-holdings.com) | Note from agent: 'Customer mentioned they completed acquisition of MedFlow Analytics last quarter.'\n\nContext from Contract Management: Active MSA with 'Nexus Health Solutions Inc.' signed 14 months ago | Addendum filed 3 months ago adding 'MedFlow Analytics' as authorized subsidiary | Usage rights extended to 'all wholly-owned subsidiaries of Nexus Holdings LLC.'",
+  "question": "A renewal agent is preparing the account review. How many distinct customer entities should be represented, and what is the correct consolidated ARR?",
+  "answer_format": "multiple_choice",
+  "choices": [
+    "A) Three entities (Nexus Health Solutions, Nexus Healthcare Inc., MedFlow Analytics); ARR = $450K + unknown MedFlow amount",
+    "B) One entity (Nexus Holdings LLC as parent) with two operating subsidiaries; consolidated ARR = $458,400",
+    "C) Two entities (Nexus Health Solutions and MedFlow Analytics as separate accounts under Nexus Holdings); ARR = $450K for Nexus only",
+    "D) One entity (Nexus Health Solutions); ARR = $450K; billing and contract discrepancies need manual review before consolidation"
+  ],
+  "correct_answer": "B",
+  "rationale": "The contract addendum confirms MedFlow is a wholly-owned subsidiary of Nexus Holdings LLC. The billing record shows payment from Nexus Holdings LLC (the parent). The CRM, billing, and support records all refer to the same organizational entity at different levels of the corporate hierarchy. The consolidated ARR is the billing amount annualized ($38,200 x 12 = $458,400), which is more current than the CRM's $450K figure and likely reflects the post-acquisition expanded usage. The entity resolution requires recognizing the parent-subsidiary relationship, reconciling naming variations across systems, and choosing the most authoritative data source for each attribute. Answer A incorrectly treats naming variations as distinct entities. Answer C partially resolves the structure but misses the billing consolidation. Answer D is overly conservative; the contract addendum and billing records provide sufficient evidence for consolidation without manual review.",
+  "contributor": {
+    "name": "Shankha S. Dey",
+    "title": "Senior Director, Product Management",
+    "organization": "Salesforce",
+    "years_experience": 15,
+    "domain_expertise": "Enterprise data infrastructure, entity resolution, AI agent deployment"
+  }
+}
