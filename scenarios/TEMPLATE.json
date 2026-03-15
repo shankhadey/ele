@@ -1,0 +1,31 @@
+{
+  "_comment": "Copy this file, rename it, and fill in your scenario. Delete this _comment field.",
+
+  "title": "Your Scenario Title",
+
+  "category": "PICK ONE: entity_resolution | precedent_exception | cross_system_synthesis | policy_version | approval_chain | temporal_consistency",
+
+  "domain": "PICK ONE: sales_deal_desk | customer_success_support | finance_revops | hr_people_ops | engineering_devops | compliance_legal | procurement_vendor | other",
+
+  "difficulty": "PICK ONE: standard | hard | expert",
+
+  "scenario_text": "Your scenario context here. Must be 200-500 words. Describe the enterprise situation with data from multiple systems that creates the reasoning challenge.",
+
+  "question": "The specific question the model must answer based on the scenario.",
+
+  "answer_format": "PICK ONE: exact_match | multiple_choice",
+
+  "choices": ["Only needed for multiple_choice format", "Include 2-6 options", "Delete this field for exact_match"],
+
+  "correct_answer": "The correct answer. For multiple_choice, must exactly match one of the choices above.",
+
+  "rationale": "Explanation of why this is the correct answer. Must be 100-300 words.",
+
+  "contributor": {
+    "name": "Your Name",
+    "title": "Your Job Title",
+    "organization": "Your Organization",
+    "years_experience": 5,
+    "domain_expertise": "Must match one of the domain values above"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "scoring_similarity_threshold": 0.75,
+  "scoring_similarity_weight": 0.8,
+  "eval_timeout_seconds": 60,
+  "eval_max_tokens": 4096,
+  "eval_temperature": 0.0,
+  "eval_parallel_workers": 1,
+  "eval_rate_limit_per_minute": 0,
+  "eval_enable_tools": false
+}

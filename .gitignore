@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+
+# Test artifacts
+.pytest_cache/
+.hypothesis/
+
+# Results (regenerated on each run)
+results/*.json
+
+# Environment
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store

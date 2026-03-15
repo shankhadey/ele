@@ -1,0 +1,19 @@
+{
+  "title": "Email-Based Contract Discrepancy Detection",
+  "category": "cross_system_synthesis",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "MegaCorp's legal team is reviewing a vendor contract renewal with DataFlow Inc. The contract management system shows the renewal amount as $450,000 per year for a 2-year term starting March 1, 2025. However, the procurement team received an email from the DataFlow sales rep on February 10, 2025 confirming a negotiated rate of $380,000 per year with a 3-year commitment. A follow-up email from MegaCorp's VP of Procurement on February 12, 2025 approved the $380,000 rate but specified a 2-year term, not 3 years. The finance system shows a purchase order created on February 15, 2025 for $760,000 total (matching $380,000 times 2 years). Meanwhile, the contract management system was updated by a junior analyst who entered the original list price of $450,000 instead of the negotiated rate. The legal team needs to determine the correct contract value before signing. The email trail contains the authoritative negotiation history, but the contract system shows different numbers. The VP of Procurement's email is the final approval authority. The DataFlow sales rep's email contains the initial offer, and the VP's response contains the accepted terms. The discrepancy between the contract system ($450,000 per year) and the email-approved rate ($380,000 per year) must be resolved before the contract can be executed. The finance team's purchase order aligns with the email-approved terms, creating a conflict with the contract management system.",
+  "question": "Based on the email correspondence and system records, what is the correct total contract value that should appear in the final signed contract?",
+  "answer_format": "exact_match",
+  "correct_answer": "$760,000",
+  "rationale": "The VP of Procurement's email on February 12, 2025 is the authoritative approval. The VP approved the negotiated rate of $380,000 per year but specified a 2-year term (not the 3-year term proposed by DataFlow). Therefore the correct total contract value is $380,000 times 2 years equals $760,000. This matches the purchase order in the finance system. The contract management system's $450,000 per year figure is incorrect because it reflects the original list price, not the negotiated rate. The DataFlow rep's proposed 3-year term was overridden by the VP's 2-year specification. The email trail serves as the authoritative record of the negotiation, and the VP's email represents the final accepted terms.",
+  "tools_available": ["gmail_search"],
+  "contributor": {
+    "name": "Sarah Chen",
+    "title": "General Counsel",
+    "organization": "MegaCorp",
+    "years_experience": 18,
+    "domain_expertise": "compliance_legal"
+  }
+}

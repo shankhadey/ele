@@ -1,0 +1,24 @@
+{
+  "title": "Conflicting Approval Chain Resolution",
+  "category": "approval_chain",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "GlobalTech Inc is processing a $2.5 million software licensing renewal with vendor TechStack Solutions. The procurement system shows the approval chain as: Procurement Manager, VP of IT, CFO, CEO (for deals over $1M). However, the vendor management system shows a different approval path: Procurement Manager, VP of IT, CTO, Board Approval (for strategic technology investments). The legal system flags that this vendor had a data breach six months ago, triggering an additional security review requirement. The compliance system requires CISO sign-off for any vendor that has had a security incident in the past 12 months. The budget system shows the IT department has only $1.8M remaining in their annual software budget, meaning this deal would require a budget exception approved by the CFO. The contract management system shows the current license expires in 30 days, creating urgency. The previous year's renewal was $1.8M, making this a 39% increase that triggers the price escalation review policy. The vendor has offered a 15% discount if the deal closes within 2 weeks, which would bring it to $2.125M. Even with the discount, the deal exceeds the remaining budget and the standard approval thresholds. Three different systems prescribe three different approval chains, and additional compliance requirements add more approvers to the process.",
+  "question": "Given the conflicting approval chains and additional compliance requirements, what is the minimum set of unique approvers needed to process this renewal?",
+  "answer_format": "multiple_choice",
+  "choices": [
+    "Procurement Manager, VP of IT, CFO, CEO",
+    "Procurement Manager, VP of IT, CTO, CFO, CEO, CISO",
+    "Procurement Manager, VP of IT, CFO, CEO, CISO, Board",
+    "Procurement Manager, VP of IT, CTO, CFO, CEO, CISO, Board"
+  ],
+  "correct_answer": "Procurement Manager, VP of IT, CTO, CFO, CEO, CISO, Board",
+  "rationale": "All three approval chains must be satisfied simultaneously since they come from different governance systems with different triggering criteria. The procurement system requires Procurement Manager, VP of IT, CFO, and CEO for deals over $1M. The vendor management system requires Procurement Manager, VP of IT, CTO, and Board approval for strategic technology investments. The compliance system adds CISO approval due to the vendor's recent data breach. Taking the union of all required approvers gives us: Procurement Manager, VP of IT, CTO, CFO, CEO, CISO, and Board. This is the minimum set because each approver is required by at least one governance system, and no approver can be skipped without violating one of the applicable policies. The budget exception further reinforces the need for CFO approval even if it weren't already required by the procurement threshold.",
+  "contributor": {
+    "name": "John Smith",
+    "title": "Chief Procurement Officer",
+    "organization": "GlobalTech Inc",
+    "years_experience": 15,
+    "domain_expertise": "procurement_vendor"
+  }
+}
