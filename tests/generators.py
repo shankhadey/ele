@@ -2,7 +2,7 @@
 
 from hypothesis import strategies as st
 
-from evaluation_workflow.models import (
+from evaluation_workflow.core.models import (
     CategoryEnum,
     DomainEnum,
     DifficultyEnum,

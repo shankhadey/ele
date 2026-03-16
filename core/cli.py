@@ -14,8 +14,8 @@ import sys
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional
 
-from evaluation_workflow.engine import EvaluationConfig, EvaluationEngine
-from evaluation_workflow.models import (
+from evaluation_workflow.core.engine import EvaluationConfig, EvaluationEngine
+from evaluation_workflow.core.models import (
     AnswerFormatEnum,
     CategoryEnum,
     Contributor,
@@ -25,7 +25,7 @@ from evaluation_workflow.models import (
     ScenarioFilters,
     StatusEnum,
 )
-from evaluation_workflow.models_integration import (
+from evaluation_workflow.core.models_integration import (
     ModelInterface,
     ModelRegistry,
     OpenAIAdapter,
@@ -33,8 +33,8 @@ from evaluation_workflow.models_integration import (
     LocalModelAdapter,
     APIConfig,
 )
-from evaluation_workflow.repository import ScenarioRepository
-from evaluation_workflow.results_store import (
+from evaluation_workflow.core.repository import ScenarioRepository
+from evaluation_workflow.core.results_store import (
     AggregateMetrics,
     EvaluationResults,
     ExportFormat,
@@ -43,8 +43,8 @@ from evaluation_workflow.results_store import (
     ScoredResultRecord,
     calculate_aggregate_metrics,
 )
-from evaluation_workflow.scoring import ScoringConfig
-from evaluation_workflow.tool_registry import ToolRegistry
+from evaluation_workflow.core.scoring import ScoringConfig
+from evaluation_workflow.core.tool_registry import ToolRegistry
 
 
 # --- Application context ---
@@ -152,7 +152,7 @@ class App:
         except (KeyError, ValueError) as exc:
             return {"valid": False, "errors": [str(exc)]}
 
-        from evaluation_workflow.validation import ScenarioValidator
+        from evaluation_workflow.core.validation import ScenarioValidator
 
         result = ScenarioValidator().validate(scenario)
         if result.is_valid:

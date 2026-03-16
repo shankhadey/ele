@@ -12,7 +12,7 @@ from dataclasses import dataclass, field
 from enum import Enum
 from typing import List, Optional
 
-from evaluation_workflow.models import AnswerFormatEnum, Scenario
+from evaluation_workflow.core.models import AnswerFormatEnum, Scenario
 
 
 # --- Enumerations ---

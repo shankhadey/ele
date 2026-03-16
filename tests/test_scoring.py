@@ -10,8 +10,8 @@ import re
 from hypothesis import given, settings, assume
 from hypothesis import strategies as st
 
-from evaluation_workflow.models import AnswerFormatEnum, Scenario
-from evaluation_workflow.scoring import (
+from evaluation_workflow.core.models import AnswerFormatEnum, Scenario
+from evaluation_workflow.core.scoring import (
     ScoringConfig,
     ScoringMethodEnum,
     calculate_exact_match,

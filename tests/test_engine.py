@@ -12,7 +12,7 @@ from typing import Any, Dict, List, Optional
 from hypothesis import given, settings, assume, HealthCheck
 from hypothesis import strategies as st
 
-from evaluation_workflow.models import (
+from evaluation_workflow.core.models import (
     AnswerFormatEnum,
     ResultStatusEnum,
     RunStatusEnum,
@@ -20,19 +20,19 @@ from evaluation_workflow.models import (
     ScenarioFilters,
     StatusEnum,
 )
-from evaluation_workflow.engine import (
+from evaluation_workflow.core.engine import (
     EvaluationConfig,
     EvaluationEngine,
     ScenarioResult,
 )
-from evaluation_workflow.models_integration import (
+from evaluation_workflow.core.models_integration import (
     ModelInterface,
     ModelCapabilities,
     ModelResponse,
     ProviderEnum,
 )
-from evaluation_workflow.repository import ScenarioRepository
-from evaluation_workflow.scoring import ScoringConfig
+from evaluation_workflow.core.repository import ScenarioRepository
+from evaluation_workflow.core.scoring import ScoringConfig
 from evaluation_workflow.tests.generators import (
     valid_scenarios,
     categories,

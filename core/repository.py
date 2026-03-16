@@ -8,14 +8,14 @@ from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from typing import Dict, List, Optional, Tuple
 
-from evaluation_workflow.models import (
+from evaluation_workflow.core.models import (
     CategoryEnum,
     DomainEnum,
     Scenario,
     ScenarioFilters,
     StatusEnum,
 )
-from evaluation_workflow.validation import ScenarioValidator, ValidationResult
+from evaluation_workflow.core.validation import ScenarioValidator, ValidationResult
 
 
 @dataclass

@@ -8,8 +8,8 @@ from __future__ import annotations
 from hypothesis import given, settings, assume
 from hypothesis import strategies as st
 
-from evaluation_workflow.models import AnswerFormatEnum, Scenario
-from evaluation_workflow.models_integration import (
+from evaluation_workflow.core.models import AnswerFormatEnum, Scenario
+from evaluation_workflow.core.models_integration import (
     AnthropicAdapter,
     LocalModelAdapter,
     ModelCapabilities,
@@ -131,7 +131,7 @@ def test_property9_prompt_includes_choices_for_mc(scenario: Scenario):
 # Validates: Requirements 3.5
 # ------------------------------------------------------------------
 
-from evaluation_workflow.scoring import extract_answer  # noqa: E402
+from evaluation_workflow.core.scoring import extract_answer  # noqa: E402
 
 
 # Strategy: generate responses that embed a known answer in various formats.

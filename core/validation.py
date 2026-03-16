@@ -5,7 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import List, Optional
 
-from evaluation_workflow.models import (
+from evaluation_workflow.core.models import (
     AnswerFormatEnum,
     CategoryEnum,
     DifficultyEnum,

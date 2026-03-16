@@ -2,7 +2,7 @@
 
 from hypothesis import given, settings
 
-from evaluation_workflow.models import Scenario
+from evaluation_workflow.core.models import Scenario
 from evaluation_workflow.tests.generators import valid_scenarios
 
 
