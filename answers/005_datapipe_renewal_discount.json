@@ -1,0 +1,6 @@
+{
+  "scenario_file": "005_datapipe_renewal_discount.json",
+  "correct_answer": "Up to 15% via service-impact exception for the incidents, PLUS escalation to VP for strategic retention exception (up to 25%) given the competitive threat; recommend presenting both paths to the decision-maker",
+  "answer_format": "multiple_choice",
+  "rationale": "The current case has two qualifying factors: documented service incidents (SEV-1s and SEV-2) AND a competitive threat. Precedent B established that service incidents alone cap at the service-impact tier (up to 15%, Director approval). But unlike Precedent B, this case also has a competitive evaluation in progress. Precedent A combined both factors and received VP approval for 20%. The correct recommendation is to pursue the service-impact exception path for the incident-based component and escalate to VP for the strategic retention tier given the competitive threat. Answer D is wrong because it applies a precedent from a prior policy version; the current policy v4.1 has different thresholds."
+}

@@ -55,7 +55,9 @@ def load_scenarios(directory: Path) -> List[Dict[str, Any]]:
         if Path(f).stem.upper() == "TEMPLATE":
             continue
         with open(f) as fh:
-            scenarios.append(json.load(fh))
+            data = json.load(fh)
+            data["_source_file"] = Path(f).name
+            scenarios.append(data)
     return scenarios
 
 
@@ -140,7 +142,9 @@ def main():
                 return 1
             for f in matched:
                 with open(f) as fh:
-                    raw_scenarios.append(json.load(fh))
+                    data = json.load(fh)
+                    data["_source_file"] = Path(f).name
+                    raw_scenarios.append(data)
         print(f"Loaded {len(raw_scenarios)} scenario file(s) from command line\n")
     else:
         if not scenarios_dir.exists():
@@ -164,7 +168,7 @@ def main():
     # ── Submit scenarios ──────────────────────────────────────────
     submitted = 0
     for s in raw_scenarios:
-        result = app.submit_scenario(s)
+        result = app.submit_scenario(s, source_file=s.get("_source_file", ""))
         title = s.get("title", "Untitled")
         if result.get("success"):
             submitted += 1
@@ -251,7 +255,9 @@ def main():
                 title = scenario.title if scenario else r.scenario_id[:8]
                 status = "✓" if (sr and sr.final_score >= 0.5) else "✗"
                 score = f"{sr.final_score:.1f}" if sr else "?"
-                print(f"    {status} {title}: score={score}, latency={r.latency_ms}ms, tokens={r.tokens_used}")
+                method = f"[{sr.scoring_method.value}]" if sr else ""
+                tool_calls = f", tool_calls={len(r.tool_invocations)}" if r.tool_invocations else ""
+                print(f"    {status} {title}: score={score} {method}, latency={r.latency_ms}ms{tool_calls}")
 
     # ── Leaderboard ───────────────────────────────────────────────
     print("\n" + "=" * 60)

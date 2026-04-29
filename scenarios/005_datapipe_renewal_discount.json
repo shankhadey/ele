@@ -6,19 +6,17 @@
   "scenario_text": "Current situation: Customer \"DataPipe Systems\" is up for renewal. Contract value: $320K/year. The customer success manager reports the customer is evaluating a competitor. The customer experienced two SEV-1 outages in the past 6 months, plus one SEV-2 that caused 4 hours of downtime. The CRM system shows the account health score dropped from 85 to 62 over the past quarter. The support ticket system shows 47 open tickets, 12 of which are marked critical.\n\nActive policy (Renewal Discount Policy v4.1, effective Jan 2026): Standard renewal discount: up to 5%. Service-impact exception: up to 15%, requires Director-level approval, must be supported by documented service incidents. Strategic retention exception: up to 25%, requires VP-level approval, must include competitive threat documentation and customer LTV analysis. The policy explicitly states that multiple exception tiers can be pursued simultaneously if qualifying criteria are met independently.\n\nPrecedent A (Q3 2025, pre-policy update): Customer \"HealthSync Corp\" ($280K ARR) received 20% renewal discount. Three SEV-1 incidents. VP of Customer Success approved. Note: \"Approved under service-impact exception; customer had credible competitive threat from [Competitor X].\"\n\nPrecedent B (Q4 2025, post-policy update): Customer \"Meridian Analytics\" ($510K ARR) requested 18% discount citing two SEV-1 incidents. Director of CS approved 12% under service-impact exception. VP declined escalation to strategic retention tier, noting: \"Service incidents alone don't qualify for strategic tier; need documented competitive evaluation.\"",
   "question": "What discount range should the agent recommend, and through which approval path?",
   "answer_format": "multiple_choice",
-  "correct_answer": "Up to 15% via service-impact exception for the incidents, PLUS escalation to VP for strategic retention exception (up to 25%) given the competitive threat; recommend presenting both paths to the decision-maker",
-  "rationale": "The current case has two qualifying factors: documented service incidents (SEV-1s and SEV-2) AND a competitive threat. Precedent B established that service incidents alone cap at the service-impact tier (up to 15%, Director approval). But unlike Precedent B, this case also has a competitive evaluation in progress. Precedent A combined both factors and received VP approval for 20%. The correct recommendation is to pursue the service-impact exception path for the incident-based component and escalate to VP for the strategic retention tier given the competitive threat. Answer D is wrong because it applies a precedent from a prior policy version; the current policy v4.1 has different thresholds.",
+  "choices": [
+    "Up to 5% standard discount; no exception warranted since there were only 2 SEV-1 incidents vs. 3 in Precedent A",
+    "Up to 15% via service-impact exception (Director approval), citing service incidents; recommend 12% consistent with Precedent B",
+    "Up to 15% via service-impact exception for the incidents, PLUS escalation to VP for strategic retention exception (up to 25%) given the competitive threat; recommend presenting both paths to the decision-maker",
+    "20% matching Precedent A, since the situations are substantially similar"
+  ],
   "contributor": {
     "name": "Hayman G",
     "title": "Product Lead",
     "organization": "Acme Corp",
     "years_experience": 8,
     "domain_expertise": "customer_success_support"
-  },
-  "choices": [
-    "Up to 5% standard discount; no exception warranted since there were only 2 SEV-1 incidents vs. 3 in Precedent A",
-    "Up to 15% via service-impact exception (Director approval), citing service incidents; recommend 12% consistent with Precedent B",
-    "Up to 15% via service-impact exception for the incidents, PLUS escalation to VP for strategic retention exception (up to 25%) given the competitive threat; recommend presenting both paths to the decision-maker",
-    "20% matching Precedent A, since the situations are substantially similar"
-  ]
+  }
 }

@@ -19,11 +19,13 @@ from typing import Any, Dict, List, Optional, Tuple
 
 class SourceTypeEnum(Enum):
     """Types of external information sources."""
-    GMAIL = "gmail"
+    EMAIL = "email"
     SLACK = "slack"
     SHAREPOINT = "sharepoint"
     DATABASE = "database"
     API = "api"
+    # Legacy aliases kept for backward compatibility
+    GMAIL = "email"
 
 
 # --- Data models ---

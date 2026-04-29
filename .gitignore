@@ -28,4 +28,4 @@ results/*.json
 .DS_Store
 
 # Kiro specs
-specs
+specs/

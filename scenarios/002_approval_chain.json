@@ -12,8 +12,6 @@
     "Procurement Manager, VP of IT, CFO, CEO, CISO, Board",
     "Procurement Manager, VP of IT, CTO, CFO, CEO, CISO, Board"
   ],
-  "correct_answer": "Procurement Manager, VP of IT, CTO, CFO, CEO, CISO, Board",
-  "rationale": "All three approval chains must be satisfied simultaneously since they come from different governance systems with different triggering criteria. The procurement system requires Procurement Manager, VP of IT, CFO, and CEO for deals over $1M. The vendor management system requires Procurement Manager, VP of IT, CTO, and Board approval for strategic technology investments. The compliance system adds CISO approval due to the vendor's recent data breach. Taking the union of all required approvers gives us: Procurement Manager, VP of IT, CTO, CFO, CEO, CISO, and Board. This is the minimum set because each approver is required by at least one governance system, and no approver can be skipped without violating one of the applicable policies. The budget exception further reinforces the need for CFO approval even if it weren't already required by the procurement threshold.",
   "contributor": {
     "name": "John Smith",
     "title": "Chief Procurement Officer",

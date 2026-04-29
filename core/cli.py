@@ -12,6 +12,7 @@ import json
 import os
 import sys
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from ele.core.engine import EvaluationConfig, EvaluationEngine
@@ -46,6 +47,7 @@ from ele.core.results_store import (
 from ele.core.scoring import ScoringConfig
 from ele.core.scoring import LLMJudgeConfig
 from ele.core.tool_registry import ToolRegistry
+from ele.core.answer_key_store import AnswerKeyStore
 
 
 # --- Application context ---
@@ -139,12 +141,19 @@ class App:
             tool_registry=self.tool_registry,
             scoring_config=self.scoring_config,
         )
+        self.answer_key_store = AnswerKeyStore()
 
     # ------------------------------------------------------------------
     # Scenario commands
     # ------------------------------------------------------------------
-    def submit_scenario(self, scenario_data: Dict[str, Any]) -> Dict[str, Any]:
-        """Submit a scenario from a dict (e.g. parsed JSON). Returns result dict."""
+    def submit_scenario(self, scenario_data: Dict[str, Any], source_file: Optional[str] = None) -> Dict[str, Any]:
+        """Submit a scenario from a dict (e.g. parsed JSON). Returns result dict.
+
+        If source_file is provided (e.g. '003_email_contract_discrepancy.json'),
+        the answer key is looked up and merged into the scenario after validation,
+        so the answer key rationale word count is not validated against the
+        scenario word count rules.
+        """
         try:
             scenario = _dict_to_scenario(scenario_data)
         except (KeyError, ValueError) as exc:
@@ -159,6 +168,21 @@ class App:
                     for e in validation.errors
                 ],
             }
+
+        # Merge answer key AFTER validation — answer key data is never shown to the model
+        # and its rationale is not subject to the scenario word count rules.
+        if not scenario.correct_answer and source_file:
+            fname = Path(source_file).name
+            key = self.answer_key_store.get(fname)
+            if key:
+                # Patch the stored scenario directly
+                stored = self.repository.get_scenario(scenario_id)
+                if stored:
+                    stored.correct_answer = key.correct_answer
+                    stored.rationale = key.rationale
+                    # Update in-place in the repository
+                    self.repository._scenarios[scenario_id][-1] = stored
+
         return {"success": True, "scenario_id": scenario_id}
 
     def validate_scenario(self, scenario_data: Dict[str, Any]) -> Dict[str, Any]:
@@ -371,7 +395,11 @@ class App:
 # --- Helpers ---
 
 def _dict_to_scenario(data: Dict[str, Any]) -> Scenario:
-    """Convert a raw dict (e.g. from JSON) into a Scenario instance."""
+    """Convert a raw dict (e.g. from JSON) into a Scenario instance.
+
+    correct_answer and rationale are optional — they may be absent when
+    the scenario uses a separate answer key file.
+    """
     contributor_data = data.get("contributor", {})
     contributor = Contributor(
         name=contributor_data.get("name", ""),

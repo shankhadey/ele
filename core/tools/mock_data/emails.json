@@ -1,0 +1,132 @@
+[
+  {
+    "message_id": "msg_001",
+    "thread_id": "thread_dataflow_renewal",
+    "sender": "alex.morgan@dataflow-inc.com",
+    "recipients": ["procurement@megacorp.com", "legal@megacorp.com"],
+    "subject": "DataFlow Inc — Renewal Proposal for MegaCorp",
+    "body": "Hi team,\n\nPlease find our renewal proposal for the DataFlow platform license.\n\nProposed terms:\n- Annual rate: $380,000 per year (down from list price of $450,000)\n- Commitment: 3-year term\n- Start date: March 1, 2025\n\nThis represents a 15.5% discount from our standard rate in recognition of MegaCorp's long-standing partnership. The 3-year commitment is required to unlock this pricing.\n\nPlease let me know if you have any questions.\n\nBest,\nAlex Morgan\nAccount Executive, DataFlow Inc",
+    "date": "2025-02-10T09:15:00Z",
+    "labels": ["procurement", "contracts", "renewal"]
+  },
+  {
+    "message_id": "msg_002",
+    "thread_id": "thread_dataflow_renewal",
+    "sender": "procurement@megacorp.com",
+    "recipients": ["alex.morgan@dataflow-inc.com"],
+    "subject": "Re: DataFlow Inc — Renewal Proposal for MegaCorp",
+    "body": "Alex,\n\nThank you for the proposal. We are reviewing internally. The 3-year term is longer than our standard commitment. We will revert shortly.\n\nRegards,\nMegaCorp Procurement",
+    "date": "2025-02-11T11:00:00Z",
+    "labels": ["procurement", "contracts"]
+  },
+  {
+    "message_id": "msg_003",
+    "thread_id": "thread_dataflow_renewal",
+    "sender": "jane.vp@megacorp.com",
+    "recipients": ["procurement@megacorp.com", "legal@megacorp.com", "alex.morgan@dataflow-inc.com"],
+    "subject": "Re: DataFlow Inc — Renewal Proposal for MegaCorp",
+    "body": "Team,\n\nI have reviewed the DataFlow proposal. Here are the approved terms:\n\n- Annual rate: $380,000 per year (accepted)\n- Term: 2 years ONLY — we will not commit to 3 years at this time\n- Start date: March 1, 2025\n- Total contract value: $760,000\n\nAlex, please confirm these terms and send a revised contract reflecting the 2-year commitment. The 3-year term is not approved.\n\nLegal — please update the contract management system accordingly. The current entry of $450,000/year is incorrect.\n\nJane\nVP of Procurement, MegaCorp",
+    "date": "2025-02-12T14:30:00Z",
+    "labels": ["procurement", "contracts", "approved"]
+  },
+  {
+    "message_id": "msg_004",
+    "thread_id": "thread_dataflow_renewal",
+    "sender": "alex.morgan@dataflow-inc.com",
+    "recipients": ["jane.vp@megacorp.com", "procurement@megacorp.com"],
+    "subject": "Re: DataFlow Inc — Renewal Proposal for MegaCorp",
+    "body": "Jane,\n\nConfirmed. We accept the 2-year term at $380,000 per year. Revised contract to follow.\n\nAlex",
+    "date": "2025-02-13T08:45:00Z",
+    "labels": ["procurement", "contracts"]
+  },
+  {
+    "message_id": "msg_005",
+    "thread_id": "thread_dataflow_renewal",
+    "sender": "junior.analyst@megacorp.com",
+    "recipients": ["legal@megacorp.com"],
+    "subject": "Contract system update — DataFlow",
+    "body": "Hi,\n\nI updated the DataFlow contract in the system. I used the original proposal amount of $450,000/year as I could not find the final approved figure. Please verify.\n\nThanks",
+    "date": "2025-02-14T10:00:00Z",
+    "labels": ["contracts", "internal"]
+  },
+  {
+    "message_id": "msg_010",
+    "thread_id": "thread_cloudvault_deal",
+    "sender": "sarah.ae@cloudvault.com",
+    "recipients": ["deals@novatech.com", "vp.sales@novatech.com"],
+    "subject": "CloudVault — NovaTech License Agreement Final Terms",
+    "body": "Hi NovaTech team,\n\nFollowing our negotiations, here are the final agreed terms for the CloudVault platform license:\n\n- Annual license fee: $425,000 per year (15% discount from $500,000 list price)\n- Term: 2 years\n- Total contract value: $850,000\n- Payment: Annual in advance\n\nThis discount reflects NovaTech's commitment to a 2-year term and our strategic partnership.\n\nPlease confirm acceptance so we can proceed to contract execution.\n\nBest,\nSarah AE\nCloudVault Inc",
+    "date": "2025-02-20T16:00:00Z",
+    "labels": ["sales", "contracts", "deal-desk"]
+  },
+  {
+    "message_id": "msg_011",
+    "thread_id": "thread_cloudvault_deal",
+    "sender": "vp.sales@novatech.com",
+    "recipients": ["sarah.ae@cloudvault.com", "finance@novatech.com"],
+    "subject": "Re: CloudVault — NovaTech License Agreement Final Terms",
+    "body": "Sarah,\n\nAccepted. $425,000 per year for 2 years, total $850,000. Finance — please raise a PO for $850,000 against this agreement.\n\nThanks,\nVP of Sales, NovaTech",
+    "date": "2025-02-21T09:30:00Z",
+    "labels": ["sales", "approved", "deal-desk"]
+  },
+  {
+    "message_id": "msg_012",
+    "thread_id": "thread_cloudvault_deal",
+    "sender": "finance@novatech.com",
+    "recipients": ["vp.sales@novatech.com"],
+    "subject": "Re: CloudVault — NovaTech License Agreement Final Terms",
+    "body": "PO raised for $850,000 as instructed. PO number: NVT-2025-0892.",
+    "date": "2025-02-21T11:15:00Z",
+    "labels": ["finance", "purchase-order"]
+  },
+  {
+    "message_id": "msg_020",
+    "thread_id": "thread_hr_policy_update",
+    "sender": "hr@megacorp.com",
+    "recipients": ["all-staff@megacorp.com"],
+    "subject": "Updated Remote Work Policy — Effective March 1, 2025",
+    "body": "Dear all,\n\nPlease note that the remote work policy has been updated effective March 1, 2025. Employees may work remotely up to 3 days per week with manager approval. Full details in the HR portal.\n\nHR Team",
+    "date": "2025-02-18T08:00:00Z",
+    "labels": ["hr", "policy", "all-staff"]
+  },
+  {
+    "message_id": "msg_021",
+    "thread_id": "thread_it_maintenance",
+    "sender": "it@megacorp.com",
+    "recipients": ["all-staff@megacorp.com"],
+    "subject": "Scheduled Maintenance — Saturday Feb 22",
+    "body": "The following systems will be unavailable Saturday Feb 22 from 2am-6am EST: ERP, CRM, email. Please plan accordingly.\n\nIT Operations",
+    "date": "2025-02-19T14:00:00Z",
+    "labels": ["it", "maintenance", "all-staff"]
+  },
+  {
+    "message_id": "msg_022",
+    "thread_id": "thread_vendor_acme",
+    "sender": "sales@acme-software.com",
+    "recipients": ["procurement@megacorp.com"],
+    "subject": "Acme Software — Annual Renewal Quote",
+    "body": "Hi,\n\nYour Acme Software subscription renews on April 1, 2025. Renewal quote: $95,000/year (same as last year). Please confirm by March 15.\n\nAcme Sales",
+    "date": "2025-02-17T10:30:00Z",
+    "labels": ["procurement", "renewal"]
+  },
+  {
+    "message_id": "msg_023",
+    "thread_id": "thread_vendor_acme",
+    "sender": "procurement@megacorp.com",
+    "recipients": ["sales@acme-software.com"],
+    "subject": "Re: Acme Software — Annual Renewal Quote",
+    "body": "Thank you. We will review and respond by March 10.",
+    "date": "2025-02-18T09:00:00Z",
+    "labels": ["procurement"]
+  },
+  {
+    "message_id": "msg_030",
+    "thread_id": "thread_q1_forecast",
+    "sender": "cfo@megacorp.com",
+    "recipients": ["finance-leads@megacorp.com"],
+    "subject": "Q1 2025 Forecast Review — Action Required",
+    "body": "Team,\n\nPlease submit your Q1 forecast updates by EOD Friday. We are tracking $2.1M against a $2.4M target. Key deals to close: DataFlow renewal, Acme renewal, and the Horizon project.\n\nCFO",
+    "date": "2025-02-14T16:00:00Z",
+    "labels": ["finance", "forecast"]
+  }
+]

@@ -264,12 +264,12 @@ def format_prompt(
 ) -> str:
     """Build a standardized prompt string from a scenario.
 
-    The prompt always contains the scenario context and question.
-    If *tools* are provided and non-empty, a tool-description section is
-    appended so the model knows which tools it can call.
+    The prompt contains the scenario context, question, and answer format.
+    If tools are available, they are listed with their parameter schemas only —
+    no coaching on what to search for or how to use them.
     """
     parts: List[str] = [
-        "## Scenario Context",
+        "## Scenario",
         "",
         scenario.scenario_text,
         "",
@@ -286,19 +286,40 @@ def format_prompt(
             letter = chr(ord("A") + idx)
             parts.append(f"{letter}. {choice}")
         parts.append("")
-        parts.append("Respond with ONLY the letter of the correct answer (e.g. A, B, C, or D).")
+        parts.append("Respond with ONLY the letter of the correct answer (A, B, C, or D).")
         parts.append("")
     else:
-        parts.append("Respond with ONLY the final answer, as concisely as possible. Do not explain.")
+        parts.append("Respond with ONLY the final answer, as concisely as possible.")
         parts.append("")
 
     if tools:
-        parts.append("## Available Tools")
+        parts.append("## Tools")
+        parts.append("")
+        parts.append("You may call tools to retrieve additional information.")
+        parts.append("To call a tool, output this on its own line:")
+        parts.append("")
+        parts.append('  TOOL_CALL: tool_name({"param": "value"})')
+        parts.append("")
+        parts.append("You will receive the tool result, then may call another tool or give your final answer.")
+        parts.append("When you have your final answer, output it with no TOOL_CALL line.")
         parts.append("")
         for tool in tools:
             name = tool.get("name", "unknown")
-            desc = tool.get("description", "")
-            parts.append(f"- **{name}**: {desc}")
+            tool_id = tool.get("id", name.lower().replace(" ", "_"))
+            params = tool.get("parameters", {})
+            param_names = list(params.get("properties", {}).keys())
+            param_str = ", ".join(param_names) if param_names else "none"
+            parts.append(f"- {tool_id}  (params: {param_str})")
         parts.append("")
 
     return "\n".join(parts)
+
+
+def format_tool_result(tool_id: str, result: Any) -> str:
+    """Format a tool result for appending to the conversation."""
+    import json
+    try:
+        result_str = json.dumps(result, indent=2) if not isinstance(result, str) else result
+    except Exception:
+        result_str = str(result)
+    return f"TOOL_RESULT: {tool_id}\n{result_str}"

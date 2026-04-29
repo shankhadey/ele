@@ -3,6 +3,11 @@
 Orchestrates scenario execution, model invocation, tool access, scoring,
 and result collection. Supports parallel execution, rate limiting,
 pause/resume, progress tracking, and error isolation.
+
+When eval_enable_tools is True and a scenario declares tools_available,
+the engine runs a multi-turn tool-call loop: the model may call tools
+(email_search, slack_search) to retrieve context before answering.
+Known mock tools are auto-registered on evaluation creation.
 """
 
 from __future__ import annotations
@@ -29,12 +34,18 @@ from ele.core.models_integration import (
     ModelInterface,
     ModelResponse,
     format_prompt,
+    format_tool_result,
 )
 from ele.core.repository import ScenarioRepository
 from ele.core.scoring import ScoredResult, ScoringConfig, score_response
-from ele.core.tool_registry import ToolRegistry
+from ele.core.tool_registry import ToolConfig, ToolRegistry
 
 logger = logging.getLogger(__name__)
+
+# Lazy import to avoid circular deps — resolved at runtime
+def _get_known_mock_tools() -> dict:
+    from ele.core.tools import KNOWN_MOCK_TOOLS  # noqa: PLC0415
+    return KNOWN_MOCK_TOOLS
 
 
 # --- Configuration ---
@@ -50,6 +61,7 @@ class EvaluationConfig:
     enable_tools: bool = False
     retry_on_failure: bool = False
     max_retries: int = 1
+    max_tool_rounds: int = 5  # max tool-call iterations per scenario
 
 
 # --- Result models ---
@@ -152,6 +164,9 @@ class EvaluationEngine:
         scenarios = self._repository.query_scenarios(query_filters)
         scenario_ids = [s.id for s in scenarios]
 
+        # Auto-register known mock tools declared by any scenario in this run
+        self._auto_register_mock_tools(scenarios)
+
         run = EvaluationRun(
             model_id=model_id,
             scenario_filters=filters,
@@ -160,6 +175,45 @@ class EvaluationEngine:
         )
         self._runs[run.id] = run
         return run.id
+
+    def _auto_register_mock_tools(self, scenarios: List[Scenario]) -> None:
+        """Register known mock tools for any tool IDs declared in the scenarios."""
+        known = _get_known_mock_tools()
+        seen: set = set()
+        for scenario in scenarios:
+            for tool_id in (scenario.tools_available or []):
+                if tool_id in seen:
+                    continue
+                seen.add(tool_id)
+                # Already registered — skip
+                if self._tool_registry.get_tool(tool_id) is not None:
+                    continue
+                if tool_id in known:
+                    impl = known[tool_id]()
+                    from ele.core.tool_registry import AuthConfig, SourceTypeEnum  # noqa: PLC0415
+                    source = (
+                        SourceTypeEnum.EMAIL if tool_id == "email_search"
+                        else SourceTypeEnum.SLACK if tool_id == "slack_search"
+                        else SourceTypeEnum.API
+                    )
+                    cfg = ToolConfig(
+                        id=tool_id,
+                        name=tool_id.replace("_", " ").title(),
+                        description=impl.get_description(),
+                        source_type=source,
+                        parameters_schema=impl.get_parameters_schema(),
+                        authentication=AuthConfig(),
+                        enabled=True,
+                    )
+                    try:
+                        self._tool_registry.register_tool(cfg, impl)
+                        logger.info("Auto-registered mock tool: %s", tool_id)
+                    except Exception as exc:
+                        logger.warning("Failed to auto-register tool %s: %s", tool_id, exc)
+                else:
+                    logger.warning(
+                        "Scenario declares unknown tool '%s' — not registered", tool_id
+                    )
 
     # ------------------------------------------------------------------
     # Execute a single scenario
@@ -171,12 +225,12 @@ class EvaluationEngine:
         config: EvaluationConfig,
         rate_limiter: Optional[_TokenBucketRateLimiter] = None,
     ) -> ScenarioResult:
-        """Format prompt, invoke model with timeout, score, return result."""
+        """Format prompt, invoke model (with optional tool-call loop), score, return result."""
         # Rate limiting
         if rate_limiter:
             rate_limiter.acquire()
 
-        # Build tool descriptions if enabled
+        # Build tool descriptions if enabled and scenario declares tools
         tools_for_prompt: Optional[List[Dict[str, Any]]] = None
         if config.enable_tools and scenario.tools_available:
             tools_for_prompt = []
@@ -184,6 +238,7 @@ class EvaluationEngine:
                 tcfg = self._tool_registry.get_tool(tid)
                 if tcfg:
                     tools_for_prompt.append({
+                        "id": tid,
                         "name": tcfg.name,
                         "description": tcfg.description,
                         "parameters": self._tool_registry.get_tool_schema(tid) or {},
@@ -193,41 +248,29 @@ class EvaluationEngine:
 
         start = time.monotonic()
         try:
-            # Invoke with timeout simulation via ThreadPoolExecutor
-            response = self._invoke_with_timeout(model, prompt, tools_for_prompt, config)
+            if config.enable_tools and tools_for_prompt:
+                # Multi-turn tool-call loop
+                final_response, tool_invocations = self._run_tool_call_loop(
+                    scenario, model, prompt, config, rate_limiter
+                )
+            else:
+                # Single-turn invocation
+                response = self._invoke_with_timeout(model, prompt, None, config)
+                final_response = response.text
+                tool_invocations = []
+
             latency_ms = int((time.monotonic() - start) * 1000)
+            tokens_used = 0  # aggregated in loop if needed
 
-            # Handle tool calls from model response
-            tool_invocations: List[Dict[str, Any]] = []
-            if config.enable_tools and response.tool_calls:
-                for tc in response.tool_calls:
-                    try:
-                        result = self._tool_registry.invoke_tool(
-                            tc.tool_id, tc.parameters,
-                            scenario_id=scenario.id,
-                            model_id=config.__class__.__name__,
-                        )
-                        tool_invocations.append({
-                            "tool_id": tc.tool_id,
-                            "parameters": tc.parameters,
-                            "result": result,
-                        })
-                    except Exception as te:
-                        tool_invocations.append({
-                            "tool_id": tc.tool_id,
-                            "parameters": tc.parameters,
-                            "error": str(te),
-                        })
-
-            # Score the response
-            scored = score_response(scenario, response.text, self._scoring_config)
+            # Score the final response
+            scored = score_response(scenario, final_response, self._scoring_config)
 
             return ScenarioResult(
                 scenario_id=scenario.id,
-                model_response=response.text,
+                model_response=final_response,
                 tool_invocations=tool_invocations,
                 latency_ms=latency_ms,
-                tokens_used=response.tokens_used,
+                tokens_used=tokens_used,
                 status=ResultStatusEnum.SUCCESS,
                 scored_result=scored,
             )
@@ -249,6 +292,89 @@ class EvaluationEngine:
                 status=ResultStatusEnum.ERROR,
                 error_message=str(exc),
             )
+
+    def _run_tool_call_loop(
+        self,
+        scenario: Scenario,
+        model: ModelInterface,
+        initial_prompt: str,
+        config: EvaluationConfig,
+        rate_limiter: Optional[_TokenBucketRateLimiter],
+    ) -> tuple[str, List[Dict[str, Any]]]:
+        """Run the multi-turn tool-call loop.
+
+        The model may call tools (TOOL_CALL: tool_name({...})) up to
+        max_tool_rounds times. Each tool result is appended to the
+        conversation and the model is re-invoked. Returns (final_answer, invocations).
+        """
+        conversation = initial_prompt
+        tool_invocations: List[Dict[str, Any]] = []
+        last_text = ""
+
+        for round_num in range(config.max_tool_rounds + 1):
+            if rate_limiter and round_num > 0:
+                rate_limiter.acquire()
+
+            response = self._invoke_with_timeout(model, conversation, None, config)
+            text = response.text or ""
+            last_text = text
+
+            # Parse tool call from response
+            tool_call = _parse_tool_call(text)
+
+            if tool_call is None:
+                # No tool call — this is the final answer
+                return text, tool_invocations
+
+            if round_num == config.max_tool_rounds:
+                # Hit the round limit — force a final answer turn
+                conversation = (
+                    f"{conversation}\n\nAssistant: {text}\n\n"
+                    "You have reached the maximum number of tool calls. "
+                    "Based on all the information retrieved so far, provide your final answer now. "
+                    "Do NOT call any more tools."
+                )
+                if rate_limiter:
+                    rate_limiter.acquire()
+                final_response = self._invoke_with_timeout(model, conversation, None, config)
+                return final_response.text or last_text, tool_invocations
+
+            tool_id, tool_params = tool_call
+            # Execute the tool
+            try:
+                result = self._tool_registry.invoke_tool(
+                    tool_id, tool_params,
+                    scenario_id=scenario.id,
+                    model_id="",
+                )
+                result_text = format_tool_result(tool_id, result)
+                invocation_record = {
+                    "round": round_num + 1,
+                    "tool_id": tool_id,
+                    "parameters": tool_params,
+                    "result": result,
+                    "success": True,
+                }
+            except Exception as exc:
+                result_text = f"TOOL_RESULT: {tool_id} — Error: {exc}"
+                invocation_record = {
+                    "round": round_num + 1,
+                    "tool_id": tool_id,
+                    "parameters": tool_params,
+                    "result": None,
+                    "success": False,
+                    "error": str(exc),
+                }
+
+            tool_invocations.append(invocation_record)
+            # Append model turn + tool result to conversation
+            conversation = (
+                f"{conversation}\n\nAssistant: {text}\n\n"
+                f"{result_text}\n\n"
+                "Continue reasoning and provide your final answer, or call another tool."
+            )
+
+        return last_text, tool_invocations
 
     def _invoke_with_timeout(
         self,
@@ -417,3 +543,33 @@ class EvaluationEngine:
     def get_run(self, run_id: str) -> Optional[EvaluationRun]:
         """Return the full run object."""
         return self._runs.get(run_id)
+
+
+# ------------------------------------------------------------------
+# Tool-call parsing
+# ------------------------------------------------------------------
+
+import json as _json
+import re as _re
+
+_TOOL_CALL_RE = _re.compile(
+    r"TOOL_CALL\s*:\s*(\w+)\s*\(\s*(\{.*?\})\s*\)",
+    _re.DOTALL | _re.IGNORECASE,
+)
+
+
+def _parse_tool_call(text: str) -> Optional[tuple[str, Dict[str, Any]]]:
+    """Parse a TOOL_CALL: tool_name({...}) from model output.
+
+    Returns (tool_id, parameters) or None if no tool call is found.
+    """
+    m = _TOOL_CALL_RE.search(text)
+    if not m:
+        return None
+    tool_id = m.group(1).strip()
+    try:
+        params = _json.loads(m.group(2))
+    except _json.JSONDecodeError:
+        logger.warning("Could not parse tool call parameters: %r", m.group(2))
+        return None
+    return tool_id, params

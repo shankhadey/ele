@@ -91,7 +91,12 @@ class Contributor:
 
 @dataclass
 class Scenario:
-    """A test case containing context, a question, and a correct answer."""
+    """A test case containing context, a question, and a correct answer.
+
+    correct_answer and rationale are intentionally optional — for tool-augmented
+    and blind-evaluation scenarios they are stored separately in the answers/
+    directory and loaded only by the scorer, never sent to the model.
+    """
     title: str
     category: CategoryEnum
     domain: DomainEnum
@@ -99,10 +104,10 @@ class Scenario:
     scenario_text: str
     question: str
     answer_format: AnswerFormatEnum
-    correct_answer: str
-    rationale: str
     contributor: Contributor
     id: str = field(default_factory=lambda: str(uuid.uuid4()))
+    correct_answer: str = ""          # empty when stored in answer key
+    rationale: str = ""               # empty when stored in answer key
     choices: List[str] = field(default_factory=list)
     tools_available: List[str] = field(default_factory=list)
     created_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
@@ -151,3 +156,30 @@ class ScenarioFilters:
     difficulty: Optional[DifficultyEnum] = None
     contributor_name: Optional[str] = None
     status: Optional[StatusEnum] = None
+
+
+@dataclass
+class AnswerKey:
+    """The correct answer and rationale for a scenario.
+
+    Stored separately from the scenario so it is never sent to the model.
+    Loaded only at scoring time.
+    """
+    scenario_file: str       # e.g. "003_email_contract_discrepancy.json"
+    correct_answer: str
+    answer_format: str       # "exact_match" or "multiple_choice"
+    rationale: str = ""
+
+    @classmethod
+    def from_dict(cls, data: Dict[str, Any]) -> "AnswerKey":
+        return cls(
+            scenario_file=data["scenario_file"],
+            correct_answer=data["correct_answer"],
+            answer_format=data.get("answer_format", "exact_match"),
+            rationale=data.get("rationale", ""),
+        )
+
+    @classmethod
+    def from_json_file(cls, path: str) -> "AnswerKey":
+        with open(path) as f:
+            return cls.from_dict(json.loads(f.read()))

@@ -58,14 +58,25 @@ class ScenarioValidator:
             ("title", scenario.title),
             ("scenario_text", scenario.scenario_text),
             ("question", scenario.question),
-            ("correct_answer", scenario.correct_answer),
-            ("rationale", scenario.rationale),
         ]
         for name, value in required_str_fields:
             if not value or not value.strip():
                 errors.append(
                     ValidationError(field=name, message=f"{name} is required and must not be empty")
                 )
+
+        # correct_answer and rationale are optional when using answer key files.
+        # If present, they must be non-empty strings.
+        if scenario.correct_answer is not None and scenario.correct_answer != "" and not scenario.correct_answer.strip():
+            errors.append(ValidationError(
+                field="correct_answer",
+                message="correct_answer must not be blank if provided (omit it or use an answer key file)"
+            ))
+        if scenario.rationale is not None and scenario.rationale != "" and not scenario.rationale.strip():
+            errors.append(ValidationError(
+                field="rationale",
+                message="rationale must not be blank if provided (omit it or use an answer key file)"
+            ))
 
     # ------------------------------------------------------------------
     # Enum validation
@@ -117,14 +128,17 @@ class ScenarioValidator:
                 )
             )
 
-        rat_wc = _word_count(scenario.rationale)
-        if rat_wc < 100 or rat_wc > 300:
-            errors.append(
-                ValidationError(
-                    field="rationale",
-                    message=f"rationale must contain 100-300 words (got {rat_wc})",
+        # Only validate rationale word count when it's provided inline.
+        # When loaded from an answer key file the rationale may be shorter.
+        if scenario.rationale and scenario.rationale.strip():
+            rat_wc = _word_count(scenario.rationale)
+            if rat_wc < 100 or rat_wc > 300:
+                errors.append(
+                    ValidationError(
+                        field="rationale",
+                        message=f"rationale must contain 100-300 words (got {rat_wc})",
+                    )
                 )
-            )
 
     # ------------------------------------------------------------------
     # Answer-format specific rules
@@ -144,7 +158,9 @@ class ScenarioValidator:
                 )
             )
 
-        if scenario.correct_answer not in scenario.choices:
+        # Only validate correct_answer against choices if it's provided inline.
+        # When using answer key files, correct_answer will be empty here.
+        if scenario.correct_answer and scenario.correct_answer not in scenario.choices:
             errors.append(
                 ValidationError(
                     field="correct_answer",
