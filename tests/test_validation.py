@@ -8,7 +8,7 @@ from __future__ import annotations
 from hypothesis import given, settings, assume
 from hypothesis import strategies as st
 
-from evaluation_workflow.core.models import (
+from ele.core.models import (
     AnswerFormatEnum,
     CategoryEnum,
     DifficultyEnum,
@@ -16,8 +16,8 @@ from evaluation_workflow.core.models import (
     Scenario,
     Contributor,
 )
-from evaluation_workflow.core.validation import ScenarioValidator
-from evaluation_workflow.tests.generators import (
+from ele.core.validation import ScenarioValidator
+from ele.tests.generators import (
     valid_scenarios,
     contributors,
     categories,

@@ -14,8 +14,8 @@ import sys
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional
 
-from evaluation_workflow.core.engine import EvaluationConfig, EvaluationEngine
-from evaluation_workflow.core.models import (
+from ele.core.engine import EvaluationConfig, EvaluationEngine
+from ele.core.models import (
     AnswerFormatEnum,
     CategoryEnum,
     Contributor,
@@ -25,7 +25,7 @@ from evaluation_workflow.core.models import (
     ScenarioFilters,
     StatusEnum,
 )
-from evaluation_workflow.core.models_integration import (
+from ele.core.models_integration import (
     ModelInterface,
     ModelRegistry,
     OpenAIAdapter,
@@ -33,8 +33,8 @@ from evaluation_workflow.core.models_integration import (
     LocalModelAdapter,
     APIConfig,
 )
-from evaluation_workflow.core.repository import ScenarioRepository
-from evaluation_workflow.core.results_store import (
+from ele.core.repository import ScenarioRepository
+from ele.core.results_store import (
     AggregateMetrics,
     EvaluationResults,
     ExportFormat,
@@ -43,8 +43,9 @@ from evaluation_workflow.core.results_store import (
     ScoredResultRecord,
     calculate_aggregate_metrics,
 )
-from evaluation_workflow.core.scoring import ScoringConfig
-from evaluation_workflow.core.tool_registry import ToolRegistry
+from ele.core.scoring import ScoringConfig
+from ele.core.scoring import LLMJudgeConfig
+from ele.core.tool_registry import ToolRegistry
 
 
 # --- Application context ---
@@ -60,6 +61,10 @@ class AppConfig:
     eval_parallel_workers: int = 1
     eval_rate_limit_per_minute: int = 0
     eval_enable_tools: bool = False
+    # LLM judge — enabled by default
+    eval_judge_enabled: bool = True
+    eval_judge_model: str = "gpt-4o-mini"
+    eval_judge_api_key: str = ""
 
     @classmethod
     def from_env(cls) -> "AppConfig":
@@ -84,6 +89,10 @@ class AppConfig:
             ),
             eval_enable_tools=os.environ.get("EVAL_ENABLE_TOOLS", "").lower()
             in ("1", "true", "yes"),
+            eval_judge_enabled=os.environ.get("EVAL_JUDGE_ENABLED", "").lower()
+            in ("1", "true", "yes"),
+            eval_judge_model=os.environ.get("EVAL_JUDGE_MODEL", "gpt-4o-mini"),
+            eval_judge_api_key=os.environ.get("EVAL_JUDGE_API_KEY", ""),
         )
 
     @classmethod
@@ -102,6 +111,9 @@ class AppConfig:
             eval_parallel_workers=data.get("eval_parallel_workers", 1),
             eval_rate_limit_per_minute=data.get("eval_rate_limit_per_minute", 0),
             eval_enable_tools=data.get("eval_enable_tools", False),
+            eval_judge_enabled=data.get("eval_judge_enabled", False),
+            eval_judge_model=data.get("eval_judge_model", "gpt-4o-mini"),
+            eval_judge_api_key=data.get("eval_judge_api_key", ""),
         )
 
 
@@ -117,6 +129,10 @@ class App:
         self.scoring_config = ScoringConfig(
             similarity_threshold=self.config.scoring_similarity_threshold,
             similarity_weight=self.config.scoring_similarity_weight,
+            llm_judge=LLMJudgeConfig(
+                model=self.config.eval_judge_model,
+                api_key=self.config.eval_judge_api_key,
+            ) if self.config.eval_judge_enabled else None,
         )
         self.engine = EvaluationEngine(
             repository=self.repository,
@@ -152,7 +168,7 @@ class App:
         except (KeyError, ValueError) as exc:
             return {"valid": False, "errors": [str(exc)]}
 
-        from evaluation_workflow.core.validation import ScenarioValidator
+        from ele.core.validation import ScenarioValidator
 
         result = ScenarioValidator().validate(scenario)
         if result.is_valid:
@@ -285,6 +301,8 @@ class App:
                     category=scenario.category.value if scenario else "",
                     domain=scenario.domain.value if scenario else "",
                     difficulty=scenario.difficulty.value if scenario else "",
+                    judge_score=sr.judge_score if sr else None,
+                    judge_reasoning=sr.judge_reasoning if sr else None,
                 )
             )
 

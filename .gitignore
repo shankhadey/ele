@@ -19,9 +19,13 @@ results/*.json
 
 # Environment
 .env
+.kiro_tmp
 
 # IDE
 .vscode/
 .idea/
 *.swp
 .DS_Store
+
+# Kiro specs
+specs

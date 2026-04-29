@@ -18,21 +18,21 @@ from datetime import datetime, timezone
 from threading import Lock
 from typing import Any, Dict, List, Optional
 
-from evaluation_workflow.core.models import (
+from ele.core.models import (
     ResultStatusEnum,
     RunStatusEnum,
     Scenario,
     ScenarioFilters,
     StatusEnum,
 )
-from evaluation_workflow.core.models_integration import (
+from ele.core.models_integration import (
     ModelInterface,
     ModelResponse,
     format_prompt,
 )
-from evaluation_workflow.core.repository import ScenarioRepository
-from evaluation_workflow.core.scoring import ScoredResult, ScoringConfig, score_response
-from evaluation_workflow.core.tool_registry import ToolRegistry
+from ele.core.repository import ScenarioRepository
+from ele.core.scoring import ScoredResult, ScoringConfig, score_response
+from ele.core.tool_registry import ToolRegistry
 
 logger = logging.getLogger(__name__)
 

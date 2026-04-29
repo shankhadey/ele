@@ -8,7 +8,7 @@ from __future__ import annotations
 from hypothesis import given, settings
 from hypothesis import strategies as st
 
-from evaluation_workflow.core.tool_registry import (
+from ele.core.tool_registry import (
     AuthConfig,
     SourceTypeEnum,
     ToolConfig,

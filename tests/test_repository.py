@@ -11,7 +11,7 @@ from datetime import datetime
 from hypothesis import given, settings, assume
 from hypothesis import strategies as st
 
-from evaluation_workflow.core.models import (
+from ele.core.models import (
     AnswerFormatEnum,
     CategoryEnum,
     Contributor,
@@ -21,8 +21,8 @@ from evaluation_workflow.core.models import (
     ScenarioFilters,
     StatusEnum,
 )
-from evaluation_workflow.core.repository import ScenarioRepository
-from evaluation_workflow.tests.generators import (
+from ele.core.repository import ScenarioRepository
+from ele.tests.generators import (
     valid_scenarios,
     categories,
     domains,

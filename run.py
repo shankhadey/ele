@@ -33,8 +33,8 @@ from dotenv import load_dotenv
 load_dotenv("linkedin_ai_manager/.env")
 load_dotenv(".env")
 
-from evaluation_workflow.core.cli import App, AppConfig
-from evaluation_workflow.core.models_integration import APIConfig, OpenAIAdapter
+from ele.core.cli import App, AppConfig
+from ele.core.models_integration import APIConfig, OpenAIAdapter
 
 
 # ── Defaults ──────────────────────────────────────────────────────

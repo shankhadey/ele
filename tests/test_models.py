@@ -2,8 +2,8 @@
 
 from hypothesis import given, settings
 
-from evaluation_workflow.core.models import Scenario
-from evaluation_workflow.tests.generators import valid_scenarios
+from ele.core.models import Scenario
+from ele.tests.generators import valid_scenarios
 
 
 # Feature: ai-model-evaluation-workflow, Property 31: Scenario export round-trip

@@ -14,7 +14,7 @@ from datetime import datetime, timezone, timedelta
 from hypothesis import given, settings, assume, HealthCheck
 from hypothesis import strategies as st
 
-from evaluation_workflow.core.results_store import (
+from ele.core.results_store import (
     AggregateMetrics,
     EvaluationResults,
     ExportFormat,

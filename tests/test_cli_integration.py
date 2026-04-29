@@ -10,19 +10,19 @@ from typing import Any, Dict, List, Optional
 
 import pytest
 
-from evaluation_workflow.core.cli import App, AppConfig
-from evaluation_workflow.core.models import (
+from ele.core.cli import App, AppConfig
+from ele.core.models import (
     AnswerFormatEnum,
     CategoryEnum,
     DifficultyEnum,
     DomainEnum,
 )
-from evaluation_workflow.core.models_integration import (
+from ele.core.models_integration import (
     ModelCapabilities,
     ModelInterface,
     ModelResponse,
 )
-from evaluation_workflow.core.tool_registry import (
+from ele.core.tool_registry import (
     AuthConfig,
     SourceTypeEnum,
     ToolConfig,

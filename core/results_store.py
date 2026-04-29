@@ -99,6 +99,9 @@ class ScoredResultRecord:
     category: str = ""
     domain: str = ""
     difficulty: str = ""
+    # LLM judge fields (None when judge was not used)
+    judge_score: Optional[float] = None
+    judge_reasoning: Optional[str] = None
 
 
 @dataclass
@@ -302,6 +305,8 @@ class ResultsStore:
                 "extracted_answer": sr.extracted_answer,
                 "exact_match": sr.exact_match,
                 "similarity_score": sr.similarity_score,
+                "judge_score": sr.judge_score,
+                "judge_reasoning": sr.judge_reasoning,
                 "final_score": sr.final_score,
                 "scoring_method": sr.scoring_method,
                 "latency_ms": sr.latency_ms,
