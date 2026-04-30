@@ -14,7 +14,7 @@ venv/
 .pytest_cache/
 .hypothesis/
 
-# Results (regenerated on each run)
+# Results (regenerated on each run — commit specific ones manually)
 results/*.json
 
 # Environment

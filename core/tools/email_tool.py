@@ -123,7 +123,6 @@ class EmailMockTool(ToolInterface):
         if params.get("subject"):
             term = params["subject"].lower()
             results = [e for e in results if term in e["subject"].lower()]
-
         if params.get("date_after"):
             cutoff = _parse_date(params["date_after"])
             if cutoff:

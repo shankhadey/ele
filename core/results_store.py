@@ -102,6 +102,9 @@ class ScoredResultRecord:
     # LLM judge fields (None when judge was not used)
     judge_score: Optional[float] = None
     judge_reasoning: Optional[str] = None
+    # Tool invocation trace — each entry has: round, tool_id, parameters, result, success
+    # parameters shows exactly what the model queried
+    tool_invocations: List[Dict[str, Any]] = field(default_factory=list)
 
 
 @dataclass
@@ -296,11 +299,27 @@ class ResultsStore:
         """Flatten scored results into a list of dicts for export."""
         rows: List[Dict[str, Any]] = []
         for sr in results.scored_results:
+            # Summarise tool invocations: keep query params and result count,
+            # omit full email/message bodies to keep the file readable.
+            tool_trace = []
+            for inv in sr.tool_invocations:
+                raw_result = inv.get("result") or []
+                result_count = len(raw_result) if isinstance(raw_result, list) else 0
+                tool_trace.append({
+                    "round": inv.get("round"),
+                    "tool_id": inv.get("tool_id"),
+                    "query": inv.get("parameters", {}),
+                    "results_returned": result_count,
+                    "success": inv.get("success", True),
+                    "error": inv.get("error"),
+                })
+
             rows.append({
                 "run_id": results.run_id,
                 "model_id": results.model_id,
                 "model_name": results.model_name,
                 "scenario_id": sr.scenario_id,
+                "model_response": sr.model_response,
                 "correct_answer": sr.correct_answer,
                 "extracted_answer": sr.extracted_answer,
                 "exact_match": sr.exact_match,
@@ -315,6 +334,7 @@ class ResultsStore:
                 "category": sr.category,
                 "domain": sr.domain,
                 "difficulty": sr.difficulty,
+                "tool_invocations": tool_trace,
             })
         return rows
 

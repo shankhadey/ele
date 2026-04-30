@@ -327,6 +327,7 @@ class App:
                     difficulty=scenario.difficulty.value if scenario else "",
                     judge_score=sr.judge_score if sr else None,
                     judge_reasoning=sr.judge_reasoning if sr else None,
+                    tool_invocations=r.tool_invocations,
                 )
             )
 

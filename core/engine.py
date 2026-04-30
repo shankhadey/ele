@@ -250,7 +250,7 @@ class EvaluationEngine:
         try:
             if config.enable_tools and tools_for_prompt:
                 # Multi-turn tool-call loop
-                final_response, tool_invocations = self._run_tool_call_loop(
+                final_response, tool_invocations, tokens_used = self._run_tool_call_loop(
                     scenario, model, prompt, config, rate_limiter
                 )
             else:
@@ -258,9 +258,9 @@ class EvaluationEngine:
                 response = self._invoke_with_timeout(model, prompt, None, config)
                 final_response = response.text
                 tool_invocations = []
+                tokens_used = response.tokens_used
 
             latency_ms = int((time.monotonic() - start) * 1000)
-            tokens_used = 0  # aggregated in loop if needed
 
             # Score the final response
             scored = score_response(scenario, final_response, self._scoring_config)
@@ -300,15 +300,14 @@ class EvaluationEngine:
         initial_prompt: str,
         config: EvaluationConfig,
         rate_limiter: Optional[_TokenBucketRateLimiter],
-    ) -> tuple[str, List[Dict[str, Any]]]:
+    ) -> tuple[str, List[Dict[str, Any]], int]:
         """Run the multi-turn tool-call loop.
 
-        The model may call tools (TOOL_CALL: tool_name({...})) up to
-        max_tool_rounds times. Each tool result is appended to the
-        conversation and the model is re-invoked. Returns (final_answer, invocations).
+        Returns (final_answer, tool_invocations, total_tokens_used).
         """
         conversation = initial_prompt
         tool_invocations: List[Dict[str, Any]] = []
+        total_tokens = 0
         last_text = ""
 
         for round_num in range(config.max_tool_rounds + 1):
@@ -317,14 +316,13 @@ class EvaluationEngine:
 
             response = self._invoke_with_timeout(model, conversation, None, config)
             text = response.text or ""
+            total_tokens += response.tokens_used
             last_text = text
 
-            # Parse tool call from response
             tool_call = _parse_tool_call(text)
 
             if tool_call is None:
-                # No tool call — this is the final answer
-                return text, tool_invocations
+                return text, tool_invocations, total_tokens
 
             if round_num == config.max_tool_rounds:
                 # Hit the round limit — force a final answer turn
@@ -337,10 +335,10 @@ class EvaluationEngine:
                 if rate_limiter:
                     rate_limiter.acquire()
                 final_response = self._invoke_with_timeout(model, conversation, None, config)
-                return final_response.text or last_text, tool_invocations
+                total_tokens += final_response.tokens_used
+                return final_response.text or last_text, tool_invocations, total_tokens
 
             tool_id, tool_params = tool_call
-            # Execute the tool
             try:
                 result = self._tool_registry.invoke_tool(
                     tool_id, tool_params,
@@ -367,14 +365,13 @@ class EvaluationEngine:
                 }
 
             tool_invocations.append(invocation_record)
-            # Append model turn + tool result to conversation
             conversation = (
                 f"{conversation}\n\nAssistant: {text}\n\n"
                 f"{result_text}\n\n"
                 "Continue reasoning and provide your final answer, or call another tool."
             )
 
-        return last_text, tool_invocations
+        return last_text, tool_invocations, total_tokens
 
     def _invoke_with_timeout(
         self,
