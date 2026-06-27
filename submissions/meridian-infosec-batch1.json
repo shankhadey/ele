@@ -1,0 +1,136 @@
+[
+  {
+    "title": "Vendor DPA Authority After Acquisition and Entity Name Change",
+    "category": "entity_resolution",
+    "domain": "compliance_legal",
+    "difficulty": "hard",
+    "scenario": "**Vanta — Vendor Risk Assessment: 'CloudSync Technologies' (Approved: Aug 2024)**\nRisk Level: Medium | Review Cadence: Annual | DPA Status: Executed\nSub-processor list last updated: Jul 2024\nNotes: Processes PII (email, name, org) for integration sync feature. SOC2 Type II report received Aug 2024 (reporting period Jan-Jun 2024).\n\n**Google Drive — /Legal/DPAs/Executed/CloudSync_DPA_v2.pdf (signed Aug 12, 2024)**\nParties: Meridian Systems, Inc. ('Controller') and CloudSync Technologies, Inc. ('Processor')\nSection 4.2: Processor shall not engage sub-processors without prior written consent.\nSection 9.1: This agreement is binding upon successors and assigns, provided Controller receives 30-day written notice of any change of control.\nSchedule B — Approved Sub-processors: AWS (us-east-1), Datadog, Twilio SendGrid\n\n**Slack — #security-reviews (Mar 18, 2026, 2:44 PM)**\n@priya.v: Heads up — got a notification from CloudSync that they've been acquired by Nextera Data Corp effective March 1. They're saying 'business as usual, same team, same infrastructure.'\n@jake.morrison: Didn't we just renew with them? Is the DPA still good?\n@priya.v: Checking. The DPA has a successor clause but requires 30-day prior notice. This was sent 18 days after close.\n@jake.morrison: So they're technically in breach?\n@priya.v: Potentially. But the real question is whether Nextera's own sub-processor list matches what we approved.\n[Thread continues below]\n\n**Slack — #security-reviews thread (Mar 18, 2026, 3:12 PM)**\n@priya.v: Just pulled Nextera's SOC2 from their trust page. Their report lists GCP as primary infra, not AWS. If CloudSync migrates to parent infra, that's a new sub-processor we never approved.\n@jake.morrison: :eyes:\n@priya.v: Also — Nextera's own DPA template references their 'Nextera Data Corp' entity. Our DPA is with 'CloudSync Technologies Inc' which... might not exist anymore as a legal entity post-merger.\n@engineering-leads: :thumbsup: (3 reactions)\n\n**Jira — SEC-1142 (Created: Mar 19, 2026)**\nSummary: Evaluate CloudSync/Nextera acquisition impact on data processing authorization\nStatus: In Progress | Priority: High\nComment (@priya.v, Mar 20): 'Confirmed with their legal: CloudSync Technologies Inc was dissolved into Nextera Data Corp on March 8. They are operating as a division, not a subsidiary. The legal entity party to our DPA no longer exists.'\n\n**Confluence — Security Policy SP-007: Third-Party Data Processing (v3.2, last updated Jan 2026)**\nSection 3.4: 'In the event a vendor undergoes change of control, all data processing activities under existing DPAs shall be suspended within 5 business days of security team awareness unless (a) successor entity executes a new DPA, or (b) existing DPA successor clause was properly invoked with required notice.'\n[RESOLVED COMMENT by @priya.v, Nov 2025]: 'Added the 5-business-day suspension clause after the PartnerStack situation. VP Eng signed off in the Nov governance meeting.'",
+    "question": "As of March 20, 2026, what is the correct compliance status of Meridian's data sharing with the former CloudSync service, and what action is required?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) DPA is still valid under the successor clause (Section 9.1); no action required beyond updating the vendor name in Vanta",
+      "B) Processing is unauthorized because Nextera's sub-processor list includes GCP which was never approved; immediately terminate the vendor relationship",
+      "C) DPA is in breach due to late notice but processing can continue because the same team and infrastructure are in place; issue a formal warning letter",
+      "D) Data processing must be suspended within 5 business days of March 18 awareness; the DPA successor clause was not properly invoked (late notice + entity dissolution), and policy SP-007 Section 3.4 mandates suspension"
+    ],
+    "correct_answer": "D",
+    "rationale": "The correct answer requires synthesizing four signals: (1) the DPA's successor clause requires 30-day PRIOR notice, but notice came 18 days AFTER close; (2) the legal entity 'CloudSync Technologies Inc' was dissolved, meaning the DPA counterparty no longer exists — the successor clause cannot be 'invoked' by a non-existent entity; (3) Confluence policy SP-007 v3.2 mandates suspension within 5 business days unless the successor clause was properly invoked OR a new DPA is executed — neither condition is met; (4) the Slack thread confirms awareness date as March 18, triggering the 5-business-day clock. Answer A is wrong because the successor clause was NOT properly invoked (late notice + entity dissolution). Answer C treats the breach as merely procedural and ignores the mandatory suspension policy, which is a common failure mode of applying 'reasonableness' over documented policy. Answer D correctly identifies the GCP sub-processor risk but jumps to termination rather than the required first step (suspension); additionally, the GCP migration hasn't been confirmed to have occurred yet — it's a potential future risk flagged in the Slack thread.",
+    "contributor": {
+      "name": "Priya Venkatesh",
+      "title": "Information Security & Compliance Manager",
+      "organization": "Meridian Systems",
+      "years_experience": 10,
+      "domain_expertise": "SOC2, vendor security reviews, data processing agreements, incident disclosure, policy versioning across compliance frameworks"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Vanta",
+        "Google Drive",
+        "Slack",
+        "Jira",
+        "Confluence"
+      ],
+      "informal_signal_location": "Slack thread where Priya confirms the legal entity dissolution — this fact only appears in a threaded reply, not in Jira or any formal system",
+      "acronyms_used": [
+        "DPA",
+        "SOC2",
+        "PII",
+        "GCP",
+        "AWS"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 19
+    }
+  },
+  {
+    "title": "SOC2 Control Mapping Discrepancy Across Policy Versions During Audit",
+    "category": "policy_version",
+    "domain": "compliance_legal",
+    "difficulty": "expert",
+    "scenario": "**Vanta — SOC2 Type II Audit Prep Dashboard (Audit period: Jul 2025 - Jun 2026)**\nControl CC-7.2: 'Vulnerability Management — Critical vulnerabilities are remediated within 14 days of identification.'\nStatus: Evidence Gap | Auditor Note (Jun 12, 2026): 'Observed 3 instances where critical vulns exceeded 14-day SLA. Requesting management response.'\n\n**Confluence — Security Policy SP-012: Vulnerability Management (v4.0, effective Apr 2026)**\nSection 5.1: 'Critical vulnerabilities (CVSS >= 9.0) must be remediated within 14 calendar days.'\nSection 5.4: 'Exceptions require CISO approval documented in Jira with risk acceptance rationale.'\n[Page history: v3.1 (effective Jan 2025) stated: 'Critical vulnerabilities must be remediated within 30 calendar days. High vulnerabilities within 60 days.']\n\n**Jira — SEC-0891 (Created: Feb 3, 2026)**\nSummary: CVE-2026-1847 — Critical RCE in auth-service dependency\nPriority: Critical | CVSS: 9.8\nTimeline: Identified Feb 3 → Patch available Feb 8 → Deployed to staging Feb 19 → Production deploy Mar 1 (26 days)\nComment (@jordan.kim, Feb 15): 'Blocked on staging — change freeze for SOC2 audit prep. Ironic.'\nComment (@priya.v, Feb 20): 'Flagging — we're past 14 days but technically v3.1 was active which gives 30. Proceeding.'\n\n**Slack — #security-reviews (Feb 20, 2026, 11:03 AM)**\n@priya.v: Quick gut check — SEC-0891 is at day 17. Under the current policy (v3.1) we have 30 days. But the new policy draft (v4.0) says 14 days. Auditor might apply the stricter standard retroactively since we told them in the readiness assessment that our target is 14 days.\n@ciso.williams: We committed to 14 days in the SOC2 description of controls. That's what gets audited regardless of internal policy version.\n@priya.v: :grimacing: Got it. So the description of controls is the binding commitment, not the internal policy?\n@ciso.williams: Correct. Always has been.\n[No further replies]\n\n**Jira — SEC-0923 (Created: Mar 14, 2026)**\nSummary: CVE-2026-2190 — Critical SQLi in reporting module\nPriority: Critical | CVSS: 9.1\nTimeline: Identified Mar 14 → Patch available Mar 16 → Deployed to production Mar 31 (17 days)\nComment (@dev.team.lead, Mar 28): 'WAF rule mitigates exploitation. Compensating control in place since Mar 15.'\nNo exception ticket filed. No CISO approval documented.\n\n**Jira — SEC-1003 (Created: May 2, 2026)**\nSummary: CVE-2026-3021 — Critical deserialization in event-processor\nPriority: Critical | CVSS: 9.4\nTimeline: Identified May 2 → Remediated May 19 (17 days)\nComment (@priya.v, May 10): 'Over SLA per description of controls. Filing exception.'\nException approved by CISO in linked ticket SEC-1003-EX.\n\n**Google Drive — /Compliance/SOC2/2026/Description_of_Controls_FINAL.docx (last modified: Jun 2025)**\nCC-7.2: 'The Company remediates critical vulnerabilities within 14 days of identification. Compensating controls may be applied when remediation requires extended timelines, subject to CISO approval.'",
+    "question": "The auditor flagged 3 instances exceeding the 14-day SLA. For the management response, how many of the three represent actual control failures versus exceptions or compliant remediations?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Three failures — all exceeded 14 days and none had compensating controls properly documented per the description of controls",
+      "B) Two failures (SEC-0891 and SEC-0923) — the CISO's Slack message establishes the description of controls as binding, making SEC-0891 non-compliant at 26 days without exception; SEC-1003 had proper exception approval",
+      "C) Zero failures — all three were compliant under internal policy v3.1 (30-day SLA) which was active during Feb and Mar incidents",
+      "D) One failure (SEC-0923, the SQLi vuln) — it had no documented exception or CISO approval; SEC-0891 was under the 30-day internal policy, and SEC-1003 had a proper exception filed"
+    ],
+    "correct_answer": "B",
+    "rationale": "The critical signal is the CISO's statement in Slack that the SOC2 description of controls (14-day SLA) is the binding standard, NOT the internal policy version. This means: SEC-0891 (26 days, no exception filed, Priya's Jira comment incorrectly relied on v3.1's 30-day window) is a control failure — the CISO clarified on the same day that the description of controls governs, but no exception was filed retroactively. SEC-0923 (17 days, compensating WAF control noted but NO CISO approval and NO exception ticket) is also a failure — the description of controls requires CISO approval for compensating controls, which was never obtained. SEC-1003 (17 days, proper exception with CISO approval) is compliant — the description of controls explicitly allows extended timelines with CISO approval. Answer A incorrectly applies the internal policy version instead of the description of controls, ignoring the CISO's definitive Slack statement. Answer D misses that the CISO's Slack clarification retroactively establishes SEC-0891 as non-compliant (Priya relied on the wrong standard). Answer D incorrectly treats SEC-1003 as a failure despite having the exact exception process the control description allows.",
+    "contributor": {
+      "name": "Priya Venkatesh",
+      "title": "Information Security & Compliance Manager",
+      "organization": "Meridian Systems",
+      "years_experience": 10,
+      "domain_expertise": "SOC2, vendor security reviews, data processing agreements, incident disclosure, policy versioning across compliance frameworks"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Vanta",
+        "Confluence",
+        "Jira",
+        "Slack",
+        "Google Drive"
+      ],
+      "informal_signal_location": "CISO's Slack message clarifying that description of controls (not internal policy) is the binding audit standard — this informal statement changes the compliance determination for all three incidents",
+      "acronyms_used": [
+        "SOC2",
+        "CVSS",
+        "RCE",
+        "SQLi",
+        "SLA",
+        "WAF",
+        "CISO",
+        "SBOM"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 12
+    }
+  },
+  {
+    "title": "Data Breach Notification Timeline Under Conflicting Contractual Obligations",
+    "category": "approval_chain",
+    "domain": "compliance_legal",
+    "difficulty": "hard",
+    "scenario": "**PagerDuty — Incident #PD-4471 (Triggered: Jun 14, 2026, 02:17 AM)**\nService: auth-service | Severity: SEV-1\nAlert: 'Bulk export of user records from tenant: Covington Medical Group'\nEscalation: On-call (Jordan Kim) ack'd 02:19 → Security on-call (Priya Venkatesh) paged 02:25\n\n**Slack — #incidents (Jun 14, 2026, 02:32 AM)**\n@jordan.kim: Confirmed unauthorized access to Covington tenant. Compromised API key exported ~12K user records (names, emails, hashed passwords). Key rotated 02:28. Blast radius contained to single tenant.\n@priya.v: Activating breach response. @legal-oncall who's up?\n@sarah.legal: Here. Which customer?\n@priya.v: Covington Medical Group — healthcare customer. BAA in place?\n\n**Google Drive — /Legal/DPAs/Executed/ (search results)**\n- Covington_Medical_DPA_2024.pdf — Section 7: 'Processor shall notify Controller within 72 hours of becoming aware of a Personal Data Breach.'\n- Covington_Medical_BAA_2023.pdf — Section 4.1: 'Business Associate shall notify Covered Entity of a Breach of Unsecured PHI within 24 hours of discovery.'\n\n**Slack — #incidents thread (Jun 14, 2026, 02:48 AM)**\n@sarah.legal: Both a DPA (72hr) and BAA (24hr) with Covington. BAA governs for data qualifying as PHI.\n@priya.v: Exported data is names + emails + hashed passwords. No diagnosis codes. Is that PHI?\n@sarah.legal: Patient-facing portal users at a medical practice — the fact someone HAS an account is itself health information. Arguably yes.\n@priya.v: So we're on 24hr clock starting when?\n@sarah.legal: Discovery = confirmed unauthorized access. 02:32 AM per Jordan's message. Deadline: 02:32 AM Jun 15.\n[Thread: 4 :eyes: reactions, no further replies]\n\n**Confluence — Incident Response Playbook: Data Breach (v2.1, Nov 2025)**\nSection 6.2: 'For breaches affecting 500+ records, VP Engineering AND General Counsel must jointly approve notification content before delivery.'\n\n**Jira — SEC-1201 (Created: Jun 14, 2026, 03:15 AM)**\nSummary: Covington Medical breach notification — 24hr BAA deadline\nStatus: In Progress | Priority: Critical\nComment (@priya.v, 03:20 AM): 'Drafted notification. Need VP Eng + GC sign-off per s6.2 (12K > 500 threshold). @vp.eng @gc.martinez — deadline 02:32 AM Jun 15.'\nComment (@gc.martinez, 07:45 AM): 'Are we certain this is PHI? If just portal credentials, may not meet PHI definition. If not PHI, 72hr DPA clock applies instead.'\n\n**Slack — DM between @priya.v and @sarah.legal (Jun 14, 2026, 08:15 AM)**\n@priya.v: GC pushing back on PHI determination. I'd rather over-notify. Missing BAA deadline if it IS PHI = HIPAA violation.\n@sarah.legal: Agree. But playbook says GC must approve content. Can't send without her sign-off.\n@priya.v: Can VP Eng approve solo and I send with 'GC review pending' note?\n@sarah.legal: That's not what s6.2 says. It says 'jointly approve.' :no_entry_sign:",
+    "question": "Given the conflicting timelines and approval requirements, what is the correct course of action for Priya by end of day June 14?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Wait for GC's PHI determination — if GC concludes it's not PHI, the 72-hour DPA timeline applies and there's no urgency; the BAA clock only starts once PHI is confirmed",
+      "B) Obtain VP Eng approval, formally document that GC was given reasonable time but did not provide approval by deadline, and send notification citing the BAA's 24-hour obligation — accepting the internal process deviation as lesser risk than a potential HIPAA violation",
+      "C) Send notification immediately under Priya's own authority since the breach affects fewer than 500 unique data subjects per tenant (the 12K records may include duplicates)",
+      "D) Escalate to VP Eng to override GC's delay and send notification before the 24hr BAA deadline, since HIPAA obligations supersede internal approval processes"
+    ],
+    "correct_answer": "B",
+    "rationale": "This scenario tests the judgment call when internal process conflicts with external legal obligation. The correct answer requires synthesizing: (1) the BAA's 24-hour clock started at 02:32 AM per Sarah Legal's Slack determination; (2) the playbook requires JOINT VP Eng + GC approval for 500+ records; (3) GC has not refused — she's questioning the PHI determination, which is reasonable but creates timeline risk; (4) Sarah Legal's DM confirms you cannot bypass the joint approval requirement. The correct organizational judgment (D) is to document the attempt at joint approval, get the available approver (VP Eng), and proceed — treating the external HIPAA obligation as overriding when internal process creates a compliance gap. Answer A is wrong because the 12K figure clearly exceeds the 500-record threshold (the scenario says 12K user records, not that fewer than 500 are unique), and Priya's authority is limited by Section 6.2. Answer D incorrectly suggests VP Eng can 'override' GC — the playbook requires joint approval, not hierarchical override, and no one person supersedes the other. Answer C incorrectly resets the notification clock — the BAA deadline runs from discovery of the breach, not from confirmation that the data constitutes PHI; the conservative position (which Sarah Legal endorsed in the DM) is to assume the BAA clock is running. The DM between Priya and Sarah is the critical informal signal: it simultaneously blocks the easy path (send without GC) while implicitly supporting the documented-deviation approach.",
+    "contributor": {
+      "name": "Priya Venkatesh",
+      "title": "Information Security & Compliance Manager",
+      "organization": "Meridian Systems",
+      "years_experience": 10,
+      "domain_expertise": "SOC2, vendor security reviews, data processing agreements, incident disclosure, policy versioning across compliance frameworks"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "PagerDuty",
+        "Slack",
+        "Google Drive",
+        "Confluence",
+        "Jira"
+      ],
+      "informal_signal_location": "DM between Priya and Sarah Legal where Sarah confirms joint approval is mandatory but implicitly validates the 'document and proceed' approach by agreeing the BAA clock is running regardless of PHI determination",
+      "acronyms_used": [
+        "BAA",
+        "DPA",
+        "PHI",
+        "HIPAA",
+        "SEV-1",
+        "GC",
+        "RCA"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 0
+    }
+  }
+]

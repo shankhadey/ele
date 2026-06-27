@@ -1,0 +1,134 @@
+[
+  {
+    "title": "Dual-System Customer with Conflicting Balances Post-Acquisition",
+    "category": "entity_resolution",
+    "domain": "finance_revops",
+    "difficulty": "expert",
+    "scenario": "You are 14 months into the integration of Lakeshore Community Bank, acquired by Cascade Financial Group in April 2025. The MDM project is overdue and the customer data reconciliation between FIS Horizon (Cascade's core banking platform) and Lakeshore's legacy system (Fiserv DNA) is incomplete. A TSA governs Lakeshore's continued use of Fiserv DNA for deposit operations through September 2026.\n\n**ServiceNow — INC0078234**\nPriority: P2 | Opened: Jun 22, 2026 | Status: Pending\nCustomer: Margaret Hollis (SSN ending 4471)\nDescription: 'Customer called branch. Says her CD matured and she wants to roll it over. We see her in Horizon with a checking account ($14,200 balance) but no CD. She insists she has a $250K 18-month CD that matured last week.'\nInternal note (Jun 22, @t.morrison): 'Checked Dynamics — she exists as two records. One under Cascade (acct 7734-001) and one under the old Lakeshore entity (acct LSB-88291). The CD is probably in DNA.'\n\n**Microsoft Teams — #integration-ops (Jun 22, 2026, 3:47 PM)**\n@t.morrison: Anyone know if CDs that matured post-cutover are supposed to auto-migrate to Horizon? I thought Wave 2 covered term deposits.\n@p.langford: Wave 2 was savings and money market only. Term deposits were pushed to Wave 3 (Aug timeline). CDs maturing before Wave 3 need manual migration per the playbook.\n@t.morrison: So this customer's CD is still in DNA with no Horizon record?\n@p.langford: Correct. But — heads up — check the clean room output. Some Lakeshore CDs got flagged for OFAC re-screening before migration. If hers was flagged, ops can't touch it until compliance clears it.\n@t.morrison: :eyes:\n\n**SharePoint — /integration/wave3/clean-room-output-jun2026.xlsx (Last modified: Jun 18, 2026)**\nRow 2,341: Hollis, Margaret R. | LSB-88291 | Product: 18M CD | Maturity: Jun 15, 2026 | Amount: $250,000 | OFAC Flag: NO | Migration Status: PENDING-WAVE3\n\n**Outlook — From: compliance-ops@cascadefinancial.com (Jun 10, 2026)**\nTo: integration-program@cascadefinancial.com\nSubject: RE: Pre-migration OFAC Screening — Batch 14 Results\n'All accounts in Batch 14 cleared. No hits. Batch includes LSB-88200 through LSB-88450. These are greenlit for migration at ops discretion — no need to wait for Wave 3 scheduling if customer-facing urgency exists.'\n\n**Archer GRC — Compliance Note CN-2026-0441 (Jun 5, 2026)**\nPolicy: TSA Section 4.2(b) — 'Matured term deposits under the legacy entity must be serviced by the acquiring entity within 5 business days of maturity unless migration has not been operationally completed, in which case the legacy servicer continues under TSA terms.'",
+    "question": "What is the correct operational path to service Margaret Hollis's CD rollover request?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Process the rollover in Horizon against her existing checking account record (7734-001) since she's already a Cascade customer, and reconcile the legacy CD record later",
+      "B) Instruct the branch to process the rollover in Fiserv DNA under Lakeshore's entity since the TSA still governs term deposits until Wave 3 completes in August",
+      "C) Manually migrate her CD record from DNA to Horizon now (she's OFAC-cleared in Batch 14 and greenlit for early migration), then process the rollover in Horizon under her Cascade account",
+      "D) Escalate to compliance and wait for Wave 3 — the CD was flagged in the clean room output as PENDING-WAVE3 and cannot be moved until the scheduled migration window"
+    ],
+    "correct_answer": "C",
+    "rationale": "The correct path requires synthesizing four sources: (1) the clean room output confirms no OFAC flag on her account, (2) the compliance email explicitly greenlights Batch 14 (which includes her account range LSB-88200 to LSB-88450) for early migration at ops discretion when customer-facing urgency exists, (3) the TSA clause 4.2(b) requires servicing within 5 business days of maturity by the acquiring entity if migration is operationally possible, and (4) the Teams thread confirms the CD is in DNA but doesn't surface the compliance clearance. Answer A is wrong because the TSA actually mandates the acquiring entity service matured deposits when migration is feasible — and it is now feasible given OFAC clearance. Answer D misreads PENDING-WAVE3 as a block; it's a scheduling status, not a compliance hold — the OFAC Flag column explicitly shows NO, and the compliance email grants discretion to move early. Answer D is operationally dangerous: creating a new CD in Horizon without migrating the source record would create a phantom $250K liability in DNA and a duplicate product in Horizon with no lineage.",
+    "contributor": {
+      "name": "Karen Johanssen",
+      "title": "M&A Integration Program Manager",
+      "organization": "Cascade Financial Group",
+      "years_experience": 15,
+      "domain_expertise": "Post-merger integration planning, system consolidation, entity rationalization, policy harmonization"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "FIS Horizon",
+        "Fiserv DNA",
+        "ServiceNow",
+        "Microsoft Teams",
+        "SharePoint",
+        "Outlook",
+        "Archer GRC",
+        "Dynamics 365"
+      ],
+      "informal_signal_location": "Compliance email greenlighting Batch 14 for early migration at ops discretion — buried in an email thread not referenced in the ServiceNow ticket or Teams discussion",
+      "acronyms_used": [
+        "TSA",
+        "MDM",
+        "OFAC",
+        "CD",
+        "DNA",
+        "GRC"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 14
+    }
+  },
+  {
+    "title": "Policy Harmonization Gap During Integration Transition Period",
+    "category": "policy_version",
+    "domain": "finance_revops",
+    "difficulty": "hard",
+    "scenario": "Cascade Financial Group acquired Ridgeline Wealth Advisors in January 2025. You're managing policy harmonization. An HR issue has surfaced where the two organizations' policies conflict and no explicit transition guidance exists for this specific case.\n\n**Workday — Employee Record**\nName: Derek Yoon | Hire Date (Ridgeline): Mar 2021 | Role: Senior Wealth Advisor | Division: Cascade Wealth (formerly Ridgeline) | Manager: Nina Ashford | Status: Active\nNote: Transferred to Cascade entity on Jul 1, 2025 (Day 100 legal entity cutover)\n\n**ServiceNow — HR Case HR-2026-1192 (Opened Jun 24, 2026)**\nSubmitted by: Nina Ashford\nDescription: 'Derek Yoon is requesting approval for outside business activity — he wants to serve on the board of a fintech startup. Under Ridgeline's policy this only required Director approval. Under Cascade's Policy 4.2 it requires SVP approval plus compliance review. Derek argues he submitted the request verbally to his Director at Ridgeline in December 2024 (pre-close) and got a verbal OK. No documentation. What applies?'\n\n**SharePoint — /policies/hr/outside-business-activities/ (3 documents found)**\n1. 'Policy 4.2 — Outside Business Activities (Cascade)' — v3, published Aug 2025: 'SVP approval required for all advisory roles involving financial services entities. Compliance pre-clearance mandatory.'\n2. 'Policy 4.2 — Outside Activities (Ridgeline Legacy)' — v1, published 2019: 'Director approval sufficient for board service where no direct client conflict exists.'\n3. 'Policy 4.2 — Integration Transition Addendum' — v1, published Feb 2025: 'All employment policies of the acquired entity remain in effect for existing employees until formal notification of policy transition. Transition notifications will be issued by function no later than Day 100.'\n\n**Microsoft Teams — #hr-integration (Jul 3, 2025, 11:15 AM)**\n@nina.ashford: Quick Q — did the outside activities policy transition notice go out to the Ridgeline folks?\n@maria.santos: We sent the compensation and benefits transition notices. Outside activities is still pending — legal wants to review the non-compete implications first.\n@nina.ashford: So what applies to them right now?\n@maria.santos: Technically still the legacy policy until we send formal notice. But please don't publicize that — we don't want a rush of requests under the old rules.\n[Thread has 2 emoji reactions: :thumbsup: from @nina.ashford, :grimacing: from @j.burke]\n\n**Outlook — From: legal-integration@cascadefinancial.com (Sep 12, 2025)**\nTo: hr-policy@cascadefinancial.com\nSubject: Outside Business Activities — Policy Transition Notice\n'Legal has completed review. Please issue the transition notice for outside activities policy to all former Ridgeline employees effective October 1, 2025.'\n\n**SharePoint — /hr/transition-notices/ (Last item dated: Aug 2025 — Benefits & Compensation)**\nNo document found for 'Outside Business Activities' transition notice.",
+    "question": "Under the applicable policy framework, what approval is required for Derek Yoon's outside business activity request submitted in June 2026?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) SVP approval plus compliance review under Cascade's Policy 4.2 — the transition notice was authorized by legal and should be treated as effectively issued even though no document exists in SharePoint",
+      "B) No approval needed — Derek received verbal authorization from his Ridgeline Director in December 2024 before the acquisition closed, which constitutes pre-existing approval",
+      "C) Director approval under Ridgeline's legacy policy — the transition notice was never issued, so the legacy policy still applies per the Integration Transition Addendum",
+      "D) SVP approval plus compliance review under Cascade's Policy 4.2 — legal authorized the transition notice in September 2025, and it is now June 2026 well past any reasonable transition period"
+    ],
+    "correct_answer": "C",
+    "rationale": "The Integration Transition Addendum is explicit: acquired entity policies remain in effect 'until formal notification of policy transition.' The formal notification was never issued. Legal authorized HR to send it in September 2025, but the SharePoint transition-notices folder shows the last notice posted was in August 2025 (Benefits & Compensation) — the outside activities notice never made it out. The Teams message from Maria Santos in July 2025 confirms the legacy policy was still in effect at that time, and no subsequent evidence shows the transition was ever completed. Answer B applies reasonable-person logic but ignores the explicit contractual language of the Addendum — 'until formal notification' is unambiguous and doesn't include a sunset clause. Answer B fails because the request is being formally submitted NOW (June 2026), the verbal December 2024 conversation is undocumented, and even under Ridgeline's policy, board service requires Director approval (not just verbal mention). Answer D conflates authorization to issue with actual issuance — the Addendum requires 'formal notification,' not intent to notify. The absence of the document in SharePoint is the critical signal proving the notification never reached employees.",
+    "contributor": {
+      "name": "Karen Johanssen",
+      "title": "M&A Integration Program Manager",
+      "organization": "Cascade Financial Group",
+      "years_experience": 15,
+      "domain_expertise": "Post-merger integration planning, system consolidation, entity rationalization, policy harmonization"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Workday",
+        "ServiceNow",
+        "SharePoint",
+        "Microsoft Teams",
+        "Outlook"
+      ],
+      "informal_signal_location": "The absence of a transition notice document in the SharePoint /hr/transition-notices/ folder — proving the notice was authorized but never actually published",
+      "acronyms_used": [
+        "SVP",
+        "TSA",
+        "HR",
+        "OBA"
+      ],
+      "policy_versions_involved": 4,
+      "temporal_span_months": 18
+    }
+  },
+  {
+    "title": "TSA Vendor Invoice Routing After Legal Entity Rationalization",
+    "category": "cross_system_synthesis",
+    "domain": "finance_revops",
+    "difficulty": "hard",
+    "scenario": "Cascade Financial Group completed its acquisition of Piedmont Savings & Trust in March 2025. Legal entity rationalization collapsed Piedmont into Cascade's entity structure on Day 100 (Jul 1, 2025), but a Transition Services Agreement keeps certain vendor relationships active under the old Piedmont entity name through December 2026. A vendor invoice has arrived that doesn't fit neatly into either category.\n\n**Outlook — Accounts Payable Inbox (Jun 25, 2026)**\nFrom: billing@cabornetech.com\nTo: ap@piedmontsavings.com (forwarded to ap@cascadefinancial.com per mail redirect)\nSubject: Invoice #CT-2026-0891 — Annual License Renewal\n'Please find attached invoice for annual license renewal of CaborneTech DataVault platform. Amount: $187,500. Due: Jul 25, 2026. Bill-to: Piedmont Savings & Trust, 440 Market St, Greensboro NC.'\nAttachment: CT-2026-0891.pdf (last modified: Jun 20, 2026)\n\n**SharePoint — /integration/tsa/schedule-a-services.xlsx (Last modified: Mar 15, 2025)**\nRow 18: Vendor: CaborneTech | Service: Data archival platform | TSA Category: IT Infrastructure | TSA End: Dec 31, 2026 | Monthly Cost: $15,625 | Responsible Party: Cascade (paying) | Notes: 'License was 3-year term, renews annually. Cascade assumes cost from Day 1.'\n\n**Dynamics 365 — Vendor Record**\nVendor: CaborneTech Solutions Inc. | Vendor #: V-40221 | Status: Active | Payment Terms: Net 30 | Default GL: 6200-IT-INFRA | Entity: CASCADE FINANCIAL GROUP\nNote (added Apr 2025): 'Migrated from Piedmont vendor master. Original vendor # PST-1887.'\n\n**Microsoft Teams — #ap-operations (Jun 25, 2026, 2:20 PM)**\n@rachel.dunn: Got a CaborneTech invoice addressed to Piedmont. $187,500. Their schedule shows monthly at $15,625 — that's only $187,500 annually so the math checks out but this is an annual lump sum, not monthly. Do we pay it?\n@kevin.cho: Is it on the TSA schedule?\n@rachel.dunn: Yes but the schedule says monthly cost $15,625. This invoice is for the whole year upfront.\n@kevin.cho: Might be the renewal structure changed. Check with procurement if the contract terms allow annual billing.\n@rachel.dunn: Also the amount matches exactly ($15,625 x 12) so it's not like they're overcharging.\n@kevin.cho: :thinking_face: but wait — didn't we renegotiate CaborneTech during the synergy review? I swear I saw something about that.\n[No further replies]\n\n**Outlook — From: j.park@cascadefinancial.com (May 8, 2026)**\nTo: procurement-integration@cascadefinancial.com\nCC: cfo-office@cascadefinancial.com\nSubject: CaborneTech Synergy Outcome\n'Following the vendor rationalization review, we've confirmed CaborneTech DataVault will be decommissioned when we complete migration to Cascade's existing Iron Mountain archival service (target: Q3 2026). CaborneTech has been notified of non-renewal. Their current term expires June 30, 2026. We should NOT be receiving any renewal invoices. If one arrives, reject it — the contract is not being extended.'\n\n**FIS Horizon — System Log (Jun 20, 2026)**\nData export job 'PiedmontArchive-Daily' status: ACTIVE | Target: CaborneTech DataVault endpoint | Records exported today: 14,221 | No errors.",
+    "question": "What should Accounts Payable do with invoice #CT-2026-0891 from CaborneTech?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Pay the invoice but flag for review — the FIS Horizon system is still actively sending data to CaborneTech, meaning the service is operationally needed regardless of the non-renewal decision",
+      "B) Pay the invoice — it's on the TSA schedule, the amount matches the annual equivalent of the monthly rate, and the TSA runs through December 2026",
+      "C) Escalate to legal — the TSA schedule says the service runs through December 2026, but procurement says non-renewal; these conflict and AP cannot unilaterally decide",
+      "D) Reject the invoice — procurement confirmed non-renewal and contract expiry on June 30, 2026; the invoice is for a renewal period Cascade has explicitly declined"
+    ],
+    "correct_answer": "D",
+    "rationale": "The May 2026 email from procurement is definitive: the contract expires June 30, 2026, CaborneTech was notified of non-renewal, and any renewal invoice should be rejected. The TSA schedule (last modified March 2025) reflects the initial integration plan, which has since been superseded by the synergy review outcome. The TSA end date of December 2026 was the maximum allowed window, not a guaranteed service duration — Cascade can decommission TSA services early. Answer A relies on the stale TSA schedule without accounting for the later procurement decision — a classic failure of treating the earliest document as still authoritative. Answer C sounds procedurally safe but is unnecessary — there's no actual conflict; the TSA schedule is a planning document from 15 months ago, while the procurement email is a recent explicit decision communicated to the vendor and CC'd to the CFO office. Answer D raises a real operational concern (the Horizon export job is still running), but AP's job is to process based on contractual authority, not operational dependency. The active data export is an IT cutover issue that needs to be addressed by the migration team, not a reason to pay an invoice for a contract that's been terminated. Kevin Cho's unresolved question in Teams (about the synergy review) would have led to the answer, but the thread was abandoned — the email from procurement is the authoritative source.",
+    "contributor": {
+      "name": "Karen Johanssen",
+      "title": "M&A Integration Program Manager",
+      "organization": "Cascade Financial Group",
+      "years_experience": 15,
+      "domain_expertise": "Post-merger integration planning, system consolidation, entity rationalization, policy harmonization"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Outlook",
+        "SharePoint",
+        "Dynamics 365",
+        "Microsoft Teams",
+        "FIS Horizon"
+      ],
+      "informal_signal_location": "The abandoned Teams thread where Kevin Cho half-remembers the synergy review renegotiation but no one follows up — and the Horizon system log showing active data exports creating a false signal that the service is still needed",
+      "acronyms_used": [
+        "TSA",
+        "AP",
+        "GL",
+        "CFO",
+        "Q3"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 15
+    }
+  }
+]

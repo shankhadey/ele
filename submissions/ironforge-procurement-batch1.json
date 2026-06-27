@@ -1,0 +1,143 @@
+[
+  {
+    "title": "Vendor Entity Resolution Across Legacy Procurement Systems at Blanket PO Renewal",
+    "category": "entity_resolution",
+    "domain": "procurement_vendor",
+    "difficulty": "hard",
+    "scenario": "Context from SAP Ariba (Supplier Master):\nVendor ID: V-20198 | Name: 'Consolidated Precision Alloys Inc.' | Category: Raw Materials — Specialty Metals | AVL Status: Approved | Qualification Expiry: 2026-09-30 | Plant Assignment: Cleveland, Monterrey | Blanket PO #4500078812: $340K annual, renewing Jul 1, 2026.\n\nContext from Oracle Procurement (Legacy — Greenfield Plant):\nSupplier #: OR-3392 | Name: 'CPA Metals LLC' | Status: Active | Last PO: Feb 2026, $42K spot buy for Ti-6Al-4V bar stock | Contact: James Whitfield, same email domain (@cpa-metals.com) as Ariba entry.\n\nContext from SAP QM (Vendor Scorecard):\nVendor: 'Consol. Precision Alloys' | Last audit: Nov 2025 | Score: 72/100 (Below threshold — minimum 75 for aerospace-qualified suppliers) | Corrective action due: Mar 31, 2026 | Status in QM: 'Conditional — pending CAPA closure.'\n\n**Microsoft Teams — #procurement-ops (Apr 2, 2026, 3:47 PM)**\n@sandra.volkov: Does anyone have the CAPA response from CPA? Their corrective action was due end of March.\n@rick.delgado: They sent something on the 28th. Let me dig it up.\n@sandra.volkov: Need it for the blanket renewal. AVL shows them approved but QM has them conditional.\n@rick.delgado: Found it — they submitted evidence of the furnace recalibration. Henrik reviewed it.\n@sandra.volkov: Did he accept it?\n@rick.delgado: 👍 (reacted with ✅ emoji to Sandra's message)\n[No further messages in thread]\n\n**SharePoint — /contracts/vendors/CPA/ (folder last modified: Jan 2023)**\nFile: 'CPA_Qualification_Certificate_2021.pdf'\nCertified entity name: 'Consolidated Precision Alloys Partners LP'\nCertification scope: AS9100D, aerospace-grade titanium and nickel alloys\nCertifying body: NadCap\nNote in file properties (added by prev. procurement mgr, now retired): 'LP converted to Inc. in 2022 restructuring. Same ownership, same facilities. Legal sent updated W-9.'\n\n**Email — Subject: 'RE: CPA Renewal Review' (Apr 10, 2026)**\nFrom: henrik.johansson@ironforge-mfg.com\nTo: rick.delgado@ironforge-mfg.com\nCC: (none)\n\n> Their CAPA evidence looks solid. Furnace cal records check out.\n> I'm marking them compliant in MasterControl. QM scorecard\n> will update in next sync cycle (usually takes 2-3 weeks).\n\nRick — go ahead and treat them as qualified for the renewal.\nJust make sure Sandra knows the QM system won't reflect this until mid-April at earliest.",
+    "question": "Sandra needs to determine whether the blanket PO renewal for this supplier can proceed on Jul 1. Considering the vendor identity discrepancies, qualification status, and system lag, what is the correct procurement action?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Block the renewal — the supplier scorecard shows 72/100 (below 75 threshold), CAPA status is unresolved in QM, and the AVL qualification references a different legal entity (Partners LP vs Inc.)",
+      "B) Proceed with renewal for the Cleveland plant only — Oracle's 'CPA Metals LLC' is a separate entity serving Greenfield and must be qualified independently before the blanket PO can cover both plants",
+      "C) Proceed with renewal — the four entity names (Inc., LLC, Consol. Precision Alloys, Partners LP) are the same supplier confirmed by the SharePoint note and shared domain; Henrik's email confirms CAPA acceptance pending system sync; qualification is effectively restored",
+      "D) Escalate for competitive bid — the blanket PO at $340K exceeds the sole-source threshold ($75K) and the supplier's conditional status triggers mandatory re-sourcing per procurement policy"
+    ],
+    "correct_answer": "C",
+    "rationale": "All four entity names refer to the same supplier: the SharePoint note from the previous procurement manager confirms the LP-to-Inc. conversion; the Oracle entry 'CPA Metals LLC' shares the same email domain and contact; and the QM entry is a truncation of the same name. The critical CAPA resolution is confirmed in Henrik's email to Rick (an informal channel not cc'd to Sandra), and Rick's ✅ emoji reaction in Teams signals he received the go-ahead. The QM system lag (2-3 weeks) means the scorecard will not reflect compliance by Jul 1, but the authoritative quality judgment is Henrik's written confirmation. Answer A fails because it treats the system-of-record lag as the ground truth and the entity name variation as a blocker — both are resolved by cross-referencing the SharePoint note and the email. Answer B incorrectly treats the Oracle entry as a distinct entity rather than a legacy system duplicate. Answer D misapplies the sole-source threshold — a blanket PO renewal with an existing qualified supplier is not a new sole-source justification; competitive bid requirements apply to new awards, not renewals of existing agreements with qualified vendors.",
+    "contributor": {
+      "name": "Sandra Volkov",
+      "title": "Senior Procurement Category Manager",
+      "organization": "Ironforge Manufacturing",
+      "years_experience": 14,
+      "domain_expertise": "Strategic sourcing, supplier qualification, contract negotiation, sole-source justification, vendor risk management"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "SAP Ariba",
+        "Oracle Procurement",
+        "SAP QM",
+        "Microsoft Teams",
+        "SharePoint",
+        "Email (Outlook)"
+      ],
+      "informal_signal_location": "Rick Delgado's ✅ emoji reaction in Teams confirming Henrik accepted the CAPA, plus Henrik's email to Rick (not cc'd to Sandra) confirming compliance restoration",
+      "acronyms_used": [
+        "AVL",
+        "CAPA",
+        "QM",
+        "PO",
+        "MOQ",
+        "AS9100D",
+        "NadCap",
+        "Ti-6Al-4V"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 8
+    }
+  },
+  {
+    "title": "Sole-Source Threshold Change Impact on In-Flight Blanket PO with Split Plant Coverage",
+    "category": "policy_version",
+    "domain": "procurement_vendor",
+    "difficulty": "expert",
+    "scenario": "Context from SAP Ariba (Purchase Orders):\nBlanket PO #4500082140 | Vendor: Kestrel Machining Services | Issued: Aug 15, 2025 | Term: 12 months | Value: $92K | Category: Outsourced CNC machining — aerospace brackets | Sole-source justification filed: Aug 10, 2025 (approved under $100K threshold by Category Manager) | Renewal due: Aug 15, 2026.\n\n**SharePoint — /policies/procurement/sole-source-policy-v7.pdf (Published Oct 1, 2025)**\nSection 4.1: 'All sole-source awards exceeding $75,000 require VP of Supply Chain approval. Awards below $75,000 may be approved by Category Manager.'\nSection 4.3: 'This policy applies to all new awards and renewals initiated after the effective date.'\n[Document version history: v6 (effective Jan 2023) stated $100,000 threshold; v7 changed to $75,000]\n\n**SharePoint — /policies/procurement/sole-source-policy-v7.pdf (RESOLVED COMMENT by @david.park, Sep 28, 2025)**\n'Per CFO guidance: in-flight POs issued before Oct 1 that are up for renewal in Q1-Q2 2026 get a 90-day grace period from their renewal date to secure VP approval or transition to competitive bid. This does NOT apply to renewals in Q3+ 2026.'\n\n**Microsoft Teams — #supply-chain-leadership (Nov 12, 2025, 9:14 AM)**\n@maria.gonzalez (VP Supply Chain): Quick reminder — the new sole-source thresholds are live. I'm seeing some renewals come through that were approved under the old limit. If it's above $75K, it needs my sign-off now. No exceptions after the grace window.\n@david.park: Already communicated to the team. Grace period ends 90 days post-renewal date for anything issued pre-Oct 1.\n@maria.gonzalez: 👍\n[Thread — 2 replies]\n  @sandra.volkov: Maria — does this apply to the Monterrey plant too? They're still on Oracle and their POs don't flow through Ariba approval workflows.\n  [No reply]\n\n**SAP Ariba — Supplier Performance Notes (Kestrel Machining Services):**\nNote by @rick.delgado (Jan 2026): 'Kestrel is the only qualified shop for the AS-9102 FAI brackets. OEM spec requires their specific 5-axis equipment. Tried to identify alternates in Q4 — no viable candidates within lead time.'\n\n**Email — Subject: 'FW: Kestrel Renewal Planning' (Jun 5, 2026)**\nFrom: sandra.volkov@ironforge-mfg.com\nTo: maria.gonzalez@ironforge-mfg.com\n\nMaria — flagging the Kestrel blanket PO for your awareness. $92K, sole-source, renews Aug 15. I know the new threshold applies. Rick's notes confirm no viable alternates. Attaching updated sole-source justification for your approval.\n\n> Forwarded from rick.delgado (Jun 3):\n> Sandra — Kestrel renewal is coming up. Same scope, same value.\n> Their lead time advantage is 6 weeks vs 14 weeks for the next closest shop.\n> FYI their quote came in 4% higher this year ($95.7K). Still within budget.",
+    "question": "Given the policy change, grace period provisions, and the Kestrel PO specifics, what is the correct approval path for the Aug 15, 2026 renewal?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) VP Supply Chain approval required, but the renewal must be blocked until a competitive bid is conducted — policy Section 4.3 requires both VP approval AND competitive sourcing for renewals above threshold",
+      "B) VP Supply Chain approval required — the $92K renewal exceeds the new $75K threshold, the renewal date (Aug 15) is in Q3 2026 so the grace period does not apply, and Sandra has correctly escalated to Maria",
+      "C) Category Manager can approve — the original PO was issued before Oct 1, 2025 under the $100K threshold, and renewals of pre-existing POs are governed by the policy version in effect at original issuance",
+      "D) The renewal cannot proceed at $92K — Rick's quote shows the actual value is $95.7K which changes the approval tier and requires a new PO rather than a renewal"
+    ],
+    "correct_answer": "B",
+    "rationale": "The resolved comment on the SharePoint policy document is the critical hidden signal: it establishes a 90-day grace period for renewals in Q1-Q2 2026, but explicitly excludes Q3+ renewals. The Kestrel PO renews Aug 15, 2026 (Q3), so no grace period applies. Under v7 of the policy (effective Oct 1, 2025), any sole-source above $75K requires VP approval. Sandra correctly identified this and escalated to Maria with an updated justification. Answer A incorrectly applies a 'version at issuance' principle that doesn't exist — Section 4.3 explicitly states the policy applies to renewals initiated after the effective date. Answer C conflates VP approval with competitive bid requirements — sole-source justification with VP approval is a valid path when no alternatives exist (as Rick's notes confirm); the policy doesn't mandate competitive bid when sole-source justification is substantiated. Answer D is wrong because the $95.7K quote represents the new pricing but the approval threshold is a policy gate, not a PO-value-precision issue — both $92K and $95.7K exceed $75K and require the same approval level.",
+    "contributor": {
+      "name": "Sandra Volkov",
+      "title": "Senior Procurement Category Manager",
+      "organization": "Ironforge Manufacturing",
+      "years_experience": 14,
+      "domain_expertise": "Strategic sourcing, supplier qualification, contract negotiation, sole-source justification, vendor risk management"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "SAP Ariba",
+        "SharePoint (policy documents)",
+        "Microsoft Teams",
+        "Email (Outlook)",
+        "SAP Ariba (supplier notes)"
+      ],
+      "informal_signal_location": "Resolved comment on SharePoint policy PDF specifying grace period exclusion for Q3+ renewals — hidden by default in document view",
+      "acronyms_used": [
+        "PO",
+        "CNC",
+        "VP",
+        "FAI",
+        "AS-9102",
+        "OEM",
+        "CFO",
+        "Q1",
+        "Q2",
+        "Q3"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 12
+    }
+  },
+  {
+    "title": "Supplier Quality Failure vs. Plant Manager Emergency Deviation Authority",
+    "category": "precedent_exception",
+    "domain": "procurement_vendor",
+    "difficulty": "hard",
+    "scenario": "Context from SAP QM (Vendor Scorecard — Triton Surface Technologies):\nVendor ID: V-20847 | Category: Surface treatment — hard chrome plating | Plants served: Cleveland, Greenfield | Last audit: Jan 2026 | Score: 61/100 | Status: SUSPENDED — removed from AVL effective Feb 1, 2026 | Reason: Two consecutive failed audits (Jul 2025: 68, Jan 2026: 61). Below 70 = automatic suspension per QMS-PRO-008 Rev 3.\n\n**SharePoint — /quality/procedures/QMS-PRO-008-Rev3.pdf (Effective Sep 2024)**\nSection 6.2: 'Suppliers scoring below 70 on two consecutive audits shall be suspended from the AVL. Reinstatement requires: (a) successful corrective action verified by on-site audit, (b) Quality Manager approval, (c) 90-day probationary period with incoming inspection on all lots.'\nSection 6.4: 'Emergency deviation from supplier suspension may be authorized by Plant Manager for production-critical situations. Duration: maximum 30 calendar days. Deviation must be documented in MasterControl within 48 hours.'\n\n**Microsoft Teams — DM between Tom Brannigan (Cleveland Plant Mgr) and Sandra Volkov (Apr 14, 2026, 6:52 AM)**\nTom: Sandra we have a problem. The Pratt landing gear brackets need hard chrome per spec and Triton is our only qualified plater within 200 miles. Next closest is 6 week lead time. We ship to Pratt on May 2.\nSandra: Triton is suspended. Can't issue a PO.\nTom: I'm invoking Section 6.4. Emergency deviation. 30 days max. I'll own it.\nSandra: You sure? Henrik is going to lose his mind.\nTom: Rather deal with Henrik than miss a Pratt delivery. Sending the deviation form now.\n\n**MasterControl — Deviation Log:**\n[No entry found for Triton Surface Technologies after Feb 1, 2026]\n\n**SAP Ariba — Purchase Requisition #10042871 (Created: Apr 14, 2026)**\nVendor: Triton Surface Technologies | Value: $18,400 | Material: Hard chrome plating services — landing gear brackets | Requested by: T. Brannigan | Status: BLOCKED — vendor suspended in QM.\n\n**Email — Subject: 'Triton deviation' (Apr 14, 2026, 7:30 AM)**\nFrom: tom.brannigan@ironforge-mfg.com\nTo: henrik.johansson@ironforge-mfg.com\nCC: sandra.volkov@ironforge-mfg.com\n\nHenrik — heads up, invoking 6.4 for Triton on the Pratt brackets. 30-day window. I know they're suspended but there's no alternative that meets the May 2 ship date. Will get the MasterControl deviation filed today.\n\n**Microsoft Teams — #cleveland-plant (Apr 16, 2026, 2:15 PM)**\n@henrik.johansson: @tom.brannigan — still waiting on that MasterControl entry for the Triton deviation. It's been 48 hours.\n@tom.brannigan: I know, I know. Been dealing with the line 3 shutdown. Will do it tomorrow.\n@henrik.johansson: Policy says 48 hours, Tom. I can't have this hanging.\n[No further messages]",
+    "question": "It is now April 22, 2026. Sandra receives the blocked purchase requisition for Triton in her approval queue. Considering the policy, the deviation authority, and the documentation status, what should Sandra do?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Approve the requisition contingent on Tom filing the MasterControl deviation immediately — the authority is valid but Sandra must not release the PO until the system-of-record documentation exists to protect audit trail integrity",
+      "B) Reject the requisition and escalate — the deviation authority under 6.4 is limited to 30 days and only covers production-critical situations, but since Triton's score is below 70 on two consecutive audits, Section 6.2 supersedes 6.4 and no emergency deviation is permitted",
+      "C) Reject the requisition — Triton is suspended from the AVL and the MasterControl deviation was never filed within 48 hours, making the emergency deviation invalid per procedure",
+      "D) Approve the requisition — Tom has Plant Manager authority under Section 6.4, his email to Henrik constitutes documented intent, and the 48-hour MasterControl filing is an administrative requirement that doesn't void the deviation authority itself"
+    ],
+    "correct_answer": "D",
+    "rationale": "Section 6.4 explicitly grants Plant Managers emergency deviation authority for production-critical situations, with a 30-day maximum duration. Tom invoked this authority clearly: the Teams DM, the email to Henrik (cc'ing Sandra), and the purchase requisition itself all demonstrate intent and awareness. The 48-hour MasterControl documentation requirement is procedural — failure to meet it is a documentation nonconformance, not a nullification of the deviation authority. In manufacturing practice, the authority to deviate is separate from the obligation to document. The Pratt delivery deadline (May 2) is within the 30-day window from Apr 14. Answer A incorrectly conflates administrative documentation timing with the validity of the authority itself — this is a common auditor interpretation but not what the policy states (6.4 says deviation 'must be documented,' not 'is invalid if not documented within 48 hours'). Answer C fabricates a hierarchy between 6.2 and 6.4 that doesn't exist — 6.4 is specifically written as the exception mechanism to 6.2. Answer D introduces a condition not in the policy — Sandra's role is to process the requisition based on whether a valid deviation authority exists, not to hold POs hostage for documentation compliance that is Henrik's domain to enforce.",
+    "contributor": {
+      "name": "Sandra Volkov",
+      "title": "Senior Procurement Category Manager",
+      "organization": "Ironforge Manufacturing",
+      "years_experience": 14,
+      "domain_expertise": "Strategic sourcing, supplier qualification, contract negotiation, sole-source justification, vendor risk management"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "SAP QM",
+        "SharePoint (quality procedures)",
+        "Microsoft Teams (DM and channel)",
+        "MasterControl",
+        "SAP Ariba",
+        "Email (Outlook)"
+      ],
+      "informal_signal_location": "Teams DM between Tom and Sandra where the deviation is first invoked — DMs are not visible to quality team or auditors; also the absence of a MasterControl entry (silence as signal)",
+      "acronyms_used": [
+        "AVL",
+        "QM",
+        "QMS",
+        "CAPA",
+        "PO",
+        "Rev",
+        "DM"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 9
+    }
+  }
+]

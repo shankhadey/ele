@@ -1,0 +1,132 @@
+[
+  {
+    "title": "SAG-AFTRA Residual Rate Determination Across Contract Transition",
+    "category": "policy_version",
+    "domain": "finance_revops",
+    "difficulty": "expert",
+    "scenario": "**RightsLine — Title Record: \"Nightfall Season 2\"**\nTitle ID: PRM-4471 | Production Entity: Prism Originals LLC | Episodes: 10 | Production dates: Jan 2025 - Sep 2025 | SAG-AFTRA Agreement: 2023 Television Agreement\n\n**FileMaker — Production Tracking (legacy, last synced to RightsLine Nov 2024)**\nTitle: \"Nightfall S2\" | Signatory: Prism Media Productions Inc. | SAG agreement filed: 2020 Television Agreement | Production start: Jan 15, 2025 | Episodes covered: 1-10 | Status: ACTIVE\n\n**NetSuite — Residual Payment Queue (Jun 2026)**\nPayee: Marcus Blevin (performer, recurring role eps 1-10) | Residual type: SVOD Exhibition | Calculation basis: 2023 TV Agreement schedule | Amount: $14,220 | Status: PENDING REVIEW | Note: \"Rate discrepancy flagged — FileMaker shows 2020 agreement.\"\n\n**Slack — #royalties (Mar 18, 2025, 3:47 PM)**\n@denise.yamamoto: Quick q — Nightfall S2 is showing 2020 agreement in FileMaker but they didn't start principal photography until Jan 2025. Should be 2023 rates right?\n@jason.reeves: Production filed their initial signatory paperwork under the 2020 agreement in Oct 2024 (pre-production). SAG confirmed the filing is valid even though cameras rolled in 2025.\n@denise.yamamoto: Even for the back half? Eps 7-10 shot after the July 2025 interim agreement kicked in.\n@jason.reeves: hmm good catch. Let me check with labor relations.\n[thread has one emoji reaction: thinking face from @karen.lu. No further replies.]\n\n**Google Sheets — \"SAG-AFTRA Agreement Transition Matrix\" (shared by Labor Relations, last edited Jul 3, 2025)**\nRow 14: \"Productions with valid signatory filings under 2020 agreement retain 2020 rates for ALL episodes if principal photography commenced before the 2025 interim effective date (Jul 1, 2025).\"\nRow 15: \"Exception: Any episode with first day of principal photography ON OR AFTER Jul 1, 2025 triggers interim agreement rates for that episode only, regardless of overall production signatory filing.\"\n\n**Outlook — From: karen.lu@prismmedia.com To: denise.yamamoto@prismmedia.com (Mar 22, 2025, sent but no reply)**\nSubject: RE: Nightfall S2 agreement question\n\"Denise — talked to SAG rep. They confirmed the signatory filing under the 2020 agreement covers pre-Jul 1 episodes. Eps 8-10 started photography Jul 14, Jul 28, Aug 11 respectively. Those three trigger interim rates. Ep 7 started Jun 22 so it stays under 2020. Jason never followed up on Slack so flagging here instead.\"",
+    "question": "What is the correct residual calculation approach for Marcus Blevin's SVOD exhibition residuals on Nightfall Season 2?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Apply 2020 TV Agreement rates to all 10 episodes, since the signatory paperwork was filed under that agreement and covers the entire production",
+      "B) Apply 2020 TV Agreement rates to episodes 1-6 and 2025 interim agreement rates to episodes 7-10, since episodes 7-10 were produced after Jul 1, 2025",
+      "C) Apply 2020 TV Agreement rates to episodes 1-7 and 2025 interim agreement rates to episodes 8-10, based on actual photography start dates and the signatory filing",
+      "D) Apply 2023 TV Agreement rates to all 10 episodes, since RightsLine shows 2023 as the governing agreement and it is the system of record"
+    ],
+    "correct_answer": "C",
+    "rationale": "The correct answer requires synthesizing the Labor Relations transition matrix (which establishes the rule: signatory filing covers pre-Jul 1 episodes, but episodes with photography starting on/after Jul 1 trigger interim rates), Karen Lu's email (which confirms episode-by-episode photography start dates — Ep 7 started Jun 22, before the cutoff, while Eps 8-10 started Jul 14+), and the Slack thread (which raised but never resolved the question). Answer A is wrong because RightsLine has incorrect agreement data — the 2023 agreement was never the governing document; the valid filing was under 2020. Answer C applies the blanket signatory rule without the episode-level exception from the transition matrix. Answer D misreads the cutoff — it splits at episodes 7-10 assuming the back half of production, but Ep 7 actually started photography on Jun 22 (before the Jul 1 threshold), which is only confirmed in Karen's email. The critical signal lives in an email that received no reply and was never escalated back to the Slack thread where the question originated.",
+    "contributor": {
+      "name": "Denise Yamamoto",
+      "title": "Royalty & Residual Accounting Manager",
+      "organization": "Prism Media Group",
+      "years_experience": 14,
+      "domain_expertise": "Guild/union residual calculations, license fee allocation, profit participation, rights window management"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "RightsLine",
+        "FileMaker",
+        "NetSuite",
+        "Slack",
+        "Google Sheets",
+        "Outlook"
+      ],
+      "informal_signal_location": "Karen Lu's email confirming per-episode photography dates, which was never replied to and never updated in any system of record",
+      "acronyms_used": [
+        "SAG-AFTRA",
+        "SVOD",
+        "DGA",
+        "MG"
+      ],
+      "policy_versions_involved": 3,
+      "temporal_span_months": 15
+    }
+  },
+  {
+    "title": "Cross-Collateralized Profit Participation with Entity Name Mismatch",
+    "category": "entity_resolution",
+    "domain": "finance_revops",
+    "difficulty": "hard",
+    "scenario": "**NetSuite — Profit Participation Statement (Q1 2026)**\nParticipant: Ridgeway Creative Partners | Title: \"The Longest Winter\" | Participation: 5% of Defined Proceeds after recoupment | Total Revenue to date: $8.2M | Distribution fees deducted: $2.87M (35%) | Recoupment balance: -$1.14M (not yet recouped) | Amount due: $0.00\n\n**RightsLine — Title: \"The Longest Winter\"**\nTitle ID: PRM-2203 | Licensor: Ridgeway Films LLC | Rights: Worldwide, All Media | License type: Profit participation | Cross-collateralization: Yes — linked to PRM-2204 (\"Winter's Edge\") | Distribution deal: Prism Distribution Agreement dated Aug 2022\n\n**FileMaker — Title: \"Longest Winter, The\"**\nID: FM-0887 | Producer: Ridgeway Creative Partners Inc. | Distribution fee: 30% | Cross-coll group: FM-0887, FM-0888 | Notes (Oct 2023): \"Distribution fee updated to 35% per new output deal. See signed amendment in G Drive.\"\n\n**Google Drive — Folder: /Deals/Ridgeway/Amendments/**\nFile: \"Ridgeway_Output_Deal_Amendment_2023.pdf\" (last modified: Oct 14, 2023)\nSection 4(b): \"Effective for revenue recognized on or after January 1, 2024, the distribution fee shall be thirty-five percent (35%). Revenue recognized prior to January 1, 2024 shall remain subject to the original thirty percent (30%) distribution fee.\"\nSection 4(c): \"For the avoidance of doubt, the cross-collateralization provisions of the Original Agreement remain in full force.\"\n\n**Slack — #royalties (Feb 12, 2026, 11:03 AM)**\n@tanya.osei: @denise.yamamoto Ridgeway's business affairs attorney called. They're saying we applied 35% dist fee to ALL revenue on Longest Winter, but the first $3.1M came in before Jan 1 2024. They want a restatement.\n@denise.yamamoto: Let me pull the amendment. What entity name did they use?\n@tanya.osei: They said \"Ridgeway Films\" on the call but the participation agreement I have says \"Ridgeway Creative Partners\"\n@denise.yamamoto: Same people. The LLC is the production entity, the Inc. is the participant. Check if Winter's Edge has earned anything yet — that affects recoupment if we restate.\n@tanya.osei: one sec\n@tanya.osei: Winter's Edge has $620K in revenue per NetSuite, all post-Jan 2024.\n[reacted with :eyes: by @denise.yamamoto]\n\n**NetSuite — Revenue Detail: \"Winter's Edge\" (PRM-2204)**\nTotal revenue: $620,000 | Distribution fee applied: 35% ($217,000) | Net: $403,000 | Cross-coll status: Pooled with PRM-2203",
+    "question": "If the distribution fee is correctly restated per the amendment's temporal provision, what is the recoupment status of the cross-collateralized pool (The Longest Winter + Winter's Edge)?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Cannot determine — the entity name mismatch between 'Ridgeway Films LLC' and 'Ridgeway Creative Partners' means the cross-collateralization linkage is legally questionable",
+      "B) Recouped — the $155K fee reduction on pre-2024 revenue plus the Winter's Edge revenue pushes the cross-collateralized pool past breakeven",
+      "C) Still unrecouped by $1.14M — the restatement doesn't change recoupment because the fee reduction benefits the participant, not the pool",
+      "D) Still unrecouped, but by $985,000 — the restated lower fee on pre-2024 revenue ($155K reduction) improves the pool but doesn't reach breakeven"
+    ],
+    "correct_answer": "D",
+    "rationale": "The restatement applies the original 30% fee (instead of 35%) to the $3.1M in pre-2024 revenue. This reduces the distribution fee on that tranche by $155K ($3.1M x 5%). The current pool shows an unrecouped balance of -$1.14M. Adding back $155K in incorrectly deducted fees improves the pool by that amount, bringing the unrecouped balance to -$985K. Winter's Edge revenue ($620K) is already included in the cross-collateralized pool per NetSuite, so it cannot be double-counted. Answer A incorrectly assumes the fee restatement doesn't flow through to recoupment — it does, because lower distribution fees mean more net revenue in the pool. Answer C double-counts Winter's Edge revenue that is already reflected in the current $1.14M unrecouped figure. Answer D is a red herring — the Slack thread confirms these are the same people (LLC = production entity, Inc. = participant), and Denise's comment plus the RightsLine cross-collateralization linkage confirm the entities are properly connected. The critical signal is the Slack eyes-emoji reaction confirming Denise acknowledged the Winter's Edge figure without further comment, implying it was already in the system.",
+    "contributor": {
+      "name": "Denise Yamamoto",
+      "title": "Royalty & Residual Accounting Manager",
+      "organization": "Prism Media Group",
+      "years_experience": 14,
+      "domain_expertise": "Guild/union residual calculations, license fee allocation, profit participation, rights window management"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "NetSuite",
+        "RightsLine",
+        "FileMaker",
+        "Google Drive",
+        "Slack"
+      ],
+      "informal_signal_location": "Slack eyes-emoji reaction confirming Winter's Edge revenue was already accounted for in the pool, preventing double-counting",
+      "acronyms_used": [
+        "LLC",
+        "MG",
+        "SVOD",
+        "EST"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 28
+    }
+  },
+  {
+    "title": "WGA Residual Obligation After Rights Window Lapse and Re-License",
+    "category": "temporal_consistency",
+    "domain": "finance_revops",
+    "difficulty": "expert",
+    "scenario": "**RightsLine — Title: \"Parallax\"**\nTitle ID: PRM-3309 | Type: Feature Film | Rights holder: Prism Originals LLC | WGA covered: Yes | Original SVOD window: Jan 2022 - Dec 2024 (expired) | Re-licensed: TVOD/EST window granted to StreamVault, Mar 2025 - Mar 2027 | Residual obligation: Active\n\n**FileMaker — Title: \"Parallax\" (FM-1142)**\nWriter: Jordan Achebe | WGA Agreement: 2020 MBA | Residual schedule: Pay per \"exhibition\" on new-media platform per Article 15.B | Last residual paid: Q4 2024 (SVOD window) | Residual basis: Distributor's gross | Note (Jan 2023): \"Title moved to RightsLine. FM record frozen. DO NOT UPDATE HERE.\"\n\n**NetSuite — Residual Accrual (Jun 2026)**\nTitle: Parallax | Payee: Jordan Achebe | Period: Q1 2026 | Platform: StreamVault (TVOD) | Revenue recognized: $312,000 | Residual accrued: $0.00 | Flag: \"No active residual schedule found for TVOD exploitation.\"\n\n**Slack — #royalties (Apr 8, 2025, 2:14 PM)**\n@denise.yamamoto: Heads up team — we re-licensed Parallax to StreamVault for TVOD/EST. WGA residuals apply. Need to set up the payment schedule.\n@marcus.hall: Is this a new exhibition or continuation? The 2020 MBA treats TVOD different from SVOD.\n@denise.yamamoto: New exhibition. Different platform, different window, different medium. Article 15.B applies separately.\n@marcus.hall: Got it. But wait - the 2023 MBA replaced 15.B residual calculations for anything licensed after May 2023. Do we use old or new rates?\n@denise.yamamoto: Good question. The WRITING was done under 2020 MBA. Let me check if the re-license date controls or the production date.\n[thread ends — no resolution posted]\n\n**Google Doc — \"WGA MBA Transition Guide (Internal)\" (Created by Legal, Sep 2023)**\nSection 3.1: \"For residual purposes, the applicable MBA is determined by the date of the employment agreement under which the covered material was written, NOT the date of subsequent exploitation.\"\nSection 3.2: \"However, for new-media exhibitions commencing after ratification of the 2023 MBA, the residual RATE SCHEDULE from the 2023 MBA applies, even if the underlying work was produced under a prior agreement.\"\n[RESOLVED COMMENT by @legal.intern.patel, Oct 2023]: \"Confirmed with WGA rep: Section 3.2 supersedes 3.1 for rate calculation only. All other terms (covered platforms, payment timing, reporting) follow the original employment MBA. This is confusing but correct.\"\n\n**Outlook — From: streamvault-reports@streamvault.io To: royalties@prismmedia.com (Apr 30, 2026)**\nSubject: Q1 2026 Exploitation Report — Parallax\nAttachment: Parallax_Q1_2026_TVOD_EST.xlsx\nBody: \"Per our distribution agreement, attached is the quarterly report. 4,211 TVOD transactions, 1,893 EST transactions. Gross revenue: $312,400. Note: our reporting format changed in Jan 2026; please reference column H for residual-eligible gross (previously column F).\"",
+    "question": "What residual rate framework should Prism apply when calculating Jordan Achebe's WGA residual payment for Q1 2026 TVOD/EST exploitation of Parallax on StreamVault?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) 2023 MBA residual rates applied to total gross revenue ($312,400), since the re-license post-dates the 2023 MBA and all terms of the newer agreement apply",
+      "B) 2023 MBA residual rate schedule applied to residual-eligible gross from the StreamVault report, with all other residual terms (covered platforms, payment timing) governed by the 2020 MBA",
+      "C) No residual obligation exists for TVOD/EST exploitation because the original license was SVOD-only and the WGA agreement tied to that window expired in Dec 2024",
+      "D) 2020 MBA residual rates, since the writing was performed under that agreement and Section 3.1 of the transition guide states the employment agreement date controls"
+    ],
+    "correct_answer": "B",
+    "rationale": "The correct approach requires synthesizing three sources: (1) the Google Doc transition guide establishing that rate schedules follow the 2023 MBA for post-ratification exhibitions, (2) the resolved comment clarifying that only the rate calculation follows 2023 MBA while other terms follow the original employment agreement (2020 MBA), and (3) the StreamVault email noting their reporting format changed and residual-eligible gross is now in column H (not total gross). Answer A applies only Section 3.1 without the superseding Section 3.2 for rate calculations. Answer C incorrectly assumes the residual obligation was window-specific — WGA residuals follow the underlying work regardless of which distribution window is active, as confirmed by Denise's Slack message calling this a 'new exhibition' triggering Article 15.B. Answer D correctly identifies 2023 MBA rates but applies them to total gross rather than residual-eligible gross (the critical signal buried in the StreamVault email noting column H vs. column F), and incorrectly extends all 2023 MBA terms rather than just the rate schedule. The resolved Google Doc comment from an intern is the hardest-to-find signal confirming the split-application framework.",
+    "contributor": {
+      "name": "Denise Yamamoto",
+      "title": "Royalty & Residual Accounting Manager",
+      "organization": "Prism Media Group",
+      "years_experience": 14,
+      "domain_expertise": "Guild/union residual calculations, license fee allocation, profit participation, rights window management"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "RightsLine",
+        "FileMaker",
+        "NetSuite",
+        "Slack",
+        "Google Docs",
+        "Outlook"
+      ],
+      "informal_signal_location": "Resolved Google Doc comment from legal intern confirming the split-application rule (rate schedule from 2023 MBA, other terms from 2020 MBA)",
+      "acronyms_used": [
+        "WGA",
+        "MBA",
+        "SVOD",
+        "TVOD",
+        "EST",
+        "SAG-AFTRA"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 52
+    }
+  }
+]

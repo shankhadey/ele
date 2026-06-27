@@ -1,0 +1,135 @@
+[
+  {
+    "title": "Cross-Brand Return Ring with Shared Payment Instrument",
+    "category": "entity_resolution",
+    "domain": "finance_revops",
+    "difficulty": "hard",
+    "scenario": "NetSuite \u2014 Returns Dashboard (Brand: UrbanEdge)\nReturn #RE-20260412: SKU UE-8834 (leather jacket, $389) returned 4/12/2026. Refund issued to Visa ending 4471. Customer: 'David Morales', 118 Flatbush Ave, Brooklyn, NY. Reason: 'Didn't fit.' Store associate: Marcus T. (Location: UrbanEdge SoHo). No receipt \u2014 POS lookup matched purchase from 3/28.\n\nNetSuite \u2014 Returns Dashboard (Brand: Threads & Co)\nReturn #TC-20260415: SKU TC-2209 (cashmere wrap, $275) returned 4/15/2026. Refund issued to Visa ending 4471. Customer: 'D. Morales', 118 Flatbush Ave Apt 3, Brooklyn, NY. Reason: 'Defective.' Store associate: Priya K. (Location: Threads & Co Williamsburg).\n\nShopify \u2014 Online Returns (Brand: KineticWear)\nRMA #KW-9921: Order KW-5567812, SKU KW-APEX-BLK (running shoes, $210) returned via mail 4/18/2026. Refund to PayPal (david.m.nyc@gmail.com). Shipping label origin: Brooklyn, NY 11217. Customer account: 'DaveMNYC'. Account created 3/15/2026.\n\nSquare POS \u2014 Exception Report (Brand: UrbanEdge, SoHo location)\nAlert: Associate Marcus T. processed 4 refund-without-receipt transactions in 14-day window (threshold: 5/30 days). Individual amounts: $389, $215, $178, $290. All within authority limit ($400).\n\nSlack \u2014 #lp-alerts (Apr 19, 2026, 9:47 AM)\n@jenny.okafor: Hey @anthony.dimaggio \u2014 Riskified flagged a velocity cluster on card ending 4471. Seven purchases across 3 brands in 21 days, all high-value apparel. Six have already been returned. The 7th is a $520 coat from Threads & Co purchased yesterday.\n@anthony.dimaggio: Which brands? Do we have a unified customer ID?\n@jenny.okafor: No, separate profiles per brand obviously. But the card match is clean. Also the PayPal on the KW return resolves to the same name.\n@anthony.dimaggio: Put a return hold on the coat. I'll pull the full picture.\n[reacted with: eyes emoji]\n\nGoogle Sheets \u2014 'LP Exception Log Q2 2026'\nRow 34: Date: 4/12 | Brand: UrbanEdge | Flag: 'Refund w/o receipt over $300 \u2014 manager override by Sandra L.' | Notes: 'Sandra approved verbally, Marcus processed. Sandra noted customer was VIP loyalty member.' | Policy ref: 'RP-2025-v3 Sec 4.1'\n\nZendesk \u2014 Ticket #ZD-442918 (Brand: KineticWear)\nCustomer: DaveMNYC | Created: 4/16/2026 | Subject: 'Return label not working'\nAgent note (internal, 4/17): 'Customer demanding expedited return. Mentioned he returns frequently and has never had issues. Offered $25 credit to resolve. Customer accepted but still wants full refund on item.'",
+    "question": "Based on the available evidence, what is the correct next action for Loss Prevention?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Escalate Sandra L. for the manager override on the $389 return \u2014 the exception log shows she approved a refund-without-receipt over the $300 threshold in RP-2025-v3, which requires LP director sign-off",
+      "B) No action needed yet \u2014 each individual brand's returns are within policy limits, and the card match alone is insufficient without identity verification across brands",
+      "C) Flag Marcus T. for internal investigation \u2014 his exception count is approaching threshold and the refund-without-receipt on the $389 jacket is the primary concern",
+      "D) Treat this as a confirmed cross-brand ORC pattern tied to a single actor via payment instrument matching, place holds on all pending returns linked to card 4471 and the associated PayPal, and escalate to the multi-brand fraud committee"
+    ],
+    "correct_answer": "D",
+    "rationale": "The Riskified velocity flag, consistent card-last-4 across two in-store brands, PayPal resolution to the same name, matching address (with slight apartment variation), and the pattern of high-value purchase-then-return across brands within 21 days constitutes a textbook ORC wardrobing pattern. The critical signal in Slack confirms Riskified already linked the activity, and Anthony's own instruction to 'put a return hold' validates this is actionable. Answer A focuses only on the associate (who is a tool, not the actor) and misses the cross-brand pattern. Answer C applies single-brand threshold logic to what is clearly a multi-system synthesis problem \u2014 no single brand sees the full picture, which is exactly how these rings operate. Answer D focuses on a policy compliance issue with the manager override, which is a secondary finding, not the primary threat. The entity resolution across brands (name variations, address variation, different systems) is the core challenge that makes B correct.",
+    "contributor": {
+      "name": "Anthony DiMaggio",
+      "title": "Loss Prevention Manager",
+      "organization": "Atlas Retail Holdings",
+      "years_experience": 13,
+      "domain_expertise": "Return fraud detection, ORC analysis, POS exception monitoring across multi-brand retail"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "NetSuite",
+        "Shopify",
+        "Square POS",
+        "Riskified",
+        "Slack",
+        "Google Sheets",
+        "Zendesk"
+      ],
+      "informal_signal_location": "Slack #lp-alerts thread where Riskified velocity cluster is reported and Anthony instructs a return hold via emoji reaction",
+      "acronyms_used": [
+        "ORC",
+        "RMA",
+        "SKU",
+        "BOPIS",
+        "LP",
+        "POS"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 1
+    }
+  },
+  {
+    "title": "Refund Authority Threshold Change with Undocumented Grace Period",
+    "category": "approval_chain",
+    "domain": "finance_revops",
+    "difficulty": "expert",
+    "scenario": "Google Workspace \u2014 'Return & Refund Policy RP-2026-v1' (Published Feb 1, 2026)\nSection 4.2: 'Refund-without-receipt transactions exceeding $100 require Loss Prevention Manager approval. Store managers may approve refunds without receipt up to $100.'\nSection 4.2 (Footnote): 'Replaces RP-2025-v3 Section 4.1, effective immediately upon publication.'\n\nGoogle Workspace \u2014 'Return & Refund Policy RP-2025-v3' (Archived Jan 31, 2026)\nSection 4.1: 'Refund-without-receipt transactions exceeding $300 require LP Director approval. Store managers may approve refunds without receipt up to $300.'\n\nSlack \u2014 #store-managers (Feb 1, 2026, 8:02 AM)\n@corporate.ops: Team \u2014 new return policy RP-2026-v1 is live today. Key change: refund w/o receipt threshold dropped from $300 to $100 for manager-level authority. Please review and confirm.\n[14 of 47 managers reacted with checkmark emoji]\n[No further replies in thread]\n\nSlack \u2014 #store-managers (Feb 3, 2026, 11:15 AM)\n@rachel.nguyen: Quick q \u2014 I have a customer in-store right now with a $180 return, no receipt. Under the old policy I could approve this. Are we really enforcing the new limit starting today?\n@corporate.ops: Policy is effective as of 2/1. Please follow the new threshold.\n@sandra.lowell: @rachel.nguyen just call LP, they're turning these around in under 5 min\n@rachel.nguyen: Got it, thanks\n\nSlack \u2014 DM between Anthony DiMaggio and VP of Retail Ops, Karen Marsh (Feb 1, 2026, 10:22 AM)\n@karen.marsh: Anthony \u2014 heads up, we're going to get a flood of calls on the new $100 limit. Can you give managers a soft 2-week grace period to adjust? Don't formally flag anyone processing between $100-$300 until Feb 15.\n@anthony.dimaggio: Makes sense. I'll tell my team to note but not escalate until the 15th.\n@karen.marsh: Perfect. Don't put that in writing anywhere official though \u2014 I don't want it as a documented exception.\n\nSquare POS \u2014 Exception Report (UrbanEdge, 5 locations, Feb 1-14, 2026)\n23 refund-without-receipt transactions between $100-$300 approved by store managers during this window. None escalated to LP.\n\nSquare POS \u2014 Exception Report (UrbanEdge, Midtown location, Feb 18, 2026)\nAlert: Manager Sandra L. processed refund-without-receipt for $245. Customer: 'T. Whittaker'. No LP approval on file.\n\nGoogle Sheets \u2014 'LP Exception Log Q1 2026'\nRow 12: Date: 2/18 | Brand: UrbanEdge | Location: Midtown | Flag: 'Refund w/o receipt $245, no LP approval' | Manager: Sandra L. | Status: 'Pending review' | Notes: [empty]\n\nZendesk \u2014 Ticket #ZD-438201 (Feb 18, 2026)\nCustomer: T. Whittaker | Subject: 'Refund issue in store'\nAgent note (internal): 'Customer states manager approved refund but it was reversed the next day. Customer upset. Manager Sandra L. says she thought the old policy still applied.'",
+    "question": "Sandra L. processed a $245 refund-without-receipt on Feb 18 without LP approval. How should this be adjudicated?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Inconclusive \u2014 the grace period was never formally documented, creating ambiguity about whether it constitutes a policy modification; escalate to Legal/HR for interpretation before taking action",
+      "B) No violation \u2014 Sandra's claim that she didn't see the policy update is supported by the fact that only 14 of 47 managers acknowledged the Slack announcement, suggesting insufficient notice",
+      "C) Clear policy violation \u2014 RP-2026-v1 took effect Feb 1, the published policy requires LP approval over $100, the grace period ended Feb 15, and Sandra processed this transaction on Feb 18; she must be formally flagged",
+      "D) No violation \u2014 the informal grace period communicated by the VP of Retail Ops via DM to Anthony extends manager authority to $300 through at least Feb 15, and a reasonable interpretation allows additional adjustment time"
+    ],
+    "correct_answer": "C",
+    "rationale": "The DM between Anthony and Karen Marsh explicitly bounds the grace period to Feb 15 ('Don't formally flag anyone processing between $100-$300 until Feb 15'). Sandra's transaction on Feb 18 falls three days after the grace period expired. While the grace period was informal and undocumented by design (Karen explicitly said 'don't put that in writing'), it had a clear end date that has passed. Answer A incorrectly extends the grace period beyond its stated boundary with a vague 'reasonable interpretation' \u2014 the DM is specific about Feb 15. Answer C is tempting because the grace period lacks formal documentation, but Anthony was party to the agreement and knows its terms; from his operational perspective this is clear, not ambiguous. Answer D confuses notification adequacy with policy enforceability \u2014 the Slack announcement plus the published policy document constitute sufficient notice under Atlas's change management procedures, and Sandra had 17 days of the policy being live before her transaction. The 23 transactions in the Feb 1-14 window are correctly un-escalated per the informal agreement; Sandra's Feb 18 transaction is not.",
+    "contributor": {
+      "name": "Anthony DiMaggio",
+      "title": "Loss Prevention Manager",
+      "organization": "Atlas Retail Holdings",
+      "years_experience": 13,
+      "domain_expertise": "Return fraud detection, ORC analysis, POS exception monitoring across multi-brand retail"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Google Workspace",
+        "Slack",
+        "Square POS",
+        "Google Sheets",
+        "Zendesk"
+      ],
+      "informal_signal_location": "Slack DM between Anthony and VP Karen Marsh establishing an undocumented grace period with explicit Feb 15 end date",
+      "acronyms_used": [
+        "LP",
+        "POS",
+        "ORC",
+        "RP"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 1
+    }
+  },
+  {
+    "title": "Multi-Location Employee Collusion Ring Hidden Below Individual Thresholds",
+    "category": "cross_system_synthesis",
+    "domain": "finance_revops",
+    "difficulty": "expert",
+    "scenario": "Square POS \u2014 Exception Reports (March 2026, across brands)\n\nUrbanEdge \u2014 Herald Square:\nAssociate: James Fontaine | Refund-without-receipt count: 3 (30-day window) | Amounts: $89, $94, $97 | Threshold alert: No (limit: 5 transactions or $500 total)\n\nThreads & Co \u2014 Upper East Side:\nAssociate: Melissa Tran | Refund-without-receipt count: 3 (30-day window) | Amounts: $92, $88, $95 | Threshold alert: No\n\nKineticWear \u2014 Chelsea:\nAssociate: Darnell Washington | Refund-without-receipt count: 2 (30-day window) | Amounts: $91, $96 | Threshold alert: No\n\nNetSuite \u2014 Inventory Reconciliation (March 2026, all brands)\nSKU UE-4412 (UrbanEdge 'Metro Hoodie', retail $95): Inventory variance -8 units across 3 locations (expected shrink: 1-2 units/month/location).\nSKU TC-1187 (Threads & Co 'Silk Camisole', retail $92): Inventory variance -6 units across 2 locations.\nSKU KW-STRIDE-GRY (KineticWear 'Stride Trainer', retail $94): Inventory variance -5 units across 2 locations.\n\nGoogle Sheets \u2014 'LP Exception Log Q1 2026'\nRow 48: Date: 3/22 | Brand: UrbanEdge | Flag: 'Inventory variance UE-4412 above norm' | Status: 'Assigned to cycle count' | Notes: 'Likely receiving error \u2014 checking with DC'\nRow 52: Date: 3/25 | Brand: Threads & Co | Flag: 'TC-1187 variance' | Status: 'Open' | Notes: blank\n\nSlack \u2014 #lp-team (Mar 26, 2026, 2:14 PM)\n@jenny.okafor: Weird one. Pulled the refund details on the Fontaine transactions at Herald Sq. All three refunds were processed to prepaid Visa cards. Different card numbers each time.\n@anthony.dimaggio: Prepaid cards on refund-without-receipt? That's a red flag. Same for the other locations?\n@jenny.okafor: Checking... Tran's refunds went to prepaid Visa too. Washington's went to a regular debit card though.\n@jenny.okafor: Oh wait \u2014 I just ran the card BINs. Fontaine and Tran's prepaid cards are all from the same issuer batch (BIN 4147-83xx). That's a Walgreens gift card BIN.\n@anthony.dimaggio: eyes emoji\n\nSlack \u2014 DM between Jenny Okafor and Anthony DiMaggio (Mar 26, 2026, 3:45 PM)\n@jenny.okafor: One more thing. I looked up Fontaine, Tran, and Washington on LinkedIn. Fontaine and Tran both previously worked at Nordstrom Rack \u2014 same location, overlapping dates. Washington I can't connect yet.\n@anthony.dimaggio: Don't put LinkedIn stuff in the official log. Note the card BIN match only for now. I'll request the prepaid card purchase records from Walgreens corporate through our ORC network.\n\nLooker \u2014 Refund Pattern Dashboard (filtered Mar 2026)\nAll refund-without-receipt transactions $85-$100 across all Atlas brands: 14 total. 8 of those processed by Fontaine, Tran, or Washington. Average for comparable associates: 0-1 per month.",
+    "question": "What evidence pattern supports opening a coordinated internal theft investigation versus treating these as independent low-level policy compliance issues?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Insufficient evidence for coordinated investigation \u2014 each associate is below individual thresholds, the inventory variances could be receiving errors, and the LinkedIn connection is circumstantial; continue monitoring",
+      "B) Escalate the inventory variances to the distribution center first \u2014 the LP Exception Log suggests a receiving error, and without resolving that root cause, the refund patterns could be explained by legitimate customer returns of merchandise that was never properly received",
+      "C) Open an investigation into James Fontaine only \u2014 he has the highest transaction count and the inventory variance at his location is largest; the others may be coincidental",
+      "D) The prepaid card BIN batch match across two associates at different brands, combined with the deliberate sub-threshold transaction amounts ($88-$97 against a $100 policy limit), correlated inventory variances in the same SKU categories, and the prior employment overlap establish a coordinated scheme requiring formal investigation"
+    ],
+    "correct_answer": "D",
+    "rationale": "The evidence, when synthesized across systems that individually see nothing alarming, reveals a coordinated pattern: (1) All transactions are deliberately structured just below the $100 LP-approval threshold, indicating knowledge of internal controls. (2) The prepaid Visa BIN match across Fontaine and Tran's transactions \u2014 discovered only in Slack by Jenny's manual analysis \u2014 proves the refund instruments came from the same batch of cards, not from random customers. (3) Inventory variances in the exact product categories being 'returned' confirm merchandise is disappearing. (4) The LinkedIn connection between Fontaine and Tran establishes a pre-existing relationship. The Looker dashboard shows these three associates account for 8 of 14 sub-$100 refund-without-receipt transactions company-wide. Answer A applies single-system threshold logic \u2014 no individual system triggers an alert, which is precisely how employee collusion rings operate below detection. Answer C incorrectly siloes the investigation to one associate, missing the coordinated nature. Answer D is a misdirection from the Exception Log note about 'receiving error' \u2014 the correlation between inventory loss and refund patterns across multiple brands makes a DC error implausible as a full explanation.",
+    "contributor": {
+      "name": "Anthony DiMaggio",
+      "title": "Loss Prevention Manager",
+      "organization": "Atlas Retail Holdings",
+      "years_experience": 13,
+      "domain_expertise": "Return fraud detection, ORC analysis, POS exception monitoring across multi-brand retail"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Square POS",
+        "NetSuite",
+        "Google Sheets",
+        "Slack",
+        "Looker",
+        "LinkedIn"
+      ],
+      "informal_signal_location": "Slack DM where Jenny reveals the prepaid card BIN batch match and LinkedIn employment overlap \u2014 neither recorded in official LP log per Anthony's instruction",
+      "acronyms_used": [
+        "ORC",
+        "LP",
+        "POS",
+        "BIN",
+        "SKU",
+        "DC"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 1
+    }
+  }
+]

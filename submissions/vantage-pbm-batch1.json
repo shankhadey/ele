@@ -1,0 +1,143 @@
+[
+  {
+    "title": "Formulary Tier Grandfathering Dispute After P&T Committee Reclassification",
+    "category": "policy_version",
+    "domain": "finance_revops",
+    "difficulty": "hard",
+    "scenario": "A patient (MRN 4402891 at Vantage Regional, MRN 77-20145 at the former Lakeside campus) has been on Xeljanz 5mg for moderate RA since March 2025. At that time, tofacitinib was Tier 3 (preferred specialty) on the Vantage formulary.\n\n**SharePoint \u2014 /pharmacy/formulary/2026-formulary-v2.xlsx (Published Jan 15, 2026)**\nTherapeutic Class: JAK Inhibitors | Xeljanz (tofacitinib) | Tier: 4 (Non-preferred specialty) | PA Required: Yes | Step Therapy: Must fail 2 bDMARDs | Effective: Feb 1, 2026\n[Document Properties: Last modified by P&T Committee Coordinator, Jan 12, 2026]\n\n**SharePoint \u2014 /pharmacy/formulary/policies/grandfathering-policy-v3.docx (Published Sep 2024)**\nSection 4.1: \"Patients with active PA approvals at the time of a formulary tier change shall be grandfathered at their current tier until their PA expiration date, unless the P&T Committee specifies otherwise.\"\n[RESOLVED COMMENT by @dr.navarro, Jan 8, 2026]: \"For the JAK inhibitor reclassification specifically, P&T voted to require re-review at next PA renewal for ALL patients, no grandfathering. This overrides 4.1. Documenting here per Linda's request since the meeting minutes aren't finalized yet.\"\n\n**Epic Pharmacy Module \u2014 Prior Authorization Record**\nPatient: [MRN 4402891] | Drug: Tofacitinib 5mg BID | PA Status: Approved | Approved by: Dr. Mehta (Medical Director) | Approval Date: Mar 14, 2025 | Expiration: Mar 14, 2026 | Notes: \"Patient failed methotrexate and Humira. Meets UM criteria v2025.1.\"\n\n**PBM Portal (Express Scripts) \u2014 Claim Adjudication Log, Feb 3, 2026**\nRx Claim #EX-9928401 | NDC: 00069-0501-30 | Status: REJECTED | Reason: NDC requires PA \u2014 no active PA on file matching current UM criteria | Pharmacy: Vantage Specialty Pharmacy | Reject Code: 75 (Prior Authorization Required)\n\n**Microsoft Teams \u2014 Pharmacy Ops Channel (Feb 4, 2026, 8:47 AM)**\n@patricia.okonkwo: Getting calls from specialty pharmacy about Xeljanz claims rejecting. Patients had valid PAs. Is this the tier change?\n@linda.marsh: Yes. New UM criteria went live Feb 1. PBM is rejecting because the old PA codes don't map to the new tier requirements.\n@patricia.okonkwo: But these patients are grandfathered per policy 4.1?\n@linda.marsh: (thumbs-down emoji) Not for JAK inhibitors. P&T made an exception. Check the formulary doc comments, I think Rachel documented it there.\n@dr.mehta: I approved these originally. Happy to re-review but need the updated criteria. Where are they posted?\n[No further replies in thread]",
+    "question": "Should the patient's Xeljanz claim be processed under the existing PA approval (grandfathered at Tier 3), or must a new PA be submitted under the 2026 UM criteria?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Process at Tier 3 under the existing PA; the grandfathering policy (Section 4.1) protects this patient until PA expiration in March 2026",
+      "B) Require a new PA under 2026 UM criteria; the P&T Committee explicitly overrode grandfathering for JAK inhibitors",
+      "C) Process at Tier 4 but without requiring a new PA, since the patient has a valid approval on file regardless of tier placement",
+      "D) Reject and require the patient to restart step therapy (fail 2 bDMARDs) before Xeljanz can be re-authorized"
+    ],
+    "correct_answer": "B",
+    "rationale": "The P&T Committee's vote to override grandfathering specifically for JAK inhibitors is documented in a resolved comment on the formulary policy document \u2014 an easy-to-miss location since resolved comments are hidden by default. Linda Marsh confirms this in the Teams thread with a thumbs-down emoji when Patricia asks about grandfathering. Answer A applies the general policy (Section 4.1) without recognizing the class-specific exception voted by P&T. Answer C incorrectly decouples tier placement from PA requirements \u2014 at Vantage, moving to Tier 4 triggers new UM criteria that the existing PA doesn't satisfy. Answer D is overly punitive: requiring a new PA under updated criteria doesn't necessarily mean restarting step therapy from scratch \u2014 the patient's prior biologic failures remain documented in Epic and would likely satisfy the bDMARD step requirement upon re-review. The correct path is a new PA submission referencing prior treatment history.",
+    "contributor": {
+      "name": "Patricia Okonkwo",
+      "title": "Pharmacy Benefits Operations Manager",
+      "organization": "Vantage Health Partners",
+      "years_experience": 10,
+      "domain_expertise": "Formulary management, prior authorization appeals, PBM contract interpretation, step therapy exceptions"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Epic (pharmacy module)",
+        "PBM Portal (Express Scripts)",
+        "SharePoint (formulary documents)",
+        "Microsoft Teams"
+      ],
+      "informal_signal_location": "Resolved comment on SharePoint formulary policy document by @dr.navarro confirming P&T override of grandfathering",
+      "acronyms_used": [
+        "PA",
+        "P&T",
+        "UM",
+        "NDC",
+        "bDMARD",
+        "JAK",
+        "MRN",
+        "RA",
+        "DAW",
+        "MAC"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 11
+    }
+  },
+  {
+    "title": "Step Therapy Exception Precedent for Biosimilar-Intolerant Pediatric Patients",
+    "category": "precedent_exception",
+    "domain": "finance_revops",
+    "difficulty": "expert",
+    "scenario": "A pediatric rheumatologist at Vantage Children's Clinic submits a PA for Enbrel (etanercept, brand) for a 14-year-old with JIA who failed methotrexate. The current formulary requires step through biosimilar Erelzi first before brand Enbrel.\n\n**PBM Portal (Express Scripts) \u2014 PA Determination, Jun 12, 2026**\nPA Request #VHP-2026-08812 | Drug: Enbrel 25mg SQ weekly | Patient: [Pediatric, Age 14] | Requesting Provider: Dr. Anita Sharma | Status: DENIED | Denial Reason: Step therapy not met \u2014 patient has not tried formulary-preferred biosimilar (Erelzi) | Appeal deadline: Jul 12, 2026\n\n**Epic Pharmacy Module \u2014 Medication History**\nPatient has no prior biologic use. Failed MTX 15mg/m2 x 4 months (elevated LFTs, documented discontinuation). No biosimilar trial documented.\n\n**Outlook \u2014 Email from Dr. Sharma to Patricia Okonkwo (Jun 13, 2026, 7:22 AM)**\nSubject: Enbrel denial - need precedent info\n\"Patricia \u2014 I remember that 6 months ago the P&T Committee discussed pediatric biosimilar interchangeability concerns and granted exceptions for patients under 16. Dr. Reeves presented data on immunogenicity differences in the peds population. Can you check if that applies here? I can't find anything in the formulary docs about it.\"\n\n**SharePoint \u2014 /pharmacy/committees/pt-committee/minutes/ (folder listing)**\n- PT_Minutes_2026-01.pdf (12 pages)\n- PT_Minutes_2025-12.pdf (14 pages) \n- PT_Minutes_2025-11.pdf \u2014 FILE NOT FOUND (broken link)\n- PT_Minutes_2025-10.pdf (9 pages)\n\n**OneNote \u2014 Dr. Reeves' Notebook (shared with pharmacy ops team), Page: \"P&T Nov 2025 prep\"**\nLast modified: Nov 18, 2025\n\"Presented peds biosimilar data. Committee voted 7-2 to allow DAW exceptions for patients <16 when prescriber documents immunogenicity concern. NOT a formulary change \u2014 classified as UM criteria exception for peds only. Linda said she'd update the UM criteria doc but wanted to wait for legal review.\"\n[Checkbox unchecked]: \"Follow up: was UM doc ever updated?\"\n\n**Microsoft Teams \u2014 #pharmacy-ops (Dec 5, 2025, 3:15 PM)**\n@linda.marsh: FYI the legal review on the peds biosimilar exception language is done. I'll update the UM criteria after the holidays.\n@patricia.okonkwo: (checkmark emoji)\n[No subsequent messages reference this update]\n\n**SharePoint \u2014 /pharmacy/formulary/UM-criteria-2026-v1.pdf (Published Jan 30, 2026)**\n[Document searched: no mention of pediatric exception, biosimilar bypass, or age-based DAW criteria. Document references \"UM Criteria v2026.1 \u2014 approved by P&T Jan 2026 meeting.\"]",
+    "question": "Should Patricia support Dr. Sharma's appeal for brand Enbrel based on the P&T Committee's pediatric exception, given that the exception never made it into the published UM criteria document?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Require the patient to trial biosimilar Erelzi first, then file a new exception if immunogenicity issues arise \u2014 the precedent only applies to patients with documented biosimilar intolerance",
+      "B) Support the appeal citing the P&T Committee's November 2025 vote as documented precedent; the committee's decision is authoritative even though the UM criteria document was never updated",
+      "C) Deny the appeal; the P&T Committee vote is not valid because the November meeting minutes are missing and the exception was never codified in the UM criteria document",
+      "D) Escalate to the P&T Committee for a new vote since the prior decision was never formalized and the current UM criteria supersede informal committee notes"
+    ],
+    "correct_answer": "B",
+    "rationale": "The P&T Committee's vote is the authoritative decision-making body for formulary and UM exceptions at Vantage. Dr. Reeves' OneNote documents a 7-2 vote explicitly allowing DAW exceptions for patients under 16 with prescriber-documented immunogenicity concerns. Linda Marsh confirmed legal review was complete in the Teams message. The failure to update the UM criteria PDF is an administrative gap, not a policy reversal \u2014 no subsequent P&T meeting rescinded the decision. Answer A incorrectly requires formal documentation to validate a committee vote; the committee's authority derives from its charter, not from downstream document updates. The missing minutes file is a SharePoint issue, not evidence the meeting didn't occur. Answer C misreads the precedent \u2014 the exception was for immunogenicity *concern* in pediatric populations (prospective), not documented *intolerance* (requiring prior exposure). Answer D is unnecessarily cautious; asking a committee to re-vote on something they already decided 7-2 wastes institutional resources and delays patient care. Patricia should file the appeal with the OneNote documentation and Teams confirmation as supporting evidence.",
+    "contributor": {
+      "name": "Patricia Okonkwo",
+      "title": "Pharmacy Benefits Operations Manager",
+      "organization": "Vantage Health Partners",
+      "years_experience": 10,
+      "domain_expertise": "Formulary management, prior authorization appeals, PBM contract interpretation, step therapy exceptions"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "PBM Portal (Express Scripts)",
+        "Epic (pharmacy module)",
+        "Outlook",
+        "SharePoint (formulary documents)",
+        "OneNote",
+        "Microsoft Teams"
+      ],
+      "informal_signal_location": "Dr. Reeves' OneNote notebook documenting P&T Committee vote outcome, plus Teams message confirming legal review completion",
+      "acronyms_used": [
+        "PA",
+        "P&T",
+        "UM",
+        "DAW",
+        "JIA",
+        "MTX",
+        "LFT",
+        "SQ",
+        "NDC"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 7
+    }
+  },
+  {
+    "title": "MAC Pricing Dispute with Retroactive Contract Amendment Across Merged Entities",
+    "category": "temporal_consistency",
+    "domain": "finance_revops",
+    "difficulty": "hard",
+    "scenario": "Vantage's specialty pharmacy is disputing underpayments from Express Scripts on high-cost generic claims. The dispute hinges on which MAC pricing schedule applies and whether a contract amendment signed by the former Lakeside Health entity carries forward post-merger.\n\n**Cerner RevCycle \u2014 Claims Reconciliation Report (May 2026)**\nPharmacy NPI: 1234567890 (Vantage Specialty Pharmacy) | Payer: Express Scripts | Period: Q1 2026\nUnderpayment flag: 47 claims | Total variance: $34,200 | Drug classes affected: Specialty generics (tacrolimus, mycophenolate, generic Revlimid)\nSystem note: \"MAC rates applied do not match contracted rates in PBM agreement VHP-ESI-2024.\"\n\n**SharePoint \u2014 /contracts/pharmacy/PBM/ (folder contents)**\n- VHP-ESI-2024-Master.pdf (Vantage Health Partners PBM Agreement, effective Jul 1, 2024)\n- Lakeside-ESI-2021-Amendment3.pdf (Lakeside Health System, Amendment to PBM Agreement, effective Jan 1, 2022)\n- VHP-ESI-2024-MAC-Schedule-A.xlsx (MAC pricing schedule, last updated Oct 2025)\n\n**SharePoint \u2014 Lakeside-ESI-2021-Amendment3.pdf**\nSection 2.4: \"For specialty generics dispensed by the Lakeside Specialty Pharmacy, MAC pricing shall not fall below AWP minus 25%, notwithstanding standard MAC list updates.\"\nSignatory: Lakeside Health System, Inc.\n[Document metadata: Uploaded to Vantage SharePoint during migration, Mar 2024. No annotation or status flag.]\n\n**Epic Pharmacy Module \u2014 Pharmacy Location Record**\nPharmacy Name: Vantage Specialty Pharmacy | NPI: 1234567890 | Legacy Name: Lakeside Specialty Pharmacy (renamed Aug 2023) | NCPDP: 3340192 | Address: 4500 Lakeview Dr (same physical location as former Lakeside pharmacy)\n\n**Outlook \u2014 Email chain (Apr 28, 2026)**\nFrom: patricia.okonkwo@vantagehealth.org\nTo: contract.disputes@express-scripts.com\nCC: legal@vantagehealth.org\nSubject: MAC Underpayment Dispute - NPI 1234567890 - Q1 2026\n\n\"Per our master agreement VHP-ESI-2024, Section 8.2, MAC rates for specialty generics at this location should reflect the AWP-25% floor carried forward from the Lakeside amendment. Please review and reprocess.\"\n\n> Reply from ESI (May 2, 2026):\n> \"The VHP-ESI-2024 agreement supersedes all prior Lakeside agreements per Section 14.1 (Entire Agreement clause). The MAC floor provision was not incorporated into the current agreement. Standard MAC list applies.\"\n\n**Microsoft Teams \u2014 #pharmacy-finance (May 3, 2026, 11:02 AM)**\n@patricia.okonkwo: ESI is saying the Lakeside MAC floor didn't carry over. Anyone remember if this was negotiated into the Vantage contract?\n@raj.patel (CFO office): I think Mike specifically asked for that during the 2024 negotiation. Check the redline.\n@patricia.okonkwo: Which redline? I only see the executed version on SharePoint.\n@raj.patel: (thinking-face emoji) Mike might have it. Oh wait, he left in January.\n@linda.chen.legal: I pulled the negotiation folder. There IS a redline showing the MAC floor was proposed in Section 8.2 but it was struck during final negotiation. The executed version doesn't include it.\n[Message has 1 reaction: sad-face emoji from @patricia.okonkwo]",
+    "question": "Based on the available evidence, does the AWP-25% MAC pricing floor apply to claims processed at Vantage Specialty Pharmacy (formerly Lakeside Specialty Pharmacy) under the current Express Scripts agreement?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Yes \u2014 the Lakeside amendment's MAC floor carries forward because the pharmacy is the same physical location and NPI, establishing continuity of the contractual benefit",
+      "B) Yes \u2014 the VHP-ESI-2024 contract's Section 8.2 references MAC pricing for specialty generics, which implicitly incorporates the prior Lakeside terms as industry-standard successor provisions",
+      "C) No \u2014 the MAC floor was explicitly struck during the VHP-ESI-2024 negotiation, the Entire Agreement clause supersedes prior Lakeside terms, and the executed contract does not contain this provision",
+      "D) Indeterminate \u2014 without the departed employee Mike's confirmation of negotiation intent, the dispute cannot be resolved and must go to formal arbitration"
+    ],
+    "correct_answer": "C",
+    "rationale": "The critical signal is buried in the Teams conversation: Linda from legal confirms she found the negotiation redline showing the MAC floor was *proposed* but *struck* during final negotiation. Combined with Express Scripts' citation of the Entire Agreement clause (Section 14.1), the evidence clearly shows the MAC floor does not exist in the current contract. Answer A incorrectly assumes physical location continuity creates contractual continuity \u2014 NPI and address are operational identifiers, not contract terms, and the Entire Agreement clause explicitly nullifies prior agreements. Answer C fabricates an implicit incorporation theory; Section 8.2 may reference MAC pricing generally but the specific AWP-25% floor is not present in the executed version, and \"implicit incorporation\" of struck terms is not a valid contractual argument. Answer D incorrectly treats the departed employee's knowledge as necessary \u2014 Linda's discovery of the redline provides the definitive evidence regardless of Mike's absence. Patricia's sad-face reaction in Teams signals she knows the answer is unfavorable but the legal and contractual evidence is clear.",
+    "contributor": {
+      "name": "Patricia Okonkwo",
+      "title": "Pharmacy Benefits Operations Manager",
+      "organization": "Vantage Health Partners",
+      "years_experience": 10,
+      "domain_expertise": "Formulary management, prior authorization appeals, PBM contract interpretation, step therapy exceptions"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Cerner RevCycle",
+        "SharePoint (PBM contracts)",
+        "Epic (pharmacy module)",
+        "Outlook",
+        "Microsoft Teams"
+      ],
+      "informal_signal_location": "Teams message from legal confirming the MAC floor was struck in negotiation redline, plus Patricia's sad-face emoji reaction acknowledging the unfavorable finding",
+      "acronyms_used": [
+        "MAC",
+        "AWP",
+        "PBM",
+        "NPI",
+        "NCPDP",
+        "NDC",
+        "ESI",
+        "Q1"
+      ],
+      "policy_versions_involved": 3,
+      "temporal_span_months": 18
+    }
+  }
+]

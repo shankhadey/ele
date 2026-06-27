@@ -1,0 +1,135 @@
+[
+  {
+    "title": "Ban Evasion Detection Across Brand Platforms with Policy Version Conflict",
+    "category": "entity_resolution",
+    "domain": "compliance_legal",
+    "difficulty": "hard",
+    "scenario": "**Riskified — Alert #RF-88412 (Jun 3, 2026)**\nSeller: 'NovaCraft Goods' | Platform: Shopify Plus (Brand: Luma Home) | Risk Score: 72 | Flag: Payment instrument match with suspended seller 'Artisan Depot Co' (banned Apr 2025 on Brand: UrbanEdge). Match type: Same Stripe Connect account suffix (****7294). Business address: 440 Industrial Blvd, Unit 9, Glendale AZ. EIN: 84-2291037.\n\n**Shopify Plus — Seller Portal (Brand: Luma Home)**\nStore: NovaCraft Goods | Registered: May 12, 2026 | Owner: Priya Nolan | EIN: 92-1158403 | Business address: 1220 Commerce Dr, Ste 200, Scottsdale AZ | Bank: Chase ****7294 | Status: Active, probationary (new seller). Monthly GMV: $14,200.\n\n**Shopify Plus — Seller Portal (Brand: UrbanEdge) [ARCHIVED]**\nStore: Artisan Depot Co | Registered: Jan 2024 | Owner: Derek Nolan | EIN: 84-2291037 | Business address: 440 Industrial Blvd, Unit 9, Glendale AZ | Bank: Chase ****7294 | Status: SUSPENDED (Apr 14, 2025). Reason: Chargeback ratio exceeded 2.8% over rolling 90 days (threshold: 1.5%). Lifetime chargebacks: 47. Strike count at suspension: 3/3.\n\n**Slack — #trust-safety (Jun 5, 2026, 2:47 PM)**\n@ryan.okonma: Flagging RF-88412. NovaCraft on Luma matches Artisan Depot bank account. Different EIN though, different registered owner name. Could be spouse or business partner.\n@jessica.tran: Looked into it — Priya Nolan and Derek Nolan share a residential address per the KYC docs. Same household for sure.\n@ryan.okonma: What's the policy on household-linked accounts? Thought we updated that.\n@jessica.tran: We did. Old policy (v2.1) was automatic ban for any linked payment instrument. New policy (v3.0, effective May 1, 2026) says shared payment instruments alone aren't sufficient — need 2+ linking signals (payment + address + device fingerprint OR behavioral cluster match).\n[Thread has 3 emoji reactions: two thinking-face, one eyes emoji from @marcus.bell]\n\n**Google Doc — 'T&S Enforcement Policy v3.0' (Last edited Apr 28, 2026)**\nSection 4.2: Ban Evasion Criteria\n'A seller shall be considered evading a prior enforcement action when TWO or more of the following signals are present: (a) matching payment instrument, (b) matching device fingerprint, (c) matching business address, (d) behavioral cluster overlap >80%, (e) shared beneficial ownership.'\n[RESOLVED COMMENT by @marcus.bell, Apr 22]: 'Added beneficial ownership per legal's request. Note: spousal/household relationships count as shared beneficial ownership per FTC guidance we adopted. This wasn't in the draft — adding to section 4.2(e) definition.'\n\n**Looker — Device Fingerprint Dashboard**\nNovaCraft Goods: Device ID cluster: DFP-4412, DFP-4413. Artisan Depot Co (historical): Device ID cluster: DFP-7890, DFP-7891. No overlap detected.",
+    "question": "Under Atlas's current enforcement policy, does NovaCraft Goods qualify as ban evasion by the suspended Artisan Depot Co seller, and what is the correct action?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Inconclusive — escalate to legal for beneficial ownership determination since the policy does not explicitly define spousal relationships as shared ownership.",
+      "B) No — only one linking signal (payment instrument) is confirmed; the different EIN, address, device fingerprints, and owner name mean this does not meet the two-signal threshold.",
+      "C) Yes — the shared payment instrument plus shared beneficial ownership (spousal/household relationship confirmed via KYC) constitutes two linking signals under Policy v3.0 Section 4.2; initiate suspension.",
+      "D) Yes — the shared bank account alone is sufficient to confirm ban evasion; suspend NovaCraft Goods immediately per payment instrument match."
+    ],
+    "correct_answer": "C",
+    "rationale": "Under Policy v3.0 Section 4.2, ban evasion requires TWO or more linking signals. The scenario confirms: (1) matching payment instrument (Chase ****7294), and (2) shared beneficial ownership — the resolved Google Doc comment by Marcus Bell explicitly states that spousal/household relationships count as shared beneficial ownership per FTC guidance adopted into section 4.2(e). Jessica Tran's Slack message confirms Priya and Derek Nolan share a residential address per KYC, establishing the household relationship. Answer A applies the OLD policy (v2.1) where a single payment instrument match was sufficient — this was superseded May 1, 2026. Answer B correctly identifies the payment instrument as one signal but fails to recognize that the spousal relationship constitutes the second signal (shared beneficial ownership), likely because the resolved comment defining household relationships is hidden by default in the Google Doc. Answer D is overly cautious — the policy already incorporates the FTC guidance on spousal relationships via Marcus Bell's addition; no further legal escalation is needed.",
+    "contributor": {
+      "name": "Ryan Okonma",
+      "title": "Marketplace Trust & Safety Lead",
+      "organization": "Atlas Retail Holdings",
+      "years_experience": 7,
+      "domain_expertise": "Seller identity verification, ban evasion detection, fraud ring identification, policy enforcement across multi-brand marketplace"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Riskified",
+        "Shopify Plus",
+        "Slack",
+        "Google Docs",
+        "Looker"
+      ],
+      "informal_signal_location": "Resolved Google Doc comment defining spousal relationships as shared beneficial ownership — hidden by default",
+      "acronyms_used": [
+        "GMV",
+        "EIN",
+        "KYC",
+        "FTC",
+        "DFP",
+        "T&S"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 14
+    }
+  },
+  {
+    "title": "Cross-Brand Returns Fraud Ring with Conflicting Identity Signals",
+    "category": "cross_system_synthesis",
+    "domain": "compliance_legal",
+    "difficulty": "expert",
+    "scenario": "**Looker — Fraud Analytics Dashboard (Query: 'Refund velocity anomalies, last 30 days')**\nCluster ID: FRC-2291 | Pattern: High-value item purchase followed by return within 48 hours, replacement shipped, then second return of replacement. Net loss per cycle: ~$180-$340 per transaction. Accounts flagged: 6 across 3 brands.\n- Brand 'Luma Home': customer emails jenna.m.watts@gmail.com, jenny.watts88@outlook.com\n- Brand 'UrbanEdge': customer email j.watts.purchasing@yahoo.com\n- Brand 'Kinfolk Supply' (BigCommerce): customer email jennawatts_shop@gmail.com\n\n**Zendesk — Ticket #ZD-441290 (Luma Home, Jun 18, 2026)**\nCustomer: Jenna Watts | Email: jenna.m.watts@gmail.com\nSubject: 'Wrong item received AGAIN'\nAgent note (internal): 'Third return request in 3 weeks. Customer claims wrong item each time. Photos provided but quality is poor. Approved per return policy — under $500, no manager override needed. Flagged to #trust-safety per protocol.'\nShipping address: 2847 Maple Ridge Ct, Portland OR 97205\n\n**Zendesk — Ticket #ZD-441455 (UrbanEdge, Jun 20, 2026)**\nCustomer: J Watts | Email: j.watts.purchasing@yahoo.com\nSubject: 'Damaged in transit'\nAgent note: 'Customer requesting full refund + replacement. High-value order ($489). Address matches another flagged account per fraud notes but different email and different brand so system didn't auto-link. Shipping to: 2847 Maple Ridge Ct, Apt B, Portland OR 97205.'\n[Note: Address is same building, different unit designation]\n\n**Slack — #trust-safety (Jun 19, 2026, 11:33 AM)**\n@jessica.tran: FYI got a Looker alert on FRC-2291. Looks like a wardrobing ring or return-cycle fraud. Six accounts, same behavioral cluster. IP overlap on 4 of 6. Need to pull device fingerprints.\n@ryan.okonma: Can you cross-check with Riskified? Also check if any of these hit the BigCommerce brand — we have zero visibility there from our tooling.\n@jessica.tran: Already checked. Kinfolk Supply (BigCommerce) has one matching email pattern but I can't pull transaction data without pinging @alex.moore on the Kinfolk ops team.\n@alex.moore: (Jun 19, 3:15 PM) Pulled it. jennawatts_shop@gmail.com has 4 returns in 2 weeks on Kinfolk. All shipped to a PO Box — not the Portland address. PO Box 4411, Portland OR 97208.\n@jessica.tran: :eyes:\n[No further messages in thread]\n\n**Riskified — Account Linking Report (pulled Jun 20, 2026)**\nPayment instruments across cluster FRC-2291:\n- Visa ****3301 (jenna.m.watts@gmail.com, jenny.watts88@outlook.com)\n- Visa ****3301 (j.watts.purchasing@yahoo.com)\n- Mastercard ****8877 (jennawatts_shop@gmail.com)\nDevice fingerprints: DFP-9021 appears on 4 of 6 accounts. DFP-9021 NOT present on the Kinfolk/BigCommerce account (separate browser/device).\n\n**Google Sheet — 'Return Policy by Brand & Channel (v2, updated Mar 2026)'**\nRow for 'Fraud-linked returns': 'If account is confirmed as part of a fraud cluster per T&S, all open refunds frozen pending investigation. Cross-brand enforcement requires VP Loss Prevention sign-off (minimum 3 brands involved). Single-brand action can be taken by T&S Lead.'",
+    "question": "Based on available evidence, can Ryan's team take immediate cross-brand enforcement action against this fraud cluster, or what is the blocker?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) No — cross-brand enforcement requires VP Loss Prevention sign-off per policy; the evidence supports 3 brands linked but Ryan cannot authorize this himself regardless of evidence strength.",
+      "B) Yes — Ryan can freeze the Luma Home and UrbanEdge accounts immediately as single-brand actions, and escalate Kinfolk Supply separately once device fingerprint data is obtained from BigCommerce.",
+      "C) Yes — 6 accounts across 3 brands are linked via behavioral cluster, shared payment instrument, and device fingerprint; T&S Lead can authorize cross-brand freeze immediately.",
+      "D) No — the Kinfolk Supply (BigCommerce) account lacks device fingerprint overlap and uses a different payment card, so only 2 brands (Luma Home and UrbanEdge) are conclusively linked; cross-brand enforcement requires 3 brands, so VP Loss Prevention sign-off cannot yet be triggered."
+    ],
+    "correct_answer": "A",
+    "rationale": "The Google Sheet policy is clear: cross-brand enforcement involving 3+ brands requires VP Loss Prevention sign-off. The evidence DOES support 3 brands being involved — the shared Visa ****3301 links Luma Home and UrbanEdge accounts, and Alex Moore's Slack message (the critical informal signal, buried in a thread that received no follow-up action) confirms Kinfolk activity from a matching email pattern with high return velocity. Even though the BigCommerce account uses a different card and device, the behavioral cluster assignment (FRC-2291) already groups it, and the email naming pattern plus Portland geography provides supporting evidence. However, the policy explicitly requires VP Loss Prevention sign-off for cross-brand action — Ryan as T&S Lead can only authorize single-brand actions independently. Answer C incorrectly assumes the T&S Lead has cross-brand authority. Answer B incorrectly concludes only 2 brands are linkable — the Looker cluster already groups all 6 accounts and Alex Moore's confirmation in Slack (which received no reply and no action) provides the Kinfolk connection. Answer D is partially correct about single-brand authority but frames it as the complete recommended action, ignoring that the 3-brand threshold IS met and the proper path is VP escalation for unified enforcement.",
+    "contributor": {
+      "name": "Ryan Okonma",
+      "title": "Marketplace Trust & Safety Lead",
+      "organization": "Atlas Retail Holdings",
+      "years_experience": 7,
+      "domain_expertise": "Seller identity verification, ban evasion detection, fraud ring identification, policy enforcement across multi-brand marketplace"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Looker",
+        "Zendesk",
+        "Slack",
+        "Riskified",
+        "Google Sheets",
+        "BigCommerce"
+      ],
+      "informal_signal_location": "Slack thread with Alex Moore's Kinfolk confirmation that received no follow-up — proving 3-brand involvement but no action taken",
+      "acronyms_used": [
+        "FRC",
+        "DFP",
+        "T&S",
+        "GMV",
+        "IP",
+        "PO Box"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 1
+    }
+  },
+  {
+    "title": "Seller Reinstatement Eligibility Under Revised Strike Policy with Temporal Overlap",
+    "category": "policy_version",
+    "domain": "compliance_legal",
+    "difficulty": "hard",
+    "scenario": "**Zendesk — Ticket #ZD-438901 (UrbanEdge, Jun 10, 2026)**\nSubject: 'Reinstatement Request — CedarWood Artisans'\nFrom: mark.ellison@cedarwoodartisans.com\nBody: 'Requesting reinstatement per your updated marketplace policy communications. Our store was suspended September 2025 under the 3-strike policy. We've resolved the counterfeit complaint (supplier misunderstanding) and have had no activity on any Atlas platform since. Please review.'\nAgent note: 'Routed to T&S for reinstatement review per SOP. Account was suspended under Policy v2.1.'\n\n**Shopify Plus — Seller Portal (Brand: UrbanEdge) [ARCHIVED]**\nStore: CedarWood Artisans | Owner: Mark Ellison | Status: SUSPENDED (Sep 22, 2025)\nStrike history:\n- Strike 1 (Mar 2025): Late shipment rate >8% over 30 days\n- Strike 2 (Jul 2025): Counterfeit claim from brand owner (DMCA notice, Nike)\n- Strike 3 (Sep 2025): Second counterfeit claim (DMCA notice, Patagonia) — automatic suspension triggered\nChargeback ratio at suspension: 0.9% (within threshold)\n\n**Google Doc — 'Marketplace Seller Enforcement Policy v3.0' (Effective May 1, 2026)**\nSection 6.1 — Reinstatement Eligibility:\n'Sellers suspended under prior policy versions may apply for reinstatement if: (a) minimum 6 months have elapsed since suspension, (b) the violation type that triggered suspension is eligible for reinstatement under current policy, (c) seller has completed remediation steps outlined in their suspension notice.'\nSection 3.4 — Strike Categories (v3.0):\n'Category A (Operational): Late shipment, response time violations — 5-strike threshold, strikes expire after 6 months.\nCategory B (IP/Counterfeit): DMCA violations — 2 strikes result in 12-month suspension; reinstatement available after 12 months with brand owner confirmation of resolution.\nCategory C (Fraud): Chargebacks, fake reviews, identity fraud — permanent ban, no reinstatement.'\n\n**Slack — #trust-safety (Jun 12, 2026, 9:18 AM)**\n@ryan.okonma: Team — got a reinstatement request for CedarWood Artisans, suspended Sep 2025. They had 3 strikes under v2.1. Need to figure out how this maps to v3.0 categories.\n@jessica.tran: Their strikes were: 1 operational (late shipments) + 2 IP/counterfeit (DMCA). Under v3.0, the operational strike wouldn't even count toward suspension — different category, higher threshold.\n@ryan.okonma: Right. So effectively they have 2 Category B strikes under the new framework. What's the reinstatement window for Cat B?\n@jessica.tran: 12 months from suspension date.\n@ryan.okonma: That's September 2026. They're only at 9 months.\n@jessica.tran: :grimacing: Yeah. Close but not there yet.\n@marcus.bell: (Jun 12, 10:02 AM) Wait — didn't we decide in the enforcement committee meeting that the 6-month elapsed time in Section 6.1(a) overrides category-specific windows for sellers suspended under prior policy versions? I thought that was the whole point of the transition clause.\n@ryan.okonma: :thinking_face: Was that in the meeting notes?\n@marcus.bell: I don't think Rachel took notes that day. It was the May 8 meeting.\n[No further replies]\n\n**Google Calendar — 'T&S Enforcement Committee Sync' (May 8, 2026, 2:00 PM)**\nRequired: ryan.okonma (accepted), marcus.bell (accepted), jessica.tran (accepted), rachel.wong (accepted), vp.lossprevention (declined)\nOptional: legal-marketplace (no response)\nAttachment: 'Agenda - May 8 Enforcement Committee.docx' (last modified: May 7, 2026; 0 bytes — empty)\nNo meeting notes document linked.",
+    "question": "Is CedarWood Artisans eligible for reinstatement today (June 2026), and what policy basis supports the decision?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Yes — Section 6.1(a) requires only 6 months elapsed since suspension; CedarWood was suspended September 2025, so they meet the 6-month minimum and are eligible for reinstatement pending remediation confirmation.",
+      "B) No — under v3.0 Category B rules, IP/counterfeit suspensions require 12 months before reinstatement; CedarWood is only at 9 months (September 2025 to June 2026) and must wait until September 2026.",
+      "C) No — the enforcement committee meeting had no notes, the VP Loss Prevention declined attendance, and legal did not respond; without documented approval from the committee and required stakeholders, the category-specific 12-month window in Section 3.4 applies.",
+      "D) Yes — the enforcement committee decided on May 8 that Section 6.1(a)'s 6-month clause overrides category-specific windows for sellers suspended under prior policies; this constitutes an approved exception even without written notes."
+    ],
+    "correct_answer": "C",
+    "rationale": "The correct answer requires synthesizing the policy text with the procedural reality revealed across informal channels. Section 6.1(a) establishes a 6-month MINIMUM elapsed time — this is a necessary but not sufficient condition. Section 6.1(b) requires the violation type to be 'eligible for reinstatement under current policy,' which points to Section 3.4's category-specific rules. For Category B (IP/Counterfeit), reinstatement is available after 12 months. Marcus Bell's Slack message claims the committee decided the 6-month clause overrides category windows, but the critical signals that undermine this are: (1) the calendar shows VP Loss Prevention declined the meeting, (2) legal did not respond to the invite, (3) the agenda document is 0 bytes/empty, and (4) no meeting notes exist. An undocumented verbal decision made without required stakeholders present cannot override explicit written policy. Answer A reads Section 6.1(a) in isolation without applying 6.1(b)'s requirement to check category-specific eligibility. Answer B arrives at the right conclusion but for incomplete reasoning — it doesn't address the committee question. Answer C accepts Marcus Bell's recollection of an undocumented committee decision as authoritative, ignoring that the meeting lacked quorum (no VP Loss Prevention, no legal) and produced no documentation.",
+    "contributor": {
+      "name": "Ryan Okonma",
+      "title": "Marketplace Trust & Safety Lead",
+      "organization": "Atlas Retail Holdings",
+      "years_experience": 7,
+      "domain_expertise": "Seller identity verification, ban evasion detection, fraud ring identification, policy enforcement across multi-brand marketplace"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Zendesk",
+        "Shopify Plus",
+        "Google Docs",
+        "Slack",
+        "Google Calendar"
+      ],
+      "informal_signal_location": "Google Calendar showing VP Loss Prevention declined the enforcement committee meeting and the agenda attachment being 0 bytes — proving the committee lacked authority and documentation",
+      "acronyms_used": [
+        "DMCA",
+        "SOP",
+        "T&S",
+        "IP",
+        "Cat B",
+        "Cat C"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 15
+    }
+  }
+]

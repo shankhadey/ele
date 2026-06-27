@@ -1,0 +1,147 @@
+[
+  {
+    "title": "Vendor Acquisition Invalidates BAA Entity Coverage",
+    "category": "entity_resolution",
+    "domain": "compliance_legal",
+    "difficulty": "hard",
+    "scenario": "A clinical department wants to resume sending PHI to a health IT analytics vendor. The following information is available across systems:\n\n**Compliance 360 — BAA Registry (Record #BAA-2023-0147)**\nVendor: Clearview Health Analytics LLC | BAA Execution Date: March 15, 2023 | Term: 3 years | Covers: de-identified data sets + limited data sets per DUA | Signed by: VP of Partnerships (Clearview) + Privacy Officer (Vantage) | Status: Active\n\n**SharePoint — /legal/vendor-agreements/clearview/ (Last modified: Jan 2024)**\nFolder contains: Original BAA (PDF), DUA Addendum (PDF), SOC 2 Type II report (2022)\nVersion note: \"BAA references Clearview Health Analytics LLC as the sole business associate entity.\"\n\n**Outlook — From: purchasing@vantage.org, Subject: 'FW: Clearview acquisition announcement' (Sep 12, 2025)**\nFrom: j.norris@vantage.org (Procurement)\nTo: hipaa-team@vantage.org\nCC: infosec@vantage.org\n\n> FYI — forwarding this from Clearview. Their parent company sold them to Orion Data Group in August. New entity name is 'Orion Health Insights, a division of Orion Data Group Inc.' They say nothing changes on our end.\n>\n> — forwarded message from sales@clearviewhealth.com —\n> \"We're excited to announce Clearview Health Analytics is now part of the Orion Data Group family! Rest assured, all existing service agreements remain in full effect. No action needed from your team.\"\n\n**Microsoft Teams — #privacy-ops (Oct 3, 2025, 2:47 PM)**\n@danielle.washington: Has anyone updated the BAA registry for the Clearview/Orion situation?\n@kevin.li: I flagged it with legal but haven't heard back. The old BAA is still in Compliance 360.\n@danielle.washington: We need to pause disclosures until we sort this. The BAA is with Clearview LLC — that entity may not even exist anymore.\n@kevin.li: 👍\n[No further messages in thread]\n\n**ServiceNow — REQ0088214 (Opened: Nov 18, 2025)**\nRequester: Dr. Rachel Okonkwo (Cardiology Research)\nSubject: \"Resume data feed to Clearview for outcomes study\"\nDescription: \"Need to restart our monthly patient outcomes data feed that was paused in October. Clearview contact says they're ready to receive. Study IRB approval is current.\"\nApproval chain: Dept Head ✓ (Nov 19) | IT Security — Pending | Privacy Office — Pending\n\n**Epic — Audit Log (Data Export Activity)**\nLast successful PHI transmission to Clearview SFTP: September 28, 2025\nTransmission paused: October 4, 2025 (manual hold by Privacy Office)\nNo transmissions since.",
+    "question": "As the Privacy Officer reviewing REQ0088214, what is the correct determination regarding resuming PHI disclosures to the vendor now operating as Orion Health Insights?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Escalate to legal for a formal opinion; the Privacy Office cannot make this determination independently since the BAA is technically still active and no breach has occurred.",
+      "B) Approve the request; the vendor's announcement confirms existing agreements remain in effect, and the BAA is still marked Active in Compliance 360.",
+      "C) Deny the request; a new BAA must be executed with Orion Data Group Inc. (or its appropriate subsidiary) before any PHI disclosure can resume, because the original covered entity — Clearview Health Analytics LLC — has undergone a change in legal ownership that potentially dissolves the BAA.",
+      "D) Approve the request but only for de-identified data; the DUA addendum allows limited data sets without needing a BAA update."
+    ],
+    "correct_answer": "C",
+    "rationale": "Under HIPAA, a BAA is a legal contract with a specific entity. When Clearview Health Analytics LLC was acquired by Orion Data Group and reorganized as a division (not a standalone LLC), the legal entity that signed the BAA may have been dissolved or merged. The vendor's marketing email saying 'no action needed' has no legal standing — it is not a legal opinion and the vendor has an obvious commercial interest in continuity. The Teams message shows the Privacy Officer already recognized this risk and paused transmissions. The Compliance 360 status showing 'Active' is stale data that was never updated. Answer A fails by relying on a vendor's self-serving announcement and stale registry data. Answer D is wrong because even de-identified data sharing under a DUA is governed by the contractual relationship, and the underlying entity question still applies. Answer D is incorrect because the Privacy Officer has clear authority and sufficient information to deny — the BAA names a specific LLC that has undergone a material corporate change, and the precautionary pause already in effect confirms the office's judgment.",
+    "contributor": {
+      "name": "Danielle Washington",
+      "title": "HIPAA Privacy Officer",
+      "organization": "Vantage Health Partners",
+      "years_experience": 13,
+      "domain_expertise": "PHI disclosure decisions, BAA management, breach determination, minimum necessary standard, patient rights requests"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Compliance 360",
+        "SharePoint",
+        "Outlook",
+        "Microsoft Teams",
+        "ServiceNow",
+        "Epic"
+      ],
+      "informal_signal_location": "Teams message where Privacy Officer states need to pause disclosures and receives only a thumbs-up acknowledgment with no formal resolution documented",
+      "acronyms_used": [
+        "PHI",
+        "BAA",
+        "DUA",
+        "SOC 2",
+        "SFTP",
+        "IRB",
+        "TPO",
+        "ePHI"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 8
+    }
+  },
+  {
+    "title": "IRB Waiver Scope Drift After Protocol Amendment",
+    "category": "policy_version",
+    "domain": "compliance_legal",
+    "difficulty": "expert",
+    "scenario": "A research coordinator is requesting expanded patient data access for an ongoing study. The following records exist:\n\n**Compliance 360 — Authorization Waiver Registry (Waiver #W-2024-031)**\nStudy: VHP-CARD-2024-008 (\"Predictive Biomarkers in Heart Failure Readmission\") | PI: Dr. Marcus Reeves | IRB Approval: June 14, 2024 | Waiver Type: Full waiver of individual authorization (45 CFR 164.512(i)) | Data Elements Approved: demographics, admission/discharge dates, primary diagnosis codes (ICD-10), lab values (BNP, troponin), ejection fraction | Patient Population: HF patients discharged from Vantage Main Campus, Jan 2022–Dec 2024 | Expiration: June 14, 2026\n\n**SharePoint — /research/protocols/VHP-CARD-2024-008/ (Version History)**\nProtocol v1.0 (May 2024): Original protocol — single-site, retrospective chart review\nProtocol v2.0 (Feb 2025): Amendment — expanded to include Lakeside Campus patients + added medication history and social determinants of health (SDOH) data elements\nProtocol v3.0 (May 2025): Amendment — added 30-day post-discharge telehealth encounter notes\n\n**Outlook — From: sarah.kimball@vantage.org (Research Compliance), Subject: 'RE: RE: VHP-CARD-2024-008 waiver update' (Feb 28, 2025)**\nFrom: sarah.kimball@vantage.org\nTo: marcus.reeves@vantage.org\nCC: irb-coordinator@vantage.org\n\n> Dr. Reeves — the IRB approved the protocol amendment (v2.0) on Feb 20. I've updated the approval letter in the IRB file.\n>\n> Quick note: the waiver of authorization was NOT explicitly re-reviewed as part of this amendment. The IRB chair noted it's 'covered under the original waiver approval' since the research purpose hasn't changed. I have his verbal confirmation from the convened meeting but it's not in the written minutes.\n>\n> For the v3.0 amendment adding telehealth notes — that will need separate privacy board review since it's a new data category not contemplated in the original waiver.\n\n**Microsoft Teams — #research-ops (May 22, 2025, 11:14 AM)**\n@coord.jen.walsh: @sarah.kimball did the privacy board ever meet on the v3.0 telehealth data? Dr. Reeves is asking me to pull those encounter notes.\n@sarah.kimball: It's on the agenda for next month's meeting. Haven't convened yet.\n@coord.jen.walsh: OK so we can't pull telehealth notes yet. What about the SDOH and med history from v2.0? Those are new data elements too.\n@sarah.kimball: Those should be fine — IRB chair said the original waiver covers it. But honestly the waiver text only lists the original elements. It's a gray area. 🤷‍♀️\n[Thread ended]\n\n**Epic — Research Data Request Queue (RDR-2025-0419, submitted May 23, 2025)**\nRequestor: Jennifer Walsh (Research Coordinator)\nStudy: VHP-CARD-2024-008\nData requested: All elements from original waiver PLUS medication history, SDOH fields, telehealth encounter notes | Population: Expanded to include Lakeside Campus\nPrivacy Office review: Pending\n\n**ServiceNow — KB0004412 (Vantage HIPAA Policy Manual, Section 8.3: Research Disclosures)**\n\"A waiver of authorization covers only the specific data elements, patient population, and research purpose described in the IRB-approved waiver documentation. Any material expansion of data elements or population requires either: (a) an amended waiver approved by the IRB or Privacy Board, or (b) a new waiver submission.\"",
+    "question": "Which data elements and patient population can the Privacy Office authorize for release under the current valid waiver documentation?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) All requested elements (including SDOH, medication history, and telehealth notes) for both campuses — the IRB approved protocol amendments v2.0 and v3.0, which implicitly extends the waiver.",
+      "B) Original waiver elements plus SDOH and medication history for both campuses — the IRB chair verbally confirmed the original waiver covers the v2.0 expansion, and protocol approval extends the population scope.",
+      "C) Original waiver elements for both campuses, but not the new data elements — the population expansion is covered by protocol amendment approval, but new data elements require explicit waiver amendment.",
+      "D) Original waiver elements only (demographics, admit/discharge dates, diagnosis codes, BNP, troponin, ejection fraction) for Vantage Main Campus patients only — the waiver text is the controlling document and was never formally amended."
+    ],
+    "correct_answer": "D",
+    "rationale": "Under 45 CFR 164.512(i) and Vantage's own policy (KB0004412), a waiver of authorization is a specific legal instrument that covers precisely the data elements and population described in its text. The waiver (#W-2024-031) explicitly lists specific data elements and limits the population to 'HF patients discharged from Vantage Main Campus.' The IRB chair's verbal confirmation that the waiver 'covers' the v2.0 expansion is not documented in meeting minutes, making it legally insufficient — Sarah Kimball's email explicitly notes this gap. Protocol amendment approval and waiver approval are distinct regulatory actions; the former does not automatically extend the latter. Answer A is wrong because protocol approval does not equal waiver amendment, and the privacy board hasn't even met on v3.0 (per the Teams thread). Answer C is tempting but relies on undocumented verbal confirmation that contradicts the actual waiver text and organizational policy requiring formal amendment. Answer C incorrectly assumes protocol amendment approval automatically expands the waiver's population scope — it does not. The Privacy Officer must rely on what is formally documented: the original waiver text as written.",
+    "contributor": {
+      "name": "Danielle Washington",
+      "title": "HIPAA Privacy Officer",
+      "organization": "Vantage Health Partners",
+      "years_experience": 13,
+      "domain_expertise": "PHI disclosure decisions, BAA management, breach determination, minimum necessary standard, patient rights requests"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Compliance 360",
+        "SharePoint",
+        "Outlook",
+        "Microsoft Teams",
+        "Epic",
+        "ServiceNow"
+      ],
+      "informal_signal_location": "Email revealing that the IRB chair's verbal confirmation was never captured in written minutes, and the Teams shrug emoji implying the research compliance lead herself considers the coverage uncertain",
+      "acronyms_used": [
+        "PHI",
+        "IRB",
+        "SDOH",
+        "ICD-10",
+        "BNP",
+        "HF",
+        "PI",
+        "CFR",
+        "TPO",
+        "MRN"
+      ],
+      "policy_versions_involved": 3,
+      "temporal_span_months": 12
+    }
+  },
+  {
+    "title": "Breach Determination for Ambiguous Employee Access Pattern",
+    "category": "cross_system_synthesis",
+    "domain": "compliance_legal",
+    "difficulty": "expert",
+    "scenario": "The Privacy Office received a report about a clinical staff member accessing a patient record that may be inappropriate. Investigation materials from multiple systems:\n\n**Epic — Audit Log (Patient: James Whitfield, MRN 7842-0091)**\nAccess event: March 14, 2026, 9:47 PM\nUser: Tanya Briggs, RN (Medical-Surgical Unit 4B, Vantage Main Campus)\nAction: Viewed — Demographics, Diagnoses, Medication List, Progress Notes\nPatient location at time of access: ICU (not Unit 4B)\nBreak-the-glass: Not triggered (patient record not restricted)\nReason for access: None documented (no prompt configured for this access pattern)\n\n**Workday — Employee Records**\nTanya Briggs, RN | Unit: Med-Surg 4B | Shift: 7PM–7AM | Status: Active\nAddress: 2847 Elm Creek Drive, Minnetonka, MN 55345\n\n**Epic — Patient Demographics (MRN 7842-0091)**\nJames Whitfield | Address: 2851 Elm Creek Drive, Minnetonka, MN 55345\nAdmitted: March 14, 2026, 6:22 PM | Unit: ICU | Admitting Dx: STEMI\n\n**Compliance 360 — Incident Report (Filed March 18, 2026 by Charge Nurse, Unit 4B)**\n\"Colleague mentioned that Tanya Briggs said she 'heard her neighbor got taken away in an ambulance' on March 14. Later that shift, another RN noticed Tanya was in a chart for an ICU patient. Reporting per policy.\"\n\n**ServiceNow — HR Case HR-2026-0312 (Opened March 19, 2026)**\nSubject: \"Potential unauthorized access — Briggs, T.\"\nHR Notes: \"Privacy Office investigating. Employee has no prior access violations. Union rep notified per CBA Article 12. Interview scheduled March 25.\"\n\n**Microsoft Teams — #unit-4b-nurses (March 14, 2026, 10:03 PM)**\n@tanya.briggs: Hey does anyone know if the rapid response team was already called for the new admit in ICU? I had him on my floor last month and his allergies weren't updated in the system.\n@charge.nurse.patel: Which patient?\n@tanya.briggs: Whitfield. I updated his allergy list when he was here in Feb — just want to make sure it carried over to the ICU chart.\n[No further replies]\n\n**Epic — Patient History (MRN 7842-0091)**\nPrevious admission: February 8–11, 2026 | Unit: Med-Surg 4B | Attending: Dr. Park\nNursing assignments (Feb 8–11): T. Briggs assigned Feb 9–10\n\n**Epic — Allergy Documentation (MRN 7842-0091)**\nAllergy added: February 9, 2026 by T. Briggs, RN — \"Lisinopril — angioedema (patient reported)\"\nNo allergy modifications on March 14, 2026\n\n**SharePoint — Vantage HIPAA Sanction Policy (v3.2, effective Jan 2026)**\nSection 4.1: \"Access to PHI is considered unauthorized when the workforce member does not have a current treatment, payment, or operations relationship with the patient AND cannot demonstrate a legitimate work-related purpose.\"\nSection 4.3: \"A workforce member's knowledge of a patient's identity through non-work channels (e.g., personal relationship, neighborhood, media) does not constitute treatment relationship.\"",
+    "question": "Based on the totality of evidence available, should the Privacy Officer determine this access event constitutes a HIPAA breach requiring notification under 45 CFR 164.402?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Yes, this is a reportable breach — the employee lives near the patient, had no treatment relationship at the time, and the neighbor's report confirms personal motivation regardless of the Teams message.",
+      "B) Yes, this is a breach, but it falls under the low-probability exception — the access was brief, no evidence of re-disclosure, the information was not further used, and the employee had a prior clinical relationship that reduces the probability of compromise.",
+      "C) No breach — the employee's Teams message demonstrates legitimate clinical concern about allergy documentation, her prior treatment relationship establishes reasonable basis for access, and Epic confirms she previously documented the allergy.",
+      "D) No breach determination can be made yet — the investigation requires the employee interview (scheduled March 25) before the Privacy Officer can apply the four-factor risk assessment under the Breach Notification Rule."
+    ],
+    "correct_answer": "D",
+    "rationale": "Under 45 CFR 164.402 and the Breach Notification Rule, a breach determination requires a four-factor risk assessment: (1) nature and extent of PHI involved, (2) unauthorized person who used/accessed it, (3) whether PHI was actually acquired or viewed, (4) extent to which risk has been mitigated. The evidence here is genuinely ambiguous. The Teams message suggests legitimate clinical concern (allergy safety), and Epic confirms she did document that allergy during a prior admission — this is exculpatory. However, the neighbor relationship, the charge nurse's hearsay report, and Section 4.3 of Vantage's sanction policy (personal knowledge doesn't equal treatment relationship) cut the other way. Critically, the employee hasn't been interviewed yet and the HR case notes confirm an interview is scheduled. Answer A jumps to breach determination without completing the investigation and ignores exculpatory evidence (the documented prior clinical relationship and the Teams message). Answer B prematurely exonerates by over-weighting the Teams message — which could be post-hoc justification — and conflates a prior treatment relationship with a current one. Answer D applies the low-probability exception analysis, but you cannot apply that exception until you first determine an impermissible access occurred, which hasn't been established. The correct action is to complete the investigation before making the determination.",
+    "contributor": {
+      "name": "Danielle Washington",
+      "title": "HIPAA Privacy Officer",
+      "organization": "Vantage Health Partners",
+      "years_experience": 13,
+      "domain_expertise": "PHI disclosure decisions, BAA management, breach determination, minimum necessary standard, patient rights requests"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Epic",
+        "Workday",
+        "Compliance 360",
+        "ServiceNow",
+        "Microsoft Teams",
+        "SharePoint"
+      ],
+      "informal_signal_location": "Teams message from the employee providing real-time clinical justification for the access, which could be either genuine concern or post-hoc rationalization — its ambiguity is the critical signal",
+      "acronyms_used": [
+        "PHI",
+        "ePHI",
+        "MRN",
+        "RN",
+        "ICU",
+        "STEMI",
+        "CBA",
+        "TPO",
+        "CFR",
+        "BTG"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 2
+    }
+  }
+]

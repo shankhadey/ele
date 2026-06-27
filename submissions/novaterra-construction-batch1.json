@@ -1,0 +1,138 @@
+[
+  {
+    "title": "Change Order Authority Delegation Across Projects",
+    "category": "approval_chain",
+    "domain": "procurement_vendor",
+    "difficulty": "hard",
+    "scenario": "You are reviewing a disputed change order on the Lincoln Square mixed-use renovation (NovaTerra Lincoln Holdings LLC is the owner entity). The GC submitted CO #017 for $73,400 covering unforeseen structural remediation in the parking garage. The project is under a GMP contract with a total value of $14.2M.\n\n**Procore — Lincoln Square, Change Order #017 (submitted Apr 8, 2026)**\nStatus: Approved | Approved by: Marcus Webb (Project Manager) | Date approved: Apr 10, 2026\nDescription: Structural steel reinforcement at grid lines C4-C7, level P2. Unforeseen deterioration discovered during demo.\nAttachments: Structural engineer report, RFI #042 response, subcontractor pricing breakdown.\nComment (Marcus Webb, Apr 9): \"Approved per delegation authority. Referencing memo from Dave Kowalski dated 3/15/25.\"\n\n**Outlook — Email from David Kowalski to Marcus Webb (Mar 15, 2025)**\nSubject: RE: Authority for field decisions — Wacker Drive\n\"Marcus — Per our conversation, I'm delegating approval authority for change orders up to $75K on the Wacker Drive project to you while I'm focused on the capital committee through Q2. This is for Wacker only. Loop me in on anything over $50K on other jobs per the capital policy. —DK\"\n\n**iManage — Document: \"NovaTerra Capital Expenditure Policy v3.2\" (effective Jan 2026)**\nSection 4.1: \"Change orders exceeding $50,000 require Owner Representative (VP-level or above) written approval prior to execution.\"\nSection 4.3: \"Delegation of approval authority must be project-specific and documented via the standard delegation form (Exhibit C). Email delegation is not a recognized form.\"\n\n**Microsoft Teams — #lincoln-square-project (Apr 11, 2026, 2:47 PM)**\n@marcus.webb: FYI Dave — approved CO17 yesterday, $73K for the P2 structural work. Used the delegation from last year.\n@dave.kowalski: (thumbs up emoji)\n[No further messages in thread]\n\n**Yardi — Capital Projects Module, Lincoln Square**\nProject budget: $14.2M GMP | Contingency remaining: $892K | CO total approved to date: $1.34M\nCO #017 status: \"Pending owner ratification\" (auto-flagged by system — approval authority mismatch)\n\n**Shared Drive — \\\\ntserver\\projects\\lincoln-square\\contracts\\**\nFile: \"Owner-GC Agreement (AIA A133-2019).pdf\" — Section 7.3.1: \"Changes in the Work exceeding Fifty Thousand Dollars ($50,000) require written approval of the Owner prior to commencement.\"",
+    "question": "Is Change Order #017 validly approved, and what is the correct next step?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) The change order is NOT validly approved because the delegation memo was project-specific to Wacker Drive, not Lincoln Square, and email delegation does not meet the capital policy's Exhibit C requirement — the CO requires formal VP-level written approval before the work can proceed or payment can be released.",
+      "B) The change order is validly approved because Kowalski's thumbs-up emoji on Teams constitutes retroactive written owner approval, ratifying Webb's decision.",
+      "C) The change order is validly approved because Webb's authority extends to $75K per the Kowalski delegation, which applies to all projects Webb manages as a general grant of authority.",
+      "D) The change order is NOT validly approved and must be rebid, because the GMP contract's contingency should have covered this work rather than processing it as a change order."
+    ],
+    "correct_answer": "A",
+    "rationale": "The delegation memo from Kowalski explicitly states 'This is for Wacker only' and instructs Webb to loop him in on anything over $50K on other jobs. Additionally, Section 4.3 of the Capital Expenditure Policy v3.2 requires delegation via the standard delegation form (Exhibit C) and explicitly states email delegation is not recognized — so even if the memo had referenced Lincoln Square, it would not meet policy requirements. The AIA contract independently requires written owner approval for COs over $50K. Answer B is wrong because an emoji reaction on Teams does not constitute 'written approval' under either the contract or the capital policy, and even if it did, the work was already approved and potentially commenced before this reaction. Answer C misreads the delegation as a blanket authority when the memo explicitly limits it to Wacker Drive. Answer D confuses contingency usage with change order validity — whether contingency funds cover the cost is a budget allocation question, not an approval authority question; the structural work is legitimately unforeseen and properly categorized as a CO.",
+    "contributor": {
+      "name": "Robert Fitzgerald",
+      "title": "Construction & Capital Projects Manager",
+      "organization": "NovaTerra Property Group",
+      "years_experience": 22,
+      "domain_expertise": "Change order management, GMP contracts, subcontractor disputes, lien waivers, substantial completion determinations"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Procore",
+        "Outlook",
+        "iManage",
+        "Microsoft Teams",
+        "Yardi",
+        "Shared network drive"
+      ],
+      "informal_signal_location": "Teams emoji reaction (thumbs-up) from Kowalski that appears to ratify the CO but does not meet written approval requirements",
+      "acronyms_used": [
+        "GMP",
+        "CO",
+        "RFI",
+        "AIA",
+        "GC"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 13
+    }
+  },
+  {
+    "title": "Subcontractor Entity Mismatch on Lien Waiver",
+    "category": "entity_resolution",
+    "domain": "procurement_vendor",
+    "difficulty": "expert",
+    "scenario": "NovaTerra is preparing to close on a $4.8M construction draw for the Riverview Retail Center renovation (owned by NovaTerra Riverview LLC). The lender requires unconditional lien waivers from all subcontractors with contracts over $100K before releasing funds. One waiver is causing a problem.\n\n**Procore — Riverview Retail Center, Subcontractor Directory**\nVendor: Advanced Mechanical Systems Inc. | Contract: $1.24M | Scope: Full HVAC replacement\nInsurance COI on file: Advanced Mechanical Systems Inc. | EIN: 36-4481902\nContact: Tony Mirovic, President\n\n**DocuSign — Lien Waiver Package (Draw #4, submitted Jun 12, 2026)**\nConditional Waiver Upon Progress Payment — $287,000\nSigned by: Tony Mirovic, Member/Manager\nEntity on waiver: \"AMS Holdings LLC\"\nNotarized: Yes | Date: Jun 11, 2026\n\n**Outlook — Email thread between Robert Fitzgerald and GC (Helm Construction)**\nFrom: j.parsons@helmconstruction.com (Jun 14, 2026)\nSubject: RE: RE: Lien waiver discrepancy — Advanced Mechanical\n\"Rob — Tony says AMS Holdings is the parent. They restructured last year for liability purposes. Same people, same bonding company, same work. I've worked with them for 15 years, never an issue.\"\n\n> On Jun 13, r.fitzgerald@novaterra.com wrote:\n> Jim — the waiver is signed by 'AMS Holdings LLC' but our contract is with 'Advanced Mechanical Systems Inc.' These are different legal entities. Our lender won't accept this. Can you get a corrected waiver from the contracted entity?\n\n**Shared Drive — \\\\ntserver\\projects\\riverview\\legal\\**\nFile: \"IL Secretary of State - AMS Holdings LLC.pdf\" (downloaded Jun 15, 2026)\n- Formed: Sep 2024 | Manager: Anthony Mirovic | Registered Agent: CSC\n- No filed documentation showing relationship to Advanced Mechanical Systems Inc.\n\nFile: \"Subcontract Agreement - Advanced Mechanical.pdf\"\n- Section 12.1: \"Contractor shall not assign this Agreement without prior written consent of Owner.\"\n- Section 14.3: \"All lien waivers shall be executed by the contracting entity as identified in this Agreement.\"\n\n**Microsoft Teams — #riverview-project (Jun 16, 2026, 8:15 AM)**\n@tony.mirovic.guest: Rob, Jim — we dissolved Advanced Mechanical Systems as of Jan 1. AMS Holdings assumed all contracts and obligations. I can send the articles of dissolution if that helps. The bonding company already transferred the bond.\n@j.parsons.guest: See? Same thing. Can we move forward? Draw deadline is Friday.\n[No reply from NovaTerra team]\n\n**Yardi — Capital Projects, Riverview Retail Center**\nDraw #4 deadline: Jun 20, 2026 | Lender: First Midwest Bank\nPending items: 1 (lien waiver — Advanced Mechanical / AMS Holdings)\nLate draw penalty: 0.25% of outstanding balance per week",
+    "question": "What should NovaTerra do regarding the AMS Holdings lien waiver to protect the owner's interest while meeting the draw deadline?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Reject the waiver and demand a new one from Advanced Mechanical Systems Inc., since that is the contracted entity and Section 14.3 requires waivers from the contracting entity.",
+      "B) Accept the waiver with a side letter from the GC (Helm Construction) indemnifying NovaTerra against any lien claims, since the GC is ultimately responsible for subcontractor performance under the prime contract.",
+      "C) Require an assignment and assumption agreement (with owner consent per Section 12.1) formally transferring the subcontract from Advanced Mechanical Systems Inc. to AMS Holdings LLC, then accept a waiver from AMS Holdings — and simultaneously obtain the articles of dissolution to confirm Advanced Mechanical no longer exists as a viable entity to sign.",
+      "D) Accept the AMS Holdings LLC waiver as-is because Tony Mirovic signed both the original contract and the waiver, establishing continuity of the principal regardless of entity name."
+    ],
+    "correct_answer": "C",
+    "rationale": "This is an entity resolution problem with real legal exposure. A lien waiver from an entity that is not party to the subcontract provides no lien protection — if AMS Holdings LLC never formally assumed the contract, their waiver may not extinguish Advanced Mechanical Systems Inc.'s potential lien rights (even if dissolved, a dissolved entity can still have residual claims during wind-down). The correct path is to formalize the assignment: obtain the articles of dissolution proving Advanced Mechanical no longer exists, execute a formal assignment and assumption agreement (requiring owner consent per Section 12.1 of the subcontract), and then accept the waiver from the entity that actually holds the contract obligations. Answer A is wrong because same-principal does not equal same-entity in lien law — courts have consistently held that corporate formalities matter for lien validity. Answer B is impractical and potentially impossible: if Advanced Mechanical was dissolved January 1, it cannot execute new documents (Tony confirmed dissolution in the Teams message, which is the critical hidden signal that makes option B unworkable). Answer D shifts risk but does not eliminate the lien exposure — a GC indemnity does not prevent a lien from being filed, only provides a claim for damages after the fact, and the lender will not accept this for draw purposes.",
+    "contributor": {
+      "name": "Robert Fitzgerald",
+      "title": "Construction & Capital Projects Manager",
+      "organization": "NovaTerra Property Group",
+      "years_experience": 22,
+      "domain_expertise": "Change order management, GMP contracts, subcontractor disputes, lien waivers, substantial completion determinations"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Procore",
+        "DocuSign",
+        "Outlook",
+        "Shared network drive",
+        "Microsoft Teams",
+        "Yardi"
+      ],
+      "informal_signal_location": "Teams message from subcontractor confirming dissolution of original entity — makes option B (demanding waiver from contracted entity) impossible",
+      "acronyms_used": [
+        "GMP",
+        "COI",
+        "EIN",
+        "HVAC",
+        "AIA",
+        "GC",
+        "AMS"
+      ],
+      "policy_versions_involved": 0,
+      "temporal_span_months": 9
+    }
+  },
+  {
+    "title": "GMP Contingency vs Owner Allowance at Project Closeout",
+    "category": "policy_version",
+    "domain": "procurement_vendor",
+    "difficulty": "hard",
+    "scenario": "The Monroe Street Office Tower tenant improvement project is approaching substantial completion. The GC (Lakefront Builders) is requesting release of remaining contingency funds as part of final payment. NovaTerra Monroe LLC is the owner. The project used a GMP contract based on AIA A133-2019.\n\n**Procore — Monroe Street Office Tower, Budget Summary (as of Jun 20, 2026)**\nOriginal GMP: $8,750,000 | Approved COs: $412,000 | Revised GMP: $9,162,000\nCost to date: $8,894,000 | Remaining contingency (contractor's): $268,000\nOwner allowances (unspent): $185,000 (lobby finishes allowance — tenant selected less expensive option)\nRetainage held: $458,100 (5%)\n\n**iManage — Document: \"Owner-GC Agreement, Monroe Street\" (AIA A133-2019, modified)**\nArticle 6.3.2 (modified): \"Savings resulting from the difference between the GMP and the actual Cost of the Work plus the Contractor's Fee shall be allocated 75% to Owner and 25% to Contractor.\"\nArticle 6.5.1 (standard): \"Contingency funds are included in the GMP for the Contractor's exclusive use in covering cost increases...\"\nExhibit D — Schedule of Allowances: \"Lobby finishes: $185,000 allowance. Actual selections to be made by Owner. Unused portions revert to Owner.\"\n\n**Shared Drive — \\\\ntserver\\properties\\monroe-street\\capital-policy\\**\nFile: \"NovaTerra Capital Policy v2.8 (effective Jul 2024).pdf\"\nSection 5.2: \"Unspent contingency on capital projects reverts to the property-level capital reserve upon project closeout.\"\nSection 5.4: \"GMP savings sharing shall not apply to owner-directed allowances.\"\n\n**Outlook — Email from Lakefront Builders (Jun 18, 2026)**\nFrom: k.sullivan@lakefrontbuilders.com\nTo: r.fitzgerald@novaterra.com\nSubject: Monroe St — Final reconciliation and contingency release\n\"Rob — Per our GMP, we're requesting release of the remaining $268K contingency. As you know under 6.5.1 this is contractor's contingency and it's ours to manage. We also believe the 75/25 savings share in 6.3.2 applies to the full difference between GMP and actual cost including unused contingency. Our calculation: GMP savings = $9,162,000 - $8,894,000 = $268,000. Our share at 25% = $67,000. We'll credit you $201,000.\"\n\n**Microsoft Teams — #monroe-street-tia (Jun 19, 2026, 11:32 AM)**\n@k.sullivan.guest: Rob can we get alignment on the contingency calc before the closeout meeting Thursday?\n@r.fitzgerald: Need to check something. The $185K in allowances shouldn't be in the savings calc.\n@k.sullivan.guest: It's all within the GMP envelope per the contract\n@r.fitzgerald: (typing indicator appeared, then disappeared — no message sent)\n\n**Google Doc — \"Monroe Street Closeout Punch List\" (shared with Lakefront, last edited Jun 15)**\n[RESOLVED COMMENT by @d.kowalski, Mar 2026]: \"Make sure we separate the allowance savings from contingency in the final rec. The savings split does NOT apply to allowances per our capital policy. Catherine flagged this on the Wacker project last year and legal agreed.\"\n\n**Yardi — Monroe Street Capital Tracking**\nProject code: MNST-2025-TI | Budget category: Tenant Improvements\nNote (entered by Catherine Brennan, Apr 2026): \"Lobby allowance of $185K tracked separately per policy 5.4. Not subject to GMP savings share.\"",
+    "question": "What is the correct final payment calculation for the contractor at project closeout?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) No savings payment to contractor; all $268,000 reverts to NovaTerra's property-level capital reserve per Capital Policy Section 5.2, which supersedes the AIA contract terms.",
+      "B) GMP savings of $268,000 split 75/25: Owner receives $201,000, Contractor receives $67,000. The entire difference between revised GMP and actual cost is subject to the savings clause.",
+      "C) GMP savings calculated as $268,000 minus the $185,000 owner allowance = $83,000 in true contractor contingency savings, split 75/25: Owner receives $62,250, Contractor receives $20,750. The $185,000 in unspent allowances reverts entirely to Owner per Exhibit D and Capital Policy Section 5.4.",
+      "D) Contractor receives the full $268,000 remaining contingency because Article 6.5.1 designates it as contractor's contingency for their exclusive use, and savings sharing in 6.3.2 does not override this provision."
+    ],
+    "correct_answer": "C",
+    "rationale": "The correct answer requires synthesizing multiple sources: (1) Exhibit D of the contract explicitly states unused allowance portions revert to Owner; (2) Capital Policy Section 5.4 states GMP savings sharing shall not apply to owner-directed allowances; (3) the resolved Google Doc comment from Kowalski confirms this interpretation was validated by legal on a prior project; (4) Catherine Brennan's Yardi note confirms the $185K is tracked separately. Therefore the $185K allowance savings is NOT part of the GMP savings calculation. The true contingency savings is $268K - $185K = $83K, which IS subject to the 75/25 split under Article 6.3.2. Answer A is wrong because 6.5.1 gives the contractor exclusive USE of contingency during construction (to cover unforeseen costs without needing a CO), but it does not grant ownership of unused funds at closeout — that is governed by 6.3.2's savings clause. Answer B is the contractor's argument and is wrong because it includes the $185K owner allowance in the savings calculation, violating both Exhibit D and the capital policy. Answer D is wrong because the capital policy is an internal NovaTerra document that cannot unilaterally override the bilateral GMP contract's savings sharing provision — Section 5.2 applies to owner's share of savings, not to eliminate the contractor's contractual entitlement.",
+    "contributor": {
+      "name": "Robert Fitzgerald",
+      "title": "Construction & Capital Projects Manager",
+      "organization": "NovaTerra Property Group",
+      "years_experience": 22,
+      "domain_expertise": "Change order management, GMP contracts, subcontractor disputes, lien waivers, substantial completion determinations"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Procore",
+        "iManage",
+        "Shared network drive",
+        "Outlook",
+        "Microsoft Teams",
+        "Google Docs",
+        "Yardi"
+      ],
+      "informal_signal_location": "Resolved Google Doc comment from Kowalski confirming legal's position that allowance savings are excluded from the GMP savings split — validated on a prior project",
+      "acronyms_used": [
+        "GMP",
+        "CO",
+        "AIA",
+        "TI",
+        "GC",
+        "TIA"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 15
+    }
+  }
+]

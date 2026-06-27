@@ -1,0 +1,145 @@
+[
+  {
+    "title": "OCI Firewall Breach via Pre-Establishment Access to Competitive Sensitive Material",
+    "category": "cross_system_synthesis",
+    "domain": "compliance_legal",
+    "difficulty": "expert",
+    "scenario": "Sentinel Defense Solutions is pursuing a $45M IDIQ recompete under RFP W56HZV-26-R-0012. The program manager assigned to lead the capture effort, Marcus Webb, joined Sentinel 14 months ago from the government client where he served as a Contracting Officer's Technical Representative (COTR) on the incumbent contract.\n\n**SharePoint — /ethics/oci-disclosures/Webb_Marcus_OCI-2025-031.pdf (filed Feb 2025)**\nOCI Type: Access to Non-Public Information (FAR 9.505-4)\nMitigation: Organizational firewall established. M. Webb prohibited from accessing source selection documentation or competitor pricing from prior government role. Ethics screening completed 02/14/2025. Signed by: R. Chen (Ethics), K. Patel (Contracts VP).\n\n**Costpoint — Proposal P-26-0087 (created Dec 2024)**\nProgram: Advanced Logistics C2 Recompete\nCapture Lead: Marcus Webb (assigned 01/03/2025)\nCost Volume Status: Draft — Last modified 03/18/2026\nNote: Initial competitive analysis uploaded 12/22/2024 by J. Morales (BD)\n\n**Teams — #logistics-c2-capture (Dec 19, 2024, 3:47 PM)**\n@j.morales: Marcus — since you were on the gov side, can you sanity-check the competitor pricing assumptions in the competitive analysis? Attaching the file.\n@m.webb: Sure, pulling it up now.\n@m.webb: Some of these are way off. I can tell you from the last LPTA eval that [REDACTED]'s wrap rate was significantly lower than what you have here.\n@j.morales: That's gold. Updating the deck.\n[Thread has 3 :thumbsup: reactions from BD team members]\n\n**Teams — #logistics-c2-capture (Dec 20, 2024, 9:12 AM)**\n@m.webb: Actually let me caveat — my knowledge is from the source selection I participated in on the gov side. Should I be sharing this?\n@j.morales: I think you're fine as long as you don't share actual proposal docs. This is just your professional judgment right?\n[No further replies in thread]\n\n**Jira — COMP-2025-088 (OCI Compliance Tracker)**\nCreated: 02/14/2025 | Status: Closed — Mitigated\nScreening Date: 02/14/2025\nFirewall Effective Date: 02/14/2025\nComment (02/14, @r.chen): 'Standard organizational firewall in place. Webb confirmed no access to competitive sensitive info since joining Sentinel.'\n\n**Outlook — From: m.webb@sentinel-ds.com To: k.patel@sentinel-ds.com (Feb 13, 2025)**\nSubject: RE: OCI Screening — Quick Q\n'Karen — for the disclosure form, it asks if I've accessed any competitive information since joining. I did have some early conversations with the BD team about competitor landscape before the firewall was set up. Nothing from my gov files though — just my general knowledge from working the program. Should I note that on the form?'\n[No reply found in email archive]",
+    "question": "As the Procurement Integrity & Ethics Officer, you discover this timeline during a pre-submission compliance review. What is the correct determination regarding OCI mitigation adequacy for Proposal P-26-0087?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) The OCI mitigation is adequate but needs supplementation — the December 2024 conversations should be retroactively documented as pre-firewall activity and the competitive analysis file should be sequestered, but the proposal can proceed.",
+      "B) The OCI mitigation is adequate because Webb's firewall was properly established in February 2025, and his earlier conversations reflected general professional knowledge rather than documented competitive sensitive information.",
+      "C) The OCI determination cannot be made until the Contracting Officer is consulted, as the government — not the contractor — is the ultimate authority on whether an OCI exists under FAR 9.5.",
+      "D) The OCI mitigation is inadequate because Webb accessed and shared competitive sensitive information derived from source selection participation before the firewall was established, and the mitigation plan's certification that he had 'no access to competitive sensitive info since joining' is contradicted by the Teams record."
+    ],
+    "correct_answer": "D",
+    "rationale": "The Teams messages from December 2024 show Webb explicitly referencing knowledge from source selection evaluation ('I can tell you from the last LPTA eval') and providing competitor-specific pricing intelligence to the capture team. This is textbook competitive sensitive information derived from access to non-public source selection material. The firewall wasn't established until February 2025 — nearly two months after the information was already shared and incorporated into the competitive analysis. The COMP-2025-088 closure and Webb's certification both state no access occurred, which is directly contradicted by the Teams record. The unanswered email to K. Patel shows Webb even flagged this concern, but no corrective action was taken. Answer A fails because 'general professional knowledge' does not include specific competitor wrap rates learned during source selection. Answer C is inadequate because you cannot retroactively un-share information already incorporated into proposal strategy; the contamination is irreversible without redoing the competitive analysis from scratch. Answer D is a procedural dodge — while the CO does make final OCI determinations, the contractor has an independent duty under FAR 3.104 to identify and report potential violations, and the Ethics Officer must make an internal determination first.",
+    "contributor": {
+      "name": "Raymond Chen",
+      "title": "Procurement Integrity & Ethics Officer",
+      "organization": "Sentinel Defense Solutions",
+      "years_experience": 16,
+      "domain_expertise": "OCI mitigation, source selection firewall, post-award audit, FAR Part 3 compliance, disclosure obligations"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "SharePoint",
+        "Costpoint",
+        "Microsoft Teams",
+        "Jira",
+        "Outlook"
+      ],
+      "informal_signal_location": "Teams thread from Dec 2024 where Webb shares competitive sensitive pricing knowledge before firewall establishment, plus the unreplied email to Contracts VP flagging the concern",
+      "acronyms_used": [
+        "OCI",
+        "IDIQ",
+        "RFP",
+        "COTR",
+        "FAR",
+        "LPTA",
+        "BD",
+        "CUI",
+        "CAGE"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 16
+    }
+  },
+  {
+    "title": "Intra-Company Competitive Bid Collision After Organizational Restructuring",
+    "category": "approval_chain",
+    "domain": "compliance_legal",
+    "difficulty": "hard",
+    "scenario": "Sentinel Defense Solutions has three divisions, each with separate CAGE codes: Sentinel Cyber (CAGE: 1XB47), Sentinel ISR (CAGE: 3KM92), and Sentinel Mission Systems (CAGE: 5TP61). A recent reorg moved the 'Data Fusion' group from ISR to Mission Systems effective January 2026.\n\n**Costpoint — Proposal P-26-0134**\nDivision: Sentinel Cyber (1XB47)\nOpportunity: DIA HELIOS Program — Next-Gen Analytical Platform\nRFP: HHM402-26-R-0045 | Due: 04/15/2026\nOCI Screening: COMP-2026-012 | Status: Cleared | Date: 01/22/2026\nScreening Notes: 'Checked against active proposals across all divisions. No conflicts identified.'\n\n**Costpoint — Proposal P-26-0151**\nDivision: Sentinel Mission Systems (5TP61)\nOpportunity: DIA HELIOS Program — Next-Gen Analytical Platform\nRFP: HHM402-26-R-0045 | Due: 04/15/2026\nOCI Screening: COMP-2026-019 | Status: Cleared | Date: 02/08/2026\nScreening Notes: 'No conflicts with other Sentinel proposals per Costpoint query.'\n\n**SharePoint — /compliance/oci-screenings/procedure-v3.2.docx (Last updated: Nov 2025)**\nSection 4.1: 'OCI screening shall query all active proposals in Costpoint using parent company DUNS as the primary identifier.'\n[RESOLVED COMMENT by @l.tran, Jan 5 2026]: 'Updated org chart not yet reflected in Costpoint division mappings. IT ticket INFRA-4421 filed. Workaround: manually check GovWin pipeline by solicitation number.'\n\n**Teams — #mission-systems-capture (Feb 6, 2026, 11:23 AM)**\n@d.nakamura: Heads up — just saw Cyber is also going after HELIOS. Ran into Tom K at the all-hands and he mentioned their proposal.\n@s.rodriguez: Wait what? We cleared OCI screening two days ago. How did this not get flagged?\n@d.nakamura: Different CAGE codes. The screening tool queries by division.\n@s.rodriguez: So what do we do?\n@d.nakamura: Probably needs to go to Ethics? But our submission deadline is in 8 weeks.\n@s.rodriguez: Let's bring it up at the Thursday pipeline review.\n[Thread received :eyes: reaction from @r.chen]\n\n**Outlook — From: t.kowalski@sentinel-ds.com To: cyber-capture-team@sentinel-ds.com (Jan 30, 2026)**\nSubject: HELIOS Win Strategy\n'Team — got good intel from the Data Fusion guys who just moved over from ISR. They had a prior relationship with the DIA PM from the ORION program. Leveraging that past performance in our vol II.'\n\n**GovWin — Opportunity: DIA HELIOS (ID: GW-2026-88412)**\nSentinel entries: 2 (Sentinel Cyber — tracking since Nov 2025; Sentinel Mission Systems — tracking since Jan 2026)\nCompetitor tracking shows 4 other bidders.",
+    "question": "As the Procurement Integrity & Ethics Officer, what is the correct course of action after discovering both proposals during a routine pre-submission review on February 10, 2026?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Establish an organizational firewall between the two proposal teams retroactively, document the OCI mitigation, and allow both proposals to proceed since no competitive sensitive information has been exchanged between the teams.",
+      "B) Allow both proposals to proceed since they are submitted under different CAGE codes, which the government treats as separate legal entities for source selection purposes.",
+      "C) Escalate to the Contracts VP for a business decision on which division should pursue HELIOS, since this is a capture strategy conflict rather than a procurement integrity issue.",
+      "D) Immediately stand down one proposal and notify the Contracting Officer of the conflict, because even under separate CAGE codes, FAR 9.5 requires disclosure when affiliated entities bid on the same procurement — and the shared 'Data Fusion' personnel intelligence between divisions further compromises the firewall."
+    ],
+    "correct_answer": "D",
+    "rationale": "This is a clear affiliated-entity OCI under FAR 9.5. Separate CAGE codes do not create separate legal entities for OCI purposes — Sentinel is one company. The Kowalski email proves competitive sensitive information already flowed: the Data Fusion group (recently moved from ISR to Mission Systems) provided intelligence that Cyber is now leveraging in their proposal. This cross-pollination means a retroactive firewall (Answer C) is insufficient because contamination has already occurred. Answer A is wrong because CAGE codes are facility identifiers, not legal entity separators — the government will see both proposals coming from the same parent and may reject both or sustain a protest. Answer C fails because the Kowalski email demonstrates that shared personnel (Data Fusion) have already provided relationship intelligence across the division boundary. Answer C incorrectly characterizes this as merely a business conflict; an affiliated entity bidding against itself with shared access to capture intelligence is a procurement integrity issue requiring CO notification under FAR 3.104. The resolved SharePoint comment shows the root cause: the OCI screening procedure queried by division, not by solicitation number, and the IT fix hadn't been implemented.",
+    "contributor": {
+      "name": "Raymond Chen",
+      "title": "Procurement Integrity & Ethics Officer",
+      "organization": "Sentinel Defense Solutions",
+      "years_experience": 16,
+      "domain_expertise": "OCI mitigation, source selection firewall, post-award audit, FAR Part 3 compliance, disclosure obligations"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Costpoint",
+        "SharePoint",
+        "Microsoft Teams",
+        "Outlook",
+        "GovWin"
+      ],
+      "informal_signal_location": "Resolved SharePoint comment revealing the OCI screening tool doesn't reflect the reorg, plus the Teams :eyes: reaction from Ethics showing awareness without action",
+      "acronyms_used": [
+        "OCI",
+        "CAGE",
+        "DUNS",
+        "FAR",
+        "DFARS",
+        "DIA",
+        "LPTA",
+        "CO",
+        "ISR",
+        "RFP"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 4
+    }
+  },
+  {
+    "title": "Post-Award Cost Data Accuracy and Defective Pricing Exposure",
+    "category": "temporal_consistency",
+    "domain": "compliance_legal",
+    "difficulty": "expert",
+    "scenario": "Sentinel Defense Solutions won Contract FA8750-25-C-0330 (value: $28.2M, cost-plus-fixed-fee) with proposal submission on March 15, 2025. DCAA is now conducting a post-award audit and has flagged potential defective pricing under TINA (10 U.S.C. 3702).\n\n**Costpoint — Proposal P-25-0062**\nContract: Advanced Persistent Threat Detection (APTD)\nType: CPFF | Submitted: 03/15/2025\nIndirect Rates Used: FY25 Forward Pricing Rates (approved by DCMA 11/2024)\n- Fringe: 34.2% | OH: 78.5% | G&A: 12.1%\nCertificate of Current Cost or Pricing Data: Signed 03/14/2025 by K. Patel (Contracts VP)\n\n**SharePoint — /finance/rates/FY25-rate-revision-memo.pdf (uploaded Jan 8, 2025)**\nMemo from CFO to Cost Accounting: 'Based on Q1 actual experience and updated headcount projections, revising provisional billing rates effective 02/01/2025. New rates: Fringe 33.1% (-1.1%), OH 74.2% (-4.3%), G&A 11.8% (-0.3%). DCMA notification pending.'\n[Document metadata: Created 01/06/2025, Last accessed: 01/08/2025 by L. Castellano]\n\n**Teams — #cost-accounting (Feb 22, 2025, 2:14 PM)**\n@l.castellano: Quick reminder — anyone with proposals in progress needs to use the November DCMA-approved rates until the new provisionals are formally accepted. Don't use the January revision for pricing.\n@j.torres: Even though we know actuals are trending lower?\n@l.castellano: Correct. The cert of current cost or pricing data covers data 'reasonably available.' The question is what's reasonably available vs. what's approved.\n@j.torres: Got it. Using November rates.\n:white_check_mark: reacted by @l.castellano\n\n**Outlook — From: l.castellano@sentinel-ds.com To: k.patel@sentinel-ds.com (Mar 12, 2025)**\nSubject: APTD Proposal — Rate Question\n'Karen — heads up that the APTD proposal is still using November FPRAs. The January rate revision memo shows materially lower rates but hasn't been formally submitted to DCMA yet. Technically the cert covers cost or pricing data reasonably available as of certification date. The memo exists and shows lower costs. Flagging for your awareness before you sign the cert on Friday.'\n\n**Outlook — From: k.patel@sentinel-ds.com To: l.castellano@sentinel-ds.com (Mar 13, 2025)**\nSubject: RE: APTD Proposal — Rate Question\n'Linda — discussed with outside counsel. Their view is that DCMA-approved rates are the appropriate basis for proposal pricing. The internal revision memo is preliminary until DCMA accepts. Proceeding with November rates. Will sign cert tomorrow.'\n\n**Jira — COMP-2026-041 (DCAA Audit Tracker)**\nCreated: 05/2026 | Status: Open — Under Review\nAudit Finding: 'Contractor's certified cost or pricing data may not have been current, accurate, and complete as of 03/14/2025. Internal documentation shows awareness of lower indirect rates prior to certification.'\nComment (06/01/2026, @r.chen): 'Need to reconstruct timeline. Key question: was the Jan rate memo reasonably available cost or pricing data? If yes, potential defective pricing under TINA. Government's price adjustment claim could be ~$1.2M.'",
+    "question": "Based on the available evidence, what is the most defensible position for Sentinel regarding the DCAA defective pricing allegation?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Sentinel should assert that the Teams message from Castellano instructing the team to use November rates demonstrates a good-faith compliance culture, negating any intent element required for defective pricing claims.",
+      "B) Sentinel has limited exposure that can be mitigated by demonstrating the January memo was preliminary and the DCMA-approved rates remained the best available 'certified' data at the time of submission.",
+      "C) Sentinel has significant defective pricing exposure because the January rate revision memo constitutes cost or pricing data that was 'reasonably available' before certification, Castellano's email proves awareness, and the Patel email shows a deliberate decision not to disclose — creating potential liability under TINA even though outside counsel advised otherwise.",
+      "D) Sentinel has no defective pricing exposure because it used DCMA-approved forward pricing rates, which are the contractually established basis for proposal pricing regardless of internal analyses."
+    ],
+    "correct_answer": "C",
+    "rationale": "Under TINA (10 U.S.C. 3702), the Certificate of Current Cost or Pricing Data certifies that all cost or pricing data submitted were 'accurate, complete, and current' as of the certification date. The critical signal is the email chain between Castellano and Patel on March 12-13: it proves that (1) the rate revision memo existed and was known to decision-makers, (2) it showed materially lower costs, and (3) a conscious decision was made not to disclose it. TINA does not require intent — it is a strict liability statute for the price adjustment; the January memo is factual cost data (actual experience showing lower rates) that was available and not disclosed. Answer A is wrong because DCMA-approved rates are a starting point, but the TINA obligation independently requires disclosure of data that would affect price, regardless of what rates are 'approved.' Answer C attempts a reasonable defense but is undermined by the Castellano email explicitly calling the memo 'cost or pricing data reasonably available as of certification date' — Sentinel's own compliance officer identified the issue. Answer D is irrelevant because defective pricing under TINA has no intent element for the price adjustment remedy; good faith only matters if the government pursues penalties beyond the adjustment.",
+    "contributor": {
+      "name": "Raymond Chen",
+      "title": "Procurement Integrity & Ethics Officer",
+      "organization": "Sentinel Defense Solutions",
+      "years_experience": 16,
+      "domain_expertise": "OCI mitigation, source selection firewall, post-award audit, FAR Part 3 compliance, disclosure obligations"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Costpoint",
+        "SharePoint",
+        "Microsoft Teams",
+        "Outlook",
+        "Jira"
+      ],
+      "informal_signal_location": "The Castellano-to-Patel email explicitly framing the rate memo as 'cost or pricing data reasonably available as of certification date' — proving internal awareness of the disclosure obligation before signing the cert",
+      "acronyms_used": [
+        "DCAA",
+        "DCMA",
+        "TINA",
+        "CPFF",
+        "FPRA",
+        "G&A",
+        "OH",
+        "CAS",
+        "FAR",
+        "DFARS"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 15
+    }
+  }
+]

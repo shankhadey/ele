@@ -1,0 +1,129 @@
+[
+  {
+    "title": "The Hidden Co-Term Approval",
+    "category": "approval_chain",
+    "domain": "sales_deal_desk",
+    "difficulty": "expert",
+    "scenario": "AE Marcus Chen submitted a deal for GlobalTech Industries through Salesforce CPQ on March 15th: $340K TCV, 24-month term, 18% discount. The opportunity shows \"Deal Desk Review\" stage. In the CPQ approval history, you see: (1) Marcus (submitter), (2) Sarah Kim, RVP West (approved March 15, 4:22 PM), (3) yourself (pending).\n\nYou open the Google Sheet pricing matrix (last updated February 2026) which states: \"Deals >$300K TCV require VP Sales approval. Discounts 15-25% require Deal Desk + RVP approval.\"\n\nIn Slack #deal-desk, Marcus posted March 15 at 3:18 PM: \"Need this GlobalTech deal rushed - they're co-terming with an existing contract that renews March 31. Finance wants everything on the same renewal cycle.\" You replied with a \ud83d\udc40 emoji at 3:45 PM.\n\nYou check Confluence and find the \"Deal Approval Policy v2.1\" (published January 15, 2026): \"Co-term deals that modify existing contract end dates require CFO approval regardless of deal size, in addition to standard approval chain.\"\n\nYou search Slack DMs and find a thread from January 28 between Sarah Kim (RVP) and James Park (VP Sales) where James wrote: \"For Q1, I'm delegating all co-term approvals under $500K to RVPs. Finance is overwhelmed with the ERP migration. Just tag me in #deal-desk so I have visibility.\"\n\nYou pull up the GlobalTech account in Salesforce. Under \"Related Contracts\" you see: Contract #C-8847, $180K ARR, Start: April 1, 2024, End: March 31, 2026. The new deal's CPQ configuration shows End Date: March 31, 2027.\n\nChecking Slack #deal-desk history, you see NO mention of James Park being tagged on this deal. In your Slack DM with Marcus from March 15 at 4:55 PM, he wrote: \"Sarah approved it, we're good right? Customer is signing tomorrow morning.\"",
+    "question": "What is the correct next action for this deal approval?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Escalate to VP Sales (James Park) for approval - while the January DM delegation exists, the condition was to \"tag me in #deal-desk for visibility\" which wasn't done, making the delegation incomplete",
+      "B) Approve but require Marcus to tag James Park in #deal-desk retroactively to comply with the delegation conditions Sarah received in January",
+      "C) Approve immediately - the deal meets the pricing matrix requirements (RVP + Deal Desk for 15-25% discount) and Sarah's January delegation covers co-term approvals under $500K",
+      "D) Reject and require CFO approval - the Confluence policy v2.1 (January 2026) explicitly requires CFO approval for all co-term deals, which supersedes the informal January delegation"
+    ],
+    "correct_answer": "A",
+    "rationale": "The correct answer is A. While Sarah Kim did receive delegation authority from James Park for co-term deals under $500K (covering this $340K deal), the delegation came with an explicit condition: \"Just tag me in #deal-desk so I have visibility.\" This wasn't done - there's no mention of James in the #deal-desk thread about this deal. Delegated authority with conditions requires ALL conditions to be met. Option A ignores the Confluence policy requiring CFO approval for co-terms. Option B misses that the informal January delegation from VP Sales (who has authority to interpret policy for his org) takes precedence over the formal policy for Q1, especially given the \"Finance is overwhelmed\" context. Option C is wrong because retroactive tagging doesn't provide the required visibility before approval - James needed to see it during the approval process, not after. The delegation was conditional, not absolute. Marcus should have tagged James on March 15, and since he didn't, the deal needs to go to James now for proper approval. This tests understanding that informal delegations can override formal policies BUT only when all stated conditions are met, and that visibility requirements in fast-moving sales orgs are substantive, not procedural.",
+    "contributor": {
+      "name": "Rachel Stein",
+      "title": "Senior Deal Desk Manager",
+      "organization": "Meridian Systems",
+      "years_experience": 11,
+      "domain_expertise": "Complex deal structuring, pricing exceptions, CPQ governance"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Salesforce CPQ",
+        "Google Sheets",
+        "Slack",
+        "Confluence"
+      ],
+      "informal_signal_location": "Slack DM between RVP and VP Sales (January 28) containing conditional delegation",
+      "acronyms_used": [
+        "TCV",
+        "RVP",
+        "CFO",
+        "ARR",
+        "CPQ",
+        "ERP"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 2
+    }
+  },
+  {
+    "title": "The Precedent That Wasn't",
+    "category": "precedent_exception",
+    "domain": "sales_deal_desk",
+    "difficulty": "expert",
+    "scenario": "AE Jennifer Wu is pushing for approval on a 36-month ramp deal for Apex Manufacturing: Year 1: $120K, Year 2: $180K, Year 3: $240K (TCV $540K, blended 22% discount). She submitted it through CPQ on May 8th. In her submission notes: \"Per precedent with DataCore deal (Opp ID: 006-9834), requesting approval for multi-year ramp with >20% discount in Year 1.\"\n\nYou search Salesforce for Opp 006-9834 (DataCore Solutions, closed January 12, 2026, owner: Michael Torres). The deal structure shows: 36 months, Year 1: $100K, Year 2: $200K, Year 3: $300K, TCV $600K. The Approval History in CPQ shows: Michael Torres \u2192 You (approved Jan 12) \u2192 VP Sales (approved Jan 12). Your approval comment: \"Approved - strategic account, ramp justified by deployment timeline in SOW.\"\n\nYou check the related files on the Salesforce opportunity. There's a DocuSign envelope with a Master Services Agreement and a Statement of Work. The SOW (signed by DataCore's CTO) specifies: \"Phase 1 (Months 1-12): Pilot deployment, 50 users. Phase 2 (Months 13-24): Department rollout, 200 users. Phase 3 (Months 25-36): Enterprise rollout, 500 users.\" The user-based pricing clearly correlates to the revenue ramp.\n\nFor Jennifer's Apex deal, you review the attached draft MSA in DocuSign (unsigned). There's no SOW. In a resolved Google Doc comment thread on the internal deal memo (March 20), Jennifer's SE wrote: \"Customer wants ramp for cash flow management - their capex budget is frozen until new fiscal year.\" Jennifer replied: \"Got it, will position as gradual expansion.\" The comment thread was marked resolved on March 21.\n\nYou pull up Confluence \"Discount Policy v3.0\" (effective March 1, 2026): \"Ramp deals: Discounts >20% in any single year require VP Sales approval. Discounts calculated on year-over-year basis, not blended.\"\n\nIn Slack #revenue-ops (May 2, 2026), your RevOps counterpart posted: \"Reminder: Finance is cracking down on ramp deals that are really just payment plans. We need usage/deployment ramps tied to contractual milestones, not customer cash flow management.\"\n\nJennifer's Year 1 pricing shows $120K against a list price of $160K (25% discount).",
+    "question": "How should you handle Jennifer's precedent claim for the Apex Manufacturing ramp deal?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Approve based on precedent - the DataCore deal had similar structure and discount levels, and you approved it in January, creating binding precedent for similar deals",
+      "B) Reject - Year 1 has a 25% discount which exceeds the 20% threshold in Policy v3.0 (March 2026), requiring VP Sales approval that isn't in the workflow",
+      "C) Reject - the precedent doesn't apply because DataCore's ramp was tied to a contractual deployment milestone (SOW with phased rollout), while Apex's ramp is for customer cash flow management, which Finance explicitly flagged as problematic",
+      "D) Approve with condition that Jennifer adds a phased deployment SOW matching the revenue ramp before DocuSign execution, bringing it in line with DataCore precedent"
+    ],
+    "correct_answer": "C",
+    "rationale": "The correct answer is C. While the DataCore deal superficially looks like precedent, the critical distinction is hidden in the resolved Google Doc comment and the May 2 Slack post from RevOps. DataCore's ramp was justified by a contractual SOW with specific deployment phases tied to user counts - this is a legitimate business ramp where revenue recognition aligns with value delivery. Apex's ramp is explicitly for \"cash flow management\" and \"capex budget\" reasons - it's effectively a payment plan disguised as a ramp deal, which Finance has specifically called out as problematic. Precedents only apply when the material facts are substantially similar. Option A fails because it treats all ramp deals as equivalent without examining the business justification. Option B is technically correct about the discount threshold but misses the more fundamental issue - even if VP Sales approved the discount, the deal structure itself is problematic. Option D sounds reasonable but is wrong because you cannot retroactively manufacture a legitimate precedent by adding documentation - the customer wants a payment plan, not a phased deployment, and creating a fake SOW would be misrepresenting the deal structure to get approval. This tests understanding that precedent requires material similarity, that resolved comments and informal Slack guidance carry weight in fast-moving orgs, and that deal desk must distinguish between legitimate business structures and financial engineering.",
+    "contributor": {
+      "name": "Rachel Stein",
+      "title": "Senior Deal Desk Manager",
+      "organization": "Meridian Systems",
+      "years_experience": 11,
+      "domain_expertise": "Complex deal structuring, pricing exceptions, CPQ governance"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Salesforce CPQ",
+        "DocuSign",
+        "Google Docs",
+        "Slack",
+        "Confluence"
+      ],
+      "informal_signal_location": "Resolved Google Doc comment thread revealing customer's cash flow motivation",
+      "acronyms_used": [
+        "TCV",
+        "SOW",
+        "MSA",
+        "CPQ",
+        "SE",
+        "RevOps"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 5
+    }
+  },
+  {
+    "title": "The Policy Version Trap",
+    "category": "policy_version",
+    "domain": "sales_deal_desk",
+    "difficulty": "hard",
+    "scenario": "On June 15th, AE David Park reaches out via Slack DM: \"Rachel - need help with the TechVision renewal. Customer signed the renewal quote on May 28th, but DocuSign envelope is stuck in 'Waiting for Others.' Can you push it through? They're asking about their license keys.\"\n\nYou pull up the TechVision Industries opportunity in Salesforce (Opp ID: 006-4521, Close Date: May 28, 2026, Stage: Closed Won). The renewal is for $280K ARR, 12 months, with a 12% discount. The CPQ approval history shows: David Park (submitted May 22) \u2192 You (approved May 23, 8:45 AM) \u2192 Deal marked Approved.\n\nYou check DocuSign and find the envelope created May 23 at 9:15 AM, signed by customer on May 28, routed to \"Internal Approver: James Park (VP Sales)\" - status shows \"Sent May 28, 3:22 PM\" but not yet signed.\n\nYou open Confluence and navigate to discount policies. You see:\n- \"Discount Policy v2.3\" (Effective Date: April 1, 2026): \"Renewal discounts: 0-10% require Deal Desk approval. 11-15% require Deal Desk + VP Sales approval. 16%+ require CFO approval.\"\n- \"Discount Policy v2.4\" (Effective Date: June 1, 2026): \"Renewal discounts: 0-15% require Deal Desk approval only. 16-25% require VP Sales approval. 26%+ require CFO approval. Note: This policy change eliminates VP Sales bottleneck for standard renewal discounts.\"\n\nIn Slack #deal-desk on May 30, you see a message from your colleague Lisa Chen: \"Heads up team - v2.4 is live as of June 1. Remember to update your approval workflows for renewals submitted after 6/1.\"\n\nYou check your own Slack message history. On May 23 at 8:47 AM (two minutes after approving in CPQ), you sent David a DM: \"Approved in CPQ. Routing to James for VP sig since it's 12% - per v2.3 needs VP approval. Should be quick.\"\n\nYou notice in the CPQ record's \"Discount Justification\" field, David wrote: \"Renewal at existing discount rate. Original contract (C-7733) signed May 2025 at 12% discount. Customer threatened to churn without price match.\"\n\nYou pull Contract C-7733 in Salesforce: Start Date May 15, 2025, 12% discount, approved under \"Discount Policy v2.1\" which had the same thresholds as v2.3.\n\nIn your email, you find a May 23 message you sent to James Park at 9:20 AM: \"James - TechVision renewal in your DocuSign queue, $280K at 12% discount, needs your approval per policy v2.3. Customer already verbally committed, should be fast.\"",
+    "question": "What is the correct action to unblock the TechVision renewal signature?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Contact James Park to sign immediately - the deal was submitted and approved under v2.3 (May 22-23), so it must follow v2.3 rules requiring VP Sales signature regardless of when the customer signed",
+      "B) Remove James Park from the DocuSign envelope and mark as complete - v2.4 is now in effect, and deals are governed by the policy in effect at time of final execution, not submission, so this renewal no longer requires VP Sales approval",
+      "C) Keep the workflow as-is and escalate to RevOps - there's a policy version conflict between submission date (v2.3) and current date (v2.4), requiring a process exception determination",
+      "D) Remove James Park from the DocuSign envelope and mark as complete - v2.4 (effective June 1) eliminates VP requirement for 12% renewals, and the customer signed May 28 before the policy took effect, so the old approval chain applies but can be administratively completed"
+    ],
+    "correct_answer": "A",
+    "rationale": "The correct answer is A. In deal desk operations, the policy in effect at the time of deal submission and approval governs the approval requirements, not the policy in effect at later stages of execution. This deal was submitted May 22 and approved by Deal Desk on May 23 under v2.3, which required VP Sales approval for 11-15% renewal discounts. The approval chain was correctly configured at that time, and James Park was properly added to the DocuSign workflow. The fact that v2.4 took effect June 1 (after customer signature on May 28) doesn't retroactively change the approval requirements - you cannot remove a required approver mid-flight just because the policy changed. Option B incorrectly suggests administrative completion without the required signature, which would violate the approval policy the deal was submitted under and create audit/compliance issues. Option C misunderstands policy versioning - deals are locked to the policy version at submission to prevent gaming the system and ensure audit integrity. If you could apply whatever policy is current at execution, AEs would delay signature to wait for favorable policy changes. Option D is wrong because there is no conflict - the rule is clear that submission date governs. This tests understanding of policy version control in deal governance, the importance of approval chain integrity, and why you cannot retroactively apply new policies to in-flight deals even when the new policy is more permissive.",
+    "contributor": {
+      "name": "Rachel Stein",
+      "title": "Senior Deal Desk Manager",
+      "organization": "Meridian Systems",
+      "years_experience": 11,
+      "domain_expertise": "Complex deal structuring, pricing exceptions, CPQ governance"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Salesforce CPQ",
+        "DocuSign",
+        "Slack",
+        "Confluence"
+      ],
+      "informal_signal_location": "Slack DM from AE and Deal Desk channel announcement about policy v2.4",
+      "acronyms_used": [
+        "ARR",
+        "CPQ",
+        "CFO"
+      ],
+      "policy_versions_involved": 3,
+      "temporal_span_months": 2
+    }
+  }
+]

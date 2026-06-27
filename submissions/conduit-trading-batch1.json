@@ -1,0 +1,131 @@
+[
+  {
+    "title": "Solar PPA Imbalance Charges and SPV Entity Name Resolution",
+    "category": "entity_resolution",
+    "domain": "finance_revops",
+    "difficulty": "hard",
+    "scenario": "You're reconciling March 2026 settlement statements for your renewable portfolio. The SAP settlement report shows a $47,300 imbalance charge under counterparty name \"Desert Sky Solar LLC.\" Your Allegro ETRM system has the PPA registered under \"Mohave Solar Holdings II SPV\" with delivery point MEAD_500KV_NODE_7. The contract in SharePoint is titled \"Power Purchase Agreement - Desert Sky Project (2019)\" and references \"Seller: Mohave Solar Holdings II, a Delaware limited liability company, project entity Desert Sky Solar LLC.\"\n\nYour trader sends you a Teams message: \"Katherine - saw the imbalance hit. Desert Sky curtailed 22 MWh on 3/15 due to transmission congestion but scheduling coordinator didn't update day-ahead. Should be their cost per Section 4.7 of the PPA but double-check the amendment.\"\n\nYou find a SharePoint folder with Amendment No. 3 (executed May 2024) that states: \"Effective June 1, 2024, all scheduling responsibilities and associated imbalance costs shall transfer to Buyer. Seller remains responsible for curtailment due to Seller's equipment failure only. For avoidance of doubt, transmission-related curtailment costs are borne by Buyer.\"\n\nAllegro shows the curtailment event tagged as \"EXTERNAL_TRANSMISSION\" with reason code \"MEAD_CONGESTION.\" The invoice from CAISO came to Conduit Energy (as scheduling coordinator of record since June 2024) but was coded in SAP to \"Desert Sky Solar LLC\" because AP matched the delivery point name in their legacy mapping table. Your manager asks whether to pay the invoice or dispute it with the counterparty.",
+    "question": "Who is financially responsible for the $47,300 March 2026 imbalance charge?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Conduit Energy - Amendment No. 3 transferred transmission-related imbalance costs to Buyer",
+      "B) Mohave Solar Holdings II SPV - they are the counterparty of record in the PPA",
+      "C) Desert Sky Solar LLC - they curtailed generation and caused the imbalance",
+      "D) CAISO - the scheduling coordinator error was on their system side"
+    ],
+    "correct_answer": "A",
+    "rationale": "This is an entity resolution problem complicated by SPV naming conventions and a policy change buried in an amendment. Desert Sky Solar LLC and Mohave Solar Holdings II SPV refer to the same seller entity (the PPA clarifies Desert Sky is the project entity name). The critical signal is in Amendment No. 3, which explicitly transferred transmission-related curtailment and imbalance costs to Buyer (Conduit Energy) effective June 1, 2024. The curtailment was tagged EXTERNAL_TRANSMISSION due to MEAD congestion, not equipment failure, so it falls under Buyer responsibility per the amendment. Answer B fails because Mohave Solar Holdings II SPV is the same entity as Desert Sky Solar LLC — they are not a separate counterparty but the same seller under different naming conventions (SPV parent vs. project entity). Answer C fails because while Desert Sky did curtail generation, the cause was transmission congestion (external), not equipment failure. Amendment No. 3 only leaves Seller responsible for equipment-failure curtailment; transmission-related costs transferred to Buyer. Answer D fails because CAISO is the market operator, not a contractual counterparty — scheduling coordinator liability is allocated by the PPA and its amendments between Buyer and Seller, not borne by the ISO. The trader's suggestion to check Section 4.7 is a red herring since amendments supersede base contract terms.",
+    "contributor": {
+      "name": "Katherine Engström",
+      "title": "Power Trading Operations Manager",
+      "organization": "Conduit Energy",
+      "years_experience": 16,
+      "domain_expertise": "Energy market settlements, contract interpretation, counterparty risk"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "SAP",
+        "Allegro ETRM",
+        "SharePoint",
+        "Microsoft Teams",
+        "CAISO"
+      ],
+      "informal_signal_location": "SharePoint amendment document (Amendment No. 3) buried in contract folder",
+      "acronyms_used": [
+        "PPA",
+        "SPV",
+        "CAISO",
+        "MWh",
+        "AP"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 22
+    }
+  },
+  {
+    "title": "ISDA Credit Support Annex Threshold Change and Collateral Call Timing",
+    "category": "policy_version",
+    "domain": "finance_revops",
+    "difficulty": "expert",
+    "scenario": "It's April 18, 2026. Your credit manager forwards an email from counterparty Apex Power Marketing demanding Conduit Energy post $1.2M in collateral by April 22 under your ISDA Credit Support Annex (CSA). The collateral call cites \"negative mark-to-market of $2.4M on gas swap positions as of April 15, 2026, exceeding Conduit's $1.0M threshold per CSA Section 3(a).\"\n\nYou pull the executed CSA from SharePoint (dated March 2018). Section 3(a) states: \"Threshold for Conduit Energy: USD $1,000,000. Minimum Transfer Amount: USD $250,000.\" However, buried in your Outlook Sent folder, you find an email thread from January 2025 where Apex's credit officer wrote: \"Per our call, we're increasing Conduit's threshold to $1.5M given your improved credit rating (BBB+ as of Q4 2024). Amendment is in legal review, expect execution in March.\" Your credit manager replied: \"Understood, thanks. We'll operate under $1.5M effective Feb 1 pending paperwork.\"\n\nYou check SharePoint's contract amendments folder - no executed amendment exists. You call Apex's back office. Their collateral management system shows Conduit's threshold as $1.0M (never updated). However, their trader mentions in passing: \"Yeah, we've been using $1.5M since February. Our system is wrong but we've honored it for 15 months. Legal never finalized the paperwork but we had a deal.\"\n\nAllegro shows your mark-to-market at -$2.38M on April 15. SAP credit monitoring has been flagging Apex positions against a $1.5M threshold since February 2025. Your finance VP asks: \"Do we legally owe this collateral by April 22?\"",
+    "question": "What is Conduit Energy's legally enforceable collateral obligation under the ISDA CSA as of April 18, 2026?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) $0 - the $2.4M mark-to-market does not exceed the $1.5M threshold agreed to in January 2025",
+      "B) $1.25M - calculated as ($2.4M MTM - $1.0M threshold - $250K Minimum Transfer Amount)",
+      "C) $1.13M - calculated as ($2.38M MTM - $1.5M threshold), rounded to Minimum Transfer Amount",
+      "D) $1.4M - calculated as ($2.4M MTM - $1.0M executed threshold), rounded to nearest $100K per standard practice"
+    ],
+    "correct_answer": "B",
+    "rationale": "This is a policy version trap involving an unexecuted amendment and informal operational practice. The critical legal principle: under ISDA documentation, only executed written amendments modify CSA terms. The January 2025 email exchange and 15 months of operational practice using $1.5M do not constitute a legally binding amendment without execution. The only enforceable CSA threshold is $1.0M from the March 2018 executed document. With a mark-to-market of $2.4M (using Apex's calculation for the call) and a $1.0M threshold, the exposure is $1.4M. The CSA's Minimum Transfer Amount of $250K applies, making the collateral obligation $2.4M - $1.0M - $0.25M = $1.15M, rounded per standard practice to $1.25M. Answer B is correct. Answer A fails because it relies on the unexecuted $1.5M threshold — informal email agreements and operational practice cannot modify ISDA terms without a signed written amendment. Answer C fails because it uses the wrong MTM figure ($2.38M from Allegro instead of Apex's $2.4M stated in the collateral call) and applies the unenforceable $1.5M threshold. Answer D fails because it applies the correct $1.0M threshold but rounds incorrectly to $100K increments (not standard CSA practice) and omits the Minimum Transfer Amount deduction.",
+    "contributor": {
+      "name": "Katherine Engström",
+      "title": "Power Trading Operations Manager",
+      "organization": "Conduit Energy",
+      "years_experience": 16,
+      "domain_expertise": "Energy market settlements, contract interpretation, counterparty risk"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "SharePoint",
+        "Outlook",
+        "Allegro ETRM",
+        "SAP"
+      ],
+      "informal_signal_location": "Outlook email thread in Sent folder documenting informal threshold agreement",
+      "acronyms_used": [
+        "ISDA",
+        "CSA",
+        "MTM",
+        "MTA",
+        "BBB+",
+        "VP"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 99
+    }
+  },
+  {
+    "title": "Wind Farm Capacity Payment Eligibility and Interconnection Agreement Version Conflict",
+    "category": "temporal_consistency",
+    "domain": "finance_revops",
+    "difficulty": "expert",
+    "scenario": "You're auditing June 2026 capacity payments for Prairie Wind Phase II (commissioned Q2 2023, 180 MW nameplate). Your June SAP settlement shows $0 capacity payment despite the project being fully operational. The PPA (executed 2021, effective 2023) states: \"Buyer shall pay Seller a monthly capacity payment of $4,500/MW for all Qualified Capacity as defined in the Interconnection Agreement.\"\n\nThe Interconnection Agreement in SharePoint (executed 2018 with Western Area Power Administration) defines Qualified Capacity as \"nameplate capacity less any derates documented in Exhibit C, as updated per Section 7.3.\" Exhibit C (dated 2018) shows no derates. However, Section 7.3 states: \"Interconnection Customer must update derates within 90 days of commissioning based on witnessed performance testing.\"\n\nYou find a scanned PDF logbook entry from June 14, 2023 (right after commissioning): \"Performance test completed 6/12/23. Transformer bank T2 limited to 165 MW injection due to WAPA substation thermal constraints. Verbal confirmation from WAPA engineer on-site. Awaiting written update to IA.\" No formal Exhibit C update was ever filed.\n\nYour renewable energy director sends a Teams message on June 24, 2026: \"Katherine, why no capacity payment for Prairie Wind in June? We're injecting 165 MW consistently. Check if it's a SAP mapping issue - node might be wrong.\"\n\nAllegro shows Prairie Wind registered at 180 MW nameplate with node PRAIRIE_230KV. The PPA's payment schedule in Appendix B states: \"Capacity payments commence upon Commercial Operation Date (June 1, 2023) for Qualified Capacity only.\" WAPA's online interconnection register (checked June 27, 2026) now lists Prairie Wind at 165 MW \"per thermal study update March 2024\" but shows no document link. Finance asks: should June 2026 capacity payment be calculated on 180 MW or 165 MW?",
+    "question": "What is the correct Qualified Capacity basis for Prairie Wind's June 2026 capacity payment?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) 180 MW - the nameplate capacity in the executed Interconnection Agreement Exhibit C, as no formal amendment was filed within 90 days",
+      "B) 165 MW - the derate was documented in the June 2023 logbook and WAPA's register reflects the operational reality",
+      "C) 165 MW effective March 2024 only - WAPA's thermal study formalized the derate, so June 2026 should use 180 MW for Jan-Feb and 165 MW thereafter",
+      "D) 0 MW - Conduit failed to update Exhibit C within the 90-day contractual deadline, forfeiting capacity payment eligibility"
+    ],
+    "correct_answer": "B",
+    "rationale": "This temporal consistency problem involves a policy update gap between informal documentation (scanned logbook), operational reality, and formal contract amendments. The interconnection agreement requires derate updates within 90 days of commissioning (by September 2023). The critical signal is the June 14, 2023 logbook entry documenting the 165 MW thermal constraint discovered during witnessed performance testing. While no formal Exhibit C amendment was filed within 90 days, three factors support 165 MW as the correct Qualified Capacity: (1) the PPA defines Qualified Capacity by reference to the Interconnection Agreement's physical limitations, not paperwork compliance, (2) WAPA's register update in March 2024 retroactively formalized what was operationally true since June 2023, and (3) capacity payments are for actual deliverable capacity, not fictional nameplate ratings. Answer A incorrectly prioritizes paperwork over operational reality. Answer C is a harsh forfeiture reading unsupported by the PPA's commercial intent. Answer D incorrectly dates the derate to March 2024 when the logbook shows it existed from commissioning. The informal logbook entry, combined with WAPA's later formal recognition, establishes that Qualified Capacity was 165 MW from Commercial Operation Date forward. Conduit should process June 2026 payment at $4,500/MW × 165 MW = $742,500.",
+    "contributor": {
+      "name": "Katherine Engström",
+      "title": "Power Trading Operations Manager",
+      "organization": "Conduit Energy",
+      "years_experience": 16,
+      "domain_expertise": "Energy market settlements, contract interpretation, counterparty risk"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "SAP",
+        "SharePoint",
+        "Allegro ETRM",
+        "Microsoft Teams",
+        "WAPA online register",
+        "scanned PDF logbooks"
+      ],
+      "informal_signal_location": "Scanned PDF logbook entry from June 14, 2023 documenting transformer thermal constraint",
+      "acronyms_used": [
+        "MW",
+        "PPA",
+        "WAPA",
+        "IA"
+      ],
+      "policy_versions_involved": 3,
+      "temporal_span_months": 37
+    }
+  }
+]

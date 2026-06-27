@@ -1,0 +1,138 @@
+[
+  {
+    "title": "Interconnection Agreement Tariff Version Conflict at QF Billing",
+    "category": "policy_version",
+    "domain": "compliance_legal",
+    "difficulty": "expert",
+    "scenario": "Conduit Energy is billing a 4.2 MW qualifying facility (QF) operated by High Desert Solar LLC for Q1 2026 energy deliveries. The interconnection agreement (IA) was executed in 2008 under Docket No. 08-R-412 and references Rate Schedule QF-2, which was superseded by Rate Schedule QF-3 in the 2019 general rate case (Docket No. 19-R-087).\n\n**Custom FileMaker — Docket Tracking (Docket 08-R-412)**\nEntity: High Desert Solar LLC | Facility: 4.2 MW PV | IA Effective: June 15, 2008\nRate Reference: Schedule QF-2 | Contract Term: 25 years\nNotes: 'Standard QF IA template, pre-PURPA reform. See Section 8.3 for rate escalation.'\nLinked filings: Original IA (SharePoint), Amendment 1 (2014 — capacity increase from 3.8 MW)\n\n**SharePoint — /regulatory/filings/interconnection/high-desert-solar/IA-2008.pdf**\nSection 8.3: 'Energy payments shall be calculated at the avoided cost rate in effect at time of delivery, as published in the applicable Rate Schedule.'\nSection 8.5: 'Capacity payments shall be fixed at the rate established at contract execution for the full contract term.'\nSection 12.1: 'This Agreement shall be governed by tariff provisions in effect as of the Effective Date, except as specifically noted in Section 8.3.'\n\n**SAP — Rate Calculation Module (current billing run)**\nCustomer: HIGH-DESERT-SOLAR | Rate Schedule applied: QF-3 | Avoided cost rate: $0.0847/kWh\nCapacity rate applied: $12.40/kW-month (current QF-3 rate)\nBilling period: Jan-Mar 2026 | Flag: 'Rate schedule override required — legacy IA'\n\n**Teams — #regulatory-affairs (Feb 12, 2026, 3:47 PM)**\n@william.reeves: SAP flagged High Desert again. The system defaulted to QF-3 capacity rate but their IA locks capacity at execution rate.\n@maria.estrada: What was the 2008 QF-2 capacity rate? I can't find it in the current tariff book.\n@william.reeves: $8.15/kW-month. It's in the archived tariff sheets on SharePoint, filed under the 08-R-412 docket.\n@maria.estrada: Got it. But wait — they did Amendment 1 in 2014 for the capacity increase. Does that reset the capacity rate for the incremental 0.4 MW?\n@william.reeves: Good catch. Let me check the amendment language.\n[Thread continues with no further replies]\n\n**Outlook — From: william.reeves@conduit-energy.com, To: maria.estrada@conduit-energy.com (Feb 14, 2026)**\nSubject: RE: High Desert capacity rate\n> Maria — pulled the 2014 amendment. Section 2(b) states: 'Incremental capacity above 3.8 MW shall be compensated at the capacity rate in effect at the time of amendment execution.' The 2014 QF-2 capacity rate was $9.20/kW-month. So we have a split: 3.8 MW at $8.15 and 0.4 MW at $9.20.\n> Energy rate is straightforward — Section 8.3 clearly says current avoided cost at time of delivery, so QF-3's $0.0847/kWh applies to all energy.\n\n**SharePoint — /regulatory/tariff-archive/QF-2-schedule-2008.pdf**\nPage last accessed: Feb 12, 2026\nCapacity Payment Rate (2008): $8.15/kW-month\nAvoided Cost Rate (2008): $0.0612/kWh\n[Document footer: 'Superseded by Rate Schedule QF-3, effective January 1, 2020, per Docket 19-R-087']",
+    "question": "What is the correct billing methodology for High Desert Solar LLC's Q1 2026 capacity payment?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Flag for manual review and withhold capacity payment pending resolution of the unresolved Teams thread",
+      "B) Apply $8.15/kW-month to 3.8 MW and $9.20/kW-month to 0.4 MW, per the original IA Section 8.5 and 2014 amendment Section 2(b)",
+      "C) Apply QF-3 capacity rate of $12.40/kW-month to all 4.2 MW, as the current tariff supersedes the 2008 agreement",
+      "D) Apply $8.15/kW-month to all 4.2 MW, as Section 12.1 governs all provisions by the tariff at the Effective Date"
+    ],
+    "correct_answer": "B",
+    "rationale": "The correct answer requires synthesizing four sources: the original IA (Section 8.5 locks capacity at execution rate), the 2014 amendment (Section 2(b) sets incremental capacity at the 2014 rate), the archived tariff (confirming historical rates), and William's email confirming the split methodology. Answer A is wrong because it ignores Section 8.5's explicit lock-in for capacity payments and conflates the energy rate treatment (which does follow current tariff per Section 8.3) with the capacity rate. Answer C is wrong because it applies Section 12.1's general governing provision without recognizing that the 2014 amendment specifically carved out a different rate for incremental capacity above 3.8 MW. Answer D is wrong because the Teams thread's lack of resolution is a red herring — William's follow-up email to Maria two days later definitively resolves the question. The unresolved thread does not indicate an unresolved issue; the resolution simply happened in a different channel.",
+    "contributor": {
+      "name": "William Reeves",
+      "title": "Regulatory Affairs Director",
+      "organization": "Conduit Energy",
+      "years_experience": 22,
+      "domain_expertise": "PUC tariff filings, rate case management, interconnection agreements, regulatory docket tracking"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Custom FileMaker (docket tracking)",
+        "SharePoint (filings archive)",
+        "SAP (rate calculations)",
+        "Microsoft Teams",
+        "Outlook"
+      ],
+      "informal_signal_location": "Outlook email resolving the split-rate methodology, discovered only after the Teams thread appears unresolved",
+      "acronyms_used": [
+        "QF",
+        "IA",
+        "PV",
+        "PURPA",
+        "PUC",
+        "MW",
+        "kWh"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 216
+    }
+  },
+  {
+    "title": "Solar Developer Entity Conversion and Interconnection Queue Priority",
+    "category": "entity_resolution",
+    "domain": "compliance_legal",
+    "difficulty": "hard",
+    "scenario": "A 12 MW community solar project is in Conduit Energy's interconnection queue. The developer originally filed as 'Solaris Mountain Partners LLC' in March 2024. In November 2025, the developer converted to a corporation ('Solaris Mountain Energy Corp') for federal ITC transferability purposes. The developer is now requesting to proceed to the facilities study phase under the new entity name while retaining their queue position (#IQ-2024-037).\n\n**Custom FileMaker — Interconnection Queue Register**\nQueue Position: IQ-2024-037 | Entity: Solaris Mountain Partners LLC\nFacility Size: 12 MW AC | Type: Solar PV + BESS (4 MW / 16 MWh)\nApplication Filed: March 8, 2024 | Feasibility Study Complete: Sept 2024\nSystem Impact Study: Completed Jan 2025 — no adverse impacts identified\nStatus: Awaiting Facilities Study Agreement execution\nDeposit: $360,000 (received March 2024, from Solaris Mountain Partners LLC operating account)\n\n**SharePoint — /regulatory/tariffs/interconnection-procedures/Rule-21-Equiv.pdf (v3.2, effective July 2025)**\nSection 4.7.1: 'Queue position is non-transferable and shall be forfeited if the Interconnection Customer assigns or transfers the project to a different entity.'\nSection 4.7.3: 'Changes to project ownership structure that do not constitute a transfer of control shall not affect queue position, provided the Interconnection Customer notifies the Utility within 30 days of such change.'\n\n**SharePoint — /regulatory/tariffs/interconnection-procedures/Rule-21-Equiv.pdf (v3.1, effective Jan 2023, ARCHIVED)**\nSection 4.7.1: 'Queue position is non-transferable.'\n[Note: v3.1 had no Section 4.7.3 — the provision distinguishing entity conversion from transfer was added in v3.2]\n\n**Teams — #interconnection-engineering (Jan 22, 2026, 11:15 AM)**\n@raj.patel: Got a queue position transfer request for IQ-2024-037. Solaris Mountain changed from LLC to Corp.\n@jennifer.kowalski: Is that actually a transfer? Or just a conversion?\n@raj.patel: Legal distinction matters. If it's a 'transfer of control' we bump them. If it's an entity conversion they keep position.\n@jennifer.kowalski: Did they notify us within 30 days? That's the 4.7.3 requirement.\n@raj.patel: Checking.\n[Thread — no further replies]\n\n**Outlook — From: solaris.legal@solarismountain.com, To: interconnection@conduit-energy.com (Dec 18, 2025)**\nSubject: Entity Conversion Notice — Solaris Mountain Partners LLC -> Solaris Mountain Energy Corp\nAttachment: Certificate of Conversion (State of Colorado), Articles of Incorporation\nBody: 'Per Section 4.7.3 of Conduit Energy's Interconnection Procedures, please be advised that Solaris Mountain Partners LLC converted to Solaris Mountain Energy Corp effective December 2, 2025. This is a statutory conversion, not an assignment or transfer. All assets, liabilities, and contracts of the LLC are held by the Corp by operation of law. We request continuation of queue position IQ-2024-037.'\n\n**SAP — Vendor Master**\nVendor 400892: Solaris Mountain Partners LLC | Status: Active | Tax ID: 84-XXXXXXX\nVendor 401156: Solaris Mountain Energy Corp | Status: Active | Tax ID: 93-XXXXXXX\n[Note: Different EINs due to entity type change]",
+    "question": "Should Conduit Energy preserve queue position IQ-2024-037 for the converted entity?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Yes — the statutory conversion notice was filed within 30 days (Dec 18 for Dec 2 conversion), satisfying Section 4.7.3, and a statutory conversion is not a transfer of control",
+      "B) No — Section 4.7.1 states queue position is non-transferable, and SAP shows two different entities with different Tax IDs, confirming this is a transfer",
+      "C) No — the developer filed under v3.1 of the interconnection procedures, which had no Section 4.7.3 carve-out; the version in effect at application governs",
+      "D) Cannot determine — the Teams thread is unresolved and the internal review is still pending Raj's confirmation of the 30-day notification requirement"
+    ],
+    "correct_answer": "A",
+    "rationale": "The correct answer requires synthesizing the current tariff (v3.2, Section 4.7.3 distinguishes conversion from transfer), the developer's notice (filed December 18 for a December 2 conversion — 16 days, within the 30-day window), and the legal nature of a statutory conversion (same entity continues, not a new entity). Answer B is wrong because it conflates EIN change with entity transfer — a statutory conversion under Colorado law means the Corp IS the LLC by operation of law; SAP's duplicate vendor records reflect a systems data issue, not a legal reality. Answer C is tempting but wrong because tariff provisions apply as currently effective, not as of the application date — Section 4.7.3 governs procedure for all customers currently in queue, not just those who filed after July 2025. Answer D is wrong because the Teams thread's lack of resolution is irrelevant — the email clearly satisfies the 30-day notice requirement (16 days elapsed), and the legal question is answerable from the tariff language and the conversion certificate.",
+    "contributor": {
+      "name": "William Reeves",
+      "title": "Regulatory Affairs Director",
+      "organization": "Conduit Energy",
+      "years_experience": 22,
+      "domain_expertise": "PUC tariff filings, rate case management, interconnection agreements, regulatory docket tracking"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Custom FileMaker (docket tracking)",
+        "SharePoint (filings archive — current and archived versions)",
+        "Microsoft Teams",
+        "Outlook",
+        "SAP (vendor master)"
+      ],
+      "informal_signal_location": "Developer's email to the interconnection inbox confirming 30-day notice compliance — the Teams thread makes it appear unresolved, but the email answers the question",
+      "acronyms_used": [
+        "ITC",
+        "MW",
+        "MWh",
+        "AC",
+        "BESS",
+        "PV",
+        "LLC",
+        "EIN",
+        "IQ"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 22
+    }
+  },
+  {
+    "title": "Net Metering Grandfathering Dispute — Application vs. Approval Date",
+    "category": "temporal_consistency",
+    "domain": "compliance_legal",
+    "difficulty": "expert",
+    "scenario": "A commercial customer (Ridgeline Brewing Co.) installed a 285 kW rooftop solar system and is claiming NEM-1 grandfathered status. The PUC's new NEM-2 rule (Docket No. 25-R-103) became effective April 1, 2025, with a grandfathering clause for customers 'enrolled in NEM-1 prior to the effective date.' The dispute centers on whether 'enrolled' means application filed or interconnection approved.\n\n**Custom FileMaker — Docket Tracking (Docket 25-R-103)**\nRule: Net Energy Metering 2.0 | Effective: April 1, 2025\nGrandfathering: 'Customers enrolled in NEM-1 prior to April 1, 2025 shall remain on NEM-1 for 20 years from PTO date.'\nDefinition of 'enrolled': [NOT EXPLICITLY DEFINED IN RULE TEXT]\nRelated Dockets: 22-R-045 (original NEM-1 implementation), 24-I-088 (NEM-2 rulemaking proceeding)\n\n**SharePoint — /regulatory/dockets/24-I-088/conduit-reply-brief.pdf**\nPage 14, Paragraph 3: 'Conduit Energy recommends that the Commission define enrollment as the date of interconnection application submittal, consistent with the principle that customers should not be penalized for utility processing timelines.'\n[Note: The PUC's final decision did not adopt Conduit's recommended definition]\n\n**Oracle CC&B — Customer Billing System**\nAccount: Ridgeline Brewing Co. | Service Address: 4521 Industrial Pkwy, Unit B\nRate Schedule: C-1 (Commercial General Service)\nNEM Flag: NEM-1 | NEM Enrollment Date: April 12, 2025\nInterconnection Application Received: March 14, 2025\nPTO Issued: April 12, 2025\n\n**Outlook — From: ridgeline.owner@ridgelinebrewing.com, To: solar-interconnection@conduit-energy.com (May 3, 2025)**\nSubject: NEM-1 Grandfathering Dispute\n'We filed our interconnection application on March 14, well before the April 1 cutoff. Our installer confirmed the system was ready for inspection in March but Conduit didn't schedule the inspection until April 8. We shouldn't lose NEM-1 status because of your processing delay.'\n\n**Teams — #regulatory-affairs (May 5, 2025, 9:23 AM)**\n@william.reeves: Got the Ridgeline complaint. Tricky one. CC&B has enrollment date as April 12 (PTO date). Application was March 14.\n@sarah.oconnell: What did the Commission actually say about 'enrolled'?\n@william.reeves: That's the problem. They didn't define it. Our reply brief advocated for application date but the final order is silent.\n@sarah.oconnell: Any Commission precedent?\n@william.reeves: Checking. I recall Decision 18-D-204 had similar language for the TOU transition...\n[Thread ends]\n\n**SharePoint — /regulatory/dockets/18-D-204/commission-decision.pdf**\nPage 8: 'For purposes of grandfathering, enrollment shall be deemed to occur upon the utility's receipt of a complete application, not upon final approval or activation of service.'\n[Document metadata: Filed 2018, regarding Time-of-Use rate transition grandfathering]\n\n**Teams — #regulatory-affairs (May 5, 2025, 2:41 PM)**\n@william.reeves: Found it. Decision 18-D-204 — TOU grandfathering case. Commission defined enrollment as application receipt date. Not directly NEM but same Commission, same grandfathering concept.\n@sarah.oconnell: strong precedent\n@sarah.oconnell reacted with :white_check_mark:\n@william.reeves: I'll draft the determination. Ridgeline keeps NEM-1.\n[No further messages]",
+    "question": "Based on the available evidence, what is the correct NEM status determination for Ridgeline Brewing Co.?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) NEM-1 grandfathered — Conduit's reply brief in the NEM-2 rulemaking advocated for application date as enrollment, making this Conduit's own stated position",
+      "B) Cannot determine — the NEM-2 rule does not define 'enrolled' and no NEM-specific precedent exists; this must be escalated to the PUC for a declaratory ruling",
+      "C) NEM-2 applies — CC&B shows enrollment date of April 12, 2025, which is after the April 1 effective date; the system of record governs",
+      "D) NEM-1 grandfathered — the application was filed March 14, 2025, and Commission precedent (Decision 18-D-204) defines enrollment as application receipt date"
+    ],
+    "correct_answer": "D",
+    "rationale": "The correct answer requires synthesizing the NEM-2 rule (grandfathering for customers 'enrolled' before April 1, but no definition of enrolled), Oracle CC&B data (application March 14, PTO April 12), and critically, the Commission's own precedent in Decision 18-D-204 (defining enrollment as application receipt for grandfathering purposes). William's Teams message confirming the precedent and his stated intent to draft the determination corroborates this conclusion. Answer A is wrong because it treats CC&B's system-generated enrollment date (which defaults to PTO date) as the legal determination, confusing a billing system field with a regulatory definition. Answer C reaches the right outcome but for the wrong reason — Conduit's advocacy position in a brief is not binding precedent; the Commission did not adopt it in the final NEM-2 order. The actual authority is Decision 18-D-204, a prior Commission decision. Answer B is wrong because while the NEM-2 rule is silent, Commission precedent from 18-D-204 provides analogous guidance that William identified as applicable, making escalation unnecessary.",
+    "contributor": {
+      "name": "William Reeves",
+      "title": "Regulatory Affairs Director",
+      "organization": "Conduit Energy",
+      "years_experience": 22,
+      "domain_expertise": "PUC tariff filings, rate case management, interconnection agreements, regulatory docket tracking"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Custom FileMaker (docket tracking)",
+        "SharePoint (filings archive — multiple dockets)",
+        "Oracle CC&B (customer billing)",
+        "Outlook",
+        "Microsoft Teams"
+      ],
+      "informal_signal_location": "Teams emoji reaction (checkmark) from sarah.oconnell confirming agreement with the precedent-based determination, plus William's stated intent to draft determination — the resolution never appears in a formal system",
+      "acronyms_used": [
+        "NEM",
+        "PUC",
+        "PTO",
+        "TOU",
+        "kW",
+        "CC&B"
+      ],
+      "policy_versions_involved": 3,
+      "temporal_span_months": 84
+    }
+  }
+]

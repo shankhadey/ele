@@ -1,0 +1,136 @@
+[
+  {
+    "title": "Conflicting Go-Live Dates Across Brand Implementation Workstreams",
+    "category": "cross_system_synthesis",
+    "domain": "customer_success_support",
+    "difficulty": "hard",
+    "scenario": "Atlas Retail Holdings is deploying a unified loyalty platform across three brands (Vero, Threadline, and the recently acquired Kova). Each brand has a separate implementation workstream with its own PM.\n\n**Smartsheet — 'Unified Loyalty Platform Master Schedule' (last updated Jun 2, 2026)**\nProject: Loyalty Unification | Status: Amber | Phase: UAT\nVero workstream go-live: Jul 14, 2026\nThreadline workstream go-live: Jul 14, 2026\nKova workstream go-live: Jul 28, 2026 (2-week buffer for integration delta)\nMilestone gate 4 (UAT sign-off): Jun 30, 2026 — all brands\nDependency note: 'Kova POS integration requires Square API v3 migration. Blocked until Vero completes first.'\n\n**Jira — LOYAL-892 'Kova POS Integration - Square API v3'**\nStatus: In Progress | Assignee: dev.team.kova | Sprint: Sprint 14\nComment (Jun 18, @rachel.osei): 'Vero migration to API v3 hit a snag — their custom discount logic isn't compatible. Estimating 8 additional dev days.'\nComment (Jun 20, @kenji.nakamura): 'This puts Vero UAT at risk. Can we decouple Kova from the Vero dependency?'\nComment (Jun 20, @rachel.osei): 'Technically yes but we'd need to run parallel API versions during cutover. Adds $18K in T&M.'\n[No further comments]\n\n**Slack — #implementations (Jun 21, 2026, 9:47 AM)**\n@kenji.nakamura: Heads up — loyalty go-live for Vero is slipping. Threadline unaffected. Kova TBD pending CR approval.\n@marcus.bell (VP Retail Tech): Can't slip Vero past Jul 21. We have the analyst day keynote on Jul 23 and the CEO is demoing it live.\n@kenji.nakamura: Understood. I'll look at scope reduction options.\n@marcus.bell: :+1:\n\n**Slack — #implementations (Jun 22, 2026, 3:15 PM)**\n@kenji.nakamura: Option A: drop custom discount logic from Vero go-live (add back in Sprint 16). Saves 6 dev days. Go-live Jul 18.\n@kenji.nakamura: Option B: parallel API versions for Kova decoupling, Vero stays Jul 14 but burn rate goes up $18K.\n@marcus.bell: A. We can't justify the T&M overage to finance right now. Discount logic can wait.\n@kenji.nakamura: Copy. I'll update the SOW amendment and Smartsheet.\n[Thread has 3 :eyes: reactions, no other replies]\n\n**ServiceNow — CR-2026-0441 'Loyalty Platform Scope Reduction - Vero Custom Discounts'**\nStatus: Draft | Requested by: Kenji Nakamura | Created: Jun 23, 2026\nApproval chain: PM (Kenji) → Delivery Lead → VP Retail Tech → Brand GM (Vero)\nCurrent approvals: PM ✓ | Delivery Lead: Pending | VP Retail Tech: Pending | Brand GM: Pending\nNote: 'VP verbal approval obtained in Slack. Formal approval pending.'",
+    "question": "Based on all available information as of June 23, what is the current approved go-live date for the Vero workstream and what is the status of the scope reduction that enables it?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Jul 21 per the VP's stated deadline; the scope reduction is approved since the VP explicitly said 'A' in the Slack thread",
+      "B) Jul 14 is at risk and no new date is confirmed; the Jira blocker has not been resolved and no CR has been formally submitted",
+      "C) Jul 14 per the Smartsheet master schedule; the scope reduction CR is fully approved and the schedule stands",
+      "D) Jul 18 with scope reduction; the CR has only informal VP approval via Slack emoji and has not completed the formal approval chain"
+    ],
+    "correct_answer": "D",
+    "rationale": "The correct answer synthesizes across four systems: (1) The Smartsheet still shows Jul 14 but is stale (last updated Jun 2), (2) Jira shows the blocker that necessitated scope change, (3) Slack shows the VP selecting Option A which yields Jul 18, and (4) ServiceNow shows the CR is in Draft with only PM approval completed — the VP's Slack ':+1:' and 'A' selection constitute informal approval but the formal approval chain (Delivery Lead, VP, Brand GM) is still pending. Answer A is wrong because the CR is not fully approved and Smartsheet is outdated. Answer C conflates the VP's maximum tolerable date (Jul 21) with the actual go-live target (Jul 18) and treats informal Slack selection as formal approval. Answer B is wrong because a CR has been submitted (it exists in ServiceNow as Draft) and the Slack thread does constitute a decision, just not a formally approved one.",
+    "contributor": {
+      "name": "Kenji Nakamura",
+      "title": "Enterprise Implementation Program Manager",
+      "organization": "Atlas Retail Holdings",
+      "years_experience": 12,
+      "domain_expertise": "New store technology deployments, vendor coordination, sales-to-delivery handoff, scope management, go-live readiness"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Smartsheet",
+        "Jira",
+        "Slack",
+        "ServiceNow"
+      ],
+      "informal_signal_location": "VP approval given as Slack emoji :+1: and single-word reply 'A' in #implementations thread",
+      "acronyms_used": [
+        "UAT",
+        "CR",
+        "T&M",
+        "SOW",
+        "POS",
+        "API",
+        "PM"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 1
+    }
+  },
+  {
+    "title": "Vendor Change Request Citing False Precedent from Prior Implementation",
+    "category": "precedent_exception",
+    "domain": "customer_success_support",
+    "difficulty": "expert",
+    "scenario": "Atlas Retail Holdings contracted OmniConnect Systems for Kova brand's e-commerce platform migration (BigCommerce to custom platform). OmniConnect has submitted a change request claiming entitlement to T&M billing for integration testing, citing precedent from the Threadline implementation 14 months ago.\n\n**ServiceNow — CR-2026-0512 'OmniConnect - Billing Model Change for Integration Testing Phase'**\nStatus: Under Review | Submitted by: OmniConnect (vendor PM: @daniel.rowe)\nJustification: 'Per precedent established during the Threadline platform migration (Project THREAD-2025), integration testing was billed on T&M basis after milestone gate 3 due to scope uncertainty. Requesting same treatment for Kova migration per SOW clause 8.2 (Precedent & Consistency).'\nAttached: Email from Atlas Delivery Lead (Apr 2025) approving T&M shift for Threadline.\n\n**Confluence — 'Threadline Platform Migration - Lessons Learned' (page version 3, last edited May 2025)**\nSection 4 - Budget:\n'Integration testing phase moved to T&M after milestone gate 3 due to discovery of undocumented API dependencies in legacy Threadline storefront. This was a ONE-TIME concession given the exceptional circumstances of the legacy system.'\n[RESOLVED COMMENT by @kenji.nakamura, May 12, 2025]: 'Adding explicit language that this was a one-time exception. @marcus.bell confirmed this should NOT set precedent for future vendor engagements. Do not reference this as standard practice.'\n[Comment was resolved by @kenji.nakamura on May 12, 2025]\n\n**Google Doc — 'Kova Migration SOW v2.1' (signed Jan 2026)**\nSection 5.3 - Billing: 'All phases including integration testing shall be billed on a fixed-fee basis per the milestone schedule in Appendix B.'\nSection 8.2 - Precedent & Consistency: 'Where prior Atlas implementations established commercial precedent, vendor may request analogous treatment subject to Program Manager approval.'\n\n**Slack — #vendor-mgmt (Jun 24, 2026, 11:03 AM)**\n@daniel.rowe (OmniConnect): Hey @kenji.nakamura — just flagging, we submitted CR-0512. The Threadline precedent is well-documented and clause 8.2 gives us the right to request it. Happy to discuss.\n@kenji.nakamura: Saw it. Reviewing.\n@priya.sharma (Procurement): @kenji.nakamura FYI OmniConnect's burn rate on Kova is already 15% over plan. T&M would remove their incentive to control hours.\n[No further replies]\n\n**Smartsheet — 'Kova Migration Budget Tracker'**\nOmniConnect contracted value: $420K fixed-fee\nActual spend to date: $310K (milestone gate 3 not yet reached)\nRemaining milestones: Integration Testing ($65K), UAT ($30K), Cutover ($15K)\nVariance note (Jun 20): 'Vendor burn rate trending 15% above plan. If testing moves to T&M at current rate, projected overrun = $40-55K.'",
+    "question": "Should Kenji approve CR-2026-0512 based on the precedent OmniConnect is citing?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) No — the Confluence lessons learned page explicitly documents this was a one-time concession with VP confirmation it should not set precedent, and the Kova SOW specifies fixed-fee for all phases",
+      "B) Yes, but only partially — approve T&M for integration testing hours exceeding the $65K fixed-fee allocation, creating a hybrid approach",
+      "C) Cannot determine — the CR requires VP Retail Tech approval per the standard approval chain, so Kenji should escalate rather than decide",
+      "D) Yes — the Threadline T&M shift is documented in Confluence and clause 8.2 explicitly allows vendors to request analogous treatment from prior implementations"
+    ],
+    "correct_answer": "A",
+    "rationale": "The correct answer requires finding the resolved Confluence comment — hidden by default in the UI — which explicitly states the Threadline T&M shift was a one-time concession with VP confirmation that it should NOT set precedent. This directly negates OmniConnect's clause 8.2 argument. Furthermore, the signed Kova SOW (section 5.3) explicitly specifies fixed-fee for all phases including integration testing, which supersedes any general precedent clause. Answer D fails because it only reads the visible Confluence page content and the SOW clause 8.2 without discovering the resolved comment that nullifies the precedent claim. Answer C invents a hybrid approach not supported by either the SOW or any precedent — it would actually create new unauthorized commercial terms. Answer D misreads the approval chain; clause 8.2 grants Program Manager authority to adjudicate precedent requests, and the ServiceNow CR shows the PM is the first approver in the chain, meaning Kenji has authority to reject at his level.",
+    "contributor": {
+      "name": "Kenji Nakamura",
+      "title": "Enterprise Implementation Program Manager",
+      "organization": "Atlas Retail Holdings",
+      "years_experience": 12,
+      "domain_expertise": "New store technology deployments, vendor coordination, sales-to-delivery handoff, scope management, go-live readiness"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "ServiceNow",
+        "Confluence",
+        "Google Docs",
+        "Slack",
+        "Smartsheet"
+      ],
+      "informal_signal_location": "Resolved Confluence comment explicitly marking the Threadline exception as non-precedential with VP confirmation",
+      "acronyms_used": [
+        "T&M",
+        "SOW",
+        "CR",
+        "UAT",
+        "PM",
+        "API"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 14
+    }
+  },
+  {
+    "title": "Implementation Acceptance Criteria Mismatch Between SOW and Kickoff Doc",
+    "category": "approval_chain",
+    "domain": "customer_success_support",
+    "difficulty": "hard",
+    "scenario": "Atlas Retail Holdings is implementing a new order management system (OMS) for the Vero brand's wholesale channel. The project is approaching UAT sign-off and the vendor (FulfillPro) claims they have met acceptance criteria. The Vero Brand GM is refusing to sign off.\n\n**Salesforce — Opportunity 'Vero OMS Implementation' (Closed Won, Jan 2026)**\nAmount: $285K | Close Date: Jan 15, 2026\nNotes (by AE @tom.garcia): 'Customer requires sub-2-second order routing for wholesale orders. Committed in verbal meeting with Brand GM. Added to SOW requirements.'\n\n**Google Doc — 'Vero OMS Kickoff - Requirements & Success Criteria' (created Jan 28, 2026)**\nShared with: delivery team, FulfillPro vendor team, Vero ops team\nSection 3 - Acceptance Criteria:\n- Order routing latency: < 5 seconds p95\n- Inventory sync accuracy: 99.5%\n- Channel conflict detection: automated alerts within 1 business day\n[COMMENT by @tom.garcia, Jan 30, 2026]: 'Guys the SOW says sub-2-second routing, not 5. Can we update?'\n[REPLY by @kenji.nakamura, Jan 30]: 'The SOW says sub-2-second but FulfillPro scoped to 5s in their technical proposal. This was discussed in pre-sales. Let me check with their SA.'\n[No resolution — comment left open, never resolved]\n\n**Signed SOW — 'Vero Wholesale OMS - Statement of Work v1.0' (executed Jan 22, 2026)**\nSection 4.1 - Performance Requirements:\n- 'Order routing latency shall not exceed 2 seconds at the 95th percentile under normal load conditions.'\nSection 9.2 - Acceptance: 'Acceptance criteria shall be as defined in Section 4 of this SOW. Customer sign-off required from Brand General Manager.'\n\n**Jira — VERO-OMS-347 'UAT Performance Results'**\nStatus: Done | Completed: Jun 19, 2026\nResults attached:\n- Order routing p95: 3.4 seconds\n- Inventory sync: 99.7%\n- Channel conflict alerts: avg 4 hours\nComment (@fulfillpro.pm, Jun 19): 'All acceptance criteria met per kickoff doc thresholds. Requesting sign-off.'\nComment (@brand.gm.vero, Jun 20): 'This does not meet our requirements. The SOW says 2 seconds. Rejecting UAT.'\nComment (@fulfillpro.pm, Jun 21): 'The kickoff doc that was shared with all parties and used throughout delivery specifies 5 seconds. We built to that spec.'\n\n**Slack — #implementations (Jun 22, 2026, 8:30 AM)**\n@kenji.nakamura: Escalation needed. FulfillPro met kickoff doc criteria (5s) but not SOW criteria (2s). Brand GM won't sign off. SOW is the contractual document.\n@marcus.bell: Who baselined the kickoff doc?\n@kenji.nakamura: It was never formally baselined. It was a working doc from the kickoff meeting.\n@marcus.bell: Then the SOW governs. But did FulfillPro ever formally accept the 2s requirement?\n@kenji.nakamura: Their technical proposal said 5s. But they signed the SOW which says 2s.\n@marcus.bell: :grimacing: Get legal's read. Don't approve the milestone payment yet.\n[Thread ends]",
+    "question": "Based on the contractual and documentary evidence, which document governs the acceptance criteria for UAT sign-off, and has FulfillPro met the threshold?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) The signed SOW governs per its own Section 9.2 which defines acceptance criteria by reference to Section 4; FulfillPro has NOT met criteria (3.4s > 2s)",
+      "B) The acceptance criteria are ambiguous due to the unresolved Google Doc comment; the matter must go to dispute resolution before either party can claim acceptance or rejection",
+      "C) The kickoff Google Doc governs because it was shared with all parties and used as the working specification throughout delivery; FulfillPro has met criteria (3.4s < 5s)",
+      "D) The Salesforce opportunity notes confirm the 2-second requirement was the customer's intent, but since the kickoff doc was the operative project document, FulfillPro should be given a cure period to reach 2s"
+    ],
+    "correct_answer": "A",
+    "rationale": "The signed SOW is unambiguous: Section 4.1 specifies sub-2-second p95 latency, and Section 9.2 explicitly states acceptance criteria are defined in Section 4. The SOW is the executed contractual document, and FulfillPro signed it. The kickoff Google Doc was never formally baselined (confirmed by Kenji in the Slack thread) and therefore has no contractual standing. The unresolved comment in the Google Doc actually supports this conclusion — it flags the discrepancy and was never resolved, meaning the kickoff doc was never corrected to match the SOW, but also was never elevated to supersede it. Answer C is wrong because an informal working document cannot override a signed contract, regardless of how many parties saw it. Answer C is wrong because the criteria are not actually ambiguous in the contractual document; the ambiguity exists only between the contract and a non-binding working doc. Answer D incorrectly treats Salesforce opportunity notes as having contractual weight and conflates customer intent with operative project governance.",
+    "contributor": {
+      "name": "Kenji Nakamura",
+      "title": "Enterprise Implementation Program Manager",
+      "organization": "Atlas Retail Holdings",
+      "years_experience": 12,
+      "domain_expertise": "New store technology deployments, vendor coordination, sales-to-delivery handoff, scope management, go-live readiness"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Salesforce",
+        "Google Docs",
+        "Jira",
+        "Slack",
+        "ServiceNow"
+      ],
+      "informal_signal_location": "Unresolved Google Doc comment from Jan 30 flagging the SOW vs kickoff discrepancy — never acted on, proving the kickoff doc was never formally corrected",
+      "acronyms_used": [
+        "OMS",
+        "SOW",
+        "UAT",
+        "p95",
+        "AE",
+        "SA",
+        "GM",
+        "CR"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 5
+    }
+  }
+]

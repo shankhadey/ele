@@ -1,0 +1,134 @@
+[
+  {
+    "title": "OCC Bulletin Phase-In Conflict Across Legacy Portfolios",
+    "category": "policy_version",
+    "domain": "compliance_legal",
+    "difficulty": "expert",
+    "scenario": "Cascade Financial Group is implementing OCC Bulletin 2025-18 (revised credit risk management standards). The final rule has a 24-month phase-in from effective date of January 1, 2025, with an optional early adoption provision.\n\n**Archer GRC — Regulatory Change Record RCR-2025-041 (Created Feb 3, 2025)**\nStatus: Implementation In Progress | Owner: R. Nakamura\nScope: All credit portfolios across CFG consolidated entity\nPhase-in election: Standard (full compliance by Jan 1, 2027)\nNotes: \"Wealth management division (legacy Piedmont Bank portfolio) opted for early adoption per separate attestation filed 3/15/2025. Commercial lending remains on standard timeline.\"\n\n**SharePoint — /policies/credit-risk/OCC-2025-18-implementation (v3, last edited May 2025)**\nSection 4.1: \"All new credit extensions after June 1, 2025 in early-adoption portfolios must comply with revised concentration limit methodology.\"\n[VERSION HISTORY: v2 (March 2025) stated: \"...after April 1, 2025...\" — date was pushed back per OCC FAQ issued April 14]\n\n**Microsoft Teams — #reg-change-implementation (June 4, 2025, 3:47 PM)**\n@sarah.wellington: Quick question — the Piedmont CRE participations that got moved to the commercial book in the Q1 rebalance, are those under early adoption or standard timeline now?\n@robert.nakamura: Good question. The attestation was filed at portfolio level. If they transferred after the attestation date they should follow the receiving portfolio's election.\n@sarah.wellington: But the loans originated under Piedmont's underwriting standards...\n@robert.nakamura: Origination standards ≠ phase-in election. It's about where they sit today.\n@sarah.wellington: 👍\n[Thread ended]\n\n**Outlook — Subject: \"RE: FW: Concentration limit calc — Whitfield Plaza deal\" (June 12, 2025)**\nFrom: m.torres@cascadefinancial.com\nTo: credit-committee@cascadefinancial.com\nCC: r.nakamura@cascadefinancial.com\n\n> On June 10, p.chandler wrote:\n> > The Whitfield Plaza participation ($14.2M) originated at Piedmont in November 2024.\n> > It was rebalanced to the commercial book on March 28, 2025 — 13 days AFTER the early adoption attestation.\n> > Do we apply the new concentration methodology or the legacy calc?\n>\n> Per the rebalance transfer memo, effective transfer date was March 31 (quarter-end settlement).\n> But operational booking happened March 28.\n\nMike — I think we need to pin down whether \"transfer date\" means trade date or settlement date here. The attestation was filed 3/15. If trade date governs, it transferred after attestation under early-adoption rules. If settlement date, same result. But the FIS booking record shows the loan was coded to commercial portfolio on 3/28.\n\n**FIS Horizon — Loan Detail: LN-2024-PB-08821**\nPortfolio: COMM_CRE (transferred from WM_PIEDMONT, effective 3/28/2025)\nOrigination: 11/14/2024 | Maturity: 11/14/2029\nParticipation amount: $14,200,000\nConcentration code: CRE_OFFICE (legacy methodology applied as of last calc run 5/31/2025)",
+    "question": "For the June 30, 2025 concentration limit calculation, should the Whitfield Plaza participation loan (LN-2024-PB-08821) be calculated using the OCC 2025-18 revised methodology or the legacy methodology?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Revised methodology — the loan transferred to the commercial book after the early adoption attestation date, so it follows the receiving portfolio's standard timeline (compliance required by Jan 2027), but since the new extension date of June 1 has not yet passed for standard-timeline portfolios, legacy methodology applies until then",
+      "B) Revised methodology — the loan is now in the commercial portfolio which is on the standard timeline, but Section 4.1 requires revised methodology for all positions as of June 1, 2025, and the last calc run on 5/31 was the final legacy run",
+      "C) Revised methodology — the loan sat in an early-adoption portfolio at the time the attestation was filed (March 15), so early adoption follows the loan regardless of subsequent transfer",
+      "D) Legacy methodology — the loan originated before the final rule effective date and is grandfathered"
+    ],
+    "correct_answer": "C",
+    "rationale": "The critical signal is in the Teams thread where Robert Nakamura initially states that phase-in election follows 'where they sit today' (the receiving portfolio). However, this general guidance is contradicted by the specific timeline facts: the attestation was filed March 15, 2025, and the loan's operational transfer did not occur until March 28 (and settlement not until March 31). At the time the early-adoption attestation was filed, this loan was still booked in the Piedmont (wealth management) portfolio. The attestation bound all positions in that portfolio as of the attestation date. The OCC FAQ (referenced in SharePoint version history) and standard regulatory practice holds that early adoption elections are irrevocable and attach to positions held at election time. Answer A is wrong because grandfathering applies to origination date relative to the final rule's compliance deadline, not to calculation methodology during phase-in. Answer B incorrectly applies Robert's casual Teams guidance without accounting for the fact that the transfer occurred AFTER the attestation locked in the election for existing positions. Answer D gets the right answer but for the wrong reason — Section 4.1's June 1 date applies to 'new credit extensions,' not existing positions that transferred between books.",
+    "contributor": {
+      "name": "Robert Nakamura",
+      "title": "Regulatory Change Manager",
+      "organization": "Cascade Financial Group",
+      "years_experience": 14,
+      "domain_expertise": "Regulatory implementation, policy versioning, transition periods, grandfathering provisions, compliance attestation"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Archer GRC",
+        "SharePoint",
+        "Microsoft Teams",
+        "Outlook",
+        "FIS Horizon"
+      ],
+      "informal_signal_location": "Teams thread where Robert gives general guidance that appears to answer the question but is contradicted by the specific chronology of the attestation filing date vs. transfer date",
+      "acronyms_used": [
+        "OCC",
+        "CRE",
+        "CFG",
+        "CRA",
+        "FAQ"
+      ],
+      "policy_versions_involved": 3,
+      "temporal_span_months": 8
+    }
+  },
+  {
+    "title": "Retroactive vs. Prospective Examination Finding Under Superseded Regulation",
+    "category": "temporal_consistency",
+    "domain": "compliance_legal",
+    "difficulty": "hard",
+    "scenario": "During Cascade Financial Group's 2025 safety and soundness examination, an OCC examiner issued a Matter Requiring Attention (MRA) referencing BSA/AML transaction monitoring thresholds. The finding creates a temporal consistency puzzle across multiple systems.\n\n**Archer GRC — Examination Finding EF-2025-007 (Filed April 22, 2025)**\nType: MRA | Examiner: OCC Field Office, Charlotte\nFinding: \"The institution's automated transaction monitoring system failed to generate alerts for structuring patterns below the $3,000 threshold during the review period (July 2024 — December 2024).\"\nRegulation cited: 12 CFR 1010.320 (as amended, effective March 1, 2024)\nRemediation deadline: August 31, 2025\n\n**SharePoint — /policies/bsa-aml/monitoring-thresholds (Page version 8, published January 2025)**\nSection 2.1: \"Automated monitoring shall flag potential structuring activity at thresholds of $3,000 and above, per revised regulatory guidance effective March 2024.\"\n[Version 5 (published February 2024) stated: \"...thresholds of $5,000 and above, consistent with long-standing FinCEN guidance...\"]\n[RESOLVED COMMENT by @d.kapoor, Feb 28, 2024]: \"Legal confirmed: the March 1 effective date applies prospectively. We don't need to re-run historical transactions. Just update the threshold going forward.\"\n\n**ServiceNow — CHG-2024-1847 (System change request)**\nRequester: D. Kapoor | Submitted: Feb 15, 2024 | Approved: Feb 27, 2024\nChange: Update AML monitoring threshold from $5,000 to $3,000\nImplementation date: March 4, 2024 (3 days after regulatory effective date)\nCAB notes: \"Approved for March 4 deployment window. 3-day gap between effective date and implementation is within acceptable tolerance per vendor SLA.\"\n\n**Microsoft Teams — #bsa-compliance (April 24, 2025, 9:15 AM)**\n@robert.nakamura: Has anyone reviewed the EF-2025-007 finding closely? The review period starts July 2024 but I want to confirm our system was running at $3K by then.\n@deepa.kapoor: We went live March 4. So July onwards was definitely at the $3K threshold.\n@robert.nakamura: Then why the finding? Were there gaps in coverage?\n@deepa.kapoor: Let me check with the vendor. Could be a model tuning issue vs. a threshold issue.\n@robert.nakamura: 🤔\n[No further replies]\n\n**Outlook — Subject: \"Confidential: AML vendor call notes\" (April 28, 2025)**\nFrom: d.kapoor@cascadefinancial.com\nTo: r.nakamura@cascadefinancial.com\n\nRobert — just got off the call with FIS. Here's the issue: when we updated the threshold in March 2024, the change applied to NEW transaction monitoring rules only. The legacy Piedmont Bank rules (migrated during the 2022 acquisition) were running on a separate rule engine instance. Those rules were still at $5K until the December 2024 platform consolidation. So any Piedmont-originated accounts with structuring patterns between $3K-$5K from March through November 2024 would not have alerted.\n\nThis only affects ~400 accounts in the legacy Piedmont segment. I haven't told the exam team yet. What's our exposure here?",
+    "question": "What is Cascade Financial Group's strongest defensible position when responding to the MRA regarding the March-November 2024 monitoring gap on legacy Piedmont accounts?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) The finding should be challenged — Cascade's internal policy (SharePoint v5) was at $5,000 until the update, and the resolved comment confirms legal advised the new threshold applies prospectively only, meaning historical Piedmont transactions need not be re-monitored",
+      "B) The finding is time-barred — the examination review period begins July 2024, but the monitoring gap started March 2024, and the OCC should have identified this in the prior examination cycle; Cascade can argue lack of timely supervisory notice as a mitigating factor",
+      "C) The gap is a de minimis technical issue — the regulation took effect March 1 but Cascade's policy correctly set the $3,000 threshold and the 3-day implementation delay was within acceptable tolerance; the legacy engine issue is a vendor defect, not a compliance failure",
+      "D) The gap represents a genuine compliance deficiency — the regulation was effective March 1, 2024, Cascade's policy was updated to reflect the $3,000 threshold, but implementation was incomplete because the legacy Piedmont rule engine was not included in the system change; the institution's control environment failed to ensure the policy was operationalized across all platforms"
+    ],
+    "correct_answer": "D",
+    "rationale": "The correct answer requires synthesizing information across all five systems. The regulation was effective March 1, 2024. Cascade's policy was updated (SharePoint v8 confirms the $3,000 threshold). The ServiceNow change was approved and implemented — but only for the primary rule engine. The critical signal hidden in the Outlook email reveals that the legacy Piedmont Bank rules (from the 2022 acquisition) ran on a separate instance that was never updated. This is a control gap: the institution had the right policy but failed to ensure it was operationalized across all systems. Answer A is wrong because the issue is not the 3-day delay (which WAS within tolerance) but the 9-month gap on the legacy platform — and a vendor defect defense fails because the institution owns its compliance program regardless of vendor responsibility. Answer B misreads the resolved comment — legal's 'prospective only' guidance meant they didn't need to re-run pre-March transactions, not that the new threshold could be delayed indefinitely for certain account segments. Answer B is incorrect because examination findings are not 'time-barred'; examiners can cite any deficiency that existed during the review period, and the gap persisted into the July-December 2024 review window.",
+    "contributor": {
+      "name": "Robert Nakamura",
+      "title": "Regulatory Change Manager",
+      "organization": "Cascade Financial Group",
+      "years_experience": 14,
+      "domain_expertise": "Regulatory implementation, policy versioning, transition periods, grandfathering provisions, compliance attestation"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Archer GRC",
+        "SharePoint",
+        "ServiceNow",
+        "Microsoft Teams",
+        "Outlook"
+      ],
+      "informal_signal_location": "Confidential Outlook email from Deepa Kapoor revealing that the legacy Piedmont rule engine was never updated — the root cause that no formal system captured",
+      "acronyms_used": [
+        "OCC",
+        "MRA",
+        "BSA",
+        "AML",
+        "FinCEN",
+        "CFR",
+        "CAB",
+        "SLA"
+      ],
+      "policy_versions_involved": 3,
+      "temporal_span_months": 14
+    }
+  },
+  {
+    "title": "CRA Assessment Area Determination After Three-Bank Merger",
+    "category": "cross_system_synthesis",
+    "domain": "compliance_legal",
+    "difficulty": "expert",
+    "scenario": "Cascade Financial Group must file its updated CRA Assessment Area delineation following the integration of its third acquisition (Appalachian Savings Bank, closed February 2025). The existing assessment areas from prior acquisitions create overlapping and potentially conflicting commitments.\n\n**Archer GRC — CRA Program Record (Last updated March 2025)**\nEntity: Cascade Financial Group (Consolidated) | Charter: OCC #14872\nAssessment Areas: Charlotte MSA (original), Raleigh-Durham MSA (Piedmont 2022), Asheville MSA + 4 non-MSA counties (Appalachian Feb 2025)\nCRA Strategy: Outstanding target | Current: Satisfactory (2023)\nNote: \"Piedmont commitment to Raleigh housing fund ($2.5M/yr through 2026). Confirm transferability.\"\n\n**SharePoint — /compliance/cra/assessment-area-methodology (v2, published April 2025)**\nSection 1.2: \"Assessment areas are delineated based on lending activity concentration, branch footprint, and deposit-taking geography per 12 CFR 25.41.\"\nSection 3.1: \"Legacy commitments from acquired institutions are assumed by the surviving charter unless the commitment agreement specifies non-assignability.\"\n[RESOLVED COMMENT by @r.nakamura, March 10, 2025]: \"Legal is still reviewing the Appalachian commitment letters. The Laurel County community development commitment may have a non-assignability clause — waiting on confirmation.\"\n\n**Dynamics 365 — Community Development Tracking Module**\nCD-PIED-2022-04 | \"Piedmont Affordable Housing\" | $2.5M/yr | 2022-2026 | Active, transferred to Cascade | Investment Test | Wake County, NC\nCD-APP-2019-08 | \"Appalachian Small Business Dev\" | $800K/yr | 2019-2027 | Pending Transfer | [BLANK] | Lending Test | Laurel County, NC (non-MSA)\n\n**Microsoft Teams — #cra-working-group (May 2, 2025, 2:20 PM)**\n@maria.fuentes: OCC examiner asked about Laurel County. We're closing the branch Q3 — still need those counties?\n@robert.nakamura: Branch closure removes deposit-taking basis, but the outstanding commitment complicates it.\n@maria.fuentes: If it's non-assignable it dies with the charter.\n@robert.nakamura: Possibly. But community will push back and examiner is watching. I'd rather honor it voluntarily than look like we're exiting a low-income area.\n@maria.fuentes: ✅ I'll draft retention language.\n\n**Outlook — Subject: \"RE: Appalachian commitment letters — legal review\" (May 15, 2025)**\nFrom: j.whitfield@cascadefinancial.com (General Counsel)\nTo: r.nakamura@cascadefinancial.com\nCC: m.fuentes@cascadefinancial.com\n\nRobert — finally got clarity on this. The Laurel County commitment letter (CD-APP-2019-08) includes Section 7(b): \"This commitment is binding upon the Bank and its successors and assigns.\" So it IS assignable and transfers to Cascade as surviving entity.\n\nHowever — and this is the wrinkle — the commitment references \"Appalachian Savings Bank's assessment area as delineated in its 2019 CRA Strategic Plan.\" If Laurel County is no longer in our assessment area (because we close the branch), the commitment technically still exists but may not count toward our CRA Investment Test since it falls outside our delineated geography.\n\nWe'd still have to honor the dollar commitment, but it becomes a \"broader statewide\" activity rather than assessment-area specific. That's a lower weighting under the new CRA final rule.\n\nThoughts?",
+    "question": "Given the legal review, branch closure plan, and CRA examination context, what is Cascade's optimal regulatory strategy for the Laurel County commitment (CD-APP-2019-08)?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Retain Laurel County in the assessment area despite closing the branch, ensuring the commitment counts at full weighting under the Investment Test and demonstrating continued service to the community during the examination period",
+      "B) Challenge the commitment's transfer on the grounds that it references Appalachian's 2019 CRA Strategic Plan assessment area, which ceased to exist when the charter was dissolved — the successor clause binds to dollars but not geography",
+      "C) Allow the commitment to terminate as non-assignable since the Dynamics 365 record shows status as 'Pending Transfer' with no assigned entity, indicating the legal transfer was never completed",
+      "D) Remove Laurel County from the assessment area after branch closure and honor the commitment as a broader statewide activity — the dollar obligation is met and the lower CRA weighting is immaterial since Cascade targets an Outstanding rating in its primary assessment areas"
+    ],
+    "correct_answer": "A",
+    "rationale": "The correct answer requires synthesizing the legal review (Outlook), the regulatory context (Archer GRC showing Outstanding rating target and examiner scrutiny), the Teams conversation (Robert's explicit preference to 'honor it voluntarily rather than look like we're exiting a low-income area'), and the CRA methodology (SharePoint Section 1.2 on delineation). Under 12 CFR 25.41, assessment areas can be delineated based on lending activity and deposit-taking — but there is no prohibition on retaining an area voluntarily, especially where active commitments exist. Retaining Laurel County ensures full Investment Test weighting, demonstrates community commitment to the examiner (who is 'already watching' per the Teams thread), and supports the Outstanding rating target. Answer A is technically permissible but strategically suboptimal — the lower weighting hurts the Outstanding pursuit, and the optics of exiting a low-income community during examination contradicts Robert's stated strategy. Answer C is legally creative but unsupported; the General Counsel's email confirms the commitment IS assignable via the successors-and-assigns clause, and the geography reference creates a weighting issue, not an enforceability issue. Answer D is wrong because Dynamics 365 showing 'Pending Transfer' reflects an administrative status lag, not a legal determination — the GC email definitively confirms assignability.",
+    "contributor": {
+      "name": "Robert Nakamura",
+      "title": "Regulatory Change Manager",
+      "organization": "Cascade Financial Group",
+      "years_experience": 14,
+      "domain_expertise": "Regulatory implementation, policy versioning, transition periods, grandfathering provisions, compliance attestation"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Archer GRC",
+        "SharePoint",
+        "Dynamics 365",
+        "Microsoft Teams",
+        "Outlook"
+      ],
+      "informal_signal_location": "Teams conversation where Robert reveals his strategic preference ('I'd rather find a way to honor it voluntarily than have it look like we're exiting a low-income area') — this organizational judgment call determines the correct answer over the purely legal analysis",
+      "acronyms_used": [
+        "CRA",
+        "OCC",
+        "MSA",
+        "CFR",
+        "GC"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 6
+    }
+  }
+]

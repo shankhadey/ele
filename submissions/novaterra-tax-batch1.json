@@ -1,0 +1,137 @@
+[
+  {
+    "title": "Tax Abatement Entity Transfer After LLC Merger",
+    "category": "entity_resolution",
+    "domain": "finance_revops",
+    "difficulty": "expert",
+    "scenario": "You are reviewing the property tax abatement status for the Parkview Tower office complex (Parcel 14-22-305-008) ahead of the annual tax payment deadline.\n\n**Yardi Voyager — Tax Module (Property: Parkview Tower)**\nOwning Entity: NovaTerra Parkview Holdings LLC\nAbatement Status: Active — PILOT agreement, 15-year term, Year 8 of 15\nAnnual PILOT Payment: $312,000 (in lieu of ~$1.4M full assessment)\nAbatement Grantor: City of Elgin Economic Development Office\nOriginal Recipient Entity: Parkview Development LLC\nNotes: \"Entity updated per 2023 restructuring. See legal for transfer docs.\"\n\n**iManage — Document ID: NTP-TAX-2023-0441 (Filed: March 2023)**\nTitle: \"Articles of Merger — Parkview Development LLC into NovaTerra Parkview Holdings LLC\"\nFiling State: Illinois\nEffective Date: January 15, 2023\nSurviving Entity: NovaTerra Parkview Holdings LLC\nAttached: Certificate of Merger, Secretary of State filing receipt\n\n**Outlook — From: City of Elgin Economic Development (taxabatements@elgin.gov) | To: v.mehta@novaterra.com | Date: April 3, 2026**\nSubject: RE: PILOT Agreement #2018-ED-0093 — Entity Compliance Review\n\"Mr. Mehta — Per our review, the PILOT agreement was executed with Parkview Development LLC. Our records do not reflect a successor entity. Section 9.2 of the agreement states that benefits are non-transferable without prior written consent of the City Council. Please provide documentation of approved transfer or the abatement may be revoked effective next tax cycle. You have 45 days to respond.\"\n\n**Outlook — From: v.mehta@novaterra.com | To: rachel.sinclair@novaterra.com (General Counsel) | Date: April 4, 2026**\nSubject: FW: PILOT Agreement — URGENT entity issue\n\"Rachel — see below. The city is saying the abatement doesn't transfer. My understanding is the merger was a name change / structural reorganization, not a sale. The EIN didn't change. Do we have anything showing the city was notified at the time of merger?\"\n\n**Outlook — From: rachel.sinclair@novaterra.com | To: v.mehta@novaterra.com | Date: April 4, 2026**\n\"Vivek — Looking into it. I recall Marcus [Marcus Webb, former SVP, departed Nov 2023] handled this. Checking his archived Outlook.\"\n\n**Shared Network Drive — \\\\ntserver\\properties\\parkview\\tax\\abatement\\**\nFile listing:\n- PILOT_Agreement_2018_executed.pdf (Modified: 2018-06-14)\n- Amendment_1_2020.pdf (Modified: 2020-03-22)\n- Transfer_Consent_DRAFT_unsigned.docx (Modified: 2023-02-28)\n- City_Council_Resolution_2023_DRAFT.pdf (Modified: 2023-03-01)\n\n**Microsoft Teams — Channel: #legal-property (April 5, 2026, 9:47 AM)**\n@rachel.sinclair: Found something in Marcus's sent items. He emailed the city's ED office on Feb 10, 2023 with the merger docs. Got a reply from their paralegal (not the director) saying \"received, will process.\" No council resolution ever came through.\n@v.mehta: So we have proof of notification but no formal consent?\n@rachel.sinclair: Correct. The paralegal's acknowledgment isn't the same as City Council approval per 9.2.\n@v.mehta: What's our exposure if they revoke?\n@rachel.sinclair: ~$1.1M annually for remaining 7 years. But I think we have a strong estoppel argument — they accepted PILOT payments for 3 years after the merger without objection.\n@v.mehta: :+1:",
+    "question": "What is NovaTerra's strongest legal position for preserving the PILOT abatement, and what is the most accurate characterization of the entity transfer status?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) The abatement was never validly transferred (no City Council consent per Section 9.2), but NovaTerra has a strong equitable estoppel defense because the city accepted PILOT payments for 3 years post-merger without objection, combined with evidence of notification that was acknowledged but never acted upon.",
+      "B) The abatement transferred validly because the city paralegal's email acknowledgment of the merger documents constitutes written consent on behalf of the City of Elgin.",
+      "C) The abatement automatically transferred because a statutory merger is not a 'transfer' under Illinois law; the city's notice is without legal basis and can be ignored.",
+      "D) The abatement is void because the Transfer Consent was never signed (only a draft exists on the network drive); NovaTerra must reapply for a new PILOT agreement."
+    ],
+    "correct_answer": "A",
+    "rationale": "The correct answer requires synthesizing information across five sources: Yardi (current status and original entity), iManage (merger documentation), the city's email (formal challenge citing Section 9.2), the shared network drive (unsigned draft consent revealing the transfer was never formalized), and the Teams conversation (discovery of the paralegal acknowledgment and the estoppel argument). Answer C is wrong because while statutory merger arguments exist, the scenario doesn't establish Illinois-specific merger-transfer case law, and more importantly the PILOT agreement's Section 9.2 explicitly requires consent — contractual provisions can override statutory defaults. Answer C is wrong because the unsigned draft doesn't automatically void the abatement; the abatement was granted to the original entity which merged into the surviving entity — it's not simply void, it's in a legally contested state. Answer D is wrong because a paralegal's email acknowledgment of receipt does not constitute City Council approval as required by Section 9.2. The critical signal — Rachel's discovery in Marcus Webb's archived sent items, revealed only in Teams — establishes both the notification history and the estoppel argument that represents NovaTerra's strongest position.",
+    "contributor": {
+      "name": "Vivek Mehta",
+      "title": "Property Tax Manager",
+      "organization": "NovaTerra Property Group",
+      "years_experience": 12,
+      "domain_expertise": "Assessment appeals, valuation methodology disputes, exemption applications, multi-parcel portfolio management"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Yardi Voyager",
+        "iManage",
+        "Outlook",
+        "Shared Network Drive",
+        "Microsoft Teams"
+      ],
+      "informal_signal_location": "Microsoft Teams message revealing the paralegal acknowledgment found in a departed employee's archived email — establishes the estoppel argument",
+      "acronyms_used": [
+        "PILOT",
+        "SNDA",
+        "EIN",
+        "ED",
+        "SVP",
+        "LLC",
+        "CAM"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 38
+    }
+  },
+  {
+    "title": "Assessment Appeal Methodology Conflict Across Pending Filing",
+    "category": "temporal_consistency",
+    "domain": "finance_revops",
+    "difficulty": "hard",
+    "scenario": "You are managing the portfolio-wide assessment appeal calendar and discover a stalled appeal for the Lakeshore Commons retail property that has been pending for over two years.\n\n**Yardi Voyager — Tax Module (Property: Lakeshore Commons)**\nOwning Entity: NovaTerra Lakeshore LLC\nParcel: 09-15-200-042\nAssessed Value (Current Year 2026): $28,400,000\nAssessed Value (Appeal Year 2024): $31,200,000\nAppeal Status: Pending — Filed June 2024\nAppeal Basis: Income approach, argued market cap rate of 7.25% supports value of $24,800,000\nAssessor's Position: Not yet responded\n\n**County Assessor Portal — Cook County (accessed June 25, 2026)**\nParcel 09-15-200-042 — Lakeshore Commons\nCurrent Assessment: $28,400,000 (reassessed Jan 2026 per triennial cycle)\nMethodology Note (effective Jan 1, 2026): \"Per Board of Review Resolution 2025-BR-112, income approach valuations shall apply a market-derived capitalization rate floor of 6.0% for retail properties in suburban submarkets, replacing the prior practice of accepting taxpayer-submitted cap rates without independent verification.\"\nPrior Methodology: No stated cap rate floor; taxpayer-submitted income proformas accepted with supporting comparable evidence.\n\n**iManage — Document: NTP-TAX-2024-Appeal-Lakeshore.pdf**\nFiled: June 14, 2024\nArgument Summary: Income approach using 7.25% cap rate derived from 5 comparable sales (2022-2023 vintage). NOI of $1,798,000 / 7.25% = $24,800,000 vs. assessed $31,200,000.\nComparables cited: All suburban retail, 2022-2023 sales, cap rates 6.8%–7.6%.\nStatus: No hearing date assigned.\n\n**Outlook — From: david.park@cookcountyassessor.gov | To: v.mehta@novaterra.com | Date: June 20, 2026**\nSubject: Lakeshore Commons — Hearing Scheduled\n\"Mr. Mehta — Your appeal (Case #2024-R-05521) is scheduled for Board of Review hearing on August 12, 2026. Please note that the Board will apply current valuation methodology standards to all pending cases per Resolution 2025-BR-112. If you wish to submit supplemental evidence or amend your filing, the deadline is July 28.\"\n\n**Excel — \\\\ntserver\\tax\\models\\lakeshore_valuation_2024.xlsx (Last Modified: June 2024)**\nTab: \"Income Approach\"\nNOI: $1,798,000\nCap Rate Used: 7.25%\nIndicated Value: $24,800,000\nTab: \"Sensitivity\" (added by V. Mehta)\nAt 6.0% cap rate: $29,966,667\nAt 6.5%: $27,661,538\nAt 7.0%: $25,685,714\nNote in cell B22: \"If county enforces 6% floor, our income approach actually supports a HIGHER value than current assessment. Need to pivot to comparable sales approach or withdraw.\"\n\n**Microsoft Teams — #tax-team (June 22, 2026, 3:15 PM)**\n@v.mehta: Heads up — Lakeshore appeal hearing set for Aug 12. Problem: the new BR resolution applies a 6% cap rate floor retroactively to pending appeals. At 6% our income approach gives $30M which is ABOVE the $28.4M current assessment. We'd be arguing ourselves into a higher value.\n@jenny.liu: Wait, can they apply new methodology to a 2024 filing? That seems wrong.\n@v.mehta: Per their email, yes. \"Current valuation methodology standards to all pending cases.\"\n@jenny.liu: What about the comparables? Those still support lower value regardless of cap rate.\n@v.mehta: True but the comps are 2022-2023 vintage. Board might say they're stale for a 2026 hearing.\n@jenny.liu: Talk to outside counsel?\n@v.mehta: Already pinged Rachel. She's checking if there's a due process argument for methodology changes mid-appeal.\n[Thread — no further replies]",
+    "question": "Given the new cap rate floor methodology and the August 2026 hearing date, what is Vivek's optimal strategy for the Lakeshore Commons assessment appeal?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Withdraw the appeal before the hearing, because the income approach at the 6% floor produces a value ($29.97M) above the current assessment ($28.4M), and proceeding risks the Board increasing the assessed value.",
+      "B) Amend the filing to update the cap rate to 6.5% (midpoint compromise) and add 2025-vintage comparable sales to demonstrate the market supports a rate above the 6% floor.",
+      "C) Proceed with the original income approach filing using 7.25% cap rate, as the appeal was filed under the prior methodology and the Board cannot retroactively apply Resolution 2025-BR-112 to a 2024 case.",
+      "D) Amend the filing by July 28 to pivot from income approach to comparable sales approach using the 2022-2023 retail comps already in the file, abandoning the cap rate argument entirely while the comps still support a value below $28.4M."
+    ],
+    "correct_answer": "D",
+    "rationale": "The critical insight comes from synthesizing the county assessor's email (new methodology applies retroactively to pending cases), the Excel sensitivity analysis (6% floor yields value above current assessment), and the Teams discussion (Vivek's own analysis that the income approach now hurts them, plus Jenny's suggestion about comparables). Answer A is wrong because the assessor's email explicitly states the new methodology applies to all pending cases — proceeding under the old methodology invites rejection or worse, Board adoption of the 6% rate yielding a higher assessment. Answer B is superficially safe but suboptimal — withdrawal preserves the current $28.4M assessment but forfeits the opportunity to reduce it; the original comps do support a lower value via a different approach. Answer D is correct because it leverages the existing comparable sales evidence (already in the appeal file) which supports a value below $28.4M independent of any cap rate methodology, and the July 28 amendment deadline gives time to restructure. Answer C is wrong because it still relies on the income approach and a cap rate argument — even at 6.5%, the Board may apply the 6% floor, and 2025-vintage comps for retail may actually show cap rate compression (lower rates = higher values), undermining the argument further.",
+    "contributor": {
+      "name": "Vivek Mehta",
+      "title": "Property Tax Manager",
+      "organization": "NovaTerra Property Group",
+      "years_experience": 12,
+      "domain_expertise": "Assessment appeals, valuation methodology disputes, exemption applications, multi-parcel portfolio management"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Yardi Voyager",
+        "Cook County Assessor Portal",
+        "iManage",
+        "Outlook",
+        "Excel (shared network drive)",
+        "Microsoft Teams"
+      ],
+      "informal_signal_location": "Teams discussion where Vivek's own analysis reveals the income approach is self-defeating, and Jenny's unreplied suggestion to use comparables instead",
+      "acronyms_used": [
+        "NOI",
+        "BR",
+        "CAM",
+        "TIF",
+        "LLC",
+        "NTP"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 26
+    }
+  },
+  {
+    "title": "TIF District Parcel Consolidation Without Owner Notification",
+    "category": "cross_system_synthesis",
+    "domain": "finance_revops",
+    "difficulty": "expert",
+    "scenario": "During quarterly tax reconciliation, you discover a discrepancy between Yardi's parcel records and the county assessor's portal for two adjacent properties in your portfolio.\n\n**Yardi Voyager — Tax Module**\nProperty 1: Riverview Plaza East\n- Owning Entity: NovaTerra Riverview East LLC\n- Parcel: 17-03-401-015\n- Assessed Value: $14,200,000\n- Tax District: Riverview TIF #3 (increment captured through 2031)\n- Annual Tax: $187,000 (base amount only; increment to TIF)\n\nProperty 2: Riverview Plaza West\n- Owning Entity: NovaTerra Riverview West LLC\n- Parcel: 17-03-401-016\n- Assessed Value: $9,800,000\n- Tax District: Standard (no TIF overlay)\n- Annual Tax: $412,000 (full rate)\n\n**County Assessor Portal — Lake County (accessed June 26, 2026)**\nParcel 17-03-401-015: NOT FOUND\nParcel 17-03-401-016: NOT FOUND\nParcel 17-03-401-017 (NEW): \n- Owner: NovaTerra Riverview East LLC (listed) / NovaTerra Riverview West LLC (listed)\n- Assessed Value: $24,000,000 (combined)\n- Tax District: Riverview TIF #3\n- Consolidation Date: January 2026 reassessment\n- Note: \"Parcels 015 and 016 consolidated per plat of consolidation recorded Doc #2025-R-88431\"\n\n**iManage — Search results for \"Riverview\" + \"consolidation\"**\nNo documents found.\n\n**Outlook — From: Lake County Assessor (assessor-notices@lakecounty.gov) | To: property-tax@novaterra.com | Date: November 12, 2025**\nSubject: Notice of Proposed Plat of Consolidation — Parcels 17-03-401-015 & 016\n\"This notice is to inform the owner(s) of record that a plat of consolidation has been initiated for the above-referenced parcels pursuant to [County Ord. 2019-44]. Objections must be filed within 30 days of this notice.\"\n[Email was received by the property-tax@novaterra.com distribution list. No reply was sent. No forwarding to Vivek or legal.]\n\n**Microsoft Teams — #finance-ops (June 26, 2026, 11:02 AM)**\n@v.mehta: Has anyone seen this? County consolidated our Riverview parcels into one tax PIN. The east parcel was in TIF #3, west was not. Now the whole combined parcel shows as TIF #3.\n@carla.jensen (Controller): Wait — that means the west building's taxes drop from $412K to just the base amount?\n@v.mehta: That's what it looks like. The combined assessed value is $24M with TIF overlay on the whole thing. But I don't trust this. The TIF boundary map I have from 2019 clearly excludes the west parcel.\n@carla.jensen: So either the TIF boundary was amended, or the assessor made an error applying TIF to the consolidated parcel.\n@v.mehta: Exactly. If it's an error, they'll fix it and we'll owe the difference. If the TIF boundary was legitimately extended...\n@carla.jensen: ...we'd be saving ~$280K/year. Don't poke the bear? :eyes:\n@v.mehta: We have a fiduciary obligation to accrue correctly. If this unwinds we'd need to restate.\n@jenny.liu: Also — who approved the consolidation? Did legal know? Two different LLCs own these parcels.\n@v.mehta: Good catch. A consolidation across two separate legal entities shouldn't have been recorded without both owners' consent.\n[No further replies]\n\n**Shared Network Drive — \\\\ntserver\\properties\\riverview\\tax\\**\nFile: TIF_3_Boundary_Map_2019.pdf (Modified: 2019-08-22)\nFile: Riverview_East_Abatement_Schedule.xlsx (Modified: 2024-01-15)\nNo consolidation-related documents present.",
+    "question": "What combination of issues must Vivek resolve, and what is the correct treatment for financial accrual purposes while the situation is under investigation?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) No accrual change needed; continue booking taxes per Yardi's current records ($187K + $412K) until the county formally notifies NovaTerra of the change through proper legal channels.",
+      "B) Accrue taxes at the new combined TIF rate ($187K equivalent for the full parcel) because the county's consolidation is the legal reality until formally reversed; investigate the TIF boundary question separately.",
+      "C) Accrue taxes at the pre-consolidation rates ($187K + $412K = $599K) because the consolidation is likely void due to lack of owner consent from both LLCs, and the TIF district application to the west parcel is either an error or requires boundary amendment verification — the conservative accrual protects against restatement risk.",
+      "D) Accrue taxes at the full non-TIF rate for the combined parcel ($24M at full rate) because the TIF overlay is clearly an assessor error since the 2019 boundary map excludes the west parcel."
+    ],
+    "correct_answer": "C",
+    "rationale": "This scenario requires synthesizing six information sources: Yardi (pre-consolidation parcel structure and TIF status), county assessor portal (post-consolidation reality), iManage (absence of any consolidation authorization documents), the Outlook email to the distribution list (notice was received but never acted upon — establishing that NovaTerra was notified but the notice went to a generic inbox with no response), the Teams conversation (identifying both the TIF boundary question and the two-LLC consent problem), and the shared drive (confirming the 2019 TIF boundary excludes the west parcel). Answer A is wrong because it treats the county's action as settled when there are two independent legal defects: (1) the consolidation likely required consent from both LLC owners which was never given, and (2) the TIF overlay on the west parcel contradicts the recorded boundary map. Accruing at the lower rate creates restatement risk Vivek explicitly flagged. Answer C is correct because it identifies both the entity consent problem and the TIF boundary uncertainty, and applies conservative accrual methodology pending resolution — this matches Vivek's stated concern about fiduciary obligation and restatement risk. Answer D overcorrects by assuming the TIF is entirely invalid for the whole parcel, when in fact the east parcel legitimately falls within TIF #3. Answer D is wrong because NovaTerra WAS notified (the November 2025 email to the distribution list), even though the notice was never properly routed internally — the county fulfilled its notification obligation, meaning NovaTerra can't claim lack of notice. The critical hidden signal is the unactioned email to the property-tax distribution list that proves notification occurred.",
+    "contributor": {
+      "name": "Vivek Mehta",
+      "title": "Property Tax Manager",
+      "organization": "NovaTerra Property Group",
+      "years_experience": 12,
+      "domain_expertise": "Assessment appeals, valuation methodology disputes, exemption applications, multi-parcel portfolio management"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Yardi Voyager",
+        "Lake County Assessor Portal",
+        "iManage",
+        "Outlook",
+        "Microsoft Teams",
+        "Shared Network Drive"
+      ],
+      "informal_signal_location": "Unactioned email to property-tax distribution list proving notification was received but never routed; Teams emoji reaction (:eyes:) suggesting temptation to not investigate the favorable error",
+      "acronyms_used": [
+        "TIF",
+        "PIN",
+        "LLC",
+        "CAM",
+        "NOI",
+        "GMP"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 7
+    }
+  }
+]

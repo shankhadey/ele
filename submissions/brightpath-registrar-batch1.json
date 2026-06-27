@@ -1,0 +1,134 @@
+[
+  {
+    "title": "Pre-Merge Dual Record Consolidation with Conflicting Enrollment Status",
+    "category": "entity_resolution",
+    "domain": "compliance_legal",
+    "difficulty": "hard",
+    "scenario": "**Banner SIS — Student Record A (Campus East legacy ID: E-2019-4471)**\nName: Thanh Nguyen | Admit Term: Fall 2019 | Campus: East Portland (pre-merge) | Catalog Year: 2019-20\nCredits Earned: 68 | Enrollment Status: Active | Major: BS Computer Science\nHold: None | Advisor: Dr. R. Patel\n\n**Banner SIS — Student Record B (Campus West legacy ID: W-2021-0893)**\nName: Thanh V. Nguyen | Admit Term: Fall 2021 | Campus: West Portland (pre-merge) | Catalog Year: 2021-22\nCredits Earned: 24 | Enrollment Status: Withdrawn (admin withdrawal, Jan 2024)\nHold: FA Hold — Return to Title IV balance of $2,340\nAdvisor: Unassigned\n\n**DegreeWorks — Audit for E-2019-4471**\nDegree Progress: 72% complete | Remaining: 6 upper-division CS courses + capstone\nException Applied: MATH 251 substituted for MATH 260 (approved by Dr. K. Albrecht, retired Dec 2023)\nFlag: \"Multiple PIDM records detected — possible duplicate\"\n\n**Slate (Admissions) — Application Record**\nApplicant: Thanh Van Nguyen | DOB: 03/15/2001 | SSN last 4: 7748\nApplied: Spring 2021 (transfer from PCC — Portland Community College)\nTransfer Credits Evaluated: 24 credits from PCC (articulation agreement v3, effective 2020)\nNote: \"Student previously enrolled at East campus — readmit vs. new admit? Coded as new per West campus procedure.\"\n\n**Slack — #registrar-ops (Feb 12, 2026, 9:47 AM)**\n@jennifer.c: Hey @michael.o — got a student calling about their FA hold. Says they never withdrew from West, claims they were always at East and someone created a duplicate when they took one course through West's continuing ed catalog.\n@michael.o: Which term?\n@jennifer.c: Fall 2023. They say they enrolled in one online section listed under West's schedule.\n@michael.o: Ah, that was during the transition semester when online sections hadn't been consolidated yet.\n@jennifer.c: Right. So the admin withdrawal was probably automated when West's standalone enrollment system got decommissioned.\n[Thread has 1 emoji reaction: :eyes: from @registrar-director]\n\n**Google Doc — \"Post-Merge ID Reconciliation Log\" (last edited Aug 2024)**\nRow 47: E-2019-4471 / W-2021-0893 | Flagged: Likely duplicate | Action: \"Pending — need department chair confirmation of continuous enrollment\" | Assigned: T. Okafor (transferred to another department, Sep 2024)\n[RESOLVED COMMENT by @t.okafor, Jul 2024]: \"Confirmed same student via SSN match. Recommend merge into E-record, treat W-credits as earned under E-enrollment. But FA hold needs resolution first — can't merge with outstanding R2T4 balance.\"",
+    "question": "What is the correct course of action for resolving Thanh Nguyen's records before the student can register for Fall 2026?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Merge both records into E-2019-4471 under the 2019-20 catalog year, but the FA hold must be resolved through Financial Aid's R2T4 recalculation process before the merge can be completed — the automated withdrawal doesn't automatically void the Title IV liability.",
+      "B) Merge both records into E-2019-4471, add the 24 West credits to the existing 68, clear the FA hold since the withdrawal was an automated error, and apply the 2019-20 catalog year to all coursework.",
+      "C) Create a new consolidated record under the post-merge unified ID schema, re-evaluate all transfer credits under the current 2025-26 catalog, and require the student to petition for the MATH 251 substitution again since Dr. Albrecht is no longer available to verify.",
+      "D) Keep records separate until the FA hold is resolved; the student should register under the East record (E-2019-4471) which has no hold, and reconcile the West record later."
+    ],
+    "correct_answer": "A",
+    "rationale": "The resolved Google Doc comment from T. Okafor confirms the records are the same student (SSN match) and recommends merging into the E-record, but explicitly notes the FA hold must be resolved first. The R2T4 balance is a federal Title IV obligation — even if the admin withdrawal was triggered by a system decommissioning rather than student action, the institution must complete the R2T4 recalculation to determine if the balance is valid or should be reversed. The Slack thread provides the critical context that the withdrawal was likely automated, but this doesn't eliminate the federal compliance requirement. Answer D incorrectly assumes the hold can simply be cleared without R2T4 recalculation — this would be a federal compliance violation. Answer C is operationally tempting but creates ongoing FERPA issues with two active records and doesn't resolve the underlying problem. Answer D is unnecessarily destructive — catalog year rights follow the student's continuous enrollment, the substitution was properly authorized when granted (retirement doesn't void prior approvals), and re-evaluation under current catalog penalizes the student for an institutional system error.",
+    "contributor": {
+      "name": "Michael Owusu",
+      "title": "Associate Registrar",
+      "organization": "Brightpath State University",
+      "years_experience": 11,
+      "domain_expertise": "Enrollment verification, transfer credit evaluation, academic policy interpretation, FERPA compliance, degree audit exceptions"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Banner SIS",
+        "DegreeWorks",
+        "Slate",
+        "Slack",
+        "Google Docs"
+      ],
+      "informal_signal_location": "Resolved Google Doc comment confirming SSN match and merge recommendation with FA caveat; Slack thread revealing the withdrawal was likely automated during system decommissioning",
+      "acronyms_used": [
+        "FA",
+        "R2T4",
+        "PIDM",
+        "FERPA",
+        "PCC",
+        "SSN"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 84
+    }
+  },
+  {
+    "title": "Catalog Year Rights Conflict After Articulation Agreement Revision",
+    "category": "policy_version",
+    "domain": "compliance_legal",
+    "difficulty": "expert",
+    "scenario": "**Banner SIS — Student Record (ID: BSU-2022-11087)**\nName: Maria Elena Gutierrez-Soto | Admit Term: Fall 2022 | Type: Transfer from Mt. Hood CC\nCatalog Year: 2022-23 | Major: BA Psychology | Credits Earned: 94 | GPA: 3.41\nExpected Graduation: Spring 2026 | Enrollment: Continuous (no breaks)\n\n**DegreeWorks — Degree Audit (generated Jun 15, 2026)**\nStatus: NOT CLEARED FOR GRADUATION\nDeficiency: PSY 410 (Research Methods) — Required, not completed\nNote: \"PSY 210 (Intro Research Methods — Mt. Hood CC) was previously mapped as equivalent. Equivalency removed per articulation agreement v5 (effective Fall 2024). Student must complete PSY 410 or file substitution petition.\"\n\n**Google Drive — \"Articulation Agreements\" folder**\nFile: MtHoodCC_Psychology_v4.pdf (effective 2020-2024)\n  → Section 3.2: \"PSY 210 at MHCC satisfies PSY 410 prerequisite AND partial equivalency (lab component waived if GPA > 3.0)\"\nFile: MtHoodCC_Psychology_v5.pdf (effective Fall 2024)\n  → Section 3.2: \"PSY 210 at MHCC satisfies prerequisite only. Full equivalency discontinued — lab methodology component no longer aligns with revised PSY 410 learning outcomes.\"\n\n**Google Chat — Faculty DM between Dr. Leah Morrison (Psych Chair) and Dr. James Whitfield (Jun 2, 2026)**\nMorrison: Jim — we have 6 students caught in the artic agreement change for PSY 410. They had equivalency under v4 but DegreeWorks stripped it when we loaded v5.\nWhitfield: Wasn't there supposed to be a teach-out provision? I thought we agreed in curriculum committee that anyone admitted under v4 would be held harmless.\nMorrison: That's what I recall too. But I can't find it in the minutes. Karen took notes but she went on sabbatical.\nWhitfield: Check the Canvas shell for the curriculum committee — she used to post draft minutes there before they went to Faculty Senate.\n:thumbsup: [Morrison reacted]\n\n**Canvas LMS — \"Curriculum Committee 2023-24\" course shell (unpublished)**\nAnnouncement (posted Nov 14, 2023, by Karen Ostrowski): \"Draft minutes from 11/8 meeting attached. Please review before I submit to Senate.\"\nAttachment: CurrComm_Minutes_Nov8_2023.docx\nContent excerpt: \"Motion 23-14: Articulation agreement revisions for MHCC Psychology pathway. Approved 7-2. AMENDMENT (friendly, accepted): Students admitted under v4 with continuous enrollment retain v4 equivalencies through graduation. No sunset date.\"\n\n**Banner — Catalog/Curriculum module**\nPSY 410 course record: Last modified Sep 2024. Learning outcomes revised. Lab component now mandatory (4 cr → 5 cr effective Fall 2024).\nNote: No teach-out provision coded. DegreeWorks exception table: Empty for PSY 410/MHCC equivalency.\n\n**Slate (Admissions) — Transfer Evaluation Record**\nEvaluator notes (Aug 2022): \"PSY 210 — mapped per artic agreement v4. Equivalency: PSY 410. Confirmed with dept.\"",
+    "question": "Should Maria Elena Gutierrez-Soto be cleared for graduation without completing PSY 410, and what is the authoritative basis for the decision?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) No — the current articulation agreement (v5) governs, and DegreeWorks correctly removed the equivalency. She must complete PSY 410 or petition for a substitution through the standard process.",
+      "B) No — while the curriculum committee discussed a teach-out, the motion was never submitted to Faculty Senate (Karen went on sabbatical), so it lacks institutional authority. The student must petition.",
+      "C) Yes — catalog year rights mean the 2022-23 catalog governs all of her degree requirements, and since the equivalency existed when she was admitted, it cannot be retroactively revoked under any circumstances.",
+      "D) Yes — the curriculum committee motion 23-14 with its accepted amendment constitutes an approved teach-out provision; her continuous enrollment and v4 catalog year entitle her to the original equivalency regardless of the DegreeWorks configuration."
+    ],
+    "correct_answer": "D",
+    "rationale": "The critical signal is in the unpublished Canvas course shell — the curriculum committee minutes document Motion 23-14 with an accepted friendly amendment explicitly granting continuous-enrollment students their v4 equivalencies. Curriculum committee motions are binding institutional policy once approved by vote (7-2), regardless of whether the minutes were subsequently submitted to Faculty Senate for informational filing. Faculty Senate receives minutes as a reporting function, not an approval function for curriculum decisions — curriculum authority is delegated to the committee. The student has maintained continuous enrollment since Fall 2022 under the 2022-23 catalog year, satisfying both conditions of the amendment. Answer A applies the wrong policy version — the v5 agreement governs new students but the amendment specifically carved out continuing students. Answer C misunderstands governance structure — the committee's vote IS the decision; Senate filing is administrative, not ratifying. The motion was approved in committee; Karen's sabbatical affected the paperwork trail, not the legal standing of the vote. Answer C overstates catalog year protections — catalog year guarantees degree requirements but does NOT automatically preserve all transfer equivalencies, which are governed by articulation agreements. The correct answer requires the specific teach-out amendment, not a blanket catalog year argument.",
+    "contributor": {
+      "name": "Michael Owusu",
+      "title": "Associate Registrar",
+      "organization": "Brightpath State University",
+      "years_experience": 11,
+      "domain_expertise": "Enrollment verification, transfer credit evaluation, academic policy interpretation, FERPA compliance, degree audit exceptions"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Banner SIS",
+        "DegreeWorks",
+        "Google Drive",
+        "Google Chat",
+        "Canvas LMS",
+        "Slate"
+      ],
+      "informal_signal_location": "Unpublished Canvas course shell containing draft curriculum committee minutes with the binding teach-out amendment — discoverable only via faculty Google Chat hint",
+      "acronyms_used": [
+        "MHCC",
+        "PSY",
+        "GPA",
+        "artic",
+        "DW"
+      ],
+      "policy_versions_involved": 3,
+      "temporal_span_months": 46
+    }
+  },
+  {
+    "title": "Retroactive Withdrawal Request Spanning Pre-Merge Enrollment Terms",
+    "category": "temporal_consistency",
+    "domain": "compliance_legal",
+    "difficulty": "hard",
+    "scenario": "**Email — Subject: \"Retroactive withdrawal petition — Jordan Akiyama\" (May 28, 2026)**\nFrom: jordan.akiyama@brightpath.edu\nTo: registrar@brightpath.edu\nCC: disabilityservices@brightpath.edu\n\nHi, I'm requesting a retroactive withdrawal from Spring 2024. I was hospitalized for most of that term (documentation attached) and received all F grades. I've since returned and am doing well, but those grades are destroying my GPA and affecting my eligibility for the teaching credential program. My disability services coordinator said this should be straightforward given the medical documentation.\n\n**Banner SIS — Student Record (ID: BSU-2020-07734)**\nName: Jordan Akiyama | Admit: Fall 2020 (West campus, pre-merge) | Catalog: 2020-21\nSpring 2024 enrollment: 15 credits (5 courses) | Grades: F, F, F, F, W\nCumulative GPA: 2.14 (would be 2.87 without Spring 2024 Fs)\nProgram: BA Education — Teaching Credential Track\n\n**Banner — Academic Policy Configuration**\nRetroactive Withdrawal Policy (effective Fall 2023, Policy #AR-2023-07):\n\"Petitions must be filed within 12 months of the affected term's end date. Requires documentation of extenuating circumstances. Approved by Associate Registrar.\"\n\n**Slack — #registrar-ops (May 29, 2026, 11:15 AM)**\n@sarah.p: Michael — the Akiyama retro-W petition just came in. It's for Spring 2024. That's past the 12-month window, right?\n@michael.o: When did Spring 2024 end? May 2024. So the deadline was May 2025. Yeah, it's a year past.\n@sarah.p: The student says disability services told them it would be fine.\n@michael.o: Did they file an extension with us before the deadline?\n@sarah.p: Doesn't look like it.\n@michael.o: Check if they were under the old West campus policy though. The 12-month limit was new with AR-2023-07.\n\n**SharePoint — Archived Policies (West Campus Legacy)**\nFile: WestPDX_AcademicRegulations_2020.pdf\nSection 9.4 — Retroactive Withdrawal:\n\"Students may petition for retroactive withdrawal at any time prior to degree conferral. No time limit. Requires documentation of circumstances beyond the student's control and approval by the Academic Standards Committee.\"\n\n**Google Sheet — \"Academic Standards Committee Decisions 2024-25\" (last row: Apr 2026)**\n[No entry for Jordan Akiyama]\nColumn headers: Student ID | Term | Petition Type | Decision | Approved By | Notes\nRow 112 (Mar 2025): BSU-2019-03341 | Fall 2023 | Retro-W | APPROVED | Committee | \"Pre-merge student — applied West campus regs per transition memo\"\nRow 113 (Mar 2025): BSU-2021-08822 | Spring 2023 | Retro-W | DENIED | Committee | \"Enrolled under unified policy — 12-month window applies\"\n\n**Google Doc — \"Campus Merger Transition Memorandum\" (authored by VP Academic Affairs, Jul 2021)**\nSection 4.1: \"Students admitted to West or East campuses prior to Fall 2021 retain the academic regulations of their admitting campus for the duration of continuous enrollment, unless the unified regulation is more favorable to the student.\"\n[RESOLVED COMMENT by @assoc.provost, Aug 2023]: \"Does this sunset? We can't maintain two policy sets forever.\"\n[Reply in thread by @vp.acad]: \"Operationally yes, but we never set a formal sunset. Legal says we're bound until we formally supersede with notice to affected students. Put it on the governance agenda.\"\n[No further action visible in any system]",
+    "question": "Is Jordan Akiyama eligible to petition for retroactive withdrawal from Spring 2024, and under which policy framework?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) No — the petition is past the 12-month deadline under AR-2023-07, which is the current unified policy. The student should have filed by May 2025.",
+      "B) Yes — as a pre-merge West campus student with continuous enrollment, the West campus policy (no time limit) applies per the transition memorandum; however, the petition must go to the Academic Standards Committee, not the Associate Registrar.",
+      "C) No — while the West campus policy might technically apply, the Academic Standards Committee has not yet received the petition, and precedent shows the committee process takes months; the student should instead appeal the F grades individually through the grade appeal process.",
+      "D) Yes — the transition memorandum applies, and since AR-2023-07 doesn't have a time limit component that is 'more favorable,' the West policy governs entirely, meaning the Associate Registrar can approve it directly."
+    ],
+    "correct_answer": "B",
+    "rationale": "The transition memorandum (Section 4.1) explicitly states pre-Fall 2021 admits retain their admitting campus regulations during continuous enrollment. Jordan was admitted Fall 2020 at West campus and has maintained continuous enrollment. The resolved comment thread confirms this provision was never formally sunset — the VP acknowledged legal obligation to maintain it until formal supersession with notice. The West campus policy has no time limit but requires Academic Standards Committee approval (not Associate Registrar). The Google Sheet precedent in Row 112 confirms this exact framework was applied to another pre-merge student as recently as March 2025. Answer A incorrectly applies the unified policy without considering the transition memorandum's grandfathering provision. Answer C correctly identifies the applicable policy framework but misapplies the approval authority — the West policy specifies Academic Standards Committee, and the 'more favorable' clause in the transition memo applies to the substantive regulation (no time limit = more favorable), not the approval pathway. The Associate Registrar authority in AR-2023-07 doesn't override the committee requirement from the West policy. Answer D conflates the procedural path — grade appeals and retroactive withdrawals are different processes with different outcomes and standards.",
+    "contributor": {
+      "name": "Michael Owusu",
+      "title": "Associate Registrar",
+      "organization": "Brightpath State University",
+      "years_experience": 11,
+      "domain_expertise": "Enrollment verification, transfer credit evaluation, academic policy interpretation, FERPA compliance, degree audit exceptions"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Banner SIS",
+        "Slack",
+        "SharePoint",
+        "Google Sheets",
+        "Google Docs",
+        "Email"
+      ],
+      "informal_signal_location": "Resolved comment thread on the transition memorandum confirming the grandfathering provision was never sunset; Google Sheet precedent row showing identical framework applied to another student",
+      "acronyms_used": [
+        "GPA",
+        "retro-W",
+        "AR",
+        "FA",
+        "FERPA"
+      ],
+      "policy_versions_involved": 3,
+      "temporal_span_months": 72
+    }
+  }
+]

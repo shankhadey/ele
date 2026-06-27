@@ -1,0 +1,138 @@
+[
+  {
+    "title": "Protocol Amendment Effective Date Conflict Across IRB and Sponsor Communications",
+    "category": "temporal_consistency",
+    "domain": "compliance_legal",
+    "difficulty": "expert",
+    "scenario": "**OnCore CTMS — Study VHP-2249 (BEACON-3 Phase II)**\nProtocol Version: 4.0 | Sponsor: Aethon Therapeutics\nAmendment 3 submitted to IRB: 2026-02-18\nIRB approval letter uploaded: 2026-03-07\nSite activation for Amendment 3: Pending\n\n**Outlook — From: clinops-notifications@aethon-therapeutics.com (Feb 20, 2026)**\nTo: james.osei-bonsu@vantagehealth.org, pi-team@vantagehealth.org\nSubject: BEACON-3 Amendment 3 — Immediate Implementation Notice\n\n\"Dear Investigators, Amendment 3 has been submitted to all IRBs and per sponsor determination constitutes a safety-driven change. Sites are authorized to implement revised exclusion criteria (Section 5.2 — removal of patients with baseline QTc > 480ms) effective immediately to protect subject safety. Formal IRB approval documentation should follow within 30 days. Please update screening procedures accordingly.\"\n\n**Epic Research Module — Screening Log**\nSubject 2249-041: Screened 2026-02-24 | QTc at screening: 472ms | Status: Enrolled\nSubject 2249-042: Screened 2026-03-01 | QTc at screening: 488ms | Status: Screen Failure (QTc exclusion)\nSubject 2249-043: Screened 2026-03-03 | QTc at screening: 491ms | Status: Screen Failure (QTc exclusion)\n\n**Microsoft Teams — Clinical Research Coordinators channel (Feb 22, 2026, 8:47 AM)**\n@karen.lindstrom: Hey team — got that Aethon email about BEACON QTc change. Are we implementing now or waiting for IRB letter?\n@priya.nair: Dr. Franklin said go ahead, it's a safety thing. We can't enroll someone we know is at risk.\n@karen.lindstrom: Makes sense. Updating the screening checklist in the binder today.\n[thumbs-up reaction from @james.osei-bonsu]\n\n**SharePoint — /clinical-research/irb-correspondence/BEACON-3/**\nFile: IRB_Approval_Amendment3_2026-03-07.pdf\nApproved changes: \"Revised exclusion criterion 5.2.4 — QTc prolongation threshold lowered from 500ms to 480ms. Effective date of approval: March 7, 2026.\"\n\n**OneNote — James Osei-Bonsu's Research Operations notebook (last edited Mar 10, 2026)**\nBEACON-3 Notes:\n- Need to check if 041 is a deviation. Enrolled 2/24 under old criteria (QTc 500ms threshold). Their QTc was 472 so they'd pass under BOTH versions. Should be fine.\n- 042 and 043 screened out using new criteria BEFORE IRB approved. Technically we implemented unapproved amendment procedures. But sponsor said to. And it's more conservative. Gray area — ask regulatory.\n- FDA 21 CFR 312.30 — sponsor can authorize safety changes before IRB if risk to subjects. Document rationale.",
+    "question": "From a regulatory compliance standpoint, which subjects (if any) represent protocol deviations requiring reporting, and what is the correct regulatory justification?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) No deviations occurred; the sponsor's immediate implementation notice constitutes authorization under 21 CFR 312.30 for safety-related changes, and all screening decisions were compliant.",
+      "B) All three subjects (041, 042, 043) are deviations because Amendment 3 procedures were implemented before the IRB approval date of March 7, 2026.",
+      "C) Only subjects 042 and 043 are deviations — they were screened using unapproved criteria — but subject 041 is not because they met both old and new criteria.",
+      "D) Subject 041 is the only deviation because they were enrolled during the gap period between amendment submission and IRB approval; 042 and 043 were correctly excluded regardless of which criteria version applies."
+    ],
+    "correct_answer": "A",
+    "rationale": "Under 21 CFR 312.30, a sponsor may authorize immediate implementation of a protocol amendment prior to IRB approval when the change is necessary to eliminate an apparent immediate hazard to subjects. The sponsor's email explicitly invokes this safety rationale for the QTc threshold change. The site's implementation on Feb 22 — confirmed by the Teams message and James's thumbs-up reaction — was authorized by the sponsor's notice. Subject 041 (QTc 472ms) passes under both versions and is clean regardless. Subjects 042 and 043 were correctly excluded under the sponsor-authorized safety criteria. Answer B incorrectly treats IRB approval as the sole gating mechanism, ignoring the FDA regulation permitting sponsor-authorized safety changes. Answer C correctly identifies the gap-period concern but fails to apply the 312.30 safety exception that the sponsor invoked. Answer D misidentifies 041 as the problem; since their QTc was below both thresholds (472 < 480 < 500), no version of the criteria would have excluded them.",
+    "contributor": {
+      "name": "James Osei-Bonsu",
+      "title": "Clinical Trial Operations Manager",
+      "organization": "Vantage Health Partners",
+      "years_experience": 12,
+      "domain_expertise": "Protocol amendments, IRB submissions, informed consent versioning, FDA regulatory compliance"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "OnCore CTMS",
+        "Epic Research Module",
+        "Microsoft Teams",
+        "Outlook",
+        "SharePoint",
+        "OneNote"
+      ],
+      "informal_signal_location": "James's thumbs-up emoji reaction in Teams confirming site implementation before IRB approval",
+      "acronyms_used": [
+        "IRB",
+        "QTc",
+        "CTMS",
+        "CFR",
+        "PI",
+        "IND"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 1
+    }
+  },
+  {
+    "title": "Informed Consent Version Mismatch After Mid-Enrollment Amendment",
+    "category": "policy_version",
+    "domain": "compliance_legal",
+    "difficulty": "hard",
+    "scenario": "**OnCore CTMS — Study VHP-3011 (CLARITY Phase III)**\nSponsor: NovaBio Pharmaceuticals | Sites: 4 (Vantage is Site 003)\nICF Version History:\n- v2.0 approved by IRB: 2025-09-12\n- v3.0 (Amendment 5 — added biomarker sub-study) approved by IRB: 2026-01-22\n- v3.0 effective at site per activation log: 2026-01-28\n\n**Epic Research Module — Consent Tracking**\nSubject 3011-118: Enrolled 2025-11-04 | Consent signed: v2.0 (2025-11-04)\nSubject 3011-118: Re-consent signed: v3.0 (2026-02-14)\nSubject 3011-122: Enrolled 2026-01-25 | Consent signed: v2.0 (2026-01-25)\nSubject 3011-122: Re-consent: NOT ON FILE\n\n**DocuSign — Audit Trail for Subject 3011-122**\nDocument: CLARITY_ICF_v2.0_3011-122.pdf\nSigned: 2026-01-25, 2:34 PM CST\nWitnessed by: Karen Lindstrom, CRC\n\n**Outlook — From: karen.lindstrom@vantagehealth.org (Jan 25, 2026, 3:01 PM)**\nTo: james.osei-bonsu@vantagehealth.org\nSubject: Quick Q — CLARITY consent version\n\n\"Hey James — I just consented 122 on v2.0. I know v3.0 was IRB-approved on the 22nd but our binder still only has v2.0 printed. The activation visit isn't until Monday (28th). Are we good? They're not participating in the biomarker sub-study anyway.\"\n\n**Outlook — From: james.osei-bonsu@vantagehealth.org (Jan 25, 2026, 4:45 PM)**\nTo: karen.lindstrom@vantagehealth.org\nSubject: RE: Quick Q — CLARITY consent version\n\n\"Good catch. Technically the new ICF is effective at IRB approval date, not site activation. But the only material change in v3.0 is the sub-study language. Since 122 isn't in the sub-study, the risk disclosure in v2.0 is still accurate for their participation. Flag it as a minor deviation, we'll re-consent at their next visit. Don't need to pull them off study.\"\n\n**SharePoint — /clinical-research/sops/SOP-RC-014_InformedConsent_v6.pdf**\nSection 4.3.2: \"All subjects must be consented using the current IRB-approved version of the ICF. If a subject is consented on a superseded version, this constitutes a protocol deviation. The PI must assess whether the deviation affected the subject's willingness to participate and document the assessment within 5 business days.\"\n\n**Teams — #clarity-study-team (Jan 28, 2026, 9:15 AM)**\n@james.osei-bonsu: Site activation complete for Amendment 5. New binders distributed. Reminder: any subjects consented between 1/22 and today on v2.0 need re-consent at next visit.\n[No replies]\n\n**OnCore — Deviation Log**\nNo deviation filed for Subject 3011-122 as of 2026-03-15.",
+    "question": "Based on the SOP, regulatory requirements, and documented communications, what is the current compliance status of Subject 3011-122's participation in the CLARITY study?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Compliant — v2.0 was still the effective version at the site because site activation did not occur until January 28; consent obtained January 25 was on the correct version.",
+      "B) Minor deviation properly managed — James acknowledged the issue, planned re-consent, and the subject's participation is unaffected because v3.0 changes are not material to their enrollment.",
+      "C) Reportable protocol deviation with incomplete corrective action — the SOP requires deviation documentation within 5 business days and re-consent, neither of which have been completed as of March 15.",
+      "D) Major deviation requiring study withdrawal — the subject cannot have valid consent on a superseded ICF regardless of materiality; continued participation without current consent violates 21 CFR Part 50."
+    ],
+    "correct_answer": "C",
+    "rationale": "The SOP (Section 4.3.2) is unambiguous: consenting on a superseded ICF version is a protocol deviation requiring PI assessment documented within 5 business days. The IRB approval date (Jan 22) is the effective date per the SOP, not the site activation date. James's email acknowledges this ('technically the new ICF is effective at IRB approval date') and instructs Karen to 'flag it as a minor deviation.' However, as of March 15, no deviation has been filed in OnCore. The re-consent also has not occurred despite nearly 7 weeks passing. The issue was identified and a plan was communicated, but the corrective actions were never executed — making this an incomplete deviation management situation. Answer A incorrectly conflates site activation with ICF effective date; James's own email contradicts this interpretation. Answer B describes the plan but ignores that neither the deviation filing nor re-consent actually happened — the email thread in Outlook shows intent but the OnCore system shows no action. Answer D overstates the severity; the deviation is minor because v3.0 changes do not affect this subject's risk profile, and 21 CFR Part 50 does not mandate withdrawal for administrative consent version errors.",
+    "contributor": {
+      "name": "James Osei-Bonsu",
+      "title": "Clinical Trial Operations Manager",
+      "organization": "Vantage Health Partners",
+      "years_experience": 12,
+      "domain_expertise": "Protocol amendments, IRB submissions, informed consent versioning, FDA regulatory compliance"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "OnCore CTMS",
+        "Epic Research Module",
+        "DocuSign",
+        "Outlook",
+        "SharePoint",
+        "Microsoft Teams"
+      ],
+      "informal_signal_location": "James's email reply acknowledging the deviation and proposing a plan that was never executed — the gap between Outlook intent and OnCore action is the critical signal",
+      "acronyms_used": [
+        "IRB",
+        "ICF",
+        "CRC",
+        "PI",
+        "SOP",
+        "CFR"
+      ],
+      "policy_versions_involved": 3,
+      "temporal_span_months": 2
+    }
+  },
+  {
+    "title": "DSMB Enrollment Hold Authorization Chain After SAE Cluster",
+    "category": "approval_chain",
+    "domain": "compliance_legal",
+    "difficulty": "expert",
+    "scenario": "**OnCore CTMS — Study VHP-1887 (RESOLVE Phase II)**\nSponsor: Meridian Oncology | Indication: Advanced NSCLC\nStatus: ENROLLMENT HOLD (effective 2026-04-03)\nHold reason: \"DSMB recommendation pending safety review\"\nHold entered by: System (auto-triggered)\n\n**Outlook — From: dsmb-notifications@meridianoncology.com (Apr 2, 2026, 6:48 PM)**\nTo: resolve-investigators@meridianoncology.com\nSubject: URGENT — RESOLVE DSMB Recommendation: Enrollment Pause\n\n\"Following the ad hoc DSMB meeting today, the Board recommends a temporary enrollment pause effective immediately pending review of a cluster of Grade 4 hepatotoxicity events (3 SAEs reported in the last 14 days across 2 sites). The DSMB will reconvene within 21 days. Sites should not screen or enroll new subjects until further notice. Subjects currently on treatment should continue per protocol unless individually contraindicated. Formal letter to follow.\"\n\n**Epic Research Module — Screening Log (Site 003 — Vantage)**\nSubject 1887-067: Screening visit scheduled 2026-04-04 | Status: CANCELLED\nSubject 1887-068: Screening started 2026-04-01, labs pending | Status: IN SCREENING\n\n**Teams — #resolve-site003 (Apr 3, 2026, 7:22 AM)**\n@karen.lindstrom: Just saw the DSMB email. What about 068? They started screening yesterday, labs are at the central lab already.\n@dr.anita.franklin (PI): They haven't been randomized. Hold them at screening. Do NOT proceed to enrollment.\n@karen.lindstrom: Got it. But their disease is progressing — they asked about timelines.\n@dr.anita.franklin: I know. We can't enroll until the hold lifts. Tell them we're waiting on a safety review. Don't mention SAEs at other sites — that's confidential sponsor data.\n@priya.nair: What if they want to withdraw screening consent and go to another trial?\n@dr.anita.franklin: That's their right. Document it if they do.\n[thumbs-up from @james.osei-bonsu]\n\n**Outlook — From: james.osei-bonsu@vantagehealth.org (Apr 10, 2026)**\nTo: regulatory-affairs@vantagehealth.org\nSubject: RESOLVE hold — IRB notification question\n\n\"Do we need to file anything with our IRB re: the DSMB enrollment hold? The sponsor says formal letter is coming but it's been 8 days and we haven't received it. Our SOP says we report enrollment holds to IRB within 10 business days. I don't want to miss the window waiting for Meridian.\"\n\n**Outlook — From: regulatory-affairs@vantagehealth.org (Apr 10, 2026)**\nTo: james.osei-bonsu@vantagehealth.org\n\"File a preliminary notification with IRB now based on the DSMB email. You can supplement when the formal letter arrives. Better to be early than late. Use form IRB-4C (safety-related enrollment action).\"\n\n**SharePoint — /clinical-research/irb-submissions/RESOLVE/**\nFiles present: IRB_Submission_Amendment2_2025-11.pdf, Annual_Continuing_Review_2026-01.pdf\nNo file matching enrollment hold notification as of Apr 15, 2026.\n\n**Slack (unofficial clinical research channel) — #clin-res-watercooler (Apr 14, 2026, 12:33 PM)**\n@priya.nair: Anyone hear anything on RESOLVE? My patient 068 is getting antsy. It's been almost 2 weeks.\n@karen.lindstrom: Nothing from sponsor. James said he'd ping them today.\n@priya.nair: Ugh. At what point can we tell the patient to look at other options? This feels like it could drag.\n@karen.lindstrom: Dr. Franklin said they can withdraw anytime. But we can't recommend they leave our study for another one — that's steering.\n@priya.nair: Right right. Just sucks watching them wait.",
+    "question": "As of April 15, 2026, what is the site's regulatory compliance gap, and what is the immediate required action?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) No compliance gap exists — the enrollment hold is sponsor-directed and the site appropriately paused screening; IRB notification is only required once the formal DSMB letter is received.",
+      "B) The compliance gap is the unauthorized disclosure of DSMB-confidential information in the unofficial Slack channel; Priya's message implies the hold is safety-related, which could constitute unblinding. Immediate action: report to sponsor and document in deviation log.",
+      "C) The compliance gap is the missed IRB notification deadline — the SOP requires notification within 10 business days of an enrollment hold, the regulatory affairs team advised filing, but no submission exists in SharePoint as of April 15. Immediate action: file IRB-4C form with the DSMB email as supporting documentation.",
+      "D) The compliance gap is that Subject 1887-068 remains in screening status without a documented hold rationale in their study record — the site must formally withdraw the subject from screening or document the hold in Epic."
+    ],
+    "correct_answer": "C",
+    "rationale": "The SOP requires IRB notification within 10 business days of an enrollment hold. The hold was effective April 3. Ten business days from April 3 brings the deadline to approximately April 17 (accounting for weekends). James emailed regulatory affairs on April 10 asking about this exact obligation. Regulatory affairs replied the same day advising him to file form IRB-4C immediately using the DSMB email. Despite this clear guidance, no enrollment hold notification exists in the SharePoint IRB submissions folder as of April 15. The site is at imminent risk of missing its SOP-mandated deadline. Answer A incorrectly states that the formal letter is a prerequisite; the SOP says 'enrollment holds' must be reported, not 'formally documented holds.' Regulatory affairs explicitly advised filing without the formal letter. Answer C identifies a real but secondary documentation issue — 068's screening status should be updated — but this is operational housekeeping, not the primary regulatory gap. Answer D overreads the Slack conversation; Priya's message does not reveal specific SAE information, site identities, or unblinding data — saying a study is paused for 'safety review' is general knowledge available to the patient themselves. The Slack channel concern is a training issue, not a reportable deviation.",
+    "contributor": {
+      "name": "James Osei-Bonsu",
+      "title": "Clinical Trial Operations Manager",
+      "organization": "Vantage Health Partners",
+      "years_experience": 12,
+      "domain_expertise": "Protocol amendments, IRB submissions, informed consent versioning, FDA regulatory compliance"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "OnCore CTMS",
+        "Epic Research Module",
+        "Microsoft Teams",
+        "Outlook",
+        "SharePoint",
+        "Slack (unofficial)"
+      ],
+      "informal_signal_location": "The absence of a file in SharePoint's IRB submissions folder — the critical signal is what does NOT exist, contrasted against the Outlook thread proving the obligation was known",
+      "acronyms_used": [
+        "DSMB",
+        "SAE",
+        "IRB",
+        "NSCLC",
+        "PI",
+        "SOP",
+        "CRC"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 1
+    }
+  }
+]

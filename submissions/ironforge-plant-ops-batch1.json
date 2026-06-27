@@ -1,0 +1,144 @@
+[
+  {
+    "title": "Expired Safety Interlock Deviation with Conflicting Records",
+    "category": "policy_version",
+    "domain": "engineering_devops",
+    "difficulty": "expert",
+    "scenario": "Context from SAP S/4HANA (Plant 2 — Production Orders):\nOrder: 4001892 | Material: FORGE-7741-A (high-temp turbine shaft) | Work Center: CNC-14 | Status: CONFIRMED | Safety interlocks: ALL ACTIVE per system check 06/12/2026.\n\nContext from MasterControl (Quality — Deviation Log):\nDEV-2025-0087 | Type: Temporary Process Deviation | Equipment: CNC-14 thermal interlock | Approved by: R. Kowalski (EHS Manager) | Effective: 2025-03-14 | Expiry: 2025-09-14 | Status: EXPIRED | Justification: 'Interlock trips at 410°F but new alloy requires 435°F soak. Bypass approved pending engineering review of setpoint change.'\n\n**Microsoft Teams — #plant2-maintenance (Jun 24, 2026, 6:47 AM)**\n@tony.reeves: Heads up — CNC-14 thermal kicked again last night on the 3rd shift run. Danny just bridged it like usual and kept running. No scrap.\n@miguel.santos: Wait, I thought we closed that deviation last September?\n@tony.reeves: Did we? The jumper's still in place from when Bobby installed it. Nobody told us to pull it.\n@miguel.santos: ...\n[No further replies in thread]\n\n**Paper Logbook — CNC-14 Equipment History (scanned PDF, Plant 2 floor):**\nEntry dated 2025-03-15: 'Installed thermal bypass jumper per DEV-2025-0087. Signed: B. Hernandez, Maintenance Tech II.'\nNo subsequent entry for removal.\n\n**SharePoint — /policies/safety/PSM-MOC-procedure (Page version 3, published Jan 2026)**\nSection 4.1: 'Any temporary deviation that alters a safety-critical interlock must be formally closed via MOC process within 30 days of expiration. Failure to close constitutes an unauthorized process change subject to OSHA PSM enforcement.'\n[Version 2 (2024) stated: 'Temporary deviations auto-close on expiry date. No further action required.']\n\n**SAP PM — Preventive Maintenance Schedule (CNC-14):**\nLast interlock validation: 2026-01-08 | Result: PASS | Performed by: Automated PLC check\nNote: PLC validates interlock CIRCUIT CONTINUITY, not functional setpoint. A bridged interlock passes continuity check.\n\n**Email — Subject: 'RE: CNC-14 Setpoint Review' (Sep 2, 2025)**\nFrom: j.park@ironforge-mfg.com (Process Engineering)\nTo: r.kowalski@ironforge-mfg.com\nCC: miguel.santos@ironforge-mfg.com\n> Engineering recommends permanent setpoint change to 440°F.\n> ECN-2025-1104 drafted but needs capital approval ($8K for new sensor rated to 500°F).\n> Holding pending Q4 budget review.\n\n[No follow-up emails found. ECN-2025-1104 status in Jira: OPEN, unassigned, last updated Sep 2025.]",
+    "question": "A PSM auditor asks: What is Ironforge's current compliance status regarding CNC-14's thermal interlock, and what is the correct immediate action?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Non-compliant — the bypass is physically still in place constituting an unauthorized process change under the current PSM-MOC procedure; immediate action is to remove the jumper, halt production on CNC-14, and initiate a retroactive MOC",
+      "B) Non-compliant — but the issue is only that ECN-2025-1104 was never completed; once the permanent setpoint change is approved, the bypass becomes authorized retroactively",
+      "C) Indeterminate — the policy version that was active when the deviation expired (v2, 2024) said deviations auto-close, so no MOC was required at the time; the new policy cannot be applied retroactively",
+      "D) Compliant — the deviation expired in September 2025, meaning the bypass auto-closed per policy, and the January 2026 PM validation confirmed the interlock passed"
+    ],
+    "correct_answer": "A",
+    "rationale": "The physical bypass jumper remains installed (confirmed by Teams chat, paper logbook with no removal entry, and the fact that maintenance 'bridged it like usual'). Under the current PSM-MOC procedure (v3, Jan 2026), any temporary deviation altering a safety-critical interlock must be formally closed via MOC within 30 days of expiration. The deviation expired Sep 2025 with no MOC initiated — the jumper's continued presence constitutes an unauthorized process change NOW regardless of what policy said at expiration time, because the hazard is present today. Answer D fails because the SAP PM 'PASS' result only validates circuit continuity, not functional interlock behavior — a bridged interlock passes this check (explicitly noted in the PM record). Answer C incorrectly assumes a future ECN can retroactively authorize a current safety violation; PSM compliance is assessed in real-time. Answer D incorrectly applies a temporal defense — while the v2 policy was active at expiration, the current state of the equipment (bypass still physically in place, actively being used per Teams) must be assessed under the current governing procedure. OSHA evaluates the present hazard condition, not the historical policy context.",
+    "contributor": {
+      "name": "Miguel Santos",
+      "title": "Plant Operations Manager",
+      "organization": "Ironforge Manufacturing",
+      "years_experience": 20,
+      "domain_expertise": "Production scheduling, maintenance planning, safety decisions, equipment change-out approvals, PSM compliance"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "SAP S/4HANA",
+        "MasterControl",
+        "Microsoft Teams",
+        "Paper Logbook (scanned PDF)",
+        "SharePoint",
+        "SAP PM",
+        "Email",
+        "Jira"
+      ],
+      "informal_signal_location": "Teams chat revealing the bypass is still actively being used ('Danny just bridged it like usual') — the only real-time evidence that the expired deviation is still physically in effect",
+      "acronyms_used": [
+        "PSM",
+        "MOC",
+        "LOTO",
+        "ECN",
+        "PLC",
+        "EHS",
+        "OEE",
+        "PM"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 15
+    }
+  },
+  {
+    "title": "Overtime Grievance Under Conflicting CBA Terms",
+    "category": "precedent_exception",
+    "domain": "engineering_devops",
+    "difficulty": "hard",
+    "scenario": "Context from ADP (Payroll — Week ending Jun 15, 2026):\nEmployee: D. Wojcik (Badge 4412) | Classification: Maintenance Mechanic A | Shift: 2nd | Regular hours: 40 | OT hours: 12 | OT authorized by: T. Reeves (Shift Supervisor) | Cost center: Plant 2 Maintenance\n\n**Microsoft Teams — #plant2-supervision (Jun 13, 2026, 9:52 PM)**\n@tony.reeves: Need Danny W. to stay for a double. Compressor #3 is down and we can't run the heat treat line without it. @miguel.santos you around?\n[No response — 45 minutes pass]\n@tony.reeves: Going to call it — authorizing the OT. Can't wait, we'll miss the Pratt delivery window.\n@rick.jensen: 👍\n[rick.jensen is Union Steward, Plant 2]\n\n**SharePoint — /HR/labor-relations/CBA-2026-final.pdf (effective Apr 1, 2026)**\nArticle 14.3: 'Overtime in excess of 8 hours beyond regular shift requires authorization from Plant Manager or designated Operations Manager. Shift Supervisor authorization is limited to first 8 hours of overtime only.'\n\n**Shared Network Drive — \\\\plant2\\ops\\CBA-archive\\CBA-2022-2025.pdf**\nArticle 14.3 (prior version): 'Overtime authorization rests with Shift Supervisor or above for all duration.'\n\n**SAP PS — Production Order 4001910:**\nCustomer: Pratt & Whitney | Part: FORGE-9920-C | Due date: Jun 16, 2026 | Status: IN PROCESS | Constraint note: 'Heat treat cycle = 14hr minimum. Late start = missed ship date. LD clause active ($15K/day).'\n\n**Email — Subject: 'CBA Rollout Training' (Mar 28, 2026)**\nFrom: hr-laborrelations@ironforge-mfg.com\nTo: all-supervisors@ironforge-mfg.com\nCC: plant-managers@ironforge-mfg.com\n\n'Please review the attached summary of changes effective April 1. Key changes include updated OT authorization levels (Art. 14.3), new shift-swap procedures (Art. 16), and revised holiday premium calculations. Training sessions scheduled for April 5-9. Attendance is mandatory.'\n\n**ADP — Training Records:**\nT. Reeves: CBA Training — Status: NOT COMPLETED. Scheduled Apr 7, marked 'No Show.' No reschedule on file.\n\n**Grievance Filing — Local 412, Case #2026-G-031 (filed Jun 20, 2026):**\nGrievant: D. Wojcik | Nature: Improper OT authorization | Relief sought: Double-time pay for hours 9-12 of OT (penalty rate per Art. 14.5 for unauthorized OT) | Union position: 'Supervisor lacked authority under current CBA. Employee entitled to penalty premium.'\n\n**Miguel Santos' Calendar — Jun 13, 2026:**\n7:00 PM - 9:00 PM: 'Flight CLE→ORD' (personal calendar, blocked as OOO)\nNo delegation of authority memo on file for that date.",
+    "question": "As Plant Operations Manager, how should Miguel assess the grievance merit and what is the most defensible resolution?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Grievance has no merit — the old CBA terms apply because Reeves was never trained on the new CBA, making enforcement of the new authorization levels against him improper",
+      "B) Grievance has merit — Reeves lacked authority for hours beyond 8 under the current CBA; however, the appropriate resolution is to pay the penalty premium for hours 9-12 only and issue corrective training to Reeves, not to discipline the employee",
+      "C) Grievance has merit and Ironforge should deny the OT pay entirely for hours 9-12 since it was unauthorized, paying only straight time",
+      "D) Grievance has no merit — the Union Steward's thumbs-up emoji in Teams constitutes implicit union consent to the authorization, waiving the procedural objection"
+    ],
+    "correct_answer": "B",
+    "rationale": "The grievance has merit because the current CBA (effective Apr 1, 2026) clearly limits shift supervisor OT authorization to the first 8 hours. Reeves authorized 12 hours, exceeding his authority for hours 9-12. The proper resolution under Article 14.5 is the penalty premium rate for the unauthorized hours — this protects the employee (who worked in good faith at a supervisor's direction) while acknowledging the procedural violation. Answer A is wrong because a union steward's emoji reaction in a Teams chat does not constitute a formal waiver of contractual rights — grievance rights cannot be waived informally, and the steward's role in the moment was operational (acknowledging the situation), not legal. Answer C incorrectly argues that lack of training nullifies the CBA — the agreement is effective as of its ratification date regardless of individual supervisor training completion; the company's failure to train is the company's problem, not a defense. Answer D is wrong because you cannot penalize an employee for working OT that a supervisor directed; the employee followed a reasonable instruction from their chain of command. The penalty premium exists precisely for this situation — to make the employee whole while incentivizing management compliance.",
+    "contributor": {
+      "name": "Miguel Santos",
+      "title": "Plant Operations Manager",
+      "organization": "Ironforge Manufacturing",
+      "years_experience": 20,
+      "domain_expertise": "Production scheduling, maintenance planning, labor relations, overtime authorization, collective bargaining agreement administration"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "ADP",
+        "Microsoft Teams",
+        "SharePoint",
+        "Shared Network Drive",
+        "SAP PS",
+        "Email",
+        "Google Calendar"
+      ],
+      "informal_signal_location": "Union Steward's thumbs-up emoji in Teams thread — creates a tempting but incorrect argument for implicit consent that would not survive arbitration",
+      "acronyms_used": [
+        "CBA",
+        "OT",
+        "LD",
+        "PM",
+        "OOO",
+        "PSM"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 3
+    }
+  },
+  {
+    "title": "Grandfathered Equipment and Implicit MOC Acceptance",
+    "category": "approval_chain",
+    "domain": "engineering_devops",
+    "difficulty": "expert",
+    "scenario": "Context from SAP S/4HANA (Equipment Master — Plant 3):\nEquipment: FURN-301 (Batch Annealing Furnace #1) | Installed: 2009 | Last major overhaul: 2021 | Status: ACTIVE | Classification: PSM-covered process | Operating pressure: 45 psig | Max temp: 1,750°F | Linked PM orders: 47 active\n\n**MasterControl — PSM Mechanical Integrity Records:**\nFURN-301 last inspection: Jan 2026 | Result: SATISFACTORY | Inspector notes: 'Relief valve RV-301A tested at 52 psig (set point 50 psig). Within ±10% tolerance per API 576. Vessel wall thickness: 0.412\" (minimum required: 0.375\" per original design).'\n\n**SharePoint — /engineering/standards/PSM-equipment-standards-2024.pdf (published Jul 2024)**\nSection 6.2: 'All PSM-covered pressure vessels installed after January 1, 2015 must meet ASME Section VIII Div 1, 2017 Edition or later. Minimum wall thickness calculated per UG-27 with corrosion allowance of 0.0625\".'\nSection 6.4: 'Equipment installed prior to 2015 is exempt from Section 6.2 requirements PROVIDED it has undergone formal grandfathering review per MOC-EXT-001 process and maintains satisfactory mechanical integrity results.'\n\n**Microsoft Teams — #engineering-standards (Mar 12, 2024, 2:15 PM)**\n@janet.morrison (Process Engineering Director): Team — new PSM equipment standard is going out in July. We need to identify all pre-2015 equipment that needs grandfathering review. @miguel.santos can you pull the list for Plant 3?\n@miguel.santos: Will do. Off the top of my head it's FURN-301, FURN-302, REAC-101, and the old quench tank QT-205.\n@janet.morrison: Perfect. Let's get MOC-EXT-001 forms started for each. Target completion before the standard publishes.\n@miguel.santos: 👍\n[Thread has 2 additional replies — both from other plant managers confirming their lists]\n\n**SAP — MOC (Management of Change) Log:**\nMOC-2024-0045: FURN-302 grandfathering review | Status: APPROVED (Jun 2024)\nMOC-2024-0046: REAC-101 grandfathering review | Status: APPROVED (Jun 2024)\nMOC-2024-0047: QT-205 grandfathering review | Status: APPROVED (Jul 2024)\n[No MOC record found for FURN-301]\n\n**Email — Subject: 'Plant 3 Grandfathering Status' (Jun 28, 2024)**\nFrom: miguel.santos@ironforge-mfg.com\nTo: janet.morrison@ironforge-mfg.com\n\n'Janet — FURN-302, REAC-101, and QT-205 are all through MOC review and approved. FURN-301 is more complex — the original design calcs are missing from the files (pre-digital era). I'm working with the OEM to reconstruct them. Should have it wrapped up in a few weeks.'\n\n**Janet Morrison's status in ADP: TERMINATED (Aug 15, 2024 — retirement)**\n[No reply to Miguel's email found. No subsequent emails regarding FURN-301 grandfathering.]\n\n**Maximo — Work Order History (FURN-301):**\n47 completed PM work orders since Jul 2024 | 3 corrective maintenance orders | All signed off by qualified maintenance personnel | No operational restrictions noted | Equipment continuously operated for production since standard publication.",
+    "question": "During a corporate PSM audit, the auditor asks: Is FURN-301 currently authorized to operate under Ironforge's PSM equipment standards? What is the correct finding?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Authorized — Miguel's thumbs-up emoji in the Teams thread acknowledging the grandfathering task list, combined with 2 years of continued operation with management knowledge, constitutes implicit MOC approval",
+      "B) Not applicable — FURN-301 was installed in 2009 (pre-2015) and is therefore fully exempt from the 2024 standard under the pre-2015 installation clause in Section 6.2",
+      "C) Not authorized — FURN-301 lacks a completed MOC-EXT-001 grandfathering review as required by Section 6.4; the process was initiated but never completed due to the engineering director's departure, and no formal exemption or interim authorization exists in the system",
+      "D) Authorized — FURN-301 passes mechanical integrity inspections and has operated continuously since 2009; the satisfactory inspection results constitute de facto grandfathering acceptance"
+    ],
+    "correct_answer": "C",
+    "rationale": "Section 6.4 is explicit: pre-2015 equipment is exempt from Section 6.2's newer ASME requirements ONLY if it has undergone formal grandfathering review via MOC-EXT-001. The SAP MOC log shows completed reviews for FURN-302, REAC-101, and QT-205 — but not FURN-301. Miguel's email confirms FURN-301 was delayed due to missing design calculations, and Janet Morrison retired before the issue was resolved with no handoff. The equipment has been operating in a compliance gap since July 2024. Answer A is wrong because mechanical integrity results satisfy Section 6.2's ongoing inspection requirements but do NOT substitute for the formal MOC-EXT-001 grandfathering review — these are separate compliance gates. Answer B is wrong because an emoji acknowledgment of a task list is not an MOC approval; MOC processes require formal documentation, engineering review, and sign-off per OSHA PSM requirements. Implicit acceptance through continued operation is not a recognized compliance mechanism under PSM. Answer D misreads the standard — Section 6.2 exempts pre-2015 equipment from the newer ASME edition requirements, but Section 6.4 conditions that exemption on completing the grandfathering review. The exemption is not automatic; it requires the MOC-EXT-001 process.",
+    "contributor": {
+      "name": "Miguel Santos",
+      "title": "Plant Operations Manager",
+      "organization": "Ironforge Manufacturing",
+      "years_experience": 20,
+      "domain_expertise": "Production scheduling, maintenance planning, PSM compliance, equipment lifecycle management, Management of Change processes"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "SAP S/4HANA",
+        "MasterControl",
+        "SharePoint",
+        "Microsoft Teams",
+        "Email",
+        "ADP",
+        "Maximo"
+      ],
+      "informal_signal_location": "The Teams emoji (thumbs-up) acknowledging the grandfathering list creates a false trail suggesting approval was initiated, and Janet Morrison's termination record in ADP explains why the process was never completed — the critical gap is discoverable only by cross-referencing the MOC log absence with the email showing delay and the ADP termination",
+      "acronyms_used": [
+        "PSM",
+        "MOC",
+        "ASME",
+        "API",
+        "PM",
+        "OEM",
+        "RV"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 24
+    }
+  }
+]

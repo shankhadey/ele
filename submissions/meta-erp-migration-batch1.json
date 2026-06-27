@@ -1,0 +1,138 @@
+[
+  {
+    "title": "Legacy UOM Conversion Gap in Migrated Purchase History",
+    "category": "cross_system_synthesis",
+    "domain": "engineering_devops",
+    "difficulty": "expert",
+    "scenario": "Ironforge Manufacturing is 14 months into its SAP S/4HANA migration from SAP ECC. The Monterrey (Mexico) plant still runs ECC 6.0 and is scheduled for cutover in Q3 2026. During a supplier performance review, a discrepancy surfaces in vendor pricing for titanium fastener stock (material 4400-TF-0882 in S/4HANA).\n\n**SAP S/4HANA — Purchase Order History (migrated records)**\nMaterial: 4400-TF-0882 | Vendor: Precision Alloys Ltd (Vendor #300442)\nPO 450012881 (migrated from legacy): Qty 500 EA @ $14.20/EA = $7,100.00\nPO 450012997 (migrated from legacy): Qty 200 EA @ $14.20/EA = $2,840.00\nPO 450018330 (new, post-migration): Qty 1,000 EA @ $1.42/EA = $1,420.00\n\n**SharePoint — /migration/mapping-tables/UOM-conversion-log.xlsx (last modified: Nov 2024)**\nRow 2,841: Material 4400-TF-0882 | Legacy UOM: HUN (per hundred) | Target UOM: EA (each)\nConversion factor: 0.01 | Applied to: Material master, BOM, routing\nNote column: \"Historical PO price migration — FLAG: conversion NOT applied to closed POs per cutover decision doc v2.3. Only open POs at cutover converted.\"\n\n**Microsoft Teams — #erp-migration-war-room (Feb 12, 2025, 3:47 PM)**\n@raj.chowdhury: Heads up — closed PO pricing in the migrated history is going to look 100x inflated vs. new POs for any material that was HUN in legacy. We made the call not to restate historical pricing during cutover. It's documented in the cutover decision log.\n@maria.santos: Got it. Should we flag these for procurement reporting?\n@raj.chowdhury: Already raised it in the data steward meeting. Karen said she'd add a note to the reporting wiki.\n[3 emoji reactions: thumbs-up from maria.santos, eyes from dave.kowalski, no reaction from karen.mills]\n\n**SAP ECC (Mexico plant, still live) — Vendor Master**\nVendor: Precision Alloys de Mexico SA de CV (Vendor #VM-8821)\nPurchasing org: 1200 (Monterrey)\nPayment terms: Net 45\nNote: \"Same entity as HQ vendor 300442 — see cross-reference in Oracle decomm mapping\"\n\n**Oracle Procurement (decommissioned Dec 2023) — Archived Extract on SharePoint**\n/migration/oracle-archive/vendor-xref.csv\nRow: Oracle Vendor ID OV-4410 | SAP ECC Vendor VM-8821 | SAP S/4 Vendor 300442 | Entity: \"Precision Alloys Group (all subsidiaries)\"\nNote: \"Consolidated from 3 Oracle vendor IDs (OV-4410, OV-4411, OV-4415) during ECC implementation 2017\"",
+    "question": "A procurement analyst is reviewing total spend with Precision Alloys for contract renegotiation. They pull all PO history from S/4HANA for vendor 300442 and calculate an average unit price of $9.94/EA across 1,700 units. What is the correct interpretation and what action should they take?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) The migrated historical POs reflect a per-hundred UOM that was not restated during cutover; the true legacy price was $0.142/EA, making the current $1.42/EA actually a price increase — and the full spend picture requires cross-referencing vendor VM-8821 at the Mexico plant plus the three consolidated Oracle vendor IDs",
+      "B) Only post-migration POs should be used for negotiation since historical data is unreliable; vendor 300442 is the only relevant entity and the $1.42/EA rate represents the current market price",
+      "C) The average price is correct; the vendor has been charging inconsistent prices and procurement should flag this in the negotiation as evidence of price erosion opportunity",
+      "D) The pricing discrepancy indicates a data quality defect in the migration; the historical POs should be corrected in S/4HANA before any analysis, and the Mexico plant data is irrelevant since it is a different legal entity"
+    ],
+    "correct_answer": "A",
+    "rationale": "The correct answer requires synthesizing four sources: (1) the UOM conversion log on SharePoint showing the HUN-to-EA factor was NOT applied to closed POs, meaning legacy prices must be divided by 100; (2) the Teams message confirming this was a deliberate cutover decision, not an error; (3) the Oracle archive vendor cross-reference proving that vendor 300442 in S/4HANA, VM-8821 in ECC Mexico, and three Oracle IDs (OV-4410/4411/4415) all represent the same entity; and (4) the ECC vendor master note linking the Mexico vendor to the HQ vendor. The true legacy unit price was $14.20/HUN = $0.142/EA, making the new $1.42/EA a 10x price increase, not a decrease. Answer C is wrong because it takes the inflated migrated prices at face value. Answer C incorrectly treats this as a defect rather than a documented decision, and wrongly dismisses the Mexico entity as separate. Answer D is overly conservative and misses the entity consolidation needed for complete spend analysis.",
+    "contributor": {
+      "name": "Raj Chowdhury",
+      "title": "ERP Migration & Data Governance Lead",
+      "organization": "Ironforge Manufacturing",
+      "years_experience": 11,
+      "domain_expertise": "Data migration, legacy system decommissioning, master data reconciliation, cutover planning"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "SAP S/4HANA",
+        "SharePoint",
+        "Microsoft Teams",
+        "SAP ECC",
+        "Oracle Procurement (archived)"
+      ],
+      "informal_signal_location": "Teams message confirming the UOM non-conversion was intentional, plus Karen Mills' missing reaction indicating she never acknowledged the reporting wiki action item",
+      "acronyms_used": [
+        "UOM",
+        "HUN",
+        "EA",
+        "PO",
+        "BOM",
+        "ECC",
+        "HQ"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 18
+    }
+  },
+  {
+    "title": "Credit Limit Override Lost in Migration — Customer Escalation",
+    "category": "entity_resolution",
+    "domain": "finance_revops",
+    "difficulty": "hard",
+    "scenario": "Ironforge Manufacturing receives an urgent complaint from a long-standing customer whose orders are being blocked in S/4HANA due to credit limit exceeded. The standard credit limit in the migrated master data is $150K, but the customer insists they were approved for $500K years ago.\n\n**SAP S/4HANA — Customer Master (BP 1004782)**\nName: Great Lakes Machining Corp | Credit limit: $150,000 | Credit exposure: $487,200\nStatus: BLOCKED — credit exceeded | Sales org: 1000\nMigration note: \"Migrated from ECC customer 0041200. Credit limit set per standard migration rule (highest of: legacy limit, 12-month rolling average receivables).\"\n\n**SAP ECC (archived snapshot, pre-migration) — Customer Credit Data**\nCustomer: 0041200 | Credit limit field (FD32): $150,000\nText field (rarely used): \"See email — Rosenthal override to $500K approved 2019-06-14\"\n\n**SharePoint — /migration/cutover-decisions/credit-migration-rules.docx (v3.1, approved Aug 2024)**\nSection 4.2: \"Customer credit limits will be migrated as the HIGHER of: (a) the value in FD32, or (b) the trailing 12-month average A/R balance. Manual overrides documented outside the credit master will NOT be migrated unless captured in the exception spreadsheet (Appendix B).\"\nAppendix B: [47 rows of customer exceptions] — Customer 0041200 is NOT listed.\n\n**Email (recovered from Outlook archive via legal hold) — Subject: \"RE: Credit increase — Great Lakes Machining\" (Jun 14, 2019)**\nFrom: paul.rosenthal@ironforge.com (former CFO, retired 2022)\nTo: credit.team@ironforge.com\nCC: plant2.controller@ironforge.com\n\n> Approved. Raise to $500K effective immediately. They've been with us since the Dayton days and their payment history is clean. Don't make me fill out the form for this one.\n> — Paul\n\n**Microsoft Teams — #customer-escalations (Jun 24, 2026, 9:15 AM)**\n@lisa.tran: Great Lakes is furious. They say their credit was $500K for years and now we're blocking their orders. I can see in ECC there's a text note about an override but nothing in S/4.\n@raj.chowdhury: That's a known gap. Overrides that lived outside FD32 didn't migrate. Was it in the exception spreadsheet?\n@lisa.tran: Checking... no, it wasn't.\n@raj.chowdhury: Then it fell through. The old CFO approved a lot of these informally. We need the original approval evidence to reinstate.\n@greg.hoffman (plant controller): I remember this one. Paul approved it over email. Let me dig it up.\n[Thread continues 2 hours later]\n@greg.hoffman: Found it. Forwarding to credit team now. :white_check_mark:\n\n**Jira — MIGR-4421 (Data Governance backlog)**\nSummary: \"Audit informal credit overrides not captured in FD32\"\nStatus: Open | Priority: Medium | Created: Sep 2024\nComment (Oct 2024, @raj.chowdhury): \"Identified ~35 customers with text-field references to overrides. Added to data steward queue but no capacity until Q2 2026.\"\nComment (Jun 2026, @lisa.tran): \"Great Lakes just escalated. This is now P1.\"",
+    "question": "What is the correct resolution path for reinstating Great Lakes Machining's credit limit in S/4HANA?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Reinstate the $500K limit using the recovered 2019 email as supporting documentation, routed through the current credit approval workflow for validation, while flagging MIGR-4421 as evidence that this was a known migration gap — not a new request",
+      "B) Require a brand-new credit review and approval from the current CFO since the original approver (Paul Rosenthal) has retired and his authority is no longer valid — treat this as a new credit request",
+      "C) Immediately reinstate the $500K limit in S/4HANA based on the ECC text field reference — the legacy system is the authoritative record and overrides should be honored without additional approval",
+      "D) Reject the escalation because the credit migration rules (v3.1 Section 4.2) explicitly state that overrides outside FD32 do not migrate unless in Appendix B — the customer was not listed, so the $150K limit is correct per policy"
+    ],
+    "correct_answer": "A",
+    "rationale": "The correct answer synthesizes evidence across five systems: the ECC text field referencing the override, the recovered email proving CFO approval in 2019, the migration rules document explaining WHY the override was lost (a known policy gap, not a data error), the Teams thread confirming the email was located, and the Jira ticket proving this was a recognized systemic issue. Answer C is wrong because you cannot reinstate a $500K exposure based solely on a text field note — the actual approval documentation is needed. Answer B is wrong because this is not a new credit request; it is a restoration of a previously approved limit that was lost due to a documented migration limitation. Treating it as new would be both procedurally incorrect and damaging to the customer relationship. Answer D applies the migration policy rigidly without recognizing that the policy created a known gap (MIGR-4421) that the organization acknowledged but deprioritized — the customer shouldn't bear the cost of an internal backlog failure.",
+    "contributor": {
+      "name": "Raj Chowdhury",
+      "title": "ERP Migration & Data Governance Lead",
+      "organization": "Ironforge Manufacturing",
+      "years_experience": 11,
+      "domain_expertise": "Data migration, legacy system decommissioning, master data reconciliation, cutover planning"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "SAP S/4HANA",
+        "SAP ECC",
+        "SharePoint",
+        "Outlook (archived email)",
+        "Microsoft Teams",
+        "Jira"
+      ],
+      "informal_signal_location": "The 2019 CFO email explicitly bypassing formal process ('Don't make me fill out the form'), recovered via legal hold archive — and the Teams thread where greg.hoffman confirms finding it with a checkmark emoji",
+      "acronyms_used": [
+        "FD32",
+        "A/R",
+        "BP",
+        "CFO",
+        "P1",
+        "ECC"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 84
+    }
+  },
+  {
+    "title": "Material Consolidation Traceability Failure in Quality Complaint",
+    "category": "temporal_consistency",
+    "domain": "engineering_devops",
+    "difficulty": "expert",
+    "scenario": "Ironforge's quality team receives a customer complaint about fatigue cracking in aerospace-grade turbine blade forgings. The complaint references S/4HANA material number 5500-TB-0120. During the 2024 migration, three legacy ECC materials were consolidated into this single golden record. The root cause investigation needs to determine which specific legacy material — and therefore which production process — is responsible.\n\n**SAP S/4HANA — Quality Notification QN-2026-00847**\nMaterial: 5500-TB-0120 (Turbine Blade Forging, Ti-6Al-4V, Aerospace Grade)\nBatch: FG-2025-44821 | Customer: Pratt & Whitney\nDefect: Fatigue cracking at dovetail root | Detection: Customer incoming inspection\nProduction date: Aug 2025 | Plant: 2000 (Cleveland)\n\n**SharePoint — /migration/mapping-tables/material-consolidation-master.xlsx**\nTarget material 5500-TB-0120 maps from:\n- Legacy ECC MAT-44120: \"Turbine blade forging — standard geometry (Plant 2000)\"\n- Legacy ECC MAT-44120-A: \"Turbine blade forging — modified root radius (Plant 2000)\"\n- Legacy ECC MAT-44121: \"Turbine blade forging — wide chord variant (Plant 3000, Akron)\"\nConsolidation rationale: \"Same alloy, same spec (AMS 4928), same end-use. Variants captured in classification characteristics.\"\n\n**MasterControl — Document #DC-2022-0445 (Controlled Document)**\nTitle: \"Process Deviation Report — Modified Dovetail Forging Die\"\nEffective: Mar 2022 | Status: Closed\nDescription: \"MAT-44120-A introduced to accommodate revised customer drawing (P&W Dwg Rev F). Root radius reduced from 2.5mm to 1.8mm per customer request. Die qualification completed per AS9100 clause 8.5.6.\"\nApproval: Quality Director, Engineering VP\n\n**Microsoft Teams — #quality-engineering (Aug 18, 2025, 11:02 AM)**\n@dave.kowalski: Running the batch trace on QN-2026-00847. S/4 shows material 5500-TB-0120 but I need to know which legacy variant this batch actually came from. The consolidation mapping just shows all three feeding into one number.\n@raj.chowdhury: Check the batch classification characteristics. We migrated the legacy material number into a Z-field on the batch master. Should be ZLEGACY_MATNO.\n@dave.kowalski: Found it — it's MAT-44120-A.\n@raj.chowdhury: That's the modified root radius one. :eyes:\n@dave.kowalski: Yeah. And the cracking is at the dovetail root. Connecting some dots here.\n[No further messages — thread ends]\n\n**SAP S/4HANA — Batch Master FG-2025-44821 (Classification view)**\nCharacteristic ZLEGACY_MATNO: MAT-44120-A\nCharacteristic ZDIE_SET: DS-2022-003\nCharacteristic ZCUST_DWG_REV: F\n\n**Excel — Plant 2000 Maintenance Log (network drive: \\\\CLE-PROD-01\\maint\\forge-press-PM.xlsx)**\nRow 1,204: Die set DS-2022-003 | Last inspection: Jul 2025 | Cycles since refurb: 8,420\nNote (hand-typed): \"hairline wear mark observed at root cavity, within tolerance per visual. Flagged for next PM window (Oct 2025).\"",
+    "question": "Based on the available evidence, what is the most likely root cause chain for the fatigue cracking in batch FG-2025-44821, and which system contains the earliest indicator that should have triggered preventive action?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) The root cause cannot be determined without the legacy ECC routing data which was not migrated; the investigation should be paused until the Mexico plant ECC system (which holds backup routing archives) can be queried",
+      "B) The defect is a customer-specification issue since P&W requested the reduced root radius; Ironforge manufactured to drawing and the complaint should be rejected with reference to MasterControl document DC-2022-0445 showing customer-directed design change",
+      "C) The reduced root radius (1.8mm per P&W Drawing Rev F) combined with die wear at the root cavity created a stress concentration; the Excel maintenance log noting 'hairline wear mark at root cavity' in July 2025 was the earliest actionable signal that should have triggered die replacement before the August production run",
+      "D) The material consolidation itself caused the defect by losing process-specific routing information; the SharePoint mapping table is the root cause artifact and all batches of 5500-TB-0120 should be quarantined"
+    ],
+    "correct_answer": "C",
+    "rationale": "The correct answer requires tracing through six systems: (1) S/4HANA quality notification identifies the defect location (dovetail root); (2) the batch classification Z-field traces back to legacy MAT-44120-A; (3) the SharePoint consolidation mapping identifies that MAT-44120-A is the modified root radius variant; (4) MasterControl shows the root radius was reduced from 2.5mm to 1.8mm; (5) the Teams conversation connects the legacy material to the cracking location; and critically (6) the Excel maintenance log — the least formal source — shows die wear was observed at the root cavity a month before the defective batch was produced, within the same die set (DS-2022-003). The thinner root radius made the part more sensitive to die wear-induced surface defects that nucleate fatigue cracks. Answer A incorrectly blames the migration itself rather than the underlying manufacturing condition. Answer C deflects responsibility by pointing to the customer spec, ignoring that Ironforge's die maintenance is their process control obligation regardless of geometry. Answer D unnecessarily delays investigation when sufficient traceability exists through the Z-field and mapping table.",
+    "contributor": {
+      "name": "Raj Chowdhury",
+      "title": "ERP Migration & Data Governance Lead",
+      "organization": "Ironforge Manufacturing",
+      "years_experience": 11,
+      "domain_expertise": "Data migration, legacy system decommissioning, master data reconciliation, cutover planning"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "SAP S/4HANA",
+        "SharePoint",
+        "MasterControl",
+        "Microsoft Teams",
+        "Excel (maintenance log)"
+      ],
+      "informal_signal_location": "The hand-typed note in the plant floor Excel maintenance log observing die wear at the root cavity one month before the defective batch — a critical preventive signal buried in an informal spreadsheet that serves as one plant's maintenance system of record",
+      "acronyms_used": [
+        "QN",
+        "Ti-6Al-4V",
+        "AMS 4928",
+        "AS9100",
+        "PM",
+        "P&W",
+        "UOM",
+        "BOM"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 48
+    }
+  }
+]

@@ -1,0 +1,138 @@
+[
+  {
+    "title": "SAP Appeal Precedent After COVID Hardship Policy Sunset",
+    "category": "precedent_exception",
+    "domain": "hr_people_ops",
+    "difficulty": "hard",
+    "scenario": "**Banner Financial Aid Module \u2014 Student Record (ID: B00487231)**\nName: Marcus T. Rivera | Enrollment: Full-time, Senior | Campus: West Campus\nSAP Status: Suspended (cumulative GPA 1.82, completion rate 58%)\nPrior SAP Appeal: Approved Spring 2024, reason code 'COVID-EXT' | Academic plan filed, signed by advisor K. Yamamoto\nCurrent term: Fall 2026 | New appeal submitted: Sep 3, 2026\n\n**Google Sheets \u2014 'FA Appeals Tracker 2026-27' (Row 142)**\nStudent: Rivera, Marcus | Appeal type: SAP | Received: 9/3 | Committee date: TBD | Notes: 'Second appeal. Prior COVID approval. Citing ongoing mental health. Has counseling documentation. \u2014L.Pham'\n\n**Google Doc \u2014 'SAP Policy Updates AY2025-26' (last edited Aug 2025)**\nSection 4.1: 'The COVID-19 Extended Hardship provision (added May 2020) is retired effective Fall 2025. Students previously granted extensions under this provision are not automatically grandfathered. All new appeals must cite qualifying unusual circumstances per standard SAP policy.'\n[RESOLVED COMMENT by @j.caldwell, Jul 14, 2025]: 'Confirming with legal \u2014 students whose prior plan was approved under COVID-EXT and who maintained compliance with their plan through completion are NOT considered to have exhausted their one-time appeal right. They get a fresh appeal under standard criteria. Updated language in 4.1.2.'\n\n**Slack \u2014 #finaid-team (Sep 5, 2026, 9:47 AM)**\n@l.pham: Quick q \u2014 Rivera is back with another SAP appeal. His COVID one was approved S24 but he fell below again. Does the retired COVID policy mean his first appeal 'counts' or not?\n@t.washington: I'd say it counts. Policy says not grandfathered.\n@l.pham: But Jen commented something in the policy doc about this...\n@t.washington: Which doc?\n@l.pham: The AY25-26 updates one. Let me find it.\n[No further replies in thread]\n\n**Email \u2014 Subject: 'RE: Rivera SAP Documentation' (Sep 4, 2026)**\nFrom: counseling@brightpath.edu\nTo: l.pham@brightpath.edu\nAttachment: Rivera_Treatment_Summary.pdf (last modified: Aug 28, 2026)\n\n'Hi Lisa, Attached is Marcus's treatment verification. He's been in consistent treatment since January 2025. His provider confirms the mental health condition is distinct from any COVID-related hardship previously cited. Let me know if you need the diagnostic code for your records.'",
+    "question": "When the SAP Appeals Committee reviews Marcus Rivera's case, what is the correct procedural determination regarding his appeal eligibility?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Rivera cannot appeal because the COVID-EXT policy was retired and his current hardship must be reviewed under the new policy, which requires VP approval for second appeals.",
+      "B) Rivera is eligible for a fresh appeal under standard unusual circumstances criteria because his prior COVID-EXT approval, where he maintained compliance, does not exhaust his standard appeal right per Section 4.1.2.",
+      "C) Rivera has exhausted his one-time SAP appeal right because the COVID-EXT appeal in Spring 2024 counts as his appeal regardless of the policy sunset.",
+      "D) Rivera's appeal should be held pending legal review since the policy language says students are 'not automatically grandfathered' which implies his prior approval is void."
+    ],
+    "correct_answer": "B",
+    "rationale": "The critical signal is in Jennifer Caldwell's resolved comment on the Google Doc (hidden by default), which clarifies that students who maintained compliance with their COVID-EXT plan are not considered to have used their standard appeal right \u2014 they get a fresh appeal under normal criteria. Rivera's counseling documentation establishes a distinct, qualifying unusual circumstance (ongoing mental health condition unrelated to COVID). Answer A incorrectly treats the COVID-EXT appeal as consuming the standard appeal right, ignoring the Section 4.1.2 clarification. Answer C fabricates a VP approval requirement that doesn't exist in the policy and conflates the policy sunset with ineligibility. Answer D misreads 'not automatically grandfathered' \u2014 that language refers to continued COVID-EXT extensions, not to appeal eligibility itself. The Slack thread shows staff uncertainty, but the authoritative answer lives in the resolved comment that Lisa Pham was trying to locate.",
+    "contributor": {
+      "name": "Jennifer Caldwell",
+      "title": "Director of Financial Aid",
+      "organization": "Brightpath State University",
+      "years_experience": 16,
+      "domain_expertise": "Federal financial aid (Title IV), SAP appeals, professional judgment decisions, institutional aid policy"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Banner Financial Aid Module",
+        "Google Sheets",
+        "Google Docs",
+        "Slack",
+        "Email"
+      ],
+      "informal_signal_location": "Resolved comment by @j.caldwell in Google Doc 'SAP Policy Updates AY2025-26' \u2014 hidden by default, contains the authoritative interpretation of Section 4.1.2",
+      "acronyms_used": [
+        "SAP",
+        "COVID-EXT",
+        "AY",
+        "GPA"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 28
+    }
+  },
+  {
+    "title": "Professional Judgment Override by Unauthorized Counselor Post-Delegation Matrix Update",
+    "category": "approval_chain",
+    "domain": "hr_people_ops",
+    "difficulty": "expert",
+    "scenario": "**Banner Financial Aid Module \u2014 Award Record (ID: B00512984)**\nName: Aisha Okonkwo | Enrollment: Half-time, Junior | Campus: Main Campus\nISIR Status: Verified, C-flag cleared | EFC: $14,200 (as filed)\nPJ Override applied: Aug 19, 2026 | Override type: Income adjustment (loss of employment) | New EFC: $0 | Processed by: R. Guzman\nAward adjusted: Pell increased from $0 to $3,648; institutional need-based grant added $2,500\n\n**Google Doc \u2014 'PJ Delegation Matrix AY2026-27' (v3, effective Jul 1, 2026)**\nSection 2: Professional Judgment Authority Levels\n- Income adjustments > $10,000 impact: Senior Counselor or above\n- Income adjustments resulting in zero EFC: Director approval required\n- Dependency overrides: Associate Director or above\n[Version history: v2 (AY2025-26) stated: 'Income adjustments of any amount: Financial Aid Counselor II or above']\n\n**PeopleSoft HR \u2014 Employee Record**\nRoberto Guzman | Title: Financial Aid Counselor II | Department: Financial Aid | Start date: Mar 2023 | Supervisor: L. Pham (Senior Counselor)\nNote: Promotion to Senior Counselor effective Oct 1, 2026 (approved in PeopleSoft Aug 30, 2026)\n\n**Slack \u2014 #finaid-team (Aug 18, 2026, 3:22 PM)**\n@r.guzman: Hey @l.pham \u2014 I have a student (Okonkwo) whose parent lost their job in June. Documentation checks out. ISIR is clean. Going to process the PJ for income adjustment. EFC goes to zero.\n@l.pham: Sounds straightforward. Go for it. :thumbsup:\n[Thread: 1 reply, 1 emoji reaction]\n\n**Google Chat \u2014 Faculty Advising Channel (Aug 20, 2026, 11:15 AM)**\n@prof.harrison: Quick FYI for advising \u2014 Aisha Okonkwo's aid package was updated yesterday. She should be clear to register for full load next term if she wants. I saw the adjustment in Banner this morning.\n\n**Email \u2014 Subject: 'PJ Delegation Update Reminder' (Jul 8, 2026)**\nFrom: j.caldwell@brightpath.edu\nTo: finaid-all@brightpath.edu\n\n'Team \u2014 Reminder that the updated PJ delegation matrix (v3) is effective as of July 1. Key change: any PJ resulting in zero-EFC now requires my sign-off before processing. Please route these to me or Kenji. I know this adds a step but we got flagged in the program review for insufficient documentation on high-impact PJs. See the matrix doc for full details. \u2014Jen'\n\n**Slate CRM \u2014 Admissions Note (for context)**\nOkonkwo, Aisha: Transfer student from Portland CC (Fall 2025). Scholarship: Dean's Transfer Award $1,500/yr (merit, not need-based). Enrollment counselor: M. Torres.",
+    "question": "During a quarterly file review, the Director discovers this override. What is the correct determination regarding the validity of Guzman's professional judgment action on the Okonkwo record?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) The override is invalid and must be reversed because Guzman lacked authority under the v3 matrix, and a Slack thumbs-up does not constitute Director approval for zero-EFC determinations.",
+      "B) The override is valid because Guzman's promotion to Senior Counselor was already approved in PeopleSoft on Aug 30, retroactively covering the Aug 19 action.",
+      "C) The override is valid because Lisa Pham (Senior Counselor) provided implicit approval via Slack, satisfying the 'Senior Counselor or above' threshold for income adjustments.",
+      "D) The override should be referred to the federal program review team because processing a PJ without proper delegation is a Title IV compliance violation requiring self-disclosure."
+    ],
+    "correct_answer": "A",
+    "rationale": "Under the v3 delegation matrix effective July 1, 2026, any professional judgment resulting in zero EFC requires Director approval. Guzman held the title of Counselor II on August 19 when he processed the override \u2014 his promotion to Senior Counselor wasn't effective until October 1 and cannot apply retroactively to authorize a prior action. Lisa Pham's Slack thumbs-up, while it might satisfy the 'Senior Counselor or above' tier for general income adjustments, does NOT satisfy the zero-EFC Director requirement. The Director's own email on July 8 explicitly stated these must be routed to her. Answer A is tempting because Pham is a Senior Counselor, but it misses that zero-EFC adjustments specifically require Director sign-off \u2014 a higher bar than general income adjustments. Answer C incorrectly applies retroactive authority from a future-dated promotion. Answer D escalates prematurely \u2014 while the override was improperly authorized, it can be remediated through Director review and re-processing without triggering a self-disclosure, as the underlying documentation (job loss, ISIR verification) appears sound. The correct action is to review the documentation, have the Director sign off if appropriate, and retrain on the delegation matrix.",
+    "contributor": {
+      "name": "Jennifer Caldwell",
+      "title": "Director of Financial Aid",
+      "organization": "Brightpath State University",
+      "years_experience": 16,
+      "domain_expertise": "Federal financial aid (Title IV), SAP appeals, professional judgment decisions, institutional aid policy"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Banner Financial Aid Module",
+        "Google Docs",
+        "PeopleSoft HR",
+        "Slack",
+        "Google Chat",
+        "Email",
+        "Slate CRM"
+      ],
+      "informal_signal_location": "Slack #finaid-team \u2014 Lisa Pham's :thumbsup: emoji reaction used as implicit approval, which is insufficient for the zero-EFC Director requirement",
+      "acronyms_used": [
+        "PJ",
+        "EFC",
+        "ISIR",
+        "C-flag",
+        "Pell",
+        "COA",
+        "AY",
+        "Title IV"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 3
+    }
+  },
+  {
+    "title": "R2T4 Calculation Dispute Across Merged Campus Records",
+    "category": "cross_system_synthesis",
+    "domain": "hr_people_ops",
+    "difficulty": "expert",
+    "scenario": "**Banner SIS \u2014 Student Record (ID: W00298471)**\nName: Daniel Park-Simmons | Campus: East Campus (merged from former 'Eastview Community College' 5 years ago)\nEnrollment Spring 2026: 12 credits (full-time) | Withdrawal date: Mar 14, 2026 (official)\nPrior ID (legacy Eastview system): EV-10923 | Records migration note: 'Attendance data pre-merge incomplete; LMS is authoritative for post-merge terms'\n\n**Banner Financial Aid \u2014 Disbursement Record**\nPell Grant: $3,298 disbursed (Feb 1, 2026) | Institutional Grant: $2,000 disbursed (Feb 1, 2026)\nDirect Sub Loan: $1,750 disbursed (Feb 1, 2026) | Total Title IV disbursed: $5,048\nR2T4 calculation initiated: Mar 18, 2026 | Status: PENDING \u2014 'Attendance verification required'\n\n**Canvas LMS \u2014 Activity Log (Spring 2026, exported Mar 15)**\nDaniel Park-Simmons | Course: PSYCH 301 \u2014 Last login: Mar 12 | Submissions: 3 of 5 due\nCourse: ENG 204 \u2014 Last login: Mar 14 | Submissions: 4 of 4 due\nCourse: MATH 210 \u2014 Last login: Feb 28 | Submissions: 1 of 4 due\nCourse: SOC 150 \u2014 Last login: Mar 14 | Submissions: 2 of 3 due\n\n**Google Sheets \u2014 'R2T4 Tracking Spring 2026' (Row 28)**\nStudent: Park-Simmons, D. | WD Date: 3/14 | % completed: ???? | Calc by: T. Washington | Notes: 'Conflicting last attendance. Banner shows 3/14 official WD. Canvas shows last academic activity 3/14 for two courses but only 2/28 for MATH 210. Which date do we use? Using 3/14 per WD form. \u2014TW'\n[Cell highlighted yellow \u2014 no resolution noted]\n\n**Slack \u2014 #finaid-team (Mar 20, 2026, 2:08 PM)**\n@t.washington: Hey team \u2014 Park-Simmons R2T4 question. Kid withdrew 3/14 but his MATH 210 last activity was 2/28. Do we treat MATH as a class he never attended (reduce the payment period) or use the module-based definition since it's an online section?\n@k.nakamura: Was it an online or hybrid section?\n@t.washington: Online. East Campus course. Those old Eastview courses are weird \u2014 some still show as 'classroom' in Banner even though they moved online after the merge.\n@k.nakamura: If it's truly online and modular, you'd use the last LMS activity date for that course. But if he submitted assignment 1 of 4, he DID begin attendance.\n@t.washington: Right but that was week 2. He basically ghosted MATH after Feb 28.\n@k.nakamura: Then his last date of attendance for R2T4 is still 3/14 \u2014 you use the latest activity across ALL courses in the period. MATH doesn't change the calc.\n@t.washington: :eyes: oh wait. Shouldn't we check if the ENG 204 submissions on 3/14 were academically related? If they were just discussion posts...\n[Thread ends \u2014 no response]\n\n**Email \u2014 Subject: 'Fwd: Park-Simmons withdrawal circumstances' (Mar 16, 2026)**\nFrom: academic.advising@brightpath.edu\nTo: finaid-withdrawals@brightpath.edu\n\n'FYI \u2014 Daniel told his advisor he stopped attending MATH 210 in late February because the instructor wasn't posting materials. Department confirmed instructor had medical leave; no course activity Feb 25 - Mar 10. Replacement assigned Mar 11. May be relevant for your R2T4 since the student arguably couldn't attend.'",
+    "question": "What is the correct last date of academically-related activity to use in Daniel Park-Simmons's R2T4 calculation, and why?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) March 14 \u2014 use the official withdrawal date from the withdrawal form, as that is the institutional determination regardless of LMS activity patterns.",
+      "B) March 12 \u2014 use the PSYCH 301 last login as the last confirmed academic engagement, since discussion posts in ENG 204 on 3/14 may not qualify as academically-related activity.",
+      "C) March 14 \u2014 use the latest academically-related activity across all courses in the payment period (ENG 204 and SOC 150 submissions on 3/14), provided those submissions constitute academically-related activity.",
+      "D) February 28 \u2014 use the earliest 'last activity' date across courses (MATH 210) since he demonstrably disengaged from that course, reducing the payment period percentage."
+    ],
+    "correct_answer": "C",
+    "rationale": "Federal R2T4 regulations require using the later of the student's last date of attendance or last date of academically-related activity. For a student enrolled in multiple courses, you use the latest activity across ALL courses in the payment period \u2014 not the earliest. The Canvas data shows submissions (not just logins) in ENG 204 on March 14, with 4 of 4 assignments submitted, which constitutes academically-related activity (submissions are explicitly qualifying under ED guidance). The MATH 210 situation (instructor absence, Feb 28 last activity) is relevant for other purposes but does NOT override the later activity in other courses. Kenji's guidance in Slack is correct on this point. Answer A incorrectly uses the earliest date and conflates per-course analysis with the R2T4 payment period calculation. Answer B arrives at the right date but for the wrong reason \u2014 the withdrawal form date is not automatically the LDA for R2T4; you must independently verify academic activity. Answer D raises a valid question about whether discussion posts qualify, but the Canvas log shows 'submissions' (4 of 4 due) not merely logins, and the unresolved Slack thread questioning this is a red herring \u2014 submissions are academically related activity per regulation. The instructor absence email, while contextually important, does not change the calculation since the student had activity in other courses through March 14.",
+    "contributor": {
+      "name": "Jennifer Caldwell",
+      "title": "Director of Financial Aid",
+      "organization": "Brightpath State University",
+      "years_experience": 16,
+      "domain_expertise": "Federal financial aid (Title IV), SAP appeals, professional judgment decisions, institutional aid policy, Return to Title IV"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Banner SIS",
+        "Banner Financial Aid",
+        "Canvas LMS",
+        "Google Sheets",
+        "Slack",
+        "Email"
+      ],
+      "informal_signal_location": "Unresolved Slack thread where the final question about ENG 204 submissions goes unanswered \u2014 the silence creates false doubt about whether March 14 activity qualifies",
+      "acronyms_used": [
+        "R2T4",
+        "Pell",
+        "LMS",
+        "WD",
+        "LDA",
+        "Title IV",
+        "ED"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 2
+    }
+  }
+]

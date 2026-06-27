@@ -1,0 +1,153 @@
+[
+  {
+    "title": "CAS Disclosure Statement Change and Split-Period G&A Allocation",
+    "category": "policy_version",
+    "domain": "finance_revops",
+    "difficulty": "expert",
+    "scenario": "Context from Costpoint (Indirect Rate Module): CAS Disclosure Statement Rev 7 effective date: January 1, 2026. Change: G&A allocation base moved from Total Cost Input (TCI) to Value-Added Cost Input (VACI), excluding material and subcontract costs above $100K. Prior revision (Rev 6) used TCI. Forward pricing rate agreement (FPRA) signed with DCMA reflects VACI base effective 1/1/2026. Provisional billing rates updated in system 2/15/2026.\n\n**SharePoint — /finance/CAS-disclosures/Rev7-approval-chain (uploaded 12/18/2025)**\nFiled with CFAO on 11/30/2025. Acknowledgment received 12/15/2025. Effective date confirmed as 'beginning of contractor's next fiscal year' per CAS 9903.202-3.\n[RESOLVED COMMENT by @l.castellano, 11/22/2025]: 'DCAA fieldwork on FY25 ICS still in progress — they're using Rev 6 for everything through 12/31. Confirmed verbally with Auditor Jenkins that costs incurred in December that hit the ledger in January will be treated based on incurred date, not posting date.'\n\n**Teams — #cost-accounting (Jan 14, 2026, 3:47 PM)**\n@kevin.marsh: Linda — the Orion subcontract (CPFF, $2.3M) had a milestone payment of $1.4M that was accrued in December but the invoice didn't post until Jan 3. Under VACI this would be excluded from base since it's >$100K. Under TCI it was in the base. Which method?\n@l.castellano: Incurred in December = Rev 6 applies. TCI base.\n@kevin.marsh: Got it. But the G&A pool itself — do we use Jan rates since that's when it booked?\n@l.castellano: No. The cost belongs to Dec cost pool regardless of posting date.\n[Thread ends — no further replies]\n\n**Email — Subject: 'RE: FY25 ICS Draft — Orion Sub Costs' (Mar 2, 2026)**\nFrom: d.jenkins@dcaa.mil\nTo: l.castellano@sentineldefense.com\nCC: dcaa-resident@sentineldefense.com\n\n> On Feb 28, l.castellano wrote:\n> The $1.4M Orion milestone was accrued in FY25 (December) per ASC 606 recognition.\n> We allocated G&A using TCI base consistent with Rev 6.\n\nLinda — we concur on the incurred-date treatment. However, our preliminary testing shows $218K in material costs from PO 4471-A that posted in January but reference a December delivery receipt. If those are FY25 incurred costs, they'd also go in the TCI base and your FY25 G&A rate denominator increases. Your current ICS draft doesn't include them. Please reconcile.\n\n**Costpoint — Journal Entry JE-2026-0142 (Jan 8, 2026)**\nDescription: 'Correct Dec material receipt — PO 4471-A, delivery 12/28, invoice rec'd 1/6'\nDebit: Direct Material Pool (Project NIGHTHAWK-III) $218,000\nCredit: AP Accrual $218,000\nApproval: K. Marsh (Cost Analyst) — auto-approved per threshold policy\nNote: No project manager sign-off (PM was on PTO 12/23 through 1/7)",
+    "question": "Given the DCAA's finding about PO 4471-A, what is the correct treatment for the $218K in the FY25 Incurred Cost Submission, and what compliance risk exists with the journal entry?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) The $218K belongs in the FY26 G&A pool under VACI (Rev 7) because the journal entry posted in January; no compliance risk since auto-approval met Costpoint threshold policy.",
+      "B) The $218K belongs in the FY25 G&A base under TCI (Rev 6) because it was incurred in December; the compliance risk is the missing PM sign-off, which doesn't affect CAS treatment but creates a FAR 31.201-2(d) adequacy question for DCAA.",
+      "C) The $218K should be excluded from both FY25 and FY26 until the PM provides retroactive approval; without project authorization the cost is suspended and potentially unallowable.",
+      "D) The $218K belongs in FY25 under TCI but should be excluded from the G&A allocation base entirely because material costs over $100K are excluded under the new VACI methodology."
+    ],
+    "correct_answer": "B",
+    "rationale": "The December delivery receipt establishes the incurred date per CAS 9904.401 (consistency in estimating, accumulating, and reporting costs). Linda's own guidance in the Teams thread confirms that incurred date — not posting date — determines which fiscal year and which CAS revision applies. Since it was incurred in FY25, Rev 6 (TCI) governs, and the $218K belongs in the FY25 G&A allocation base. The compliance risk is real but distinct from the CAS question: the journal entry was auto-approved by a cost analyst without PM authorization. Under FAR 31.201-2(d), costs must be adequately documented. The missing PM sign-off doesn't make the cost unallowable per se, but gives DCAA grounds to question the adequacy of internal controls. Answer A incorrectly applies posting date rather than incurred date and applies the wrong CAS revision. Answer C overstates the consequence of missing PM approval — cost suspension is not required merely because a PM was on PTO; the delivery receipt and invoice substantiate the cost. Answer D conflates Rev 6 and Rev 7 methodologies — the VACI $100K exclusion only applies to costs governed by Rev 7 (FY26 forward), not retroactively to FY25 costs.",
+    "contributor": {
+      "name": "Linda Castellano",
+      "title": "Director of Cost Accounting & Compliance",
+      "organization": "Sentinel Defense Solutions",
+      "years_experience": 20,
+      "domain_expertise": "CAS compliance, indirect rate structure, incurred cost submissions, DCAA audit response, cost allowability"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Deltek Costpoint",
+        "SharePoint",
+        "Microsoft Teams",
+        "Email (Outlook)",
+        "DCAA correspondence"
+      ],
+      "informal_signal_location": "Teams thread where Linda confirms incurred-date-not-posting-date treatment, and the resolved SharePoint comment documenting verbal agreement with DCAA auditor",
+      "acronyms_used": [
+        "CAS",
+        "DCAA",
+        "ICS",
+        "G&A",
+        "TCI",
+        "VACI",
+        "FPRA",
+        "CFAO",
+        "CPFF",
+        "FAR",
+        "PM",
+        "PTO",
+        "ASC 606"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 4
+    }
+  },
+  {
+    "title": "B&P to Funded Contract Reclassification with Prior-Year Rate Impact",
+    "category": "temporal_consistency",
+    "domain": "finance_revops",
+    "difficulty": "hard",
+    "scenario": "Context from Costpoint (Project Module): Project CEDAR-PROPOSAL created 6/15/2025. Charge type: B&P (Bid & Proposal). Total costs accumulated: $347,200 through 9/30/2025. Project closed 10/1/2025. Indirect rates applied: FY25 provisional rates (OH: 62%, Fringe: 38.2%, G&A: 14.1%).\n\nNew project created: CEDAR-OPS, Contract FA8721-26-C-0019 (FFP), awarded 1/12/2026, period of performance 2/1/2026 - 1/31/2029. Contract includes CLIN 0001AA — NRE (Non-Recurring Engineering) which explicitly states: 'The contractor's proposal preparation costs for the technical volume engineering analysis are considered pre-contract costs allowable under this CLIN per FAR 31.205-32.'\n\n**Outlook — From: l.castellano@sentineldefense.com (Jan 22, 2026)**\nTo: kevin.marsh@sentineldefense.com; r.oconnor@sentineldefense.com\nSubject: CEDAR reclassification — READ BEFORE PROCESSING\n\nKevin/Rachel — The contract explicitly allows pre-contract cost recovery on the NRE CLIN. We need to reclassify $192K of the B&P costs (the engineering analysis portion only, NOT the volumes/pricing labor) from the B&P pool to direct on CEDAR-OPS.\n\nIMPORTANT: FY25 final rates haven't been negotiated yet. The reclassification reduces our FY25 B&P pool, which will change the numerator for FY25 IR&D/B&P rate calculation. Use PROVISIONAL rates for now and flag for true-up once finals are set.\n\n**Excel — 'FY25 B&P Pool Reconciliation.xlsx' (last modified: 2/3/2026 by K. Marsh)**\nTab 'CEDAR Reclass':\n| Cost Element | Original B&P | Reclass to Direct | Remaining B&P |\n| Engineering Labor | $142,000 | $142,000 | $0 |\n| ODCs (test materials) | $50,000 | $50,000 | $0 |\n| Overhead (applied) | $88,040 | — | — |\n| Total | $280,040 | $192,000 | $88,040 |\nNote in cell F12: 'Per Linda — only base costs. OH reapplied at project rate when moved to CEDAR-OPS. Confirmed in call 1/28.'\n\n**Teams — #finance-ops (Feb 10, 2026, 11:02 AM)**\n@r.oconnor: Quick flag — the FY25 ICS draft shows B&P pool at $4.8M but that's pre-CEDAR reclass. Should be $4.608M after removing the $192K. Updating now.\n@kevin.marsh: Wait — do we also back out the OH that was applied to those B&P costs? The $88K in overhead was in the OH pool allocated to B&P.\n@r.oconnor: Good catch. Pinging Linda.\n[No reply in thread as of 2/10]\n\n**Teams DM — @l.castellano to @r.oconnor (Feb 11, 2026, 8:14 AM)**\nRachel — yes, back out the OH from the B&P pool. The overhead gets reapplied at the CEDAR-OPS project overhead rate (which is different — that's a manufacturing-support rate at 58%, not the G&A-only rate). Don't touch the fringe — that stays with the labor wherever it lands. Update the ICS draft and I'll review Thursday.",
+    "question": "After the full reclassification is processed correctly, what happens to the FY25 indirect rate pools, and which approval is still missing that could jeopardize the cost allowability of the reclassified amount?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) The B&P pool decreases by $192,000 (base costs only); the FY25 OH pool decreases by $88,040 (OH backed out per Linda's DM); the missing approval is the CAS-required written notification to the CFAO of a change in cost accounting practice.",
+      "B) The B&P pool decreases by $192,000 (base costs only); the FY25 OH pool decreases by $88,040; the missing approval is the DCAA pre-approval of the reclassification before it can be included in the ICS.",
+      "C) The B&P pool decreases by $192,000 (base costs only); the OH pool is unaffected because overhead follows the cost it's applied to; the missing approval is the Contracting Officer's written consent for pre-contract cost recovery.",
+      "D) The B&P pool decreases by $280,040 (base + OH); the FY25 OH pool decreases by $88,040; no approval is missing because the contract language in CLIN 0001AA provides sufficient authorization."
+    ],
+    "correct_answer": "A",
+    "rationale": "Linda's Teams DM (the critical informal signal) confirms that both the $192K base cost AND the $88,040 OH should be backed out of their respective pools. The B&P pool drops by $192K (base costs) and the OH pool drops by $88,040 (overhead that was allocated to those B&P costs). The overhead gets reapplied at the CEDAR-OPS rate (58%) on the new project. The missing approval is the CAS notification: moving costs from an indirect pool (B&P) to direct charging represents a change in cost accounting practice under CAS 9904.402. The contractor must notify the CFAO in writing. This isn't a DCAA pre-approval (DCAA audits but doesn't approve; Answer D misattributes authority). The contract language provides the FAR 31.205-32 basis for allowability, but CAS compliance is a separate obligation — the CO's consent (Answer B) is already embedded in the contract clause. Answer B incorrectly includes the full $280K as the B&P reduction (the $88K is OH pool, not B&P pool) and misses the CAS notification requirement entirely.",
+    "contributor": {
+      "name": "Linda Castellano",
+      "title": "Director of Cost Accounting & Compliance",
+      "organization": "Sentinel Defense Solutions",
+      "years_experience": 20,
+      "domain_expertise": "CAS compliance, indirect rate structure, incurred cost submissions, DCAA audit response, cost allowability"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Deltek Costpoint",
+        "Microsoft Teams",
+        "Outlook (Email)",
+        "Excel",
+        "Contract document"
+      ],
+      "informal_signal_location": "Teams DM from Linda to Rachel confirming OH back-out treatment — not visible in the public channel thread that received no reply",
+      "acronyms_used": [
+        "B&P",
+        "IR&D",
+        "OH",
+        "G&A",
+        "ICS",
+        "FFP",
+        "CLIN",
+        "NRE",
+        "CAS",
+        "CFAO",
+        "DCAA",
+        "FAR",
+        "ODC"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 8
+    }
+  },
+  {
+    "title": "Time Charging Correction Spanning Contracts with Different Fee Structures",
+    "category": "approval_chain",
+    "domain": "finance_revops",
+    "difficulty": "hard",
+    "scenario": "Context from Costpoint (Timesheet Module): Employee: Marcus Webb, Senior Systems Engineer (L4). Timesheet correction submitted 2/14/2026 for period 8/12/2025 - 8/23/2025. Original charges: 80 hours to Project MERIDIAN (T&M contract, labor category: SSE, billed rate: $185/hr). Correction: move 32 hours from MERIDIAN to Project THORNFIELD (CPFF contract, OH rate: 62%, G&A: 14.1%, fee: 8.2%). Reason code: 'Mischarge — employee worked split assignment, charged to wrong WBS.' Correction submitted by: Marcus Webb. First-level approval: David Holt (current supervisor).\n\n**Costpoint — Approval Workflow History:**\nOriginal timesheet (8/23/2025): Approved by Susan Park (then-supervisor, Project MERIDIAN PM).\nSusan Park status: Transferred to Classified Programs Division, 11/1/2025. No longer has access to unclass Costpoint.\n\n**SharePoint — /policies/timekeeping/TC-Policy-2024-Rev3.pdf (effective 7/1/2024)**\nSection 5.4: 'Corrections to timesheets older than 60 calendar days require written justification, supervisor approval, AND approval from the Project Manager of the receiving project.'\nSection 5.5: 'When the original approving supervisor is no longer available, the current cost center manager may approve corrections with documented rationale.'\n\n**Teams — #meridian-program (Feb 14, 2026, 2:18 PM)**\n@david.holt: Heads up @j.torres — Marcus submitted a timecard correction moving 32 hrs off MERIDIAN onto THORNFIELD. Old charges from August. I can approve as his current super but you'll need to sign off as THORNFIELD PM per policy 5.4.\n@j.torres: Ack. Is this going to affect our MERIDIAN ceiling? We're at 94% burn on that CLIN.\n@david.holt: Actually it frees up $5,920 on MERIDIAN (32 x $185). Might be useful for the extension.\n@j.torres: :thumbsup:\n[No further messages]\n\n**Email — Subject: 'THORNFIELD Cost Impact — Timesheet Correction' (Feb 15, 2026)**\nFrom: r.oconnor@sentineldefense.com\nTo: l.castellano@sentineldefense.com\n\nLinda — flagging a downstream issue. The 32-hour correction to THORNFIELD increases the direct labor base on that contract by $4,288 (32 hrs x $134.00 loaded). With OH + G&A applied, the fully burdened cost is approximately $7,180. Since THORNFIELD is CPFF, this also generates additional fee of ~$589 (8.2%). The total impact to the government is ~$7,769.\n\nFAR 52.216-7(d) requires notification to the CO for any adjustment to costs previously billed. MERIDIAN (T&M) was already billed for those hours in August — we'd need a credit on the next T&M invoice.\n\nAlso — the correction crosses fiscal years for rate purposes if the rates finalized for FY25 differ from the provisionals that were applied. Do we use FY25 provisional rates or wait for finals?\n\n**Costpoint — Correction Status (as of 2/18/2026)**\nApproval chain: Marcus Webb (submitted) -> David Holt (approved, current supervisor) -> [PENDING: THORNFIELD PM]\nJ. Torres has not formally approved in system. No audit trail of Section 5.4 PM approval.",
+    "question": "What is the current compliance status of this timesheet correction, and what is the most significant unresolved risk?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) The correction is properly approved because David Holt's approval as current supervisor satisfies Section 5.5, and Torres' thumbs-up emoji in Teams constitutes PM acknowledgment; the main risk is the FY25 rate finalization timing.",
+      "B) The correction cannot proceed because Susan Park (original approver) must re-approve; Section 5.5 does not apply since Park is still employed, just transferred; the risk is an invalid correction creating a FAR 52.216-7 billing discrepancy.",
+      "C) The correction has supervisor approval but lacks formal PM approval in the system per Section 5.4; Torres' emoji is not a system-of-record approval; the most significant risk is that the correction generates fee on THORNFIELD ($589) without CO notification, which could be construed as an improper cost transfer benefiting the contractor.",
+      "D) The correction is blocked by the 60-day policy (August to February exceeds 60 days) and requires VP-level exception; the risk is DCAA interpreting the delayed correction as evidence of systemic timekeeping deficiency."
+    ],
+    "correct_answer": "C",
+    "rationale": "Section 5.4 requires both supervisor approval AND PM approval for corrections older than 60 days. David Holt's approval satisfies the supervisor requirement (Section 5.5 permits current supervisor when original is unavailable). However, Torres' thumbs-up emoji in Teams is NOT a formal approval in Costpoint — the system shows his approval is still PENDING. The more significant risk is the fee implication: moving costs from a T&M contract (no fee on hours) to a CPFF contract generates 8.2% fee ($589) that the government would not have paid under the original charging. Without CO notification per FAR 52.216-7(d), this creates the appearance of a cost transfer that benefits the contractor — exactly the kind of pattern DCAA flags as a potential deficiency finding. Answer A incorrectly treats the emoji as sufficient formal approval and downplays the fee risk. Answer B incorrectly reads Section 5.5 — Park's transfer to classified programs where she lacks system access makes her functionally 'unavailable.' Answer D overstates the 60-day policy — it requires additional approval, not VP exception; the policy is being followed (just incompletely), and a single correction is not a 'systemic deficiency.'",
+    "contributor": {
+      "name": "Linda Castellano",
+      "title": "Director of Cost Accounting & Compliance",
+      "organization": "Sentinel Defense Solutions",
+      "years_experience": 20,
+      "domain_expertise": "CAS compliance, indirect rate structure, incurred cost submissions, DCAA audit response, cost allowability"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Deltek Costpoint",
+        "SharePoint",
+        "Microsoft Teams",
+        "Outlook (Email)"
+      ],
+      "informal_signal_location": "Torres' thumbsup emoji in Teams used as de facto PM 'approval' that has no corresponding audit trail in the formal system; also the fee generation implication only surfaced in Rachel's email, not in the correction workflow",
+      "acronyms_used": [
+        "T&M",
+        "CPFF",
+        "OH",
+        "G&A",
+        "WBS",
+        "PM",
+        "CO",
+        "CLIN",
+        "DCAA",
+        "FAR",
+        "FY25",
+        "SSE"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 6
+    }
+  }
+]

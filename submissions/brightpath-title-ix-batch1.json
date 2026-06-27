@@ -1,0 +1,129 @@
+[
+  {
+    "title": "Cross-Campus Respondent Transfer with Conflicting Interim Measures",
+    "category": "approval_chain",
+    "domain": "compliance_legal",
+    "difficulty": "expert",
+    "scenario": "**Maxient Case #IX-2026-0147**\nComplainant: Student A (West Campus) | Respondent: Student B (originally West Campus, transferred to East Campus Jan 2026)\nFiled: February 3, 2026 | Incident date: November 12, 2025\nStatus: Formal investigation, supportive measures in place\nCase notes (Feb 4): \"Respondent's enrollment verified via Banner. Note: campus transfer processed 1/6/26. Original no-contact directive issued by Dean Harper (West Campus) on 11/15/25.\"\n\n**Banner SIS — Student B enrollment record**\nCampus: East Campus (effective 1/6/2026) | Prior: West Campus (Fall 2019 - Fall 2025)\nAdvisor hold: None | Title IX hold: ACTIVE (placed 11/15/25 by user DHARPER)\nRegistration restriction: \"No enrollment in courses cross-listed with [specific section numbers]\" — restriction campus: WEST\n\n**Google Doc — \"IX Procedures Manual v7.2\" (last edited August 2025)**\nSection 4.1.3: \"Supportive measures issued by a campus Dean are binding only within that Dean's jurisdictional campus. For respondents who transfer between campuses, the receiving campus Title IX Deputy must independently assess and re-issue measures within 5 business days of the transfer processing date.\"\n[RESOLVED COMMENT by @d.marchetti, Oct 14, 2025]: \"This section was NOT updated for the 2024 reg changes. New regs require continuity of measures across campuses without a gap. Will fix in v7.3 — but until then, the federal reg controls over this manual. Flagging for training.\"\n\n**Slack — #title-ix-deputies (Jan 8, 2026, 9:44 AM)**\n@rachel.ogunyemi: Heads up — Student B just showed up in my East Campus caseload via the transfer. I see Dean Harper's no-contact order in Maxient but my understanding is I need to re-issue under my authority?\n@diana.marchetti: No — new regs changed this. Harper's measures carry over automatically. Just confirm receipt and log it.\n@rachel.ogunyemi: Got it, will note in Maxient.\n[No further entries in Maxient from Ogunyemi]\n\n**Google Calendar — \"Title IX Deputy Sync\" (Jan 22, 2026, 2:00 PM)**\nRequired: diana.marchetti (accepted), rachel.ogunyemi (declined — OOO), mark.innis (accepted)\nAgenda: \"Cross-campus transfer protocols / v7.3 manual update status\"\nNo meeting notes document linked.\n\n**Email — Subject: \"RE: Student B — measures confirmation\" (Feb 10, 2026)**\nFrom: respondent-advisor@lawfirm.com\nTo: diana.marchetti@brightpath.edu\n\"...our client was never formally notified by East Campus of any restrictive measures. The only documentation references West Campus jurisdiction. We assert that no valid measures are currently in effect at East Campus and any enforcement action would constitute a due process violation.\"",
+    "question": "The respondent's advisor is challenging the validity of the no-contact directive at East Campus. Based on all available evidence, what is the correct institutional response?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) The advisor is correct — Dean Harper's measures expired upon transfer, and since Deputy Ogunyemi never re-issued them per Section 4.1.3, there is currently no valid no-contact directive at East Campus.",
+      "B) The measures remain valid under federal regulation (which supersedes the outdated manual), and Marchetti's Slack directive to Ogunyemi constitutes proper institutional continuity — but the institution must immediately issue formal written notice to the respondent to cure the notification deficiency.",
+      "C) The measures remain valid because the Banner hold placed by Dean Harper is system-wide and not campus-specific, making the jurisdictional argument moot.",
+      "D) The measures lapsed due to the 5-business-day re-issuance window in Section 4.1.3, requiring the Title IX Coordinator to issue entirely new measures under a fresh procedural determination."
+    ],
+    "correct_answer": "B",
+    "rationale": "The 2024 federal Title IX regulations require continuity of supportive measures regardless of campus transfer — the resolved Google Doc comment from Marchetti explicitly flags that the federal reg controls over the outdated manual section 4.1.3. Marchetti's Slack message to Ogunyemi correctly directed continuity rather than re-issuance. However, Ogunyemi never logged confirmation in Maxient, missed the deputy sync meeting, and the respondent was never formally notified at East Campus. The measures are legally valid but the notification deficiency is real and must be cured immediately. Answer A incorrectly applies the outdated manual over controlling federal regulation. Answer C is wrong because the Banner hold is campus-coded to WEST and the registration restriction references West Campus sections specifically — it is not system-wide. Answer D incorrectly treats the manual's 5-day window as binding when the federal reg supersedes it, and conflates lapsed notification with lapsed authority.",
+    "contributor": {
+      "name": "Diana Marchetti",
+      "title": "Title IX Coordinator",
+      "organization": "Brightpath State University",
+      "years_experience": 9,
+      "domain_expertise": "Due process requirements, procedural versioning (pre/post 2022 regs), evidence standards, cross-campus jurisdiction"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Maxient",
+        "Banner SIS",
+        "Google Docs",
+        "Slack",
+        "Google Calendar",
+        "Email"
+      ],
+      "informal_signal_location": "Resolved Google Doc comment revealing that Section 4.1.3 is outdated and federal reg controls; Slack directive that was never formally logged in case management",
+      "acronyms_used": [
+        "IX",
+        "SIS",
+        "OOO"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 4
+    }
+  },
+  {
+    "title": "Evidentiary Standard Mismatch Across Regulatory Transitions",
+    "category": "policy_version",
+    "domain": "compliance_legal",
+    "difficulty": "hard",
+    "scenario": "**Maxient Case #IX-2025-0298**\nComplainant: Student C | Respondent: Student D\nIncident date: March 8, 2025 | Formal complaint filed: September 19, 2025\nHearing scheduled: February 28, 2026 | Status: Investigation complete, pre-hearing phase\nInvestigator's report (filed Jan 15, 2026): \"Applying clear and convincing evidence standard per current BSU Title IX Policy v6.0 (effective August 1, 2025).\"\n\n**Google Doc — \"BSU Title IX Policy v5.3\" (archived, effective Sep 2023 — July 31, 2025)**\nSection 8.2: \"The standard of evidence for all formal complaints shall be preponderance of the evidence.\"\nSection 1.4: \"This policy governs all complaints arising from conduct that occurred during the effective period of this policy.\"\n\n**Google Doc — \"BSU Title IX Policy v6.0\" (effective August 1, 2025)**\nSection 8.2: \"The standard of evidence for all formal complaints shall be clear and convincing evidence.\"\nSection 1.4: \"This policy governs all formal complaints filed on or after August 1, 2025, regardless of when the underlying conduct occurred.\"\n[RESOLVED COMMENT by @provost.williams, July 15, 2025]: \"Legal counsel recommends 'filed on or after' language to align with DOE guidance. Faculty Senate approved 6-1 in closed session June 30.\"\n\n**Slack — #title-ix-deputies (Sep 22, 2025, 11:17 AM)**\n@diana.marchetti: Quick clarification for everyone — Case 0298 and similar transitional matters: v6.0's effective-date language controls. If the formal complaint was filed after 8/1, we use clear and convincing regardless of incident date. I know this feels counterintuitive but that's what legal and Faculty Senate approved.\n@mark.innis: Even if respondent's advisor argues due process concerns about retroactive standard changes?\n@diana.marchetti: Yes. The standard applies to the adjudication process, not the conduct itself. It's procedural not substantive. But flag any pushback to me directly.\n[thumbs-up reaction from @rachel.ogunyemi, @mark.innis]\n\n**Email — Subject: \"Pre-hearing objection — Case IX-2025-0298\" (Feb 12, 2026)**\nFrom: respondent-advisor@studentrights.org\nTo: titleix@brightpath.edu, hearing-panel@brightpath.edu\nCC: provost.williams@brightpath.edu\n\"...we formally object to the application of the clear and convincing standard. The alleged conduct occurred in March 2025, when BSU's operative policy (v5.3) applied preponderance. Retroactive application of a higher evidentiary standard to pre-existing conduct violates fundamental due process and OCR guidance...\"\n\n**PeopleSoft HR — Faculty Senate Records**\nMeeting: June 30, 2025 | Quorum: Yes (6 of 9 present)\nAgenda item 4: \"Title IX Policy revision — evidentiary standard\"\nVote: 6-1 (2 absent, 1 abstention recorded as absent per bylaws)\nMinutes: NONE FILED (Secretary position vacant June-August 2025)",
+    "question": "The hearing panel asks the Title IX Coordinator to clarify which evidentiary standard applies to Case #IX-2025-0298. What is the correct determination?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Clear and convincing evidence — because v6.0 Section 1.4 explicitly governs complaints filed after August 1, 2025, the formal complaint was filed September 19, 2025, and this was a deliberate procedural choice approved by Faculty Senate and legal counsel.",
+      "B) The determination cannot be made until the Faculty Senate minutes are located, because the policy change may not have been properly ratified given the vacant secretary position and missing minutes.",
+      "C) Preponderance of the evidence — because the conduct occurred under v5.3's effective period and applying a higher standard retroactively violates due process protections for the respondent.",
+      "D) Preponderance of the evidence — because the respondent's advisor raised a timely objection and OCR guidance prohibits retroactive changes to evidentiary standards."
+    ],
+    "correct_answer": "A",
+    "rationale": "BSU Policy v6.0 Section 1.4 explicitly states it governs complaints 'filed on or after August 1, 2025, regardless of when the underlying conduct occurred.' The formal complaint was filed September 19, 2025. The resolved Google Doc comment confirms this language was deliberately chosen based on legal counsel's recommendation and Faculty Senate's 6-1 vote. Marchetti's Slack clarification further confirms the institutional interpretation: the standard is procedural, not substantive, and applies based on filing date. Answer D incorrectly conflates substantive conduct rules with procedural adjudication standards — the evidentiary standard governs how evidence is weighed in the hearing, not what conduct is prohibited. Answer C is wrong because PeopleSoft confirms quorum was met and the vote was recorded (6-1); the absence of formal minutes is an administrative deficiency but does not invalidate the vote under Faculty Senate bylaws. Answer D fabricates an OCR prohibition — OCR guidance permits institutions to choose their evidentiary standard and apply it based on filing date.",
+    "contributor": {
+      "name": "Diana Marchetti",
+      "title": "Title IX Coordinator",
+      "organization": "Brightpath State University",
+      "years_experience": 9,
+      "domain_expertise": "Due process requirements, procedural versioning (pre/post 2022 regs), evidence standards, cross-campus jurisdiction"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Maxient",
+        "Google Docs",
+        "Slack",
+        "Email",
+        "PeopleSoft HR"
+      ],
+      "informal_signal_location": "Resolved comment in Google Doc confirming deliberate legal counsel recommendation; Slack thread establishing institutional interpretation of transitional provision",
+      "acronyms_used": [
+        "BSU",
+        "OCR",
+        "DOE"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 12
+    }
+  },
+  {
+    "title": "Informal Resolution Eligibility After Mandatory Reporter Disclosure Gap",
+    "category": "temporal_consistency",
+    "domain": "compliance_legal",
+    "difficulty": "hard",
+    "scenario": "**Maxient Case #IX-2026-0052**\nComplainant: Student E | Respondent: Faculty Member F (tenured, Chemistry Dept)\nDisclosure to mandatory reporter: October 3, 2025 | Report filed by mandatory reporter: October 7, 2025\nFormal complaint filed by Student E: January 14, 2026\nStatus: Complainant requesting informal resolution\n\n**Email — Subject: \"Mandatory reporter filing\" (Oct 7, 2025)**\nFrom: prof.kwame.asante@brightpath.edu\nTo: titleix@brightpath.edu\n\"Student approached me after class on 10/3 to disclose an incident involving a faculty member. Per my obligations I am reporting. Student expressed preference for confidentiality and stated they do NOT wish to file a formal complaint at this time. I informed them of their rights and provided the Title IX office contact.\"\n\n**Canvas LMS — Course: CHEM 301, Fall 2025**\nInstructor: Faculty Member F\nRoster: Student E enrolled (dropped 10/15/25, processed via registrar as \"late drop with W\")\nGrade at drop: B+\n\n**Banner SIS — Student E transcript**\nFall 2025: CHEM 301 — W (withdrawn) | Spring 2026: CHEM 301 — enrolled (different section, Instructor: Prof. Patel)\n\n**Google Doc — \"BSU Title IX Policy v6.0\" Section 11.3: Informal Resolution**\n\"Informal resolution is available for all formal complaints EXCEPT: (a) complaints involving an employee respondent and a student complainant where the employee had direct instructional or supervisory authority over the student at the time of the alleged conduct.\"\n\n**Slack — #title-ix-deputies (Jan 16, 2026, 3:30 PM)**\n@mark.innis: Diana — Student E case. They want IR. Faculty respondent but student dropped the course before filing. Does 11.3(a) exclusion still apply? They're not currently in respondent's class.\n@diana.marchetti: What matters is \"at the time of the alleged conduct\" — when did the incident occur?\n@mark.innis: Disclosure to Asante was 10/3, but student hasn't specified exact incident date yet. Could be during the enrollment period or before.\n@diana.marchetti: We need the incident date nailed down before we can determine IR eligibility. Don't offer it yet.\n[Thread continues 2 days later]\n@mark.innis: Got it. Student confirms incident occurred September 22, 2025. They were enrolled in F's section at that time.\n[No reply from diana.marchetti — but a :no_entry: emoji reaction added Jan 18]\n\n**Google Calendar — \"IR Eligibility Consult\" (Jan 20, 2026, 11:00 AM)**\nRequired: diana.marchetti (accepted), mark.innis (accepted), university-counsel@brightpath.edu (tentative — never confirmed)\nNo meeting notes. No follow-up email.\n\n**Maxient — Case #IX-2026-0052 (updated Jan 22, 2026)**\nCase note by D. Marchetti: \"IR ineligible per 11.3(a). Notifying complainant of formal process options only. Respondent had direct instructional authority at time of conduct (confirmed enrolled CHEM 301, incident 9/22/25).\"",
+    "question": "Student E's advisor appeals the IR eligibility determination, arguing that since Student E voluntarily dropped the course and is no longer under Faculty Member F's authority, the power dynamic no longer exists and informal resolution should be available. What is the correct institutional response?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) IR is available because the mandatory reporter's filing on October 7 did not constitute a formal complaint — the formal complaint was not filed until January 14, 2026, by which time the instructional relationship had ended, and the policy should be read as of the complaint filing date.",
+      "B) IR remains ineligible — Section 11.3(a) explicitly keys the exclusion to 'at the time of the alleged conduct,' the incident occurred September 22 while Student E was enrolled in Faculty Member F's course, and the current enrollment status is irrelevant to the eligibility determination.",
+      "C) The determination is premature because university counsel's attendance at the January 20 consult was never confirmed, meaning the eligibility decision was made without required legal review.",
+      "D) The appeal has merit — the policy's purpose is to protect against coercion from power imbalances, and since Student E voluntarily left Faculty Member F's course, the rationale for the 11.3(a) exclusion no longer applies and IR should be offered."
+    ],
+    "correct_answer": "B",
+    "rationale": "Section 11.3(a) of BSU's Title IX Policy v6.0 is unambiguous: the exclusion applies where the employee respondent 'had direct instructional or supervisory authority over the student at the time of the alleged conduct.' The Slack thread confirms the incident date was September 22, 2025, and Banner confirms Student E was enrolled in Faculty Member F's CHEM 301 at that time (dropped October 15). Marchetti's :no_entry: emoji reaction and subsequent Maxient case note confirm the institutional determination. The current enrollment status is irrelevant — the policy deliberately uses past-tense 'had' and the temporal anchor 'at the time of the alleged conduct.' Answer A incorrectly reads a present-tense purpose into a rule with explicit past-tense temporal language. Answer C is wrong because university counsel's participation is not a procedural prerequisite for an IR eligibility determination — the calendar shows it was optional consultation, not a required approval step. Answer D conflates the formal complaint filing date with the policy's temporal anchor, which is 'time of the alleged conduct,' not 'time of the complaint.'",
+    "contributor": {
+      "name": "Diana Marchetti",
+      "title": "Title IX Coordinator",
+      "organization": "Brightpath State University",
+      "years_experience": 9,
+      "domain_expertise": "Due process requirements, procedural versioning (pre/post 2022 regs), evidence standards, cross-campus jurisdiction"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Maxient",
+        "Email",
+        "Canvas LMS",
+        "Banner SIS",
+        "Google Docs",
+        "Slack",
+        "Google Calendar"
+      ],
+      "informal_signal_location": "Slack :no_entry: emoji reaction serving as implicit decision signal before formal Maxient entry; Google Calendar meeting with unconfirmed counsel attendance and no notes",
+      "acronyms_used": [
+        "IR",
+        "BSU",
+        "LMS",
+        "SIS"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 4
+    }
+  }
+]

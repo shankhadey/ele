@@ -1,0 +1,150 @@
+[
+  {
+    "title": "Phantom Green Health Score Masking Imminent Churn Risk",
+    "category": "cross_system_synthesis",
+    "domain": "customer_success_support",
+    "difficulty": "hard",
+    "scenario": "Context from Gainsight (Account: Lakeview Regional Medical Center):\nHealth Score: 82 (Green) | Lifecycle Stage: Mature | Renewal Date: Aug 15, 2026 | ARR: $1.2M | CSM: Marissa Tran | Last QBR: Mar 12, 2026 (marked 'Completed - No Issues') | CTAs: None active.\n\nHealth score breakdown: Contract Value weight = 40% (score: 100), Product Adoption = 30% (score: 78), Relationship = 20% (score: 68), Support = 10% (score: 62).\n\nContext from Salesforce Health Cloud (Account: 'Lakeview Regional Med Ctr'):\nPrimary Contact: Dr. Rebecca Okafor, CMIO | Executive Sponsor: James Whitfield, SVP Clinical Operations | Last logged activity by CSM: Feb 4, 2026 | Opportunity: Renewal - $1.2M - Stage: 'Forecast Committed' | Note (Feb 4): 'James confirmed renewal intent at EBR. Budget approved through FY27.'\n\nContext from Pendo (Product: Clinical Workflow Suite):\nOrg: lakeview-regional | MAU trend (90-day): 842 \u2192 541 \u2192 310 | Feature adoption: Dropped 'Advanced Analytics' module entirely as of Apr 2026 | Last admin login: 47 days ago | Power user count: dropped from 28 to 6.\n\n**Slack \u2014 #cs-ops (May 14, 2026, 2:47 PM)**\n@tanya.briggs: Hey does anyone know who replaced James Whitfield at Lakeview? Got a bounced email.\n@marissa.tran: Wait what? When did he leave?\n@tanya.briggs: LinkedIn says he started at Ascension last month. His Lakeview email is deactivated.\n@marissa.tran: \ud83d\ude2c I had no idea. Let me check with their team.\n[Thread \u2014 no further replies]\n\n**Zendesk \u2014 Org: Lakeview Regional Medical Center**\nOpen tickets: 6 (2x P1, 3x P2, 1x P3)\nP1-4421 (opened Apr 28): 'HL7 integration dropping messages intermittently \u2014 patient data not syncing to Epic. Clinical staff reverting to manual entry.'\nP1-4455 (opened May 9): 'SSO broken after their IdP migration. 200+ users locked out for 3 days.'\nInternal note on P1-4421 (May 2, @l.chen): 'Customer contact mentioned they're evaluating competitors. Flagged to CSM \u2014 no response yet.'\nCSAT on last 5 resolved tickets: 2, 1, 3, 2, 1 (avg: 1.8/5).\n\n**SharePoint \u2014 /cs-operations/health-score-methodology (v3.2, last edited Nov 2025)**\nSection 4.1: 'Champion change events are detected via CRM contact role updates and trigger automatic health score adjustment (-15 points) within 48 hours.'\n[RESOLVED COMMENT by @b.ellsworth, Jan 2026]: 'This only works if the CSM updates the contact role in SFDC. If they don't mark the champion as inactive, the trigger never fires. Adding to backlog for Q2 fix.'",
+    "question": "Based on all available signals, what is Lakeview Regional Medical Center's true renewal risk status and what is the primary reason the health score failed to reflect it?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) High risk; the Zendesk CSAT scores alone should have triggered a risk CTA in Gainsight, indicating a platform configuration issue rather than a process failure",
+      "B) High risk; the executive sponsor departure was never logged in Salesforce Health Cloud, so the champion-change trigger in the health score methodology never fired, and the CSM hasn't updated the account since February",
+      "C) Medium risk; the support tickets are concerning but James Whitfield confirmed renewal intent at the EBR so budget is still approved through FY27",
+      "D) High risk; the health score algorithm over-weights contract value and the Pendo usage drop hasn't been factored into the adoption component yet due to a 90-day lag"
+    ],
+    "correct_answer": "B",
+    "rationale": "The correct answer is B because the decisive failure is process-driven: the champion change (James Whitfield's departure) was only discovered via a Slack thread when Tanya got a bounced email \u2014 it was never logged as a contact role change in Salesforce Health Cloud. Per the health score methodology (SharePoint v3.2 + Brian's own resolved comment), the automatic -15 point adjustment only fires when the CSM updates the contact role. Since Marissa didn't know Whitfield left, she never updated SFDC, so the trigger never fired. This compounds with no CSM activity since February, making the 'Forecast Committed' status stale. Answer A is partially correct about over-weighting contract value, but the usage data IS flowing (Pendo shows the drop) \u2014 the bigger systemic failure is the champion change gap. Answer C treats the February EBR commitment as still valid despite the sponsor's departure \u2014 a classic mistake of trusting stale relationship signals. Answer D is wrong because CSAT-to-CTA automation requires a threshold breach over a rolling window and this is a newer degradation pattern; the real issue is the upstream data gap, not a platform misconfiguration.",
+    "contributor": {
+      "name": "Brian Ellsworth",
+      "title": "Customer Success Operations Manager",
+      "organization": "Vantage Health Partners",
+      "years_experience": 10,
+      "domain_expertise": "Health score methodology, renewal forecasting, CSM capacity planning, escalation workflows"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Gainsight",
+        "Salesforce Health Cloud",
+        "Pendo",
+        "Slack",
+        "Zendesk",
+        "SharePoint"
+      ],
+      "informal_signal_location": "Slack #cs-ops thread where champion departure was discovered via bounced email \u2014 thread received no follow-up",
+      "acronyms_used": [
+        "ARR",
+        "QBR",
+        "EBR",
+        "CSM",
+        "CTA",
+        "CSAT",
+        "MAU",
+        "CMIO",
+        "HL7",
+        "SSO",
+        "IdP",
+        "SFDC"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 5
+    }
+  },
+  {
+    "title": "Parent-Subsidiary CTA Collision During CSM Book Rebalancing",
+    "category": "entity_resolution",
+    "domain": "customer_success_support",
+    "difficulty": "expert",
+    "scenario": "Context from Gainsight (CTA Dashboard \u2014 Week of Jun 16, 2026):\nCTA-8812: Account 'Prairie Health Cooperative' | Type: Risk | Trigger: NPS response score 3 (Detractor) | Assigned CSM: David Park | Due: Jun 30\nCTA-8819: Account 'PHC Specialty Clinics' | Type: Expansion Opportunity | Trigger: Usage threshold exceeded on Telehealth module | Assigned CSM: Rachel Dominguez | Due: Jul 5\nCTA-8823: Account 'Prairie Health \u2014 Behavioral Sciences Division' | Type: Risk | Trigger: 90-day no-login | Assigned CSM: Unassigned (CSM left company May 30)\n\nContext from Salesforce Health Cloud:\nAccount: 'Prairie Health Cooperative' | Parent Account: None | ARR: $780K | Contacts: 12 | Contract end: Sep 30, 2026\nAccount: 'PHC Specialty Clinics' | Parent Account: None | ARR: $340K | Contacts: 5 | Contract end: Sep 30, 2026\nAccount: 'Prairie Health Corp' | Parent Account: None | ARR: $0 | Type: 'Holding Entity' | Contacts: 1 (CFO) | No active contract\n[No account exists for 'Prairie Health \u2014 Behavioral Sciences Division']\n\nContext from Looker (CS Dashboard \u2014 Quarterly GRR Forecast):\nRenewal cohort Q3-2026: 14 accounts | At-risk: 2 (includes Prairie Health Cooperative) | Expansion candidates: 3 (includes PHC Specialty Clinics) | Combined renewal ARR: $4.1M\nNote: GRR forecast treats each Salesforce account as independent entity.\n\n**Slack \u2014 #escalations (Jun 2, 2026, 9:15 AM)**\n@david.park: Quick flag \u2014 Prairie Health's NPS came back ugly. The respondent was their VP of Ops, Dr. Anand Mehta, and his comment said 'we're consolidating vendors across all divisions.'\n@rachel.dominguez: Interesting \u2014 I just got a usage spike alert for PHC Specialty. They're ramping telehealth hard. Doesn't feel like a churn signal to me.\n@david.park: Aren't those the same org? I thought PHC was a subsidiary.\n@rachel.dominguez: \ud83e\udd37 Different account in SFDC. Different contract. My book, my number.\n[\ud83d\udc40 reaction from @b.ellsworth]\n\n**Email \u2014 Subject: 'RE: CSM Coverage Gap \u2014 Behavioral Sciences' (Jun 5, 2026)**\nFrom: b.ellsworth@vantagehealth.com\nTo: cs-leadership@vantagehealth.com\nCC: david.park@vantagehealth.com\n\n> On Jun 3, hr-notifications wrote:\n> > Kevin Marsh's last day was May 30. Accounts pending reassignment: 4.\n\nTeam \u2014 one of Kevin's accounts is 'Prairie Health \u2014 Behavioral Sciences Division.' I can't find this in SFDC as a standalone account. It might be a Gainsight-only record created during the data migration from our old CSM platform. Needs investigation before we reassign.\n\n**Zendesk \u2014 Org: 'Prairie Health' (single org, no subdivision)**\nOpen tickets: 9 | Avg first response time: 42 hours (SLA target: 8 hours)\nRecent ticket (Jun 10): Subject: 'Contract consolidation inquiry \u2014 who is our single point of contact?' | Requester: anand.mehta@prairiehealth.org | Status: Open, unassigned",
+    "question": "How should CS Operations handle the three CTAs, and what is the correct consolidated renewal risk assessment for the Q3 GRR forecast?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Merge CTA-8812 and CTA-8823 as related risk signals but keep CTA-8819 separate since PHC Specialty Clinics shows genuine expansion; GRR risk is $780K plus whatever ARR is attributed to Behavioral Sciences",
+      "B) Treat as three separate accounts per SFDC structure; address each CTA independently; GRR risk applies only to the $780K Prairie Health Cooperative account since the other entities have different contract terms",
+      "C) Escalate to legal/contracts team for entity clarification before taking any action; the Gainsight-only record indicates a data integrity issue that must be resolved before any renewal forecasting",
+      "D) Consolidate all three CTAs under one parent entity (Prairie Health Corp); combined ARR at risk is $1.12M; assign single CSM; the expansion signal at PHC Specialty is likely ramp-before-migration, not genuine growth"
+    ],
+    "correct_answer": "D",
+    "rationale": "Answer D is correct because multiple signals confirm these are divisions of a single organization: (1) David Park's Slack message notes the NPS respondent (VP of Ops) said they're 'consolidating vendors across all divisions'; (2) the Zendesk org has a single 'Prairie Health' entity with a ticket explicitly asking about a 'single point of contact'; (3) the customer's email domain is prairiehealth.org across all interactions; (4) SFDC already has a 'Prairie Health Corp' holding entity with CFO contact but no linked subsidiaries \u2014 the hierarchy was never built. The PHC Specialty usage spike is a classic false-positive expansion signal: when an org is consolidating vendors, divisions often ramp usage on the incumbent before migrating away (testing capacity) or shifting users from the vendor being dropped. Rachel's 'my book, my number' response reveals a structural misalignment where CSM compensation incentives prevent entity consolidation. Combined ARR at risk: $780K + $340K + whatever is on the phantom Gainsight record (Behavioral Sciences) = minimum $1.12M. Answer A fails entity resolution entirely. Answer C partially resolves but misreads the expansion signal. Answer D is overly procedural \u2014 the evidence is sufficient to act now, and the Sep 30 renewal deadline doesn't allow for a multi-week legal review.",
+    "contributor": {
+      "name": "Brian Ellsworth",
+      "title": "Customer Success Operations Manager",
+      "organization": "Vantage Health Partners",
+      "years_experience": 10,
+      "domain_expertise": "Health score methodology, renewal forecasting, CSM capacity planning, escalation workflows"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Gainsight",
+        "Salesforce Health Cloud",
+        "Looker",
+        "Slack",
+        "Zendesk",
+        "Email"
+      ],
+      "informal_signal_location": "Slack #escalations thread where Rachel's dismissal of entity connection and Brian's silent eye-emoji reaction reveal organizational awareness gap",
+      "acronyms_used": [
+        "CTA",
+        "NPS",
+        "GRR",
+        "ARR",
+        "CSM",
+        "SFDC",
+        "SLA",
+        "PHC"
+      ],
+      "policy_versions_involved": 0,
+      "temporal_span_months": 4
+    }
+  },
+  {
+    "title": "Stale Success Criteria Conflicting with Amended Contract SLA",
+    "category": "temporal_consistency",
+    "domain": "customer_success_support",
+    "difficulty": "hard",
+    "scenario": "Context from Gainsight (Account: Northwoods Integrated Care Network):\nHealth Score: 71 (Yellow) | Lifecycle Stage: Adoption | Renewal Date: Nov 1, 2026 | ARR: $920K | CSM: Priya Sethi | Last CTA closed: Apr 8, 2026 (Type: Onboarding milestone \u2014 marked 'Complete') | Success Plan status: 'On Track'\n\nSuccess Plan milestones (created during onboarding, Aug 2025):\n1. Go-live on Clinical Workflow Suite \u2014 COMPLETE (Oct 2025)\n2. 80% provider adoption within 90 days of go-live \u2014 COMPLETE (Jan 2026)\n3. 15% reduction in patient wait times by Month 6 \u2014 MEASURED: 11% reduction (marked 'Partial - Acceptable')\n4. Integration with Epic (ADT feed + CCD exchange) \u2014 IN PROGRESS\n\n**Google Doc \u2014 'Northwoods IC \u2014 Onboarding Success Criteria' (created Aug 12, 2025, last edited Aug 20, 2025)**\nOwner: kevin.marsh@vantagehealth.com [DEPARTED May 30, 2026]\nSection 1: 'Mutually agreed success criteria for Year 1:'\n- Epic integration: ADT feed + CCD exchange operational by Month 4 (Dec 2025)\n- Patient wait time reduction target: 15% within 6 months\n- Provider adoption: 80% within 90 days\n[RESOLVED COMMENT by @dr.n.yakimoto (Northwoods), Sep 5, 2025]: 'We also need real-time bed census data flowing to our capacity dashboard. Adding this as mandatory for our internal go/no-go on renewal.'\n[RESOLVED COMMENT by @kevin.marsh, Sep 5, 2025]: 'Noted! Will add to integration scope.'\n[No edit to document body after Aug 20, 2025]\n\nContext from Salesforce Health Cloud (Contract Record):\nMSA: Signed Jul 2025 | Amendment 1: Signed Jan 15, 2026\nAmendment 1 details: 'Added Module: Real-Time Capacity Analytics. SLA: 99.5% uptime. Integration requirement: Bi-directional Epic bed census feed. Delivery deadline: Apr 30, 2026. Penalty: $5K/day credit after deadline if not delivered by vendor.'\nDelivery status field: Blank.\n\n**Slack \u2014 #cs-ops (May 18, 2026, 11:02 AM)**\n@priya.sethi: Checking in on Northwoods \u2014 their success plan shows on track. Anything I should know? I inherited this from Kevin last week.\n@b.ellsworth: Pull the contract amendment. There's a deliverable with a penalty clause that I don't think is reflected in Gainsight.\n@priya.sethi: \ud83d\udc4d\n[No further messages in thread]\n\n**Zendesk \u2014 Org: Northwoods Integrated Care**\nTicket ZD-6672 (opened May 1, 2026): Subject: 'Bed census integration \u2014 status update needed' | Priority: P2 | Requester: n.yakimoto@northwoodscare.org | Status: Open\nInternal note (May 5, @implementation.team): 'Integration is 60% complete. Blocked on Epic API credentialing from their side. No ETA from Northwoods IT.'\nCustomer reply (May 12): 'Our IT team completed credentialing on May 10. Please confirm timeline for completion.'\n[No agent reply since May 12]\n\n**Looker \u2014 CS Ops Dashboard (filtered: Northwoods)**\nPendo usage: Stable (no decline). NPS: 38 (Passive). Quarterly expansion likelihood model: 62% (moderate).",
+    "question": "What is the actual delivery status of Northwoods' contractual obligation, and what financial exposure exists as of today (June 27, 2026)?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) The bed census integration delivery status is unknown since the SFDC field is blank; the success plan shows 'On Track' so no financial exposure has been flagged in the system",
+      "B) The bed census integration is not yet delivered; financial exposure is $0 because the delay is caused by the customer's Epic API credentialing block, which constitutes a force majeure exemption",
+      "C) The bed census integration is not yet delivered; financial exposure is $5K/day starting May 10 (when the customer removed their blocker), totaling approximately $240K through today",
+      "D) The bed census integration is not yet delivered; financial exposure is approximately $290K ($5K/day x 58 days past the Apr 30 deadline), mitigated only partially by the customer-side credentialing delay through May 10"
+    ],
+    "correct_answer": "C",
+    "rationale": "Answer C is correct. The contract amendment specifies a $5K/day credit penalty if the bed census integration is not delivered by Apr 30, 2026. However, the Zendesk ticket reveals that Northwoods' own IT team did not complete Epic API credentialing until May 10 \u2014 meaning the vendor (Vantage) was blocked by the customer from May 1-10. The penalty clause would reasonably toll during a customer-caused delay. From May 10 onward (when the customer removed the blocker and confirmed readiness), the clock restarts: May 10 to Jun 27 = 48 days x $5K = $240K exposure. The implementation team's internal note confirms the integration is incomplete ('60% complete' as of May 5) and there has been no agent reply to the customer since May 12, suggesting no progress. Answer A incorrectly applies force majeure \u2014 credentialing delays don't typically qualify, and the customer resolved their side on May 10. Answer B calculates from Apr 30 without accounting for the customer-caused delay period, overestimating exposure. Answer C represents the 'system says it's fine' failure \u2014 trusting blank fields and stale success plans over contractual reality. The critical hidden signal is the resolved Google Doc comment showing this requirement was verbally agreed in September 2025 but only formally contracted in January 2026, with the departed CSM (Kevin) as the only internal person who knew the full history.",
+    "contributor": {
+      "name": "Brian Ellsworth",
+      "title": "Customer Success Operations Manager",
+      "organization": "Vantage Health Partners",
+      "years_experience": 10,
+      "domain_expertise": "Health score methodology, renewal forecasting, CSM capacity planning, escalation workflows"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Gainsight",
+        "Salesforce Health Cloud",
+        "Google Docs",
+        "Slack",
+        "Zendesk",
+        "Looker",
+        "Pendo"
+      ],
+      "informal_signal_location": "Resolved Google Doc comment from departed CSM showing the bed census requirement was agreed verbally months before it appeared in the contract amendment \u2014 proving institutional knowledge loss",
+      "acronyms_used": [
+        "ARR",
+        "CSM",
+        "CTA",
+        "SLA",
+        "NPS",
+        "ADT",
+        "CCD",
+        "EBR",
+        "QBR",
+        "GRR"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 11
+    }
+  }
+]

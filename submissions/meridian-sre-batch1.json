@@ -1,0 +1,143 @@
+[
+  {
+    "title": "Change Freeze Override Approval Lost Between Slack Workspaces",
+    "category": "approval_chain",
+    "domain": "engineering_devops",
+    "difficulty": "expert",
+    "scenario": "**PagerDuty — Incident #INC-4471 (May 14, 2026, 03:22 UTC)**\nTriggered: 'API latency > 5s for 3 consecutive minutes' on service `payment-processing-v2`\nSeverity: SEV-1 | Status: Resolved (05:48 UTC)\nOn-call: @alex.martinez (SRE) | IC: @jordan.kim\nEscalation path triggered: Tier1 (03:22) -> IC (03:25) -> VP Eng notified (03:31)\n\n**Slack — #incidents (main workspace) (May 14, 2026, 03:27 UTC)**\n@jordan.kim: War room open. payment-processing-v2 is returning 503s for ~18% of requests. Blast radius is all customers on pod-west-2. Investigating.\n@alex.martinez: Correlating with deploy. pr-4892 went out at 02:55 UTC. Canary looked clean but we only ran it for 10 min instead of the standard 30.\n@jordan.kim: Why was canary window shortened?\n@alex.martinez: Marco approved it in the other Slack. Said the change freeze exception covered it.\n@jordan.kim: What change freeze exception? We're in Q2 code freeze until May 15.\n@alex.martinez: Let me find it.\n\n**Slack — #engineering (legacy workspace) (May 13, 2026, 16:45 UTC)**\n@marco.velasquez: Team — I spoke with Divya yesterday. She's OK with us pushing the payment retry fix tonight since it's customer-impacting. Consider the freeze lifted for this PR only.\n@alex.martinez: Got it. Will deploy after canary.\n@marco.velasquez: :thumbsup:\n[Thread has 2 :eyes: reactions, no further replies]\n\n**Confluence — 'Change Management Policy v3.1' (last updated Feb 2026)**\nSection 4.2: Change freeze exceptions require written approval from VP Engineering or above, documented in the #change-management channel with a linked Jira ticket (type: Change Request). Verbal or informal approvals are not valid per SOC2 control CC-7.2.\nSection 4.3: Canary deployments during freeze exceptions must run for minimum 30 minutes with full SLI validation.\n\n**Jira — No ticket found for change request related to PR-4892.**\n\n**GitHub — Deploy log for pr-4892 (May 14, 2026, 02:55 UTC)**\nDeployed by: @alex.martinez | Canary duration: 10m | Canary pass: true (auto-promoted)\nDeploy tag: `v2.41.3-hotfix-payment-retry`\nCI status: all checks green\n\n**Datadog — APM Dashboard (May 14, 02:55 - 03:22 UTC)**\nPayment service p99 latency: normal (02:55-03:05), gradual degradation (03:05-03:15), spike to 12s (03:15-03:22).\nError rate crossed SLO threshold at 03:18 UTC. Error budget burned: 43% of monthly budget in 27 minutes.\n\n**Slack DM — @divya.patel to @marco.velasquez (May 12, 2026, 11:02 AM)**\n@divya.patel: If the payment retry thing is truly P1-adjacent, I'm fine with you pushing it tonight. Just make sure the canary is clean and file the CR after.\n@marco.velasquez: Will do. Thanks Divya.\n[No CR was filed]",
+    "question": "For the postmortem, was the deploy of PR-4892 a valid change freeze exception per Meridian's documented change management policy?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) No — the exception was never valid because it lacked a Jira Change Request ticket and was not posted in #change-management, regardless of Divya's informal approval",
+      "B) Yes — Marco communicated the exception in #engineering which constitutes a written channel notification; the only violation was the shortened canary window",
+      "C) Yes — VP Engineering (Divya) gave explicit approval via DM, which constitutes written authorization; the deploy was valid but the canary duration was the root policy violation",
+      "D) No — the exception expired because Divya's approval was given on May 12 for 'tonight' but the deploy happened on May 14, making the approval stale"
+    ],
+    "correct_answer": "A",
+    "rationale": "Per Confluence Change Management Policy v3.1, Section 4.2, change freeze exceptions require (1) written approval from VP Eng or above, (2) documented in the #change-management channel, AND (3) a linked Jira Change Request ticket. The deploy fails on criteria 2 and 3: Marco posted in #engineering on the legacy workspace (not #change-management), and no Jira CR ticket exists. Divya's DM constitutes informal approval only — the policy explicitly states 'verbal or informal approvals are not valid per SOC2 control CC-7.2.' Answer C incorrectly treats a Slack DM as valid written authorization under SOC2 controls. Answer C confuses #engineering (legacy workspace) with the required #change-management channel and ignores the missing Jira ticket. Answer D invents a temporal expiration issue — the timeline from May 12 DM to May 13 communication to May 14 deploy is actually coherent ('tonight' referred to the night of May 13-14), but the deploy is invalid regardless due to the missing formal artifacts.",
+    "contributor": {
+      "name": "Jordan Kim",
+      "title": "Senior Site Reliability Engineer / Incident Commander",
+      "organization": "Meridian Systems",
+      "years_experience": 6,
+      "domain_expertise": "Incident response, change management, SLA enforcement, postmortem process"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "PagerDuty",
+        "Slack (main workspace)",
+        "Slack (legacy workspace)",
+        "Confluence",
+        "Jira",
+        "GitHub",
+        "Datadog"
+      ],
+      "informal_signal_location": "Slack DM between VP Eng and engineering manager showing approval was given informally, plus legacy Slack workspace where the exception was communicated instead of the required channel",
+      "acronyms_used": [
+        "SEV-1",
+        "SRE",
+        "IC",
+        "SLI",
+        "SLO",
+        "SOC2",
+        "CR",
+        "p99",
+        "APM",
+        "CI"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 0
+    }
+  },
+  {
+    "title": "Conflicting Postmortem Action Items from Sequential Incidents",
+    "category": "temporal_consistency",
+    "domain": "engineering_devops",
+    "difficulty": "hard",
+    "scenario": "**Jira — SRE-2201 'Postmortem Action: Increase circuit breaker timeout to 10s' (Created: Mar 8, 2026)**\nType: Postmortem Action Item | Priority: P1 | Status: Done (completed Mar 22)\nLinked incident: INC-4302 (cascading failure in order-service due to downstream timeout at 3s causing retry storms)\nPostmortem conclusion: '3s timeout was too aggressive for payment-gateway calls during peak load. Increase to 10s to prevent premature circuit-breaking.'\nAssignee: @alex.martinez | Reviewer: @jordan.kim\nComment (@jordan.kim, Mar 22): 'Deployed to prod. SLIs look stable. Closing.'\n\n**Jira — SRE-2287 'Postmortem Action: Reduce circuit breaker timeout to 5s' (Created: Apr 19, 2026)**\nType: Postmortem Action Item | Priority: P1 | Status: Open\nLinked incident: INC-4389 (single-tenant degradation caused 10s hang times propagating to shared services, violating SLO)\nPostmortem conclusion: 'The 10s timeout allowed a degraded downstream to hold connections too long, exhausting the connection pool. Reduce to 5s maximum with adaptive backoff.'\nAssignee: @priya.singh | Reviewer: @jordan.kim\nComment (@priya.singh, Apr 22): 'This contradicts SRE-2201. Which wins?'\nComment (@jordan.kim, Apr 22): 'Good catch. Let me get context from the March incident owners.'\n[No further comments]\n\n**Confluence — 'Circuit Breaker Standards' (Page version 4, last edited Mar 24, 2026)**\nSection 2.1: Default circuit breaker timeout for inter-service calls: 10s (updated per INC-4302 postmortem).\nSection 2.3: Services classified as 'shared-critical' must not hold connections longer than SLO budget allows.\n[RESOLVED COMMENT by @nadia.okonkwo, Apr 20]: 'This 10s default directly caused INC-4389. We need tiered timeouts: 10s for dedicated downstreams, 5s max for shared-critical. Tagging @jordan.kim'\n[Comment was resolved by @nadia.okonkwo on Apr 21 with no reply from Jordan]\n\n**Slack — #sre-team (Apr 23, 2026, 9:14 AM)**\n@priya.singh: @jordan.kim did you see Nadia's comment on the circuit breaker doc? She resolved it herself but the suggestion makes sense — tiered approach.\n@jordan.kim: Yeah I think that's right. Shared-critical gets 5s, everything else stays at 10s.\n@priya.singh: Should I update the Confluence page or wait for the formal review?\n@jordan.kim: Just update it. We'll ratify in next week's SRE sync.\n[No Confluence edit was made as of May 1]\n\n**PagerDuty — On-call rotation for order-service (current)**\nPrimary: @priya.singh | Secondary: @alex.martinez\nRunbook link: points to Confluence 'Circuit Breaker Standards' (version 4 — still shows 10s flat default)\n\n**Datadog — SLO Dashboard (as of May 1, 2026)**\norder-service 30-day SLO: 99.91% (budget remaining: 12%)\npayment-gateway p99: 4.2s (within 5s threshold but approaching)",
+    "question": "It is May 1. Priya is on-call and order-service begins showing elevated latency against payment-gateway (a shared-critical service). Per Meridian's current authoritative configuration, what circuit breaker timeout is in effect for this call path?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) 5s — SRE-2287 (the more recent postmortem action item) supersedes SRE-2201 per Meridian's 'latest postmortem wins' convention",
+      "B) 10s — the Confluence page (version 4) is the runbook-linked authoritative source and it still specifies 10s flat default",
+      "C) 3s — SRE-2287 is still Open/unimplemented, meaning the pre-SRE-2201 configuration (3s) is what's actually deployed",
+      "D) 5s — Jordan approved the tiered approach in Slack, making shared-critical services subject to the 5s maximum"
+    ],
+    "correct_answer": "B",
+    "rationale": "The authoritative source is what is actually deployed and documented. SRE-2201 was completed (status: Done) on March 22, setting the timeout to 10s. This was reflected in Confluence version 4 (edited Mar 24). SRE-2287, which calls for 5s, is still in 'Open' status — it was never implemented. Jordan's Slack message agreeing to the tiered approach was informal direction that was never acted upon (no Confluence edit was made, no deploy occurred). The on-call runbook points to Confluence v4 which states 10s. Answer A confuses a Slack conversation about intent with an actual configuration change — the Confluence page was never updated. Answer C invents a 'latest postmortem wins' rule that doesn't exist; postmortem action items only take effect when completed. Answer D incorrectly assumes that because SRE-2287 is open, the change from SRE-2201 was also reverted — but SRE-2201 is Done and its 10s change is in production.",
+    "contributor": {
+      "name": "Jordan Kim",
+      "title": "Senior Site Reliability Engineer / Incident Commander",
+      "organization": "Meridian Systems",
+      "years_experience": 6,
+      "domain_expertise": "Incident response, change management, SLA enforcement, postmortem process"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Jira",
+        "Confluence",
+        "Slack",
+        "PagerDuty",
+        "Datadog"
+      ],
+      "informal_signal_location": "Resolved Confluence comment by Nadia proposing tiered timeouts (resolved with no action), plus Slack conversation where Jordan informally approved the change but it was never executed",
+      "acronyms_used": [
+        "SRE",
+        "SLI",
+        "SLO",
+        "P1",
+        "p99",
+        "IC"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 2
+    }
+  },
+  {
+    "title": "Escalation Policy Version Mismatch During On-Call Handoff",
+    "category": "cross_system_synthesis",
+    "domain": "engineering_devops",
+    "difficulty": "hard",
+    "scenario": "**PagerDuty — Escalation Policy: 'Platform Services' (current version, effective May 5, 2026)**\nLevel 1: Primary on-call (5 min timeout)\nLevel 2: Secondary on-call (10 min timeout)\nLevel 3: SRE Manager (@nadia.okonkwo) (15 min timeout)\nLevel 4: VP Engineering (@divya.patel)\nSchedule: Weekly rotation, handoff Mondays 09:00 UTC\n\n**PagerDuty — Escalation Policy: 'Platform Services' (previous version, effective Jan 15 - May 4, 2026)**\nLevel 1: Primary on-call (5 min timeout)\nLevel 2: Engineering Manager of owning team (10 min timeout)\nLevel 3: SRE IC on-call (@jordan.kim or @alex.martinez) (10 min timeout)\nLevel 4: VP Engineering (@divya.patel)\n\n**Slack — #sre-team (May 2, 2026, 2:33 PM)**\n@nadia.okonkwo: Heads up — I'm updating the Platform Services escalation policy on Monday. Removing the EM from L2 since they never acknowledged anyway. Going straight to secondary on-call, then me, then Divya.\n@jordan.kim: Makes sense. Are you updating the runbook too?\n@nadia.okonkwo: Will do after the PD change goes live.\n:+1: (3 reactions: @jordan.kim, @alex.martinez, @priya.singh)\n\n**Confluence — 'Platform Services Runbook' (last edited: Jan 18, 2026)**\nSection 5 — Escalation Path:\n'If primary on-call does not acknowledge within 5 minutes, PagerDuty escalates to the Engineering Manager of the owning squad. If EM does not ack within 10 minutes, the SRE Incident Commander on rotation is paged. Final escalation: VP Engineering.'\nNote: This section has not been updated since January.\n\n**PagerDuty — Incident #INC-4512 (May 9, 2026, 02:14 UTC)**\nTriggered: 'Database connection pool exhaustion on platform-auth'\nSeverity: HIGH\nTimeline:\n- 02:14: Primary on-call @priya.singh paged. No ack.\n- 02:19: Escalated to Level 2. @alex.martinez (secondary) paged. No ack.\n- 02:29: Escalated to Level 3. @nadia.okonkwo paged. Acknowledged at 02:31.\n- 02:31: Nadia opened war room. Issue resolved by 02:58.\n\n**Jira — PLAT-8821 'INC-4512 Postmortem' (Created May 9, 2026)**\nComment (@priya.singh, May 9, 10:00 AM): 'My phone was on DND — that's on me. But I want to flag: the runbook says EM gets paged at L2. I assumed if I missed it, my EM @chen.wei would be the next page. I didn't realize the policy changed last Monday.'\nComment (@chen.wei, May 9, 10:45 AM): 'I was never notified the escalation path changed. First I'm hearing of it.'\nComment (@nadia.okonkwo, May 9, 11:00 AM): 'I posted in #sre-team about this. The Confluence update is on my backlog.'\n\n**Slack — DM @priya.singh to @jordan.kim (May 9, 2026, 10:15 AM)**\n@priya.singh: Hey — honest question. If I'd followed the runbook (which says EM at L2), would that have been wrong? Like am I responsible for checking PD directly vs trusting the runbook?\n@jordan.kim: Technically PD is the system of record for escalation routing. But yeah, I get the confusion. We'll address it in the postmortem.",
+    "question": "In the INC-4512 postmortem, was the escalation path that PagerDuty followed on May 9 correct according to the current authoritative escalation policy?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Partially — the escalation path was correct but the timing was wrong; Level 2 should have had a 10-minute timeout but only waited 5 minutes before escalating to Level 3",
+      "B) Yes — PagerDuty is the system of record for escalation routing, the policy was updated May 5, and the system correctly escalated Primary -> Secondary -> SRE Manager",
+      "C) No — the Confluence runbook is the authoritative escalation reference and it specifies EM at Level 2, which PagerDuty skipped",
+      "D) No — Nadia's policy change was never formally approved; the Slack thumbsup reactions do not constitute a valid change approval per Meridian's change management policy"
+    ],
+    "correct_answer": "B",
+    "rationale": "Jordan explicitly states in the DM that 'PD is the system of record for escalation routing.' The PagerDuty policy was updated on May 5, 2026, and the incident occurred on May 9. The new policy (Primary -> Secondary -> SRE Manager -> VP Eng) was correctly followed: Priya (L1, no ack at 5 min) -> Alex (L2, no ack at 10 min) -> Nadia (L3, ack at 02:31). The timeline math confirms correct timeout intervals (02:14 + 5min = 02:19 escalation, 02:19 + 10min = 02:29 escalation). Answer A incorrectly treats the stale Confluence runbook as authoritative over the live PagerDuty configuration — this is a common failure where humans trust documentation over the actual system state. Answer C applies change management policy (which governs code deploys and infrastructure changes) to an operational tool configuration update — escalation policy changes don't require the same formal CR process. Answer D is factually wrong on the math: L2 escalated at 02:29, which is exactly 10 minutes after the 02:19 L2 page, matching the configured timeout.",
+    "contributor": {
+      "name": "Jordan Kim",
+      "title": "Senior Site Reliability Engineer / Incident Commander",
+      "organization": "Meridian Systems",
+      "years_experience": 6,
+      "domain_expertise": "Incident response, change management, SLA enforcement, postmortem process"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "PagerDuty",
+        "Slack (#sre-team)",
+        "Confluence",
+        "Jira",
+        "Slack DM"
+      ],
+      "informal_signal_location": "Slack DM where Jordan confirms PagerDuty is the system of record (not the runbook), which resolves the ambiguity between the stale Confluence documentation and the live PagerDuty configuration",
+      "acronyms_used": [
+        "SRE",
+        "IC",
+        "EM",
+        "DND",
+        "PD",
+        "L1",
+        "L2",
+        "L3",
+        "ack"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 4
+    }
+  }
+]

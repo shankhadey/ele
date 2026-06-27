@@ -1,0 +1,137 @@
+[
+  {
+    "title": "Upfront Make-Good Credits and Successor Entity Claim After Acquisition",
+    "category": "precedent_exception",
+    "domain": "sales_deal_desk",
+    "difficulty": "expert",
+    "scenario": "Context from HubSpot CRM:\nAccount: 'Radiant Brands' | Primary Contact: Derek Calloway, SVP Media | Deal Stage: Renewal | ARR: $2.8M (upfront commitment) | Notes field: 'Acquired Lumen Digital Media in Jan 2026. Wants all Lumen commitments honored under Radiant umbrella.'\n\nContext from NetSuite:\nCustomer: 'Lumen Digital Media Inc.' | Outstanding credits: $412K in ADU make-goods | Credit memo #CM-8834 issued Nov 2025, approved by Marcus Webb (SVP, Ad Sales — departed Feb 2026) | Terms: 'To be applied against Q1-Q2 2026 scatter inventory at original upfront CPM.'\n\nContext from Google Doc — 'Make-Good & ADU Policy v3.2' (last edited Aug 2025):\nSection 4.1: 'Make-good credits are non-transferable between accounts unless approved by SVP Ad Sales or above.'\n[RESOLVED COMMENT by @marcus.webb, Oct 12 2025]: 'Adding exception language for M&A scenarios — if acquiring entity assumes all media obligations under the original IO, credits follow. Legal reviewed, no signoff doc exists yet.'\n\nContext from Monday.com — Upfront Tracker 2025-2026:\nLumen Digital Media | Original commitment: $1.4M | Delivered: $988K | Under-delivery: $412K | Guarantee: A25-54, 1.2 rating | Actual delivery: 0.87 rating | Status: 'ADU owed — pending stewardship resolution'\n\nContext from Slack — #upfront-war-room (Mar 14, 2026, 9:47 AM):\n@derek.miles: Radiant's agency (GroupM) is threatening to pull their Q3 scatter unless we honor the Lumen make-goods under the Radiant IO. They say Marcus approved the transfer before he left.\n@jess.thornton: I never saw that in writing. The policy says non-transferable.\n@derek.miles: There's supposedly a comment on the policy doc. Can someone check?\n@jess.thornton: :eyes:\n[Thread: 2 replies]\n  @alex.petrov: I see Marcus's resolved comment from October. It says credits follow if acquiring entity assumes all media obligations. Did Radiant actually assume Lumen's IO?\n  @derek.miles: Their agency says yes but I haven't seen the assignment letter. Just a verbal from GroupM.\n\nContext from Email — Subject: 'FW: Lumen/Radiant Transition' (Jan 22, 2026):\nFrom: m.webb@prismmedia.com (Marcus Webb — now departed)\nTo: finance-ops@prismmedia.com\nCC: legal@prismmedia.com\n\n> Confirming that per my conversation with GroupM, Radiant Brands will be assuming all outstanding Lumen media obligations effective Feb 1. Please update billing accordingly.\n\n[No reply from legal on this thread. Finance replied: 'Updated billing entity. Credits not yet transferred — awaiting formal assignment documentation.']",
+    "question": "Radiant Brands is demanding the $412K in ADU make-good credits be applied to their Q3 scatter buy at the original upfront CPM. Based on all available evidence, what is the correct course of action?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Honor the transfer but apply current scatter CPM rates instead of the original upfront CPM, since the credits are being used outside their original commitment window",
+      "B) Deny the transfer — policy v3.2 Section 4.1 clearly states credits are non-transferable, and Marcus Webb's comment was never formally adopted into policy",
+      "C) Escalate to current SVP Ad Sales for fresh approval since Marcus Webb departed and his authority expired with his departure",
+      "D) Honor the transfer at original upfront CPM — Marcus's resolved comment created an M&A exception, his email confirms intent, and finance already updated the billing entity, establishing precedent even without the formal assignment letter"
+    ],
+    "correct_answer": "C",
+    "rationale": "The correct answer is C because while there is evidence Marcus Webb intended to approve the transfer (resolved comment + email), the formal requirements were never completed: legal never signed off, finance explicitly noted they were 'awaiting formal assignment documentation,' and no assignment letter from Radiant assuming Lumen's IO has been produced. Marcus's comment on the policy doc was a proposed exception, not a ratified one ('no signoff doc exists yet'). His email states intent but the process was interrupted by his departure. The current SVP must re-authorize. Answer A is wrong because it ignores legitimate precedent signals — Marcus's comment and email do establish intent, and simply citing the base policy ignores the M&A exception framework he was building. Answer B is wrong because it treats incomplete approvals as complete ones — finance's own note confirms the process was unfinished. Answer A is wrong because it conflates two issues: the transfer question and the pricing question are separate; applying scatter rates to make-good credits would violate standard ADU stewardship practice regardless of the entity question.",
+    "contributor": {
+      "name": "Alexandra Petrov",
+      "title": "VP, Advertising Sales Planning & Strategy",
+      "organization": "Prism Media Group",
+      "years_experience": 13,
+      "domain_expertise": "Upfront marketplace commitments, scatter pricing, audience guarantees, make-good allocation strategy"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "HubSpot CRM",
+        "NetSuite",
+        "Google Docs",
+        "Monday.com",
+        "Slack",
+        "Email"
+      ],
+      "informal_signal_location": "Resolved Google Doc comment by departed SVP proposing M&A exception language that was never formally ratified",
+      "acronyms_used": [
+        "ADU",
+        "CPM",
+        "IO",
+        "ARR",
+        "SVP",
+        "M&A"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 6
+    }
+  },
+  {
+    "title": "Rate Card Floor Conflict on Pre-Change Verbal Commitment",
+    "category": "policy_version",
+    "domain": "sales_deal_desk",
+    "difficulty": "hard",
+    "scenario": "Context from Google Sheets — 'Q2 2026 Rate Card (FINAL)' (published Apr 1, 2026):\nStreaming Premium Placement | Floor CPM: $38 | Effective: Apr 1, 2026\nStreaming Standard Run-of-Network | Floor CPM: $22 | Effective: Apr 1, 2026\n[Cell comment by @r.nakamura, Mar 28]: 'Approved by CFO. 15% increase over Q1 floors. No grandfathering for unsigned proposals.'\n\nContext from Google Sheets — 'Q1 2026 Rate Card (Archived)' (effective Jan 1 - Mar 31, 2026):\nStreaming Premium Placement | Floor CPM: $33 | Effective: Jan 1, 2026\nStreaming Standard Run-of-Network | Floor CPM: $19 | Effective: Jan 1, 2026\n\nContext from HubSpot CRM:\nDeal: 'Apex Automotive — H2 Streaming Package' | Amount: $1.6M | Stage: Proposal Sent (Mar 18, 2026) | Owner: Tomás Reyes | Close date: Apr 22, 2026 (overdue) | Notes: 'Client excited. Agency (Dentsu) reviewing. Verbal yes from CMO at dinner Mar 12.'\n\nContext from Monday.com — Proposal Pipeline:\nApex Automotive | Package: Premium Placement (60%) + Standard RON (40%) | Proposed CPMs: $34 (premium) / $20 (RON) | Blended: $28.40 | Status: 'Awaiting signature'\n\nContext from Slack — #sales-planning (Apr 8, 2026, 2:15 PM):\n@tomas.reyes: Alex — Apex is ready to sign but Dentsu noticed the IO says Q1 rates. They want to lock those in. Can we honor since we pitched before the floor change?\n@alex.petrov: When did they actually receive the proposal?\n@tomas.reyes: March 18. CMO gave us a verbal at POSSIBLE conference on the 12th.\n@alex.petrov: Verbal doesn't count for grandfathering. I need to check if there's a pending-proposal exception.\n@jess.thornton: :point_up: There isn't one. Rachel's comment on the rate card was explicit.\n\nContext from Slack — DM between Tomás Reyes and Derek Miles (Apr 9, 2026, 8:02 AM):\n@tomas.reyes: Derek, I really need this Apex deal. $1.6M. If we reprice at new floors the blended goes to $32.60 and Dentsu will walk. They have a competing offer from Hulu at $29.\n@derek.miles: What if you restructure the mix? Drop premium to 45%, bump RON to 55%. Gets you to ~$29.20 blended at new floor rates.\n@tomas.reyes: That changes the whole package value prop. Apex specifically wants majority premium for their EV launch.\n@derek.miles: Then you might need to go ask for a one-time exception. VP approval I think?\n@tomas.reyes: :pray:\n\nContext from NetSuite — Revenue Recognition Notes:\nApex Automotive: No active contract. No signed IO. Last booking: Q3 2025 scatter ($340K).",
+    "question": "Tomás wants to close the Apex deal at Q1 CPM floors ($34/$20) citing the verbal commitment and pre-change proposal date. What is the correct pricing decision?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Restructure the package mix to 45% premium / 55% RON at Q2 floors to match competitive pricing while maintaining rate card compliance",
+      "B) Apply Q2 floor rates ($38/$22) with no exceptions — the rate card explicitly states 'no grandfathering for unsigned proposals' and a verbal commitment has no contractual standing",
+      "C) Apply Q2 floor rates but approve a one-time VP-level exception to discount premium CPM to $34, citing competitive pressure and deal size",
+      "D) Honor Q1 rates — the proposal was sent March 18 before the April 1 floor change, establishing a binding price commitment to the client"
+    ],
+    "correct_answer": "B",
+    "rationale": "The correct answer is B. The rate card cell comment from Rachel Nakamura (approved by CFO) is unambiguous: 'No grandfathering for unsigned proposals.' The proposal was unsigned as of the April 1 effective date, and a verbal commitment at a conference dinner has no contractual standing. NetSuite confirms there is no active contract or signed IO. The policy is clear and there is no established exception mechanism for this situation. Answer A is wrong because an unsigned proposal is not a binding price commitment — the rate card policy specifically anticipated this scenario and closed the loophole. Answer C is wrong because it was suggested informally in a DM (not an official recommendation) and it fundamentally changes what the client wants (majority premium for their EV launch). Restructuring to game the blended rate violates the spirit of the floor while technically complying. Answer D is tempting because it acknowledges the competitive reality, but there is no established 'one-time VP exception' process for rate card floors — Derek's suggestion was speculative ('I think?'). Creating ad hoc exceptions to CFO-approved floors requires more than VP authority and would set a dangerous precedent for every AE with a competing offer from Hulu.",
+    "contributor": {
+      "name": "Alexandra Petrov",
+      "title": "VP, Advertising Sales Planning & Strategy",
+      "organization": "Prism Media Group",
+      "years_experience": 13,
+      "domain_expertise": "Upfront marketplace commitments, scatter pricing, audience guarantees, make-good allocation strategy"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Google Sheets",
+        "HubSpot CRM",
+        "Monday.com",
+        "Slack",
+        "NetSuite"
+      ],
+      "informal_signal_location": "Slack DM between AE and colleague discussing package restructuring workaround — presents a tempting but inappropriate solution",
+      "acronyms_used": [
+        "CPM",
+        "RON",
+        "IO",
+        "CMO",
+        "AE",
+        "EV",
+        "GRP"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 4
+    }
+  },
+  {
+    "title": "Cross-Platform Package Margin Conflict with Streaming P&L Separation",
+    "category": "cross_system_synthesis",
+    "domain": "sales_deal_desk",
+    "difficulty": "expert",
+    "scenario": "Context from Monday.com — Upfront Tracker 2026-2027:\nClient: 'Meridian Financial Group' (via Publicis) | Total commitment: $4.2M | Package: 'Total Audience' bundle | Breakdown: Linear (Prism Cable Network) 55% / Streaming (PrismStream+) 45% | Pricing model: Blended CPM across platforms at $26 | Guarantee: A25-54, combined 2.1 GRP equivalent | Status: 'Signed May 2026'\n\nContext from NetSuite — Internal P&L View:\nPrism Cable Network (Linear): Margin floor = 62% | Cost basis per unit = $9.50 CPM equivalent\nPrismStream+ (Streaming): Margin floor = 45% | Cost basis per unit = $14.80 CPM equivalent\n[Controller note, Q1 2026]: 'Streaming and Linear are separate cost centers per board directive effective Jan 2026. Cross-subsidization no longer permitted for margin reporting.'\n\nContext from Google Doc — 'Upfront Deal Approval Matrix v2.1' (updated May 2026):\nSection 6: 'Blended cross-platform deals must meet minimum margin at the TOTAL DEAL level (55%).'\n[VERSION HISTORY: v2.0 (Jan 2026) read: 'must meet minimum margin at each platform level independently.' Changed to 'total deal level' in v2.1 per Sales leadership request, May 15 2026.]\n\nContext from Slack — #sales-planning (Jun 4, 2026, 11:22 AM):\n@rachel.nakamura: Finance flagged the Meridian deal. At $26 blended CPM with 45% streaming mix, the streaming portion alone runs at 43% margin — below the 45% floor.\n@alex.petrov: But v2.1 of the approval matrix says total deal level, not per-platform.\n@rachel.nakamura: Right, and at total deal level it's ~54.8%. Still below the 55% total floor by a hair.\n@alex.petrov: When was the deal signed?\n@rachel.nakamura: May 22.\n@alex.petrov: And v2.1 was published May 15. So it was under v2.1 rules.\n@rachel.nakamura: But the board directive on cross-subsidization is separate from the approval matrix. That's a finance policy, not a sales policy.\n\nContext from Slack — #finance-ops (Jun 5, 2026, 3:18 PM):\n@cfo_office: For the avoidance of doubt — the Jan 2026 board directive on P&L separation supersedes any sales policy that permits blended margin calculation across cost centers. Deals must be profitable at each cost center independently.\n@rachel.nakamura: :white_check_mark:\n@tomas.reyes: Does this apply retroactively to signed upfronts?\n[No reply in thread]\n\nContext from HubSpot CRM:\nDeal: 'Meridian Financial — 26-27 Upfront' | Value: $4.2M | Signed: May 22, 2026 | IO Reference: IO-2026-0447 | Special terms: 'Platform allocation may shift +/-10% at Prism's discretion for delivery optimization.'\n\nContext from Google Sheets — 'Streaming Inventory Forecast Q3 2026':\nPrismStream+ available premium impressions: 82% sold | Standard: 71% sold | Note: 'Tight Q3. Make-goods from Q2 under-deliveries consuming 8% of premium pool.'",
+    "question": "The Meridian deal is signed at a $26 blended CPM across linear and streaming. Finance is challenging it. What is the correct determination on whether this deal is compliant?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Compliant — the deal was signed under v2.1 of the approval matrix which permits total-deal-level margin calculation, and it was approved before the CFO's clarifying Slack message",
+      "B) Non-compliant at both levels — total deal margin is 54.8% which is below the 55% floor even under the more permissive v2.1 rules",
+      "C) Compliant at deal level but requires restructuring — use the +/-10% platform allocation discretion clause in the IO to shift more volume to linear until streaming hits 45% independently",
+      "D) Non-compliant — the board directive on P&L separation (Jan 2026) supersedes the sales approval matrix (May 2026), making the streaming portion's 43% margin a violation regardless of blended calculation"
+    ],
+    "correct_answer": "D",
+    "rationale": "The correct answer is D. The board directive from January 2026 establishing separate P&L cost centers and prohibiting cross-subsidization is a governance-level policy that supersedes the sales team's approval matrix. The CFO's Slack message on June 5 makes this explicit: the board directive 'supersedes any sales policy that permits blended margin calculation across cost centers.' While the deal was signed May 22 (before the June 5 clarification), the board directive itself has been in effect since January 2026 — the CFO's message was clarification of existing policy, not new policy. The streaming portion at 43% margin violates the 45% streaming floor when evaluated independently as required. Answer A is wrong because it treats the sales approval matrix as authoritative over a board-level directive — organizational hierarchy matters and board governance outranks sales policy. Answer C is creative but wrong: using the +/-10% discretion clause to game compliance would constitute the exact cross-subsidization the board directive prohibits; shifting volume to linear to 'fix' streaming margins is accounting manipulation. Answer D correctly identifies one problem (total margin at 54.8% < 55%) but cites the wrong primary violation — the fundamental issue is the per-platform requirement from the board directive, not the total-deal shortfall.",
+    "contributor": {
+      "name": "Alexandra Petrov",
+      "title": "VP, Advertising Sales Planning & Strategy",
+      "organization": "Prism Media Group",
+      "years_experience": 13,
+      "domain_expertise": "Upfront marketplace commitments, scatter pricing, audience guarantees, cross-platform packaging"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Monday.com",
+        "NetSuite",
+        "Google Docs",
+        "Slack",
+        "HubSpot CRM",
+        "Google Sheets"
+      ],
+      "informal_signal_location": "CFO's Slack message in #finance-ops clarifying that board directive supersedes sales policy, with an unanswered question about retroactive application",
+      "acronyms_used": [
+        "CPM",
+        "GRP",
+        "P&L",
+        "IO",
+        "CFO",
+        "ADU"
+      ],
+      "policy_versions_involved": 3,
+      "temporal_span_months": 6
+    }
+  }
+]

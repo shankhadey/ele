@@ -1,0 +1,139 @@
+[
+  {
+    "title": "Invalid Signatory After Title Change in Reorg",
+    "category": "approval_chain",
+    "domain": "compliance_legal",
+    "difficulty": "expert",
+    "scenario": "NovaTerra Property Group executed a $14.2M acquisition of a retail parcel through NovaTerra Retail Holdings III LLC in March 2026. The Purchase and Sale Agreement was signed by Marcus Webb, who signed as 'Vice President, Acquisitions.' The board resolution authorizing the transaction (Resolution 2025-041, adopted November 2025) delegated execution authority to 'any officer of the Company holding the title of Vice President or above.'\n\n**iManage — Corporate Records / Entity Files / NovaTerra Retail Holdings III LLC**\nOperating Agreement (Amended & Restated, September 2024): Managing Member is NovaTerra Property Group Inc. Section 4.2: 'The Managing Member may delegate authority to execute documents on behalf of the Company to any officer of the Managing Member, provided such delegation is evidenced by board resolution or written consent.'\nIncumbency Certificate (filed January 15, 2026): Lists officers as CEO, CFO, COO, General Counsel, SVP of Capital Markets, SVP of Asset Management. No Vice Presidents listed.\n\n**Outlook — From: HR Business Partner to Marcus Webb (January 8, 2026)**\nSubject: Updated Title — Effective 1/15\n'Hi Marcus — Per the restructuring, your title is changing from VP, Acquisitions to Senior Director, Acquisitions effective January 15. Comp and reporting line stay the same. Your updated business cards are being ordered. Let me know if you have questions.'\n\n**Shared Network Drive — \\\\ntserver\\governance\\DOA-matrix-2026.xlsx (Last modified: January 20, 2026)**\nRow 47: 'Real property acquisitions > $10M' | Required Approval: 'Board Resolution + Officer Signature (VP or above)' | Effective: November 2025\n\n**Microsoft Teams — #acquisitions-closings (March 2, 2026, 11:47 AM)**\n@marcus.webb: PSA for the Oakdale retail pad is ready for sig. Same deal structure as the Greenfield close last quarter.\n@jennifer.oconnell (Legal): You still have authority from the November resolution right?\n@marcus.webb: Yeah, hasn't changed. Same as always.\n@jennifer.oconnell: :thumbsup:\n[No further messages in thread]\n\n**Diligent Board Portal — Resolution 2025-041 (Adopted November 14, 2025)**\n'RESOLVED, that any officer of NovaTerra Property Group Inc. holding the title of Vice President or above is hereby authorized to execute, on behalf of NovaTerra Retail Holdings III LLC, all documents necessary to consummate the acquisition of the property located at 4200 Oakdale Boulevard...'\n\n**DocuSign — Envelope ID: 7F3A-9B2C (Completed March 4, 2026)**\nSigner: Marcus Webb | Title entered: 'Vice President, Acquisitions' | IP: 10.0.4.77 (NovaTerra internal) | Signed: March 4, 2026 2:14 PM",
+    "question": "The title company has raised a signatory authority concern during the post-closing audit. Based on the corporate records, was Marcus Webb's signature on the PSA valid at the time of execution?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) No — the DOA matrix requires board resolution plus officer signature, and since the incumbency certificate filed January 15 does not list Marcus as an officer at all, he lacked both officer status and VP title",
+      "B) Yes — Jennifer O'Connell from Legal confirmed authority via Teams, constituting in-house counsel's verification of signatory capacity",
+      "C) No — Marcus was a Senior Director at the time of signing (January 15 title change preceded March 4 execution); the resolution requires the signer to 'hold the title of Vice President or above' and he no longer did",
+      "D) Yes — the board resolution authorized VPs, and Marcus held that title when the resolution was adopted in November 2025; authority granted is not retroactively revoked by a title change"
+    ],
+    "correct_answer": "A",
+    "rationale": "The strongest answer is D because it identifies both deficiencies. The January 15 incumbency certificate — the most authoritative corporate record of who holds officer status — does not list Marcus Webb at all. His title change to Senior Director removed him from the 'VP or above' class referenced in the resolution, and more critically, the incumbency certificate shows he is not an 'officer' of the Managing Member. The Operating Agreement (Section 4.2) requires delegation to 'any officer of the Managing Member,' and the board resolution mirrors this by authorizing 'any officer... holding the title of Vice President or above.' Marcus fails both tests. Answer D incorrectly assumes authority granted persists despite the factual predicate (holding VP title) ceasing to be true. Answer B identifies the title issue but misses the deeper officer-status problem from the incumbency certificate. Answer C treats a casual Teams thumbs-up from in-house counsel as formal verification of signatory capacity, which has no corporate governance weight — counsel's informal confirmation in a chat thread does not cure an actual authority deficiency.",
+    "contributor": {
+      "name": "Victoria Ashworth",
+      "title": "Corporate Secretary & Governance Director",
+      "organization": "NovaTerra Property Group",
+      "years_experience": 17,
+      "domain_expertise": "Board resolutions, delegation of authority, signatory verification, corporate entity management"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "iManage",
+        "Outlook",
+        "Shared Network Drive",
+        "Microsoft Teams",
+        "Diligent Board Portal",
+        "DocuSign"
+      ],
+      "informal_signal_location": "Microsoft Teams #acquisitions-closings thread where Legal gave a thumbs-up emoji without actually verifying the incumbency certificate",
+      "acronyms_used": [
+        "PSA",
+        "DOA",
+        "LLC",
+        "SVP",
+        "VP",
+        "CAM"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 5
+    }
+  },
+  {
+    "title": "Cross-Entity Lease Execution with Ambiguous LLC Authority",
+    "category": "entity_resolution",
+    "domain": "compliance_legal",
+    "difficulty": "hard",
+    "scenario": "A tenant (Briarwood Coffee Roasters) wants to expand from their current 2,400 SF space at NovaTerra's Lakeshore Commons property into an adjacent 1,800 SF suite. The adjacent suite is technically in a different building within the same complex — and each building is held by a separate LLC.\n\n**Yardi Voyager — Property Records**\nProperty: Lakeshore Commons - Building A | Owner: NT Lakeshore A LLC | Managing Member: NovaTerra Property Group Inc.\nProperty: Lakeshore Commons - Building B | Owner: NT Lakeshore B LLC | Managing Member: NovaTerra Property Group Inc.\nTenant: Briarwood Coffee Roasters | Current Lease: Suite A-104, Building A | Lease ID: LK-A-2023-017 | Expiry: August 2027\n\n**VTS — Deal Pipeline**\nDeal: 'Briarwood expansion - Bldg B Suite 201' | Stage: Lease Sent | Landlord Entity on Draft: 'NT Lakeshore A LLC' | Broker note: 'Tenant wants single lease covering both spaces for simplicity. Using same entity as existing lease.'\n\n**iManage — Entity Files / NT Lakeshore B LLC**\nOperating Agreement: Managing Member authorized to execute leases up to $500K annual base rent without JV partner consent.\nJV Partner: Midwest Realty Partners (35% interest) | Consent threshold: Any lease with annual base rent exceeding $500K OR term exceeding 10 years requires Unanimous Member Consent per Section 7.3(b).\n\n**Shared Network Drive — \\\\ntserver\\properties\\lakeshore\\amendments\\**\nFile: 'Briarwood_expansion_term_sheet_FINAL.docx' (Last modified: June 12, 2026)\nTerms: Combined rent $47/SF NNN across 4,200 SF = $197,400 annual base rent. Term: 8 years from commencement.\n\n**Outlook — From: Leasing Director to Victoria Ashworth (June 18, 2026)**\nSubject: 'Quick Q - Briarwood deal'\n'Victoria — the broker set up the Briarwood expansion lease under NT Lakeshore A LLC since that's their existing landlord entity. Does it matter? Both buildings are ours. Just want to make sure we don't need to change anything before DocuSign goes out tomorrow.'\n[No reply found]\n\n**MRI Software (Legacy System — Acquired Portfolio) — Lakeshore Commons - Building B**\nNote (entered during acquisition integration, April 2024): 'JV structure differs from Bldg A. Bldg A is wholly-owned. Bldg B has Midwest Realty at 35%. See iManage for OA. Flag any new leases for governance review.'\n\n**Microsoft Teams — #leasing-ops (June 19, 2026, 8:33 AM)**\n@rob.castellano (Leasing Director): Sending the Briarwood expansion out today. Standard deal, nothing fancy.\n@lisa.murakami (Paralegal): Which entity? I need to pull the good standing cert.\n@rob.castellano: A LLC, same as their current lease.\n@lisa.murakami: Got it, pulling now.",
+    "question": "What governance issue must be resolved before the Briarwood expansion lease can be validly executed?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) The deal must be restructured so the expansion remains in Building A (finding alternate space) to avoid triggering JV consent rights that would delay the timeline",
+      "B) The lease must be executed by NT Lakeshore B LLC for the Building B space, requiring a separate lease or a two-party landlord structure, and Midwest Realty Partners must consent because Section 7.3(b) applies to any lease — the $500K threshold is only for Managing Member unilateral action",
+      "C) The lease must be executed by NT Lakeshore B LLC (not A LLC) since Suite 201 is in Building B, and Midwest Realty Partners' consent is not required because the annual rent is under $500K",
+      "D) The lease can be executed by NT Lakeshore A LLC as a master lease covering both buildings since NovaTerra is the Managing Member of both entities"
+    ],
+    "correct_answer": "C",
+    "rationale": "Answer C is correct. The lease for Suite 201 in Building B must be executed by NT Lakeshore B LLC — you cannot have entity A be the landlord for property owned by entity B regardless of common management. However, the JV consent requirement is not triggered here: the Operating Agreement states consent is required for leases with annual base rent exceeding $500K OR term exceeding 10 years. The Briarwood expansion has $197,400 annual rent and an 8-year term, falling below both thresholds. The Managing Member (NovaTerra) can execute unilaterally. Answer B is wrong because a managing member's authority over two LLCs does not allow one LLC to lease another's property — these are separate legal entities with separate ownership structures and a JV partner in B who has rights. Answer B misreads Section 7.3(b); the consent threshold is explicitly '$500K OR 10 years' — below both, the Managing Member has delegated authority to act alone. Answer D is operationally extreme and unnecessary once the entity correction is made. The critical insight hiding in MRI Software (the legacy system the team rarely checks) is the JV structure note that flags Building B's different governance, and the informal signal is the unanswered email to Victoria Ashworth — silence that could be misread as tacit approval.",
+    "contributor": {
+      "name": "Victoria Ashworth",
+      "title": "Corporate Secretary & Governance Director",
+      "organization": "NovaTerra Property Group",
+      "years_experience": 17,
+      "domain_expertise": "Board resolutions, delegation of authority, signatory verification, corporate entity management"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Yardi Voyager",
+        "VTS",
+        "iManage",
+        "Shared Network Drive",
+        "Outlook",
+        "MRI Software",
+        "Microsoft Teams"
+      ],
+      "informal_signal_location": "MRI Software legacy note from acquisition integration flagging JV structure, plus the unanswered Outlook email to Victoria Ashworth",
+      "acronyms_used": [
+        "LLC",
+        "JV",
+        "OA",
+        "NNN",
+        "SF",
+        "DOA"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 3
+    }
+  },
+  {
+    "title": "Delegation of Authority Matrix Update Notification Failure",
+    "category": "policy_version",
+    "domain": "compliance_legal",
+    "difficulty": "hard",
+    "scenario": "In February 2026, NovaTerra's CFO approved a capital expenditure of $2.8M for HVAC replacement at the Riverpoint Tower property. The expenditure was processed through Yardi, approved in the standard workflow, and the vendor (Apex Mechanical Services) has completed 60% of the work. An internal audit has now flagged the approval as potentially unauthorized.\n\n**Shared Network Drive — \\\\ntserver\\governance\\DOA-matrix-2025.xlsx (Last modified: September 15, 2025)**\nRow 12: 'Capital expenditures — single property' | Threshold: '$0-$1M: Property Manager | $1M-$3M: CFO | $3M+: Board approval' | Effective: January 2025\n\n**SharePoint — /governance/policies/delegation-of-authority (Page version 3, published January 5, 2026)**\nSection 4.1: Capital Expenditure Approvals\n'$0-$500K: Property Manager | $500K-$1.5M: SVP Asset Management | $1.5M-$3M: CEO + CFO joint approval | $3M+: Board'\n[Version 2 (September 2025) stated: '$0-$1M: Property Manager | $1M-$3M: CFO | $3M+: Board']\n[RESOLVED COMMENT by @victoria.ashworth, December 18, 2025]: 'Updated per board directive from Dec 12 meeting. Tightening CapEx authority. Need to communicate to all budget holders before Jan 1 effective date.'\n\n**Diligent Board Portal — Board Meeting Minutes (December 12, 2025)**\nItem 7: 'The Board discussed tightening delegated authority for capital expenditures in light of recent overruns. RESOLVED that the Delegation of Authority matrix be updated to require joint CEO/CFO approval for expenditures between $1.5M and $3M, effective January 1, 2026. The Corporate Secretary is directed to update the DOA matrix and communicate changes to all affected personnel.'\n\n**Outlook — From: Victoria Ashworth to all-budget-holders@novaterra.com (DRAFT — never sent)**\nSubject: 'IMPORTANT: Updated Delegation of Authority — Effective January 1, 2026'\nBody: 'Dear colleagues, Please be advised that per Board Resolution dated December 12, 2025, the following changes to capital expenditure approval thresholds are effective immediately...'\nStatus: Draft (saved December 22, 2025, never sent)\n\n**Microsoft Teams — #asset-management (January 22, 2026, 3:15 PM)**\n@frank.novak (SVP Asset Management): Hey team — heads up, I think the CapEx thresholds changed. Saw something on SharePoint but not sure if it's final. Anyone get an official notice?\n@sarah.winters: I didn't see anything. Still going by the matrix on the shared drive.\n@frank.novak: Probably just a draft. I'll ask Victoria next time I see her.\n[No further messages]\n\n**Yardi Voyager — CapEx Approval Workflow / Riverpoint Tower HVAC (February 8, 2026)**\nProject: HVAC Full Replacement | Budget: $2,800,000 | Submitted by: Property Manager, Riverpoint\nApproval Chain (as configured in system): Property Manager > CFO\nApproved by: CFO (Thomas Hartwell) on February 10, 2026\nSystem note: 'Approval routing based on DOA matrix loaded September 2025.'\n\n**Outlook — From: Thomas Hartwell (CFO) to Victoria Ashworth (June 20, 2026)**\nSubject: 'RE: Audit Finding — Riverpoint HVAC CapEx'\n'Victoria — I was never notified of any DOA change. The matrix on the shared drive still shows my single approval is sufficient up to $3M. I approved this in good faith based on the policy I had access to. When was this supposedly communicated?'",
+    "question": "Based on the corporate governance records, what is the correct determination regarding the validity of the CFO's February 2026 approval of the $2.8M HVAC expenditure?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) The approval is invalid — the board resolution is effective January 1, 2026 regardless of communication; board resolutions are binding on all officers from the date specified, and the CFO should have checked the board portal",
+      "B) The approval is valid — the updated DOA was never formally communicated to budget holders, the notification email was never sent, and the Yardi system still reflected the old thresholds; the CFO acted reasonably based on available information",
+      "C) The approval is invalid but curable — the CEO can provide retroactive co-approval to ratify the expenditure under the new DOA matrix, since the substantive threshold (CEO + CFO joint) can still be met",
+      "D) The approval is valid — the SharePoint page is marked as 'version 3' but the shared drive matrix (the system of record referenced in Yardi's workflow configuration) was never updated, meaning the old policy remained operative"
+    ],
+    "correct_answer": "C",
+    "rationale": "Answer C is correct. The board resolution is unambiguous: joint CEO/CFO approval is required for CapEx between $1.5M and $3M effective January 1, 2026. Board resolutions are binding from their effective date regardless of communication failures — the obligation to know falls on officers, and the board portal (where the CFO has access) contains the minutes. However, the approval is not void ab initio; it is deficient but curable through ratification. The CEO can provide retroactive co-approval, making the authorization complete. This is standard corporate governance practice for procedural deficiencies where substantive authority exists. Answer A is sympathetic but legally incorrect — reliance on a stale internal document does not override a board resolution. Corporate officers are constructively on notice of board actions. Answer B reaches the right invalidity conclusion but declares the expenditure unauthorized without acknowledging that ratification is available, which would be an unnecessarily destructive finding for a $2.8M project that is 60% complete. Answer D incorrectly treats the shared drive spreadsheet as the 'system of record' superseding the board resolution; the DOA matrix is a communication tool implementing board directives, not a source of authority independent of them. The critical hidden signal is the resolved comment on SharePoint showing Victoria acknowledged the communication obligation but the draft email in Outlook proves it was never fulfilled.",
+    "contributor": {
+      "name": "Victoria Ashworth",
+      "title": "Corporate Secretary & Governance Director",
+      "organization": "NovaTerra Property Group",
+      "years_experience": 17,
+      "domain_expertise": "Board resolutions, delegation of authority, signatory verification, corporate entity management"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Shared Network Drive",
+        "SharePoint",
+        "Diligent Board Portal",
+        "Outlook",
+        "Microsoft Teams",
+        "Yardi Voyager"
+      ],
+      "informal_signal_location": "Outlook draft folder showing the notification email was composed but never sent, plus Teams thread where SVP Asset Management raised the question and got no definitive answer",
+      "acronyms_used": [
+        "DOA",
+        "CapEx",
+        "HVAC",
+        "CFO",
+        "CEO",
+        "SVP",
+        "LLC"
+      ],
+      "policy_versions_involved": 3,
+      "temporal_span_months": 6
+    }
+  }
+]

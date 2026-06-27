@@ -1,0 +1,144 @@
+[
+  {
+    "title": "Teaming Partner Entity Change Mid-Proposal with Stale SAM Registration",
+    "category": "entity_resolution",
+    "domain": "sales_deal_desk",
+    "difficulty": "expert",
+    "scenario": "Context from GovWin (Opportunity ID: GW-2026-44891):\nAgency: DHS/CISA | Title: Cyber Threat Intelligence Platform (CTIP) | Type: Best Value | Est. Value: $48M/5yr IDIQ | Proposals Due: Apr 18, 2026.\nTeaming: Sentinel (Prime, CAGE: 3K7R2) with Aethon Cyber Group (Sub, CAGE: 5M9P1) for Threat Intel CLIN.\n\nContext from SharePoint — /proposals/CTIP-2026/teaming/:\nTeaming Agreement signed Dec 12, 2025 between Sentinel Defense Solutions (Div. 2) and Aethon Cyber Group LLC.\nPast Performance Volume (Draft v3, last edit Mar 28, 2026): References 3 Aethon contracts — DHS EINSTEIN III (Contract FA8721-19-C-0034), NSA SHARKTOOTH (classified ref), and FBI CTAS (Contract 15F06823C0091).\n\n**Email — Subject: 'FW: FW: Aethon News' (Mar 14, 2026)**\nFrom: j.kowalski@sentinel-ds.com\nTo: w.tran@sentinel-ds.com\nCC: capture-team-ctip@sentinel-ds.com\n\n> > Original from Aethon Cyber Group (Feb 28):\n> > 'Pleased to announce our merger with Ridgeline Systems effective March 1.\n> > We are now operating as Ridgeline-Aethon Inc.'\n>\n> Will — FYI. Not sure if this affects anything on our side.\n\nJake K.\n\n**Teams — #ctip-proposal (Mar 15, 2026, 9:41 AM)**\n@w.tran: Jake, saw the Aethon email. Checking SAM.gov now.\n@j.kowalski: Cool. Their POC says 'nothing changes for us' so I think we're fine.\n@w.tran: Their CAGE 5M9P1 still shows Aethon Cyber Group LLC as the legal entity in SAM. Registration current through Nov 2026.\n@j.kowalski: Perfect, no action needed then.\n[Thread ended]\n\n**SAM.gov — Entity lookup (queried Apr 10, 2026):**\nCAGE 5M9P1: Aethon Cyber Group LLC | Status: Active | Expiration: Nov 14, 2026\nCAGE 8J2L6: Ridgeline-Aethon Inc. | Status: Active | Registered: Mar 8, 2026 | Small Business: No\nNote: CAGE 5M9P1 — entity marked for administrative update pending next annual renewal.\n\n**Monday.com — CTIP Proposal Schedule:**\nPink Team: Complete | Red Team: Apr 5 (complete) | Gold Team: Apr 14 | Submission: Apr 18\nRed Team finding #7 (Apr 5): 'Past performance volume references Aethon Cyber Group. Confirm entity name matches proposal cover and teaming agreement. Status: Resolved - per Jake, SAM still shows Aethon.'\n\n**SharePoint — /policies/proposals/past-performance-guide.docx (v2.3, Oct 2024)**\nSection 4.1: 'Past performance citations must reference the exact legal entity name as registered in SAM.gov at time of proposal submission... Where a successor entity exists, Offerors must demonstrate the organizational continuity and provide novation or change-of-name documentation per FAR 42.12.'",
+    "question": "Given the information available as of April 10, 2026, what is the correct course of action for the past performance volume referencing Aethon's contracts?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Retain the Aethon entity name for the citations but add a novation/continuity letter from Ridgeline-Aethon Inc. demonstrating successor relationship per FAR 42.12, and flag that CAGE 5M9P1 is pending administrative update.",
+      "B) Replace all references to 'Aethon Cyber Group' with 'Ridgeline-Aethon Inc.' and update the CAGE code to 8J2L6 since that is the current operating entity.",
+      "C) No changes needed — CAGE 5M9P1 is still active under 'Aethon Cyber Group LLC' in SAM, so the past performance citations remain valid as written.",
+      "D) Remove Aethon's past performance citations entirely since the merged entity may no longer meet the teaming agreement terms, and substitute Sentinel's own cyber contracts."
+    ],
+    "correct_answer": "A",
+    "rationale": "The SAM.gov entry shows CAGE 5M9P1 is marked for administrative update, signaling the entity is transitioning. Per Sentinel's own past performance guide (Section 4.1), where a successor entity exists, the proposal must demonstrate organizational continuity with novation or change-of-name documentation per FAR 42.12. The merger announcement and new CAGE registration (8J2L6 for Ridgeline-Aethon Inc.) establish that a successor entity exists regardless of whether the old SAM registration is technically still active. Answer C is the tempting trap — the Red Team resolved the finding based only on SAM active status, missing the 'pending administrative update' flag and ignoring the policy requirement about successor entities. Answer B overcorrects by using the new entity name for contracts that were performed under the old entity, which would create a mismatch between the cited contract records and the proposal. Answer D is unnecessarily drastic; the past performance is still attributable through proper continuity documentation.",
+    "contributor": {
+      "name": "William Tran",
+      "title": "Solutions Architect & Proposal Manager",
+      "organization": "Sentinel Defense Solutions",
+      "years_experience": 15,
+      "domain_expertise": "Government proposal pricing, LPTA vs best-value evaluation, teaming arrangements, technical volume writing"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "GovWin",
+        "SharePoint",
+        "Microsoft Teams",
+        "Outlook",
+        "SAM.gov",
+        "Monday.com"
+      ],
+      "informal_signal_location": "SAM.gov 'pending administrative update' note contradicting the Teams thread conclusion that 'no action needed'",
+      "acronyms_used": [
+        "CAGE",
+        "CLIN",
+        "IDIQ",
+        "LPTA",
+        "FAR",
+        "SAM",
+        "CPARS",
+        "DHS",
+        "CISA",
+        "NSA"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 4
+    }
+  },
+  {
+    "title": "Cross-Proposal Key Personnel Overallocation Hidden in Parallel Bid Volumes",
+    "category": "approval_chain",
+    "domain": "sales_deal_desk",
+    "difficulty": "hard",
+    "scenario": "Context from Monday.com — Active Proposals Dashboard (Apr 2026):\nProposal 1: ARTEMIS (DoD/DISA) | Prime | Gold Team: Apr 20 | Due: Apr 28 | Capture Mgr: R. Vasquez\nProposal 2: NEXUS-C2 (Army/PEO-C3T) | Prime | Gold Team: Apr 22 | Due: May 2 | Capture Mgr: M. Okoro\n\n**Costpoint — Labor Category Planning (ARTEMIS):**\nCLIN 0001 — Program Manager: D. Hutchins (100% allocated, Key Personnel)\nCLIN 0003 — Lead Cybersecurity Architect: K. Morales (75% FTE, Key Personnel)\nWrap rate applied: FY26 Approved (per Gate Review 02/15/2026)\n\n**Costpoint — Labor Category Planning (NEXUS-C2):**\nCLIN 0002 — Cybersecurity SME: K. Morales (50% FTE, Key Personnel)\nCLIN 0004 — Deputy PM: T. Washington (100%, Key Personnel)\nWrap rate applied: FY26 Approved\n\n**Teams — #nexus-c2-capture (Apr 8, 2026, 2:15 PM)**\n@m.okoro: Need to upgrade Morales from SME to Lead Architect on NEXUS. Client specifically asked for her in the Q&A. Bumping to 80% FTE.\n@t.washington: Does that conflict with anything?\n@m.okoro: She's only on NEXUS. Checked with her manager.\n@t.washington: Sounds good.\n@m.okoro: Updated the staffing tab. Gold team will see it.\n\n**Teams — #artemis-capture (Apr 3, 2026, 11:22 AM)**\n@r.vasquez: Morales confirmed for 75% on ARTEMIS. She's excited about the role.\n@d.hutchins: Great. She's essential for the Section L technical evaluation.\n@r.vasquez: Locking her in as Key Personnel. Non-negotiable.\n\n**Email — Subject: 'RE: Key Personnel Conflicts — Monthly Check' (Apr 1, 2026)**\nFrom: hr-staffing@sentinel-ds.com\nTo: proposal-ops@sentinel-ds.com\n\nAttached is the April Key Personnel commitment tracker. All named Key Personnel with >50% allocation on active proposals are listed. NOTE: This report reflects Costpoint entries as of March 31. Any updates after that date will appear in the May report.\n\n**SharePoint — /policies/proposals/key-personnel-policy.docx (v3.1, Jan 2026)**\nSection 2.4: 'No individual may be proposed as Key Personnel on concurrent active proposals where combined FTE allocation exceeds 100% without VP Capture written approval. Violations discovered post-submission may result in proposal withdrawal or organizational conflict finding.'\n[RESOLVED COMMENT by @c.reed, Nov 2025]: 'Added VP requirement after the FALCON/PEGASUS incident. Previously was Director-level. Board mandated escalation.'",
+    "question": "After M. Okoro's April 8 update to Morales's allocation on NEXUS-C2, what is the correct next step before Gold Team review?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Notify R. Vasquez on the ARTEMIS capture team and let the two capture managers negotiate the allocation split between themselves.",
+      "B) No action needed — the HR staffing report covers Key Personnel conflicts and will flag this in the May cycle before submission.",
+      "C) Obtain written VP Capture approval for Morales's combined 155% allocation across ARTEMIS and NEXUS-C2 before proceeding to Gold Team.",
+      "D) Reduce Morales's allocation on NEXUS-C2 back to 50% to stay within the 100% combined threshold across both proposals."
+    ],
+    "correct_answer": "C",
+    "rationale": "After Okoro's update, Morales is allocated 75% on ARTEMIS + 80% on NEXUS-C2 = 155% combined FTE as Key Personnel on concurrent active proposals. Per Section 2.4 of the key personnel policy (v3.1), this requires VP Capture written approval. The resolved comment reveals this was escalated from Director to VP level after a prior incident, making this a board-level governance control. Answer A fails because the HR staffing report only reflects March 31 data and won't catch the April 8 change until May — after both Gold Teams and potentially after ARTEMIS submission. Answer B addresses the symptom but not the process; the policy allows over-100% allocation WITH VP approval, and the client specifically requested Morales on NEXUS. Answer D is insufficient because capture manager negotiation doesn't satisfy the written VP approval requirement — this was precisely the failure mode in the FALCON/PEGASUS incident that triggered the policy escalation.",
+    "contributor": {
+      "name": "William Tran",
+      "title": "Solutions Architect & Proposal Manager",
+      "organization": "Sentinel Defense Solutions",
+      "years_experience": 15,
+      "domain_expertise": "Government proposal pricing, LPTA vs best-value evaluation, teaming arrangements, technical volume writing"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Monday.com",
+        "Deltek Costpoint",
+        "Microsoft Teams",
+        "Outlook",
+        "SharePoint"
+      ],
+      "informal_signal_location": "Teams #nexus-c2-capture message where Okoro bumps allocation to 80% without cross-checking ARTEMIS staffing",
+      "acronyms_used": [
+        "CLIN",
+        "FTE",
+        "FY",
+        "DISA",
+        "PEO-C3T",
+        "SME",
+        "DoD"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 1
+    }
+  },
+  {
+    "title": "Wrap Rate Policy Version Conflict Between Approved Gate Review and DCAA Audit Correction",
+    "category": "policy_version",
+    "domain": "sales_deal_desk",
+    "difficulty": "expert",
+    "scenario": "Context from Costpoint — Indirect Rate Module:\nFY25 Provisional Rates (approved by DCAA): OH 58.2%, G&A 14.1%, Fringe 32.8%\nFY26 Provisional Rates (submitted to DCAA, pending approval): OH 61.7%, G&A 13.9%, Fringe 33.1%\nFY26 Bid Rates (used in active proposals per Feb 2026 gate review): OH 60.0%, G&A 14.0%, Fringe 33.0%\n\n**SharePoint — /policies/finance/rate-application-guide.docx (v5.2, Mar 2025)**\nSection 6.1: 'Active proposals shall use bid rates approved at the most recent Pricing Gate Review unless a DCAA determination modifies allowable cost composition, in which case the Financial Planning team will issue a Rate Advisory Memorandum (RAM) within 10 business days.'\n\n**Email — Subject: 'DCAA Audit Finding - Material Handling Costs' (Mar 22, 2026)**\nFrom: dcaa.auditor@dcaa.mil\nTo: d.kowalczyk@sentinel-ds.com (Controller)\nCC: contracts-admin@sentinel-ds.com\n\n'Per our review of incurred cost submission FY24, material handling costs currently included in your OH pool (approximately 3.2% of the pool) are more appropriately classified as a direct cost or separate indirect allocation per CAS 418. Please submit a revised rate structure within 30 days.'\n\n**Teams — #finance-leadership (Mar 25, 2026, 10:02 AM)**\n@d.kowalczyk: Heads up — DCAA finding on material handling. If we reclassify per CAS 418, OH drops ~3 points but we'd need a new material handling rate of about 4.8%.\n@cfo.williams: Impact on active bids?\n@d.kowalczyk: Depends on material content. High-material CLINs get more expensive, low-material CLINs get cheaper. Net impact varies by proposal.\n@cfo.williams: Don't disrupt active proposals until we respond formally. Let's discuss Thursday.\n@d.kowalczyk: Got it. No RAM until we have a final position.\n[reacted with: thumbs-up emoji by @cfo.williams]\n\n**Monday.com — VANGUARD Proposal (Army/INSCOM) | Due: Apr 25, 2026**\nPricing Status: Final — using Feb gate review rates\nMaterial content: 38% of total CLIN value (highest in active portfolio)\nGold Team: Apr 15 (complete, no pricing findings)\nNote from Gold Team lead: 'Pricing is tight. LPTA evaluation — we're within 2% of PTW target.'\n\n**SharePoint — Gate Review Minutes (Feb 15, 2026):**\nAttendees: CFO Williams, VP Capture, Controller Kowalczyk, Div. Presidents\nDecision: 'FY26 bid rates approved as stated. Apply uniformly to all proposals in pipeline.'\n[RESOLVED COMMENT by @m.santos, Feb 16]: 'What about the pending DCAA review of OH composition? Should we caveat these rates?' — Reply by @d.kowalczyk: 'Premature. Audit isn't complete. We'll adjust if needed.'\n\n**Email — Subject: 'Rate question - VANGUARD' (Apr 12, 2026)**\nFrom: w.tran@sentinel-ds.com\nTo: pricing-team@sentinel-ds.com\n\n'VANGUARD is LPTA with heavy material. If DCAA forces the CAS 418 reclassification, our material handling adds ~4.8% to material costs. That's potentially $1.2M on our $25M material base. Are we still good with gate review rates or do we need to flag?'\n\n[No response as of Apr 14]",
+    "question": "For the VANGUARD proposal due April 25, should the pricing team continue using the February gate review rates or take action based on the DCAA finding?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Continue with February gate review rates as approved — the DCAA finding is not yet finalized and the CFO explicitly directed no disruption to active proposals.",
+      "B) Issue a RAM immediately and reprice VANGUARD using the projected post-reclassification rates (OH ~57%, MH 4.8%) since the CAS 418 finding creates a known cost risk.",
+      "C) Escalate to VP Capture for a risk-acceptance decision — the gate review rates are technically compliant but the unanswered pricing team email and high material content create a material (>$1M) cost risk on an LPTA bid that should be acknowledged before submission.",
+      "D) Delay VANGUARD submission and request an extension from the contracting officer until DCAA finalizes the rate determination."
+    ],
+    "correct_answer": "C",
+    "rationale": "This scenario tests the tension between policy compliance and organizational risk judgment. Per Section 6.1, the gate review rates remain valid because no RAM has been issued — and the CFO explicitly delayed the RAM ('Don't disrupt active proposals until we respond formally'). So Answer A is technically defensible from a process standpoint. However, the combination of signals — the unanswered pricing team email (silence as implicit concern), the Gold Team's note that pricing is 'within 2% of PTW target' on an LPTA bid, and the $1.2M potential cost exposure on a high-material proposal — means submitting without risk acknowledgment is reckless. The resolved SharePoint comment from the gate review shows this exact concern was raised and deferred, not dismissed. Answer C is correct because it respects the current rate authority while escalating the specific risk created by the DCAA finding's disproportionate impact on this particular proposal. Answer B violates the CFO's directive and the rate policy (no RAM issued). Answer D is operationally impractical — requesting extensions on competitive LPTA procurements signals weakness and the CO has no obligation to grant one.",
+    "contributor": {
+      "name": "William Tran",
+      "title": "Solutions Architect & Proposal Manager",
+      "organization": "Sentinel Defense Solutions",
+      "years_experience": 15,
+      "domain_expertise": "Government proposal pricing, LPTA vs best-value evaluation, teaming arrangements, technical volume writing"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Deltek Costpoint",
+        "SharePoint",
+        "Microsoft Teams",
+        "Outlook",
+        "Monday.com"
+      ],
+      "informal_signal_location": "CFO's thumbs-up emoji reaction in Teams as implicit approval to withhold RAM, combined with unanswered pricing team email as signal of unresolved concern",
+      "acronyms_used": [
+        "DCAA",
+        "OH",
+        "G&A",
+        "CAS",
+        "RAM",
+        "LPTA",
+        "PTW",
+        "CLIN",
+        "FY",
+        "INSCOM"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 3
+    }
+  }
+]

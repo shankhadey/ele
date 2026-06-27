@@ -1,0 +1,134 @@
+[
+  {
+    "title": "Deceased Client Trust Beneficiary Designation Conflict Across Legacy Systems",
+    "category": "entity_resolution",
+    "domain": "finance_revops",
+    "difficulty": "expert",
+    "scenario": "**WealthPort (Legacy Custodian System) — Account #WP-7734291**\nAccount type: Revocable Living Trust | Registration: 'The Margaret A. Holloway Revocable Trust dtd 05/14/2008' | Trustee: Margaret A. Holloway | Successor Trustee: David R. Holloway (son) | Beneficiaries: David R. Holloway (60%), Sarah Holloway-Park (40%) | Status: Active | Last rebalance: 08/2025 | AUM: $2.34M\n\n**Dynamics 365 — Contact Record**\nName: Margaret Holloway | Household: Holloway Family | Advisor: Craig Fenton | Status: Deceased (date of death: 03/15/2026) | Linked accounts: 3 (Trust WP-7734291, IRA WP-7734295, TOD WP-7734298) | Notes (04/01/2026, Craig Fenton): 'David called. Wants to begin trust administration. Sending him to ops.'\n\n**SharePoint — /trusts/holloway/trust-agreement-restated-2019.pdf**\nRestated Trust Agreement dated 11/20/2019. Article IV, Section 3: Upon death of Grantor, trust corpus to be distributed: David R. Holloway (50%), Sarah Holloway-Park (25%), Portland Community Foundation (25%). Page last accessed: 2023-01-08.\n\n**Microsoft Teams — #wealth-ops-escalations (Apr 3, 2026, 9:47 AM)**\n@craig.fenton: Quick q — Margaret Holloway passed. WealthPort shows 60/40 David/Sarah but I know she restated. Which version governs?\n@elaine.hartwell: The restated agreement controls. WealthPort was never updated after the 2019 restatement. Happens all the time with the legacy system.\n@craig.fenton: Got it. So 50/25/25 per the restatement?\n@elaine.hartwell: Correct BUT check if there's a subsequent amendment. She came in late 2024 I think.\n@craig.fenton: 👍\n[No further messages in thread]\n\n**Outlook — Email from legal@cascadefinancial.com to craig.fenton@cascadefinancial.com (Apr 5, 2026)**\nSubject: RE: Holloway Trust — Amendment Search\n> Craig, found it. Third Amendment to Restated Trust dated 12/03/2024. Only change: Portland Community Foundation allocation reduced to 15%, remainder (10%) added to Sarah's share. So final split is David 50%, Sarah 35%, PCF 15%. Amendment is executed and notarized. Filing in SharePoint now.\n\n**ServiceNow — RITM0088234 (opened Apr 3, 2026)**\nRequest: Update beneficiary designations on WP-7734291 | Status: On Hold | Hold reason: 'Pending certified death certificate and Letters Testamentary from David Holloway' | Assigned to: Trust Administration team",
+    "question": "Craig Fenton needs to communicate the correct distribution percentages to David Holloway. Based on all available information, what is the correct beneficiary split for the trust corpus?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) David R. Holloway 50%, Sarah Holloway-Park 25%, Portland Community Foundation 25% — per the restated trust agreement",
+      "B) David R. Holloway 60%, Sarah Holloway-Park 40% — per the custodian system of record",
+      "C) Cannot be determined until Letters Testamentary are received and the ServiceNow hold is cleared",
+      "D) David R. Holloway 50%, Sarah Holloway-Park 35%, Portland Community Foundation 15% — per the Third Amendment"
+    ],
+    "correct_answer": "D",
+    "rationale": "The Third Amendment dated 12/03/2024 is the most recent governing document and supersedes both the original WealthPort data and the 2019 restated agreement. The email from legal confirms the amendment is executed and notarized, establishing it as the controlling document. Answer A is wrong because WealthPort was never updated after the 2019 restatement — the Teams conversation explicitly confirms this is a known data integrity issue with the legacy system. Answer B reflects the 2019 restatement but ignores the subsequent amendment discovered via the legal team's email. Answer D conflates administrative processing requirements (death certificate, Letters Testamentary needed to execute the distribution) with the question of what the correct percentages are — the distribution split is knowable now even though the actual disbursement must wait. The critical signal is in the Outlook email that identifies the Third Amendment, which hadn't yet been uploaded to SharePoint.",
+    "contributor": {
+      "name": "Elaine Hartwell",
+      "title": "Wealth Management Operations Director",
+      "organization": "Cascade Financial Group",
+      "years_experience": 15,
+      "domain_expertise": "Account transfers, fiduciary responsibility, trust administration, estate settlements, discretionary authority"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "WealthPort",
+        "Dynamics 365",
+        "SharePoint",
+        "Microsoft Teams",
+        "Outlook",
+        "ServiceNow"
+      ],
+      "informal_signal_location": "Teams thread where Elaine hints at a subsequent amendment, and the Outlook email from legal confirming the Third Amendment before it was filed in SharePoint",
+      "acronyms_used": [
+        "AUM",
+        "TOD",
+        "IRA",
+        "RITM",
+        "PCF"
+      ],
+      "policy_versions_involved": 3,
+      "temporal_span_months": 18
+    }
+  },
+  {
+    "title": "Discretionary Trade Authorization After Missed Annual Review",
+    "category": "approval_chain",
+    "domain": "finance_revops",
+    "difficulty": "hard",
+    "scenario": "**WealthPort — Account #WP-4401837**\nAccount type: Individual Investment Management | Registration: 'Gerald T. Whitmore' | Authority: Discretionary | IPS dated: 06/15/2023 | Risk profile: Moderate Growth | Target allocation: 65% equity / 30% fixed / 5% alternatives | Annual review: Due 06/2024 — NOT COMPLETED | AUM: $1.87M\n\n**Dynamics 365 — Activity Log (Advisor: Pamela Reeves)**\n03/10/2026: Call note — 'Gerald mentioned wife diagnosed with early-onset Alzheimer's. Concerned about long-term care costs. Asked about liquidity options. Told him we'd discuss at annual review.'\n05/22/2026: Email sent — Annual review scheduling invitation\n06/01/2026: Follow-up call — no answer, left voicemail\n\n**Outlook Calendar — 'Whitmore Annual Review' (originally scheduled Jun 15, 2024)**\nStatus: Cancelled | Cancelled by: Gerald Whitmore (via assistant) | Reason noted in body: 'Mr. Whitmore traveling internationally through August. Will reschedule upon return.' | Reschedule: Never occurred.\n\n**Bloomberg Terminal — Trade Blotter (Pamela Reeves, Jun 10, 2026)**\nAccount WP-4401837: SELL $280K municipal bonds (AAA-rated, 4.2% yield) | BUY $280K S&P 500 index ETF | Rationale field: 'Rebalancing toward target equity allocation per IPS'\n\n**SharePoint — /policies/wealth-mgmt/discretionary-trading-policy-v7.pdf (revised Jan 2026)**\nSection 4.1: 'Advisors may execute discretionary trades consistent with the current IPS without prior client approval.'\nSection 4.3: 'An IPS is considered current if the annual review has been completed within the trailing 14 months OR the client has provided written confirmation that no changes to objectives are needed.'\nSection 4.5 (new in v7): 'Material life events communicated by the client constitute constructive notice of potential IPS invalidation. Advisors must document acknowledgment and obtain updated suitability confirmation before executing discretionary trades when material changes are known.'\n\n**Microsoft Teams — #compliance-questions (Jun 8, 2026, 3:15 PM)**\n@pamela.reeves: If a client's IPS is past due for review but the target allocation hasn't changed, can I still trade discretionary?\n@robert.nakamura: Technically 4.3 gives you 14 months from last review. When was the last one?\n@pamela.reeves: June 2023\n@robert.nakamura: That's 36 months. Way past the window. You'd need written confirmation or a new review.\n@pamela.reeves: Even if I'm just rebalancing to existing targets?\n@robert.nakamura: 😬 I'd get sign-off. Especially post-v7.\n[Thread ends]",
+    "question": "Compliance is reviewing Pamela Reeves' June 10 trade on the Whitmore account. Was the discretionary trade properly authorized?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Yes — the trade was consistent with the IPS target allocation (moving toward 65% equity), which is all discretionary authority requires under Section 4.1",
+      "B) No — the advisor was explicitly warned by compliance in the Teams channel not to proceed, and executed the trade anyway two days later",
+      "C) No — the IPS annual review is 36 months overdue, exceeding the 14-month currency window in Section 4.3, so discretionary authority is suspended",
+      "D) No — even if the IPS were current, Section 4.5 requires updated suitability confirmation because the advisor had constructive notice of a material life event (wife's Alzheimer's diagnosis and liquidity concerns), making the existing risk profile potentially invalid"
+    ],
+    "correct_answer": "D",
+    "rationale": "Answer D is correct because it identifies the most complete compliance failure. While B is partially correct (the IPS is indeed stale), C captures the deeper issue: Section 4.5 of the revised policy (v7, Jan 2026) specifically addresses material life events as constructive notice. Gerald communicated concerns about his wife's Alzheimer's diagnosis and long-term care liquidity needs in the March CRM note — this constitutes a material life event that potentially invalidates the existing moderate-growth risk profile. The advisor cannot claim the IPS targets are still appropriate when she has documented knowledge suggesting the client's circumstances and objectives may have fundamentally changed. Answer A fails on two counts: the IPS is not current per Section 4.3, AND Section 4.5 applies independently. Answer B is incomplete — it identifies only the procedural lapse (stale review) without recognizing the substantive suitability concern that makes this a potential fiduciary breach rather than merely an administrative oversight. Answer B overstates what happened in Teams; Robert expressed concern but did not issue a formal prohibition, and emoji reactions are not compliance directives.",
+    "contributor": {
+      "name": "Elaine Hartwell",
+      "title": "Wealth Management Operations Director",
+      "organization": "Cascade Financial Group",
+      "years_experience": 15,
+      "domain_expertise": "Account transfers, fiduciary responsibility, trust administration, estate settlements, discretionary authority"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "WealthPort",
+        "Dynamics 365",
+        "Outlook Calendar",
+        "Bloomberg Terminal",
+        "SharePoint",
+        "Microsoft Teams"
+      ],
+      "informal_signal_location": "Teams thread where compliance informally warns the advisor with a grimace emoji but no formal prohibition, and the CRM call note documenting the material life event",
+      "acronyms_used": [
+        "IPS",
+        "AUM",
+        "ETF",
+        "AAA"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 36
+    }
+  },
+  {
+    "title": "Cross-System Account Transfer for Estate Settlement with Name Mismatch",
+    "category": "cross_system_synthesis",
+    "domain": "finance_revops",
+    "difficulty": "hard",
+    "scenario": "**ServiceNow — RITM0091456 (opened May 28, 2026)**\nRequest: Transfer assets from deceased individual account to estate account | Source: WP-3382910 (Individual) | Destination: New estate account TBD | Requestor: Thomas Kang (Attorney, Kang & Associates) | Status: Pending — 'Unable to locate matching account in Dynamics 365 for verification'\n\n**WealthPort — Account #WP-3382910**\nRegistration: 'Yung-Hee Park' | SSN: ***-**-4471 | DOB: 03/22/1941 | Date of death: 05/10/2026 | Account type: Individual TOD | TOD beneficiary: 'James Park (son) — 100%' | AUM: $892K | Advisor: Monica Salazar | Last activity: Quarterly dividend reinvestment 04/2026\n\n**Dynamics 365 — Contact search results for 'Park':**\n1. James Park | Household: Park Family | Advisor: Monica Salazar | Related accounts: WP-3382910 (listed as TOD beneficiary)\n2. Young-Hee Park | Household: Park Family | Status: Active | Advisor: Monica Salazar | Related accounts: None linked\n3. Grace Park | Household: Park-Tillman | Advisor: Craig Fenton | Unrelated\n\n**Dynamics 365 — Contact Detail: 'Young-Hee Park'**\nPhone: (704) 555-0193 | Email: yhpark41@gmail.com | SSN last 4: 4471 | DOB: 03/22/1941 | Mailing address: 4521 Magnolia Ln, Charlotte NC 28209 | Notes (Monica Salazar, 2022): 'Client prefers anglicized spelling of name. Legal docs use Yung-Hee.'\n\n**Outlook — Email chain (May 30, 2026)**\nFrom: thomas.kang@kanglaw.com\nTo: monica.salazar@cascadefinancial.com\nSubject: Park Estate — Account Transfer\n> Monica, attaching Letters Testamentary and certified death cert for Yung-Hee Park. Per the TOD designation, assets should transfer directly to James. We don't need to go through probate on this one. Can you initiate the non-probate transfer?\n\n**SharePoint — /policies/transfers/tod-transfer-procedures-v3.pdf (effective Mar 2025)**\nSection 2.1: 'TOD transfers bypass probate. Upon receipt of certified death certificate and verification of beneficiary identity, assets transfer directly to named beneficiary.'\nSection 2.4: 'TOD designations supersede any conflicting instructions in the decedent's will or trust documents.'\nSection 5.2: 'For accounts originating from pre-MDM-migration systems (WealthPort, LegacyTrust), identity verification must cross-reference at minimum two system identifiers (SSN, DOB, address) before processing. Name-only matching is insufficient due to known romanization and transliteration discrepancies in legacy data.'\n\n**Microsoft Teams — #ops-questions (May 29, 2026, 11:22 AM)**\n@intake.specialist: Got a transfer request RITM0091456 but can't find 'Yung-Hee Park' in D365. Only see 'Young-Hee Park'. Different person?\n@monica.salazar: Same person. Romanization difference from Korean. WealthPort has the legal spelling, D365 has the preferred spelling. SSN and DOB will match.\n@intake.specialist: Thx! Should I just process as TOD direct to James then?\n@monica.salazar: ✅\n[Thread ends]",
+    "question": "The ops team needs to determine the correct transfer procedure for account WP-3382910. What is the appropriate action?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Process as a standard estate transfer requiring Letters Testamentary, opening a new estate account, and routing through probate procedures",
+      "B) Reject the request until the name discrepancy between WealthPort ('Yung-Hee Park') and Dynamics 365 ('Young-Hee Park') is formally resolved through the MDM team",
+      "C) Process as a TOD non-probate transfer directly to James Park after verifying identity match via SSN and DOB cross-reference per Section 5.2, bypassing estate account creation",
+      "D) Process as TOD transfer but hold pending formal written confirmation from the advisor that the two name variants represent the same individual, since a Teams message is not sufficient authorization"
+    ],
+    "correct_answer": "C",
+    "rationale": "Answer C is correct. The account is registered as an Individual TOD, which per Section 2.1 bypasses probate entirely — assets transfer directly to the named beneficiary (James Park) upon receipt of death certificate and identity verification. Section 5.2 specifically addresses the known name discrepancy issue with legacy WealthPort accounts and prescribes a solution: cross-reference two system identifiers. Both SSN (last 4: 4471) and DOB (03/22/1941) match between WealthPort and Dynamics 365, satisfying the verification requirement. The attorney's email also confirms this is a non-probate TOD transfer. Answer A is overly conservative; Section 5.2 was written precisely because the MDM migration created these romanization discrepancies, and it provides a resolution path without requiring MDM intervention. Answer B incorrectly applies probate procedures to a TOD account — Section 2.4 explicitly states TOD designations supersede other instruments, and the attorney confirms probate is unnecessary. Answer D invents an authorization requirement that doesn't exist in policy; Section 5.2 requires system identifier matching, not advisor attestation, and the CRM note from 2022 already documents the name preference. The Teams confirmation is supporting context, not the authorization mechanism.",
+    "contributor": {
+      "name": "Elaine Hartwell",
+      "title": "Wealth Management Operations Director",
+      "organization": "Cascade Financial Group",
+      "years_experience": 15,
+      "domain_expertise": "Account transfers, fiduciary responsibility, trust administration, estate settlements, discretionary authority"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "ServiceNow",
+        "WealthPort",
+        "Dynamics 365",
+        "Outlook",
+        "SharePoint",
+        "Microsoft Teams"
+      ],
+      "informal_signal_location": "Teams thread where the advisor confirms via checkmark emoji that the name variants are the same person, and the 2022 CRM note documenting the client's name preference",
+      "acronyms_used": [
+        "TOD",
+        "MDM",
+        "AUM",
+        "SSN",
+        "DOB",
+        "RITM"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 48
+    }
+  }
+]

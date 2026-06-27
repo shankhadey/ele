@@ -1,0 +1,144 @@
+[
+  {
+    "title": "Expired Delegation Authority on Capital Expenditure Approval",
+    "category": "approval_chain",
+    "domain": "compliance_legal",
+    "difficulty": "expert",
+    "scenario": "During the Q1 SOX walkthrough for the capital expenditure cycle at Ironforge Manufacturing's Cleveland plant, you pull the following evidence for a $1.2M CNC machine purchase (PO 4500089234):\n\n**SAP S/4HANA — Transaction ME23N (PO Display), PO 4500089234**\nVendor: Haas Automation (VM-00412) | Material: CNC-5AX-UMC1600 | Net value: $1,187,400\nCreated by: T.NGUYEN | Created: 2026-01-28\nRelease strategy: 2-step | Release 1: M.KOWALSKI (2026-01-29) | Release 2: D.PATEL (2026-01-30)\nRelease indicator: Fully released\n\n**SharePoint — /internal-audit/workpapers/delegation-matrix-2025.xlsx**\nRow 47: D.PATEL | Delegated authority from: R.VASQUEZ (VP Operations) | Authority: Approve CapEx up to $1.5M | Effective: 2025-10-01 | Expiry: 2026-01-15 | Status: Not renewed\n[Version history shows this file was last updated by HR on 2026-01-20 to reflect Patel's delegation expiry]\n\n**Microsoft Teams — #capex-approvals (2026-01-14, 3:47 PM)**\n@R.Vasquez: Heads up team — I'm extending Deepak's delegation through end of Q1. Will send the updated form to GRC tomorrow.\n@D.Patel: 👍\n[No further messages in thread. No updated delegation form found in MasterControl or SharePoint.]\n\n**SAP — SU53 Authorization Check (pulled during audit)**\nUser D.PATEL | Auth object: M_EINK_FRG | Release group: 02 | Release code: VP | Status: Active\n[SAP role was never deactivated — technical access persists regardless of delegation matrix]\n\n**MasterControl — Document search for 'Delegation of Authority'**\nDOC-2025-DA-091: Delegation form for D.PATEL | Effective 2025-10-01 | Expiry 2026-01-15 | Signed by R.VASQUEZ\nNo subsequent delegation document found. Last DOA policy revision (POL-FIN-003 Rev 7) states: 'Delegations must be documented in MasterControl with wet or electronic signature. Verbal or informal extensions are not valid for SOX-controlled processes.'\n\n**Outlook — Email from D.Patel to Internal Audit (2026-02-10, during fieldwork)**\nSubject: RE: CapEx walkthrough — PO 4500089234\n'Hi Franklin — Raj told me the delegation was being extended. I saw his Teams message and assumed it was handled. The PO was urgent because the machine lead time is 14 weeks and we'd miss the Q2 production ramp if we waited.'",
+    "question": "Based on COSO framework and Ironforge's documented controls, how should this finding be classified for the SOX audit?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Control deficiency — the delegation expired and the approval lacked valid documented authority, but compensating controls (SAP release strategy, amount within threshold) reduce severity below significant deficiency",
+      "B) Not a deficiency — R.Vasquez clearly communicated intent to extend the delegation in Teams, and the approval was within the originally authorized dollar threshold",
+      "C) Significant deficiency — the control owner's delegation was expired and no valid extension existed in the system of record; the SAP technical access remaining active represents an IT general control gap that compounds the issue",
+      "D) Material weakness — management override of the delegation control represents a pervasive breakdown requiring disclosure to the audit committee"
+    ],
+    "correct_answer": "C",
+    "rationale": "This is a significant deficiency for two compounding reasons: (1) The delegation of authority control failed — Patel's documented authority expired on Jan 15 and the PO approval occurred on Jan 30 without a valid, signed extension in MasterControl (the system of record per POL-FIN-003 Rev 7). The Teams message from Vasquez expressing intent does not constitute valid documentation under Ironforge's own policy. (2) The IT general control that should have prevented the unauthorized approval — SAP role deactivation upon delegation expiry — did not function, meaning the preventive control and the detective control both failed. Answer A is wrong because intent expressed in Teams does not satisfy the documented control requirement; informal channels cannot substitute for the system of record in SOX-controlled processes. Answer B understates severity — while the dollar amount was within the original threshold, the delegation itself was invalid, and the ITGC gap means this could affect other transactions (pervasiveness consideration). Answer D overstates — a single instance with a reasonable explanation and no evidence of fraudulent intent does not rise to material weakness; there is no pattern of management override, and the approval was operationally legitimate even if procedurally deficient.",
+    "contributor": {
+      "name": "Franklin Owens",
+      "title": "Internal Audit Manager",
+      "organization": "Ironforge Manufacturing",
+      "years_experience": 14,
+      "domain_expertise": "SOX compliance, control testing, approval authority verification, delegation matrix enforcement"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "SAP S/4HANA",
+        "SharePoint",
+        "Microsoft Teams",
+        "MasterControl",
+        "Outlook"
+      ],
+      "informal_signal_location": "Teams message from R.Vasquez expressing intent to extend delegation — never formalized, but creates ambiguity about whether verbal/informal approval existed",
+      "acronyms_used": [
+        "SOX",
+        "COSO",
+        "CapEx",
+        "PO",
+        "ITGC",
+        "CNC",
+        "DOA",
+        "GRC",
+        "SU53"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 4
+    }
+  },
+  {
+    "title": "Dual-System Approval with Currency Mismatch on Mexico Plant Expenditure",
+    "category": "cross_system_synthesis",
+    "domain": "compliance_legal",
+    "difficulty": "hard",
+    "scenario": "You're testing the procure-to-pay cycle at Ironforge's Monterrey plant during interim SOX testing. The plant runs SAP ECC 6.0 while HQ uses S/4HANA. A $485K tooling expenditure for an aerospace customer's part qualification was flagged by analytics because the amounts don't reconcile across systems:\n\n**SAP ECC 6.0 (Monterrey) — PO 4600003381**\nVendor: Sandvik Coromant Mexico S.A. de C.V. (LIF-002871) | Material: TOOL-KIT-AERO-TI | Net value: MXN 8,342,160.00\nCreated: 2025-11-18 | Release: J.DELGADO (Plant Controller) on 2025-11-19\nExchange rate applied: 17.20 MXN/USD (SAP maintained rate, updated monthly)\n\n**SAP S/4HANA (Cleveland HQ) — Cross-plant reporting, consolidated view**\nIntercompany PO reference: IC-PO-2025-1847 | USD equivalent shown: $485,009.30\nApproval workflow: Triggered at >$400K USD threshold | Approved by: C.MORRISON (CFO) on 2025-11-22\nApproval basis: '$485K per SAP consolidation report'\n\n**SharePoint — /finance/fx-rates/monthly-rate-setting-nov2025.xlsx**\n[File properties: Last modified 2025-11-03 by Treasury]\nNov 2025 official rate for MXN/USD: 17.45 (per Treasury policy, rates are set on 1st business day using Bloomberg fixing)\n[Note in cell comment by @Treasury.Analyst]: 'ECC Monterrey rate not updated since Oct — IT ticket INC-88214 open for rate feed sync issue'\n\n**ServiceNow — INC-88214**\nOpened: 2025-10-28 | Priority: P3 | Assigned: SAP Basis team\nDescription: 'Monthly FX rate feed from Treasury to ECC Monterrey failed for November cycle. Manual update needed.'\nStatus: Open (as of 2025-12-15 audit date) | No comments since opening.\n\n**Microsoft Teams — #monterrey-finance (2025-11-17, 9:12 AM)**\n@J.Delgado: @SAP.Support the rate feed is still broken. Can someone manually update MXN rate? We have POs that need to go out this week.\n@SAP.Support: Ticket is with Basis. For now you can use T-code OB08 to update manually.\n@J.Delgado: What rate should I use?\n[Thread ends — no response. No evidence of manual update in SAP change logs for OB08.]\n\n**Outlook — J.Delgado to C.Morrison (2025-11-20)**\nSubject: Tooling PO for Aerojet qualification — needs HQ sign-off\n'Carlos — PO is MXN 8.3M, roughly $485K at current rates. Need your release for the HQ threshold. Attached is the vendor quote and project justification.'\n[Morrison replied 2025-11-22: 'Approved. Please ensure this hits the Q4 accrual.']",
+    "question": "What is the correct USD value of this expenditure for SOX testing purposes, and what is the control implication of the discrepancy?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Cannot determine — the FX rate discrepancy means the transaction should be excluded from the SOX sample until the IT ticket is resolved and the rate is corrected in ECC",
+      "B) $478,007.45 (Treasury policy rate of 17.45) — the correct rate per policy was not applied due to a known system deficiency; the CFO approved based on an incorrect amount, but the approval is still valid since the correct amount is lower than what was approved",
+      "C) $485,009.30 (SAP consolidated rate of 17.20) — the system-generated amount is authoritative; the rate variance is immaterial and within tolerance",
+      "D) $478,007.45 (Treasury policy rate of 17.45) — the stale rate in ECC means the PO was recorded at an incorrect amount; the CFO's approval is invalid because it was based on misstated information, and the amount still exceeds the $400K threshold requiring re-approval at the correct figure"
+    ],
+    "correct_answer": "B",
+    "rationale": "The correct USD value per Treasury policy is MXN 8,342,160 / 17.45 = $478,007.45. The ECC system used a stale October rate (17.20) because the automated rate feed failed (documented in INC-88214 and the Teams thread confirms no manual correction occurred). However, the CFO's approval remains valid for SOX purposes: Morrison approved at $485K, and the actual policy-rate amount ($478K) is lower — meaning the approval authority was sufficient and the control objective (appropriate authorization for expenditures above threshold) was met. The finding is a control deficiency in the IT automated control (rate feed), not an approval authority failure. Answer A is wrong because the SAP rate is demonstrably stale per Treasury's own records and the open incident — you cannot call a known-incorrect system rate 'authoritative.' Answer C incorrectly concludes the approval is invalid; the control objective is that expenditures above $400K get CFO approval, which occurred. The misstatement in the approval basis does not void the approval when the correct amount still triggers the same approval level. Answer D is wrong because audit cannot simply exclude transactions with known issues — the auditor must evaluate the control effectiveness with available evidence.",
+    "contributor": {
+      "name": "Franklin Owens",
+      "title": "Internal Audit Manager",
+      "organization": "Ironforge Manufacturing",
+      "years_experience": 14,
+      "domain_expertise": "SOX compliance, control testing, cross-system reconciliation, FX control environments"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "SAP ECC 6.0",
+        "SAP S/4HANA",
+        "SharePoint",
+        "ServiceNow",
+        "Microsoft Teams",
+        "Outlook"
+      ],
+      "informal_signal_location": "Teams thread where Delgado asks what rate to use and receives no answer — proving the manual update never happened",
+      "acronyms_used": [
+        "SOX",
+        "FX",
+        "ECC",
+        "PO",
+        "MXN",
+        "USD",
+        "OB08",
+        "ITGC",
+        "P3"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 2
+    }
+  },
+  {
+    "title": "Executive Override with Missing Post-Authorization Review",
+    "category": "temporal_consistency",
+    "domain": "compliance_legal",
+    "difficulty": "expert",
+    "scenario": "During year-end SOX testing, you're evaluating management override controls at Ironforge. Your analytics flagged a transaction where the normal three-way match was bypassed. The evidence trail spans six weeks and multiple systems:\n\n**SAP S/4HANA — Transaction FB03 (Document Display), Doc 1900045521**\nPosting date: 2025-12-18 | Type: KR (Vendor invoice) | Amount: $347,200\nVendor: Precision Alloys International (VM-00298) | Text: 'Emergency titanium bar stock — Lot TI-6AL4V-2025-889'\nPosted by: R.VASQUEZ (VP Operations) | Override reason code: 'OP-NECS' (Operational Necessity)\nThree-way match status: Bypassed | GR reference: None | PO reference: None\n[SAP override log — SM21: Override authorization used; control bypass recorded per SoD exception SA-2025-041]\n\n**MasterControl — SoD Exception Register**\nSA-2025-041: R.VASQUEZ granted temporary override for AP posting (conflict: requisitioner + approver + poster)\nEffective: 2025-12-15 | Expiry: 2025-12-31 | Condition: 'All overrides require documented post-review by Controller within 5 business days per POL-FIN-008 Section 4.6'\nApproved by: CFO (C.Morrison) on 2025-12-14\n\n**SharePoint — /finance/policies/POL-FIN-008-Management-Override-Controls-Rev4.docx**\nSection 4.6: 'When management override is exercised under operational necessity, the following compensating controls apply: (a) Controller must perform independent review within 5 business days; (b) Review must be documented in the override log with sign-off; (c) Failure to complete review within 5 business days escalates to Audit Committee.'\n[Document version history: Rev 4 published 2025-09-01. Rev 3 stated '10 business days' — changed to 5 per audit committee direction after prior year finding.]\n\n**SAP — Override Review Log (Custom Z-table ZOVERIDE_REV)**\nDoc 1900045521 | Override date: 2025-12-18 | Review due: 2025-12-26 (5 business days, excluding Dec 24-25 holidays)\nReviewer assigned: K.WRIGHT (Controller) | Review status: OPEN | Review date: [blank]\n\n**Microsoft Teams — DM between K.Wright and F.Owens (2026-01-08)**\n@K.Wright: Hey Franklin — just flagging, I'm working through the Dec override reviews now. Got backed up with year-end close. The Vasquez one from 12/18 — I talked to him about it before the break and it's legit, but I haven't put the formal sign-off in the system yet. Will do it this week.\n@F.Owens: 👀\n[No further messages]\n\n**Outlook — R.Vasquez to Procurement (2025-12-17, 6:44 PM)**\nSubject: URGENT — titanium shortage for Aerojet lot\n'Team — our TI-6AL4V supplier shorted us on the last delivery and we're 3 days from halting the Aerojet line. I found bar stock at Precision Alloys but they won't hold it past tomorrow. I'm going to push this through directly. Will sort the paperwork after. Raj — can you backfill the PO?'\n[Reply from Raj (2025-12-18, 8:01 AM): 'PO created — 4500091002. You'll need to link it to the invoice.']\n[No evidence the invoice was ever linked to PO 4500091002 in SAP.]",
+    "question": "As of the audit fieldwork date (January 10, 2026), what is the status of this override finding?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Significant deficiency — the compensating control required by the SoD exception failed (no documented review within 5 business days), the review was not escalated to Audit Committee as required by POL-FIN-008 Section 4.6, and the invoice remains unmatched to the PO; the verbal Teams message cannot substitute for the required documented sign-off",
+      "B) Control deficiency — the compensating control (5-day review) was not completed timely, but the verbal confirmation in Teams and the retroactive PO creation demonstrate the underlying transaction is legitimate",
+      "C) No finding — the override was properly authorized via SoD exception SA-2025-041, the operational necessity is well-documented in email, and the Controller verbally confirmed the review was performed",
+      "D) Material weakness — an executive bypassed all three procurement controls (requisition, PO, GR) and the only compensating control also failed, representing a complete breakdown in the management override control environment"
+    ],
+    "correct_answer": "A",
+    "rationale": "This is a significant deficiency because multiple elements of the compensating control framework failed simultaneously. First, the 5-business-day review deadline (Dec 26) passed without documented Controller sign-off in the override log. Second, POL-FIN-008 Section 4.6(c) explicitly requires escalation to the Audit Committee when the review is not completed within 5 days — this escalation did not occur. Third, Wright's Teams DM to the auditor on Jan 8 confirms the review remains undocumented as of that date (13 business days late). A verbal statement in Teams that the transaction 'is legit' does not satisfy the documented sign-off requirement — the control is specifically designed to produce evidence. Additionally, the PO backfill was never linked, so the three-way match compensating control also remains incomplete. Answer B is wrong because a verbal confirmation in an informal DM is not 'documented review with sign-off' as the control requires — this conflates the substance (the transaction being legitimate) with the control evidence (the documented review). Answer B understates severity because it ignores the missed Audit Committee escalation and treats verbal confirmation as partially mitigating; the point of SOX controls is documented, auditable evidence. Answer D overstates because the override itself was properly authorized in advance (SA-2025-041 was approved by the CFO), the operational context is documented, and there is no indication of fraudulent intent — this is a compensating control timing failure, not a pervasive breakdown.",
+    "contributor": {
+      "name": "Franklin Owens",
+      "title": "Internal Audit Manager",
+      "organization": "Ironforge Manufacturing",
+      "years_experience": 14,
+      "domain_expertise": "SOX compliance, management override testing, compensating control evaluation, segregation of duties"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "SAP S/4HANA",
+        "MasterControl",
+        "SharePoint",
+        "Microsoft Teams",
+        "Outlook"
+      ],
+      "informal_signal_location": "Teams DM from Controller to auditor admitting the review is overdue and only verbally completed — a critical admission that simultaneously proves the control failed and reveals the Controller's incorrect assumption that verbal confirmation is sufficient",
+      "acronyms_used": [
+        "SOX",
+        "SoD",
+        "AP",
+        "GR",
+        "PO",
+        "KR",
+        "SM21",
+        "COSO",
+        "OP-NECS"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 1
+    }
+  }
+]

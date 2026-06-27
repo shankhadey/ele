@@ -1,0 +1,136 @@
+[
+  {
+    "title": "Holding Company IO Reconciliation with Three-Name Advertiser Entity",
+    "category": "entity_resolution",
+    "domain": "sales_deal_desk",
+    "difficulty": "hard",
+    "scenario": "**HubSpot CRM — Account: 'Omnicom Media Group' (Deal: Q1 Streaming Upfront)**\nDeal owner: Marcus Reeves | Stage: Closed-Won | Value: $380K | IO reference: PMG-IO-2026-0341 | Primary contact: Julia Parsons (julia.parsons@omnicomgroup.com) | Notes: 'Covers Nestlé brand portfolio across Prism+ streaming inventory. Frequency cap: 3x/user/day across all creatives.'\n\n**Google Ad Manager — Order: 'Nestle_Q1_Prism_Streaming'**\nAdvertiser: 'Nestlé USA' | Agency: 'PHD Media' | Line items: 14 active | Booked impressions: 52M | Delivered: 41.3M (79.4% pacing at day 68 of 90) | Revenue recognized: $334,700 | Trafficking notes: 'Separated into 3 sub-orders per brand (Purina, DiGiorno, Nespresso). Each sub-order has independent 3x freq cap.'\n\n**NetSuite — Invoice #INV-2026-4892**\nBill-to: 'PHD Media LLC' | PO #: PHD-2026-00417 | Amount: $380,000 | Terms: Net 60 | Status: Partial payment received ($158,200) | Billing contact: accounts.payable@phdmedia.com | Reference: 'Per IO PMG-IO-2026-0341, Omnicom/Nestlé Q1 package'\n\n**Slack — #ad-ops (May 14, 2026, 2:47 PM)**\n@tasha.w: heads up — Nestle pacing report shows we're gonna underdeliver by ~$45K at current fill. purina line items got frequency-capped way too early\n@marcus.r: wait, the IO says 3x/day across the ORDER not per sub-order right?\n@tasha.w: that's how I read it. but trafficking set each sub-order cap independently so a user seeing purina 3x AND digiorno 3x = 6x total exposure which... is what the IO says not to do?\n@marcus.r: julia's gonna freak. can we uncap and backfill the last 3 weeks?\n@tasha.w: we can uncap going forward but can't retroactively fix the underdelivery. we'd need a make-good\n@marcus.r: 👍\n[thread has no further replies]\n\n**Google Sheets — 'Q1 Pacing & Reconciliation' (last modified May 20, 2026)**\nRow for 'Nestlé USA / PMG-IO-2026-0341': Booked $380K | Delivered-to-date: $334,700 | Projected end: $361,200 | Variance: -$18,800 | Make-good flag: blank | Notes cell: 'freq cap issue identified 5/14 — see slack'",
+    "question": "The finance team flags a $45K discrepancy between the IO value ($380K) and revenue recognized in GAM ($334,700). Before issuing a make-good or credit, what must ad ops determine first?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Whether Omnicom Media Group, PHD Media, and Nestlé USA are separate contractual entities requiring independent reconciliation",
+      "B) Whether Marcus's thumbs-up emoji in Slack constitutes an authorized make-good commitment that Prism must now honor",
+      "C) Whether the $45K gap is a pacing issue (campaign still has 22 days remaining) versus a structural delivery failure — since the pacing report projects $361K end-of-flight, the actual shortfall is ~$18.8K, not $45K",
+      "D) Whether the IO frequency cap (3x/user/day across all creatives) was violated — making this Prism's trafficking error requiring a make-good for the full $45K underdelivery"
+    ],
+    "correct_answer": "C",
+    "rationale": "The finance team is comparing current delivered revenue ($334.7K) to the total IO value ($380K) but the campaign still has 22 days remaining. The pacing report — the most recently updated source (May 20) — projects end-of-flight delivery at $361.2K, meaning the actual shortfall is approximately $18.8K, not $45K. The $45K figure mentioned in Slack on May 14 was an early estimate before any corrective action. Answer A is tempting because the frequency cap was indeed misconfigured (per sub-order instead of per order), but jumping straight to a make-good without confirming the actual end-of-flight shortfall is premature — the uncapping may recover significant volume. Answer C misunderstands agency media buying structure: Omnicom is the holding company, PHD is the agency of record, Nestlé is the advertiser — this is standard hierarchy, not a reconciliation problem. Answer D overinterprets a Slack emoji; a thumbs-up from a sales rep in a casual thread does not constitute a binding make-good commitment per Prism's make-good policy, which requires a formal addendum.",
+    "contributor": {
+      "name": "Natasha Williams",
+      "title": "Ad Operations Director",
+      "organization": "Prism Media Group",
+      "years_experience": 11,
+      "domain_expertise": "Programmatic deal reconciliation, advertiser entity management, IO interpretation, cross-platform attribution, make-good decisions"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Google Ad Manager",
+        "HubSpot",
+        "NetSuite",
+        "Slack",
+        "Google Sheets"
+      ],
+      "informal_signal_location": "Slack thread where Marcus's thumbs-up emoji appears to acknowledge a make-good need, and the pacing spreadsheet note referencing Slack as the only documentation",
+      "acronyms_used": [
+        "IO",
+        "CPM",
+        "GAM",
+        "PO",
+        "freq cap"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 3
+    }
+  },
+  {
+    "title": "Verbal Make-Good Claim Under Revised Policy by Departed Rep",
+    "category": "precedent_exception",
+    "domain": "sales_deal_desk",
+    "difficulty": "expert",
+    "scenario": "**HubSpot CRM — Account: 'Horizon Automotive'**\nDeal owner: Priya Okonkwo (assigned Feb 2026; previously Derek Lam, departed Oct 2025) | ARR: $210K | Last IO: PMG-IO-2025-0118 (expired Aug 2025) | Renewal status: In negotiation | Contact: Ryan Sato, Media Director\n\n**Slack DM — Derek Lam → Ryan Sato (external guest) (Oct 3, 2025, 11:14 AM)**\nDerek: hey ryan — just looked at the final delivery numbers for the summer campaign. we came in about 12% under on the pre-roll completions. totally on us, viewability filter was too aggressive. i'll make sure we get you a make-good flight in Q1. probably 2-3M impressions equivalent.\nRyan: appreciate it man. we'll plan around that for the Q1 buy.\nDerek: 👊\n\n**Google Drive — 'Make-Good Policy v2.1' (effective Nov 1, 2025)**\nSection 3.1: 'All make-good commitments must be documented via signed addendum to the original IO within 30 days of campaign end. Verbal or written commitments not formalized within this window are non-binding.'\nSection 3.4: 'Make-goods for underdelivery exceeding 10% require Director-level approval and a remediation plan filed in Monday.com.'\n[RESOLVED COMMENT by @natasha.w, Oct 28, 2025]: 'Adding the 30-day clause specifically because of the Derek situation and two other reps making promises we can't track. Existing commitments made before Nov 1 are NOT explicitly grandfathered — discussed with legal, they said it's gray area but we should handle case-by-case.'\n\n**Monday.com — Board: 'Make-Good Tracker'**\nNo entry exists for Horizon Automotive or PMG-IO-2025-0118.\n\n**Slack — #client-services (Mar 12, 2026, 9:03 AM)**\n@priya.o: Ryan from Horizon is asking about a make-good Derek supposedly promised last year. Says it was 2-3M pre-roll impressions for underdelivery on the summer IO. Anyone have context?\n@marcus.r: first I'm hearing of it. nothing in the tracker\n@tasha.w: 🙄 of course. check if derek left any notes in the deal record\n@priya.o: nothing in HubSpot. Ryan says he has the slack DM though\n@tasha.w: forward it to me. i need to see the date\n[No further replies in thread]\n\n**NetSuite — Campaign Performance: PMG-IO-2025-0118**\nBooked pre-roll completions: 18M | Delivered: 15.7M | Delivery rate: 87.2% | Underdelivery: 12.8% | Revenue: $196,400 against $210K IO | Variance credited: $0",
+    "question": "Horizon Automotive's media director is claiming the make-good promised by Derek Lam in October 2025. What is Prism's correct position?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) The make-good is a gray area requiring Director-level review — the commitment predates the policy, the resolved comment confirms no explicit grandfathering, and the underdelivery is factually confirmed, but no formal documentation exists",
+      "B) The make-good is void — Policy v2.1 requires signed addendum within 30 days, which never happened, and the policy took effect Nov 1, 2025 before the 30-day window from Derek's Oct 3 promise would have expired",
+      "C) The make-good must be denied because there is no entry in Monday.com's Make-Good Tracker and Prism cannot verify the Slack DM since Derek is no longer an employee",
+      "D) The make-good should be honored — Derek's Slack DM constitutes a binding commitment made before the new policy took effect, and the 12.8% underdelivery exceeds the 10% threshold confirming it was warranted"
+    ],
+    "correct_answer": "A",
+    "rationale": "This is genuinely ambiguous and requires Director-level judgment — which is exactly what the resolved comment from Natasha reveals. The commitment was made Oct 3, before Policy v2.1 took effect Nov 1. The 30-day formalization window (ending ~Nov 2) straddles the policy transition. Natasha's own resolved comment explicitly states existing commitments are 'NOT explicitly grandfathered' and that legal called it a 'gray area' to be handled 'case-by-case.' The underdelivery (12.8%) is factually confirmed in NetSuite, exceeding the 10% threshold. Answer B is wrong because it applies the new policy retroactively — the promise was made Oct 3, before the Nov 1 effective date, and the resolved comment acknowledges this is not clear-cut. Answer B is wrong because a Slack DM to an external guest, while evidence of intent, is not a binding contractual commitment — and the policy comment specifically says these are NOT automatically grandfathered. Answer D is wrong because Derek's Slack DMs are still accessible in the workspace (he was an employee at the time), and the absence from Monday.com only proves it wasn't formalized, not that it never happened.",
+    "contributor": {
+      "name": "Natasha Williams",
+      "title": "Ad Operations Director",
+      "organization": "Prism Media Group",
+      "years_experience": 11,
+      "domain_expertise": "Programmatic deal reconciliation, advertiser entity management, IO interpretation, cross-platform attribution, make-good decisions"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "HubSpot",
+        "Slack (DM + #client-services)",
+        "Google Drive",
+        "Monday.com",
+        "NetSuite"
+      ],
+      "informal_signal_location": "Resolved Google Doc comment by Natasha revealing the policy was written specifically for this type of situation and confirming no grandfathering clause exists — hidden by default in the document view",
+      "acronyms_used": [
+        "IO",
+        "CPM",
+        "ARR",
+        "pre-roll",
+        "make-good"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 6
+    }
+  },
+  {
+    "title": "Cross-Platform Frequency Cap Dispute with Conflicting Analytics Sources",
+    "category": "cross_system_synthesis",
+    "domain": "sales_deal_desk",
+    "difficulty": "expert",
+    "scenario": "**HubSpot CRM — Account: 'Lumen Financial Services' (via GroupM/Mindshare)**\nDeal: PMG-IO-2026-0087 (Streaming) + PMG-IO-2026-0088 (Display/Programmatic) | Combined value: $520K | Negotiated term: 'Consolidated household frequency cap of 5x/day across all Prism properties including streaming and display.' | Deal owner: Angela Torres | Note (Jan 15, 2026): 'Client specifically called out cross-platform dedup as a requirement. Confirmed with ad ops we can honor via LiveRamp identity spine.'\n\n**Google Ad Manager — Order: 'Lumen_Financial_Q1_Streaming'**\nLine items: 8 | Frequency cap: 5x/household/day | Delivered: 28.4M impressions | Unique HH reached: 4.2M | Avg freq: 3.1x | Platform: Prism+ (CTV/streaming) | Identity: LiveRamp HH graph\n\n**Monday.com — Campaign Tracker: 'Lumen Display Q1'**\nPlatform: Prism Web + App (display) | Served via: PMP deal through The Trade Desk | Impressions: 19.1M | Frequency cap: 5x/user/day | Identity: cookie-based + probabilistic | Note from trafficker (Feb 8): 'TTD uses their own identity graph — no LiveRamp integration on this path. Cross-platform dedup not technically possible in real-time.'\n\n**Amplitude — Prism+ App Engagement Dashboard**\nHousehold overlap analysis (Q1 2026): 34% of Prism+ streaming HHs also active on Prism web/app properties. Estimated cross-platform undeduplicated exposure for Lumen campaign: avg 6.8x/HH/day for overlap segment.\n\n**Mixpanel — Prism Web Analytics**\nLumen Financial display campaign: avg 3.4x frequency per cookie. Note: cookie match rate to HH graph = ~62%.\n\n**Slack — #ad-ops (Apr 2, 2026, 4:55 PM)**\n@tasha.w: just got off the phone with Mindshare. they ran their own measurement and are claiming we exceeded the 5x consolidated cap by 30%+ for a third of their audience. they want a credit.\n@angela.t: shit. what does our data show?\n@tasha.w: depends which tool you look at. amplitude shows 6.8x overlap for the 34% shared-audience segment. each platform individually is compliant. it's the cross-platform dedup that broke\n@angela.t: did we ever actually confirm the LiveRamp spine could cover the display path?\n@tasha.w: 🫠 the feb 8 note in monday says TTD doesn't integrate with liveramp on the pmp path. so... no\n@angela.t: who signed off on the IO language promising consolidated cap?\n@tasha.w: you did lol. but tbf the CRM note says 'confirmed with ad ops we can honor' — I don't remember that convo\n@angela.t: 😬\n[thread ends]",
+    "question": "Mindshare is demanding a credit for frequency cap violation. What is the correct operational determination?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) A credit is owed for the full overlap segment (34% of households) based on Amplitude's 6.8x figure, calculated against the combined IO value of $520K",
+      "B) A partial credit is owed only after validating the actual overlap exposure using LiveRamp's deterministic match — Amplitude's 6.8x estimate and Mindshare's '30%+' claim are both probabilistic and neither is contractually authoritative",
+      "C) No credit is owed because the trafficker's Feb 8 note proves cross-platform dedup was technically impossible, making the IO frequency language unenforceable as a performance guarantee",
+      "D) No credit is owed — each platform individually honored the 5x cap, and the IO was structured as two separate orders (0087 and 0088) making each independently compliant"
+    ],
+    "correct_answer": "B",
+    "rationale": "The IO explicitly promises a 'consolidated household frequency cap of 5x/day across all Prism properties' — this is a single commitment spanning both orders regardless of them having separate IO numbers. So Answer A fails: two IO numbers don't override explicit cross-platform language. However, the actual credit amount cannot be determined from any single data source. Amplitude shows 6.8x for the overlap segment but uses its own identity methodology. Mixpanel shows different numbers with a 62% cookie match rate. Mindshare's measurement uses yet another methodology. The CRM note references LiveRamp as the agreed-upon identity spine — making LiveRamp's deterministic household graph the contractually implied source of truth for measurement. Answer A is wrong because it takes Amplitude's estimate at face value without confirming it against the contractually relevant identity methodology. Answer D is wrong because operational impossibility does not void a contractual commitment that was explicitly sold and confirmed — Prism made the promise and the Feb 8 note only proves Prism failed to verify feasibility internally, which is Prism's problem, not the client's. The correct path is a credit based on validated overlap using the identity methodology the IO implicitly references.",
+    "contributor": {
+      "name": "Natasha Williams",
+      "title": "Ad Operations Director",
+      "organization": "Prism Media Group",
+      "years_experience": 11,
+      "domain_expertise": "Programmatic deal reconciliation, advertiser entity management, IO interpretation, cross-platform attribution, make-good decisions"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Google Ad Manager",
+        "HubSpot",
+        "Monday.com",
+        "Amplitude",
+        "Mixpanel",
+        "Slack"
+      ],
+      "informal_signal_location": "Monday.com trafficker note from Feb 8 revealing that cross-platform dedup was technically impossible on the display path — buried in a campaign tracker comment, not escalated",
+      "acronyms_used": [
+        "IO",
+        "CPM",
+        "HH",
+        "CTV",
+        "PMP",
+        "DSP",
+        "TTD",
+        "freq cap",
+        "dedup"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 4
+    }
+  }
+]

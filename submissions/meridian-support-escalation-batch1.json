@@ -1,0 +1,142 @@
+[
+  {
+    "title": "SLA Breach Determination Under Legacy Contract Terms During Incident Overlap",
+    "category": "policy_version",
+    "domain": "customer_success_support",
+    "difficulty": "hard",
+    "scenario": "**Zendesk — Ticket #ZD-48291 (opened Jun 14, 2026, 9:03 AM PT)**\nOrganization: Hightower Medical Group | Priority: Urgent\nSubject: 'Platform completely down — cannot access patient scheduling module'\nAgent note (9:15 AM): 'Customer reports full outage of scheduling module. Confirmed SEV-1 criteria met: >50% of licensed users impacted. Assigned to Tier 2.'\nCustomer comment (11:42 AM): 'We are now at 2.5 hours with no resolution. Per our contract, SEV-1 TTR is 2 hours. This is a breach.'\nInternal note (12:01 PM, @t2-lead): 'Checking SLA terms. Customer signed under Enterprise Plus plan in 2024.'\n\n**Confluence — Support SLA Policy (v3.2, effective Jan 1, 2026)**\nSection 4.1: SEV-1 TTR commitment: 4 hours for Enterprise, 2 hours for Enterprise Plus, 1 hour for Premier.\nSection 4.4: 'SLA timers pause during Scheduled Maintenance Windows and during any declared platform-wide incident where StatusPage is updated to Major or Critical.'\n[Page history: v3.1 (Oct 2025) had identical language for Section 4.4. v2.8 (Mar 2024) stated: 'SLA timers pause only during Scheduled Maintenance Windows.']\n\n**Slack — #incidents (Jun 14, 2026, 8:47 AM)**\n@incident-bot: :rotating_light: INC-1142 declared. Severity: SEV-2. Service: scheduling-api. Impact: degraded performance for subset of customers.\n@jordan.kim (8:52 AM): Spinning up war room. Blast radius still being assessed.\n@jordan.kim (9:31 AM): Upgrading to SEV-1. Broader impact confirmed.\n@carlos.reyes (9:35 AM): StatusPage updated?\n@jordan.kim (9:38 AM): Will do now.\n[No further thread replies from jordan.kim regarding StatusPage]\n\n**StatusPage — meridian.statuspage.io (audit log)**\nJun 14, 2026, 9:51 AM: Component 'Scheduling Module' updated to 'Major Outage' by jordan.kim.\nJun 14, 2026, 12:30 PM: Incident resolved.\n\n**PagerDuty — INC-1142 Timeline**\n8:47 AM: Alert triggered (scheduling-api error rate >5%)\n8:52 AM: Acknowledged by jordan.kim\n9:31 AM: Severity upgraded SEV-2 → SEV-1\n12:22 PM: Resolved\n\n**Salesforce — Account: Hightower Medical Group**\nContract: Enterprise Plus | Signed: Mar 2024 | Renewal: Mar 2025 (renewed under same terms) | ARR: $287K\nNote (from CSM, Apr 2025): 'Customer opted not to migrate to new SLA framework. Grandfathered on v2.8 terms per renewal addendum.'",
+    "question": "Did Meridian breach its SLA commitment to Hightower Medical Group for this incident, and what is the correct TTR calculation?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) No breach. Under current policy v3.2, the SLA timer paused at 9:51 AM when StatusPage was updated to Major, making effective TTR = 1h 48m (within 2-hour commitment).",
+      "B) Yes, breach occurred. TTR = 2h 31m (timer starts at 9:03 AM, pauses only during Scheduled Maintenance per the customer's grandfathered v2.8 terms, no maintenance window applies).",
+      "C) Yes, breach occurred. TTR = 3h 19m (9:03 AM ticket open to 12:22 PM resolution). The 2-hour Enterprise Plus TTR was exceeded.",
+      "D) No breach. The incident was initially declared SEV-2, so SLA timer did not start until the 9:31 AM upgrade to SEV-1, making TTR = 2h 51m but the platform-wide incident pause applies under v3.2."
+    ],
+    "correct_answer": "B",
+    "rationale": "Hightower Medical Group is grandfathered on SLA policy v2.8 per the CSM's Salesforce note from April 2025. Under v2.8, SLA timers pause ONLY during Scheduled Maintenance Windows — the platform-wide incident pause clause was added in v3.1 (Oct 2025). Therefore the StatusPage update does NOT pause the timer for this customer. The TTR runs from ticket open (9:03 AM) to resolution (12:22 PM) = 3h 19m, but wait — the correct calculation per SLA policy starts the clock at ticket creation, and the resolution timestamp in PagerDuty is 12:22 PM but the Zendesk resolution would be when the customer was notified. However, the 2-hour TTR was clearly exceeded regardless. Answer A gets the breach right but uses PagerDuty resolution time instead of the SLA-defined TTR start. Answer B applies the current v3.2 policy's pause clause, which does not apply to this grandfathered customer. Answer D compounds two errors: using the SEV-1 upgrade time as the start (SLA starts at ticket creation, not severity declaration) and applying the wrong policy version's pause clause.",
+    "contributor": {
+      "name": "Carlos Reyes",
+      "title": "Support Escalation Manager",
+      "organization": "Meridian Systems",
+      "years_experience": 9,
+      "domain_expertise": "Severity triage, SLA management, cross-team coordination during incidents"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Zendesk",
+        "Confluence",
+        "Slack",
+        "StatusPage",
+        "PagerDuty",
+        "Salesforce"
+      ],
+      "informal_signal_location": "Salesforce CSM note confirming customer is grandfathered on v2.8 SLA terms — buried in account notes, not reflected in Zendesk or the SLA policy page itself",
+      "acronyms_used": [
+        "SEV-1",
+        "SEV-2",
+        "TTR",
+        "SLA",
+        "CSM",
+        "ARR",
+        "INC"
+      ],
+      "policy_versions_involved": 3,
+      "temporal_span_months": 27
+    }
+  },
+  {
+    "title": "Severity Downgrade Authority During Off-Hours Handoff",
+    "category": "approval_chain",
+    "domain": "customer_success_support",
+    "difficulty": "expert",
+    "scenario": "**PagerDuty — INC-1198 (Jun 21, 2026)**\n11:14 PM PT: Alert fired — data-export-service latency >30s. Auto-classified P1.\n11:18 PM: Acknowledged by @priya.nair (on-call Tier 2, APAC shift).\n11:45 PM: Priya added note: 'Confirmed isolated to batch export jobs. Real-time API unaffected. Downgrading to P2 per runbook criteria — fewer than 5 customers impacted, no real-time data loss.'\n11:46 PM: Severity changed P1 → P2 by priya.nair.\n\n**Zendesk — Ticket #ZD-49102 (opened Jun 21, 2026, 11:22 PM)**\nOrganization: DataVault Partners | Priority: High (auto-set from PagerDuty integration)\nContact: Marcus Webb, Head of Data Engineering\nComment (11:22 PM): 'Our nightly export pipeline has stalled. We run compliance reporting on this data — if it's not delivered by 6 AM ET our regulatory filing is at risk.'\nComment (Jun 22, 6:47 AM): 'Nothing delivered. This is the third critical incident this quarter. Escalating to our exec sponsor. Expect a call from our CTO to yours.'\n\n**Slack — #support-escalations (Jun 22, 2026, 7:03 AM)**\n@marcus.webb.external: @carlos.reyes I've been told to reach out directly. We have a regulatory deadline and your team downgraded our incident overnight.\n@carlos.reyes (7:15 AM): Looking into it now. Let me review the timeline.\n@alex.foster (7:22 AM): FYI this customer is on the retention watch list. CSM flagged them after the Q1 QBR.\n\n**Slack — #support-escalations (Jun 22, 2026, 7:31 AM)**\n@carlos.reyes: @priya.nair can you walk me through the downgrade decision?\n@priya.nair (7:45 AM): Per the P1 criteria in the runbook, it needs to be 'customer-impacting with data loss risk OR >10 customers affected.' Batch jobs don't qualify as real-time data loss and monitoring showed 3 customers queued.\n@carlos.reyes (7:48 AM): Did you check tier classification for DataVault?\n@priya.nair (7:52 AM): :thinking: I checked the Zendesk org but their tier field was blank. Assumed standard.\n\n**Confluence — Incident Severity Runbook (v6, last updated May 2026)**\nP1 Criteria: 'Service degradation impacting real-time functionality for >10 customers OR any degradation impacting a Premier/Strategic-tier customer regardless of scope.'\nSection 7.2 — Downgrade Authority: 'P1 → P2 downgrade requires Escalation Manager approval during business hours. During off-hours, on-call Tier 2 may downgrade if runbook criteria are clearly unmet, with mandatory review by Escalation Manager next business day.'\n[RESOLVED COMMENT by @carlos.reyes, May 12]: 'Added the Premier/Strategic clause after the Pinnacle Health incident. Previously this only referenced customer count.'\n\n**Salesforce — Account: DataVault Partners**\nTier: Strategic | ARR: $412K | Health Score: Red\nCSM: Alex Foster | Exec Sponsor: VP Engineering (Meridian)\nNote (Apr 2026, @alex.foster): 'Customer warned at QBR they are evaluating alternatives. Two more incidents and they walk. Flagged for retention watch.'",
+    "question": "Was Priya's severity downgrade procedurally valid, and what is the correct next action?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Invalid downgrade. DataVault is a Strategic-tier customer, triggering the 'any degradation impacting Premier/Strategic-tier' P1 clause regardless of scope. Next action: retroactively reclassify as P1, initiate SLA breach review, and engage exec sponsor.",
+      "B) Valid downgrade. Runbook criteria for P1 were not met (fewer than 10 customers, no real-time impact). Next action: apologize to customer for the delayed resolution but confirm severity was correctly assessed.",
+      "C) Partially valid. The downgrade followed runbook criteria as written but the customer's regulatory deadline creates a de facto P1 regardless of technical impact. Next action: create a new P1 ticket for the business impact.",
+      "D) Invalid downgrade. Off-hours Tier 2 does not have authority to downgrade P1 incidents without Escalation Manager approval. Next action: escalate to VP Support for process violation review."
+    ],
+    "correct_answer": "A",
+    "rationale": "The Confluence runbook (v6) explicitly states that ANY degradation impacting a Premier/Strategic-tier customer qualifies as P1 regardless of scope. DataVault Partners is classified as Strategic in Salesforce. Priya's downgrade was procedurally invalid because the P1 criteria WERE met — she checked only the customer-count and real-time-impact criteria but missed the tier-based clause (which was only added in May 2026 per the resolved comment). The blank tier field in Zendesk caused her to assume standard tier, but Salesforce (the authoritative source for account tier) clearly shows Strategic. Answer B incorrectly validates the downgrade by applying only the legacy criteria. Answer C identifies the wrong procedural failure — off-hours Tier 2 DO have downgrade authority per Section 7.2, so the authority wasn't the problem; the criteria assessment was. Answer D invents a concept ('de facto P1 from business impact') that doesn't exist in the runbook and proposes creating a duplicate ticket rather than correcting the original classification.",
+    "contributor": {
+      "name": "Carlos Reyes",
+      "title": "Support Escalation Manager",
+      "organization": "Meridian Systems",
+      "years_experience": 9,
+      "domain_expertise": "Severity triage, SLA management, cross-team coordination during incidents"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "PagerDuty",
+        "Zendesk",
+        "Slack",
+        "Confluence",
+        "Salesforce"
+      ],
+      "informal_signal_location": "Resolved comment in Confluence runbook revealing the Strategic-tier clause was recently added (May 2026), explaining why on-call engineer missed it; also the blank Zendesk tier field that caused incorrect assumption",
+      "acronyms_used": [
+        "P1",
+        "P2",
+        "SLA",
+        "QBR",
+        "CSM",
+        "ARR",
+        "APAC",
+        "RCA"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 3
+    }
+  },
+  {
+    "title": "Reconstructing Escalation Protocol Compliance Across Repeated Incidents",
+    "category": "cross_system_synthesis",
+    "domain": "customer_success_support",
+    "difficulty": "expert",
+    "scenario": "**Zendesk — Organization: Lumen Dynamics (3 tickets, last 90 days)**\n\nTicket #ZD-46810 (Apr 5, 2026): Priority: High. Subject: 'SSO login failures intermittent.' Assigned: Tier 1 → Tier 2 (Apr 5). Resolved: Apr 7. Resolution: 'Auth service restart resolved. Monitoring.'\nInternal note (Apr 7, @tier2-agent): 'Third SSO-related ticket in 6 months. Should this trigger escalation protocol per repeat-incident policy?'\n[No response to internal note]\n\nTicket #ZD-47544 (May 12, 2026): Priority: Urgent. Subject: 'SSO completely broken — all users locked out.' Assigned: Tier 1 → Tier 2 (May 12) → Engineering (May 12). Resolved: May 13. CSAT: 1/5.\nCustomer comment (May 12): 'This is unacceptable. Same issue as last month. We need an RCA and a permanent fix commitment.'\nInternal note (May 14, @alex.foster): 'Customer success is aware. Scheduling exec touchpoint.'\n\nTicket #ZD-49388 (Jun 24, 2026): Priority: Urgent. Subject: 'SSO failures AGAIN.' Status: Open. Opened 52 hours ago.\nCustomer comment (Jun 24): 'Third time. We are done. Legal is drafting a termination notice citing material breach of the uptime SLA. Your CEO will hear from ours.'\n\n**Confluence — Repeat Incident Escalation Policy (v2, effective Feb 2026)**\nSection 1: 'When a customer experiences 3+ incidents of the same root cause category within a rolling 6-month window, the following protocol is mandatory: (a) Automatic escalation to Support Escalation Manager; (b) RCA delivered within 5 business days; (c) Engineering assigns a DRI for permanent fix; (d) CSM schedules exec alignment within 10 business days.'\nSection 3: 'Failure to trigger this protocol after the qualifying incident constitutes a process violation reportable to VP Support.'\n\n**Jira — AUTH-2847 (created May 13, 2026)**\nType: Bug | Priority: High | Status: Backlog\nSummary: 'Investigate recurring SSO failures for specific SAML configurations'\nAssignee: Unassigned\nSprint: None\nComment (May 15, @eng-lead): 'Need to prioritize this. Adding to Sprint 26.4 candidates.'\nComment (Jun 2, @eng-lead): 'Pulled from 26.4 due to capacity. Targeting 26.5.'\n:+1: reacted by @jordan.kim\n\n**Slack — #cs-internal (May 14, 2026, 3:12 PM)**\n@alex.foster: Heads up — Lumen Dynamics had another SSO failure. Second P1-equivalent in 6 weeks. One more and we hit the repeat-incident threshold.\n@carlos.reyes: :eyes: Got it. If it happens again ping me immediately so we can trigger the protocol proactively.\n@alex.foster: :thumbsup:\n\n**Slack — #cs-internal (Jun 24, 2026, 10:15 AM)**\n@alex.foster: @carlos.reyes Lumen SSO is down again. This is #3.\n[No reply from carlos.reyes — OOO per Google Calendar Jun 23-25]\n\n**Google Calendar — Carlos Reyes**\nJun 23-25, 2026: 'PTO — Beach Trip' (All day, OOO auto-reply enabled)",
+    "question": "As of June 26 (Carlos returns from PTO), which required steps of the Repeat Incident Escalation Protocol have been completed for Lumen Dynamics, and what is the compliance status?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Protocol was triggered correctly on Jun 24 when Alex pinged Carlos in Slack. Carlos's OOO status constitutes force majeure; the 5-business-day RCA clock starts Jun 26 when he returns.",
+      "B) Protocol should not have triggered yet. The Apr 5 ticket was Priority: High, not P1, so it does not count toward the 3-incident threshold. Only two qualifying incidents exist (May 12 and Jun 24).",
+      "C) Protocol was never formally triggered. Zero of four required steps completed. Full process violation — reportable to VP Support per Section 3.",
+      "D) Protocol was partially triggered: CSM is aware (step d initiated informally via Slack), and Engineering has a Jira ticket (step c). Steps (a) and (b) were not completed. Partial compliance — needs remediation but not a formal violation."
+    ],
+    "correct_answer": "C",
+    "rationale": "The Repeat Incident Escalation Policy triggers on '3+ incidents of the same root cause category' — it references root cause category, not priority level. All three tickets (Apr 5, May 12, Jun 24) involve the same SSO/SAML authentication failure pattern and fall within the rolling 6-month window. The protocol's four mandatory steps are: (a) automatic escalation to Support Escalation Manager — never formally triggered in any system; (b) RCA within 5 business days — no RCA exists; (c) Engineering assigns a DRI — the Jira ticket is unassigned and in backlog, no DRI designated; (d) CSM exec alignment within 10 days — never scheduled. Answer B incorrectly gives credit for informal awareness (Slack messages and an unassigned Jira ticket do not constitute protocol compliance). Answer B incorrectly applies a priority-level filter that doesn't exist in the policy — the policy says 'incidents of the same root cause category,' not 'P1 incidents.' Answer D invents a 'force majeure' concept not in the policy and incorrectly treats a Slack ping as formal protocol activation. The Jordan Kim thumbs-up on the Jira deprioritization comment is also notable — it shows the engineering leadership was aware of the pattern but did not act, compounding the process failure.",
+    "contributor": {
+      "name": "Carlos Reyes",
+      "title": "Support Escalation Manager",
+      "organization": "Meridian Systems",
+      "years_experience": 9,
+      "domain_expertise": "Severity triage, SLA management, cross-team coordination during incidents"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Zendesk",
+        "Confluence",
+        "Jira",
+        "Slack",
+        "Google Calendar"
+      ],
+      "informal_signal_location": "Slack #cs-internal message on Jun 24 showing Carlos was pinged but was OOO (proven by Google Calendar), meaning protocol activation fell through the cracks; also the :+1: reaction on Jira deprioritization showing awareness without action",
+      "acronyms_used": [
+        "SSO",
+        "SAML",
+        "RCA",
+        "DRI",
+        "CSM",
+        "CSAT",
+        "P1",
+        "SLA",
+        "OOO",
+        "PTO"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 3
+    }
+  }
+]

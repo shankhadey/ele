@@ -1,0 +1,134 @@
+[
+  {
+    "title": "MAP Enforcement Against Wholesale Partner Under Revised Policy",
+    "category": "policy_version",
+    "domain": "sales_deal_desk",
+    "difficulty": "hard",
+    "scenario": "**Salesforce — Account: 'Summit Outdoor Distributors' (Wholesale)**\nAccount Owner: Jake Morton | Tier: Gold | Active since: 2022 | Last contract signed: March 2025 | Contract term: 24 months | MSA Clause 9.4 references 'Atlas Retail Holdings MAP Policy v2.1 (Jan 2025)' | Annual wholesale volume: $1.8M across Brands A and C.\n\n**Google Sheets — 'Corporate Pricing Matrix FY26' (last edited May 12, 2026)**\nBrand A — Apex Trail Boot: MSRP $289 | Wholesale cost $144.50 | MAP $231 | Margin floor 52%\nBrand A — Apex Trail Boot: Promotional MAP (approved seasonal): $202 (valid Jun 1 - Jun 30 only)\n\n**NetSuite — Price Rule Log (Jun 2026)**\nRule PR-4492: MAP Policy updated to v3.0, effective April 1, 2026. Key change: promotional MAP windows now require 14-day advance registration via pricing portal. Non-registered promotions default to standard MAP. Notification sent to all wholesale accounts via email blast March 15.\n\n**Slack — #pricing-team (Jun 18, 2026, 2:47 PM)**\n@jake.morton: Summit Outdoor is advertising the Apex Trail Boot at $195 on their site. Clearly below MAP. Can we send an enforcement letter?\n@laura.svensson: What version are they under contractually?\n@jake.morton: Their MSA says v2.1 but the blast went out in March\n@laura.svensson: Did they register for the seasonal promo window?\n@jake.morton: Let me check\n[Thread — 3 replies]\n@jake.morton (Jun 18, 3:12 PM): No registration in the portal. But... I found this:\n\n**Slack — #brand-leads (Mar 28, 2026, 5:55 PM)**\n@derek.walsh (Brand A GM): Quick FYI all — Summit asked if they could run early summer promos per usual. Told them same deal as last year, should be fine.\n@laura.svensson: Derek that's not how it works anymore. New policy requires portal registration.\n@derek.walsh: :thumbsup:\n[No further messages in thread]\n\n**Email — Subject: 'RE: Summit Outdoor Summer Promo' (Apr 2, 2026)**\nFrom: derek.walsh@atlasretail.com\nTo: summit.buyingteam@summitoutdoor.com\nCC: jake.morton@atlasretail.com\n\n> Hey team — go ahead and plan your summer promo like last year. We'll make sure you're squared away on our end.\n\nNo record of portal registration for Summit Outdoor in the pricing portal system.",
+    "question": "Can Atlas enforce the new MAP policy (v3.0) against Summit Outdoor for their $195 listing of the Apex Trail Boot?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Yes — but only for the amount below the seasonal promotional MAP of $202; the $195 price is $7 below the approved promotional floor regardless of registration status",
+      "B) No — while v3.0 technically applies, Derek Walsh's email created an equitable estoppel situation; Atlas cannot enforce against a partner who relied on an authorized representative's explicit go-ahead",
+      "C) No — Summit's contract references MAP v2.1 and the MSA must be amended to enforce a newer version; Atlas has no enforcement standing until contract renewal",
+      "D) Yes — MAP v3.0 is effective as of April 1 and the email notification on March 15 constitutes adequate notice; Summit is in violation at $195"
+    ],
+    "correct_answer": "B",
+    "rationale": "The critical signal is Derek Walsh's April 2 email explicitly telling Summit to 'go ahead and plan your summer promo like last year,' sent AFTER Laura corrected him in Slack (which he acknowledged with a thumbsup but clearly ignored). Derek, as Brand A GM, is an authorized representative of Atlas. Summit relied on his written instruction. This creates an estoppel problem — Atlas cannot enforce a policy requirement (portal registration) that its own representative told the partner to disregard. Answer A ignores the estoppel created by Derek's email and treats notification alone as sufficient. Answer D is wrong because most MAP policies operate as standalone documents incorporated by reference; the MSA language typically allows the referenced policy to be updated with notice. Answer D correctly identifies the promotional MAP but misses the fundamental enforceability problem — registration non-compliance is excused by Derek's instruction regardless of the price floor math.",
+    "contributor": {
+      "name": "Laura Svensson",
+      "title": "Pricing Strategy Manager",
+      "organization": "Atlas Retail Holdings",
+      "years_experience": 10,
+      "domain_expertise": "MAP enforcement, promotional pricing governance, wholesale vs DTC price parity, channel conflict resolution"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Salesforce",
+        "Google Sheets",
+        "NetSuite",
+        "Slack",
+        "Email"
+      ],
+      "informal_signal_location": "Derek Walsh's email to Summit sent after being corrected in Slack — the Slack thumbsup acknowledged the new process but his subsequent email contradicted it",
+      "acronyms_used": [
+        "MAP",
+        "MSRP",
+        "MSA",
+        "DTC",
+        "GM",
+        "FY"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 4
+    }
+  },
+  {
+    "title": "Loyalty Tier Pricing Grandfathering After Program Relaunch",
+    "category": "precedent_exception",
+    "domain": "sales_deal_desk",
+    "difficulty": "expert",
+    "scenario": "**Klaviyo — Customer Segment: 'Legacy Platinum' (Brand B DTC)**\nCustomer: Margaret Holloway | Email: m.holloway@gmail.com | Segment: Legacy Platinum (auto-migrated) | Lifetime spend: $14,200 | Member since: 2021 | Tier benefit: 25% off all full-price items, free shipping, early access.\n\n**Google Doc — 'Brand B Loyalty Program Relaunch — Final Structure' (v3, last edited Jan 8, 2026)**\nNew tiers effective Feb 1, 2026: Silver (5%), Gold (10%), Platinum (15%), Diamond (20%)\nSection 4: 'All existing members migrate to new tiers based on trailing-12-month spend thresholds.'\n[RESOLVED COMMENT by @laura.svensson, Jan 6, 2026]: 'What about legacy Platinums who had 25% under the old program? 15% is a downgrade.'\n[RESOLVED REPLY by @nina.okafor (Brand B Director), Jan 7]: 'They keep 25% through end of Q2 as courtesy. After that, earn Diamond or drop to new Platinum at 15%.'\n[Comment was resolved by @nina.okafor on Jan 7 — not reflected in document body]\n\n**Shopify Plus — Brand B Admin (Jun 2026)**\nDiscount code 'LEGACYPLAT25' — Status: Active | Auto-applied for segment 'Legacy Platinum' | Discount: 25% | No expiration set.\n\n**Slack — #brand-leads (May 14, 2026, 11:03 AM)**\n@nina.okafor: Hey pricing team — are legacy platinums still getting 25%? I thought we said Q2 cutoff.\n@laura.svensson: That was the plan per the relaunch doc. Has anyone updated the Shopify codes?\n@nina.okafor: :eyes:\n@marcus.reid (Brand B Ops): I never got a ticket to change it. Was that supposed to come from pricing or loyalty?\n[No further replies]\n\n**NetSuite — Margin Report, Brand B (Jun 2026)**\nDTC blended margin: 58.2% (target: 62%) | Flag: 340 customers in 'Legacy Platinum' segment receiving 25% discount | Estimated margin drag: $84K/quarter\n\n**Zendesk — Ticket #ZD-44891 (Jun 22, 2026)**\nFrom: m.holloway@gmail.com\nSubject: 'My platinum discount didn't apply'\nBody: 'I've been a platinum member since 2021. My last order only gave me 15%. I've always gotten 25%. Please fix this.'\nAgent note: 'Customer placed order via mobile app. App is pulling new tier structure. Desktop site still applies LEGACYPLAT25 code. Inconsistency between channels.'",
+    "question": "Margaret Holloway contacts customer service about her discount discrepancy. What is the correct resolution based on Atlas's current commitments?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Honor 25% through June 30 and communicate the upcoming change — the resolved comment established a Q2 courtesy period, the Shopify code was never turned off (implementation gap, not policy gap), and she is still within the grace window",
+      "B) Escalate to Brand B Director — there is no documented policy governing this transition since the grandfathering agreement was in a resolved comment never formalized into the program document",
+      "C) Apply 15% — the Q2 grace period expired June 30, the resolved comment confirms the courtesy window, and her new Platinum tier entitles her to 15% under the relaunched program",
+      "D) Honor 25% — the relaunch document Section 4 does not mention any grandfathering exception, so the standard migration applies and her legacy rate of 25% is her earned benefit until explicitly revoked with notice"
+    ],
+    "correct_answer": "A",
+    "rationale": "The resolved Google Doc comment from Nina Okafor (Brand B Director with authority) explicitly states legacy Platinums keep 25% through end of Q2. The scenario is set in June 2026, which is still within Q2. The Shopify code 'LEGACYPLAT25' remains active (confirming no one executed the cutoff). The Zendesk ticket reveals a channel inconsistency — the mobile app migrated to new tiers but the desktop site still applies the legacy code. The correct answer honors the 25% for the remainder of Q2 per the director's stated commitment AND communicates the upcoming change. Answer B is wrong because it invents a perpetual entitlement — the 25% was always intended to be temporary per the resolved comment. Answer B is wrong because Q2 ends June 30 and the ticket is dated June 22 — she is still within the grace window, so 15% is premature. Answer D is wrong because there IS a documented decision (the resolved comment constitutes a commitment from the Brand B Director); the fact that it was never formalized into the document body is an implementation gap, not an authority gap.",
+    "contributor": {
+      "name": "Laura Svensson",
+      "title": "Pricing Strategy Manager",
+      "organization": "Atlas Retail Holdings",
+      "years_experience": 10,
+      "domain_expertise": "MAP enforcement, promotional pricing governance, wholesale vs DTC price parity, channel conflict resolution"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Klaviyo",
+        "Google Docs",
+        "Shopify Plus",
+        "Slack",
+        "NetSuite",
+        "Zendesk"
+      ],
+      "informal_signal_location": "Resolved Google Doc comment containing the grandfathering decision — never reflected in the document body; also the Slack thread with no resolution (silence as inaction)",
+      "acronyms_used": [
+        "DTC",
+        "MAP",
+        "Q2",
+        "MSRP"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 5
+    }
+  },
+  {
+    "title": "Cross-Brand Promotional Depth Conflict with Emoji Approval",
+    "category": "temporal_consistency",
+    "domain": "sales_deal_desk",
+    "difficulty": "hard",
+    "scenario": "**Google Doc — 'Atlas Corporate Pricing Governance Policy' (v2.3, effective Aug 2025)**\nSection 7.2: 'No brand shall exceed 30% promotional depth on full-price items without written CMO approval. Promotions exceeding 30% that are not pre-approved are subject to immediate suspension and P&L chargeback to the brand.'\nSection 7.4: 'Promotional calendars must be submitted 30 days in advance to pricing-governance@atlasretail.com for cross-brand conflict review.'\n\n**Slack — #brand-leads (Nov 12, 2025, 9:18 AM)**\n@rachel.fong (CMO): Team — Q4 is going to be competitive. I'm open to deeper promotions IF they don't undercut sister brands. Propose what you need and I'll approve case by case.\n@tom.nguyen (Brand C Director): Can we get blanket approval for up to 40% on last-season inventory through Jan?\n@rachel.fong: For clearance/last-season only? Not mainline?\n@tom.nguyen: Correct. End-of-life SKUs only.\n@rachel.fong: :white_check_mark:\n@derek.walsh (Brand A Director): Same ask for Brand A? We have winter carryover.\n@rachel.fong: :white_check_mark:\n[Thread continues with unrelated topic]\n\n**Shopify Plus — Brand A Promotions (Jun 15, 2026)**\nPromo code 'SUMMER40' — Discount: 40% | Applied to: Collection 'Summer Essentials' | Active: Jun 15 - Jul 15 | Created by: Brand A marketing team\nCollection 'Summer Essentials': 48 SKUs, all current-season mainline products (NOT last-season/EOL)\n\n**Looker — Brand B Performance Dashboard (Jun 20, 2026)**\nBrand B 'Summer Collection' — conversion rate dropped 34% week-over-week | Average selling price down 12% | Note from Brand B analyst in dashboard annotation: 'Brand A running 40% off on competing summer category. Our full-price positioning is getting crushed. Customers cross-shopping.'\n\n**Slack — #pricing-team (Jun 21, 2026, 8:30 AM)**\n@laura.svensson: Did Brand A submit a promo calendar for SUMMER40?\n@jessica.lin: Nothing in the governance inbox. I checked back 60 days.\n@laura.svensson: And this is mainline product, not EOL.\n@jessica.lin: Confirmed. All 48 SKUs are SS26 current season.\n\n**Email — From: derek.walsh@atlasretail.com (Jun 21, 2026, 10:14 AM)**\nTo: laura.svensson@atlasretail.com\nSubject: 'RE: SUMMER40 promo — compliance question'\n\n> Laura — Rachel approved 40% for us back in November. See the Slack thread. We're covered.\n\n> Re: promo calendar submission — that's for cross-brand conflict review. We didn't think summer essentials overlapped with other brands.",
+    "question": "Is Brand A's SUMMER40 promotion (40% off current-season mainline) compliant with Atlas pricing governance?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) No — the CMO's approval was specifically scoped to 'last-season/end-of-life SKUs only' and SUMMER40 applies to current-season mainline; the approval does not cover this promotion",
+      "B) Yes — the CMO gave explicit approval via the checkmark emoji in the #brand-leads Slack thread; this constitutes written approval per Section 7.2",
+      "C) Partially compliant — the CMO approval covers the depth (40%) but the cross-brand conflict with Brand B creates a separate violation under Section 7.4 that requires retroactive review",
+      "D) No — regardless of CMO approval, the promotion was not submitted 30 days in advance per Section 7.4, making it procedurally non-compliant even if substantively authorized"
+    ],
+    "correct_answer": "A",
+    "rationale": "The CMO's emoji approval in November 2025 was given in response to a specific, scoped request: Tom Nguyen asked for 40% on 'last-season inventory' and Rachel Fong confirmed 'For clearance/last-season only? Not mainline?' before giving the checkmark. Derek Walsh received the same approval under the same conditions. The SUMMER40 promotion applies to 48 current-season mainline SKUs — this is categorically outside the scope of what was approved. Derek's email claim that 'Rachel approved 40% for us' is technically true but materially misleading; the approval was conditioned on product type. Answer B incorrectly treats the emoji as blanket approval without reading the conditional scoping in the thread. Answer C identifies a real procedural issue (no 30-day advance submission) but frames it as the PRIMARY violation — the substantive violation (wrong product category) is more fundamental and would not be cured by timely submission. Answer D tries to split the difference but mischaracterizes the situation; the depth itself was never approved for mainline product, so there is no partial compliance.",
+    "contributor": {
+      "name": "Laura Svensson",
+      "title": "Pricing Strategy Manager",
+      "organization": "Atlas Retail Holdings",
+      "years_experience": 10,
+      "domain_expertise": "MAP enforcement, promotional pricing governance, wholesale vs DTC price parity, channel conflict resolution"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Google Docs",
+        "Slack",
+        "Shopify Plus",
+        "Looker",
+        "Email"
+      ],
+      "informal_signal_location": "Slack emoji approval (checkmark) that was scoped to a specific condition (last-season only) — the scoping is easy to miss if you only look at the emoji and not the preceding conversation",
+      "acronyms_used": [
+        "MAP",
+        "CMO",
+        "EOL",
+        "SKU",
+        "P&L",
+        "DTC",
+        "SS26"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 7
+    }
+  }
+]

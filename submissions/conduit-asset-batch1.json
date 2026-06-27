@@ -1,0 +1,146 @@
+[
+  {
+    "title": "Missing Reinspection Record for Transmission Structure with Conflicting System Evidence",
+    "category": "temporal_consistency",
+    "domain": "engineering_devops",
+    "difficulty": "expert",
+    "scenario": "Context from IBM Maximo (Asset #TL-4472-019, Transmission Structure 19, Line 4472):\nAsset class: Steel lattice tower | Install date: 1978 | Last PM: 2018-06-14 (climbing inspection) | Condition: B2 (Fair) | Next scheduled: 2023-06-14 | Status: OVERDUE | No attached work orders after 2018.\n\nContext from scanned paper logbook (PDF, 2012-09-22, Crew Lead: Mike Trujillo — retired 2016):\nPage scan reads: 'Structure 19 — 4472. Section loss observed bottom gusset plate NE leg, approx 15% remaining cross-section. CP readings below threshold. Recommend reinspection 5 yr max per NESC Rule 214A1. Notified Brennan.'\n\nContext from SharePoint — /engineering/inspection-reports/2017/ (folder listing):\nFiles present: TL-4472-Str14-17.pdf, TL-4472-Str15-17.pdf, TL-4472-Str18-17.pdf, TL-4472-Str20-17.pdf. No file for Structure 19.\n\nContext from SAP PM (Work Order history for Functional Location TL-4472):\nWO 400182 (2017-04-10): 'Climbing inspection — Structures 14-20, Line 4472' | Status: TECO | Actual hours: 42 | Settlement: Cost center 55100 (O&M).\n\nContext from Microsoft Teams — #asset-integrity (2023-08-14, 2:43 PM):\n@dave.kowalski: Doug, the PUC data request for aging infrastructure — they want reinspection compliance for all lines with structures older than 1985. Line 4472 is on the list. Are we good?\n@doug.brennan: Let me check. Should be — we did the full line in 2017.\n@dave.kowalski: (thumbs up emoji)\n[No further messages in thread]\n\nContext from Esri ArcGIS (Asset layer, queried today):\nTL-4472-019 | Last inspection attribute: 2017-04-10 | Inspector: R. Garza | Condition code: B2 | Flag: none.\n\nContext from GIS edit history (metadata):\nTL-4472-019 inspection date field last modified: 2018-07-02 by user 'system_batch_upload' | Prior value: 2012-09-22.",
+    "question": "The PUC has requested documentation proving Structure 19 on Line 4472 received its mandated 5-year reinspection after the 2012 finding. Based on all available evidence, what is the most defensible conclusion about whether the reinspection occurred?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) The reinspection likely occurred in 2017 (WO 400182 covered Structures 14-20) but there is no individual structure report for Str 19 in SharePoint, and the GIS date was set by a batch upload — the evidence is insufficient to demonstrate compliance to the PUC.",
+      "B) The reinspection was completed in 2017 as part of WO 400182; the GIS attribute confirms it; the company is in compliance.",
+      "C) The reinspection did not occur; the missing SharePoint report and the Maximo 2018 entry (not 2017) prove the 2017 work order skipped Structure 19.",
+      "D) The 2018 Maximo climbing inspection satisfies the 5-year reinspection requirement from the 2012 finding, making the 2017 question moot."
+    ],
+    "correct_answer": "A",
+    "rationale": "The SAP work order 400182 covers Structures 14-20 generically, but the SharePoint folder conspicuously lacks a report for Structure 19 while having reports for Structures 14, 15, 18, and 20. The GIS inspection date of 2017-04-10 was populated by a 'system_batch_upload' in July 2018 — not entered by an inspector — suggesting the date was propagated from the work order completion rather than confirmed by actual inspection evidence. The Maximo record shows 2018 as the last PM (climbing inspection), not 2017, creating a discrepancy. For a PUC data request, the utility needs the actual inspection report documenting condition findings for Structure 19, not merely proof that a blanket work order was completed. Answer B is wrong because it conflates a GIS attribute (batch-populated) with documentary evidence of inspection. Answer C overstates the case — absence of a SharePoint report doesn't prove the inspection was skipped, only that documentation is missing. Answer D is wrong because the 2018 Maximo entry is a routine PM, not a NESC Rule 214A1 reinspection triggered by the 2012 structural finding; they have different scopes and acceptance criteria.",
+    "contributor": {
+      "name": "Douglas Brennan",
+      "title": "Asset Integrity Manager",
+      "organization": "Conduit Energy",
+      "years_experience": 25,
+      "domain_expertise": "Infrastructure inspection programs, regulatory compliance for aging assets, condition-based maintenance"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "IBM Maximo",
+        "Scanned paper logbook (PDF)",
+        "SharePoint",
+        "SAP PM",
+        "Microsoft Teams",
+        "Esri ArcGIS"
+      ],
+      "informal_signal_location": "Teams thread where Doug casually confirms compliance without checking documentation, followed by a thumbs-up emoji constituting implicit acceptance",
+      "acronyms_used": [
+        "NESC",
+        "CP",
+        "PUC",
+        "PM",
+        "TECO",
+        "O&M",
+        "WO",
+        "RCM"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 132
+    }
+  },
+  {
+    "title": "Grandfathered NESC Standard Versus New Development Trigger with Lapsed Budget Authority",
+    "category": "approval_chain",
+    "domain": "engineering_devops",
+    "difficulty": "hard",
+    "scenario": "Context from SharePoint — /engineering/standards/nesc-compliance-matrix.xlsx (last modified: 2024-03-15):\nAsset TL-2290-044 (Distribution pole, wood, installed 1991). Listed as 'Grandfathered — NESC 2007 edition.' Note in column K: 'Clearance to ground = 22.1 ft (meets 2007 min of 18.5 ft; does NOT meet 2023 min of 23.0 ft for new construction).'\n\nContext from Esri ArcGIS (parcel layer + asset overlay):\nParcel 09-443-012 (adjacent to TL-2290-044) rezoned from Agricultural to Commercial on 2025-11-20. New site plan filed: 3-story mixed-use building. Structure TL-2290-044 is within 15 ft of new building envelope per site plan overlay.\n\nContext from Outlook — email chain (Subject: 'RE: RE: 2290 pole conflict — new development on Parcel 09-443'):\nFrom: jessica.huang@conduitenergy.com (Engineering Supervisor)\nTo: doug.brennan@conduitenergy.com\nDate: 2026-01-08\n\n> On Jan 5, tom.nakamura wrote:\n> > Under NESC 234C2, the rezoning and proximity of new structure triggers current-edition compliance.\n> > We need to relocate or raise the pole. Estimate: $185K.\n>\n> Doug — I confirmed with Steve Martinez (VP, Grid Ops) verbally on Thursday that this should go\n> through as a capital improvement. He said 'just get it done, we'll figure out the bucket later.'\n\nDoug — Steve approved but his delegation authority caps at $150K for unplanned capital per the 2025 delegation matrix (updated after the rate case). Anything above that needs Karen Albright (SVP, Operations) or it goes to the capital committee.\n\nContext from SAP (Project budget system):\nBlanket WO for 'Distribution Pole Replacements — 2026' | Budget: $2.4M | Spent YTD: $1.9M | Remaining: $500K | Approval authority: VP Grid Ops (Steve Martinez) for individual items up to delegation limit.\n\nContext from Microsoft Teams — #grid-engineering (2026-01-12, 9:17 AM):\n@tom.nakamura: Filed the Maximo WO for 2290-044 relocation. Tagged it to the blanket. $185K.\n@jessica.huang: (checkmark emoji)\n@doug.brennan: Hold on — did we get Karen's sign-off? Steve's limit changed after the rate case.\n[Message edited by @doug.brennan at 9:19 AM — original text not visible]\n@tom.nakamura: Steve said it's fine. He told Jessica directly.\n@doug.brennan: (no reply)\n\nContext from Custom FileMaker (Regulatory filings):\nDocket CE-2025-0034: Conduit Energy 2025 rate case. Approved 2025-09-01. Exhibit 14: Updated delegation of authority matrix. Capital project approval: VP = $150K, SVP = $500K, Capital Committee = $500K+.",
+    "question": "What is the correct disposition of the $185K pole relocation project given all evidence across these systems?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) The project needs capital committee approval ($500K+) because it should be combined with the existing blanket spend, making the cumulative authorization exceed SVP threshold.",
+      "B) The project can proceed under the grandfathered NESC 2007 standard since the pole itself is not being modified — only the adjacent parcel is changing — so no upgrade trigger exists.",
+      "C) The project requires SVP (Karen Albright) approval because it exceeds Steve Martinez's $150K delegation limit per the post-rate-case matrix, regardless of blanket WO availability.",
+      "D) The project is properly authorized — Steve Martinez has blanket WO authority over the $2.4M distribution pole replacement budget, and $185K is within the remaining $500K balance."
+    ],
+    "correct_answer": "C",
+    "rationale": "The 2025 rate case (Docket CE-2025-0034) established a new delegation matrix where VP authority caps at $150K for capital projects. Steve Martinez's verbal approval is insufficient for a $185K expenditure regardless of his prior authority. The blanket work order provides budget availability but does not override individual project approval thresholds — delegation limits apply per-project, not per-budget-pool. Doug Brennan's Teams message questioning Karen's sign-off (which he then edited and received no reply to) signals he recognized the authority gap but the project proceeded anyway. Answer A is wrong because blanket WO budget availability does not substitute for proper delegation authority on individual items exceeding the cap. Answer B is wrong because NESC 234C2 explicitly triggers current-edition compliance when new construction creates proximity conflicts with existing lines, removing grandfathered status. Answer D is wrong because delegation limits are per-project; combining with prior blanket spend is not how capital authorization works under FERC accounting standards.",
+    "contributor": {
+      "name": "Douglas Brennan",
+      "title": "Asset Integrity Manager",
+      "organization": "Conduit Energy",
+      "years_experience": 25,
+      "domain_expertise": "Infrastructure inspection programs, regulatory compliance for aging assets, capital vs expense decisions"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "SharePoint",
+        "Esri ArcGIS",
+        "Outlook",
+        "SAP",
+        "Microsoft Teams",
+        "Custom FileMaker (Regulatory)"
+      ],
+      "informal_signal_location": "Doug Brennan's edited Teams message and subsequent silence (no reply) — indicating he raised the authority concern but was overridden without resolution",
+      "acronyms_used": [
+        "NESC",
+        "FERC",
+        "PUC",
+        "WO",
+        "O&M",
+        "SVP",
+        "VP",
+        "TCO",
+        "YTD"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 10
+    }
+  },
+  {
+    "title": "Conflicting Inspection Priority Scores Drive Mismatched Capital Filing and Budget Approval",
+    "category": "cross_system_synthesis",
+    "domain": "engineering_devops",
+    "difficulty": "expert",
+    "scenario": "Context from IBM Maximo (Asset #SUB-0117, Substation transformer, 45MVA, installed 1994):\nCondition assessment (2025-04-22): Overall score = 3.2/5.0 (Fair) | DGA trending: stable | Bushing PF: within limits | Load tap changer: 87,000 operations (manufacturer limit: 100,000). Assessment by: R. Espinoza. Recommendation: 'Monitor — no capital action required this cycle.'\n\nContext from SAP PM — Corrosion Protection Program (Asset: SUB-0117-CP):\nInspection date: 2025-06-15 | CP priority score: HIGH (4.7/5.0) | Finding: 'Radiator bank 2 showing advanced surface corrosion with pitting initiation on lower headers. Tank coating failure zone NW quadrant approx 12 sq ft. If untreated, tank penetration estimated 18-24 months.' Inspector: K. Walsh. Recommendation: 'Immediate capital rehab — blast and recoat, replace radiator bank 2. Est. $340K.'\n\nContext from SharePoint — /capital-planning/2026-budget-submission.xlsx:\nLine item 47: 'SUB-0117 Transformer Rehabilitation' | Justification: 'Condition score 3.2 — approaching end of useful life, proactive replacement.' | Amount: $1.2M (full transformer replacement) | Priority rank: 14 of 22 | Status: Approved by Capital Committee 2025-11-30.\n\nContext from Custom FileMaker — PUC Filing (Docket CE-2026-0002, Capital Plan filing, submitted 2026-01-15):\nExhibit 8, Page 34: 'Substation 117 transformer replacement is driven by condition assessment score of 4.7 indicating HIGH priority and active corrosion threatening tank integrity within 18-24 months without intervention.'\n\nContext from Microsoft Teams — #capital-planning (2025-10-03, 3:55 PM):\n@maria.oconnell (Finance): Capital committee deck is due Friday. Doug, can you confirm the SUB-0117 priority score for the summary slide?\n@doug.brennan: It's a 3.2 from the structural/electrical assessment. But CP came back at 4.7 — different program, different methodology.\n@maria.oconnell: Which one should I use?\n@doug.brennan: Use the 4.7 — it tells the more compelling story for the PUC filing and it's technically accurate for the corrosion scope.\n@maria.oconnell: (thumbs up emoji)\n\nContext from Outlook (sent from SVP Karen Albright to Capital Committee, 2025-11-28):\nSubject: 'Capital plan approval — consent items'\nBody: '...Items 40-55 on the attached list are consent items under $2M requiring no individual discussion. Approve by reply-all with no objection by COB Thursday...\n[3 reply-all responses: 'No objection' from CFO, VP Grid Ops, VP Customer Ops. No response from General Counsel or VP Regulatory.]",
+    "question": "An internal audit has flagged SUB-0117. The capital committee approved a $1.2M full transformer replacement based on a condition score of 3.2, but the PUC filing justifies the same project using a 4.7 corrosion score. What is the core compliance risk?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) The mismatch is administrative only — both scores are valid assessments of the same asset from different programs; the filing used the more conservative (higher urgency) score, which is standard practice for regulatory justification.",
+      "B) The capital committee approved the project as a consent item without individual discussion; the lack of response from General Counsel and VP Regulatory means it lacks proper governance sign-off.",
+      "C) The PUC filing is fraudulent — the 4.7 score applies to a $340K corrosion rehab, not a $1.2M full replacement; the filing misrepresents the scope and justification to inflate the rate base.",
+      "D) The capital committee approved a full replacement justified by the 3.2 score (end-of-life), but the PUC filing justifies the same dollar amount using the 4.7 corrosion score — creating a disconnect where the internal justification, approved scope, and regulatory filing tell three different stories about the same $1.2M expenditure."
+    ],
+    "correct_answer": "D",
+    "rationale": "The core risk is a three-way inconsistency: (1) Maximo's structural/electrical assessment recommends monitoring only (3.2 score), (2) the corrosion program recommends a $340K rehab (4.7 score), (3) the capital budget line is $1.2M for full replacement justified by 'approaching end of useful life,' and (4) the PUC filing uses the 4.7 corrosion score to justify the $1.2M replacement amount. Doug's Teams message reveals he consciously selected the 4.7 score for the PUC filing because it 'tells the more compelling story' — but that score was generated for a different scope ($340K rehab, not $1.2M replacement). If the PUC or an intervenor cross-references the scope with the score's source program, the utility faces a prudency challenge. Answer A overstates the case — this is more likely an inconsistency born of siloed programs than intentional fraud. Answer B identifies a real but secondary governance gap; silence on a consent item is standard practice and does not void the approval. Answer C is incorrect because using a corrosion program score to justify a full electrical/mechanical replacement conflates two different assessment methodologies with different scopes of recommended action — this is not standard practice and creates audit exposure.",
+    "contributor": {
+      "name": "Douglas Brennan",
+      "title": "Asset Integrity Manager",
+      "organization": "Conduit Energy",
+      "years_experience": 25,
+      "domain_expertise": "Infrastructure inspection programs, regulatory compliance for aging assets, capital vs expense decisions"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "IBM Maximo",
+        "SAP PM",
+        "SharePoint",
+        "Custom FileMaker (PUC Filing)",
+        "Microsoft Teams",
+        "Outlook"
+      ],
+      "informal_signal_location": "Teams message where Doug Brennan explicitly tells Finance to use the higher score because it 'tells the more compelling story' — revealing the intentional mismatch",
+      "acronyms_used": [
+        "DGA",
+        "PF",
+        "CP",
+        "LTC",
+        "PUC",
+        "MVA",
+        "FERC",
+        "O&M",
+        "RCM",
+        "NW"
+      ],
+      "policy_versions_involved": 0,
+      "temporal_span_months": 14
+    }
+  }
+]

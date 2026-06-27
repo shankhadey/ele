@@ -1,0 +1,144 @@
+[
+  {
+    "title": "Cross-Facility Patient Identity Match with Payer Denial",
+    "category": "entity_resolution",
+    "domain": "finance_revops",
+    "difficulty": "expert",
+    "scenario": "**Epic (Lakewood Campus) -- Patient Record:**\nMRN: VHP-L-4492817 | Name: Margaret A. Kowalski | DOB: 03/14/1948 | SSN: ***-**-6271 | Primary Insurance: BlueCross MN PPO | Subscriber ID: XWB992014487 | Last encounter: 02/18/2026 (hip arthroplasty, DRG 470)\n\n**Cerner RevCycle -- Claim Denial (received 03/11/2026):**\nClaim #: CLM-2026-00881247 | Billed: $42,300 | DOS: 02/18/2026 | Denial Code: CO-4 (\"The procedure code is inconsistent with the modifier used or a required modifier is missing\") | ERA Payer Remark: \"Duplicate service -- patient received identical procedure at network facility on 01/22/2026. See prior auth PA-8841203.\"\n\n**Epic (Riverside Campus -- merged entity) -- Patient Record:**\nMRN: RMC-0087341 | Name: Maggie Kowalski-Dent | DOB: 03/14/1948 | SSN: ***-**-6271 | Primary Insurance: BCBS Minnesota | Subscriber ID: XWB992014487 | Encounter 01/22/2026: Right knee arthroscopy (CPT 29881), Dr. Pham\n\n**Salesforce Health Cloud -- Care Coordination Note (02/01/2026):**\nAccount: Margaret Kowalski | Note by RN Care Coordinator: \"Pt called re: upcoming L hip replacement at Lakewood. Confirmed she is same pt as Riverside MRN ending in 7341 -- name discrepancy due to recent marriage. MPI merge request submitted 01/28. Awaiting HIM review.\"\n\n**Slack -- #rev-cycle-denials (unofficial channel, 03/12/2026, 9:47 AM):**\n@jenna.park: Got a CO-4 on the Kowalski arthroplasty but the ERA remark says duplicate. That's not a CO-4, that's a CO-18 issue. Payer applied wrong denial code.\n@michelle.torres: Was the MPI merge completed before the claim dropped?\n@jenna.park: Checking... no, HIM still has it in queue. Claim went out with the old Lakewood MRN only.\n@michelle.torres: That explains it. Payer saw two different patients with same subscriber ID getting ortho procedures 4 weeks apart. Flag it -- we need the merge done before appeal.\n[Thread: 3 additional replies, then silence]\n\n**SharePoint -- /contracts/payers/BCBS-MN/VHP-Amendment-2024.pdf (last modified 08/2024):**\nSection 9.4: \"Claims for services rendered at any Vantage Health Partners facility shall be adjudicated under this agreement regardless of which campus-specific TIN was used for submission, provided the rendering provider holds active credentials within the VHP medical staff.\"",
+    "question": "What is the correct primary action to resolve this denial and ensure successful reimbursement?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Complete the MPI merge first to unify MRNs, then appeal citing Section 9.4 of the BCBS-MN amendment and the distinct CPT codes proving non-duplicate services on a single unified patient record",
+      "B) Submit a corrected claim with modifier 59 (distinct procedural service) to override the duplicate edit, referencing both encounters as distinct anatomical sites",
+      "C) Refile the claim under the Riverside Campus TIN since the payer contract amendment covers all VHP facilities, bypassing the MPI issue entirely",
+      "D) Appeal the CO-4 denial citing incorrect denial reason code, as the procedure was a hip arthroplasty (DRG 470) not a duplicate of the knee arthroscopy (CPT 29881) -- no MPI merge needed"
+    ],
+    "correct_answer": "A",
+    "rationale": "The denial occurred because the payer's system saw two different patient identities (due to unmerged MRNs) receiving orthopedic procedures under the same subscriber ID within 4 weeks, triggering a duplicate service flag. The Slack thread reveals the critical insight: the MPI merge was never completed before the claim was submitted, causing the payer to see what appeared to be two patients. Simply appealing on the denial code (A) addresses a symptom but not the root cause -- the payer will still see two patient records. The merge must happen first so the appeal presents a single patient who received two distinct procedures (knee arthroscopy vs hip arthroplasty) at different anatomical sites. Section 9.4 then confirms coverage regardless of which campus TIN was used. Option C is wrong because refiling under a different TIN without merging the MPI still leaves two patient identities in the payer's system. Option D incorrectly treats this as a coding/modifier issue when the real problem is patient identity fragmentation across the merged hospital system.",
+    "contributor": {
+      "name": "Michelle Torres",
+      "title": "Revenue Cycle Director",
+      "organization": "Vantage Health Partners",
+      "years_experience": 16,
+      "domain_expertise": "Claims management, denial resolution, patient identity matching, payer contract interpretation"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Epic",
+        "Cerner RevCycle",
+        "Salesforce Health Cloud",
+        "Slack",
+        "SharePoint"
+      ],
+      "informal_signal_location": "Slack #rev-cycle-denials thread confirming MPI merge was incomplete before claim submission",
+      "acronyms_used": [
+        "MRN",
+        "MPI",
+        "DRG",
+        "CPT",
+        "CO-4",
+        "CO-18",
+        "ERA",
+        "TIN",
+        "HIM",
+        "DOS"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 2
+    }
+  },
+  {
+    "title": "Payer Contract Entity Mismatch After Hospital Merger",
+    "category": "policy_version",
+    "domain": "finance_revops",
+    "difficulty": "hard",
+    "scenario": "**Cerner RevCycle -- Denial Report (Week of 04/07/2026):**\n47 claims denied by HealthFirst HMO | Total billed: $1.2M | Denial Code: CO-109 (\"Claim/service not covered by this payer/contractor\") | All claims from Riverside Campus providers | DOS range: 03/01/2026 -- 03/31/2026\n\n**SharePoint -- /contracts/payers/HealthFirst/ (folder contents):**\n- HealthFirst-VHP-MasterAgreement-2019.pdf (signed by \"Vantage Health Partners Inc.\")\n- HealthFirst-RMC-Agreement-2017.pdf (signed by \"Riverside Medical Center\" -- pre-merger entity)\n- Amendment-2023-Merger-Transition.pdf (extends RMC agreement through \"transition period ending 12/31/2025\")\n\n**Outlook -- Email thread (01/15/2026):**\nFrom: Lisa.Engstrom@vantagehp.org (Managed Care Director)\nTo: Contracting@healthfirstmn.com\nCC: michelle.torres@vantagehp.org\nSubject: RE: RE: Riverside Campus Transition to Master Agreement\n\n> On 01/10, Contracting@healthfirstmn.com wrote:\n> > We received your request to add Riverside Campus providers to the VHP master agreement.\n> > Our credentialing team needs updated rosters. Please submit via the provider portal by 02/28.\n>\n> Lisa: Roster submitted today via portal. Please confirm receipt and processing timeline.\n\n[No reply in thread]\n\n**Epic -- Credentialing Module (queried 04/08/2026):**\nRiverside Campus providers: 34 active | Status in HealthFirst network: 12 show \"Active-VHP\", 22 show \"Pending-Transition\"\n\n**Microsoft Teams -- Managed Care Team channel (02/27/2026, 4:55 PM):**\nLisa Engstrom: @team heads up -- HealthFirst confirmed via phone they received our roster. Said processing takes 30-45 business days. We should be good by mid-April. No written confirmation yet but I trust Diane over there.\nReaction: 1x thumbs-up from michelle.torres\n\n**QGenda -- Provider Schedule (March 2026):**\nRiverside Campus: 22 of the \"Pending-Transition\" providers had active patient schedules throughout March, seeing HealthFirst HMO patients.\n\n**SharePoint -- /policies/revcycle/timely-filing-guidelines-v3.pdf (effective 01/2026):**\nSection 2.1: \"All claims must be submitted within 90 days of DOS or per payer contract terms, whichever is shorter. HealthFirst HMO: 60-day timely filing limit from DOS.\"",
+    "question": "Given the denial of all 47 Riverside Campus claims for March 2026, what is the correct resolution path and what is the critical deadline?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Escalate to HealthFirst to expedite the 22 pending credentialing transitions, then resubmit claims once providers show Active-VHP status; timely filing deadline is 60 days from DOS (latest: May 30, 2026)",
+      "B) Appeal the 12 claims from Active-VHP providers under the master agreement immediately, and escalate credentialing for the remaining 22 providers with resubmission before the 60-day timely filing window closes on the earliest DOS (April 30, 2026)",
+      "C) File all 47 claims under the legacy RMC agreement (HealthFirst-RMC-Agreement-2017.pdf) since the transition amendment expired but the base contract may still be arguable",
+      "D) Appeal all 47 claims citing the 2019 VHP Master Agreement which covers all VHP facilities; deadline is 60 days from date of denial (approximately June 6, 2026)"
+    ],
+    "correct_answer": "B",
+    "rationale": "This requires synthesizing information across five systems to understand the full picture. The 12 providers already showing Active-VHP status in Epic's credentialing module are covered under the VHP master agreement -- their denials are straightforward appeals with strong contractual basis. The remaining 22 are in Pending-Transition status because HealthFirst never completed processing the roster (the only confirmation was a verbal phone call mentioned in Teams, with no written follow-up). The critical deadline is the timely filing limit: HealthFirst has a 60-day window from DOS per the guidelines document. The earliest March DOS (03/01) means the absolute deadline is April 30, 2026 -- not 60 days from denial date. Option A incorrectly assumes the master agreement already covers Riverside (it does not until credentialing completes). Option B correctly identifies the credentialing gap but miscalculates the deadline -- timely filing runs from DOS, not from denial date, making the earliest deadline April 30, not May 30. Option D tries to resurrect an expired contract whose transition period explicitly ended 12/31/2025.",
+    "contributor": {
+      "name": "Michelle Torres",
+      "title": "Revenue Cycle Director",
+      "organization": "Vantage Health Partners",
+      "years_experience": 16,
+      "domain_expertise": "Claims management, denial resolution, patient identity matching, payer contract interpretation"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Cerner RevCycle",
+        "SharePoint",
+        "Outlook",
+        "Epic",
+        "Microsoft Teams",
+        "QGenda"
+      ],
+      "informal_signal_location": "Teams message showing verbal-only confirmation of roster receipt with no written follow-up from payer",
+      "acronyms_used": [
+        "CO-109",
+        "DOS",
+        "TIN",
+        "HMO",
+        "RMC",
+        "VHP",
+        "MPI"
+      ],
+      "policy_versions_involved": 3,
+      "temporal_span_months": 4
+    }
+  },
+  {
+    "title": "ICD-10 Annual Update Coding Discrepancy with Fee Schedule Lag",
+    "category": "cross_system_synthesis",
+    "domain": "finance_revops",
+    "difficulty": "hard",
+    "scenario": "**Cerner RevCycle -- AR Aging Report (pulled 03/15/2026):**\n$387,000 in claims aged 60+ days | Filter: DOS 10/01/2025 -- 12/31/2025 | Payer: MN State Medicaid (MHCP) | Common denial: CO-11 (\"Diagnosis is inconsistent with procedure\") | 23 claims affected | All coded with ICD-10 codes from FY2026 update (effective 10/01/2025)\n\n**Epic -- Coding Queue Notes (11/15/2025):**\nCoder note (T. Andersen): \"FY2026 ICD-10 update loaded into Epic encoder on 10/01. All encounters DOS 10/01+ coded per new guidelines. HCC-relevant specificity codes now required per CMS memo.\"\n\n**SharePoint -- /revcycle/fee-schedules/MHCP-FY2026-fee-schedule.xlsx:**\nFile properties: Last modified: 01/12/2026 | Uploaded by: billing.admin\nSheet notes: \"MHCP published updated fee schedule 01/05/2026, effective retroactive to 10/01/2025. Crosswalk file maps old codes to new reimbursement rates.\"\n\n**Outlook -- Email (12/02/2025):**\nFrom: provider.relations@mhcp.state.mn.us\nTo: billing@vantagehp.org\nSubject: IMPORTANT: FY2026 Code Update -- Processing Delay Notice\n\n\"Please be advised that MHCP claim processing systems will not accept FY2026 ICD-10 codes until our system update completes (estimated January 2026). Claims submitted with new codes before system update will be denied. Providers may submit using FY2025 codes with modifier -32 (mandated services) for tracking, or hold claims until system update.\"\n\n**Slack -- #coding-compliance (unofficial, 12/03/2025, 11:22 AM):**\n@tina.andersen: Just got the MHCP bulletin. They want us to use OLD codes even though CMS says new codes are required as of 10/1? That's a compliance conflict.\n@dr.reshma.gupta (CMO): If we code with old codes we're technically submitting inaccurate diagnoses. That's a false claims risk.\n@michelle.torres: Agreed. We code accurately per CMS. If MHCP denies, we appeal with the bulletin as evidence of their system limitation. Do NOT downcode.\n@tina.andersen: Got it. Keeping FY2026 codes. Flagging all MHCP claims DOS 10/1-12/31 for manual appeal tracking.\n[Thread end -- no further replies]\n\n**Compliance 360 -- Open Item #C360-2025-0441:**\nTitle: \"MHCP FY2026 Coding Discrepancy\" | Status: Under Review | Opened: 12/04/2025 | Owner: Compliance Committee | Last update (01/20/2026): \"MHCP system updated. New codes now accepted. Retroactive processing confirmed. Appeal window for previously denied claims: 120 days from original denial date.\"\n\n**Cerner RevCycle -- Denial Dates on 23 claims:**\nEarliest denial: 11/15/2025 | Latest denial: 01/08/2026",
+    "question": "What is the correct action for the 23 denied MHCP claims totaling $387K, and what is the deadline risk?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Appeal all 23 claims with FY2026 codes citing the MHCP bulletin, but prioritize the 11 claims denied on 11/15/2025 since their 120-day appeal window closes on 03/15/2026 -- the day the AR report was pulled",
+      "B) Appeal all 23 claims with the original FY2026 codes now that MHCP's system accepts them, citing the MHCP processing delay bulletin as cause; all claims are within the 120-day appeal window",
+      "C) Recode the claims to FY2025 codes to match the fee schedule that was active at DOS, since the retroactive fee schedule was not uploaded to SharePoint until 01/12/2026 and may not have been applied to these claims",
+      "D) Resubmit all 23 claims with FY2025 ICD-10 codes and modifier -32 as MHCP originally instructed; the claims are within timely filing and this resolves the CO-11 denial"
+    ],
+    "correct_answer": "A",
+    "rationale": "The Slack conversation establishes that leadership made a deliberate compliance decision to code accurately per CMS guidelines (FY2026 codes) rather than submit inaccurate codes to accommodate MHCP's system limitation. The Compliance 360 item confirms MHCP now accepts the new codes and grants a 120-day appeal window from original denial date. However, the critical detail is temporal: the earliest denials (11/15/2025) hit their 120-day deadline on 03/15/2026 -- the same day the AR report was pulled. This means some claims are at immediate deadline risk and must be prioritized today. Option B is almost correct but misses the urgency -- it assumes all 23 claims have equal time remaining, when in fact the earliest batch is at the deadline edge. Option A contradicts the documented compliance decision in Slack (coding accurately per CMS) and would constitute submitting knowingly inaccurate diagnoses. Option D confuses the fee schedule upload date with code validity -- the codes were clinically correct at DOS regardless of when the fee schedule crosswalk was uploaded internally.",
+    "contributor": {
+      "name": "Michelle Torres",
+      "title": "Revenue Cycle Director",
+      "organization": "Vantage Health Partners",
+      "years_experience": 16,
+      "domain_expertise": "Claims management, denial resolution, patient identity matching, payer contract interpretation"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Cerner RevCycle",
+        "Epic",
+        "SharePoint",
+        "Outlook",
+        "Slack",
+        "Compliance 360"
+      ],
+      "informal_signal_location": "Slack #coding-compliance thread where CMO and RevCycle Director made explicit compliance decision to maintain FY2026 codes despite MHCP system limitation",
+      "acronyms_used": [
+        "ICD-10",
+        "CO-11",
+        "DOS",
+        "MHCP",
+        "HCC",
+        "CMS",
+        "FY2026",
+        "AR",
+        "CPT"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 5
+    }
+  }
+]

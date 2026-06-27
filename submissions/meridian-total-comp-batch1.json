@@ -1,0 +1,132 @@
+[
+  {
+    "title": "Above-Band Offer Approval Based on Misidentified Precedent",
+    "category": "precedent_exception",
+    "domain": "hr_people_ops",
+    "difficulty": "hard",
+    "scenario": "Context from Greenhouse (Requisition #4892):\nRole: Staff Software Engineer (L6-IC) | Hiring Manager: Marcus Webb | Recruiter: Priya Nair | Status: Offer Pending Approval | Candidate: Jordan Nakamura | Current comp: $285K base + $180K/yr RSU (at competitor) | Proposed offer: $275K base + 12,000 RSUs (4yr vest, 1yr cliff) | Target TCC at L6 midpoint: $310K\n\nContext from Rippling (Compensation Module):\nL6-IC band (effective Jan 2026): $225K-$268K base | Equity range: 8,000-11,000 RSUs | Compa-ratio ceiling for new hires: 1.05 | Note: Band updated during Feb 2026 reorg; prior L6 band was $210K-$255K\n\nSlack \u2014 #comp-committee (Mar 12, 2026, 2:47 PM):\n@marcus.webb: Need approval for above-band base on the Nakamura offer. $275K against $268K ceiling. We did this for Reeves last year \u2014 same situation, external candidate with competing offer.\n@jasmine.torres: Which Reeves hire? Let me pull the comp exception log.\n@marcus.webb: Engineering. Sam Reeves. L6 offer in August.\n@priya.nair: I remember that one \u2014 it was approved in like a day.\n[Thread ends \u2014 no further replies]\n\nSlack \u2014 #people-ops (Aug 14, 2025, 11:03 AM):\n@jasmine.torres: FYI the Reeves exception went through but that was a board-level approval tied to the Klarity acqui-hire package. VP Eng flagged it as one-time. Do NOT use as precedent for future offers.\n@devon.xu reacted with :eyes:\n@rachel.lim reacted with :white_check_mark:\n\nGoogle Sheets \u2014 Offer Exception Tracker (Row 34):\nCandidate: S. Reeves | Date: Aug 2025 | Exception Type: Board-approved acqui-hire | Approver: Board Comp Committee | Notes: 'One-time; not to set precedent per VP Eng + CPO' | Band at time: old L6 ($210K-$255K)\n\nPave Benchmarking Report (pulled Mar 10, 2026):\nStaff SWE, SF Bay Area, Series D SaaS (75th pctile): $272K base | Note: Meridian comp philosophy targets 65th pctile for base, 75th for TCC including equity.\n\nGoogle Calendar \u2014 'Comp Committee Sync' (Mar 14, 2026, 3:00 PM):\nRequired: jasmine.torres \u2713, cpo.office \u2713, vp.eng (declined)\nAgenda doc linked \u2014 contains only header, no content added.",
+    "question": "Should the Nakamura offer at $275K base + 12,000 RSUs be approved as proposed, citing the Reeves precedent?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Yes \u2014 the Reeves exception establishes precedent for above-band L6 offers when candidates have competing offers at higher comp.",
+      "B) No \u2014 the Reeves exception was a board-level one-time acqui-hire approval explicitly marked as non-precedent-setting; the base exceeds the current band ceiling and requires a new exception request through proper channels.",
+      "C) No \u2014 the offer cannot proceed because VP Eng declined the comp committee meeting, and VP-level approval is required for any above-band offer.",
+      "D) Yes \u2014 the $275K base is within market range per Pave data (75th pctile = $272K) and only $7K above band ceiling, making it a de minimis exception the hiring manager can approve."
+    ],
+    "correct_answer": "B",
+    "rationale": "The critical signal is in the #people-ops Slack message from August 2025, where Jasmine explicitly flagged the Reeves exception as a one-time board-level approval tied to an acqui-hire, not to be used as precedent. This is reinforced by the Offer Exception Tracker showing 'Board Comp Committee' as approver with explicit non-precedent language. Answer A fails because it treats a one-time board exception as binding precedent without reading the informal channel context. Answer C incorrectly applies Pave 75th percentile data when Meridian's comp philosophy targets 65th for base (not 75th), and the 'de minimis' framing has no basis in the approval matrix \u2014 any above-ceiling offer requires formal exception. Answer D reaches the right conclusion for the wrong reason: VP Eng declining a calendar invite doesn't block the process; the real blocker is that this requires a proper exception request since the cited precedent is invalid.",
+    "contributor": {
+      "name": "Jasmine Torres",
+      "title": "Senior Total Rewards Analyst",
+      "organization": "Meridian Systems",
+      "years_experience": 9,
+      "domain_expertise": "Compensation band management, equity refresh cycles, job leveling frameworks, offer approvals"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Greenhouse",
+        "Rippling",
+        "Slack",
+        "Google Sheets",
+        "Pave",
+        "Google Calendar"
+      ],
+      "informal_signal_location": "Slack #people-ops message explicitly marking Reeves exception as non-precedent-setting, easy to miss if only checking #comp-committee",
+      "acronyms_used": [
+        "TCC",
+        "RSU",
+        "L6-IC",
+        "compa-ratio",
+        "OTE"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 7
+    }
+  },
+  {
+    "title": "Equity Refresh Discrepancy from Pre-Acquisition Grant Policy",
+    "category": "policy_version",
+    "domain": "hr_people_ops",
+    "difficulty": "expert",
+    "scenario": "Context from Rippling (Employee Records):\nEmployee A: Kai Okafor | Role: Senior Product Manager (L5) | Hire date: Mar 2023 | Origin: Direct hire | Annual equity refresh: 2,400 RSUs (vesting quarterly) | Last refresh: Jan 2026 | Next refresh: Jan 2027\nEmployee B: Nina Petrova | Role: Senior Product Manager (L5) | Hire date: Nov 2022 | Origin: SpectraLab acquisition (closed Feb 2023) | Annual equity refresh: 3,800 RSUs (vesting monthly) | Last refresh: Jul 2025 | Next refresh: Jul 2026\n\nPay Equity Audit Flag (Automated, Mar 2026):\n'ALERT: Two employees in same role/level/geo with >40% variance in annual equity value. Kai Okafor: $96K/yr equity value. Nina Petrova: $152K/yr equity value. Investigate for potential pay equity concern.'\n\nConfluence \u2014 'Equity Programs' Space (Page: 'Refresh Grant Policy v3.1', last edited Nov 2025):\nSection 4.2: 'All employees at L5 receive annual refresh grants of 2,000-3,000 RSUs based on performance rating, vesting quarterly over 1 year. Grants issued in January annually.'\n[Page history shows v2.0 existed until Apr 2024 with no mention of acquisition transitions]\n\nConfluence \u2014 'SpectraLab Integration' Space (Page: 'Compensation Transition Plan', last edited Apr 2023):\n'Acquired employees retain existing equity schedules for 24-month transition period. Monthly vesting cadence honored. Refresh amounts calculated at 1.2x Meridian standard to account for acceleration clause buyout. Transition ends at individual 24-month anniversary of close.'\n[RESOLVED COMMENT by @cfo, Mar 2023]: 'Approved 1.2x multiplier but ONLY for transition period. After 24mo, normalize to standard Meridian refresh policy. Do not auto-extend.'\n\nSlack \u2014 #people-ops (Feb 3, 2026, 9:18 AM):\n@jasmine.torres: Quick check \u2014 do the SpectraLab transition comp arrangements expire based on close date (Feb 2023) or individual start-in-role date?\n@devon.xu: Close date. So Feb 2025 for everyone.\n@jasmine.torres: Nina Petrova got a refresh in Jul 2025 at the old 1.2x rate. That's 5 months past expiration.\n@devon.xu: \ud83d\ude2c Rippling probably auto-calculated based on her profile flag. I don't think anyone manually checked.\n@jasmine.torres: Who owns the transition-off? Was it ever assigned?\n[No reply in thread]\n\nGoogle Sheets \u2014 'SpectraLab Transition Tracker' (last modified: Jun 2023):\nColumn headers: Name | Transition Start | 24mo End Date | Multiplier | Status\nNina Petrova | Feb 2023 | Feb 2025 | 1.2x | 'Active'\n[Sheet appears abandoned \u2014 no updates since Jun 2023, 'Status' column never changed for any employee]",
+    "question": "What is the correct resolution for the pay equity audit flag on Okafor vs. Petrova?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) No action needed \u2014 Petrova's higher equity is explained by the SpectraLab transition policy, which provides a legitimate business justification for the disparity.",
+      "B) Petrova's Jul 2025 refresh was issued in error at the expired 1.2x transition rate; her next refresh (Jul 2026) should normalize to standard L5 range (2,000-3,000 RSUs, quarterly vesting, January cycle), and the overage on the current grant should be documented as a system processing error.",
+      "C) Increase Okafor's refresh to match Petrova's 3,800 RSUs to eliminate the pay equity gap, since both are L5 PMs in the same geo.",
+      "D) Escalate to legal \u2014 the transition period has expired and any continued preferential treatment of acquired employees may constitute discriminatory compensation practice."
+    ],
+    "correct_answer": "B",
+    "rationale": "The resolved Confluence comment from the CFO explicitly states the 1.2x multiplier applies ONLY for the 24-month transition period with no auto-extension. The Slack conversation confirms the transition expired in Feb 2025, yet Petrova received a refresh at the old rate in Jul 2025 \u2014 five months after expiration. The Google Sheets tracker was abandoned and never updated status from 'Active' to 'Expired,' which likely caused Rippling to continue the elevated calculation. Answer A is wrong because the transition policy explicitly expired; it no longer provides justification after Feb 2025. Answer C overcorrects by raising Okafor to an above-policy level rather than normalizing Petrova down \u2014 this would compound the error and violate the L5 band ceiling. Answer D is an overreaction; this is a system automation error with clear documentation trail, not a pattern of discriminatory practice. The correct path is to acknowledge the processing error, normalize Petrova's future grants to standard policy, and document the overage.",
+    "contributor": {
+      "name": "Jasmine Torres",
+      "title": "Senior Total Rewards Analyst",
+      "organization": "Meridian Systems",
+      "years_experience": 9,
+      "domain_expertise": "Compensation band management, equity refresh cycles, job leveling frameworks, pay equity audits"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Rippling",
+        "Confluence",
+        "Slack",
+        "Google Sheets"
+      ],
+      "informal_signal_location": "Resolved Confluence comment from CFO specifying the 1.2x multiplier must not auto-extend past 24 months \u2014 hidden by default in resolved comments",
+      "acronyms_used": [
+        "RSU",
+        "L5",
+        "TCC",
+        "compa-ratio"
+      ],
+      "policy_versions_involved": 3,
+      "temporal_span_months": 13
+    }
+  },
+  {
+    "title": "Geographic Differential Discontinuation and Leveling Reorg Collision",
+    "category": "cross_system_synthesis",
+    "domain": "hr_people_ops",
+    "difficulty": "hard",
+    "scenario": "Context from Rippling (Compensation Record):\nEmployee: Derek Huang | Role: Engineering Manager (EM, L6) | Location: Austin, TX | Base salary: $248K | Geo-differential applied: 'Austin Tier 2 (-8%)' | Hire date: Sep 2024 | Last comp adjustment: Feb 2026 (annual cycle)\n\nContext from Rippling (Band Configuration, effective Feb 2026):\nL6-EM band: $245K-$295K base (SF benchmark) | Geo-differentials: Tier 1 (SF/NYC): 0% | Tier 2 (Austin/Seattle/Denver): -8% | Tier 3 (all other US): -15%\n\nSlack \u2014 #people-ops (Jan 18, 2026, 4:55 PM):\n@cpo: Heads up team \u2014 board approved eliminating geo-differentials effective Q2. We're moving to national bands. Don't communicate yet, just flag anyone whose current comp would fall below the new unified floor.\n@jasmine.torres: Got it. Timeline for rollout?\n@cpo: April 1 target. Comms go out end of March.\n@jasmine.torres: \ud83d\udc4d\n\nSlack \u2014 #eng-managers (Feb 22, 2026, 10:12 AM):\n@derek.huang: Hey @vp.eng \u2014 I noticed my band shows $245-$295 but with the -8% that puts my effective ceiling at $271K. A couple of my reports are approaching L6 and I want to understand the ceiling for internal promo offers.\n@vp.eng: The geo stuff is going away soon. Don't factor it into promo planning. Think national band.\n@derek.huang: Oh nice, when?\n@vp.eng: Can't say yet officially but plan for Q2.\n\nGoogle Doc \u2014 'FY26 Leveling Reorg Proposal' (Draft, last edited Mar 5, 2026):\nSection: 'Engineering Management Track'\n'Proposal: Collapse L6-EM and L7-EM into single Senior EM band. New band: $270K-$340K. Effective date: TBD (pending comp committee approval).'\n[COMMENT by @jasmine.torres, Mar 6]: 'This conflicts with the geo elimination timeline. If geo goes away Apr 1 but reorg isn't until May/June, there's a window where L6-EMs hit the unified $245-$295 band with no differential. Derek Huang would be at $248K \u2014 fine. But if reorg lands first, the new Senior EM floor is $270K and he'd need a market adjustment.'\n[COMMENT by @cpo, Mar 7]: 'Good catch. Sequence matters. Let's discuss Thursday.'\n\nGoogle Calendar \u2014 'Comp/Leveling Sequencing Discussion' (Mar 13, 2026, 2:00 PM):\nRequired: jasmine.torres \u2713, cpo \u2713, vp.eng \u2717 (no response)\nNotes doc: [linked but empty]\n\nPave Benchmarking (Mar 2026):\nEngineering Manager, Austin TX, Series D: 50th pctile $258K | 65th pctile $271K | 75th pctile $289K",
+    "question": "Derek Huang asks his HRBP what his compensation will be after the upcoming changes. Based on all available information as of mid-March 2026, what is the most accurate answer?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) His base increases to $269K \u2014 removing the -8% geo-differential from his current $248K effectively restores the pre-differential amount of $269K ($248K / 0.92).",
+      "B) His base stays at $248K \u2014 the geo-differential elimination means his effective ceiling rises from $271K to $295K, but his current pay doesn't change since he's already within band.",
+      "C) His base should increase to at least $270K \u2014 the leveling reorg collapses L6/L7 EM into Senior EM with a $270K floor, requiring a market adjustment regardless of sequencing.",
+      "D) It cannot be determined yet \u2014 the geo elimination and leveling reorg interact, and the sequencing decision (which change lands first) has not been finalized, as evidenced by the empty meeting notes and pending comp committee approval."
+    ],
+    "correct_answer": "D",
+    "rationale": "The Google Doc comment thread between Jasmine and the CPO explicitly identifies that the outcome depends on sequencing: if geo elimination (Apr 1) lands before the reorg, Derek stays at $248K within the unified national L6-EM band ($245-$295K). If the reorg lands first or simultaneously, the new Senior EM floor of $270K triggers a mandatory market adjustment. The scheduled meeting to resolve this sequencing had an empty notes doc, meaning no decision has been recorded. Answer A is partially correct about the geo elimination mechanics but assumes the reorg won't apply, ignoring the draft proposal. Answer B assumes the reorg is confirmed and applies immediately, but it's still a draft pending comp committee approval with no effective date set. Answer D misunderstands how geo-differentials work \u2014 they're applied to the band structure for ceiling/floor purposes, not as a reversible mathematical adjustment to individual salaries. Derek was hired at $248K as his actual salary; removing the geo tier doesn't mechanically change his existing pay.",
+    "contributor": {
+      "name": "Jasmine Torres",
+      "title": "Senior Total Rewards Analyst",
+      "organization": "Meridian Systems",
+      "years_experience": 9,
+      "domain_expertise": "Compensation band management, geo-differential policy, job leveling frameworks, market adjustments"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Rippling",
+        "Slack",
+        "Google Docs",
+        "Google Calendar",
+        "Pave"
+      ],
+      "informal_signal_location": "Google Doc comment thread identifying the sequencing dependency, plus empty meeting notes proving the decision was never finalized",
+      "acronyms_used": [
+        "EM",
+        "L6",
+        "L7",
+        "TCC",
+        "geo-differential",
+        "compa-ratio",
+        "RSU"
+      ],
+      "policy_versions_involved": 3,
+      "temporal_span_months": 3
+    }
+  }
+]

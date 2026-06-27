@@ -1,0 +1,140 @@
+[
+  {
+    "title": "Cross-Plant Material Recall with Fragmented Part Numbering",
+    "category": "entity_resolution",
+    "domain": "finance_revops",
+    "difficulty": "expert",
+    "scenario": "A recall notice arrives from supplier Titan Alloys referencing their part number TA-4420-CrMo for a chromium-molybdenum bar stock batch (heat lot H2025-0892) with a metallurgical defect in tensile strength.\n\n**SAP S/4HANA (Cleveland HQ) — Material Master:**\nMaterial: 10045221 | Desc: 'CrMo Bar 4140 1.5in RD' | Vendor: 300019 (Titan Alloys Corp) | Last GR: 2026-02-18 | Batch: H2025-0892 | Plant: 1000\n\n**SAP S/4HANA (Detroit plant) — Material Master:**\nMaterial: 20-88-0334 | Desc: 'AISI 4140 RD BAR 38.1MM' | Vendor: 300019 | Last GR: 2026-03-02 | Batch: H2025-0892 | Plant: 2000\n\n**SAP ECC 6.0 (Monterrey plant) — Material Master:**\nMaterial: MX-MAT-6610 | Desc: 'BARRA RED ACERO 4140 1.5 PLG' | Vendor: 71100204 (Titan Aleaciones SA de CV) | Last GR: 2026-01-28 | Batch: H2025-0892 | Plant: MX01\n\n**Oracle Procurement (legacy, read-only) — Supplier History:**\nSupplier: TITAN ALLOY INC | ID: ORA-V-4412 | Cross-ref note (added 2019 during migration): 'Now SAP vendor 300019. Mexico entity separate — see local procurement.'\n\n**Microsoft Teams — #mdm-data-stewards (Apr 14, 2026, 9:47 AM)**\n@ananya.krishnan: Heads up — Monterrey vendor 71100204 is the Mexican subsidiary of Titan Alloys. Same parent, same mill, same heats. We never got around to linking them in the vendor master because the tax IDs are different entities.\n@carlos.mendez: Confirmed. They ship from the same Guadalajara mill regardless of which entity invoices.\n@ananya.krishnan: So for recall purposes, MX-MAT-6610 = 10045221 = 20-88-0334. All the same physical material.\n[thumbsup emoji from @henrik.johansson]\n\n**Excel — Plant Reconciliation Sheet (Detroit, updated quarterly):**\nRow 88: 'Material 20-88-0334 | Legacy Oracle item: ORA-I-22105 | S/4 equiv at CLE: 10045221 | Notes: Same spec, different UoM (mm vs inches). Conversion: 38.1mm = 1.5in'\n\n**SharePoint — /quality/recall-procedures/SOP-RCL-003 (v2.1, Jan 2025):**\nSection 4.2: 'All recall containment actions must identify affected material across ALL plants using the cross-reference table maintained by MDM. Where no cross-reference exists, assume material is NOT present at other plants until confirmed.'\n[RESOLVED COMMENT by @ananya.krishnan, Nov 2025]: 'Updated to require positive confirmation. Previous version (v1.4) said to quarantine at receiving plant only.'",
+    "question": "Given the recall notice for heat lot H2025-0892, how many plants received affected material and what is the correct containment scope?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Three plants (Cleveland, Detroit, Monterrey); all three received heat lot H2025-0892 and the Teams channel confirms vendor 71100204 is the same parent company shipping from the same mill.",
+      "B) One plant (Cleveland only); per SOP-RCL-003 section 4.2, where no formal cross-reference exists in the system, assume material is not present at other plants until confirmed. The Excel sheet and Teams messages are not the official cross-reference table.",
+      "C) Two plants (Cleveland and Monterrey); only these two have batch H2025-0892 with GR dates in 2026. Detroit's material 20-88-0334 uses metric dimensions and is likely a different specification.",
+      "D) Two plants (Cleveland and Detroit); material 10045221 and 20-88-0334 are confirmed linked. Monterrey's vendor is a different legal entity (71100204 vs 300019) so their material is unaffected."
+    ],
+    "correct_answer": "A",
+    "rationale": "The correct answer requires synthesizing data across five sources. All three plants received the same heat lot H2025-0892 — this is confirmed by batch numbers in each SAP system. The Teams conversation explicitly confirms that Monterrey's vendor 71100204 (Titan Aleaciones SA de CV) is the Mexican subsidiary of Titan Alloys and ships from the same mill, meaning the same physical material. The Excel reconciliation sheet confirms Detroit's 20-88-0334 is the same spec as Cleveland's 10045221 (just metric vs imperial UoM). Answer D fails because it treats different vendor master IDs as proof of different suppliers, ignoring the Teams confirmation of the parent-subsidiary relationship. Answer C over-applies the SOP literally — the cross-reference DOES exist (in the Excel sheet and Teams confirmation from the MDM manager herself), just not in a formal system-to-system link. The SOP's purpose is containment, not exclusion. Answer D incorrectly rejects Detroit based on UoM differences despite the batch number match and the explicit cross-reference in the Excel reconciliation sheet.",
+    "contributor": {
+      "name": "Ananya Krishnan",
+      "title": "Master Data Manager",
+      "organization": "Ironforge Manufacturing",
+      "years_experience": 9,
+      "domain_expertise": "Material master harmonization, vendor master deduplication, cross-system data governance, ERP migration data quality"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "SAP S/4HANA",
+        "SAP ECC",
+        "Oracle Procurement (legacy)",
+        "Microsoft Teams",
+        "Excel",
+        "SharePoint"
+      ],
+      "informal_signal_location": "Teams channel message confirming Monterrey vendor is same parent company, validated by thumbsup emoji from Quality Manager",
+      "acronyms_used": [
+        "GR",
+        "CrMo",
+        "UoM",
+        "MDM",
+        "SOP",
+        "RCL",
+        "AISI",
+        "AVL"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 4
+    }
+  },
+  {
+    "title": "Vendor Master Deduplication During Ariba Migration Conflicts with Active PO",
+    "category": "cross_system_synthesis",
+    "domain": "finance_revops",
+    "difficulty": "hard",
+    "scenario": "During the quarterly vendor master cleanup, a deduplication algorithm flags three records as potential duplicates. A blanket PO renewal is pending against one of them, and procurement needs to know which record is the golden record before the PO can be extended.\n\n**SAP S/4HANA — Vendor Master:**\nVendor 300042 | Name: 'Precision Coatings LLC' | Address: 1847 Industrial Pkwy, Akron OH 44301 | Tax ID: 34-2918756 | Payment terms: Net 45 | Status: Active | Created: 2022-06-14 | Purchasing Org: 1000\n\n**SAP Ariba — Supplier Profile:**\nSupplier: 'Precision Coatings Inc.' | DUNS: 07-842-1190 | Address: 1847 Industrial Parkway, Akron OH | Qualification status: Approved (audit date: 2025-09-12) | Category: Surface treatment — aerospace | Contact: Dave Moretti, dave.m@precisioncoat.com\n\n**Oracle Procurement (legacy, frozen) — Vendor Record:**\nVendor: ORA-V-8833 | Name: 'PREC COATING' | Address: 1847 IND PKWY AKRON OH | Status: Inactive (migrated) | Cross-ref: 'See SAP 300042' | Last PO: 2020-11-03 | Notes field: 'Formerly Midwest Surface Tech — name changed 2019 per acquisition. Same facility, same ownership.'\n\n**SAP Ariba — Blanket PO #4500089921:**\nSupplier: 'Precision Coatings Inc.' | Value: $340K annual | Contract period: 2025-07-01 to 2026-06-30 | Status: Renewal pending | Buyer: @j.kowalski | Spend category: Spec coatings — aerospace\n\n**Microsoft Teams — #procurement-ops (Jun 22, 2026, 2:13 PM)**\n@j.kowalski: @ananya.krishnan the dedup tool flagged Precision Coatings as a triple. I need to extend BPO 4500089921 by Friday. Which record do I point the renewal at?\n@ananya.krishnan: The Ariba profile has their current DUNS and qualification. S/4 has the payment config. Oracle is dead — ignore it except for history.\n@j.kowalski: But Ariba says 'Inc.' and S/4 says 'LLC'. Legal name matters for the contract, right?\n@ananya.krishnan: Good catch. Let me check.\n[No further reply in thread]\n\n**Email — Subject: 'RE: Precision Coatings entity update' (Mar 8, 2026)**\nFrom: dave.m@precisioncoat.com\nTo: ap@ironforgemfg.com\nCC: j.kowalski@ironforgemfg.com\n\n> Hi team — quick update: we converted from LLC to Inc. in January 2026 as part of our Series B. New W-9 attached. Tax ID unchanged: 34-2918756. All existing contracts remain valid under the new entity name per our counsel.\n\nPlease update your records. Let me know if you need anything else for the renewal.\n\n**SharePoint — /procurement/policies/VMP-001 (Vendor Master Policy, v3.0):**\nSection 6.1: 'Where multiple records exist for a single legal entity, the record containing the current tax ID and active qualification status shall be designated the golden record. Legacy records shall be marked as duplicates with a cross-reference to the golden record. Under NO circumstances shall a PO be issued against a legacy or duplicate record.'",
+    "question": "Which vendor record should be designated the golden record for the BPO renewal, and what updates are required before the PO can be extended?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Neither is currently valid as a golden record. Per VMP-001, the golden record requires both current tax ID AND active qualification status in one record. The tax ID is in S/4 and qualification is in Ariba. These must be merged first, creating a single consolidated record before any PO extension.",
+      "B) The BPO should be extended against the Ariba supplier profile 'Precision Coatings Inc.' directly since it matches the current legal name and has the qualification. The S/4 record should be updated afterward during the normal quarterly sync.",
+      "C) SAP S/4HANA vendor 300042 is the golden record because it contains the payment configuration and tax ID. Update the name from 'LLC' to 'Inc.' per the vendor's email, then extend the BPO against this record.",
+      "D) SAP Ariba profile is the golden record because it holds the current DUNS and qualification status per VMP-001 section 6.1. Update the S/4 vendor 300042 name to 'Inc.' and link it to Ariba. Extend BPO against the Ariba-linked S/4 record."
+    ],
+    "correct_answer": "A",
+    "rationale": "VMP-001 section 6.1 is explicit: the golden record must contain BOTH the current tax ID AND active qualification status. Currently, the tax ID (34-2918756) lives in S/4 vendor 300042 while the qualification (audit date 2025-09-12, approved) lives in the Ariba profile. Neither record alone satisfies the policy requirement. The vendor's email confirms the entity converted from LLC to Inc. in January 2026 with the same tax ID, which means the S/4 name is stale. The correct action is to merge the records — update S/4 vendor 300042 with the 'Inc.' name, ensure the Ariba qualification is linked, and only then designate the merged record as golden and extend the BPO. Answer D ignores that the qualification status is not in the S/4 record. Answer B gets the logic partially right but incorrectly calls the Ariba profile the golden record when it lacks the tax ID — the policy requires both attributes in one record. Answer D violates VMP-001 by issuing a PO against the Ariba profile which is not the designated golden record and does not contain payment/tax configuration needed for PO processing in SAP.",
+    "contributor": {
+      "name": "Ananya Krishnan",
+      "title": "Master Data Manager",
+      "organization": "Ironforge Manufacturing",
+      "years_experience": 9,
+      "domain_expertise": "Material master harmonization, vendor master deduplication, cross-system data governance, ERP migration data quality"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "SAP S/4HANA",
+        "SAP Ariba",
+        "Oracle Procurement (legacy)",
+        "Microsoft Teams",
+        "Email",
+        "SharePoint"
+      ],
+      "informal_signal_location": "Email from vendor confirming LLC-to-Inc conversion with unchanged tax ID — buried in AP inbox, CC'd to buyer",
+      "acronyms_used": [
+        "BPO",
+        "DUNS",
+        "MDM",
+        "PO",
+        "VMP",
+        "W-9",
+        "AP"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 6
+    }
+  },
+  {
+    "title": "Unit of Measure Mismatch Masks Price Variance in ERP Migration Data",
+    "category": "temporal_consistency",
+    "domain": "finance_revops",
+    "difficulty": "hard",
+    "scenario": "The Detroit plant manager escalates what he calls a '22% price increase' on a critical fastener, claiming the new SAP system is showing inflated costs compared to the legacy Oracle system. Finance needs to determine whether this is a real price change or a data migration artifact before approving a budget variance.\n\n**SAP S/4HANA (Detroit, Plant 2000) — Purchase Order History:**\nMaterial: 20-55-0178 | Desc: 'HX HD CAP SCREW M12x1.75x50 GR10.9 ZN' | Vendor: 300088 (Continental Fasteners) | Last PO price: $0.487/EA | PO date: 2026-05-10 | Order qty: 25,000 EA | UoM: EA\n\n**Oracle Procurement (legacy, frozen) — Historical PO:**\nItem: ORA-I-55721 | Desc: 'M12 HEX CAP SCREW 50MM 10.9 ZINC' | Vendor: CONTINENTAL FAST | Last PO price: $398.50/C | PO date: 2024-08-14 | Order qty: 250 C | UoM: C\n\n**Excel — Detroit Plant Reconciliation Sheet (last updated Q1 2026):**\nRow 142: 'Material 20-55-0178 | Oracle item: ORA-I-55721 | Migration note: UoM converted from C (hundreds) to EA during migration. Price should be Oracle price / 100. Verified by: [blank] | Status: Pending verification'\n\n**Microsoft Teams — #detroit-plant-ops (Jun 24, 2026, 7:22 AM)**\n@rick.dlugos: @ananya.krishnan Finance is asking me to justify a 22% cost increase on M12 cap screws. I've been buying these for years — price hasn't moved more than 3% annually. Something's wrong in the system.\n@ananya.krishnan: Checking. What's the PO number?\n@rick.dlugos: 4500092710\n@ananya.krishnan: Got it. Give me an hour.\n\n**Microsoft Teams — DM from @ananya.krishnan to @lisa.tran (Jun 24, 2026, 8:05 AM)**\n@ananya.krishnan: Lisa, quick question — when your team migrated Detroit fasteners in 2024, did you apply the C-to-EA conversion on pricing?\n@lisa.tran: We were supposed to. But there were 1,200 line items and we ran out of time before cutover. I flagged the ones we missed in the recon sheet but nobody went back to verify.\n@ananya.krishnan: So 20-55-0178 might still have the unconverted price as baseline?\n@lisa.tran: Possibly. If the recon sheet says 'pending verification' then yeah, the initial load price was probably the raw Oracle number divided by 100 — $3.985 — which would have been the baseline the system used for price variance calcs.\n@ananya.krishnan: But the current PO shows $0.487. So the 'increase' Finance sees is relative to what baseline?\n@lisa.tran: Oh. That's the problem. The system probably set the info record baseline from the first converted PO ($3.985/EA was wrong — should have been $3.985 but the actual per-EA price is $3.985... wait. $398.50/C = $3.985/EA. And current price is $0.487/EA? That can't be right either.\n[No further messages]\n\n**SAP S/4HANA — Purchasing Info Record:**\nMaterial: 20-55-0178 | Vendor: 300088 | Last price: $0.487/EA | Previous price: $0.399/EA | Price date: 2026-05-10 | Validity: 2026-01-01 to 2026-12-31\n\n**Email — Subject: 'Continental Fasteners 2026 Price Schedule' (Dec 2, 2025)**\nFrom: orders@continentalfast.com\nTo: purchasing-detroit@ironforgemfg.com\n\nPlease find attached our 2026 price schedule. Key changes for your account:\n- M12x50 Gr10.9 Zinc: $48.70/C (prev: $39.85/C) — 22.2% increase due to zinc surcharge\n\nNew prices effective January 1, 2026.",
+    "question": "What is the actual situation with the M12 cap screw pricing — is this a real price increase, a UoM migration error, or both?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Both a migration error AND a real increase are present. The Oracle legacy price of $398.50/C should be $3.985/EA, but the SAP info record shows previous price as $0.399/EA (off by 10x), indicating the migration divided by 1000 instead of 100. However, the vendor's 2026 email confirms prices in $/C, making $48.70/C = $0.487/EA the correct current price. The 22% increase is real, but the baseline the system uses ($0.399) is wrong.",
+      "B) Real 22% price increase correctly reflected. The vendor's 2026 price schedule shows $48.70/C = $0.487/EA. The SAP info record's previous price of $0.399/EA matches the old Oracle price of $39.85/C converted correctly. The migration was done right; the plant manager is wrong.",
+      "C) Pure migration error. The Oracle price was $398.50/C ($3.985/EA) and the SAP price of $0.487/EA is clearly wrong — it appears the system divided by 1000 instead of 100 during conversion. The real current price should be $4.87/EA. No actual increase occurred.",
+      "D) The data is too inconsistent to determine. The reconciliation sheet shows 'pending verification,' the Teams DM reveals the migration team ran out of time, and the SAP info record previous price conflicts with the Oracle history. This requires a manual audit with the vendor before any conclusion."
+    ],
+    "correct_answer": "B",
+    "rationale": "The vendor's email is the critical external signal that resolves the apparent contradiction. Continental Fasteners quotes prices in $/C (per hundred), consistent with how Oracle stored them. Their 2026 schedule shows $48.70/C for this part, which converts to $0.487/EA — exactly matching the current SAP price. Their previous price was $39.85/C = $0.3985/EA, which rounds to the SAP info record's previous price of $0.399/EA. The migration WAS performed correctly for this item: Oracle's $398.50/C is actually $39.85/C (the Oracle system stored values in tenths of cents, a display format issue Lisa was confusing in the Teams DM). The 22% increase ($39.85 to $48.70 per C) is real and due to the zinc surcharge the vendor documented. Answer A incorrectly assumes a migration error based on the misleading Teams DM where Lisa confused herself mid-calculation. Answer C invents a 10x error that doesn't exist — it misreads the Oracle price format. Answer D is the failure mode of giving up when multiple signals actually do converge on a clear answer once the vendor's pricing email is consulted as the external source of truth.",
+    "contributor": {
+      "name": "Ananya Krishnan",
+      "title": "Master Data Manager",
+      "organization": "Ironforge Manufacturing",
+      "years_experience": 9,
+      "domain_expertise": "Material master harmonization, vendor master deduplication, cross-system data governance, ERP migration data quality"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "SAP S/4HANA",
+        "Oracle Procurement (legacy)",
+        "Excel",
+        "Microsoft Teams",
+        "Email"
+      ],
+      "informal_signal_location": "DM conversation in Teams where the migration analyst inadvertently confuses herself mid-calculation, creating a misleading trail — the vendor's pricing email (buried in a purchasing inbox) is the actual resolution",
+      "acronyms_used": [
+        "UoM",
+        "EA",
+        "C",
+        "PO",
+        "ERP",
+        "MDM",
+        "GR"
+      ],
+      "policy_versions_involved": 0,
+      "temporal_span_months": 22
+    }
+  }
+]

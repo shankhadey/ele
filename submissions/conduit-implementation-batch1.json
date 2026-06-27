@@ -1,0 +1,144 @@
+[
+  {
+    "title": "Economic Development Rider Expiration with Informal Settlement Commitment",
+    "category": "precedent_exception",
+    "domain": "customer_success_support",
+    "difficulty": "expert",
+    "scenario": "Context from Oracle CC&B (Customer Billing):\nAccount: 'Rocky Mountain Aggregates LLC' | Rate Schedule: LGS-3 (Large General Service) | EDR Discount: 18% demand charge reduction | EDR Effective: Jul 2021 | EDR Expiration: Jun 30, 2026 | Monthly demand: 4,200 kW | Monthly bill: ~$67K\n\nContext from FileMaker (Rate Case Tracker):\nDocket 21-AL-0445 | 'General Rate Case - Conduit Energy' | Filed: Mar 2021 | Status: Settled | Settlement Date: Jun 2021\nStipulation parties: Conduit, OCC, Staff, CIEC (incl. Rocky Mountain Aggregates as member)\nNote field: 'EDR transition — see testimony Exh. JMH-4, pg 12-14. 3-step down agreed in principle but NOT in final stip language.'\n\n**Email — Subject: 'RE: RE: RE: Rocky Mtn EDR sunset' (Jun 14, 2021)**\nFrom: j.hoffman@conduitenergy.com (VP Customer Programs, retired 2023)\nTo: m.hayes@conduitenergy.com\nCC: regulatory-affairs@conduitenergy.com\n\n> On Jun 12, m.hayes wrote:\n> > Jim — did the step-down get into the final stipulation or not?\n> > Their counsel is asking for written confirmation.\n>\n> It didn't make it into the stip. But I gave Jenkins (their outside counsel)\n> a verbal at the settlement conference that we'd honor a 3-year transition:\n> Year 1 post-expiry: 12% discount, Year 2: 6%, Year 3: full tariff rate.\n> Consider it a gentleman's agreement. If it ever comes up, point them to\n> my rebuttal testimony where I reference the 'transition mechanism.'\n\n[No reply from regulatory-affairs on this thread]\n\n**SharePoint — /customer-programs/EDR-tracker.xlsx (last modified: Oct 2025)**\nRow 14: Rocky Mountain Aggregates | EDR expires 6/30/2026 | Status: 'Expiring — standard sunset, no transition' | Owner: M. Hayes\n\n**Teams — #key-accounts (Feb 3, 2026, 9:47 AM)**\n@margaret.hayes: Heads up — Rocky Mtn's account manager at Jenkins & Associates called. Says they have 'a commitment from Conduit' about EDR step-down treatment. Anyone know what they're referencing?\n@brian.kowalski: No idea. The stip is clean — EDR just expires per tariff.\n@margaret.hayes: That's what I thought. Let me dig.\n[Thread has a thumbs-down emoji reaction from @j.petersen (Regulatory Affairs) but no text reply]\n\n**SAP CRM — Activity Log for Rocky Mountain Aggregates:**\nMar 15, 2026 | Call note (M. Hayes): 'Customer increasingly agitated. Says they sized a $4M expansion based on rate assumptions from the EDR transition commitment. Escalating to Director level.'\nMar 22, 2026 | Meeting note (M. Hayes): 'Met w/ their CFO. They produced a copy of Hoffman's rebuttal testimony (Exh. JMH-4) with highlighted passage referencing transition. No written commitment exists beyond this.'",
+    "question": "Given the EDR expiration on June 30, 2026, what is the appropriate treatment for Rocky Mountain Aggregates' rate transition, and what is the basis for that determination?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Honor the 3-year step-down (12%/6%/0%) based on the retired VP's verbal commitment at the settlement conference, supported by the testimony reference in Exhibit JMH-4",
+      "B) Apply the standard tariff rate immediately upon EDR expiration on July 1, 2026 — the stipulation is the governing document and contains no transition provision",
+      "C) Offer a 1-year courtesy transition at 12% as a customer retention measure, splitting the difference between the formal tariff position and the informal commitment",
+      "D) Deny any transition but file a tariff amendment with the PUC to create a formal EDR transition rider before the June 30 expiration"
+    ],
+    "correct_answer": "A",
+    "rationale": "The retired VP's email explicitly states a verbal commitment was made at a settlement conference — a quasi-judicial regulatory proceeding where oral commitments between parties carry weight even absent formal codification. The testimony exhibit (JMH-4) provides documentary support that Conduit publicly acknowledged a transition mechanism. The customer made a $4M capital investment in reliance on this representation. In utility regulatory practice, a company cannot easily disavow commitments made during settlement proceedings, particularly when the counterparty relied upon them for investment decisions. The thumbs-down emoji from Regulatory Affairs in the Teams thread suggests they recognize this is problematic but their silence (no text reply contradicting the commitment) does not constitute a denial of its existence. Answer C fails because it ignores the settlement conference commitment and testimony reference — the tariff alone is not the complete picture when supplemented by settlement proceeding conduct. Answer C is an unprincipled compromise with no regulatory basis that could itself create precedent problems. Answer D is impractical given the timeline and would publicly expose the informal commitment in a regulatory filing.",
+    "contributor": {
+      "name": "Margaret Hayes",
+      "title": "Customer Programs Director",
+      "organization": "Conduit Energy",
+      "years_experience": 18,
+      "domain_expertise": "Key account program management, rate case customer testimony coordination, large C&I customer escalations"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Oracle CC&B",
+        "FileMaker",
+        "Outlook",
+        "SharePoint",
+        "Microsoft Teams",
+        "SAP CRM"
+      ],
+      "informal_signal_location": "Retired VP's email buried 3 levels deep in a forwarding chain containing the only written record of the verbal settlement conference commitment",
+      "acronyms_used": [
+        "EDR",
+        "LGS",
+        "OCC",
+        "CIEC",
+        "PUC",
+        "stip",
+        "kW",
+        "C&I"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 60
+    }
+  },
+  {
+    "title": "Dual-Facility Load Aggregation Dispute After Meter Reconfiguration",
+    "category": "cross_system_synthesis",
+    "domain": "customer_success_support",
+    "difficulty": "hard",
+    "scenario": "Context from Oracle CC&B (Customer Billing):\nAccount 1: 'Wasatch Cold Storage - Facility A' | Account #: 7402-8891 | Rate: LGS-2 | Demand: 1,800 kW | Address: 4500 Industrial Blvd, Unit A\nAccount 2: 'Wasatch Cold Storage Inc.' | Account #: 7402-9103 | Rate: LGS-2 | Demand: 2,400 kW | Address: 4500 Industrial Blvd, Unit B\nCombined billing demand: 4,200 kW | Both accounts pay demand charges independently.\n\n**Esri ArcGIS — Asset Map Layer (updated Mar 2026):**\nParcel 4500 Industrial Blvd: 2 service points shown. Meter M-7402-A (12.47kV feed from Substation Cottonwood-3) and Meter M-7402-B (12.47kV feed from Substation Cottonwood-3). Note: Both meters feed from same transformer bank (XF-CW3-004). Common bus on customer side confirmed by field survey 11/2024.\n\n**SharePoint — /customer-programs/line-extensions/LE-2019-0087.pdf (Line Extension Agreement, signed Aug 2019)**\nParties: Conduit Energy and Wasatch Cold Storage Inc.\nSection 4.2: 'Customer agrees to a minimum load commitment of 3,500 kW across both service points for a period of 7 years in consideration of Conduit's contribution of $1.2M toward the dual-feed line extension.'\nSection 4.4: 'For purposes of this Agreement, demand at both service points shall be aggregated and treated as a single load for calculating CIAC refund eligibility.'\nExhibit B: Shows single-line diagram with BOTH meters behind common customer switchgear.\n\n**Teams — #field-ops (Jan 15, 2026, 2:33 PM)**\n@rick.delgado: FYI just finished the meter reconfiguration at Wasatch Industrial Blvd. Split the interval data streams per the billing team's request. Each meter now reports independently to CC&B.\n@sarah.lindgren: Was there a reason we un-aggregated? I thought those were contractually linked.\n@rick.delgado: Billing put in the work order. Something about system upgrade compatibility. I just did what the WO said.\n[reacted with shrug emoji by @sarah.lindgren]\n\n**SAP — Financial (Accounts Receivable):**\nWasatch Cold Storage Inc. | Open balance: $0 | Last payment: Mar 2026 | Payment note: 'Customer disputing $18,400 in demand charges from Jan-Feb bills. Claims overcharge due to ratchet applied to split accounts that weren't split before.'\n\n**IBM Maximo — Work Order WO-2025-11847 (completed Jan 8, 2026):**\nDescription: 'Reconfigure meters M-7402-A and M-7402-B for independent interval data reporting per CC&B system migration requirements.'\nRequester: Billing Operations (auto-generated)\nApprover: None listed\nCompletion note: 'Meters now reporting as separate NMI. Customer not notified per standard practice for internal reconfigs.'",
+    "question": "Is Wasatch Cold Storage's billing dispute regarding the demand charge increase valid, and what should be the resolution?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) The dispute is partially valid — aggregation applied only to CIAC refund calculations per Section 4.4, not to ongoing demand billing; current split billing is correct for tariff purposes",
+      "B) The dispute is valid — the Line Extension Agreement requires load aggregation across both service points, making the meter split an internal error that should not affect billing; demand charges should be recalculated on a combined basis",
+      "C) The dispute is invalid — each meter is a separate service point under tariff, and demand charges are correctly applied independently regardless of internal reconfiguration",
+      "D) The dispute cannot be resolved without a new interconnection study since the ArcGIS data shows both meters on the same transformer bank, requiring engineering review"
+    ],
+    "correct_answer": "B",
+    "rationale": "The Line Extension Agreement (Section 4.2) establishes a minimum load commitment 'across both service points' and Section 4.4 explicitly states demand 'shall be aggregated and treated as a single load.' While Section 4.4 specifically references CIAC refund eligibility, Section 4.2's framing of the entire commercial arrangement as a single aggregated load — combined with the single-line diagram showing common customer switchgear — establishes that the contractual intent was unified treatment. The meter reconfiguration (WO-2025-11847) was an internal system migration action with no customer notification and no contractual authorization to disaggregate. The ArcGIS data confirms the physical reality: common bus, same transformer bank. When meters are split, the demand ratchet applies separately to each, producing higher charges than the aggregated peak. The customer's $18,400 dispute reflects this artificial inflation. Answer A incorrectly applies generic tariff rules while ignoring a specific contractual override. Answer C reads Section 4.4 too narrowly — isolating one clause from the broader agreement structure. Answer D is a stalling tactic; the engineering facts are already documented in ArcGIS and the line extension exhibit.",
+    "contributor": {
+      "name": "Margaret Hayes",
+      "title": "Customer Programs Director",
+      "organization": "Conduit Energy",
+      "years_experience": 18,
+      "domain_expertise": "Key account program management, rate case customer testimony coordination, large C&I customer escalations"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Oracle CC&B",
+        "Esri ArcGIS",
+        "SharePoint",
+        "Microsoft Teams",
+        "SAP",
+        "IBM Maximo"
+      ],
+      "informal_signal_location": "Teams #field-ops message where a field technician reveals the meter split was done without customer notification or contractual review, and Sarah Lindgren's unanswered question about contractual linkage (shrug emoji as implicit 'nobody checked')",
+      "acronyms_used": [
+        "CIAC",
+        "LGS",
+        "kW",
+        "NMI",
+        "WO",
+        "XF",
+        "kV"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 84
+    }
+  },
+  {
+    "title": "Curtailment Priority Dispute After Undocumented Capacity Expansion",
+    "category": "temporal_consistency",
+    "domain": "customer_success_support",
+    "difficulty": "expert",
+    "scenario": "Context from OSIsoft PI (SCADA — Operational Data):\nMeter Point: IND-SUMMIT-001 (Summit Alloys LLC) | Connected load (nameplate): 8,500 kW | Actual peak demand (rolling 12-mo): 11,200 kW | Load factor: 0.78 | Peak recorded: Aug 14, 2025 at 14:42 (11,847 kW)\nAnomaly flag: Demand exceeded registered capacity by >30% continuously since Q2 2025.\n\n**Oracle CC&B (Customer Billing):**\nAccount: 'Summit Alloys LLC' | Rate: IP-1 (Industrial Power) | Contract demand: 8,500 kW | Actual billed demand: 8,500 kW (capped at contract) | Excess demand penalty: NOT applied (system note: 'grandfathered per 2022 demand charge waiver, see attached') | Attachment: Empty — no document attached.\n\n**SharePoint — /regulatory/curtailment-priority/2022-Curtailment-Order.pdf:**\nPUC Docket 22-EM-0198 | Emergency Curtailment Priority Order\nTable 3 — Firm Service Curtailment Sequence:\nPriority 6 (last curtailed): Industrial customers with contract demand > 10,000 kW\nPriority 5: Industrial customers with contract demand 5,000–10,000 kW\nPriority 4: Large commercial customers...\n[Table based on registered contract demand as of filing date]\n\n**FileMaker — Rate Case Tracker (Docket 22-EM-0198):**\nCustomer testimony filed: 14 parties | Summit Alloys: Listed as intervenor\nSettlement note: 'Curtailment priority based on contract demand at time of order. Updates to contract demand trigger reassignment. See Tariff Sheet 45, Section 8.'\n\n**Email — Subject: 'Summit expansion heads-up' (Apr 3, 2025)**\nFrom: t.nakamura@conduitenergy.com (Account Manager)\nTo: m.hayes@conduitenergy.com\n\nMargaret — FYI Summit is bringing a new arc furnace online. Their ops manager mentioned it casually at the site visit last week. Probably adds 2,500-3,000 kW. They haven't filed anything with us or requested a contract demand increase. Should I flag it?\n\n**Teams — DM from m.hayes to t.nakamura (Apr 4, 2025, 8:11 AM)**\nLet's not poke the bear. They're a big intervenor in the rate case and we need their support on the renewable rider. If they want to update their contract demand they'll do it on their own timeline.\n[message has a thumbs-up reaction from t.nakamura]\n\n**IBM Maximo — Asset Record: Substation Summit Industrial Park**\nTransformer T-SIP-002 loading: 94% of rated capacity (Aug 2025) | Alert: Thermal limit approaching | Maintenance note (Sep 2025): 'Loading increase correlates with Summit Alloys expansion. Notified planning — no action taken.'\n\n**Context from current event: Grid Emergency declared June 22, 2026.**\nPUC has ordered curtailment through Priority 5. Summit Alloys is classified as Priority 5 (contract demand 8,500 kW = within 5,000-10,000 band). Summit Alloys' counsel has filed an emergency motion arguing they should be Priority 6 based on actual load exceeding 10,000 kW.",
+    "question": "During the June 2026 grid emergency, what is Summit Alloys' correct curtailment priority classification, and does Conduit Energy face regulatory exposure?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Summit Alloys remains Priority 5 because curtailment priority is locked at the time of the 2022 order and cannot be changed without a new docket; Conduit has no regulatory obligation to reclassify",
+      "B) Summit Alloys is correctly Priority 5 based on their contract demand of 8,500 kW; their failure to update contract demand is their own responsibility and Conduit has no exposure",
+      "C) Summit Alloys should be reclassified to Priority 6 based on actual metered demand exceeding 10,000 kW; Conduit faces exposure for failing to enforce contract demand updates per Tariff Sheet 45, Section 8",
+      "D) The question is moot because Summit Alloys' excess demand penalty waiver means they are operating outside their contract, and non-compliant customers should be curtailed first regardless of priority"
+    ],
+    "correct_answer": "C",
+    "rationale": "The settlement note in FileMaker explicitly states 'Updates to contract demand trigger reassignment' per Tariff Sheet 45, Section 8. The SCADA data shows Summit has continuously exceeded 10,000 kW since Q2 2025 — over a year. Conduit had actual knowledge of the expansion (the account manager's email from April 2025, the Maximo thermal alert from September 2025, and the PI system anomaly flag). The Teams DM between Hayes and Nakamura reveals Conduit deliberately chose not to enforce the contract demand update for political reasons (rate case support). This creates significant regulatory exposure: Conduit knowingly allowed a customer to remain in the wrong curtailment priority band, which during an emergency means other customers in Priority 5 are being curtailed when Summit Alloys should have been protected in Priority 6 (or Summit should have been excluded from the curtailment order). The PUC will likely view this as a tariff compliance failure. Answer A ignores Conduit's affirmative knowledge and the tariff obligation to reassign priority upon capacity changes. Answer B misreads the settlement — priority is not permanently locked; it updates with contract demand changes. Answer D invents a curtailment rule that does not exist in the filed tariff.",
+    "contributor": {
+      "name": "Margaret Hayes",
+      "title": "Customer Programs Director",
+      "organization": "Conduit Energy",
+      "years_experience": 18,
+      "domain_expertise": "Key account program management, rate case customer testimony coordination, large C&I customer escalations"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "OSIsoft PI",
+        "Oracle CC&B",
+        "SharePoint",
+        "FileMaker",
+        "Outlook",
+        "Microsoft Teams",
+        "IBM Maximo"
+      ],
+      "informal_signal_location": "Teams DM where Margaret Hayes instructs account manager not to enforce contract demand update for political reasons, revealing Conduit's deliberate non-compliance",
+      "acronyms_used": [
+        "PUC",
+        "SCADA",
+        "kW",
+        "IP-1",
+        "PI",
+        "arc furnace",
+        "intervenor",
+        "EDR",
+        "C&I"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 48
+    }
+  }
+]

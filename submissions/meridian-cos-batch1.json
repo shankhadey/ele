@@ -1,0 +1,138 @@
+[
+  {
+    "title": "The VP Engineering Exception That Wasn't",
+    "category": "precedent_exception",
+    "domain": "hr_people_ops",
+    "difficulty": "expert",
+    "scenario": "You're reviewing a comp exception request for Sarah Chen, a Senior Engineering Manager reporting to VP Engineering David Kumar. The request landed in your inbox yesterday asking for a $40K off-cycle increase to match a competing offer. The formal exception request in Asana references \"CEO verbal approval in our 1:1 on June 18\" and David's Slack message to you says \"Per my conversation with James [CEO], we're green-lit to move forward. Sarah's critical to the platform reorg and we can't lose her.\"\n\nYou check the decision log (Google Doc titled \"Q2 2026 Comp Exceptions\") which shows three approved exceptions this quarter: two retention cases at $25K each for product managers, and one market adjustment at $30K for a sales leader. The log notes: \"CEO guidance 6/12: Hold line on eng comp exceptions until post-Series C. Too many requests, setting bad precedent.\"\n\nYou weren't in the June 18th CEO-David 1:1 (it was added last-minute as a skip-level with Sarah, your calendar shows the decline notification). You check Slack and find a DM thread between James and David from June 20th. David: \"Following up on Sarah's comp situation.\" James: \"Remind me - what's the number?\" David: \"40K to match offer.\" James: \"That's steep. What if we do 25K now and promise another look at year-end?\" David: \"I can try but the offer is 40K more than current.\" James: \"OK try the 25K path first. If she's really walking we'll revisit but I want to see the counter-offer letter.\"\n\nThe Asana exception request attached Sarah's verbal offer summary (no letter), shows $40K, and was submitted June 24th. You also notice in Google Doc version history that David edited the Q2 decision log on June 19th, adding a line \"Engineering retention exceptions approved up to $50K per CEO 6/18 guidance\" but James reverted it 4 hours later with the comment \"let's discuss, don't think this is what I said.\"\n\nHR is waiting for your approval to process. David is pressuring you in Slack: \"Sarah's giving us EOD Monday. Need to move.\"",
+    "question": "What is the correct approval status of Sarah's $40K comp exception?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Denied - CEO's June 12 guidance to hold the line on eng exceptions supersedes any informal discussion, and the reorg context doesn't constitute a documented exception",
+      "B) Approved - CEO gave verbal approval in the June 18 skip-level and the request is within Engineering's retention authority",
+      "C) Approved for $40K - The CEO's June 20 Slack acknowledgment of \"we'll revisit\" constitutes approval once the threshold condition (she's really walking) is met",
+      "D) Conditionally approved for $25K pending counter-offer letter - must follow CEO's June 20 Slack guidance before escalating to full $40K"
+    ],
+    "correct_answer": "D",
+    "rationale": "The most recent specific guidance from the CEO is in the June 20 Slack DM: offer $25K first, and only escalate to the full amount with proof of competing offer (counter-offer letter). David's interpretation that he has blanket approval is contradicted by three signals: (1) James reverted David's decision log edit about $50K authority with \"don't think this is what I said,\" (2) the June 20 Slack shows James specifically pushing back on $40K and requiring a phased approach, and (3) the exception request violates the CEO's process requirement (no letter attached, just verbal summary). Choice A fails because there's no evidence the June 18 meeting granted approval - you weren't there and the Slack contradicts it. Choice C is too rigid - the June 20 Slack shows James is willing to make an exception despite June 12 guidance, but with conditions. Choice D misreads \"we'll revisit\" as approval when it's actually a conditional escalation path. As Chief of Staff, your role is to enforce the actual decision (phased approach with documentation) not the VP's preferred interpretation. The informal Slack DM contains the real approval authority, but HR needs you to formalize it correctly: approve $25K now, create escalation path to $40K with letter.",
+    "contributor": {
+      "name": "Amanda Liu",
+      "title": "Chief of Staff to the CEO",
+      "organization": "Meridian Systems",
+      "years_experience": 9,
+      "domain_expertise": "Executive decision tracking, informal approval channels, reorg execution"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Asana",
+        "Slack",
+        "Google Docs",
+        "Google Calendar",
+        "Email"
+      ],
+      "informal_signal_location": "CEO-VP Slack DM from June 20 + Google Doc version history showing reverted edit",
+      "acronyms_used": [
+        "VP",
+        "CEO",
+        "1:1",
+        "HR",
+        "EOD",
+        "Q2"
+      ],
+      "policy_versions_involved": 2,
+      "temporal_span_months": 1
+    }
+  },
+  {
+    "title": "The Contradictory Reorg Mandate",
+    "category": "cross_system_synthesis",
+    "domain": "hr_people_ops",
+    "difficulty": "expert",
+    "scenario": "It's June 25th and you're preparing the ELT deck for Monday's offsite. The reorg planning has been chaotic. Six weeks ago (May 14), the CEO announced in the ELT Slack channel: \"Flattening directive: every VP should have 8-12 direct reports by Q3. Too many layers, slowing us down. Amanda will track compliance.\"\n\nYou've been monitoring via your reorg tracker (Google Sheet). Current state: VP Product has 6 directs, VP Sales has 14, VP Engineering has 7. Last week, VP Product Jamie Ross submitted a reorg proposal in Asana to add 3 Director-level positions, bringing her to 9 directs (compliant). VP Engineering David Kumar submitted a proposal to consolidate two teams and reduce from 7 to 5 directs, arguing \"my org is already flat, teams need principal-level leadership layers for the platform rebuild.\"\n\nYesterday you attended a board prep meeting (no formal notes, but you took personal notes). CEO James said: \"The board's concerned about our leadership density metrics compared to peers. We need fewer VPs, not more Directors. I'm thinking we should have each VP own bigger portfolios with senior IC tracks instead of management layers.\" CFO Sarah responded: \"Agrees with philosophy but concerned about the Product reorg - Jamie's been explicit she needs those Directors for the Series C buildout.\"\n\nThis morning, you see a calendar hold added to James's schedule: 1:1 with Jamie, June 26th, titled \"Reorg decision.\" You're not invited. You check Slack and find a DM from James to Jamie (you have access to CEO's Slack via your CoS role) from June 24th: \"Let's get you those Director roles approved before the offsite. You've made the case and I don't want this hanging over Q3 planning. Will confirm Thursday.\"\n\nYou also notice the ELT decision log hasn't been updated since May 20th (you've pinged the CEO's EA twice). The May 14 Slack directive is the only written record of the flattening mandate. David is now messaging you asking whether his 7-to-5 consolidation \"meets the flattening requirement or if I need to stretch back to 8.\"",
+    "question": "For the Monday ELT deck summarizing reorg status, what is the accurate current state of the flattening mandate?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Selectively enforced: Product has CEO exception for Director additions (compliant path to 9); Engineering's reduction to 5 is non-compliant and must stay at 7 or expand to 8",
+      "B) In effect with case-by-case exceptions: Flattening remains the default policy, but VPs can make written business cases for variance; Product's case is approved, Engineering should submit formal exception request",
+      "C) Superseded by board guidance: The flattening mandate is paused pending leadership density strategy; all reorg proposals should be held until CEO clarifies new direction post-offsite",
+      "D) Active and binding for all VPs: Product's Director additions violate the mandate; Engineering's consolidation creates non-compliance; both need revision to hit 8-12 range"
+    ],
+    "correct_answer": "A",
+    "rationale": "This scenario requires synthesizing signals across five systems with contradictory guidance. The critical informal signal is the June 24 CEO-Jamie Slack DM confirming Director approvals \"before the offsite\" - this is a definitive decision despite contradicting the board prep discussion from June 23. The CEO often makes decisions verbally/informally that override broader policy discussions, and the DM shows Jamie has secured an exception. Product's path to 9 directs will be compliant with the 8-12 mandate once approved. Choice A incorrectly treats the mandate as absolute when the CEO has already granted an exception. Choice B over-indexes on the board prep meeting, but that was a discussion not a decision, and the subsequent Slack DM shows the CEO proceeded with Jamie's approval anyway. Choice D sounds procedurally correct but mischaracterizes what happened - Jamie didn't need to submit a formal exception request; she got approval through informal channels (the actual decision-making pattern at Meridian). For David's question, his 7-to-5 move violates the 8-12 mandate and he received no exception. The board discussion about \"fewer VPs not more Directors\" might support his consolidation philosophically, but there's no CEO decision authorizing variance from the 8-12 range for Engineering. As Chief of Staff, you must accurately represent that Product is on an approved exception path while Engineering is out of compliance. The real org chart is shaped by informal CEO approvals, not written policy.",
+    "contributor": {
+      "name": "Amanda Liu",
+      "title": "Chief of Staff to the CEO",
+      "organization": "Meridian Systems",
+      "years_experience": 9,
+      "domain_expertise": "Executive decision tracking, informal approval channels, reorg execution"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Slack",
+        "Google Sheets",
+        "Asana",
+        "Google Calendar",
+        "Google Docs"
+      ],
+      "informal_signal_location": "CEO-VP Product Slack DM from June 24 + Board prep meeting notes (no formal notes, CoS personal notes only)",
+      "acronyms_used": [
+        "ELT",
+        "VP",
+        "CEO",
+        "Q3",
+        "CoS",
+        "CFO",
+        "IC",
+        "EA",
+        "1:1"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 2
+    }
+  },
+  {
+    "title": "The Skip-Level Promotion Approval Chain",
+    "category": "approval_chain",
+    "domain": "hr_people_ops",
+    "difficulty": "hard",
+    "scenario": "You're reviewing Q2 promotion packets before the calibration meeting next week. One promotion stands out: Marcus Thompson, Senior Product Manager \u2192 Director of Product, two levels up. The packet shows he'd be reporting directly to VP Product Jamie Ross, skipping the Group PM layer entirely.\n\nThe formal approval chain per the People Ops policy (updated January 2026) requires: (1) Manager recommendation, (2) VP approval, (3) CEO approval for skip-level promos, and (4) Compensation Committee review for any Director+ promotion creating >$180K base. Marcus's proposed comp is $195K base.\n\nThe promotion packet in Asana shows: Manager (Jamie Ross) recommended 6/15, VP approved 6/15 (same person), CEO approval field shows \"Verbal OK - 6/18 ELT meeting per Jamie.\" The packet notes reference \"Discussed in Q2 OKR review, Marcus taking on platform strategy ownership post-reorg.\"\n\nYou weren't at the June 18 ELT meeting (you were in back-to-back board prep sessions), but you check the meeting notes doc. The notes show a section titled \"Product Org Updates\" with bullet points about the platform reorg and team consolidation. No mention of Marcus's promotion. You check Slack and find the #elt-team channel from June 18. Jamie posted: \"Quick update: proposing to move Marcus Thompson to Director level as part of the reorg, he'll own platform product strategy. Supportive?\" Three reactions: thumbs up from VP Sales, eyes emoji from CFO, and no reaction from CEO. No written responses.\n\nYou also find a 1:1 note between Jamie and the CEO from June 10 (you have view access to their shared 1:1 doc). Jamie's agenda item: \"Marcus promotion - want to move him to Director.\" James's note in response: \"Love Marcus but two-level jump is aggressive. Can we do Senior \u2192 Group PM first? Also need to staff up the Group PM layer per our flattening goals.\" Jamie's reply note: \"Will think about structure.\"\n\nHR sent you a Slack DM yesterday: \"Marcus promotion packet is complete pending your CoS sign-off. Comp Committee meets Friday and we need CEO confirmation since it's skip-level. Can you verify?\"\n\nYou notice the promotion effective date is listed as July 1 (4 days away) and Marcus has already been added to the \"Product Leadership\" Slack channel as of June 22.",
+    "question": "What is the correct approval status for Marcus Thompson's skip-level promotion to Director?",
+    "answer_format": "multiple_choice",
+    "choices": [
+      "A) Approved with Comp Committee contingency - The ELT Slack reactions constitute sufficient executive consensus, but must go to Comp Committee before July 1 effective date due to $195K base",
+      "B) Denied - The January 2026 policy requires explicit CEO approval for skip-level promotions and Slack reactions do not constitute documented approval for a promotion of this magnitude",
+      "C) Incomplete approval chain - CEO expressed concerns about two-level jump in June 10 1:1 and requested Group PM intermediate step; no documented reversal of that guidance exists",
+      "D) Approved - CEO gave verbal approval in the June 18 ELT meeting as documented in the promotion packet, and the reorg context justifies the skip-level structure"
+    ],
+    "correct_answer": "C",
+    "rationale": "The approval chain is incomplete because the CEO's most recent documented position (June 10 1:1 notes) explicitly questioned the two-level jump and suggested an intermediate step. Jamie's representation of \"Verbal OK - 6/18 ELT meeting\" is not supported by available evidence: (1) the ELT meeting notes don't mention Marcus's promotion, (2) the Slack post in #elt-team got emoji reactions but no written CEO approval, and (3) emoji reactions don't constitute formal approval for a skip-level promotion that the CEO previously flagged as \"aggressive.\" Choice A takes Jamie's claim at face value without corroborating evidence. Choice C incorrectly interprets Slack emoji as executive consensus - the CFO's eyes emoji could signal concern, not approval, and the CEO didn't react at all. Choice D is too absolutist about policy; Meridian's culture allows verbal approvals, but the issue here is there's no evidence the verbal approval actually happened. The CEO's silence on the Slack post is notable given his previous concerns. As Chief of Staff, you need to go back to the CEO directly to confirm whether he reversed his June 10 position, because the skip-level promotion contradicts his last documented guidance about building the Group PM layer. The informal signal here is what's missing - no CEO response in Slack when you'd expect one given the previous 1:1 discussion. Marcus being added to leadership Slack suggests Jamie is moving forward assuming approval, but that's not the same as having it. This requires CEO confirmation before Friday's Comp Committee meeting.",
+    "contributor": {
+      "name": "Amanda Liu",
+      "title": "Chief of Staff to the CEO",
+      "organization": "Meridian Systems",
+      "years_experience": 9,
+      "domain_expertise": "Executive decision tracking, informal approval channels, reorg execution"
+    },
+    "metadata": {
+      "systems_referenced": [
+        "Asana",
+        "Google Docs",
+        "Slack",
+        "Google Calendar"
+      ],
+      "informal_signal_location": "CEO's non-response in ELT Slack channel + 1:1 notes showing previous concerns + missing promotion mention in ELT meeting notes",
+      "acronyms_used": [
+        "VP",
+        "CEO",
+        "ELT",
+        "Q2",
+        "OKR",
+        "CoS",
+        "HR",
+        "PM"
+      ],
+      "policy_versions_involved": 1,
+      "temporal_span_months": 1
+    }
+  }
+]
