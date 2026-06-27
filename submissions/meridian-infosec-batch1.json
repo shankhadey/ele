@@ -40,7 +40,9 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 19
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "SOC2 Control Mapping Discrepancy Across Policy Versions During Audit",
@@ -86,7 +88,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 12
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Data Breach Notification Timeline Under Conflicting Contractual Obligations",
@@ -131,6 +135,8 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 0
-    }
+    },
+    "decidability": "edge",
+    "enhancement_type": "original"
   }
 ]

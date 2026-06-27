@@ -41,7 +41,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 14
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Cross-Brand Returns Fraud Ring with Conflicting Identity Signals",
@@ -86,7 +88,9 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 1
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   },
   {
     "title": "Seller Reinstatement Eligibility Under Revised Strike Policy with Temporal Overlap",
@@ -130,6 +134,8 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 15
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   }
 ]

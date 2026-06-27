@@ -41,7 +41,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 1
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   },
   {
     "title": "The Contradictory Reorg Mandate",
@@ -88,14 +90,16 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 2
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   },
   {
     "title": "The Skip-Level Promotion Approval Chain",
     "category": "approval_chain",
     "domain": "hr_people_ops",
     "difficulty": "hard",
-    "scenario": "You're reviewing Q2 promotion packets before the calibration meeting next week. One promotion stands out: Marcus Thompson, Senior Product Manager \u2192 Director of Product, two levels up. The packet shows he'd be reporting directly to VP Product Jamie Ross, skipping the Group PM layer entirely.\n\nThe formal approval chain per the People Ops policy (updated January 2026) requires: (1) Manager recommendation, (2) VP approval, (3) CEO approval for skip-level promos, and (4) Compensation Committee review for any Director+ promotion creating >$180K base. Marcus's proposed comp is $195K base.\n\nThe promotion packet in Asana shows: Manager (Jamie Ross) recommended 6/15, VP approved 6/15 (same person), CEO approval field shows \"Verbal OK - 6/18 ELT meeting per Jamie.\" The packet notes reference \"Discussed in Q2 OKR review, Marcus taking on platform strategy ownership post-reorg.\"\n\nYou weren't at the June 18 ELT meeting (you were in back-to-back board prep sessions), but you check the meeting notes doc. The notes show a section titled \"Product Org Updates\" with bullet points about the platform reorg and team consolidation. No mention of Marcus's promotion. You check Slack and find the #elt-team channel from June 18. Jamie posted: \"Quick update: proposing to move Marcus Thompson to Director level as part of the reorg, he'll own platform product strategy. Supportive?\" Three reactions: thumbs up from VP Sales, eyes emoji from CFO, and no reaction from CEO. No written responses.\n\nYou also find a 1:1 note between Jamie and the CEO from June 10 (you have view access to their shared 1:1 doc). Jamie's agenda item: \"Marcus promotion - want to move him to Director.\" James's note in response: \"Love Marcus but two-level jump is aggressive. Can we do Senior \u2192 Group PM first? Also need to staff up the Group PM layer per our flattening goals.\" Jamie's reply note: \"Will think about structure.\"\n\nHR sent you a Slack DM yesterday: \"Marcus promotion packet is complete pending your CoS sign-off. Comp Committee meets Friday and we need CEO confirmation since it's skip-level. Can you verify?\"\n\nYou notice the promotion effective date is listed as July 1 (4 days away) and Marcus has already been added to the \"Product Leadership\" Slack channel as of June 22.",
+    "scenario": "You're reviewing Q2 promotion packets before the calibration meeting next week. One promotion stands out: Marcus Thompson, Senior Product Manager → Director of Product, two levels up. The packet shows he'd be reporting directly to VP Product Jamie Ross, skipping the Group PM layer entirely.\n\nThe formal approval chain per the People Ops policy (updated January 2026) requires: (1) Manager recommendation, (2) VP approval, (3) CEO approval for skip-level promos, and (4) Compensation Committee review for any Director+ promotion creating >$180K base. Marcus's proposed comp is $195K base.\n\nThe promotion packet in Asana shows: Manager (Jamie Ross) recommended 6/15, VP approved 6/15 (same person), CEO approval field shows \"Verbal OK - 6/18 ELT meeting per Jamie.\" The packet notes reference \"Discussed in Q2 OKR review, Marcus taking on platform strategy ownership post-reorg.\"\n\nYou weren't at the June 18 ELT meeting (you were in back-to-back board prep sessions), but you check the meeting notes doc. The notes show a section titled \"Product Org Updates\" with bullet points about the platform reorg and team consolidation. No mention of Marcus's promotion. You check Slack and find the #elt-team channel from June 18. Jamie posted: \"Quick update: proposing to move Marcus Thompson to Director level as part of the reorg, he'll own platform product strategy. Supportive?\" Three reactions: thumbs up from VP Sales, eyes emoji from CFO, and no reaction from CEO. No written responses.\n\nYou also find a 1:1 note between Jamie and the CEO from June 10 (you have view access to their shared 1:1 doc). Jamie's agenda item: \"Marcus promotion - want to move him to Director.\" James's note in response: \"Love Marcus but two-level jump is aggressive. Can we do Senior → Group PM first? Also need to staff up the Group PM layer per our flattening goals.\" Jamie's reply note: \"Will think about structure.\"\n\nHR sent you a Slack DM yesterday: \"Marcus promotion packet is complete pending your CoS sign-off. Comp Committee meets Friday and we need CEO confirmation since it's skip-level. Can you verify?\"\n\nYou notice the promotion effective date is listed as July 1 (4 days away) and Marcus has already been added to the \"Product Leadership\" Slack channel as of June 22.",
     "question": "What is the correct approval status for Marcus Thompson's skip-level promotion to Director?",
     "answer_format": "multiple_choice",
     "choices": [
@@ -133,6 +137,8 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 1
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   }
 ]

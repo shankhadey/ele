@@ -40,7 +40,9 @@
       ],
       "policy_versions_involved": 3,
       "temporal_span_months": 8
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Retroactive vs. Prospective Examination Finding Under Superseded Regulation",
@@ -86,7 +88,9 @@
       ],
       "policy_versions_involved": 3,
       "temporal_span_months": 14
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "CRA Assessment Area Determination After Three-Bank Merger",
@@ -129,6 +133,8 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 6
-    }
+    },
+    "decidability": "edge",
+    "enhancement_type": "original"
   }
 ]

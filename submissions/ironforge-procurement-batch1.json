@@ -44,7 +44,9 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 8
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Sole-Source Threshold Change Impact on In-Flight Blanket PO with Split Plant Coverage",
@@ -92,7 +94,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 12
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Supplier Quality Failure vs. Plant Manager Emergency Deviation Authority",
@@ -138,6 +142,8 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 9
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   }
 ]

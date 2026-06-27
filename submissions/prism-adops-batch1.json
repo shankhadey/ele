@@ -40,7 +40,9 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 3
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Verbal Make-Good Claim Under Revised Policy by Departed Rep",
@@ -83,7 +85,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 6
-    }
+    },
+    "decidability": "edge",
+    "enhancement_type": "original"
   },
   {
     "title": "Cross-Platform Frequency Cap Dispute with Conflicting Analytics Sources",
@@ -131,6 +135,8 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 4
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   }
 ]

@@ -45,7 +45,9 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 3
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   },
   {
     "title": "Dual-Manager Ghost: Sup Org Conflict After Legacy Entity Merger",
@@ -93,7 +95,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 7
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "WARN Act Trigger Date: Which System's Termination Is Authoritative?",
@@ -139,6 +143,8 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 3
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   }
 ]

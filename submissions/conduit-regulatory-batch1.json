@@ -42,7 +42,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 216
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Solar Developer Entity Conversion and Interconnection Queue Priority",
@@ -89,7 +91,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 22
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Net Metering Grandfathering Dispute — Application vs. Approval Date",
@@ -133,6 +137,8 @@
       ],
       "policy_versions_involved": 3,
       "temporal_span_months": 84
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   }
 ]

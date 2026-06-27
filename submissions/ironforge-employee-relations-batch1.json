@@ -41,7 +41,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 3
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Accommodation Approval via Unauthorized Channel During Investigation Hold",
@@ -85,7 +87,9 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 3
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Union Grievance Precedent Invalidated by CBA Renegotiation",
@@ -132,6 +136,8 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 7
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   }
 ]

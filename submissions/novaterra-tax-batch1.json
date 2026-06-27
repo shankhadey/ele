@@ -42,7 +42,9 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 38
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Assessment Appeal Methodology Conflict Across Pending Filing",
@@ -87,7 +89,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 26
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "TIF District Parcel Consolidation Without Owner Notification",
@@ -132,6 +136,8 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 7
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   }
 ]

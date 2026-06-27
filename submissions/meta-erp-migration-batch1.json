@@ -42,7 +42,9 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 18
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   },
   {
     "title": "Credit Limit Override Lost in Migration — Customer Escalation",
@@ -87,7 +89,9 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 84
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Material Consolidation Traceability Failure in Quality Complaint",
@@ -133,6 +137,8 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 48
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   }
 ]

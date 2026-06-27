@@ -46,7 +46,9 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 4
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Cross-Proposal Key Personnel Overallocation Hidden in Parallel Bid Volumes",
@@ -91,7 +93,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 1
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Wrap Rate Policy Version Conflict Between Approved Gate Review and DCAA Audit Correction",
@@ -139,6 +143,8 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 3
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   }
 ]

@@ -47,7 +47,9 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 0
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Conflicting Postmortem Action Items from Sequential Incidents",
@@ -91,7 +93,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 2
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   },
   {
     "title": "Escalation Policy Version Mismatch During On-Call Handoff",
@@ -138,6 +142,8 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 4
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   }
 ]

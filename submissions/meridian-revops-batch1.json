@@ -4,17 +4,17 @@
     "category": "entity_resolution",
     "domain": "finance_revops",
     "difficulty": "hard",
-    "scenario": "You are preparing the Q2 board deck and need to reconcile ARR for the account variously known as 'TerraLogic' across systems.\n\n**Salesforce \u2014 Account Records:**\nAccount: 'TerraLogic Inc.' | ARR: $380K | Opp Stage: Closed Won | Close Date: 2025-03-14 | Owner: Jamie Reeves (AE)\nAccount: 'TerraLogic Solutions (formerly DataPipe)' | ARR: $95K | Opp Stage: Closed Won | Close Date: 2024-11-02 | Owner: Marcus Bell (AE) | Note: 'Migrated from HubSpot. Original close date unclear.'\n\n**Zuora \u2014 Subscription Records:**\nSubscription Z-4491: Customer 'TerraLogic Inc' | MRR: $32,800 | Term: Annual | Start: 2025-03-15 | Products: Platform Pro + API Gateway\nSubscription Z-3187: Customer 'DataPipe Labs LLC' | MRR: $7,916 | Term: Annual | Start: 2024-11-01 | Products: API Gateway (legacy tier)\nSubscription Z-5002: Customer 'TerraLogic' | MRR: $4,200 | Term: Monthly | Start: 2026-02-01 | Products: Analytics Add-on\n\n**Slack \u2014 #revenue-ops (Apr 8, 2026, 11:47 AM)**\n@jamie.reeves: Hey @david.okafor \u2014 TerraLogic closed their DataPipe acquisition in Jan. They want everything on one invoice going forward. Can we merge?\n@david.okafor: Need the signed entity change letter first. Did legal get it?\n@jamie.reeves: Rachel said she has it, let me check\n[Thread \u2014 3 replies]\n@jamie.reeves (Apr 9, 9:02 AM): Got confirmation from Rachel \u2014 entity letter signed, effective 2/1. TerraLogic Inc is the surviving entity.\n@david.okafor: :white_check_mark:\n[No further messages]\n\n**Stripe \u2014 Payment Records:**\nCharge Mar 2026: $32,800 from 'TerraLogic Inc' (card ending 4421)\nCharge Mar 2026: $7,916 from 'DataPipe Labs LLC' (ACH, Wells Fargo account ending 8830)\nCharge Mar 2026: $4,200 from 'TerraLogic Inc' (card ending 4421)\n\n**Google Sheet \u2014 'ARR Reconciliation Q2' (last edited Apr 2, 2026):**\nRow 44: TerraLogic Inc | $380,000 | Source: SFDC\nRow 87: DataPipe | $95,000 | Source: SFDC | Flag: 'Possible duplicate? Ask Marcus'",
+    "scenario": "You are preparing the Q2 board deck and need to reconcile ARR for the account variously known as 'TerraLogic' across systems.\n\n**CRM — Account Records:**\nAccount: 'TerraLogic Inc.' | ARR: $380K | Opp Stage: Closed Won | Close Date: 2025-03-14 | Owner: Jamie Reeves (AE)\nAccount: 'TerraLogic Solutions (formerly DataPipe)' | ARR: $95K | Opp Stage: Closed Won | Close Date: 2024-11-02 | Owner: Marcus Bell (AE) | Note: 'Migrated from HubSpot. Original close date unclear.'\n\n**Zuora — Subscription Records:**\nSubscription Z-4491: Customer 'TerraLogic Inc' | MRR: $32,800 | Term: Annual | Start: 2025-03-15 | Products: Platform Pro + API Gateway\nSubscription Z-3187: Customer 'DataPipe Labs LLC' | MRR: $7,916 | Term: Annual | Start: 2024-11-01 | Products: API Gateway (legacy tier)\nSubscription Z-5002: Customer 'TerraLogic' | MRR: $4,200 | Term: Monthly | Start: 2026-02-01 | Products: Analytics Add-on\n\n**Slack — #revenue-ops (Apr 8, 2026, 11:47 AM)**\n@jamie.reeves: Hey @david.okafor — TerraLogic closed their DataPipe acquisition in Jan. They want everything on one invoice going forward. Can we merge?\n@david.okafor: Need the signed entity change letter first. Did legal get it?\n@jamie.reeves: Rachel said she has it, let me check\n[Thread — 3 replies]\n@jamie.reeves (Apr 9, 9:02 AM): Got confirmation from Rachel — entity letter signed, effective 2/1. TerraLogic Inc is the surviving entity.\n@david.okafor: :white_check_mark:\n[No further messages]\n\n**Stripe — Payment Records:**\nCharge Mar 2026: $32,800 from 'TerraLogic Inc' (card ending 4421)\nCharge Mar 2026: $7,916 from 'DataPipe Labs LLC' (ACH, Wells Fargo account ending 8830)\nCharge Mar 2026: $4,200 from 'TerraLogic Inc' (card ending 4421)\n\n**Google Sheet — 'ARR Reconciliation Q2' (last edited Apr 2, 2026):**\nRow 44: TerraLogic Inc | $380,000 | Source: CRM\nRow 87: DataPipe | $95,000 | Source: CRM | Flag: 'Possible duplicate? Ask Marcus'",
     "question": "What is the correct consolidated ARR for this customer entity as of April 2026, and how many Zuora subscriptions should be mapped to it?",
     "answer_format": "multiple_choice",
     "choices": [
       "A) ARR = $488,400 (annualized MRR of Z-4491 + Z-3187 only; exclude Z-5002 because monthly terms are not ARR)",
       "B) ARR = $539,016 (annualized MRR across all 3 Zuora subs: $32,800 + $7,916 + $4,200 x 12); 3 Zuora subscriptions mapped to TerraLogic Inc",
-      "C) ARR = $380K (only the confirmed TerraLogic Inc SFDC record); 1 Zuora subscription (Z-4491) until legal formally merges billing entities",
-      "D) ARR = $475K (SFDC sum of both accounts); 2 Zuora subscriptions (Z-4491 + Z-3187)"
+      "C) ARR = $380K (only the confirmed TerraLogic Inc CRM record); 1 Zuora subscription (Z-4491) until legal formally merges billing entities",
+      "D) ARR = $475K (CRM sum of both accounts); 2 Zuora subscriptions (Z-4491 + Z-3187)"
     ],
     "correct_answer": "B",
-    "rationale": "The Slack thread confirms the entity change letter was signed effective 2/1/2026, with TerraLogic Inc as the surviving entity. David's checkmark emoji constitutes RevOps acknowledgment of the merge. Therefore all three Zuora subscriptions \u2014 including Z-3187 (still billing under legacy DataPipe name) and Z-5002 (the monthly Analytics Add-on created post-acquisition) \u2014 belong to the consolidated entity. The correct ARR is the annualized sum of all MRR: ($32,800 + $7,916 + $4,200) x 12 = $539,016. Answer A uses stale SFDC figures that predate the Analytics Add-on and don't reflect actual billing. Answer C incorrectly excludes monthly subscriptions from ARR \u2014 at Meridian, ARR includes all recurring revenue regardless of billing term per their ASC 606 policy. Answer D is overly conservative; the entity letter confirmation in Slack (with David's approval emoji) is sufficient to consolidate without waiting for a formal billing system merge.",
+    "rationale": "The Slack thread confirms the entity change letter was signed effective 2/1/2026, with TerraLogic Inc as the surviving entity. David's checkmark emoji constitutes RevOps acknowledgment of the merge. Therefore all three Zuora subscriptions — including Z-3187 (still billing under legacy DataPipe name) and Z-5002 (the monthly Analytics Add-on created post-acquisition) — belong to the consolidated entity. The correct ARR is the annualized sum of all MRR: ($32,800 + $7,916 + $4,200) x 12 = $539,016. Answer A uses stale CRM figures that predate the Analytics Add-on and don't reflect actual billing. Answer C incorrectly excludes monthly subscriptions from ARR — at Meridian, ARR includes all recurring revenue regardless of billing term per their ASC 606 policy. Answer D is overly conservative; the entity letter confirmation in Slack (with David's approval emoji) is sufficient to consolidate without waiting for a formal billing system merge.",
     "contributor": {
       "name": "David Okafor",
       "title": "Revenue Operations Manager",
@@ -24,7 +24,7 @@
     },
     "metadata": {
       "systems_referenced": [
-        "Salesforce",
+        "CRM",
         "Zuora",
         "Stripe",
         "Slack",
@@ -35,30 +35,32 @@
         "ARR",
         "MRR",
         "ASC 606",
-        "SFDC",
+        "CRM",
         "AE",
         "ACH"
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 6
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Forecasting Conflict Between CRM Pipeline and Usage Signals",
     "category": "cross_system_synthesis",
     "domain": "finance_revops",
     "difficulty": "expert",
-    "scenario": "It's forecast call prep for Q2 close. The VP of Sales is projecting $1.8M in expansion bookings from Helios Corp. You need to validate or flag this number.\n\n**Salesforce \u2014 Opportunity Record:**\nAccount: 'Helios Corp' | Opp: 'Helios Platform Expansion \u2014 Enterprise Tier' | Amount: $1,800,000 | Stage: Negotiation | Close Date: 2026-06-28 | Next Steps: 'Contract in legal review' | Owner: Priya Sharma (Enterprise AE)\nAccount field 'Contract Type': Multi-year | Field 'Payment Terms': Net-60\n\n**Zuora \u2014 Current Subscription:**\nCustomer: 'Helios Corporation' | Current ARR: $620,000 | Product: Platform Pro (250 seats) | Usage (last 90 days): Avg 112 seats active | Overage: $0 | Contract end: 2026-09-30\n\n**Slack \u2014 #customer-success (May 14, 2026, 2:33 PM)**\n@aisha.patel: Heads up \u2014 Helios is going through a reorg. My champion (VP Eng) is moving to a different BU. New VP starts in July.\n@carlos.reyes: Didn't they also open 2 P1s last month?\n@aisha.patel: Yeah, both resolved but the CTO mentioned 'reevaluating vendor stack' in our last exec sync. Wouldn't read too much into it but noting it here.\n\n**Looker \u2014 Usage Dashboard (pulled Jun 20, 2026):**\nHelios Corp \u2014 Platform Pro:\n- Seats provisioned: 250\n- Seats active (30-day): 98\n- Seats active (90-day): 112\n- API calls (Jun MTD): 45% below contracted threshold\n- Feature adoption: 3 of 8 modules actively used\n- Trend: Declining MoM for 4 consecutive months\n\n**Slack \u2014 DM between Priya Sharma and Jamie Reeves (Jun 18, 2026):**\nPriya: Between us \u2014 Helios legal is pushing back on the 3-year term. They want annual with an out clause. I might need to restructure this.\nJamie: Does David know? That changes the booking number right?\nPriya: Not yet. Let me see if I can save the multi-year first. Don't mention in forecast call pls.\n\n**Google Doc \u2014 'Q2 Forecast Assumptions' (shared with RevOps, last edited Jun 15):**\nHelios Corp: $1.8M expansion. Assumes 3-year multi-year commitment at Enterprise tier (500 seats). SSP allocation: 70% platform / 30% services. Ratable recognition over term.",
+    "scenario": "It's forecast call prep for Q2 close. The VP of Sales is projecting $1.8M in expansion bookings from Helios Corp. You need to validate or flag this number.\n\n**CRM — Opportunity Record:**\nAccount: 'Helios Corp' | Opp: 'Helios Platform Expansion — Enterprise Tier' | Amount: $1,800,000 | Stage: Negotiation | Close Date: 2026-06-28 | Next Steps: 'Contract in legal review' | Owner: Priya Sharma (Enterprise AE)\nAccount field 'Contract Type': Multi-year | Field 'Payment Terms': Net-60\n\n**Zuora — Current Subscription:**\nCustomer: 'Helios Corporation' | Current ARR: $620,000 | Product: Platform Pro (250 seats) | Usage (last 90 days): Avg 112 seats active | Overage: $0 | Contract end: 2026-09-30\n\n**Slack — #customer-success (May 14, 2026, 2:33 PM)**\n@aisha.patel: Heads up — Helios is going through a reorg. My champion (VP Eng) is moving to a different BU. New VP starts in July.\n@carlos.reyes: Didn't they also open 2 P1s last month?\n@aisha.patel: Yeah, both resolved but the CTO mentioned 'reevaluating vendor stack' in our last exec sync. Wouldn't read too much into it but noting it here.\n\n**Looker — Usage Dashboard (pulled Jun 20, 2026):**\nHelios Corp — Platform Pro:\n- Seats provisioned: 250\n- Seats active (30-day): 98\n- Seats active (90-day): 112\n- API calls (Jun MTD): 45% below contracted threshold\n- Feature adoption: 3 of 8 modules actively used\n- Trend: Declining MoM for 4 consecutive months\n\n**Slack — DM between Priya Sharma and Jamie Reeves (Jun 18, 2026):**\nPriya: Between us — Helios legal is pushing back on the 3-year term. They want annual with an out clause. I might need to restructure this.\nJamie: Does David know? That changes the booking number right?\nPriya: Not yet. Let me see if I can save the multi-year first. Don't mention in forecast call pls.\n\n**Google Doc — 'Q2 Forecast Assumptions' (shared with RevOps, last edited Jun 15):**\nHelios Corp: $1.8M expansion. Assumes 3-year multi-year commitment at Enterprise tier (500 seats). SSP allocation: 70% platform / 30% services. Ratable recognition over term.",
     "question": "Based on all available signals, what forecast adjustment recommendation should RevOps present at the Q2 forecast call?",
     "answer_format": "multiple_choice",
     "choices": [
-      "A) Downgrade to $620K flat renewal at risk \u2014 usage at 39% of provisioned seats with declining trend and champion departure signals likely churn, not expansion",
-      "B) Move to $1.2M \u2014 apply a standard 30% haircut for multi-year-to-annual conversion risk while keeping the expansion assumption intact",
+      "A) Downgrade to $620K flat renewal at risk — usage at 39% of provisioned seats with declining trend and champion departure signals likely churn, not expansion",
+      "B) Move to $1.2M — apply a standard 30% haircut for multi-year-to-annual conversion risk while keeping the expansion assumption intact",
       "C) Flag as at-risk; recommend re-forecasting to ~$600K annual booking (restructured as 1-year deal at current usage levels) with expansion upside removed from Q2 commit",
-      "D) Keep at $1.8M \u2014 the opportunity is in Negotiation stage with contract in legal review; AE-level DMs about deal structure are premature concerns"
+      "D) Keep at $1.8M — the opportunity is in Negotiation stage with contract in legal review; AE-level DMs about deal structure are premature concerns"
     ],
     "correct_answer": "C",
-    "rationale": "Multiple converging signals demand a significant downward revision: (1) Usage is at 39-45% of provisioned capacity and declining for 4 months \u2014 the customer won't expand to 500 seats when they're actively using fewer than 100 of their current 250. (2) The AE's private DM reveals the multi-year structure is collapsing, which invalidates the $1.8M booking number (that assumed 3-year ratable). (3) Champion departure + CTO 'reevaluating vendor stack' comment + 2 recent P1s create genuine churn risk. The correct RevOps call is to remove the expansion from Q2 commit entirely and re-forecast as a right-sized annual deal around current usage (~$600K). Answer A ignores the DM signal, usage data, and CS intelligence \u2014 a classic failure mode of trusting CRM stage over real signals. Answer B is too aggressive; despite the negative signals, there's no indication of active churn \u2014 the contract runs through September and Helios is still engaged. Answer D applies a mechanical discount rather than synthesizing the actual signals about deal structure change and usage reality.",
+    "rationale": "Multiple converging signals demand a significant downward revision: (1) Usage is at 39-45% of provisioned capacity and declining for 4 months — the customer won't expand to 500 seats when they're actively using fewer than 100 of their current 250. (2) The AE's private DM reveals the multi-year structure is collapsing, which invalidates the $1.8M booking number (that assumed 3-year ratable). (3) Champion departure + CTO 'reevaluating vendor stack' comment + 2 recent P1s create genuine churn risk. The correct RevOps call is to remove the expansion from Q2 commit entirely and re-forecast as a right-sized annual deal around current usage (~$600K). Answer A ignores the DM signal, usage data, and CS intelligence — a classic failure mode of trusting CRM stage over real signals. Answer B is too aggressive; despite the negative signals, there's no indication of active churn — the contract runs through September and Helios is still engaged. Answer D applies a mechanical discount rather than synthesizing the actual signals about deal structure change and usage reality.",
     "contributor": {
       "name": "David Okafor",
       "title": "Revenue Operations Manager",
@@ -68,7 +70,7 @@
     },
     "metadata": {
       "systems_referenced": [
-        "Salesforce",
+        "CRM",
         "Zuora",
         "Slack",
         "Looker",
@@ -88,24 +90,26 @@
       ],
       "policy_versions_involved": 0,
       "temporal_span_months": 4
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   },
   {
     "title": "Revenue Recognition Timing Under Pre-Deal-Desk Precedent",
     "category": "temporal_consistency",
     "domain": "finance_revops",
     "difficulty": "hard",
-    "scenario": "The controller is asking why $214K in Q1 revenue wasn't recognized as expected. You need to trace the booking and determine the correct rev rec treatment.\n\n**Salesforce \u2014 Opportunity:**\nAccount: 'Oakmont Partners' | Opp: 'Oakmont \u2014 Analytics Suite Renewal + Expansion' | Amount: $214,000 | Close Date: 2026-01-22 | Stage: Closed Won | Owner: Marcus Bell | Products: Analytics Suite ($164K) + Professional Services ($50K)\nCustom field 'Discount Approval': 'Pre-approved \u2014 see legacy exception'\nCustom field 'Rev Rec Override': blank\n\n**Zuora \u2014 Revenue Schedule:**\nSubscription Z-6120: Customer 'Oakmont Partners LLC' | Total: $164,000 | Recognition: Ratable over 12 months | Start: 2026-02-01 | Status: Active\nNo revenue schedule found for $50K services component.\n\n**Confluence \u2014 'Deal Desk Policy v2.1' (published Aug 2025):**\nSection 4.3: 'All professional services bundled with subscription renewals must have standalone selling price (SSP) established. If SSP cannot be determined, the entire arrangement is recognized ratably over the subscription term per ASC 606-10-32-33.'\nSection 4.5: 'Discount approvals require Deal Desk sign-off for any discount exceeding 15%.'\n\n**Confluence \u2014 'Deal Desk Policy v1.0' (archived, published Jan 2025):**\nSection 3.1: 'Professional services may be recognized point-in-time upon delivery when sold alongside subscriptions, provided services are distinct performance obligations.'\nNote: This was the operative policy before Deal Desk was formally created (Aug 2025).\n\n**Slack \u2014 #deal-desk (Jan 19, 2026, 3:15 PM)**\n@marcus.bell: Oakmont renewal is ready. I applied the 18% discount we gave them last year \u2014 same structure as their original deal from 2024.\n@lisa.park: That's over 15%. Need DD approval per v2.1.\n@marcus.bell: This was pre-approved under the old policy. The discount was part of their original MSA negotiation before deal desk existed.\n@lisa.park: :thinking_face: Let me check with David\n[Thread \u2014 no further replies]\n\n**Slack \u2014 DM from Lisa Park to David Okafor (Jan 20, 2026, 9:41 AM):**\nLisa: Marcus is claiming grandfathered discount for Oakmont. Original deal was in 2024 under v1.0 terms. Do we honor it?\nDavid: If the MSA explicitly states the discount rate, yes \u2014 contractual obligation overrides current policy. But the rev rec treatment on services follows current guidance (v2.1 sec 4.3). Make sure finance knows.\nLisa: :thumbsup:\n\n**Google Sheet \u2014 'Q1 Rev Rec Exceptions' (Finance-owned, last edited Mar 28, 2026):**\nRow 12: Oakmont Partners | $50K services | Status: 'HOLD \u2014 awaiting SSP determination' | Notes: 'AE says point-in-time per old policy. Controller disagrees. Escalated to RevOps.'",
+    "scenario": "The controller is asking why $214K in Q1 revenue wasn't recognized as expected. You need to trace the booking and determine the correct rev rec treatment.\n\n**CRM — Opportunity:**\nAccount: 'Oakmont Partners' | Opp: 'Oakmont — Analytics Suite Renewal + Expansion' | Amount: $214,000 | Close Date: 2026-01-22 | Stage: Closed Won | Owner: Marcus Bell | Products: Analytics Suite ($164K) + Professional Services ($50K)\nCustom field 'Discount Approval': 'Pre-approved — see legacy exception'\nCustom field 'Rev Rec Override': blank\n\n**Zuora — Revenue Schedule:**\nSubscription Z-6120: Customer 'Oakmont Partners LLC' | Total: $164,000 | Recognition: Ratable over 12 months | Start: 2026-02-01 | Status: Active\nNo revenue schedule found for $50K services component.\n\n**Confluence — 'Deal Desk Policy v2.1' (published Aug 2025):**\nSection 4.3: 'All professional services bundled with subscription renewals must have standalone selling price (SSP) established. If SSP cannot be determined, the entire arrangement is recognized ratably over the subscription term per ASC 606-10-32-33.'\nSection 4.5: 'Discount approvals require Deal Desk sign-off for any discount exceeding 15%.'\n\n**Confluence — 'Deal Desk Policy v1.0' (archived, published Jan 2025):**\nSection 3.1: 'Professional services may be recognized point-in-time upon delivery when sold alongside subscriptions, provided services are distinct performance obligations.'\nNote: This was the operative policy before Deal Desk was formally created (Aug 2025).\n\n**Slack — #deal-desk (Jan 19, 2026, 3:15 PM)**\n@marcus.bell: Oakmont renewal is ready. I applied the 18% discount we gave them last year — same structure as their original deal from 2024.\n@lisa.park: That's over 15%. Need DD approval per v2.1.\n@marcus.bell: This was pre-approved under the old policy. The discount was part of their original MSA negotiation before deal desk existed.\n@lisa.park: :thinking_face: Let me check with David\n[Thread — no further replies]\n\n**Slack — DM from Lisa Park to David Okafor (Jan 20, 2026, 9:41 AM):**\nLisa: Marcus is claiming grandfathered discount for Oakmont. Original deal was in 2024 under v1.0 terms. Do we honor it?\nDavid: If the MSA explicitly states the discount rate, yes — contractual obligation overrides current policy. But the rev rec treatment on services follows current guidance (v2.1 sec 4.3). Make sure finance knows.\nLisa: :thumbsup:\n\n**Google Sheet — 'Q1 Rev Rec Exceptions' (Finance-owned, last edited Mar 28, 2026):**\nRow 12: Oakmont Partners | $50K services | Status: 'HOLD — awaiting SSP determination' | Notes: 'AE says point-in-time per old policy. Controller disagrees. Escalated to RevOps.'",
     "question": "What is the correct revenue recognition treatment for the $50K professional services component of the Oakmont deal?",
     "answer_format": "multiple_choice",
     "choices": [
-      "A) Hold recognition indefinitely until Deal Desk formally approves the discount and establishes SSP \u2014 neither legacy nor current policy can apply without explicit sign-off",
-      "B) Recognize point-in-time upon delivery \u2014 the deal was structured under v1.0 terms and the grandfathered discount confirms legacy treatment applies to the entire arrangement",
-      "C) Split: recognize $164K ratably and $50K point-in-time \u2014 the discount is grandfathered but rev rec follows current ASC 606 interpretation which allows distinct performance obligations to be separated",
-      "D) Recognize ratably over 12 months alongside the subscription \u2014 per current policy v2.1 Section 4.3, since SSP has not been established for the services component"
+      "A) Hold recognition indefinitely until Deal Desk formally approves the discount and establishes SSP — neither legacy nor current policy can apply without explicit sign-off",
+      "B) Recognize point-in-time upon delivery — the deal was structured under v1.0 terms and the grandfathered discount confirms legacy treatment applies to the entire arrangement",
+      "C) Split: recognize $164K ratably and $50K point-in-time — the discount is grandfathered but rev rec follows current ASC 606 interpretation which allows distinct performance obligations to be separated",
+      "D) Recognize ratably over 12 months alongside the subscription — per current policy v2.1 Section 4.3, since SSP has not been established for the services component"
     ],
     "correct_answer": "D",
-    "rationale": "David's DM to Lisa explicitly states: 'the rev rec treatment on services follows current guidance (v2.1 sec 4.3).' The grandfathering applies ONLY to the discount rate (contractual obligation from the MSA), not to the revenue recognition methodology. Under v2.1 Section 4.3, when SSP cannot be determined for bundled professional services, the entire arrangement is recognized ratably. The Google Sheet confirms SSP has not been established ('awaiting SSP determination'), which triggers the ratable treatment. Answer A incorrectly extends the grandfathering to rev rec treatment \u2014 David's DM specifically separates these two issues. Answer C is wrong because the discount WAS implicitly approved (David confirmed contractual obligation overrides current discount policy), and the rev rec path is clear under v2.1. Answer D correctly identifies the discount grandfathering but applies the wrong rev rec conclusion \u2014 v2.1 requires SSP establishment before services can be treated as distinct; without SSP, ratable applies to the full arrangement.",
+    "rationale": "David's DM to Lisa explicitly states: 'the rev rec treatment on services follows current guidance (v2.1 sec 4.3).' The grandfathering applies ONLY to the discount rate (contractual obligation from the MSA), not to the revenue recognition methodology. Under v2.1 Section 4.3, when SSP cannot be determined for bundled professional services, the entire arrangement is recognized ratably. The Google Sheet confirms SSP has not been established ('awaiting SSP determination'), which triggers the ratable treatment. Answer A incorrectly extends the grandfathering to rev rec treatment — David's DM specifically separates these two issues. Answer C is wrong because the discount WAS implicitly approved (David confirmed contractual obligation overrides current discount policy), and the rev rec path is clear under v2.1. Answer D correctly identifies the discount grandfathering but applies the wrong rev rec conclusion — v2.1 requires SSP establishment before services can be treated as distinct; without SSP, ratable applies to the full arrangement.",
     "contributor": {
       "name": "David Okafor",
       "title": "Revenue Operations Manager",
@@ -115,13 +119,13 @@
     },
     "metadata": {
       "systems_referenced": [
-        "Salesforce",
+        "CRM",
         "Zuora",
         "Confluence",
         "Slack",
         "Google Sheets"
       ],
-      "informal_signal_location": "Slack DM where RevOps manager separates discount grandfathering from rev rec treatment \u2014 the key distinction",
+      "informal_signal_location": "Slack DM where RevOps manager separates discount grandfathering from rev rec treatment — the key distinction",
       "acronyms_used": [
         "SSP",
         "ASC 606",
@@ -133,6 +137,8 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 14
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   }
 ]

@@ -44,7 +44,9 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 4
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   },
   {
     "title": "Dual-System Approval with Currency Mismatch on Mexico Plant Expenditure",
@@ -92,7 +94,9 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 2
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   },
   {
     "title": "Executive Override with Missing Post-Authorization Review",
@@ -139,6 +143,8 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 1
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   }
 ]

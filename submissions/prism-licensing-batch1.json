@@ -39,7 +39,9 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 51
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Rights Window Auto-Renewal References Amended Territory in Legacy System Only",
@@ -82,7 +84,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 60
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Holdback Conflict Between Legacy Distributor Grant and New DTC Deal",
@@ -126,6 +130,8 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 32
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   }
 ]

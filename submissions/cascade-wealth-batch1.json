@@ -41,7 +41,9 @@
       ],
       "policy_versions_involved": 3,
       "temporal_span_months": 18
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Discretionary Trade Authorization After Missed Annual Review",
@@ -84,7 +86,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 36
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Cross-System Account Transfer for Estate Settlement with Name Mismatch",
@@ -129,6 +133,8 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 48
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   }
 ]

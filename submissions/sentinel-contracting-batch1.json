@@ -43,7 +43,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 42
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Option Year Exercise Validity After Performance Lapse",
@@ -89,7 +91,9 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 36
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "DFARS Version Conflict in Equitable Adjustment on Pre-2023 Contract",
@@ -140,6 +144,8 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 60
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   }
 ]

@@ -44,7 +44,9 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 16
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   },
   {
     "title": "Intra-Company Competitive Bid Collision After Organizational Restructuring",
@@ -92,7 +94,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 4
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Post-Award Cost Data Accuracy and Defective Pricing Exposure",
@@ -140,6 +144,8 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 15
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   }
 ]

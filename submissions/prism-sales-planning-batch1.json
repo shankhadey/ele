@@ -42,7 +42,9 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 6
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   },
   {
     "title": "Rate Card Floor Conflict on Pre-Change Verbal Commitment",
@@ -87,7 +89,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 4
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   },
   {
     "title": "Cross-Platform Package Margin Conflict with Streaming P&L Separation",
@@ -132,6 +136,8 @@
       ],
       "policy_versions_involved": 3,
       "temporal_span_months": 6
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   }
 ]

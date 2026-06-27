@@ -41,7 +41,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 84
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   },
   {
     "title": "Catalog Year Rights Conflict After Articulation Agreement Revision",
@@ -85,7 +87,9 @@
       ],
       "policy_versions_involved": 3,
       "temporal_span_months": 46
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   },
   {
     "title": "Retroactive Withdrawal Request Spanning Pre-Merge Enrollment Terms",
@@ -129,6 +133,8 @@
       ],
       "policy_versions_involved": 3,
       "temporal_span_months": 72
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   }
 ]

@@ -41,7 +41,9 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 13
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Subcontractor Entity Mismatch on Lien Waiver",
@@ -87,7 +89,9 @@
       ],
       "policy_versions_involved": 0,
       "temporal_span_months": 9
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   },
   {
     "title": "GMP Contingency vs Owner Allowance at Project Closeout",
@@ -133,6 +137,8 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 15
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   }
 ]

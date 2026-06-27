@@ -40,7 +40,9 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 9
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Verbal Commitment Under Prior Credit Policy During Mid-Cycle Tightening",
@@ -87,7 +89,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 1
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Departed Officer's Modification Approval Against Updated Delegation Matrix",
@@ -132,6 +136,8 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 6
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   }
 ]

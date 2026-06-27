@@ -44,7 +44,9 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 132
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Grandfathered NESC Standard Versus New Development Trigger with Lapsed Budget Authority",
@@ -92,7 +94,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 10
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   },
   {
     "title": "Conflicting Inspection Priority Scores Drive Mismatched Capital Filing and Budget Approval",
@@ -141,6 +145,8 @@
       ],
       "policy_versions_involved": 0,
       "temporal_span_months": 14
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   }
 ]

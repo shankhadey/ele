@@ -44,7 +44,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 14
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Policy Harmonization Gap During Integration Transition Period",
@@ -86,7 +88,9 @@
       ],
       "policy_versions_involved": 4,
       "temporal_span_months": 18
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "TSA Vendor Invoice Routing After Legal Entity Rationalization",
@@ -129,6 +133,8 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 15
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   }
 ]

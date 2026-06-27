@@ -46,7 +46,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 15
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Overtime Grievance Under Conflicting CBA Terms",
@@ -92,7 +94,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 3
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   },
   {
     "title": "Grandfathered Equipment and Implicit MOC Acceptance",
@@ -139,6 +143,8 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 24
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   }
 ]

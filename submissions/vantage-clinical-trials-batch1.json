@@ -42,7 +42,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 1
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Informed Consent Version Mismatch After Mid-Enrollment Amendment",
@@ -87,7 +89,9 @@
       ],
       "policy_versions_involved": 3,
       "temporal_span_months": 2
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   },
   {
     "title": "DSMB Enrollment Hold Authorization Chain After SAE Cluster",
@@ -133,6 +137,8 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 1
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   }
 ]

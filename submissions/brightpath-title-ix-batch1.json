@@ -39,7 +39,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 4
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Evidentiary Standard Mismatch Across Regulatory Transitions",
@@ -80,7 +82,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 12
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Informal Resolution Eligibility After Mandatory Reporter Disclosure Gap",
@@ -124,6 +128,8 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 4
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   }
 ]

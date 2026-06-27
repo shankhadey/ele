@@ -4,7 +4,7 @@
     "category": "entity_resolution",
     "domain": "sales_deal_desk",
     "difficulty": "hard",
-    "scenario": "**Salesforce PRM — Deal Registration DR-2026-0441**\nPartner: 'CloudBridge Consulting' | Partner Tier: Gold | Deal Reg Submitted: Jan 12, 2026\nProspect: Orion Logistics | Estimated ACV: $185K | Stage: Negotiating\nDeal Reg Status: Approved (Jan 14) | Expiration: Apr 14, 2026\nPartner Contact: Amanda Reeves, VP Alliances, amanda@cloudbridge.io\n\n**Salesforce PRM — Deal Registration DR-2026-0587**\nPartner: 'Nimbus Digital Solutions' | Partner Tier: Silver | Deal Reg Submitted: Feb 3, 2026\nProspect: Orion Logistics Inc. | Estimated ACV: $210K | Stage: Discovery\nDeal Reg Status: Approved (Feb 5) | Expiration: May 5, 2026\nPartner Contact: Jason Trask, Director Partnerships, j.trask@nimbusdigital.com\n\n**Slack — #channel-conflict (Feb 8, 2026, 2:47 PM)**\n@marcus.chen: Flagging — two regs on Orion Logistics. CloudBridge (DR-0441) and Nimbus (DR-0587). First-touch goes to CloudBridge.\n@sarah.oconnell: Nimbus might actually be the same org as CloudBridge now? Thought I saw something about an acquisition.\n@marcus.chen: Looking into it.\n[Thread has no further replies]\n\n**Google Sheets — Partner Scorecard (Q4 2025 tab, row 34)**\nCloudBridge Consulting | Status: Active | Tier: Gold | Notes: 'Acquired by Nimbus Digital Holdings LLC effective Nov 1, 2025. Retaining brand for existing engagements per MDF agreement.'\n\n**DocuSign — Partner Agreement (signed Aug 2024)**\nParty: CloudBridge Consulting LLC\nSection 8.2: 'In the event of a change of control, all active deal registrations remain valid through their expiration date. Partner tier status shall be re-evaluated within 60 days of change of control notification.'\n\n**Slack — #partnerships (Nov 15, 2025, 10:03 AM)**\n@amanda.reeves: Hey team, just wanted to confirm CloudBridge is now part of the Nimbus family. We'll keep running our existing book under the CB brand for now. Happy to chat about how this affects our tier and pipeline.\n@marcus.chen: Congrats! I'll kick off the change-of-control review.\n@amanda.reeves: :pray:\n[No further thread activity; no change-of-control review ticket exists in Jira]",
+    "scenario": "**PRM Portal — Deal Registration DR-2026-0441**\nPartner: 'CloudBridge Consulting' | Partner Tier: Gold | Deal Reg Submitted: Jan 12, 2026\nProspect: Orion Logistics | Estimated ACV: $185K | Stage: Negotiating\nDeal Reg Status: Approved (Jan 14) | Expiration: Apr 14, 2026\nPartner Contact: Amanda Reeves, VP Alliances, amanda@cloudbridge.io\n\n**PRM Portal — Deal Registration DR-2026-0587**\nPartner: 'Nimbus Digital Solutions' | Partner Tier: Silver | Deal Reg Submitted: Feb 3, 2026\nProspect: Orion Logistics Inc. | Estimated ACV: $210K | Stage: Discovery\nDeal Reg Status: Approved (Feb 5) | Expiration: May 5, 2026\nPartner Contact: Jason Trask, Director Partnerships, j.trask@nimbusdigital.com\n\n**Slack — #channel-conflict (Feb 8, 2026, 2:47 PM)**\n@marcus.chen: Flagging — two regs on Orion Logistics. CloudBridge (DR-0441) and Nimbus (DR-0587). First-touch goes to CloudBridge.\n@sarah.oconnell: Nimbus might actually be the same org as CloudBridge now? Thought I saw something about an acquisition.\n@marcus.chen: Looking into it.\n[Thread has no further replies]\n\n**Google Sheets — Partner Scorecard (Q4 2025 tab, row 34)**\nCloudBridge Consulting | Status: Active | Tier: Gold | Notes: 'Acquired by Nimbus Digital Holdings LLC effective Nov 1, 2025. Retaining brand for existing engagements per MDF agreement.'\n\n**DocuSign — Partner Agreement (signed Aug 2024)**\nParty: CloudBridge Consulting LLC\nSection 8.2: 'In the event of a change of control, all active deal registrations remain valid through their expiration date. Partner tier status shall be re-evaluated within 60 days of change of control notification.'\n\n**Slack — #partnerships (Nov 15, 2025, 10:03 AM)**\n@amanda.reeves: Hey team, just wanted to confirm CloudBridge is now part of the Nimbus family. We'll keep running our existing book under the CB brand for now. Happy to chat about how this affects our tier and pipeline.\n@marcus.chen: Congrats! I'll kick off the change-of-control review.\n@amanda.reeves: :pray:\n[No further thread activity; no change-of-control review ticket exists in Jira]",
     "question": "Given the channel conflict between DR-0441 (CloudBridge) and DR-0587 (Nimbus), who should receive referral credit for the Orion Logistics opportunity?",
     "answer_format": "multiple_choice",
     "choices": [
@@ -24,7 +24,7 @@
     },
     "metadata": {
       "systems_referenced": [
-        "Salesforce PRM",
+        "PRM Portal",
         "Slack",
         "Google Sheets",
         "DocuSign",
@@ -39,14 +39,16 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 4
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Partner Tier Downgrade During Active Co-Sell Pipeline",
     "category": "precedent_exception",
     "domain": "sales_deal_desk",
     "difficulty": "expert",
-    "scenario": "**Salesforce PRM — Partner Record: Apex Integration Partners**\nTier: Gold (since Q2 2024) | Tier Review Date: Apr 1, 2026\nTrailing 4Q Sourced Revenue: $680K (Gold threshold: $750K)\nInfluenced Revenue: $1.2M | Active Pipeline (co-sell): $320K across 3 opps\nPartner Manager: Marcus Chen\n\n**Google Sheets — Partner Scorecard (Q1 2026 Final)**\nApex Integration Partners | Sourced: $680K | Influenced: $1.2M | Certifications: 12 (requirement: 8) | CSAT: 4.7/5.0\nTier Recommendation: DOWNGRADE to Silver (sourced revenue below $750K threshold)\nNotes cell: 'Marcus — holding for now per conversation with Raj. See Slack.'\n\n**Slack — #partnerships (Mar 22, 2026, 3:18 PM)**\n@marcus.chen: @raj.patel Quick q — Apex is $70K short on sourced for Gold renewal. But they've got $320K in active co-sell pipe that should close in Q2. If even one of those lands, they'd clear the threshold retroactively. Thoughts on holding tier?\n@raj.patel: What's the precedent? Did we hold for anyone else?\n@marcus.chen: We held for DataStream last year when they were $40K short — but that was before the new partner policy doc.\n@raj.patel: :thinking_face:\n@raj.patel: Let's discuss in 1:1 Thursday.\n\n**Google Calendar — 'Marcus / Raj 1:1' (Mar 25, 2026, 11:00 AM)**\nAttendees: marcus.chen (accepted), raj.patel (accepted)\nAgenda: [link to Google Doc — doc is empty, no notes taken]\nDuration: 30 min | Location: Zoom (no recording)\n\n**Confluence — Partner Program Policy v3.1 (published Jan 2026)**\nSection 4.3 — Tier Evaluation:\n'Partner tiers are evaluated quarterly based on trailing 4-quarter performance. Partners who do not meet the minimum sourced revenue threshold for their current tier will be downgraded at the next review cycle. No grace periods apply.'\n[Page version history shows v3.0 (Jul 2025) stated: 'Partners within 10% of threshold may be granted a one-quarter grace period at Partner Manager discretion.']\n\n**Slack DM — Marcus Chen to Priya Venkatesh (Mar 28, 2026, 9:41 AM)**\n@marcus.chen: Hey Priya — did Raj mention anything about the Apex tier hold in your leadership sync yesterday?\n@priya.venkatesh: He said 'handle it like DataStream' — that's all I caught. Was in the context of not wanting to disrupt active co-sells.\n@marcus.chen: :+1: Thanks. That's what I needed.",
+    "scenario": "**PRM Portal — Partner Record: Apex Integration Partners**\nTier: Gold (since Q2 2024) | Tier Review Date: Apr 1, 2026\nTrailing 4Q Sourced Revenue: $680K (Gold threshold: $750K)\nInfluenced Revenue: $1.2M | Active Pipeline (co-sell): $320K across 3 opps\nPartner Manager: Marcus Chen\n\n**Google Sheets — Partner Scorecard (Q1 2026 Final)**\nApex Integration Partners | Sourced: $680K | Influenced: $1.2M | Certifications: 12 (requirement: 8) | CSAT: 4.7/5.0\nTier Recommendation: DOWNGRADE to Silver (sourced revenue below $750K threshold)\nNotes cell: 'Marcus — holding for now per conversation with Raj. See Slack.'\n\n**Slack — #partnerships (Mar 22, 2026, 3:18 PM)**\n@marcus.chen: @raj.patel Quick q — Apex is $70K short on sourced for Gold renewal. But they've got $320K in active co-sell pipe that should close in Q2. If even one of those lands, they'd clear the threshold retroactively. Thoughts on holding tier?\n@raj.patel: What's the precedent? Did we hold for anyone else?\n@marcus.chen: We held for DataStream last year when they were $40K short — but that was before the new partner policy doc.\n@raj.patel: :thinking_face:\n@raj.patel: Let's discuss in 1:1 Thursday.\n\n**Google Calendar — 'Marcus / Raj 1:1' (Mar 25, 2026, 11:00 AM)**\nAttendees: marcus.chen (accepted), raj.patel (accepted)\nAgenda: [link to Google Doc — doc is empty, no notes taken]\nDuration: 30 min | Location: Zoom (no recording)\n\n**Confluence — Partner Program Policy v3.1 (published Jan 2026)**\nSection 4.3 — Tier Evaluation:\n'Partner tiers are evaluated quarterly based on trailing 4-quarter performance. Partners who do not meet the minimum sourced revenue threshold for their current tier will be downgraded at the next review cycle. No grace periods apply.'\n[Page version history shows v3.0 (Jul 2025) stated: 'Partners within 10% of threshold may be granted a one-quarter grace period at Partner Manager discretion.']\n\n**Slack DM — Marcus Chen to Priya Venkatesh (Mar 28, 2026, 9:41 AM)**\n@marcus.chen: Hey Priya — did Raj mention anything about the Apex tier hold in your leadership sync yesterday?\n@priya.venkatesh: He said 'handle it like DataStream' — that's all I caught. Was in the context of not wanting to disrupt active co-sells.\n@marcus.chen: :+1: Thanks. That's what I needed.",
     "question": "Based on all available signals, what is the correct tier decision for Apex Integration Partners at the April 1, 2026 review?",
     "answer_format": "multiple_choice",
     "choices": [
@@ -66,7 +68,7 @@
     },
     "metadata": {
       "systems_referenced": [
-        "Salesforce PRM",
+        "PRM Portal",
         "Google Sheets",
         "Slack",
         "Google Calendar",
@@ -81,14 +83,16 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 9
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   },
   {
     "title": "Referral Attribution Dispute with Conflicting Timestamps Across Systems",
     "category": "temporal_consistency",
     "domain": "sales_deal_desk",
     "difficulty": "hard",
-    "scenario": "**Salesforce — Opportunity: 'Helix BioSciences — Enterprise Platform'**\nClose Date: Mar 15, 2026 | Amount: $290K ACV | Stage: Closed Won\nSource Field: 'Partner Referral — TechForward Solutions'\nInfluence Field: [blank]\nCreated Date: Dec 8, 2025 | First Meeting: Dec 14, 2025\n\n**Salesforce PRM — Deal Registration DR-2025-1189**\nPartner: TechForward Solutions | Submitted: Dec 7, 2025 | Prospect: Helix BioSciences\nStatus: Approved | Approved by: marcus.chen | Referral type: Sourced\n\n**Salesforce PRM — Deal Registration DR-2025-1203**\nPartner: Quantum Consulting Group | Submitted: Dec 12, 2025 | Prospect: Helix Bio\nStatus: Rejected (Dec 13) | Reason: 'Duplicate — existing registration by TechForward (DR-2025-1189)'\n\n**Slack — #channel-conflict (Jan 8, 2026, 11:22 AM)**\n@derek.simmons [Quantum Consulting]: Marcus — contesting the DR rejection on Helix. We introduced their CTO to your AE at the Gartner event in November. That's sourced, not influenced. TechForward only filed first because we didn't know the prospect's legal name.\n@marcus.chen: Let me pull the event logs. When exactly was the Gartner intro?\n@derek.simmons: Nov 19. I can forward the email from their CTO thanking me for connecting them with your team.\n@marcus.chen: Send it over. I'll review with the deal desk.\n\n**Gmail — Forwarded to marcus.chen@meridian.io (Jan 9, 2026)**\nFrom: derek.simmons@quantumconsulting.com\n--- Forwarded message ---\nFrom: r.nakamura@helixbio.com\nTo: derek.simmons@quantumconsulting.com\nDate: Nov 20, 2025\nSubject: Re: Great meeting you at Gartner\n\n\"Derek — thanks for introducing me to the Meridian team yesterday. Looking forward to the demo next week.\"\n\n**Google Sheets — Gartner Summit Nov 2025 Lead Scan Export**\nRow 47: 'R. Nakamura | Helix BioSciences | Scanned by: @lisa.tran [Meridian AE] | Nov 19, 2025 | Notes: met at partner reception, intro via Derek S (Quantum)'\n\n**Slack — #partnerships (Jan 10, 2026, 4:55 PM)**\n@marcus.chen: @raj.patel Helix attribution is messy. TechForward has the approved reg but Quantum has proof of first-touch at Gartner 3 weeks prior. Our policy is first-touch for sourced. But TechForward filed the reg first and it's already approved.\n@raj.patel: What does the partner agreement say about contested regs after approval?\n@marcus.chen: 'Approved registrations may be revisited within 30 days if new evidence of prior engagement is presented.' We're at day 34 from approval.\n@raj.patel: :grimacing:\n[No further messages]",
+    "scenario": "**CRM — Opportunity: 'Helix BioSciences — Enterprise Platform'**\nClose Date: Mar 15, 2026 | Amount: $290K ACV | Stage: Closed Won\nSource Field: 'Partner Referral — TechForward Solutions'\nInfluence Field: [blank]\nCreated Date: Dec 8, 2025 | First Meeting: Dec 14, 2025\n\n**PRM Portal — Deal Registration DR-2025-1189**\nPartner: TechForward Solutions | Submitted: Dec 7, 2025 | Prospect: Helix BioSciences\nStatus: Approved | Approved by: marcus.chen | Referral type: Sourced\n\n**PRM Portal — Deal Registration DR-2025-1203**\nPartner: Quantum Consulting Group | Submitted: Dec 12, 2025 | Prospect: Helix Bio\nStatus: Rejected (Dec 13) | Reason: 'Duplicate — existing registration by TechForward (DR-2025-1189)'\n\n**Slack — #channel-conflict (Jan 8, 2026, 11:22 AM)**\n@derek.simmons [Quantum Consulting]: Marcus — contesting the DR rejection on Helix. We introduced their CTO to your AE at the Gartner event in November. That's sourced, not influenced. TechForward only filed first because we didn't know the prospect's legal name.\n@marcus.chen: Let me pull the event logs. When exactly was the Gartner intro?\n@derek.simmons: Nov 19. I can forward the email from their CTO thanking me for connecting them with your team.\n@marcus.chen: Send it over. I'll review with the deal desk.\n\n**Gmail — Forwarded to marcus.chen@meridian.io (Jan 9, 2026)**\nFrom: derek.simmons@quantumconsulting.com\n--- Forwarded message ---\nFrom: r.nakamura@helixbio.com\nTo: derek.simmons@quantumconsulting.com\nDate: Nov 20, 2025\nSubject: Re: Great meeting you at Gartner\n\n\"Derek — thanks for introducing me to the Meridian team yesterday. Looking forward to the demo next week.\"\n\n**Google Sheets — Gartner Summit Nov 2025 Lead Scan Export**\nRow 47: 'R. Nakamura | Helix BioSciences | Scanned by: @lisa.tran [Meridian AE] | Nov 19, 2025 | Notes: met at partner reception, intro via Derek S (Quantum)'\n\n**Slack — #partnerships (Jan 10, 2026, 4:55 PM)**\n@marcus.chen: @raj.patel Helix attribution is messy. TechForward has the approved reg but Quantum has proof of first-touch at Gartner 3 weeks prior. Our policy is first-touch for sourced. But TechForward filed the reg first and it's already approved.\n@raj.patel: What does the partner agreement say about contested regs after approval?\n@marcus.chen: 'Approved registrations may be revisited within 30 days if new evidence of prior engagement is presented.' We're at day 34 from approval.\n@raj.patel: :grimacing:\n[No further messages]",
     "question": "Who should receive 'sourced' referral credit for the Helix BioSciences opportunity?",
     "answer_format": "multiple_choice",
     "choices": [
@@ -108,8 +112,8 @@
     },
     "metadata": {
       "systems_referenced": [
-        "Salesforce",
-        "Salesforce PRM",
+        "CRM",
+        "PRM Portal",
         "Slack",
         "Gmail",
         "Google Sheets"
@@ -124,6 +128,8 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 5
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   }
 ]

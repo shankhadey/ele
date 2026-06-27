@@ -46,7 +46,9 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 18
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "PPA Price Escalator Dispute — Ambiguous CPI Index Reference",
@@ -94,7 +96,9 @@
       ],
       "policy_versions_involved": 0,
       "temporal_span_months": 36
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "COD Extension Approved Without Delegation Authority",
@@ -141,6 +145,8 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 5
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   }
 ]

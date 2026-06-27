@@ -44,7 +44,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 4
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Vendor Master Deduplication During Ariba Migration Conflicts with Active PO",
@@ -90,7 +92,9 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 6
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   },
   {
     "title": "Unit of Measure Mismatch Masks Price Variance in ERP Migration Data",
@@ -135,6 +139,8 @@
       ],
       "policy_versions_involved": 0,
       "temporal_span_months": 22
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   }
 ]

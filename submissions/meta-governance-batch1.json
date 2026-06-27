@@ -42,7 +42,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 5
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Cross-Entity Lease Execution with Ambiguous LLC Authority",
@@ -88,7 +90,9 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 3
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   },
   {
     "title": "Delegation of Authority Matrix Update Notification Failure",
@@ -134,6 +138,8 @@
       ],
       "policy_versions_involved": 3,
       "temporal_span_months": 6
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   }
 ]

@@ -43,7 +43,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 10
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "COVID Base Year CAM Reconciliation Dispute with Gross-Up Ambiguity",
@@ -86,14 +88,16 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 60
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Sublease Consent and Related-Entity Principal Identification Across Systems",
     "category": "cross_system_synthesis",
     "domain": "finance_revops",
     "difficulty": "hard",
-    "scenario": "**Yardi Voyager — Lease Record: Tribune Tower, Suite 1800**\nTenant: Orion Strategic Advisors LLC | Lease ID: TT-2021-0033 | Term: 10 yrs | Commencement: 7/1/2021 | Base rent: $55.00/SF | 12,400 SF | NNN | Sublease clause: Section 22.1 — 'Tenant shall not sublease without Landlord's prior written consent, which shall not be unreasonably withheld. Landlord may consider financial condition of proposed subtenant.'\n\n**DocuSign — Envelope: Sublease-Consent-TT-1800 (completed 8/14/2024)**\nSublessor: Orion Strategic Advisors LLC | Proposed Subtenant: Polaris Capital Partners LLC | Space: 4,200 SF of Suite 1800 | Term: 3 years | Approved by: Marcus Webb, SVP Leasing (signature on file) | Financial review attachment: Polaris Capital Partners LLC — D&B rating: 3A2, annual revenue $8.2M\n\n**Salesforce — Contact Record**\nName: Daniel Koh | Company: Orion Strategic Advisors LLC | Title: Managing Partner | Also linked to: Account 'Polaris Capital Partners LLC' (role: 'Board Advisor')\n\n**Shared Drive — \\\\ntserver\\leases\\tribune\\1800\\sublease\\**\nFile: 'Polaris_Subtenant_Application.pdf'\nPrincipal listed: James Aldrich, Managing Director | Guarantor: None requested\nFile: 'IL_SOS_Polaris_Filing.pdf'\nIllinois Secretary of State filing: Polaris Capital Partners LLC | Registered Agent: Daniel Koh | Members: Daniel Koh (60%), James Aldrich (40%) | Formation date: 3/12/2024\n\n**Outlook — From: m.webb@novaterra.com To: c.brennan@novaterra.com (8/10/2024)**\n'Catherine — Polaris financials look fine. D&B is acceptable. Go ahead and route the consent for my signature. Quick turnaround please, Orion's been waiting.'\n\n**Outlook — From: m.webb@novaterra.com To: personal archive (draft, never sent, 8/9/2024)**\n'Note to self — Polaris Capital. Daniel Koh is listed as registered agent. He's the same Koh who runs Orion. Essentially subleasing to himself? Lease doesn't explicitly prohibit but feels like it should have been flagged. Orion's been a good tenant though. Let it go.'\n[This draft was recovered during M. Webb's departure transition in 1/2025]\n\n**Building Engines — Maintenance Request (11/3/2024)**\nRequester: Daniel Koh | Suite: 1800 | Company listed: 'Orion/Polaris' | Request: 'Need after-hours HVAC for the Polaris side — same access card as my Orion credentials please.'\n\n**Teams — #tribune-tower-ops (1/15/2025, 2:22 PM)**\n@facilities.mgr: Quick Q — Suite 1800 subtenant (Polaris) keeps using Orion's access credentials and parking allocation. Are they actually separate companies?\n@c.brennan: Technically yes per the sublease docs. Why?\n@facilities.mgr: Same guy (Dan Koh) badges in for both. Just want to make sure we're billing correctly.\n@c.brennan: (eyes emoji) Let me look into this.",
+    "scenario": "**Yardi Voyager — Lease Record: Tribune Tower, Suite 1800**\nTenant: Orion Strategic Advisors LLC | Lease ID: TT-2021-0033 | Term: 10 yrs | Commencement: 7/1/2021 | Base rent: $55.00/SF | 12,400 SF | NNN | Sublease clause: Section 22.1 — 'Tenant shall not sublease without Landlord's prior written consent, which shall not be unreasonably withheld. Landlord may consider financial condition of proposed subtenant.'\n\n**DocuSign — Envelope: Sublease-Consent-TT-1800 (completed 8/14/2024)**\nSublessor: Orion Strategic Advisors LLC | Proposed Subtenant: Polaris Capital Partners LLC | Space: 4,200 SF of Suite 1800 | Term: 3 years | Approved by: Marcus Webb, SVP Leasing (signature on file) | Financial review attachment: Polaris Capital Partners LLC — D&B rating: 3A2, annual revenue $8.2M\n\n**CRM — Contact Record**\nName: Daniel Koh | Company: Orion Strategic Advisors LLC | Title: Managing Partner | Also linked to: Account 'Polaris Capital Partners LLC' (role: 'Board Advisor')\n\n**Shared Drive — \\\\ntserver\\leases\\tribune\\1800\\sublease\\**\nFile: 'Polaris_Subtenant_Application.pdf'\nPrincipal listed: James Aldrich, Managing Director | Guarantor: None requested\nFile: 'IL_SOS_Polaris_Filing.pdf'\nIllinois Secretary of State filing: Polaris Capital Partners LLC | Registered Agent: Daniel Koh | Members: Daniel Koh (60%), James Aldrich (40%) | Formation date: 3/12/2024\n\n**Outlook — From: m.webb@novaterra.com To: c.brennan@novaterra.com (8/10/2024)**\n'Catherine — Polaris financials look fine. D&B is acceptable. Go ahead and route the consent for my signature. Quick turnaround please, Orion's been waiting.'\n\n**Outlook — From: m.webb@novaterra.com To: personal archive (draft, never sent, 8/9/2024)**\n'Note to self — Polaris Capital. Daniel Koh is listed as registered agent. He's the same Koh who runs Orion. Essentially subleasing to himself? Lease doesn't explicitly prohibit but feels like it should have been flagged. Orion's been a good tenant though. Let it go.'\n[This draft was recovered during M. Webb's departure transition in 1/2025]\n\n**Building Engines — Maintenance Request (11/3/2024)**\nRequester: Daniel Koh | Suite: 1800 | Company listed: 'Orion/Polaris' | Request: 'Need after-hours HVAC for the Polaris side — same access card as my Orion credentials please.'\n\n**Teams — #tribune-tower-ops (1/15/2025, 2:22 PM)**\n@facilities.mgr: Quick Q — Suite 1800 subtenant (Polaris) keeps using Orion's access credentials and parking allocation. Are they actually separate companies?\n@c.brennan: Technically yes per the sublease docs. Why?\n@facilities.mgr: Same guy (Dan Koh) badges in for both. Just want to make sure we're billing correctly.\n@c.brennan: (eyes emoji) Let me look into this.",
     "question": "Given the evidence across all systems, what is the most significant lease administration issue that Catherine Brennan should escalate regarding the Polaris sublease?",
     "answer_format": "multiple_choice",
     "choices": [
@@ -115,7 +119,7 @@
       "systems_referenced": [
         "Yardi Voyager",
         "DocuSign",
-        "Salesforce",
+        "CRM",
         "Outlook",
         "Building Engines",
         "Microsoft Teams",
@@ -133,6 +137,8 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 11
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   }
 ]

@@ -44,7 +44,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 60
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   },
   {
     "title": "Dual-Facility Load Aggregation Dispute After Meter Reconfiguration",
@@ -90,7 +92,9 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 84
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   },
   {
     "title": "Curtailment Priority Dispute After Undocumented Capacity Expansion",
@@ -139,6 +143,8 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 48
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   }
 ]

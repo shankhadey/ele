@@ -41,7 +41,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 5
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "CAPA Procedure Revision During Multi-Month Investigation",
@@ -79,7 +81,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 4
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Traceability Gap in Material Revision Changeover",
@@ -119,6 +123,8 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 2
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   }
 ]

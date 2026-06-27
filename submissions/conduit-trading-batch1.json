@@ -40,7 +40,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 22
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "ISDA Credit Support Annex Threshold Change and Collateral Call Timing",
@@ -83,7 +85,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 99
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Wind Farm Capacity Payment Eligibility and Interconnection Agreement Version Conflict",
@@ -126,6 +130,8 @@
       ],
       "policy_versions_involved": 3,
       "temporal_span_months": 37
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   }
 ]

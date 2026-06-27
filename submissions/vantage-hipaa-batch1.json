@@ -44,7 +44,9 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 8
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "IRB Waiver Scope Drift After Protocol Amendment",
@@ -93,7 +95,9 @@
       ],
       "policy_versions_involved": 3,
       "temporal_span_months": 12
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Breach Determination for Ambiguous Employee Access Pattern",
@@ -142,6 +146,8 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 2
-    }
+    },
+    "decidability": "judgment",
+    "enhancement_type": "original"
   }
 ]

@@ -48,7 +48,9 @@
       ],
       "policy_versions_involved": 2,
       "temporal_span_months": 4
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "B&P to Funded Contract Reclassification with Prior-Year Rate Impact",
@@ -99,7 +101,9 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 8
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   },
   {
     "title": "Time Charging Correction Spanning Contracts with Different Fee Structures",
@@ -148,6 +152,8 @@
       ],
       "policy_versions_involved": 1,
       "temporal_span_months": 6
-    }
+    },
+    "decidability": "clear",
+    "enhancement_type": "original"
   }
 ]
