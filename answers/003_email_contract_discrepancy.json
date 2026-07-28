@@ -1,0 +1,6 @@
+{
+  "scenario_file": "003_email_contract_discrepancy.json",
+  "correct_answer": "$760,000",
+  "answer_format": "exact_match",
+  "rationale": "The VP of Procurement's email on February 12, 2025 is the authoritative approval. The VP approved the negotiated rate of $380,000 per year but specified a 2-year term (not the 3-year term proposed by DataFlow). Therefore the correct total contract value is $380,000 times 2 years equals $760,000. The contract management system's $450,000 per year figure is incorrect because it reflects the original list price entered in error by a junior analyst. The DataFlow rep's proposed 3-year term was overridden by the VP's 2-year specification. The email trail is the authoritative record of the negotiation."
+}

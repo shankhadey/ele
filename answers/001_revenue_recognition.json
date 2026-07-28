@@ -1,0 +1,6 @@
+{
+  "scenario_file": "001_revenue_recognition.json",
+  "correct_answer": "January 5, 2025",
+  "answer_format": "exact_match",
+  "rationale": "Under ASC 606, revenue recognition begins when the performance obligation starts being satisfied, which is when the service is actually delivered to the customer. The deal close date is merely when the contract was signed. The invoice date is an administrative billing event. The service activation date of January 5, 2025 is when Acme Corp begins delivering the SaaS service to the customer, making it the correct date to begin recognizing revenue. Revenue should be recognized ratably over the service period from January 5, 2025 to January 4, 2028, using the discounted contract value of $324,000. The monthly revenue recognition amount would be approximately $9,000 per month. This aligns with the core principle of ASC 606 that revenue is recognized when control of the promised service transfers to the customer."
+}

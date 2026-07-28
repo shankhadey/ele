@@ -1,0 +1,182 @@
+[
+  {
+    "message_id": "slack_001",
+    "thread_ts": "1739368200.000100",
+    "channel": "#procurement",
+    "user": "jane.smith",
+    "text": "Team — DataFlow renewal is approved. Terms: $380K/year, 2-year term only. Total $760K. @legal please fix the contract system, it still shows $450K. @alex.morgan confirmation sent via email.",
+    "timestamp": "2025-02-12T14:32:00Z",
+    "is_reply": false,
+    "reactions": ["white_check_mark", "eyes"]
+  },
+  {
+    "message_id": "slack_002",
+    "thread_ts": "1739368200.000100",
+    "channel": "#procurement",
+    "user": "legal.team",
+    "text": "On it. Will update the contract management system today.",
+    "timestamp": "2025-02-12T14:45:00Z",
+    "is_reply": true,
+    "reactions": []
+  },
+  {
+    "message_id": "slack_003",
+    "thread_ts": "1739368200.000100",
+    "channel": "#procurement",
+    "user": "junior.analyst",
+    "text": "I updated the system but used the original $450K figure from the proposal — I couldn't find the approved number. Sorry about that.",
+    "timestamp": "2025-02-14T10:05:00Z",
+    "is_reply": true,
+    "reactions": ["facepalm"]
+  },
+  {
+    "message_id": "slack_004",
+    "thread_ts": "1739368200.000100",
+    "channel": "#procurement",
+    "user": "jane.smith",
+    "text": "The correct figure is $380K/year, $760K total. Please correct immediately.",
+    "timestamp": "2025-02-14T10:20:00Z",
+    "is_reply": true,
+    "reactions": ["white_check_mark"]
+  },
+  {
+    "message_id": "slack_010",
+    "thread_ts": "1739455800.000200",
+    "channel": "#deal-desk",
+    "user": "vp.sales",
+    "text": "CloudVault deal is closed. Final terms: $425K/year, 2-year, total $850K. 15% off list. Finance — PO should be $850K. CRM still shows $500K, ignore that, it was never updated after negotiation.",
+    "timestamp": "2025-02-21T09:35:00Z",
+    "is_reply": false,
+    "reactions": ["tada", "white_check_mark"]
+  },
+  {
+    "message_id": "slack_011",
+    "thread_ts": "1739455800.000200",
+    "channel": "#deal-desk",
+    "user": "finance.ops",
+    "text": "PO raised for $850K. NVT-2025-0892.",
+    "timestamp": "2025-02-21T11:20:00Z",
+    "is_reply": true,
+    "reactions": []
+  },
+  {
+    "message_id": "slack_012",
+    "thread_ts": "1739455800.000200",
+    "channel": "#deal-desk",
+    "user": "sales.rep",
+    "text": "Great work everyone. Sarah at CloudVault confirmed in email too.",
+    "timestamp": "2025-02-21T11:45:00Z",
+    "is_reply": true,
+    "reactions": []
+  },
+  {
+    "message_id": "slack_020",
+    "thread_ts": "1739200000.000300",
+    "channel": "#incidents",
+    "user": "oncall.engineer",
+    "text": "SEV-1 declared — DataPipe Systems reporting full outage. Started 02:14 UTC. Investigating.",
+    "timestamp": "2025-01-15T02:14:00Z",
+    "is_reply": false,
+    "reactions": ["rotating_light"]
+  },
+  {
+    "message_id": "slack_021",
+    "thread_ts": "1739200000.000300",
+    "channel": "#incidents",
+    "user": "oncall.engineer",
+    "text": "Root cause identified: database failover did not complete. Mitigation in progress.",
+    "timestamp": "2025-01-15T02:45:00Z",
+    "is_reply": true,
+    "reactions": []
+  },
+  {
+    "message_id": "slack_022",
+    "thread_ts": "1739200000.000300",
+    "channel": "#incidents",
+    "user": "oncall.engineer",
+    "text": "SEV-1 resolved. Total downtime: 3h 12m. Post-mortem scheduled for Monday.",
+    "timestamp": "2025-01-15T05:26:00Z",
+    "is_reply": true,
+    "reactions": ["white_check_mark"]
+  },
+  {
+    "message_id": "slack_023",
+    "thread_ts": "1739286400.000400",
+    "channel": "#incidents",
+    "user": "oncall.engineer",
+    "text": "SEV-1 — DataPipe Systems again. API gateway unresponsive. Escalating.",
+    "timestamp": "2025-02-01T18:30:00Z",
+    "is_reply": false,
+    "reactions": ["rotating_light"]
+  },
+  {
+    "message_id": "slack_024",
+    "thread_ts": "1739286400.000400",
+    "channel": "#incidents",
+    "user": "cs.manager",
+    "text": "DataPipe CSM notified. They are very unhappy — this is the second SEV-1 in 6 weeks.",
+    "timestamp": "2025-02-01T18:50:00Z",
+    "is_reply": true,
+    "reactions": []
+  },
+  {
+    "message_id": "slack_025",
+    "thread_ts": "1739286400.000400",
+    "channel": "#incidents",
+    "user": "oncall.engineer",
+    "text": "Resolved. Downtime: 2h 48m. DataPipe account health score will take a hit.",
+    "timestamp": "2025-02-01T21:18:00Z",
+    "is_reply": true,
+    "reactions": []
+  },
+  {
+    "message_id": "slack_030",
+    "thread_ts": "1739540000.000500",
+    "channel": "#general",
+    "user": "hr.team",
+    "text": "Reminder: Q1 performance reviews are due by March 31. Please complete your self-assessments in Workday.",
+    "timestamp": "2025-02-22T09:00:00Z",
+    "is_reply": false,
+    "reactions": ["thumbsup"]
+  },
+  {
+    "message_id": "slack_031",
+    "thread_ts": "1739540000.000600",
+    "channel": "#general",
+    "user": "it.ops",
+    "text": "Heads up: VPN maintenance tonight 11pm-1am EST. Plan accordingly.",
+    "timestamp": "2025-02-22T14:00:00Z",
+    "is_reply": false,
+    "reactions": []
+  },
+  {
+    "message_id": "slack_032",
+    "thread_ts": "1739540000.000700",
+    "channel": "#engineering",
+    "user": "tech.lead",
+    "text": "PR review needed: https://github.com/internal/platform/pull/4421 — database connection pooling fix.",
+    "timestamp": "2025-02-22T10:30:00Z",
+    "is_reply": false,
+    "reactions": []
+  },
+  {
+    "message_id": "slack_040",
+    "thread_ts": "1739450000.000800",
+    "channel": "#customer-success",
+    "user": "cs.manager",
+    "text": "DataPipe Systems renewal coming up. Account health score dropped from 85 to 62. Two SEV-1s plus a SEV-2 in the last 6 months. They are evaluating a competitor. Need to discuss retention strategy.",
+    "timestamp": "2025-02-21T08:00:00Z",
+    "is_reply": false,
+    "reactions": ["eyes"]
+  },
+  {
+    "message_id": "slack_041",
+    "thread_ts": "1739450000.000800",
+    "channel": "#customer-success",
+    "user": "vp.cs",
+    "text": "Let's get on a call. We may need to escalate to strategic retention exception given the competitive threat. Service incidents alone would cap us at 15% under current policy.",
+    "timestamp": "2025-02-21T08:30:00Z",
+    "is_reply": true,
+    "reactions": []
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "models": [
+    {
+      "id": "gpt-4o-mini",
+      "provider": "openai",
+      "model_name": "gpt-4o-mini",
+      "api_key_env": "OPENAI_API_KEY"
+    },
+    {
+      "id": "gpt-4o",
+      "provider": "openai",
+      "model_name": "gpt-4o",
+      "api_key_env": "OPENAI_API_KEY"
+    }
+  ]
+}

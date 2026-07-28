@@ -1,0 +1,17 @@
+{
+  "title": "Email-Based Contract Discrepancy Detection",
+  "category": "cross_system_synthesis",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "MegaCorp's legal team is reviewing a vendor contract renewal with DataFlow Inc. ahead of the March 1, 2025 start date. The contract management system currently shows a renewal amount of $450,000 per year for a 2-year term — figures that were entered by a junior analyst. The procurement team has been in active email correspondence with the DataFlow sales representative over the past two weeks, negotiating pricing and term length. Jane, who is MegaCorp's VP of Procurement was involved in the final stages of that negotiation and issued a written approval via email. The finance team has since raised a purchase order based on what they understood to be the approved terms, but the amount on that PO does not match what the contract management system shows. The legal team has been asked to determine the correct contract value before the document is sent for signature. The contract management system is known to contain stale data in this case. The VP of Procurement's email is considered the authoritative approval record. The DataFlow sales rep's initial proposal and the VP's response together define the agreed terms. There is also a discrepancy in the proposed contract term length — DataFlow proposed one duration, and the VP specified a different one in the approval email. The legal team must reconcile all of this before execution.",
+  "question": "What is the correct total contract value that should appear in the final signed contract?",
+  "answer_format": "exact_match",
+  "tools_available": ["email_search"],
+  "contributor": {
+    "name": "Sarah Chen",
+    "title": "General Counsel",
+    "organization": "MegaCorp",
+    "years_experience": 18,
+    "domain_expertise": "compliance_legal"
+  }
+}

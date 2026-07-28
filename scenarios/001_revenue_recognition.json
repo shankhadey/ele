@@ -1,0 +1,16 @@
+{
+  "title": "Cross-System Revenue Recognition",
+  "category": "cross_system_synthesis",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "Acme Corp closed a three-year SaaS deal worth $360,000 on December 15, 2024. The CRM system shows the deal as 'Closed Won' with a single payment of $360,000. However, the billing system has the deal structured as annual payments of $120,000 each, with the first invoice generated on January 1, 2025. The ERP system shows a deferred revenue liability of $360,000 created on December 15, 2024. The customer success platform indicates the service activation date is January 5, 2025, with a contract end date of January 4, 2028. Under ASC 606 revenue recognition standards, revenue should be recognized as the performance obligation is satisfied over the service period. The finance team needs to determine the correct revenue recognition schedule. The CRM deal amount and billing schedule appear inconsistent. The service activation date differs from both the deal close date and the first invoice date. Multiple systems contain overlapping but contradictory information about this transaction. The auditors have flagged this deal for review due to the discrepancies between systems. The controller needs to reconcile these differences and establish the correct revenue recognition treatment before the quarterly close. Additional context shows that the sales team offered a 10% discount that was applied in the CRM but not yet reflected in the billing system. The actual contract value after discount is $324,000, which means annual payments should be $108,000. This further complicates the reconciliation effort across all three systems.",
+  "question": "Based on ASC 606 and the information across all systems, when should Acme Corp begin recognizing revenue for this deal: on the deal close date (December 15, 2024), the first invoice date (January 1, 2025), or the service activation date (January 5, 2025)?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Jane Doe",
+    "title": "Revenue Operations Director",
+    "organization": "Acme Corp",
+    "years_experience": 12,
+    "domain_expertise": "finance_revops"
+  }
+}

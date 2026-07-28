@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+
+# Test artifacts
+.pytest_cache/
+.hypothesis/
+
+# Results (regenerated on each run — commit specific ones manually)
+results/*.json
+
+# Environment
+.env
+.kiro_tmp
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Kiro specs
+specs/

@@ -1,0 +1,6 @@
+{
+  "scenario_file": "004_email_hidden_discount.json",
+  "correct_answer": "$425,000 per year, $850,000 total",
+  "answer_format": "multiple_choice",
+  "rationale": "The email trail reveals that CloudVault offered a 15% discount from the $500,000 list price, bringing the annual fee to $425,000. The VP of Sales approved this rate for a 2-year term, making the total contract value $850,000. This matches the purchase order in the finance system and explains the discrepancy with the CRM. The email from the CloudVault account executive on February 20, 2025 confirms the $425,000 annual rate, and the VP of Sales reply on February 21, 2025 formally accepts these terms for a 2-year commitment."
+}
