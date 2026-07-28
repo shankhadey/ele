@@ -1,0 +1,24 @@
+{
+  "title": "Overtime Grievance Under Conflicting CBA Terms",
+  "category": "precedent_exception",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "scenario_text": "Context from ADP (Payroll \u2014 Week ending Jun 15, 2026):\nEmployee: D. Wojcik (Badge 4412) | Classification: Maintenance Mechanic A | Shift: 2nd | Regular hours: 40 | OT hours: 12 | OT authorized by: T. Reeves (Shift Supervisor) | Cost center: Plant 2 Maintenance\n\n**Microsoft Teams \u2014 #plant2-supervision (Jun 13, 2026, 9:52 PM)**\n@tony.reeves: Need Danny W. to stay for a double. Compressor #3 is down and we can't run the heat treat line without it. @miguel.santos you around?\n[No response \u2014 45 minutes pass]\n@tony.reeves: Going to call it \u2014 authorizing the OT. Can't wait, we'll miss the Pratt delivery window.\n@rick.jensen: \ud83d\udc4d\n[rick.jensen is Union Steward, Plant 2]\n\n**SharePoint \u2014 /HR/labor-relations/CBA-2026-final.pdf (effective Apr 1, 2026)**\nArticle 14.3: 'Overtime in excess of 8 hours beyond regular shift requires authorization from Plant Manager or designated Operations Manager. Shift Supervisor authorization is limited to first 8 hours of overtime only.'\n\n**Shared Network Drive \u2014 \\\\plant2\\ops\\CBA-archive\\CBA-2022-2025.pdf**\nArticle 14.3 (prior version): 'Overtime authorization rests with Shift Supervisor or above for all duration.'\n\n**SAP PS \u2014 Production Order 4001910:**\nCustomer: Pratt & Whitney | Part: FORGE-9920-C | Due date: Jun 16, 2026 | Status: IN PROCESS | Constraint note: 'Heat treat cycle = 14hr minimum. Late start = missed ship date. LD clause active ($15K/day).'\n\n**Email \u2014 Subject: 'CBA Rollout Training' (Mar 28, 2026)**\nFrom: hr-laborrelations@ironforge-mfg.com\nTo: all-supervisors@ironforge-mfg.com\nCC: plant-managers@ironforge-mfg.com\n\n'Please review the attached summary of changes effective April 1. Key changes include updated OT authorization levels (Art. 14.3), new shift-swap procedures (Art. 16), and revised holiday premium calculations. Training sessions scheduled for April 5-9. Attendance is mandatory.'\n\n**ADP \u2014 Training Records:**\nT. Reeves: CBA Training \u2014 Status: NOT COMPLETED. Scheduled Apr 7, marked 'No Show.' No reschedule on file.\n\n**Grievance Filing \u2014 Local 412, Case #2026-G-031 (filed Jun 20, 2026):**\nGrievant: D. Wojcik | Nature: Improper OT authorization | Relief sought: Double-time pay for hours 9-12 of OT (penalty rate per Art. 14.5 for unauthorized OT) | Union position: 'Supervisor lacked authority under current CBA. Employee entitled to penalty premium.'\n\n**Miguel Santos' Calendar \u2014 Jun 13, 2026:**\n7:00 PM - 9:00 PM: 'Flight CLE\u2192ORD' (personal calendar, blocked as OOO)\nNo delegation of authority memo on file for that date.",
+  "question": "As Plant Operations Manager, how should Miguel assess the grievance merit and what is the most defensible resolution?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Miguel Santos",
+    "title": "Plant Operations Manager",
+    "organization": "Ironforge Manufacturing",
+    "years_experience": 20,
+    "domain_expertise": "Production scheduling, maintenance planning, labor relations, overtime authorization, collective bargaining agreement administration"
+  },
+  "tools_available": [],
+  "source_batch": "ironforge-plant-ops-batch1.json",
+  "choices": [
+    "Grievance has no merit \u2014 the old CBA terms apply because Reeves was never trained on the new CBA, making enforcement of the new authorization levels against him improper",
+    "Grievance has merit \u2014 Reeves lacked authority for hours beyond 8 under the current CBA; however, the appropriate resolution is to pay the penalty premium for hours 9-12 only and issue corrective training to Reeves, not to discipline the employee",
+    "Grievance has merit and Ironforge should deny the OT pay entirely for hours 9-12 since it was unauthorized, paying only straight time",
+    "Grievance has no merit \u2014 the Union Steward's thumbs-up emoji in Teams constitutes implicit union consent to the authorization, waiving the procedural objection"
+  ]
+}

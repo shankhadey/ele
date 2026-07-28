@@ -1,0 +1,24 @@
+{
+  "title": "Change Freeze Override Approval Lost Between Slack Workspaces",
+  "category": "approval_chain",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "**PagerDuty \u2014 Incident #INC-4471 (May 14, 2026, 03:22 UTC)**\nTriggered: 'API latency > 5s for 3 consecutive minutes' on service `payment-processing-v2`\nSeverity: SEV-1 | Status: Resolved (05:48 UTC)\nOn-call: @alex.martinez (SRE) | IC: @jordan.kim\nEscalation path triggered: Tier1 (03:22) -> IC (03:25) -> VP Eng notified (03:31)\n\n**Slack \u2014 #incidents (main workspace) (May 14, 2026, 03:27 UTC)**\n@jordan.kim: War room open. payment-processing-v2 is returning 503s for ~18% of requests. Blast radius is all customers on pod-west-2. Investigating.\n@alex.martinez: Correlating with deploy. pr-4892 went out at 02:55 UTC. Canary looked clean but we only ran it for 10 min instead of the standard 30.\n@jordan.kim: Why was canary window shortened?\n@alex.martinez: Marco approved it in the other Slack. Said the change freeze exception covered it.\n@jordan.kim: What change freeze exception? We're in Q2 code freeze until May 15.\n@alex.martinez: Let me find it.\n\n**Slack \u2014 #engineering (legacy workspace) (May 13, 2026, 16:45 UTC)**\n@marco.velasquez: Team \u2014 I spoke with Divya yesterday. She's OK with us pushing the payment retry fix tonight since it's customer-impacting. Consider the freeze lifted for this PR only.\n@alex.martinez: Got it. Will deploy after canary.\n@marco.velasquez: :thumbsup:\n[Thread has 2 :eyes: reactions, no further replies]\n\n**Confluence \u2014 'Change Management Policy v3.1' (last updated Feb 2026)**\nSection 4.2: Change freeze exceptions require written approval from VP Engineering or above, documented in the #change-management channel with a linked Jira ticket (type: Change Request). Verbal or informal approvals are not valid per SOC2 control CC-7.2.\nSection 4.3: Canary deployments during freeze exceptions must run for minimum 30 minutes with full SLI validation.\n\n**Jira \u2014 No ticket found for change request related to PR-4892.**\n\n**GitHub \u2014 Deploy log for pr-4892 (May 14, 2026, 02:55 UTC)**\nDeployed by: @alex.martinez | Canary duration: 10m | Canary pass: true (auto-promoted)\nDeploy tag: `v2.41.3-hotfix-payment-retry`\nCI status: all checks green\n\n**Datadog \u2014 APM Dashboard (May 14, 02:55 - 03:22 UTC)**\nPayment service p99 latency: normal (02:55-03:05), gradual degradation (03:05-03:15), spike to 12s (03:15-03:22).\nError rate crossed SLO threshold at 03:18 UTC. Error budget burned: 43% of monthly budget in 27 minutes.\n\n**Slack DM \u2014 @divya.patel to @marco.velasquez (May 12, 2026, 11:02 AM)**\n@divya.patel: If the payment retry thing is truly P1-adjacent, I'm fine with you pushing it tonight. Just make sure the canary is clean and file the CR after.\n@marco.velasquez: Will do. Thanks Divya.\n[No CR was filed]",
+  "question": "For the postmortem, was the deploy of PR-4892 a valid change freeze exception per Meridian's documented change management policy?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Jordan Kim",
+    "title": "Senior Site Reliability Engineer / Incident Commander",
+    "organization": "Meridian Systems",
+    "years_experience": 6,
+    "domain_expertise": "Incident response, change management, SLA enforcement, postmortem process"
+  },
+  "tools_available": [],
+  "source_batch": "meridian-sre-batch1.json",
+  "choices": [
+    "No \u2014 the exception was never valid because it lacked a Jira Change Request ticket and was not posted in #change-management, regardless of Divya's informal approval",
+    "Yes \u2014 Marco communicated the exception in #engineering which constitutes a written channel notification; the only violation was the shortened canary window",
+    "Yes \u2014 VP Engineering (Divya) gave explicit approval via DM, which constitutes written authorization; the deploy was valid but the canary duration was the root policy violation",
+    "No \u2014 the exception expired because Divya's approval was given on May 12 for 'tonight' but the deploy happened on May 14, making the approval stale"
+  ]
+}

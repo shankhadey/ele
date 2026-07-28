@@ -1,0 +1,24 @@
+{
+  "title": "Stale Success Criteria Conflicting with Amended Contract SLA",
+  "category": "temporal_consistency",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "Context from Gainsight (Account: Northwoods Integrated Care Network):\nHealth Score: 71 (Yellow) | Lifecycle Stage: Adoption | Renewal Date: Nov 1, 2026 | ARR: $920K | CSM: Priya Sethi | Last CTA closed: Apr 8, 2026 (Type: Onboarding milestone \u2014 marked 'Complete') | Success Plan status: 'On Track'\n\nSuccess Plan milestones (created during onboarding, Aug 2025):\n1. Go-live on Clinical Workflow Suite \u2014 COMPLETE (Oct 2025)\n2. 80% provider adoption within 90 days of go-live \u2014 COMPLETE (Jan 2026)\n3. 15% reduction in patient wait times by Month 6 \u2014 MEASURED: 11% reduction (marked 'Partial - Acceptable')\n4. Integration with Epic (ADT feed + CCD exchange) \u2014 IN PROGRESS\n\n**Google Doc \u2014 'Northwoods IC \u2014 Onboarding Success Criteria' (created Aug 12, 2025, last edited Aug 20, 2025)**\nOwner: kevin.marsh@vantagehealth.com [DEPARTED May 30, 2026]\nSection 1: 'Mutually agreed success criteria for Year 1:'\n- Epic integration: ADT feed + CCD exchange operational by Month 4 (Dec 2025)\n- Patient wait time reduction target: 15% within 6 months\n- Provider adoption: 80% within 90 days\n[RESOLVED COMMENT by @dr.n.yakimoto (Northwoods), Sep 5, 2025]: 'We also need real-time bed census data flowing to our capacity dashboard. Adding this as mandatory for our internal go/no-go on renewal.'\n[RESOLVED COMMENT by @kevin.marsh, Sep 5, 2025]: 'Noted! Will add to integration scope.'\n[No edit to document body after Aug 20, 2025]\n\nContext from Health Cloud CRM (Contract Record):\nMSA: Signed Jul 2025 | Amendment 1: Signed Jan 15, 2026\nAmendment 1 details: 'Added Module: Real-Time Capacity Analytics. SLA: 99.5% uptime. Integration requirement: Bi-directional Epic bed census feed. Delivery deadline: Apr 30, 2026. Penalty: $5K/day credit after deadline if not delivered by vendor.'\nDelivery status field: Blank.\n\n**Slack \u2014 #cs-ops (May 18, 2026, 11:02 AM)**\n@priya.sethi: Checking in on Northwoods \u2014 their success plan shows on track. Anything I should know? I inherited this from Kevin last week.\n@b.ellsworth: Pull the contract amendment. There's a deliverable with a penalty clause that I don't think is reflected in Gainsight.\n@priya.sethi: \ud83d\udc4d\n[No further messages in thread]\n\n**Zendesk \u2014 Org: Northwoods Integrated Care**\nTicket ZD-6672 (opened May 1, 2026): Subject: 'Bed census integration \u2014 status update needed' | Priority: P2 | Requester: n.yakimoto@northwoodscare.org | Status: Open\nInternal note (May 5, @implementation.team): 'Integration is 60% complete. Blocked on Epic API credentialing from their side. No ETA from Northwoods IT.'\nCustomer reply (May 12): 'Our IT team completed credentialing on May 10. Please confirm timeline for completion.'\n[No agent reply since May 12]\n\n**Looker \u2014 CS Ops Dashboard (filtered: Northwoods)**\nPendo usage: Stable (no decline). NPS: 38 (Passive). Quarterly expansion likelihood model: 62% (moderate).",
+  "question": "What is the actual delivery status of Northwoods' contractual obligation, and what financial exposure exists as of today (June 27, 2026)?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Brian Ellsworth",
+    "title": "Customer Success Operations Manager",
+    "organization": "Vantage Health Partners",
+    "years_experience": 10,
+    "domain_expertise": "Health score methodology, renewal forecasting, CSM capacity planning, escalation workflows"
+  },
+  "tools_available": [],
+  "source_batch": "vantage-cs-ops-batch1.json",
+  "choices": [
+    "The bed census integration delivery status is unknown since the CRM field is blank; the success plan shows 'On Track' so no financial exposure has been flagged in the system",
+    "The bed census integration is not yet delivered; financial exposure is $0 because the delay is caused by the customer's Epic API credentialing block, which constitutes a force majeure exemption",
+    "The bed census integration is not yet delivered; financial exposure is $5K/day starting May 10 (when the customer removed their blocker), totaling approximately $240K through today",
+    "The bed census integration is not yet delivered; financial exposure is approximately $290K ($5K/day x 58 days past the Apr 30 deadline), mitigated only partially by the customer-side credentialing delay through May 10"
+  ]
+}

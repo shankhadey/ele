@@ -1,0 +1,24 @@
+{
+  "title": "The Policy Version Trap",
+  "category": "policy_version",
+  "domain": "sales_deal_desk",
+  "difficulty": "hard",
+  "scenario_text": "On June 15th, AE David Park reaches out via Slack DM: \"Rachel - need help with the TechVision renewal. Customer signed the renewal quote on May 28th, but DocuSign envelope is stuck in 'Waiting for Others.' Can you push it through? They're asking about their license keys.\"\n\nYou pull up the TechVision Industries opportunity in CRM (Opp ID: 006-4521, Close Date: May 28, 2026, Stage: Closed Won). The renewal is for $280K ARR, 12 months, with a 12% discount. The CPQ approval history shows: David Park (submitted May 22) \u2192 You (approved May 23, 8:45 AM) \u2192 Deal marked Approved.\n\nYou check DocuSign and find the envelope created May 23 at 9:15 AM, signed by customer on May 28, routed to \"Internal Approver: James Park (VP Sales)\" - status shows \"Sent May 28, 3:22 PM\" but not yet signed.\n\nYou open Confluence and navigate to discount policies. You see:\n- \"Discount Policy v2.3\" (Effective Date: April 1, 2026): \"Renewal discounts: 0-10% require Deal Desk approval. 11-15% require Deal Desk + VP Sales approval. 16%+ require CFO approval.\"\n- \"Discount Policy v2.4\" (Effective Date: June 1, 2026): \"Renewal discounts: 0-15% require Deal Desk approval only. 16-25% require VP Sales approval. 26%+ require CFO approval. Note: This policy change eliminates VP Sales bottleneck for standard renewal discounts.\"\n\nIn Slack #deal-desk on May 30, you see a message from your colleague Lisa Chen: \"Heads up team - v2.4 is live as of June 1. Remember to update your approval workflows for renewals submitted after 6/1.\"\n\nYou check your own Slack message history. On May 23 at 8:47 AM (two minutes after approving in CPQ), you sent David a DM: \"Approved in CPQ. Routing to James for VP sig since it's 12% - per v2.3 needs VP approval. Should be quick.\"\n\nYou notice in the CPQ record's \"Discount Justification\" field, David wrote: \"Renewal at existing discount rate. Original contract (C-7733) signed May 2025 at 12% discount. Customer threatened to churn without price match.\"\n\nYou pull Contract C-7733 in CRM: Start Date May 15, 2025, 12% discount, approved under \"Discount Policy v2.1\" which had the same thresholds as v2.3.\n\nIn your email, you find a May 23 message you sent to James Park at 9:20 AM: \"James - TechVision renewal in your DocuSign queue, $280K at 12% discount, needs your approval per policy v2.3. Customer already verbally committed, should be fast.\"",
+  "question": "What is the correct action to unblock the TechVision renewal signature?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Rachel Stein",
+    "title": "Senior Deal Desk Manager",
+    "organization": "Meridian Systems",
+    "years_experience": 11,
+    "domain_expertise": "Complex deal structuring, pricing exceptions, CPQ governance"
+  },
+  "tools_available": [],
+  "source_batch": "meridian-deal-desk-batch1.json",
+  "choices": [
+    "Contact James Park to sign immediately - the deal was submitted and approved under v2.3 (May 22-23), so it must follow v2.3 rules requiring VP Sales signature regardless of when the customer signed",
+    "Remove James Park from the DocuSign envelope and mark as complete - v2.4 is now in effect, and deals are governed by the policy in effect at time of final execution, not submission, so this renewal no longer requires VP Sales approval",
+    "Keep the workflow as-is and escalate to RevOps - there's a policy version conflict between submission date (v2.3) and current date (v2.4), requiring a process exception determination",
+    "Remove James Park from the DocuSign envelope and mark as complete - v2.4 (effective June 1) eliminates VP requirement for 12% renewals, and the customer signed May 28 before the policy took effect, so the old approval chain applies but can be administratively completed"
+  ]
+}

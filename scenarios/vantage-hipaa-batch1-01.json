@@ -1,0 +1,24 @@
+{
+  "title": "Vendor Acquisition Invalidates BAA Entity Coverage",
+  "category": "entity_resolution",
+  "domain": "compliance_legal",
+  "difficulty": "hard",
+  "scenario_text": "A clinical department wants to resume sending PHI to a health IT analytics vendor. The following information is available across systems:\n\n**Compliance 360 \u2014 BAA Registry (Record #BAA-2023-0147)**\nVendor: Clearview Health Analytics LLC | BAA Execution Date: March 15, 2023 | Term: 3 years | Covers: de-identified data sets + limited data sets per DUA | Signed by: VP of Partnerships (Clearview) + Privacy Officer (Vantage) | Status: Active\n\n**SharePoint \u2014 /legal/vendor-agreements/clearview/ (Last modified: Jan 2024)**\nFolder contains: Original BAA (PDF), DUA Addendum (PDF), SOC 2 Type II report (2022)\nVersion note: \"BAA references Clearview Health Analytics LLC as the sole business associate entity.\"\n\n**Outlook \u2014 From: purchasing@vantage.org, Subject: 'FW: Clearview acquisition announcement' (Sep 12, 2025)**\nFrom: j.norris@vantage.org (Procurement)\nTo: hipaa-team@vantage.org\nCC: infosec@vantage.org\n\n> FYI \u2014 forwarding this from Clearview. Their parent company sold them to Orion Data Group in August. New entity name is 'Orion Health Insights, a division of Orion Data Group Inc.' They say nothing changes on our end.\n>\n> \u2014 forwarded message from sales@clearviewhealth.com \u2014\n> \"We're excited to announce Clearview Health Analytics is now part of the Orion Data Group family! Rest assured, all existing service agreements remain in full effect. No action needed from your team.\"\n\n**Microsoft Teams \u2014 #privacy-ops (Oct 3, 2025, 2:47 PM)**\n@danielle.washington: Has anyone updated the BAA registry for the Clearview/Orion situation?\n@kevin.li: I flagged it with legal but haven't heard back. The old BAA is still in Compliance 360.\n@danielle.washington: We need to pause disclosures until we sort this. The BAA is with Clearview LLC \u2014 that entity may not even exist anymore.\n@kevin.li: \ud83d\udc4d\n[No further messages in thread]\n\n**ServiceNow \u2014 REQ0088214 (Opened: Nov 18, 2025)**\nRequester: Dr. Rachel Okonkwo (Cardiology Research)\nSubject: \"Resume data feed to Clearview for outcomes study\"\nDescription: \"Need to restart our monthly patient outcomes data feed that was paused in October. Clearview contact says they're ready to receive. Study IRB approval is current.\"\nApproval chain: Dept Head \u2713 (Nov 19) | IT Security \u2014 Pending | Privacy Office \u2014 Pending\n\n**Epic \u2014 Audit Log (Data Export Activity)**\nLast successful PHI transmission to Clearview SFTP: September 28, 2025\nTransmission paused: October 4, 2025 (manual hold by Privacy Office)\nNo transmissions since.",
+  "question": "As the Privacy Officer reviewing REQ0088214, what is the correct determination regarding resuming PHI disclosures to the vendor now operating as Orion Health Insights?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Danielle Washington",
+    "title": "HIPAA Privacy Officer",
+    "organization": "Vantage Health Partners",
+    "years_experience": 13,
+    "domain_expertise": "PHI disclosure decisions, BAA management, breach determination, minimum necessary standard, patient rights requests"
+  },
+  "tools_available": [],
+  "source_batch": "vantage-hipaa-batch1.json",
+  "choices": [
+    "Escalate to legal for a formal opinion; the Privacy Office cannot make this determination independently since the BAA is technically still active and no breach has occurred.",
+    "Approve the request; the vendor's announcement confirms existing agreements remain in effect, and the BAA is still marked Active in Compliance 360.",
+    "Deny the request; a new BAA must be executed with Orion Data Group Inc. (or its appropriate subsidiary) before any PHI disclosure can resume, because the original covered entity \u2014 Clearview Health Analytics LLC \u2014 has undergone a change in legal ownership that potentially dissolves the BAA.",
+    "Approve the request but only for de-identified data; the DUA addendum allows limited data sets without needing a BAA update."
+  ]
+}

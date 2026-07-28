@@ -1,0 +1,24 @@
+{
+  "title": "Conflicting Inspection Priority Scores Drive Mismatched Capital Filing and Budget Approval",
+  "category": "cross_system_synthesis",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "Context from IBM Maximo (Asset #SUB-0117, Substation transformer, 45MVA, installed 1994):\nCondition assessment (2025-04-22): Overall score = 3.2/5.0 (Fair) | DGA trending: stable | Bushing PF: within limits | Load tap changer: 87,000 operations (manufacturer limit: 100,000). Assessment by: R. Espinoza. Recommendation: 'Monitor \u2014 no capital action required this cycle.'\n\nContext from SAP PM \u2014 Corrosion Protection Program (Asset: SUB-0117-CP):\nInspection date: 2025-06-15 | CP priority score: HIGH (4.7/5.0) | Finding: 'Radiator bank 2 showing advanced surface corrosion with pitting initiation on lower headers. Tank coating failure zone NW quadrant approx 12 sq ft. If untreated, tank penetration estimated 18-24 months.' Inspector: K. Walsh. Recommendation: 'Immediate capital rehab \u2014 blast and recoat, replace radiator bank 2. Est. $340K.'\n\nContext from SharePoint \u2014 /capital-planning/2026-budget-submission.xlsx:\nLine item 47: 'SUB-0117 Transformer Rehabilitation' | Justification: 'Condition score 3.2 \u2014 approaching end of useful life, proactive replacement.' | Amount: $1.2M (full transformer replacement) | Priority rank: 14 of 22 | Status: Approved by Capital Committee 2025-11-30.\n\nContext from Custom FileMaker \u2014 PUC Filing (Docket CE-2026-0002, Capital Plan filing, submitted 2026-01-15):\nExhibit 8, Page 34: 'Substation 117 transformer replacement is driven by condition assessment score of 4.7 indicating HIGH priority and active corrosion threatening tank integrity within 18-24 months without intervention.'\n\nContext from Microsoft Teams \u2014 #capital-planning (2025-10-03, 3:55 PM):\n@maria.oconnell (Finance): Capital committee deck is due Friday. Doug, can you confirm the SUB-0117 priority score for the summary slide?\n@doug.brennan: It's a 3.2 from the structural/electrical assessment. But CP came back at 4.7 \u2014 different program, different methodology.\n@maria.oconnell: Which one should I use?\n@doug.brennan: Use the 4.7 \u2014 it tells the more compelling story for the PUC filing and it's technically accurate for the corrosion scope.\n@maria.oconnell: (thumbs up emoji)\n\nContext from Outlook (sent from SVP Karen Albright to Capital Committee, 2025-11-28):\nSubject: 'Capital plan approval \u2014 consent items'\nBody: '...Items 40-55 on the attached list are consent items under $2M requiring no individual discussion. Approve by reply-all with no objection by COB Thursday...\n[3 reply-all responses: 'No objection' from CFO, VP Grid Ops, VP Customer Ops. No response from General Counsel or VP Regulatory.]",
+  "question": "An internal audit has flagged SUB-0117. The capital committee approved a $1.2M full transformer replacement based on a condition score of 3.2, but the PUC filing justifies the same project using a 4.7 corrosion score. What is the core compliance risk?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Douglas Brennan",
+    "title": "Asset Integrity Manager",
+    "organization": "Conduit Energy",
+    "years_experience": 25,
+    "domain_expertise": "Infrastructure inspection programs, regulatory compliance for aging assets, capital vs expense decisions"
+  },
+  "tools_available": [],
+  "source_batch": "conduit-asset-batch1.json",
+  "choices": [
+    "The mismatch is administrative only \u2014 both scores are valid assessments of the same asset from different programs; the filing used the more conservative (higher urgency) score, which is standard practice for regulatory justification.",
+    "The capital committee approved the project as a consent item without individual discussion; the lack of response from General Counsel and VP Regulatory means it lacks proper governance sign-off.",
+    "The PUC filing is fraudulent \u2014 the 4.7 score applies to a $340K corrosion rehab, not a $1.2M full replacement; the filing misrepresents the scope and justification to inflate the rate base.",
+    "The capital committee approved a full replacement justified by the 3.2 score (end-of-life), but the PUC filing justifies the same dollar amount using the 4.7 corrosion score \u2014 creating a disconnect where the internal justification, approved scope, and regulatory filing tell three different stories about the same $1.2M expenditure."
+  ]
+}

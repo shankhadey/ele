@@ -1,0 +1,24 @@
+{
+  "title": "Holding Company IO Reconciliation with Three-Name Advertiser Entity",
+  "category": "entity_resolution",
+  "domain": "sales_deal_desk",
+  "difficulty": "hard",
+  "scenario_text": "**HubSpot CRM \u2014 Account: 'Omnicom Media Group' (Deal: Q1 Streaming Upfront)**\nDeal owner: Marcus Reeves | Stage: Closed-Won | Value: $380K | IO reference: PMG-IO-2026-0341 | Primary contact: Julia Parsons (julia.parsons@omnicomgroup.com) | Notes: 'Covers Nestl\u00e9 brand portfolio across Prism+ streaming inventory. Frequency cap: 3x/user/day across all creatives.'\n\n**Google Ad Manager \u2014 Order: 'Nestle_Q1_Prism_Streaming'**\nAdvertiser: 'Nestl\u00e9 USA' | Agency: 'PHD Media' | Line items: 14 active | Booked impressions: 52M | Delivered: 41.3M (79.4% pacing at day 68 of 90) | Revenue recognized: $334,700 | Trafficking notes: 'Separated into 3 sub-orders per brand (Purina, DiGiorno, Nespresso). Each sub-order has independent 3x freq cap.'\n\n**NetSuite \u2014 Invoice #INV-2026-4892**\nBill-to: 'PHD Media LLC' | PO #: PHD-2026-00417 | Amount: $380,000 | Terms: Net 60 | Status: Partial payment received ($158,200) | Billing contact: accounts.payable@phdmedia.com | Reference: 'Per IO PMG-IO-2026-0341, Omnicom/Nestl\u00e9 Q1 package'\n\n**Slack \u2014 #ad-ops (May 14, 2026, 2:47 PM)**\n@tasha.w: heads up \u2014 Nestle pacing report shows we're gonna underdeliver by ~$45K at current fill. purina line items got frequency-capped way too early\n@marcus.r: wait, the IO says 3x/day across the ORDER not per sub-order right?\n@tasha.w: that's how I read it. but trafficking set each sub-order cap independently so a user seeing purina 3x AND digiorno 3x = 6x total exposure which... is what the IO says not to do?\n@marcus.r: julia's gonna freak. can we uncap and backfill the last 3 weeks?\n@tasha.w: we can uncap going forward but can't retroactively fix the underdelivery. we'd need a make-good\n@marcus.r: \ud83d\udc4d\n[thread has no further replies]\n\n**Google Sheets \u2014 'Q1 Pacing & Reconciliation' (last modified May 20, 2026)**\nRow for 'Nestl\u00e9 USA / PMG-IO-2026-0341': Booked $380K | Delivered-to-date: $334,700 | Projected end: $361,200 | Variance: -$18,800 | Make-good flag: blank | Notes cell: 'freq cap issue identified 5/14 \u2014 see slack'",
+  "question": "The finance team flags a $45K discrepancy between the IO value ($380K) and revenue recognized in GAM ($334,700). Before issuing a make-good or credit, what must ad ops determine first?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Natasha Williams",
+    "title": "Ad Operations Director",
+    "organization": "Prism Media Group",
+    "years_experience": 11,
+    "domain_expertise": "Programmatic deal reconciliation, advertiser entity management, IO interpretation, cross-platform attribution, make-good decisions"
+  },
+  "tools_available": [],
+  "source_batch": "prism-adops-batch1.json",
+  "choices": [
+    "Whether Omnicom Media Group, PHD Media, and Nestl\u00e9 USA are separate contractual entities requiring independent reconciliation",
+    "Whether Marcus's thumbs-up emoji in Slack constitutes an authorized make-good commitment that Prism must now honor",
+    "Whether the $45K gap is a pacing issue (campaign still has 22 days remaining) versus a structural delivery failure \u2014 since the pacing report projects $361K end-of-flight, the actual shortfall is ~$18.8K, not $45K",
+    "Whether the IO frequency cap (3x/user/day across all creatives) was violated \u2014 making this Prism's trafficking error requiring a make-good for the full $45K underdelivery"
+  ]
+}

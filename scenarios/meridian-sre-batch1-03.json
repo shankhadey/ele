@@ -1,0 +1,24 @@
+{
+  "title": "Escalation Policy Version Mismatch During On-Call Handoff",
+  "category": "cross_system_synthesis",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "scenario_text": "**PagerDuty \u2014 Escalation Policy: 'Platform Services' (current version, effective May 5, 2026)**\nLevel 1: Primary on-call (5 min timeout)\nLevel 2: Secondary on-call (10 min timeout)\nLevel 3: SRE Manager (@nadia.okonkwo) (15 min timeout)\nLevel 4: VP Engineering (@divya.patel)\nSchedule: Weekly rotation, handoff Mondays 09:00 UTC\n\n**PagerDuty \u2014 Escalation Policy: 'Platform Services' (previous version, effective Jan 15 - May 4, 2026)**\nLevel 1: Primary on-call (5 min timeout)\nLevel 2: Engineering Manager of owning team (10 min timeout)\nLevel 3: SRE IC on-call (@jordan.kim or @alex.martinez) (10 min timeout)\nLevel 4: VP Engineering (@divya.patel)\n\n**Slack \u2014 #sre-team (May 2, 2026, 2:33 PM)**\n@nadia.okonkwo: Heads up \u2014 I'm updating the Platform Services escalation policy on Monday. Removing the EM from L2 since they never acknowledged anyway. Going straight to secondary on-call, then me, then Divya.\n@jordan.kim: Makes sense. Are you updating the runbook too?\n@nadia.okonkwo: Will do after the PD change goes live.\n:+1: (3 reactions: @jordan.kim, @alex.martinez, @priya.singh)\n\n**Confluence \u2014 'Platform Services Runbook' (last edited: Jan 18, 2026)**\nSection 5 \u2014 Escalation Path:\n'If primary on-call does not acknowledge within 5 minutes, PagerDuty escalates to the Engineering Manager of the owning squad. If EM does not ack within 10 minutes, the SRE Incident Commander on rotation is paged. Final escalation: VP Engineering.'\nNote: This section has not been updated since January.\n\n**PagerDuty \u2014 Incident #INC-4512 (May 9, 2026, 02:14 UTC)**\nTriggered: 'Database connection pool exhaustion on platform-auth'\nSeverity: HIGH\nTimeline:\n- 02:14: Primary on-call @priya.singh paged. No ack.\n- 02:19: Escalated to Level 2. @alex.martinez (secondary) paged. No ack.\n- 02:29: Escalated to Level 3. @nadia.okonkwo paged. Acknowledged at 02:31.\n- 02:31: Nadia opened war room. Issue resolved by 02:58.\n\n**Jira \u2014 PLAT-8821 'INC-4512 Postmortem' (Created May 9, 2026)**\nComment (@priya.singh, May 9, 10:00 AM): 'My phone was on DND \u2014 that's on me. But I want to flag: the runbook says EM gets paged at L2. I assumed if I missed it, my EM @chen.wei would be the next page. I didn't realize the policy changed last Monday.'\nComment (@chen.wei, May 9, 10:45 AM): 'I was never notified the escalation path changed. First I'm hearing of it.'\nComment (@nadia.okonkwo, May 9, 11:00 AM): 'I posted in #sre-team about this. The Confluence update is on my backlog.'\n\n**Slack \u2014 DM @priya.singh to @jordan.kim (May 9, 2026, 10:15 AM)**\n@priya.singh: Hey \u2014 honest question. If I'd followed the runbook (which says EM at L2), would that have been wrong? Like am I responsible for checking PD directly vs trusting the runbook?\n@jordan.kim: Technically PD is the system of record for escalation routing. But yeah, I get the confusion. We'll address it in the postmortem.",
+  "question": "In the INC-4512 postmortem, was the escalation path that PagerDuty followed on May 9 correct according to the current authoritative escalation policy?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Jordan Kim",
+    "title": "Senior Site Reliability Engineer / Incident Commander",
+    "organization": "Meridian Systems",
+    "years_experience": 6,
+    "domain_expertise": "Incident response, change management, SLA enforcement, postmortem process"
+  },
+  "tools_available": [],
+  "source_batch": "meridian-sre-batch1.json",
+  "choices": [
+    "Partially \u2014 the escalation path was correct but the timing was wrong; Level 2 should have had a 10-minute timeout but only waited 5 minutes before escalating to Level 3",
+    "Yes \u2014 PagerDuty is the system of record for escalation routing, the policy was updated May 5, and the system correctly escalated Primary -> Secondary -> SRE Manager",
+    "No \u2014 the Confluence runbook is the authoritative escalation reference and it specifies EM at Level 2, which PagerDuty skipped",
+    "No \u2014 Nadia's policy change was never formally approved; the Slack thumbsup reactions do not constitute a valid change approval per Meridian's change management policy"
+  ]
+}

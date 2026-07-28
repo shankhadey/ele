@@ -1,0 +1,6 @@
+{
+  "scenario_file": "meridian-sre-batch1-02.json",
+  "correct_answer": "10s \u2014 the Confluence page (version 4) is the runbook-linked authoritative source and it still specifies 10s flat default",
+  "answer_format": "multiple_choice",
+  "rationale": "The authoritative source is what is actually deployed and documented. SRE-2201 was completed (status: Done) on March 22, setting the timeout to 10s. This was reflected in Confluence version 4 (edited Mar 24). SRE-2287, which calls for 5s, is still in 'Open' status \u2014 it was never implemented. Jordan's Slack message agreeing to the tiered approach was informal direction that was never acted upon (no Confluence edit was made, no deploy occurred). The on-call runbook points to Confluence v4 which states 10s. Answer A confuses a Slack conversation about intent with an actual configuration change \u2014 the Confluence page was never updated. Answer C invents a 'latest postmortem wins' rule that doesn't exist; postmortem action items only take effect when completed. Answer D incorrectly assumes that because SRE-2287 is open, the change from SRE-2201 was also reverted \u2014 but SRE-2201 is Done and its 10s change is in production."
+}

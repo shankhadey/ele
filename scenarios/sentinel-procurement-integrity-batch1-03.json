@@ -1,0 +1,24 @@
+{
+  "title": "Post-Award Cost Data Accuracy and Defective Pricing Exposure",
+  "category": "temporal_consistency",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "Sentinel Defense Solutions won Contract FA8750-25-C-0330 (value: $28.2M, cost-plus-fixed-fee) with proposal submission on March 15, 2025. DCAA is now conducting a post-award audit and has flagged potential defective pricing under TINA (10 U.S.C. 3702).\n\n**Costpoint \u2014 Proposal P-25-0062**\nContract: Advanced Persistent Threat Detection (APTD)\nType: CPFF | Submitted: 03/15/2025\nIndirect Rates Used: FY25 Forward Pricing Rates (approved by DCMA 11/2024)\n- Fringe: 34.2% | OH: 78.5% | G&A: 12.1%\nCertificate of Current Cost or Pricing Data: Signed 03/14/2025 by K. Patel (Contracts VP)\n\n**SharePoint \u2014 /finance/rates/FY25-rate-revision-memo.pdf (uploaded Jan 8, 2025)**\nMemo from CFO to Cost Accounting: 'Based on Q1 actual experience and updated headcount projections, revising provisional billing rates effective 02/01/2025. New rates: Fringe 33.1% (-1.1%), OH 74.2% (-4.3%), G&A 11.8% (-0.3%). DCMA notification pending.'\n[Document metadata: Created 01/06/2025, Last accessed: 01/08/2025 by L. Castellano]\n\n**Teams \u2014 #cost-accounting (Feb 22, 2025, 2:14 PM)**\n@l.castellano: Quick reminder \u2014 anyone with proposals in progress needs to use the November DCMA-approved rates until the new provisionals are formally accepted. Don't use the January revision for pricing.\n@j.torres: Even though we know actuals are trending lower?\n@l.castellano: Correct. The cert of current cost or pricing data covers data 'reasonably available.' The question is what's reasonably available vs. what's approved.\n@j.torres: Got it. Using November rates.\n:white_check_mark: reacted by @l.castellano\n\n**Outlook \u2014 From: l.castellano@sentinel-ds.com To: k.patel@sentinel-ds.com (Mar 12, 2025)**\nSubject: APTD Proposal \u2014 Rate Question\n'Karen \u2014 heads up that the APTD proposal is still using November FPRAs. The January rate revision memo shows materially lower rates but hasn't been formally submitted to DCMA yet. Technically the cert covers cost or pricing data reasonably available as of certification date. The memo exists and shows lower costs. Flagging for your awareness before you sign the cert on Friday.'\n\n**Outlook \u2014 From: k.patel@sentinel-ds.com To: l.castellano@sentinel-ds.com (Mar 13, 2025)**\nSubject: RE: APTD Proposal \u2014 Rate Question\n'Linda \u2014 discussed with outside counsel. Their view is that DCMA-approved rates are the appropriate basis for proposal pricing. The internal revision memo is preliminary until DCMA accepts. Proceeding with November rates. Will sign cert tomorrow.'\n\n**Jira \u2014 COMP-2026-041 (DCAA Audit Tracker)**\nCreated: 05/2026 | Status: Open \u2014 Under Review\nAudit Finding: 'Contractor's certified cost or pricing data may not have been current, accurate, and complete as of 03/14/2025. Internal documentation shows awareness of lower indirect rates prior to certification.'\nComment (06/01/2026, @r.chen): 'Need to reconstruct timeline. Key question: was the Jan rate memo reasonably available cost or pricing data? If yes, potential defective pricing under TINA. Government's price adjustment claim could be ~$1.2M.'",
+  "question": "Based on the available evidence, what is the most defensible position for Sentinel regarding the DCAA defective pricing allegation?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Raymond Chen",
+    "title": "Procurement Integrity & Ethics Officer",
+    "organization": "Sentinel Defense Solutions",
+    "years_experience": 16,
+    "domain_expertise": "OCI mitigation, source selection firewall, post-award audit, FAR Part 3 compliance, disclosure obligations"
+  },
+  "tools_available": [],
+  "source_batch": "sentinel-procurement-integrity-batch1.json",
+  "choices": [
+    "Sentinel should assert that the Teams message from Castellano instructing the team to use November rates demonstrates a good-faith compliance culture, negating any intent element required for defective pricing claims.",
+    "Sentinel has limited exposure that can be mitigated by demonstrating the January memo was preliminary and the DCMA-approved rates remained the best available 'certified' data at the time of submission.",
+    "Sentinel has significant defective pricing exposure because the January rate revision memo constitutes cost or pricing data that was 'reasonably available' before certification, Castellano's email proves awareness, and the Patel email shows a deliberate decision not to disclose \u2014 creating potential liability under TINA even though outside counsel advised otherwise.",
+    "Sentinel has no defective pricing exposure because it used DCMA-approved forward pricing rates, which are the contractually established basis for proposal pricing regardless of internal analyses."
+  ]
+}

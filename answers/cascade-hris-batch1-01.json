@@ -1,0 +1,6 @@
+{
+  "scenario_file": "cascade-hris-batch1-01.json",
+  "correct_answer": "CC-4420 has 1 open position (REQ-2287/new role); Adaptive needs a manual sync to remove the eliminated P-04217 and add the new position at B5",
+  "answer_format": "multiple_choice",
+  "rationale": "The Adaptive Planning model last synced on March 28 \u2014 three days before the reorg effective date of April 1. This means Adaptive still shows P-04217 as open when it was actually eliminated. Meanwhile, a new role (Compliance Integration Specialist at B5) was created through ServiceNow HR and is being actively recruited for via Korn Ferry, but it exists under a different title and band than the eliminated position. The correct state is 1 open position (the new role), not 2. The fix is a manual Adaptive sync that removes the phantom P-04217 and adds the new position. Answer A is wrong because P-04217 was intentionally eliminated \u2014 the new role is a distinct position, not a reopening. Answer A is wrong because the Teams conversation and ServiceNow case confirm the new role is approved and budgeted to CC-4420 (the Korn Ferry invoice proves it). Answer D is wrong because the position creation already happened via the ServiceNow workflow and TA opened the req; the issue is purely a sync failure in the planning tool, not a missing approval."
+}

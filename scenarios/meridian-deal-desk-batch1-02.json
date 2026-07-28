@@ -1,0 +1,24 @@
+{
+  "title": "The Precedent That Wasn't",
+  "category": "precedent_exception",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "AE Jennifer Wu is pushing for approval on a 36-month ramp deal for Apex Manufacturing: Year 1: $120K, Year 2: $180K, Year 3: $240K (TCV $540K, blended 22% discount). She submitted it through CPQ on May 8th. In her submission notes: \"Per precedent with DataCore deal (Opp ID: 006-9834), requesting approval for multi-year ramp with >20% discount in Year 1.\"\n\nYou search CRM for Opp 006-9834 (DataCore Solutions, closed January 12, 2026, owner: Michael Torres). The deal structure shows: 36 months, Year 1: $100K, Year 2: $200K, Year 3: $300K, TCV $600K. The Approval History in CPQ shows: Michael Torres \u2192 You (approved Jan 12) \u2192 VP Sales (approved Jan 12). Your approval comment: \"Approved - strategic account, ramp justified by deployment timeline in SOW.\"\n\nYou check the related files on the CRM opportunity. There's a DocuSign envelope with a Master Services Agreement and a Statement of Work. The SOW (signed by DataCore's CTO) specifies: \"Phase 1 (Months 1-12): Pilot deployment, 50 users. Phase 2 (Months 13-24): Department rollout, 200 users. Phase 3 (Months 25-36): Enterprise rollout, 500 users.\" The user-based pricing clearly correlates to the revenue ramp.\n\nFor Jennifer's Apex deal, you review the attached draft MSA in DocuSign (unsigned). There's no SOW. In a resolved Google Doc comment thread on the internal deal memo (March 20), Jennifer's SE wrote: \"Customer wants ramp for cash flow management - their capex budget is frozen until new fiscal year.\" Jennifer replied: \"Got it, will position as gradual expansion.\" The comment thread was marked resolved on March 21.\n\nYou pull up Confluence \"Discount Policy v3.0\" (effective March 1, 2026): \"Ramp deals: Discounts >20% in any single year require VP Sales approval. Discounts calculated on year-over-year basis, not blended.\"\n\nIn Slack #revenue-ops (May 2, 2026), your RevOps counterpart posted: \"Reminder: Finance is cracking down on ramp deals that are really just payment plans. We need usage/deployment ramps tied to contractual milestones, not customer cash flow management.\"\n\nJennifer's Year 1 pricing shows $120K against a list price of $160K (25% discount).",
+  "question": "How should you handle Jennifer's precedent claim for the Apex Manufacturing ramp deal?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Rachel Stein",
+    "title": "Senior Deal Desk Manager",
+    "organization": "Meridian Systems",
+    "years_experience": 11,
+    "domain_expertise": "Complex deal structuring, pricing exceptions, CPQ governance"
+  },
+  "tools_available": [],
+  "source_batch": "meridian-deal-desk-batch1.json",
+  "choices": [
+    "Approve based on precedent - the DataCore deal had similar structure and discount levels, and you approved it in January, creating binding precedent for similar deals",
+    "Reject - Year 1 has a 25% discount which exceeds the 20% threshold in Policy v3.0 (March 2026), requiring VP Sales approval that isn't in the workflow",
+    "Reject - the precedent doesn't apply because DataCore's ramp was tied to a contractual deployment milestone (SOW with phased rollout), while Apex's ramp is for customer cash flow management, which Finance explicitly flagged as problematic",
+    "Approve with condition that Jennifer adds a phased deployment SOW matching the revenue ramp before DocuSign execution, bringing it in line with DataCore precedent"
+  ]
+}

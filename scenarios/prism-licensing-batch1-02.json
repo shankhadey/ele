@@ -1,0 +1,24 @@
+{
+  "title": "Rights Window Auto-Renewal References Amended Territory in Legacy System Only",
+  "category": "policy_version",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "**RightsLine \u2014 Title: 'The Bellwether Tapes' (License ID: PRM-LC-2020-0219)**\nLicensor: Arclight Distribution\nTerritory: 'Per Schedule B'\nRights Type: TVOD + EST non-exclusive\nWindow: 24 months from Apr 1, 2020, auto-renews for successive 12-month periods unless terminated with 90 days written notice\nSchedule B (as entered in RightsLine): 'United States, United Kingdom, Australia, New Zealand'\nLast Renewal: Auto-renewed Apr 1, 2024\nNext Renewal Date: Apr 1, 2025\n\n**FileMaker \u2014 Legacy Record (Title ID: FM-6604)**\nTitle: 'Bellwether Tapes, The'\nDeal Modification DM-2022-ARC-001 (entered Jul 15, 2022):\n'Schedule B amended per mutual agreement dated Jun 30, 2022. Territory expanded to include: Germany, France, Benelux, Nordics. All other terms unchanged. Amendment executed by VP Content (M. Ishida) and Arclight SVP (D. Kreuger).'\nNote: 'RightsLine updated? \u2014 TBD (flagged for migration team)'\n\n**Google Workspace \u2014 Email thread (Subject: 'RE: Bellwether territory expansion' \u2014 Jun 28, 2022)**\nFrom: m.ishida@prismmedia.com\nTo: d.kreuger@arclightdist.com\nCC: christopher.adebayo@prismmedia.com\n\n> On Jun 25, D. Kreuger wrote:\n> > Happy to expand into EU territories. One condition: the holdback for Germany\n> > must be 6 months from first-run SVOD availability in that market before\n> > TVOD/EST can launch. Standard for our EU output deals.\n>\n> Confirmed. We'll add the 6-month German holdback to the amendment.\n\nMasahiro \u2014 looping in Chris for ops tracking. DocuSign went out today.\n\n**Slack \u2014 #content-ops (Feb 28, 2025, 11:03 AM)**\n@tanya.moss: Chris \u2014 'Bellwether Tapes' auto-renew is coming up Apr 1. Are we renewing? I see it's US/UK/AU/NZ in RightsLine.\n@christopher.adebayo: Should be broader than that. Didn't we expand into EU?\n@tanya.moss: Nothing in RL shows EU territories.\n@christopher.adebayo: Check FileMaker. I think the amendment never migrated.\n@tanya.moss: :thumbsup:\n[No follow-up message]\n\n**DocuSign \u2014 Completed Envelope (Jul 2, 2022)**\nDocument: 'Amendment to License Agreement \u2014 The Bellwether Tapes \u2014 Schedule B Territory Expansion'\nSigned by: M. Ishida (Prism), D. Kreuger (Arclight)\nStatus: Completed\nAttachment not linked in any other system.",
+  "question": "If the auto-renewal takes effect on April 1, 2025 without any party sending termination notice, which territories are included in the renewed rights window?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Christopher Adebayo",
+    "title": "Content Licensing & Acquisitions Manager",
+    "organization": "Prism Media Group",
+    "years_experience": 9,
+    "domain_expertise": "Territorial rights management, rights reversion, holdback periods, licensor entity tracking, sublicensing restrictions"
+  },
+  "tools_available": [],
+  "source_batch": "prism-licensing-batch1.json",
+  "choices": [
+    "Only US, UK, Australia, and New Zealand \u2014 the RightsLine record is the system of record and the amendment was never properly migrated",
+    "US, UK, Australia, New Zealand, Germany, France, Benelux, and Nordics, but the German window is subject to a 6-month holdback from first-run SVOD making TVOD/EST unavailable there until the holdback clears",
+    "US, UK, Australia, New Zealand, Germany, France, Benelux, and Nordics \u2014 the executed amendment expanded Schedule B and auto-renewal references 'the territory as defined in Schedule B' which was legally amended",
+    "The renewal is invalid because the territory amendment was signed by M. Ishida (VP Content) who may not have had authority over EU distribution rights post the 2024 org restructure"
+  ]
+}

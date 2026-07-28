@@ -1,0 +1,6 @@
+{
+  "scenario_file": "cascade-wealth-batch1-01.json",
+  "correct_answer": "David R. Holloway 50%, Sarah Holloway-Park 35%, Portland Community Foundation 15% \u2014 per the Third Amendment",
+  "answer_format": "multiple_choice",
+  "rationale": "The Third Amendment dated 12/03/2024 is the most recent governing document and supersedes both the original WealthPort data and the 2019 restated agreement. The email from legal confirms the amendment is executed and notarized, establishing it as the controlling document. Answer A is wrong because WealthPort was never updated after the 2019 restatement \u2014 the Teams conversation explicitly confirms this is a known data integrity issue with the legacy system. Answer B reflects the 2019 restatement but ignores the subsequent amendment discovered via the legal team's email. Answer D conflates administrative processing requirements (death certificate, Letters Testamentary needed to execute the distribution) with the question of what the correct percentages are \u2014 the distribution split is knowable now even though the actual disbursement must wait. The critical signal is in the Outlook email that identifies the Third Amendment, which hadn't yet been uploaded to SharePoint."
+}

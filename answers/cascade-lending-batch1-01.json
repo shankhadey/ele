@@ -1,0 +1,6 @@
+{
+  "scenario_file": "cascade-lending-batch1-01.json",
+  "correct_answer": "Decline the draw until a new guaranty or ratification is obtained from Bridgewater Capital Group Inc., and downgrade the risk rating to Watch per Policy 7.3",
+  "answer_format": "multiple_choice",
+  "rationale": "The outside counsel email is the critical signal: Bridgewater Holdings was dissolved (not converted), creating a 2-week gap before the new entity was formed, and no formal assignment of the guaranty occurred. This means the guaranty is legally unsupported regardless of Section 8(c) language, because the guarantor entity ceased to exist by operation of law \u2014 the clause protects against ownership changes, not entity dissolution. Additionally, the audit team's comment citing Policy 7.3 requires an immediate downgrade when the guaranty is unsupported, which would restrict new advances. Answer A incorrectly relies on Section 8(c), which addresses ownership changes, not entity dissolution. Answer C incorrectly assumes automatic successor liability \u2014 outside counsel specifically noted this is 'fact-dependent' and the gap creates risk. Answer D is procedurally irrelevant; the issue isn't approval authority but the legal validity of the credit support structure."
+}

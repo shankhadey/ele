@@ -1,0 +1,24 @@
+{
+  "title": "Studio Acquisition Triggers Sublicensing Restriction Dispute",
+  "category": "entity_resolution",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "**RightsLine \u2014 Title: 'Midnight Crossing' (License ID: PRM-LC-2021-0447)**\nLicensor: Crestview Studios LLC\nTerritory: North America (US + Canada)\nRights Window: SVOD exclusive, 36 months from Jan 1, 2022\nSublicensing: 'Not permitted without prior written consent of Licensor. Any transfer, assignment, or sublicense to a third party shall be void unless approved per Section 14.2.'\nStatus: Active\n\n**FileMaker \u2014 Legacy Record (Title ID: FM-8821)**\nTitle: 'Midnight Crossing'\nLicensor: Crestview Pictures (note: entity filed under older trade name)\nDeal Memo Reference: GM-2021-CR-003\nAmendment Note (added Aug 2023): 'Licensor entity renamed to Crestview Studios LLC per merger filing. No change to deal terms per legal confirmation from R. Okafor.'\n\n**Google Drive \u2014 Deal Memo GM-2021-CR-003 (Last Modified: Dec 14, 2021)**\nSection 14.2: 'Consent to sublicense shall not be unreasonably withheld, provided that (a) the sublicensee is a wholly-owned subsidiary or affiliate of Licensee, or (b) the sublicensee operates the same streaming platform under a different regional brand.'\n\n**Slack \u2014 #content-ops (Mar 3, 2026, 2:47 PM)**\n@christopher.adebayo: Heads up \u2014 Ridgeline Media closed the Crestview acquisition last Friday. All Crestview titles now roll into Ridgeline's library.\n@tanya.moss: Does that affect our sublicensing position on Midnight Crossing? We were about to sublicense the Canadian window to Maple+.\n@christopher.adebayo: Checking. The restriction says 'third party' \u2014 question is whether Ridgeline stepping into Crestview's shoes changes anything on our side.\n@rachel.okafor: The original deal memo has the carve-out for our affiliates. The question is whether THEIR change of control triggers anything.\n@tanya.moss: :eyes:\n[Thread ends \u2014 no further messages]\n\n**NetSuite \u2014 Vendor Record**\nVendor: Crestview Studios LLC | Status: Active | Payment remit-to: Ridgeline Media Holdings (updated Mar 1, 2026)\nNote: 'Banking details updated per acquisition close. Legal entity unchanged per counsel.'",
+  "question": "Can Prism sublicense the Canadian SVOD window for 'Midnight Crossing' to Maple+ (an unaffiliated third-party streamer) without obtaining consent from the licensor (now Ridgeline Media)?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Christopher Adebayo",
+    "title": "Content Licensing & Acquisitions Manager",
+    "organization": "Prism Media Group",
+    "years_experience": 9,
+    "domain_expertise": "Territorial rights management, rights reversion, holdback periods, licensor entity tracking, sublicensing restrictions"
+  },
+  "tools_available": [],
+  "source_batch": "prism-licensing-batch1.json",
+  "choices": [
+    "No \u2014 the acquisition constitutes a 'transfer to a third party' under Section 14.2, making the entire license void until Ridgeline re-executes",
+    "No \u2014 Maple+ is neither a wholly-owned subsidiary nor a regional brand variant of Prism, so Section 14.2 requires written consent regardless of the licensor's change of ownership",
+    "Yes \u2014 the acquisition of Crestview by Ridgeline voided the sublicensing restriction because Ridgeline is a 'new' licensor and the original clause no longer applies",
+    "Yes \u2014 the Slack thread shows no objection was raised, which constitutes implicit consent under the original deal terms"
+  ]
+}

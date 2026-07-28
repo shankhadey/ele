@@ -1,0 +1,24 @@
+{
+  "title": "Cross-Brand Promotional Depth Conflict with Emoji Approval",
+  "category": "temporal_consistency",
+  "domain": "sales_deal_desk",
+  "difficulty": "hard",
+  "scenario_text": "**Google Doc \u2014 'Atlas Corporate Pricing Governance Policy' (v2.3, effective Aug 2025)**\nSection 7.2: 'No brand shall exceed 30% promotional depth on full-price items without written CMO approval. Promotions exceeding 30% that are not pre-approved are subject to immediate suspension and P&L chargeback to the brand.'\nSection 7.4: 'Promotional calendars must be submitted 30 days in advance to pricing-governance@atlasretail.com for cross-brand conflict review.'\n\n**Slack \u2014 #brand-leads (Nov 12, 2025, 9:18 AM)**\n@rachel.fong (CMO): Team \u2014 Q4 is going to be competitive. I'm open to deeper promotions IF they don't undercut sister brands. Propose what you need and I'll approve case by case.\n@tom.nguyen (Brand C Director): Can we get blanket approval for up to 40% on last-season inventory through Jan?\n@rachel.fong: For clearance/last-season only? Not mainline?\n@tom.nguyen: Correct. End-of-life SKUs only.\n@rachel.fong: :white_check_mark:\n@derek.walsh (Brand A Director): Same ask for Brand A? We have winter carryover.\n@rachel.fong: :white_check_mark:\n[Thread continues with unrelated topic]\n\n**Shopify Plus \u2014 Brand A Promotions (Jun 15, 2026)**\nPromo code 'SUMMER40' \u2014 Discount: 40% | Applied to: Collection 'Summer Essentials' | Active: Jun 15 - Jul 15 | Created by: Brand A marketing team\nCollection 'Summer Essentials': 48 SKUs, all current-season mainline products (NOT last-season/EOL)\n\n**Looker \u2014 Brand B Performance Dashboard (Jun 20, 2026)**\nBrand B 'Summer Collection' \u2014 conversion rate dropped 34% week-over-week | Average selling price down 12% | Note from Brand B analyst in dashboard annotation: 'Brand A running 40% off on competing summer category. Our full-price positioning is getting crushed. Customers cross-shopping.'\n\n**Slack \u2014 #pricing-team (Jun 21, 2026, 8:30 AM)**\n@laura.svensson: Did Brand A submit a promo calendar for SUMMER40?\n@jessica.lin: Nothing in the governance inbox. I checked back 60 days.\n@laura.svensson: And this is mainline product, not EOL.\n@jessica.lin: Confirmed. All 48 SKUs are SS26 current season.\n\n**Email \u2014 From: derek.walsh@atlasretail.com (Jun 21, 2026, 10:14 AM)**\nTo: laura.svensson@atlasretail.com\nSubject: 'RE: SUMMER40 promo \u2014 compliance question'\n\n> Laura \u2014 Rachel approved 40% for us back in November. See the Slack thread. We're covered.\n\n> Re: promo calendar submission \u2014 that's for cross-brand conflict review. We didn't think summer essentials overlapped with other brands.",
+  "question": "Is Brand A's SUMMER40 promotion (40% off current-season mainline) compliant with Atlas pricing governance?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Laura Svensson",
+    "title": "Pricing Strategy Manager",
+    "organization": "Atlas Retail Holdings",
+    "years_experience": 10,
+    "domain_expertise": "MAP enforcement, promotional pricing governance, wholesale vs DTC price parity, channel conflict resolution"
+  },
+  "tools_available": [],
+  "source_batch": "atlas-pricing-batch1.json",
+  "choices": [
+    "No \u2014 the CMO's approval was specifically scoped to 'last-season/end-of-life SKUs only' and SUMMER40 applies to current-season mainline; the approval does not cover this promotion",
+    "Yes \u2014 the CMO gave explicit approval via the checkmark emoji in the #brand-leads Slack thread; this constitutes written approval per Section 7.2",
+    "Partially compliant \u2014 the CMO approval covers the depth (40%) but the cross-brand conflict with Brand B creates a separate violation under Section 7.4 that requires retroactive review",
+    "No \u2014 regardless of CMO approval, the promotion was not submitted 30 days in advance per Section 7.4, making it procedurally non-compliant even if substantively authorized"
+  ]
+}

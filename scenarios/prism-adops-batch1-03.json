@@ -1,0 +1,24 @@
+{
+  "title": "Cross-Platform Frequency Cap Dispute with Conflicting Analytics Sources",
+  "category": "cross_system_synthesis",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "**HubSpot CRM \u2014 Account: 'Lumen Financial Services' (via GroupM/Mindshare)**\nDeal: PMG-IO-2026-0087 (Streaming) + PMG-IO-2026-0088 (Display/Programmatic) | Combined value: $520K | Negotiated term: 'Consolidated household frequency cap of 5x/day across all Prism properties including streaming and display.' | Deal owner: Angela Torres | Note (Jan 15, 2026): 'Client specifically called out cross-platform dedup as a requirement. Confirmed with ad ops we can honor via LiveRamp identity spine.'\n\n**Google Ad Manager \u2014 Order: 'Lumen_Financial_Q1_Streaming'**\nLine items: 8 | Frequency cap: 5x/household/day | Delivered: 28.4M impressions | Unique HH reached: 4.2M | Avg freq: 3.1x | Platform: Prism+ (CTV/streaming) | Identity: LiveRamp HH graph\n\n**Monday.com \u2014 Campaign Tracker: 'Lumen Display Q1'**\nPlatform: Prism Web + App (display) | Served via: PMP deal through The Trade Desk | Impressions: 19.1M | Frequency cap: 5x/user/day | Identity: cookie-based + probabilistic | Note from trafficker (Feb 8): 'TTD uses their own identity graph \u2014 no LiveRamp integration on this path. Cross-platform dedup not technically possible in real-time.'\n\n**Amplitude \u2014 Prism+ App Engagement Dashboard**\nHousehold overlap analysis (Q1 2026): 34% of Prism+ streaming HHs also active on Prism web/app properties. Estimated cross-platform undeduplicated exposure for Lumen campaign: avg 6.8x/HH/day for overlap segment.\n\n**Mixpanel \u2014 Prism Web Analytics**\nLumen Financial display campaign: avg 3.4x frequency per cookie. Note: cookie match rate to HH graph = ~62%.\n\n**Slack \u2014 #ad-ops (Apr 2, 2026, 4:55 PM)**\n@tasha.w: just got off the phone with Mindshare. they ran their own measurement and are claiming we exceeded the 5x consolidated cap by 30%+ for a third of their audience. they want a credit.\n@angela.t: shit. what does our data show?\n@tasha.w: depends which tool you look at. amplitude shows 6.8x overlap for the 34% shared-audience segment. each platform individually is compliant. it's the cross-platform dedup that broke\n@angela.t: did we ever actually confirm the LiveRamp spine could cover the display path?\n@tasha.w: \ud83e\udee0 the feb 8 note in monday says TTD doesn't integrate with liveramp on the pmp path. so... no\n@angela.t: who signed off on the IO language promising consolidated cap?\n@tasha.w: you did lol. but tbf the CRM note says 'confirmed with ad ops we can honor' \u2014 I don't remember that convo\n@angela.t: \ud83d\ude2c\n[thread ends]",
+  "question": "Mindshare is demanding a credit for frequency cap violation. What is the correct operational determination?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Natasha Williams",
+    "title": "Ad Operations Director",
+    "organization": "Prism Media Group",
+    "years_experience": 11,
+    "domain_expertise": "Programmatic deal reconciliation, advertiser entity management, IO interpretation, cross-platform attribution, make-good decisions"
+  },
+  "tools_available": [],
+  "source_batch": "prism-adops-batch1.json",
+  "choices": [
+    "A credit is owed for the full overlap segment (34% of households) based on Amplitude's 6.8x figure, calculated against the combined IO value of $520K",
+    "A partial credit is owed only after validating the actual overlap exposure using LiveRamp's deterministic match \u2014 Amplitude's 6.8x estimate and Mindshare's '30%+' claim are both probabilistic and neither is contractually authoritative",
+    "No credit is owed because the trafficker's Feb 8 note proves cross-platform dedup was technically impossible, making the IO frequency language unenforceable as a performance guarantee",
+    "No credit is owed \u2014 each platform individually honored the 5x cap, and the IO was structured as two separate orders (0087 and 0088) making each independently compliant"
+  ]
+}

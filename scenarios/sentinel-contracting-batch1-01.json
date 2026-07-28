@@ -1,0 +1,24 @@
+{
+  "title": "Small Business Subcontractor Size Standard Recertification at Option Exercise",
+  "category": "entity_resolution",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "scenario_text": "Context from Costpoint \u2014 Contract H2847-19-D-0042:\nContract type: CPFF | Base period: Oct 2021 - Sep 2023 | Option I: Oct 2023 - Sep 2024 (exercised) | Option II: Oct 2024 - Sep 2025 (pending exercise) | Small business subcontracting plan attached at award.\n\nSubcontracting Plan (SharePoint \u2014 /proposals/H2847/vol4-sb-plan-final.docx):\nGoal: 35% of subcontracted dollars to small business concerns. Key sub: Ridgeline Cyber Solutions (NAICS 541512, size standard $30M). At time of award, Ridgeline's certified revenue was $22.4M per SAM.gov. Annual SB reporting credits Ridgeline at $1.8M/year.\n\nSAM.gov \u2014 Entity: Ridgeline Cyber Solutions LLC:\nCAGE: 7X2M4 | NAICS 541512 | Size status: OTHER THAN SMALL (recertified Feb 2025) | Annual revenue: $34.1M (averaged over last 3 fiscal years). Prior certification (Aug 2022): SMALL.\n\n**Teams \u2014 #sentinel-contracts-div2 (Mar 12, 2025, 2:47 PM)**\n@pat.holloway: Heads up \u2014 Ridgeline flipped to other-than-small in SAM last month. Does that kill our SB credit on the H2847 subK?\n@james.whitfield: They recertified at option exercise? Or just annual?\n@pat.holloway: Just pulled it up. Looks like it was triggered by a novation \u2014 they got acquired by Crestmark in Jan.\n@james.whitfield: Oh that changes things. Novation is different from organic growth\n@pat.holloway: Right. FAR 19.301-2(e) vs the merger/acquisition rule...\n[Thread ends \u2014 no further replies]\n\n**Email \u2014 Subject: 'RE: H2847 Option II Exercise Package' (Mar 18, 2025)**\nFrom: james.whitfield@sentineldef.com\nTo: pat.holloway@sentineldef.com\nCC: contracts-div2@sentineldef.com\n\n> On Mar 15, pat.holloway wrote:\n> Jim \u2014 can we still count Ridgeline as SB for the option II exercise? Need to update the ISR before submitting.\n\nPat \u2014 checked with SB liaison office. Per FAR 19.301-2(e), a subcontractor that represented itself as small at contract award is generally considered small throughout the contract unless there's a recertification event. BUT per FAR 19.301-2(e)(2), a merger/acquisition triggers mandatory recertification within 30 days. If the recert results in other-than-small, the prime loses SB credit going forward.\n\nSo: credits through Option I are safe. Option II onward \u2014 no SB credit for Ridgeline.\n\n**GovWin \u2014 Contract Record:**\nNext ISR (Individual Subcontract Report) due: Apr 15, 2025. Prior ISR (Oct 2024) showed 37.2% SB achievement.\n\n**SharePoint \u2014 /policies/sb-counting-guidance-rev3.docx (last modified: Nov 2020)**\nSection 4.1: 'Subcontractors certified as small at award retain small business credit for the life of the contract regardless of subsequent growth.'\n[Document note: 'This guidance predates the 2020 final rule on recertification. Under review.']",
+  "question": "For the upcoming Option II Individual Subcontract Report (due Apr 15, 2025), can Sentinel count the $1.8M in Ridgeline Cyber Solutions subcontract dollars toward its small business subcontracting goal?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Patricia Holloway",
+    "title": "Contracting Officer",
+    "organization": "Sentinel Defense Solutions",
+    "years_experience": 19,
+    "domain_expertise": "FAR/DFARS compliance, contract modifications, small business subcontracting"
+  },
+  "tools_available": [],
+  "source_batch": "sentinel-contracting-batch1.json",
+  "choices": [
+    "No \u2014 Ridgeline recertified as other-than-small due to a merger/acquisition, which triggers mandatory loss of SB credit from the recertification date forward",
+    "Yes \u2014 Ridgeline was small at contract award, so SB credit applies for the life of the contract per the internal policy guidance",
+    "No \u2014 Ridgeline exceeded the $30M size standard through organic growth, which requires recertification at the next option period",
+    "Yes \u2014 recertification only applies at option exercise, and since Option II has not yet been formally exercised, the current status still applies from Option I"
+  ]
+}

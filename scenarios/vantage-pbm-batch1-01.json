@@ -1,0 +1,24 @@
+{
+  "title": "Formulary Tier Grandfathering Dispute After P&T Committee Reclassification",
+  "category": "policy_version",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "A patient (MRN 4402891 at Vantage Regional, MRN 77-20145 at the former Lakeside campus) has been on Xeljanz 5mg for moderate RA since March 2025. At that time, tofacitinib was Tier 3 (preferred specialty) on the Vantage formulary.\n\n**SharePoint \u2014 /pharmacy/formulary/2026-formulary-v2.xlsx (Published Jan 15, 2026)**\nTherapeutic Class: JAK Inhibitors | Xeljanz (tofacitinib) | Tier: 4 (Non-preferred specialty) | PA Required: Yes | Step Therapy: Must fail 2 bDMARDs | Effective: Feb 1, 2026\n[Document Properties: Last modified by P&T Committee Coordinator, Jan 12, 2026]\n\n**SharePoint \u2014 /pharmacy/formulary/policies/grandfathering-policy-v3.docx (Published Sep 2024)**\nSection 4.1: \"Patients with active PA approvals at the time of a formulary tier change shall be grandfathered at their current tier until their PA expiration date, unless the P&T Committee specifies otherwise.\"\n[RESOLVED COMMENT by @dr.navarro, Jan 8, 2026]: \"For the JAK inhibitor reclassification specifically, P&T voted to require re-review at next PA renewal for ALL patients, no grandfathering. This overrides 4.1. Documenting here per Linda's request since the meeting minutes aren't finalized yet.\"\n\n**Epic Pharmacy Module \u2014 Prior Authorization Record**\nPatient: [MRN 4402891] | Drug: Tofacitinib 5mg BID | PA Status: Approved | Approved by: Dr. Mehta (Medical Director) | Approval Date: Mar 14, 2025 | Expiration: Mar 14, 2026 | Notes: \"Patient failed methotrexate and Humira. Meets UM criteria v2025.1.\"\n\n**PBM Portal (Express Scripts) \u2014 Claim Adjudication Log, Feb 3, 2026**\nRx Claim #EX-9928401 | NDC: 00069-0501-30 | Status: REJECTED | Reason: NDC requires PA \u2014 no active PA on file matching current UM criteria | Pharmacy: Vantage Specialty Pharmacy | Reject Code: 75 (Prior Authorization Required)\n\n**Microsoft Teams \u2014 Pharmacy Ops Channel (Feb 4, 2026, 8:47 AM)**\n@patricia.okonkwo: Getting calls from specialty pharmacy about Xeljanz claims rejecting. Patients had valid PAs. Is this the tier change?\n@linda.marsh: Yes. New UM criteria went live Feb 1. PBM is rejecting because the old PA codes don't map to the new tier requirements.\n@patricia.okonkwo: But these patients are grandfathered per policy 4.1?\n@linda.marsh: (thumbs-down emoji) Not for JAK inhibitors. P&T made an exception. Check the formulary doc comments, I think Rachel documented it there.\n@dr.mehta: I approved these originally. Happy to re-review but need the updated criteria. Where are they posted?\n[No further replies in thread]",
+  "question": "Should the patient's Xeljanz claim be processed under the existing PA approval (grandfathered at Tier 3), or must a new PA be submitted under the 2026 UM criteria?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Patricia Okonkwo",
+    "title": "Pharmacy Benefits Operations Manager",
+    "organization": "Vantage Health Partners",
+    "years_experience": 10,
+    "domain_expertise": "Formulary management, prior authorization appeals, PBM contract interpretation, step therapy exceptions"
+  },
+  "tools_available": [],
+  "source_batch": "vantage-pbm-batch1.json",
+  "choices": [
+    "Process at Tier 3 under the existing PA; the grandfathering policy (Section 4.1) protects this patient until PA expiration in March 2026",
+    "Require a new PA under 2026 UM criteria; the P&T Committee explicitly overrode grandfathering for JAK inhibitors",
+    "Process at Tier 4 but without requiring a new PA, since the patient has a valid approval on file regardless of tier placement",
+    "Reject and require the patient to restart step therapy (fail 2 bDMARDs) before Xeljanz can be re-authorized"
+  ]
+}

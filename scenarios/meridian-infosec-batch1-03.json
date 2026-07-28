@@ -1,0 +1,24 @@
+{
+  "title": "Data Breach Notification Timeline Under Conflicting Contractual Obligations",
+  "category": "approval_chain",
+  "domain": "compliance_legal",
+  "difficulty": "hard",
+  "scenario_text": "**PagerDuty \u2014 Incident #PD-4471 (Triggered: Jun 14, 2026, 02:17 AM)**\nService: auth-service | Severity: SEV-1\nAlert: 'Bulk export of user records from tenant: Covington Medical Group'\nEscalation: On-call (Jordan Kim) ack'd 02:19 \u2192 Security on-call (Priya Venkatesh) paged 02:25\n\n**Slack \u2014 #incidents (Jun 14, 2026, 02:32 AM)**\n@jordan.kim: Confirmed unauthorized access to Covington tenant. Compromised API key exported ~12K user records (names, emails, hashed passwords). Key rotated 02:28. Blast radius contained to single tenant.\n@priya.v: Activating breach response. @legal-oncall who's up?\n@sarah.legal: Here. Which customer?\n@priya.v: Covington Medical Group \u2014 healthcare customer. BAA in place?\n\n**Google Drive \u2014 /Legal/DPAs/Executed/ (search results)**\n- Covington_Medical_DPA_2024.pdf \u2014 Section 7: 'Processor shall notify Controller within 72 hours of becoming aware of a Personal Data Breach.'\n- Covington_Medical_BAA_2023.pdf \u2014 Section 4.1: 'Business Associate shall notify Covered Entity of a Breach of Unsecured PHI within 24 hours of discovery.'\n\n**Slack \u2014 #incidents thread (Jun 14, 2026, 02:48 AM)**\n@sarah.legal: Both a DPA (72hr) and BAA (24hr) with Covington. BAA governs for data qualifying as PHI.\n@priya.v: Exported data is names + emails + hashed passwords. No diagnosis codes. Is that PHI?\n@sarah.legal: Patient-facing portal users at a medical practice \u2014 the fact someone HAS an account is itself health information. Arguably yes.\n@priya.v: So we're on 24hr clock starting when?\n@sarah.legal: Discovery = confirmed unauthorized access. 02:32 AM per Jordan's message. Deadline: 02:32 AM Jun 15.\n[Thread: 4 :eyes: reactions, no further replies]\n\n**Confluence \u2014 Incident Response Playbook: Data Breach (v2.1, Nov 2025)**\nSection 6.2: 'For breaches affecting 500+ records, VP Engineering AND General Counsel must jointly approve notification content before delivery.'\n\n**Jira \u2014 SEC-1201 (Created: Jun 14, 2026, 03:15 AM)**\nSummary: Covington Medical breach notification \u2014 24hr BAA deadline\nStatus: In Progress | Priority: Critical\nComment (@priya.v, 03:20 AM): 'Drafted notification. Need VP Eng + GC sign-off per s6.2 (12K > 500 threshold). @vp.eng @gc.martinez \u2014 deadline 02:32 AM Jun 15.'\nComment (@gc.martinez, 07:45 AM): 'Are we certain this is PHI? If just portal credentials, may not meet PHI definition. If not PHI, 72hr DPA clock applies instead.'\n\n**Slack \u2014 DM between @priya.v and @sarah.legal (Jun 14, 2026, 08:15 AM)**\n@priya.v: GC pushing back on PHI determination. I'd rather over-notify. Missing BAA deadline if it IS PHI = HIPAA violation.\n@sarah.legal: Agree. But playbook says GC must approve content. Can't send without her sign-off.\n@priya.v: Can VP Eng approve solo and I send with 'GC review pending' note?\n@sarah.legal: That's not what s6.2 says. It says 'jointly approve.' :no_entry_sign:",
+  "question": "Given the conflicting timelines and approval requirements, what is the correct course of action for Priya by end of day June 14?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Priya Venkatesh",
+    "title": "Information Security & Compliance Manager",
+    "organization": "Meridian Systems",
+    "years_experience": 10,
+    "domain_expertise": "SOC2, vendor security reviews, data processing agreements, incident disclosure, policy versioning across compliance frameworks"
+  },
+  "tools_available": [],
+  "source_batch": "meridian-infosec-batch1.json",
+  "choices": [
+    "Wait for GC's PHI determination \u2014 if GC concludes it's not PHI, the 72-hour DPA timeline applies and there's no urgency; the BAA clock only starts once PHI is confirmed",
+    "Obtain VP Eng approval, formally document that GC was given reasonable time but did not provide approval by deadline, and send notification citing the BAA's 24-hour obligation \u2014 accepting the internal process deviation as lesser risk than a potential HIPAA violation",
+    "Send notification immediately under Priya's own authority since the breach affects fewer than 500 unique data subjects per tenant (the 12K records may include duplicates)",
+    "Escalate to VP Eng to override GC's delay and send notification before the 24hr BAA deadline, since HIPAA obligations supersede internal approval processes"
+  ]
+}

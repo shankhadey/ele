@@ -1,0 +1,24 @@
+{
+  "title": "Intra-Company Competitive Bid Collision After Organizational Restructuring",
+  "category": "approval_chain",
+  "domain": "compliance_legal",
+  "difficulty": "hard",
+  "scenario_text": "Sentinel Defense Solutions has three divisions, each with separate CAGE codes: Sentinel Cyber (CAGE: 1XB47), Sentinel ISR (CAGE: 3KM92), and Sentinel Mission Systems (CAGE: 5TP61). A recent reorg moved the 'Data Fusion' group from ISR to Mission Systems effective January 2026.\n\n**Costpoint \u2014 Proposal P-26-0134**\nDivision: Sentinel Cyber (1XB47)\nOpportunity: DIA HELIOS Program \u2014 Next-Gen Analytical Platform\nRFP: HHM402-26-R-0045 | Due: 04/15/2026\nOCI Screening: COMP-2026-012 | Status: Cleared | Date: 01/22/2026\nScreening Notes: 'Checked against active proposals across all divisions. No conflicts identified.'\n\n**Costpoint \u2014 Proposal P-26-0151**\nDivision: Sentinel Mission Systems (5TP61)\nOpportunity: DIA HELIOS Program \u2014 Next-Gen Analytical Platform\nRFP: HHM402-26-R-0045 | Due: 04/15/2026\nOCI Screening: COMP-2026-019 | Status: Cleared | Date: 02/08/2026\nScreening Notes: 'No conflicts with other Sentinel proposals per Costpoint query.'\n\n**SharePoint \u2014 /compliance/oci-screenings/procedure-v3.2.docx (Last updated: Nov 2025)**\nSection 4.1: 'OCI screening shall query all active proposals in Costpoint using parent company DUNS as the primary identifier.'\n[RESOLVED COMMENT by @l.tran, Jan 5 2026]: 'Updated org chart not yet reflected in Costpoint division mappings. IT ticket INFRA-4421 filed. Workaround: manually check GovWin pipeline by solicitation number.'\n\n**Teams \u2014 #mission-systems-capture (Feb 6, 2026, 11:23 AM)**\n@d.nakamura: Heads up \u2014 just saw Cyber is also going after HELIOS. Ran into Tom K at the all-hands and he mentioned their proposal.\n@s.rodriguez: Wait what? We cleared OCI screening two days ago. How did this not get flagged?\n@d.nakamura: Different CAGE codes. The screening tool queries by division.\n@s.rodriguez: So what do we do?\n@d.nakamura: Probably needs to go to Ethics? But our submission deadline is in 8 weeks.\n@s.rodriguez: Let's bring it up at the Thursday pipeline review.\n[Thread received :eyes: reaction from @r.chen]\n\n**Outlook \u2014 From: t.kowalski@sentinel-ds.com To: cyber-capture-team@sentinel-ds.com (Jan 30, 2026)**\nSubject: HELIOS Win Strategy\n'Team \u2014 got good intel from the Data Fusion guys who just moved over from ISR. They had a prior relationship with the DIA PM from the ORION program. Leveraging that past performance in our vol II.'\n\n**GovWin \u2014 Opportunity: DIA HELIOS (ID: GW-2026-88412)**\nSentinel entries: 2 (Sentinel Cyber \u2014 tracking since Nov 2025; Sentinel Mission Systems \u2014 tracking since Jan 2026)\nCompetitor tracking shows 4 other bidders.",
+  "question": "As the Procurement Integrity & Ethics Officer, what is the correct course of action after discovering both proposals during a routine pre-submission review on February 10, 2026?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Raymond Chen",
+    "title": "Procurement Integrity & Ethics Officer",
+    "organization": "Sentinel Defense Solutions",
+    "years_experience": 16,
+    "domain_expertise": "OCI mitigation, source selection firewall, post-award audit, FAR Part 3 compliance, disclosure obligations"
+  },
+  "tools_available": [],
+  "source_batch": "sentinel-procurement-integrity-batch1.json",
+  "choices": [
+    "Establish an organizational firewall between the two proposal teams retroactively, document the OCI mitigation, and allow both proposals to proceed since no competitive sensitive information has been exchanged between the teams.",
+    "Allow both proposals to proceed since they are submitted under different CAGE codes, which the government treats as separate legal entities for source selection purposes.",
+    "Escalate to the Contracts VP for a business decision on which division should pursue HELIOS, since this is a capture strategy conflict rather than a procurement integrity issue.",
+    "Immediately stand down one proposal and notify the Contracting Officer of the conflict, because even under separate CAGE codes, FAR 9.5 requires disclosure when affiliated entities bid on the same procurement \u2014 and the shared 'Data Fusion' personnel intelligence between divisions further compromises the firewall."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Verbal Commitment Under Prior Credit Policy During Mid-Cycle Tightening",
+  "category": "policy_version",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "**FIS Horizon \u2014 Pipeline Report (as of 11/15/2025)**\nLoan #PENDING-2025-1134 | Borrower: Greystone Development Corp | Type: Construction-to-Perm | Amount: $8.5M | LTV: 78% | DSCR (projected): 1.18x | Status: Credit Memo in Progress\nRelationship Manager: D. Parsons | Submitted to Credit: 10/28/2025\n\n**SharePoint \u2014 Credit Policy Manual (Version 11.0, effective 11/01/2025)**\nSection 3.2 \u2014 CRE Construction Lending:\n'Maximum LTV for construction loans: 75%. Minimum DSCR (stabilized): 1.25x. No exceptions without Chief Credit Officer approval and documented mitigants.'\n[Version History: v10.0 (effective 04/2023) stated: 'Maximum LTV: 80%. Minimum DSCR: 1.15x.']\n\n**Outlook \u2014 Email Chain (10/22/2025)**\nFrom: d.parsons@cascadefinancial.com\nTo: m.greystone@greystonedev.com\nCC: t.whitfield@cascadefinancial.com\nSubject: Cascade \u2014 Greystone Construction Facility\n\n'Marcus \u2014 good speaking with you today. Per our discussion, we're pleased to confirm Cascade's interest in providing the $8.5M construction facility on the terms we discussed. I'll have the credit memo submitted by end of month. Formal commitment letter to follow after credit approval. Looking forward to partnering on this one.'\n\n**Microsoft Teams \u2014 #cre-lending (10/30/2025, 11:22 AM)**\n@d.parsons: Heads up \u2014 Greystone memo is in the queue. Tom gave verbal on this at 78% LTV back in October. Should be straightforward.\n@j.chen: Policy 3.2 changed yesterday. New max LTV is 75% for construction. You aware?\n@d.parsons: Wait what? That wasn't announced until the monthly.\n@j.chen: Credit committee pushed it through 10/31 effective 11/1. The memo came out late Friday.\n@d.parsons: We told the customer we'd do this. Tom was on the email.\n@j.chen: \ud83e\udd37\u200d\u2642\ufe0f talk to Tom\n\n**SharePoint \u2014 Credit Committee Minutes (10/15/2025)**\n[RESOLVED COMMENT by @cco.office, 10/29/2025]: 'Board approved tightening CRE parameters given market conditions. Transition guidance: loans with issued commitment letters prior to 11/1 are grandfathered. Pipeline deals without formal commitments subject to new policy.'\n\n**Dynamics 365 \u2014 Relationship Notes (Greystone Development Corp)**\nEntry (10/23/2025, D. Parsons): 'Verbal commitment extended per discussion with VP Whitfield. Customer expects formal CL within 3 weeks. Strong relationship \u2014 3 prior deals closed, no losses. Greystone indicated competing term sheet from First National at 80% LTV.'\n\n**Bloomberg Terminal \u2014 Market Data (pulled 11/10/2025)**\nGreystone Development Corp \u2014 Private. No public filings.\nLocal CRE market (Charlotte MSA): Cap rate compression; office vacancy 14.2% (up from 11.8% YoY). Construction cost index +6.3% YTD.",
+  "question": "Given the policy change, the verbal commitment, and the transition guidance in the credit committee minutes, what is the correct path for the Greystone $8.5M construction loan?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Thomas Whitfield",
+    "title": "VP, Commercial Lending",
+    "organization": "Cascade Financial Group",
+    "years_experience": 18,
+    "domain_expertise": "Loan origination, credit policy, covenant compliance, loan modifications, workout situations"
+  },
+  "tools_available": [],
+  "source_batch": "cascade-lending-batch1.json",
+  "choices": [
+    "Honor the verbal commitment at 78% LTV \u2014 the email from 10/22 with a VP on CC constitutes an institutional commitment that predates the policy change",
+    "Apply new Policy 3.2 (75% LTV, 1.25x DSCR) \u2014 the transition guidance explicitly states only loans with issued commitment letters are grandfathered, and no commitment letter was issued",
+    "Approve at 78% LTV under the old policy since the credit memo was submitted on 10/28, one day before the new policy was approved by credit committee",
+    "Restructure to 75% LTV to comply with new policy but offer a rate concession to preserve the relationship, since the competing term sheet from First National makes this a retention risk"
+  ]
+}

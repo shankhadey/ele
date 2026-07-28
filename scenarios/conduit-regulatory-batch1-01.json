@@ -1,0 +1,24 @@
+{
+  "title": "Interconnection Agreement Tariff Version Conflict at QF Billing",
+  "category": "policy_version",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "Conduit Energy is billing a 4.2 MW qualifying facility (QF) operated by High Desert Solar LLC for Q1 2026 energy deliveries. The interconnection agreement (IA) was executed in 2008 under Docket No. 08-R-412 and references Rate Schedule QF-2, which was superseded by Rate Schedule QF-3 in the 2019 general rate case (Docket No. 19-R-087).\n\n**Custom FileMaker \u2014 Docket Tracking (Docket 08-R-412)**\nEntity: High Desert Solar LLC | Facility: 4.2 MW PV | IA Effective: June 15, 2008\nRate Reference: Schedule QF-2 | Contract Term: 25 years\nNotes: 'Standard QF IA template, pre-PURPA reform. See Section 8.3 for rate escalation.'\nLinked filings: Original IA (SharePoint), Amendment 1 (2014 \u2014 capacity increase from 3.8 MW)\n\n**SharePoint \u2014 /regulatory/filings/interconnection/high-desert-solar/IA-2008.pdf**\nSection 8.3: 'Energy payments shall be calculated at the avoided cost rate in effect at time of delivery, as published in the applicable Rate Schedule.'\nSection 8.5: 'Capacity payments shall be fixed at the rate established at contract execution for the full contract term.'\nSection 12.1: 'This Agreement shall be governed by tariff provisions in effect as of the Effective Date, except as specifically noted in Section 8.3.'\n\n**SAP \u2014 Rate Calculation Module (current billing run)**\nCustomer: HIGH-DESERT-SOLAR | Rate Schedule applied: QF-3 | Avoided cost rate: $0.0847/kWh\nCapacity rate applied: $12.40/kW-month (current QF-3 rate)\nBilling period: Jan-Mar 2026 | Flag: 'Rate schedule override required \u2014 legacy IA'\n\n**Teams \u2014 #regulatory-affairs (Feb 12, 2026, 3:47 PM)**\n@william.reeves: SAP flagged High Desert again. The system defaulted to QF-3 capacity rate but their IA locks capacity at execution rate.\n@maria.estrada: What was the 2008 QF-2 capacity rate? I can't find it in the current tariff book.\n@william.reeves: $8.15/kW-month. It's in the archived tariff sheets on SharePoint, filed under the 08-R-412 docket.\n@maria.estrada: Got it. But wait \u2014 they did Amendment 1 in 2014 for the capacity increase. Does that reset the capacity rate for the incremental 0.4 MW?\n@william.reeves: Good catch. Let me check the amendment language.\n[Thread continues with no further replies]\n\n**Outlook \u2014 From: william.reeves@conduit-energy.com, To: maria.estrada@conduit-energy.com (Feb 14, 2026)**\nSubject: RE: High Desert capacity rate\n> Maria \u2014 pulled the 2014 amendment. Section 2(b) states: 'Incremental capacity above 3.8 MW shall be compensated at the capacity rate in effect at the time of amendment execution.' The 2014 QF-2 capacity rate was $9.20/kW-month. So we have a split: 3.8 MW at $8.15 and 0.4 MW at $9.20.\n> Energy rate is straightforward \u2014 Section 8.3 clearly says current avoided cost at time of delivery, so QF-3's $0.0847/kWh applies to all energy.\n\n**SharePoint \u2014 /regulatory/tariff-archive/QF-2-schedule-2008.pdf**\nPage last accessed: Feb 12, 2026\nCapacity Payment Rate (2008): $8.15/kW-month\nAvoided Cost Rate (2008): $0.0612/kWh\n[Document footer: 'Superseded by Rate Schedule QF-3, effective January 1, 2020, per Docket 19-R-087']",
+  "question": "What is the correct billing methodology for High Desert Solar LLC's Q1 2026 capacity payment?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "William Reeves",
+    "title": "Regulatory Affairs Director",
+    "organization": "Conduit Energy",
+    "years_experience": 22,
+    "domain_expertise": "PUC tariff filings, rate case management, interconnection agreements, regulatory docket tracking"
+  },
+  "tools_available": [],
+  "source_batch": "conduit-regulatory-batch1.json",
+  "choices": [
+    "Flag for manual review and withhold capacity payment pending resolution of the unresolved Teams thread",
+    "Apply $8.15/kW-month to 3.8 MW and $9.20/kW-month to 0.4 MW, per the original IA Section 8.5 and 2014 amendment Section 2(b)",
+    "Apply QF-3 capacity rate of $12.40/kW-month to all 4.2 MW, as the current tariff supersedes the 2008 agreement",
+    "Apply $8.15/kW-month to all 4.2 MW, as Section 12.1 governs all provisions by the tariff at the Effective Date"
+  ]
+}

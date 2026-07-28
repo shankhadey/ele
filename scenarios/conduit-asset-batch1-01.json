@@ -1,0 +1,24 @@
+{
+  "title": "Missing Reinspection Record for Transmission Structure with Conflicting System Evidence",
+  "category": "temporal_consistency",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "Context from IBM Maximo (Asset #TL-4472-019, Transmission Structure 19, Line 4472):\nAsset class: Steel lattice tower | Install date: 1978 | Last PM: 2018-06-14 (climbing inspection) | Condition: B2 (Fair) | Next scheduled: 2023-06-14 | Status: OVERDUE | No attached work orders after 2018.\n\nContext from scanned paper logbook (PDF, 2012-09-22, Crew Lead: Mike Trujillo \u2014 retired 2016):\nPage scan reads: 'Structure 19 \u2014 4472. Section loss observed bottom gusset plate NE leg, approx 15% remaining cross-section. CP readings below threshold. Recommend reinspection 5 yr max per NESC Rule 214A1. Notified Brennan.'\n\nContext from SharePoint \u2014 /engineering/inspection-reports/2017/ (folder listing):\nFiles present: TL-4472-Str14-17.pdf, TL-4472-Str15-17.pdf, TL-4472-Str18-17.pdf, TL-4472-Str20-17.pdf. No file for Structure 19.\n\nContext from SAP PM (Work Order history for Functional Location TL-4472):\nWO 400182 (2017-04-10): 'Climbing inspection \u2014 Structures 14-20, Line 4472' | Status: TECO | Actual hours: 42 | Settlement: Cost center 55100 (O&M).\n\nContext from Microsoft Teams \u2014 #asset-integrity (2023-08-14, 2:43 PM):\n@dave.kowalski: Doug, the PUC data request for aging infrastructure \u2014 they want reinspection compliance for all lines with structures older than 1985. Line 4472 is on the list. Are we good?\n@doug.brennan: Let me check. Should be \u2014 we did the full line in 2017.\n@dave.kowalski: (thumbs up emoji)\n[No further messages in thread]\n\nContext from Esri ArcGIS (Asset layer, queried today):\nTL-4472-019 | Last inspection attribute: 2017-04-10 | Inspector: R. Garza | Condition code: B2 | Flag: none.\n\nContext from GIS edit history (metadata):\nTL-4472-019 inspection date field last modified: 2018-07-02 by user 'system_batch_upload' | Prior value: 2012-09-22.",
+  "question": "The PUC has requested documentation proving Structure 19 on Line 4472 received its mandated 5-year reinspection after the 2012 finding. Based on all available evidence, what is the most defensible conclusion about whether the reinspection occurred?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Douglas Brennan",
+    "title": "Asset Integrity Manager",
+    "organization": "Conduit Energy",
+    "years_experience": 25,
+    "domain_expertise": "Infrastructure inspection programs, regulatory compliance for aging assets, condition-based maintenance"
+  },
+  "tools_available": [],
+  "source_batch": "conduit-asset-batch1.json",
+  "choices": [
+    "The reinspection likely occurred in 2017 (WO 400182 covered Structures 14-20) but there is no individual structure report for Str 19 in SharePoint, and the GIS date was set by a batch upload \u2014 the evidence is insufficient to demonstrate compliance to the PUC.",
+    "The reinspection was completed in 2017 as part of WO 400182; the GIS attribute confirms it; the company is in compliance.",
+    "The reinspection did not occur; the missing SharePoint report and the Maximo 2018 entry (not 2017) prove the 2017 work order skipped Structure 19.",
+    "The 2018 Maximo climbing inspection satisfies the 5-year reinspection requirement from the 2012 finding, making the 2017 question moot."
+  ]
+}

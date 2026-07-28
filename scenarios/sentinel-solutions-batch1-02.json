@@ -1,0 +1,24 @@
+{
+  "title": "Cross-Proposal Key Personnel Overallocation Hidden in Parallel Bid Volumes",
+  "category": "approval_chain",
+  "domain": "sales_deal_desk",
+  "difficulty": "hard",
+  "scenario_text": "Context from Monday.com \u2014 Active Proposals Dashboard (Apr 2026):\nProposal 1: ARTEMIS (DoD/DISA) | Prime | Gold Team: Apr 20 | Due: Apr 28 | Capture Mgr: R. Vasquez\nProposal 2: NEXUS-C2 (Army/PEO-C3T) | Prime | Gold Team: Apr 22 | Due: May 2 | Capture Mgr: M. Okoro\n\n**Costpoint \u2014 Labor Category Planning (ARTEMIS):**\nCLIN 0001 \u2014 Program Manager: D. Hutchins (100% allocated, Key Personnel)\nCLIN 0003 \u2014 Lead Cybersecurity Architect: K. Morales (75% FTE, Key Personnel)\nWrap rate applied: FY26 Approved (per Gate Review 02/15/2026)\n\n**Costpoint \u2014 Labor Category Planning (NEXUS-C2):**\nCLIN 0002 \u2014 Cybersecurity SME: K. Morales (50% FTE, Key Personnel)\nCLIN 0004 \u2014 Deputy PM: T. Washington (100%, Key Personnel)\nWrap rate applied: FY26 Approved\n\n**Teams \u2014 #nexus-c2-capture (Apr 8, 2026, 2:15 PM)**\n@m.okoro: Need to upgrade Morales from SME to Lead Architect on NEXUS. Client specifically asked for her in the Q&A. Bumping to 80% FTE.\n@t.washington: Does that conflict with anything?\n@m.okoro: She's only on NEXUS. Checked with her manager.\n@t.washington: Sounds good.\n@m.okoro: Updated the staffing tab. Gold team will see it.\n\n**Teams \u2014 #artemis-capture (Apr 3, 2026, 11:22 AM)**\n@r.vasquez: Morales confirmed for 75% on ARTEMIS. She's excited about the role.\n@d.hutchins: Great. She's essential for the Section L technical evaluation.\n@r.vasquez: Locking her in as Key Personnel. Non-negotiable.\n\n**Email \u2014 Subject: 'RE: Key Personnel Conflicts \u2014 Monthly Check' (Apr 1, 2026)**\nFrom: hr-staffing@sentinel-ds.com\nTo: proposal-ops@sentinel-ds.com\n\nAttached is the April Key Personnel commitment tracker. All named Key Personnel with >50% allocation on active proposals are listed. NOTE: This report reflects Costpoint entries as of March 31. Any updates after that date will appear in the May report.\n\n**SharePoint \u2014 /policies/proposals/key-personnel-policy.docx (v3.1, Jan 2026)**\nSection 2.4: 'No individual may be proposed as Key Personnel on concurrent active proposals where combined FTE allocation exceeds 100% without VP Capture written approval. Violations discovered post-submission may result in proposal withdrawal or organizational conflict finding.'\n[RESOLVED COMMENT by @c.reed, Nov 2025]: 'Added VP requirement after the FALCON/PEGASUS incident. Previously was Director-level. Board mandated escalation.'",
+  "question": "After M. Okoro's April 8 update to Morales's allocation on NEXUS-C2, what is the correct next step before Gold Team review?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "William Tran",
+    "title": "Solutions Architect & Proposal Manager",
+    "organization": "Sentinel Defense Solutions",
+    "years_experience": 15,
+    "domain_expertise": "Government proposal pricing, LPTA vs best-value evaluation, teaming arrangements, technical volume writing"
+  },
+  "tools_available": [],
+  "source_batch": "sentinel-solutions-batch1.json",
+  "choices": [
+    "Notify R. Vasquez on the ARTEMIS capture team and let the two capture managers negotiate the allocation split between themselves.",
+    "No action needed \u2014 the HR staffing report covers Key Personnel conflicts and will flag this in the May cycle before submission.",
+    "Obtain written VP Capture approval for Morales's combined 155% allocation across ARTEMIS and NEXUS-C2 before proceeding to Gold Team.",
+    "Reduce Morales's allocation on NEXUS-C2 back to 50% to stay within the 100% combined threshold across both proposals."
+  ]
+}

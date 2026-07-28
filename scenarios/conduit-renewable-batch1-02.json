@@ -1,0 +1,24 @@
+{
+  "title": "PPA Price Escalator Dispute \u2014 Ambiguous CPI Index Reference",
+  "category": "policy_version",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "scenario_text": "**Allegro ETRM \u2014 Contract #PPA-2021-012**\nCounterparty: High Plains Wind LLC | Product: Wind (120 MW nameplate) | COD: March 1, 2022 | Base Price: $24.00/MWh | Escalator: '2.0% or CPI, whichever is greater, applied annually on COD anniversary' | Term: 25 yr.\n\n**SharePoint \u2014 /Renewables/PPAs/HighPlainsWind/Contract_Amendments/**\nNo amendments on file. Original executed PPA only.\n\n**SharePoint \u2014 /Renewables/PPAs/HighPlainsWind/Invoicing/**\nFile: 'HP_Wind_Escalator_Calc_2023.xlsx' (uploaded Mar 2023 by r.okafor)\nWorksheet shows: 2023 price = $24.00 x 1.028 = $24.67/MWh\nCell B4 note: 'Used CPI-U All Items, national avg, per Sarah's guidance'\nFile: 'HP_Wind_Escalator_Calc_2024.xlsx' (uploaded Mar 2024 by r.okafor)\nWorksheet shows: 2024 price = $24.67 x 1.032 = $25.46/MWh\nCell B4 note: 'CPI-U All Items again. Developer didn't dispute.'\n\n**Outlook \u2014 From: billing@highplainswind.com (Feb 18, 2026)**\nTo: sarah.lindqvist@conduitenergy.com, ap-renewables@conduitenergy.com\nSubject: Year 4 Price Adjustment \u2014 PPA-2021-012\n\n'Per Section 7.3(b), please find attached our Year 4 escalator calculation. We are applying CPI-W (Wage Earners) for the Denver-Aurora-Lakewood MSA which was 4.1% for the applicable period, resulting in a new price of $26.50/MWh. The contract does not specify which CPI variant or geography; CPI-W regional is the most appropriate index for energy infrastructure in our operating region.'\n\n**Teams \u2014 #renewable-contracts (Feb 19, 2026, 11:15 AM)**\n@sarah.lindqvist: Heads up \u2014 High Plains is trying to switch CPI indices on us. They want CPI-W Denver metro (4.1%) instead of the CPI-U national (2.8%) we've used the last two years.\n@dave.morton: Can they do that? Contract just says 'CPI' right?\n@sarah.lindqvist: Yeah, it's ambiguous. Section 7.3(b) literally just says 'CPI.'\n@rachel.okafor: I set precedent in Year 1 using CPI-U national because that's what our other PPAs use. They didn't object then.\n@dave.morton: Did we get that confirmed in writing from them?\n@rachel.okafor: Not explicitly. They just paid/accepted the invoice at our calculated rate.\n@sarah.lindqvist: Right. Two years of acquiescence isn't nothing but it's not a signed amendment either.\n@dave.morton: Loop legal? This is a $180K/yr delta at their volumes.\n@sarah.lindqvist: Already did. Amy said she'd look at it Thursday.\n[Emoji reaction from @amy.vasquez: eyes emoji]\n\n**SAP \u2014 PO History for Vendor #400156 (High Plains Wind LLC)**\nPO Year 2023: Unit price $24.67/MWh \u2014 matched to invoice, paid.\nPO Year 2024: Unit price $25.46/MWh \u2014 matched to invoice, paid.\nNo disputed line items on record.",
+  "question": "What is Conduit's strongest legal position for the Year 4 price escalator dispute with High Plains Wind LLC?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Sarah Lindqvist",
+    "title": "Renewable Energy PPA Manager",
+    "organization": "Conduit Energy",
+    "years_experience": 8,
+    "domain_expertise": "Power purchase agreements, price escalator mechanisms, contract interpretation, regulatory cost recovery"
+  },
+  "tools_available": [],
+  "source_batch": "conduit-renewable-batch1.json",
+  "choices": [
+    "Conduit should apply CPI-U national (2.8%) based on two years of established course of dealing accepted without objection by both parties, supported by SAP payment records confirming prior pricing",
+    "Conduit should apply the 2.0% floor since it avoids the CPI ambiguity entirely; the price should be $25.46 x 1.02 = $25.97/MWh",
+    "Conduit should reject the invoice and halt payment until legal provides formal guidance, as the contract is too ambiguous to determine the correct price without an amendment",
+    "Conduit must accept CPI-W Denver metro (4.1%) because the contract is ambiguous and the developer's interpretation is reasonable; the price should be $26.50/MWh"
+  ]
+}

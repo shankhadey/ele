@@ -1,0 +1,24 @@
+{
+  "title": "Cross-Platform Package Margin Conflict with Streaming P&L Separation",
+  "category": "cross_system_synthesis",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "Context from Monday.com \u2014 Upfront Tracker 2026-2027:\nClient: 'Meridian Financial Group' (via Publicis) | Total commitment: $4.2M | Package: 'Total Audience' bundle | Breakdown: Linear (Prism Cable Network) 55% / Streaming (PrismStream+) 45% | Pricing model: Blended CPM across platforms at $26 | Guarantee: A25-54, combined 2.1 GRP equivalent | Status: 'Signed May 2026'\n\nContext from NetSuite \u2014 Internal P&L View:\nPrism Cable Network (Linear): Margin floor = 62% | Cost basis per unit = $9.50 CPM equivalent\nPrismStream+ (Streaming): Margin floor = 45% | Cost basis per unit = $14.80 CPM equivalent\n[Controller note, Q1 2026]: 'Streaming and Linear are separate cost centers per board directive effective Jan 2026. Cross-subsidization no longer permitted for margin reporting.'\n\nContext from Google Doc \u2014 'Upfront Deal Approval Matrix v2.1' (updated May 2026):\nSection 6: 'Blended cross-platform deals must meet minimum margin at the TOTAL DEAL level (55%).'\n[VERSION HISTORY: v2.0 (Jan 2026) read: 'must meet minimum margin at each platform level independently.' Changed to 'total deal level' in v2.1 per Sales leadership request, May 15 2026.]\n\nContext from Slack \u2014 #sales-planning (Jun 4, 2026, 11:22 AM):\n@rachel.nakamura: Finance flagged the Meridian deal. At $26 blended CPM with 45% streaming mix, the streaming portion alone runs at 43% margin \u2014 below the 45% floor.\n@alex.petrov: But v2.1 of the approval matrix says total deal level, not per-platform.\n@rachel.nakamura: Right, and at total deal level it's ~54.8%. Still below the 55% total floor by a hair.\n@alex.petrov: When was the deal signed?\n@rachel.nakamura: May 22.\n@alex.petrov: And v2.1 was published May 15. So it was under v2.1 rules.\n@rachel.nakamura: But the board directive on cross-subsidization is separate from the approval matrix. That's a finance policy, not a sales policy.\n\nContext from Slack \u2014 #finance-ops (Jun 5, 2026, 3:18 PM):\n@cfo_office: For the avoidance of doubt \u2014 the Jan 2026 board directive on P&L separation supersedes any sales policy that permits blended margin calculation across cost centers. Deals must be profitable at each cost center independently.\n@rachel.nakamura: :white_check_mark:\n@tomas.reyes: Does this apply retroactively to signed upfronts?\n[No reply in thread]\n\nContext from HubSpot CRM:\nDeal: 'Meridian Financial \u2014 26-27 Upfront' | Value: $4.2M | Signed: May 22, 2026 | IO Reference: IO-2026-0447 | Special terms: 'Platform allocation may shift +/-10% at Prism's discretion for delivery optimization.'\n\nContext from Google Sheets \u2014 'Streaming Inventory Forecast Q3 2026':\nPrismStream+ available premium impressions: 82% sold | Standard: 71% sold | Note: 'Tight Q3. Make-goods from Q2 under-deliveries consuming 8% of premium pool.'",
+  "question": "The Meridian deal is signed at a $26 blended CPM across linear and streaming. Finance is challenging it. What is the correct determination on whether this deal is compliant?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Alexandra Petrov",
+    "title": "VP, Advertising Sales Planning & Strategy",
+    "organization": "Prism Media Group",
+    "years_experience": 13,
+    "domain_expertise": "Upfront marketplace commitments, scatter pricing, audience guarantees, cross-platform packaging"
+  },
+  "tools_available": [],
+  "source_batch": "prism-sales-planning-batch1.json",
+  "choices": [
+    "Compliant \u2014 the deal was signed under v2.1 of the approval matrix which permits total-deal-level margin calculation, and it was approved before the CFO's clarifying Slack message",
+    "Non-compliant at both levels \u2014 total deal margin is 54.8% which is below the 55% floor even under the more permissive v2.1 rules",
+    "Compliant at deal level but requires restructuring \u2014 use the +/-10% platform allocation discretion clause in the IO to shift more volume to linear until streaming hits 45% independently",
+    "Non-compliant \u2014 the board directive on P&L separation (Jan 2026) supersedes the sales approval matrix (May 2026), making the streaming portion's 43% margin a violation regardless of blended calculation"
+  ]
+}

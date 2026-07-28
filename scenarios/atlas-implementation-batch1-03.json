@@ -1,0 +1,24 @@
+{
+  "title": "Implementation Acceptance Criteria Mismatch Between SOW and Kickoff Doc",
+  "category": "approval_chain",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "Atlas Retail Holdings is implementing a new order management system (OMS) for the Vero brand's wholesale channel. The project is approaching UAT sign-off and the vendor (FulfillPro) claims they have met acceptance criteria. The Vero Brand GM is refusing to sign off.\n\n**CRM \u2014 Opportunity 'Vero OMS Implementation' (Closed Won, Jan 2026)**\nAmount: $285K | Close Date: Jan 15, 2026\nNotes (by AE @tom.garcia): 'Customer requires sub-2-second order routing for wholesale orders. Committed in verbal meeting with Brand GM. Added to SOW requirements.'\n\n**Google Doc \u2014 'Vero OMS Kickoff - Requirements & Success Criteria' (created Jan 28, 2026)**\nShared with: delivery team, FulfillPro vendor team, Vero ops team\nSection 3 - Acceptance Criteria:\n- Order routing latency: < 5 seconds p95\n- Inventory sync accuracy: 99.5%\n- Channel conflict detection: automated alerts within 1 business day\n[COMMENT by @tom.garcia, Jan 30, 2026]: 'Guys the SOW says sub-2-second routing, not 5. Can we update?'\n[REPLY by @kenji.nakamura, Jan 30]: 'The SOW says sub-2-second but FulfillPro scoped to 5s in their technical proposal. This was discussed in pre-sales. Let me check with their SA.'\n[No resolution \u2014 comment left open, never resolved]\n\n**Signed SOW \u2014 'Vero Wholesale OMS - Statement of Work v1.0' (executed Jan 22, 2026)**\nSection 4.1 - Performance Requirements:\n- 'Order routing latency shall not exceed 2 seconds at the 95th percentile under normal load conditions.'\nSection 9.2 - Acceptance: 'Acceptance criteria shall be as defined in Section 4 of this SOW. Customer sign-off required from Brand General Manager.'\n\n**Jira \u2014 VERO-OMS-347 'UAT Performance Results'**\nStatus: Done | Completed: Jun 19, 2026\nResults attached:\n- Order routing p95: 3.4 seconds\n- Inventory sync: 99.7%\n- Channel conflict alerts: avg 4 hours\nComment (@fulfillpro.pm, Jun 19): 'All acceptance criteria met per kickoff doc thresholds. Requesting sign-off.'\nComment (@brand.gm.vero, Jun 20): 'This does not meet our requirements. The SOW says 2 seconds. Rejecting UAT.'\nComment (@fulfillpro.pm, Jun 21): 'The kickoff doc that was shared with all parties and used throughout delivery specifies 5 seconds. We built to that spec.'\n\n**Slack \u2014 #implementations (Jun 22, 2026, 8:30 AM)**\n@kenji.nakamura: Escalation needed. FulfillPro met kickoff doc criteria (5s) but not SOW criteria (2s). Brand GM won't sign off. SOW is the contractual document.\n@marcus.bell: Who baselined the kickoff doc?\n@kenji.nakamura: It was never formally baselined. It was a working doc from the kickoff meeting.\n@marcus.bell: Then the SOW governs. But did FulfillPro ever formally accept the 2s requirement?\n@kenji.nakamura: Their technical proposal said 5s. But they signed the SOW which says 2s.\n@marcus.bell: :grimacing: Get legal's read. Don't approve the milestone payment yet.\n[Thread ends]",
+  "question": "Based on the contractual and documentary evidence, which document governs the acceptance criteria for UAT sign-off, and has FulfillPro met the threshold?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Kenji Nakamura",
+    "title": "Enterprise Implementation Program Manager",
+    "organization": "Atlas Retail Holdings",
+    "years_experience": 12,
+    "domain_expertise": "New store technology deployments, vendor coordination, sales-to-delivery handoff, scope management, go-live readiness"
+  },
+  "tools_available": [],
+  "source_batch": "atlas-implementation-batch1.json",
+  "choices": [
+    "The signed SOW governs per its own Section 9.2 which defines acceptance criteria by reference to Section 4; FulfillPro has NOT met criteria (3.4s > 2s)",
+    "The acceptance criteria are ambiguous due to the unresolved Google Doc comment; the matter must go to dispute resolution before either party can claim acceptance or rejection",
+    "The kickoff Google Doc governs because it was shared with all parties and used as the working specification throughout delivery; FulfillPro has met criteria (3.4s < 5s)",
+    "The CRM opportunity notes confirm the 2-second requirement was the customer's intent, but since the kickoff doc was the operative project document, FulfillPro should be given a cure period to reach 2s"
+  ]
+}

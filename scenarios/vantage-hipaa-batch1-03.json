@@ -1,0 +1,24 @@
+{
+  "title": "Breach Determination for Ambiguous Employee Access Pattern",
+  "category": "cross_system_synthesis",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "The Privacy Office received a report about a clinical staff member accessing a patient record that may be inappropriate. Investigation materials from multiple systems:\n\n**Epic \u2014 Audit Log (Patient: James Whitfield, MRN 7842-0091)**\nAccess event: March 14, 2026, 9:47 PM\nUser: Tanya Briggs, RN (Medical-Surgical Unit 4B, Vantage Main Campus)\nAction: Viewed \u2014 Demographics, Diagnoses, Medication List, Progress Notes\nPatient location at time of access: ICU (not Unit 4B)\nBreak-the-glass: Not triggered (patient record not restricted)\nReason for access: None documented (no prompt configured for this access pattern)\n\n**Workday \u2014 Employee Records**\nTanya Briggs, RN | Unit: Med-Surg 4B | Shift: 7PM\u20137AM | Status: Active\nAddress: 2847 Elm Creek Drive, Minnetonka, MN 55345\n\n**Epic \u2014 Patient Demographics (MRN 7842-0091)**\nJames Whitfield | Address: 2851 Elm Creek Drive, Minnetonka, MN 55345\nAdmitted: March 14, 2026, 6:22 PM | Unit: ICU | Admitting Dx: STEMI\n\n**Compliance 360 \u2014 Incident Report (Filed March 18, 2026 by Charge Nurse, Unit 4B)**\n\"Colleague mentioned that Tanya Briggs said she 'heard her neighbor got taken away in an ambulance' on March 14. Later that shift, another RN noticed Tanya was in a chart for an ICU patient. Reporting per policy.\"\n\n**ServiceNow \u2014 HR Case HR-2026-0312 (Opened March 19, 2026)**\nSubject: \"Potential unauthorized access \u2014 Briggs, T.\"\nHR Notes: \"Privacy Office investigating. Employee has no prior access violations. Union rep notified per CBA Article 12. Interview scheduled March 25.\"\n\n**Microsoft Teams \u2014 #unit-4b-nurses (March 14, 2026, 10:03 PM)**\n@tanya.briggs: Hey does anyone know if the rapid response team was already called for the new admit in ICU? I had him on my floor last month and his allergies weren't updated in the system.\n@charge.nurse.patel: Which patient?\n@tanya.briggs: Whitfield. I updated his allergy list when he was here in Feb \u2014 just want to make sure it carried over to the ICU chart.\n[No further replies]\n\n**Epic \u2014 Patient History (MRN 7842-0091)**\nPrevious admission: February 8\u201311, 2026 | Unit: Med-Surg 4B | Attending: Dr. Park\nNursing assignments (Feb 8\u201311): T. Briggs assigned Feb 9\u201310\n\n**Epic \u2014 Allergy Documentation (MRN 7842-0091)**\nAllergy added: February 9, 2026 by T. Briggs, RN \u2014 \"Lisinopril \u2014 angioedema (patient reported)\"\nNo allergy modifications on March 14, 2026\n\n**SharePoint \u2014 Vantage HIPAA Sanction Policy (v3.2, effective Jan 2026)**\nSection 4.1: \"Access to PHI is considered unauthorized when the workforce member does not have a current treatment, payment, or operations relationship with the patient AND cannot demonstrate a legitimate work-related purpose.\"\nSection 4.3: \"A workforce member's knowledge of a patient's identity through non-work channels (e.g., personal relationship, neighborhood, media) does not constitute treatment relationship.\"",
+  "question": "Based on the totality of evidence available, should the Privacy Officer determine this access event constitutes a HIPAA breach requiring notification under 45 CFR 164.402?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Danielle Washington",
+    "title": "HIPAA Privacy Officer",
+    "organization": "Vantage Health Partners",
+    "years_experience": 13,
+    "domain_expertise": "PHI disclosure decisions, BAA management, breach determination, minimum necessary standard, patient rights requests"
+  },
+  "tools_available": [],
+  "source_batch": "vantage-hipaa-batch1.json",
+  "choices": [
+    "Yes, this is a reportable breach \u2014 the employee lives near the patient, had no treatment relationship at the time, and the neighbor's report confirms personal motivation regardless of the Teams message.",
+    "Yes, this is a breach, but it falls under the low-probability exception \u2014 the access was brief, no evidence of re-disclosure, the information was not further used, and the employee had a prior clinical relationship that reduces the probability of compromise.",
+    "No breach \u2014 the employee's Teams message demonstrates legitimate clinical concern about allergy documentation, her prior treatment relationship establishes reasonable basis for access, and Epic confirms she previously documented the allergy.",
+    "No breach determination can be made yet \u2014 the investigation requires the employee interview (scheduled March 25) before the Privacy Officer can apply the four-factor risk assessment under the Breach Notification Rule."
+  ]
+}

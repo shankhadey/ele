@@ -1,0 +1,24 @@
+{
+  "title": "Vendor Change Request Citing False Precedent from Prior Implementation",
+  "category": "precedent_exception",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "Atlas Retail Holdings contracted OmniConnect Systems for Kova brand's e-commerce platform migration (BigCommerce to custom platform). OmniConnect has submitted a change request claiming entitlement to T&M billing for integration testing, citing precedent from the Threadline implementation 14 months ago.\n\n**ServiceNow \u2014 CR-2026-0512 'OmniConnect - Billing Model Change for Integration Testing Phase'**\nStatus: Under Review | Submitted by: OmniConnect (vendor PM: @daniel.rowe)\nJustification: 'Per precedent established during the Threadline platform migration (Project THREAD-2025), integration testing was billed on T&M basis after milestone gate 3 due to scope uncertainty. Requesting same treatment for Kova migration per SOW clause 8.2 (Precedent & Consistency).'\nAttached: Email from Atlas Delivery Lead (Apr 2025) approving T&M shift for Threadline.\n\n**Confluence \u2014 'Threadline Platform Migration - Lessons Learned' (page version 3, last edited May 2025)**\nSection 4 - Budget:\n'Integration testing phase moved to T&M after milestone gate 3 due to discovery of undocumented API dependencies in legacy Threadline storefront. This was a ONE-TIME concession given the exceptional circumstances of the legacy system.'\n[RESOLVED COMMENT by @kenji.nakamura, May 12, 2025]: 'Adding explicit language that this was a one-time exception. @marcus.bell confirmed this should NOT set precedent for future vendor engagements. Do not reference this as standard practice.'\n[Comment was resolved by @kenji.nakamura on May 12, 2025]\n\n**Google Doc \u2014 'Kova Migration SOW v2.1' (signed Jan 2026)**\nSection 5.3 - Billing: 'All phases including integration testing shall be billed on a fixed-fee basis per the milestone schedule in Appendix B.'\nSection 8.2 - Precedent & Consistency: 'Where prior Atlas implementations established commercial precedent, vendor may request analogous treatment subject to Program Manager approval.'\n\n**Slack \u2014 #vendor-mgmt (Jun 24, 2026, 11:03 AM)**\n@daniel.rowe (OmniConnect): Hey @kenji.nakamura \u2014 just flagging, we submitted CR-0512. The Threadline precedent is well-documented and clause 8.2 gives us the right to request it. Happy to discuss.\n@kenji.nakamura: Saw it. Reviewing.\n@priya.sharma (Procurement): @kenji.nakamura FYI OmniConnect's burn rate on Kova is already 15% over plan. T&M would remove their incentive to control hours.\n[No further replies]\n\n**Smartsheet \u2014 'Kova Migration Budget Tracker'**\nOmniConnect contracted value: $420K fixed-fee\nActual spend to date: $310K (milestone gate 3 not yet reached)\nRemaining milestones: Integration Testing ($65K), UAT ($30K), Cutover ($15K)\nVariance note (Jun 20): 'Vendor burn rate trending 15% above plan. If testing moves to T&M at current rate, projected overrun = $40-55K.'",
+  "question": "Should Kenji approve CR-2026-0512 based on the precedent OmniConnect is citing?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Kenji Nakamura",
+    "title": "Enterprise Implementation Program Manager",
+    "organization": "Atlas Retail Holdings",
+    "years_experience": 12,
+    "domain_expertise": "New store technology deployments, vendor coordination, sales-to-delivery handoff, scope management, go-live readiness"
+  },
+  "tools_available": [],
+  "source_batch": "atlas-implementation-batch1.json",
+  "choices": [
+    "No \u2014 the Confluence lessons learned page explicitly documents this was a one-time concession with VP confirmation it should not set precedent, and the Kova SOW specifies fixed-fee for all phases",
+    "Yes, but only partially \u2014 approve T&M for integration testing hours exceeding the $65K fixed-fee allocation, creating a hybrid approach",
+    "Cannot determine \u2014 the CR requires VP Retail Tech approval per the standard approval chain, so Kenji should escalate rather than decide",
+    "Yes \u2014 the Threadline T&M shift is documented in Confluence and clause 8.2 explicitly allows vendors to request analogous treatment from prior implementations"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Conflicting Postmortem Action Items from Sequential Incidents",
+  "category": "temporal_consistency",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "scenario_text": "**Jira \u2014 SRE-2201 'Postmortem Action: Increase circuit breaker timeout to 10s' (Created: Mar 8, 2026)**\nType: Postmortem Action Item | Priority: P1 | Status: Done (completed Mar 22)\nLinked incident: INC-4302 (cascading failure in order-service due to downstream timeout at 3s causing retry storms)\nPostmortem conclusion: '3s timeout was too aggressive for payment-gateway calls during peak load. Increase to 10s to prevent premature circuit-breaking.'\nAssignee: @alex.martinez | Reviewer: @jordan.kim\nComment (@jordan.kim, Mar 22): 'Deployed to prod. SLIs look stable. Closing.'\n\n**Jira \u2014 SRE-2287 'Postmortem Action: Reduce circuit breaker timeout to 5s' (Created: Apr 19, 2026)**\nType: Postmortem Action Item | Priority: P1 | Status: Open\nLinked incident: INC-4389 (single-tenant degradation caused 10s hang times propagating to shared services, violating SLO)\nPostmortem conclusion: 'The 10s timeout allowed a degraded downstream to hold connections too long, exhausting the connection pool. Reduce to 5s maximum with adaptive backoff.'\nAssignee: @priya.singh | Reviewer: @jordan.kim\nComment (@priya.singh, Apr 22): 'This contradicts SRE-2201. Which wins?'\nComment (@jordan.kim, Apr 22): 'Good catch. Let me get context from the March incident owners.'\n[No further comments]\n\n**Confluence \u2014 'Circuit Breaker Standards' (Page version 4, last edited Mar 24, 2026)**\nSection 2.1: Default circuit breaker timeout for inter-service calls: 10s (updated per INC-4302 postmortem).\nSection 2.3: Services classified as 'shared-critical' must not hold connections longer than SLO budget allows.\n[RESOLVED COMMENT by @nadia.okonkwo, Apr 20]: 'This 10s default directly caused INC-4389. We need tiered timeouts: 10s for dedicated downstreams, 5s max for shared-critical. Tagging @jordan.kim'\n[Comment was resolved by @nadia.okonkwo on Apr 21 with no reply from Jordan]\n\n**Slack \u2014 #sre-team (Apr 23, 2026, 9:14 AM)**\n@priya.singh: @jordan.kim did you see Nadia's comment on the circuit breaker doc? She resolved it herself but the suggestion makes sense \u2014 tiered approach.\n@jordan.kim: Yeah I think that's right. Shared-critical gets 5s, everything else stays at 10s.\n@priya.singh: Should I update the Confluence page or wait for the formal review?\n@jordan.kim: Just update it. We'll ratify in next week's SRE sync.\n[No Confluence edit was made as of May 1]\n\n**PagerDuty \u2014 On-call rotation for order-service (current)**\nPrimary: @priya.singh | Secondary: @alex.martinez\nRunbook link: points to Confluence 'Circuit Breaker Standards' (version 4 \u2014 still shows 10s flat default)\n\n**Datadog \u2014 SLO Dashboard (as of May 1, 2026)**\norder-service 30-day SLO: 99.91% (budget remaining: 12%)\npayment-gateway p99: 4.2s (within 5s threshold but approaching)",
+  "question": "It is May 1. Priya is on-call and order-service begins showing elevated latency against payment-gateway (a shared-critical service). Per Meridian's current authoritative configuration, what circuit breaker timeout is in effect for this call path?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Jordan Kim",
+    "title": "Senior Site Reliability Engineer / Incident Commander",
+    "organization": "Meridian Systems",
+    "years_experience": 6,
+    "domain_expertise": "Incident response, change management, SLA enforcement, postmortem process"
+  },
+  "tools_available": [],
+  "source_batch": "meridian-sre-batch1.json",
+  "choices": [
+    "5s \u2014 SRE-2287 (the more recent postmortem action item) supersedes SRE-2201 per Meridian's 'latest postmortem wins' convention",
+    "10s \u2014 the Confluence page (version 4) is the runbook-linked authoritative source and it still specifies 10s flat default",
+    "3s \u2014 SRE-2287 is still Open/unimplemented, meaning the pre-SRE-2201 configuration (3s) is what's actually deployed",
+    "5s \u2014 Jordan approved the tiered approach in Slack, making shared-critical services subject to the 5s maximum"
+  ]
+}

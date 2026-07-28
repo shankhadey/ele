@@ -1,0 +1,6 @@
+{
+  "scenario_file": "meridian-csm-batch1-01.json",
+  "correct_answer": "Account is at-risk due to champion change \u2014 escalate to red, schedule emergency EBR with CTO Dana Park, and loop in sales leadership before renewal.",
+  "answer_format": "multiple_choice",
+  "rationale": "The correct answer requires synthesizing five signals across four systems that individually look benign: (1) The resolved Google Doc comment reveals the champion Raj Menon is likely departing \u2014 this is the critical hidden signal. (2) The Zendesk ticket shows Raj mentioned evaluating alternatives, which the agent didn't escalate. (3) The billing contact change from Raj's personal email to a generic AP address corroborates his departure. (4) The 34% DAU decline buried in a Slack thread (with no follow-up action) shows disengagement. (5) Sales is already in contact for 'pricing refresh' which combined with the other signals suggests active churn evaluation, not benchmarking. Answer A fails by trusting the health score algorithm over informal signals. Answer C underestimates urgency \u2014 with 62 days to renewal, auto-renew can be cancelled with 30-day notice per standard SaaS terms. Answer D fails because Raj is likely gone; reaching out to him is the wrong move. The correct action is treating this as a champion-change churn risk requiring executive-level re-engagement."
+}

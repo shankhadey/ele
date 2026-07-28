@@ -1,0 +1,6 @@
+{
+  "scenario_file": "conduit-regulatory-batch1-01.json",
+  "correct_answer": "Apply $8.15/kW-month to 3.8 MW and $9.20/kW-month to 0.4 MW, per the original IA Section 8.5 and 2014 amendment Section 2(b)",
+  "answer_format": "multiple_choice",
+  "rationale": "The correct answer requires synthesizing four sources: the original IA (Section 8.5 locks capacity at execution rate), the 2014 amendment (Section 2(b) sets incremental capacity at the 2014 rate), the archived tariff (confirming historical rates), and William's email confirming the split methodology. Answer A is wrong because it ignores Section 8.5's explicit lock-in for capacity payments and conflates the energy rate treatment (which does follow current tariff per Section 8.3) with the capacity rate. Answer C is wrong because it applies Section 12.1's general governing provision without recognizing that the 2014 amendment specifically carved out a different rate for incremental capacity above 3.8 MW. Answer D is wrong because the Teams thread's lack of resolution is a red herring \u2014 William's follow-up email to Maria two days later definitively resolves the question. The unresolved thread does not indicate an unresolved issue; the resolution simply happened in a different channel."
+}

@@ -1,0 +1,24 @@
+{
+  "title": "TSA Vendor Invoice Routing After Legal Entity Rationalization",
+  "category": "cross_system_synthesis",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "Cascade Financial Group completed its acquisition of Piedmont Savings & Trust in March 2025. Legal entity rationalization collapsed Piedmont into Cascade's entity structure on Day 100 (Jul 1, 2025), but a Transition Services Agreement keeps certain vendor relationships active under the old Piedmont entity name through December 2026. A vendor invoice has arrived that doesn't fit neatly into either category.\n\n**Outlook \u2014 Accounts Payable Inbox (Jun 25, 2026)**\nFrom: billing@cabornetech.com\nTo: ap@piedmontsavings.com (forwarded to ap@cascadefinancial.com per mail redirect)\nSubject: Invoice #CT-2026-0891 \u2014 Annual License Renewal\n'Please find attached invoice for annual license renewal of CaborneTech DataVault platform. Amount: $187,500. Due: Jul 25, 2026. Bill-to: Piedmont Savings & Trust, 440 Market St, Greensboro NC.'\nAttachment: CT-2026-0891.pdf (last modified: Jun 20, 2026)\n\n**SharePoint \u2014 /integration/tsa/schedule-a-services.xlsx (Last modified: Mar 15, 2025)**\nRow 18: Vendor: CaborneTech | Service: Data archival platform | TSA Category: IT Infrastructure | TSA End: Dec 31, 2026 | Monthly Cost: $15,625 | Responsible Party: Cascade (paying) | Notes: 'License was 3-year term, renews annually. Cascade assumes cost from Day 1.'\n\n**Dynamics 365 \u2014 Vendor Record**\nVendor: CaborneTech Solutions Inc. | Vendor #: V-40221 | Status: Active | Payment Terms: Net 30 | Default GL: 6200-IT-INFRA | Entity: CASCADE FINANCIAL GROUP\nNote (added Apr 2025): 'Migrated from Piedmont vendor master. Original vendor # PST-1887.'\n\n**Microsoft Teams \u2014 #ap-operations (Jun 25, 2026, 2:20 PM)**\n@rachel.dunn: Got a CaborneTech invoice addressed to Piedmont. $187,500. Their schedule shows monthly at $15,625 \u2014 that's only $187,500 annually so the math checks out but this is an annual lump sum, not monthly. Do we pay it?\n@kevin.cho: Is it on the TSA schedule?\n@rachel.dunn: Yes but the schedule says monthly cost $15,625. This invoice is for the whole year upfront.\n@kevin.cho: Might be the renewal structure changed. Check with procurement if the contract terms allow annual billing.\n@rachel.dunn: Also the amount matches exactly ($15,625 x 12) so it's not like they're overcharging.\n@kevin.cho: :thinking_face: but wait \u2014 didn't we renegotiate CaborneTech during the synergy review? I swear I saw something about that.\n[No further replies]\n\n**Outlook \u2014 From: j.park@cascadefinancial.com (May 8, 2026)**\nTo: procurement-integration@cascadefinancial.com\nCC: cfo-office@cascadefinancial.com\nSubject: CaborneTech Synergy Outcome\n'Following the vendor rationalization review, we've confirmed CaborneTech DataVault will be decommissioned when we complete migration to Cascade's existing Iron Mountain archival service (target: Q3 2026). CaborneTech has been notified of non-renewal. Their current term expires June 30, 2026. We should NOT be receiving any renewal invoices. If one arrives, reject it \u2014 the contract is not being extended.'\n\n**FIS Horizon \u2014 System Log (Jun 20, 2026)**\nData export job 'PiedmontArchive-Daily' status: ACTIVE | Target: CaborneTech DataVault endpoint | Records exported today: 14,221 | No errors.",
+  "question": "What should Accounts Payable do with invoice #CT-2026-0891 from CaborneTech?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Karen Johanssen",
+    "title": "M&A Integration Program Manager",
+    "organization": "Cascade Financial Group",
+    "years_experience": 15,
+    "domain_expertise": "Post-merger integration planning, system consolidation, entity rationalization, policy harmonization"
+  },
+  "tools_available": [],
+  "source_batch": "meta-ma-integration-batch1.json",
+  "choices": [
+    "Pay the invoice but flag for review \u2014 the FIS Horizon system is still actively sending data to CaborneTech, meaning the service is operationally needed regardless of the non-renewal decision",
+    "Pay the invoice \u2014 it's on the TSA schedule, the amount matches the annual equivalent of the monthly rate, and the TSA runs through December 2026",
+    "Escalate to legal \u2014 the TSA schedule says the service runs through December 2026, but procurement says non-renewal; these conflict and AP cannot unilaterally decide",
+    "Reject the invoice \u2014 procurement confirmed non-renewal and contract expiry on June 30, 2026; the invoice is for a renewal period Cascade has explicitly declined"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "scenario_file": "atlas-implementation-batch1-03.json",
+  "correct_answer": "The signed SOW governs per its own Section 9.2 which defines acceptance criteria by reference to Section 4; FulfillPro has NOT met criteria (3.4s > 2s)",
+  "answer_format": "multiple_choice",
+  "rationale": "The signed SOW is unambiguous: Section 4.1 specifies sub-2-second p95 latency, and Section 9.2 explicitly states acceptance criteria are defined in Section 4. The SOW is the executed contractual document, and FulfillPro signed it. The kickoff Google Doc was never formally baselined (confirmed by Kenji in the Slack thread) and therefore has no contractual standing. The unresolved comment in the Google Doc actually supports this conclusion \u2014 it flags the discrepancy and was never resolved, meaning the kickoff doc was never corrected to match the SOW, but also was never elevated to supersede it. Answer C is wrong because an informal working document cannot override a signed contract, regardless of how many parties saw it. Answer C is wrong because the criteria are not actually ambiguous in the contractual document; the ambiguity exists only between the contract and a non-binding working doc. Answer D incorrectly treats CRM opportunity notes as having contractual weight and conflates customer intent with operative project governance."
+}

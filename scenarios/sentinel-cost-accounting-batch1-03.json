@@ -1,0 +1,24 @@
+{
+  "title": "Time Charging Correction Spanning Contracts with Different Fee Structures",
+  "category": "approval_chain",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "Context from Costpoint (Timesheet Module): Employee: Marcus Webb, Senior Systems Engineer (L4). Timesheet correction submitted 2/14/2026 for period 8/12/2025 - 8/23/2025. Original charges: 80 hours to Project MERIDIAN (T&M contract, labor category: SSE, billed rate: $185/hr). Correction: move 32 hours from MERIDIAN to Project THORNFIELD (CPFF contract, OH rate: 62%, G&A: 14.1%, fee: 8.2%). Reason code: 'Mischarge \u2014 employee worked split assignment, charged to wrong WBS.' Correction submitted by: Marcus Webb. First-level approval: David Holt (current supervisor).\n\n**Costpoint \u2014 Approval Workflow History:**\nOriginal timesheet (8/23/2025): Approved by Susan Park (then-supervisor, Project MERIDIAN PM).\nSusan Park status: Transferred to Classified Programs Division, 11/1/2025. No longer has access to unclass Costpoint.\n\n**SharePoint \u2014 /policies/timekeeping/TC-Policy-2024-Rev3.pdf (effective 7/1/2024)**\nSection 5.4: 'Corrections to timesheets older than 60 calendar days require written justification, supervisor approval, AND approval from the Project Manager of the receiving project.'\nSection 5.5: 'When the original approving supervisor is no longer available, the current cost center manager may approve corrections with documented rationale.'\n\n**Teams \u2014 #meridian-program (Feb 14, 2026, 2:18 PM)**\n@david.holt: Heads up @j.torres \u2014 Marcus submitted a timecard correction moving 32 hrs off MERIDIAN onto THORNFIELD. Old charges from August. I can approve as his current super but you'll need to sign off as THORNFIELD PM per policy 5.4.\n@j.torres: Ack. Is this going to affect our MERIDIAN ceiling? We're at 94% burn on that CLIN.\n@david.holt: Actually it frees up $5,920 on MERIDIAN (32 x $185). Might be useful for the extension.\n@j.torres: :thumbsup:\n[No further messages]\n\n**Email \u2014 Subject: 'THORNFIELD Cost Impact \u2014 Timesheet Correction' (Feb 15, 2026)**\nFrom: r.oconnor@sentineldefense.com\nTo: l.castellano@sentineldefense.com\n\nLinda \u2014 flagging a downstream issue. The 32-hour correction to THORNFIELD increases the direct labor base on that contract by $4,288 (32 hrs x $134.00 loaded). With OH + G&A applied, the fully burdened cost is approximately $7,180. Since THORNFIELD is CPFF, this also generates additional fee of ~$589 (8.2%). The total impact to the government is ~$7,769.\n\nFAR 52.216-7(d) requires notification to the CO for any adjustment to costs previously billed. MERIDIAN (T&M) was already billed for those hours in August \u2014 we'd need a credit on the next T&M invoice.\n\nAlso \u2014 the correction crosses fiscal years for rate purposes if the rates finalized for FY25 differ from the provisionals that were applied. Do we use FY25 provisional rates or wait for finals?\n\n**Costpoint \u2014 Correction Status (as of 2/18/2026)**\nApproval chain: Marcus Webb (submitted) -> David Holt (approved, current supervisor) -> [PENDING: THORNFIELD PM]\nJ. Torres has not formally approved in system. No audit trail of Section 5.4 PM approval.",
+  "question": "What is the current compliance status of this timesheet correction, and what is the most significant unresolved risk?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Linda Castellano",
+    "title": "Director of Cost Accounting & Compliance",
+    "organization": "Sentinel Defense Solutions",
+    "years_experience": 20,
+    "domain_expertise": "CAS compliance, indirect rate structure, incurred cost submissions, DCAA audit response, cost allowability"
+  },
+  "tools_available": [],
+  "source_batch": "sentinel-cost-accounting-batch1.json",
+  "choices": [
+    "The correction is properly approved because David Holt's approval as current supervisor satisfies Section 5.5, and Torres' thumbs-up emoji in Teams constitutes PM acknowledgment; the main risk is the FY25 rate finalization timing.",
+    "The correction cannot proceed because Susan Park (original approver) must re-approve; Section 5.5 does not apply since Park is still employed, just transferred; the risk is an invalid correction creating a FAR 52.216-7 billing discrepancy.",
+    "The correction has supervisor approval but lacks formal PM approval in the system per Section 5.4; Torres' emoji is not a system-of-record approval; the most significant risk is that the correction generates fee on THORNFIELD ($589) without CO notification, which could be construed as an improper cost transfer benefiting the contractor.",
+    "The correction is blocked by the 60-day policy (August to February exceeds 60 days) and requires VP-level exception; the risk is DCAA interpreting the delayed correction as evidence of systemic timekeeping deficiency."
+  ]
+}

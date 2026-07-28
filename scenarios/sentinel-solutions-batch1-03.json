@@ -1,0 +1,24 @@
+{
+  "title": "Wrap Rate Policy Version Conflict Between Approved Gate Review and DCAA Audit Correction",
+  "category": "policy_version",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "Context from Costpoint \u2014 Indirect Rate Module:\nFY25 Provisional Rates (approved by DCAA): OH 58.2%, G&A 14.1%, Fringe 32.8%\nFY26 Provisional Rates (submitted to DCAA, pending approval): OH 61.7%, G&A 13.9%, Fringe 33.1%\nFY26 Bid Rates (used in active proposals per Feb 2026 gate review): OH 60.0%, G&A 14.0%, Fringe 33.0%\n\n**SharePoint \u2014 /policies/finance/rate-application-guide.docx (v5.2, Mar 2025)**\nSection 6.1: 'Active proposals shall use bid rates approved at the most recent Pricing Gate Review unless a DCAA determination modifies allowable cost composition, in which case the Financial Planning team will issue a Rate Advisory Memorandum (RAM) within 10 business days.'\n\n**Email \u2014 Subject: 'DCAA Audit Finding - Material Handling Costs' (Mar 22, 2026)**\nFrom: dcaa.auditor@dcaa.mil\nTo: d.kowalczyk@sentinel-ds.com (Controller)\nCC: contracts-admin@sentinel-ds.com\n\n'Per our review of incurred cost submission FY24, material handling costs currently included in your OH pool (approximately 3.2% of the pool) are more appropriately classified as a direct cost or separate indirect allocation per CAS 418. Please submit a revised rate structure within 30 days.'\n\n**Teams \u2014 #finance-leadership (Mar 25, 2026, 10:02 AM)**\n@d.kowalczyk: Heads up \u2014 DCAA finding on material handling. If we reclassify per CAS 418, OH drops ~3 points but we'd need a new material handling rate of about 4.8%.\n@cfo.williams: Impact on active bids?\n@d.kowalczyk: Depends on material content. High-material CLINs get more expensive, low-material CLINs get cheaper. Net impact varies by proposal.\n@cfo.williams: Don't disrupt active proposals until we respond formally. Let's discuss Thursday.\n@d.kowalczyk: Got it. No RAM until we have a final position.\n[reacted with: thumbs-up emoji by @cfo.williams]\n\n**Monday.com \u2014 VANGUARD Proposal (Army/INSCOM) | Due: Apr 25, 2026**\nPricing Status: Final \u2014 using Feb gate review rates\nMaterial content: 38% of total CLIN value (highest in active portfolio)\nGold Team: Apr 15 (complete, no pricing findings)\nNote from Gold Team lead: 'Pricing is tight. LPTA evaluation \u2014 we're within 2% of PTW target.'\n\n**SharePoint \u2014 Gate Review Minutes (Feb 15, 2026):**\nAttendees: CFO Williams, VP Capture, Controller Kowalczyk, Div. Presidents\nDecision: 'FY26 bid rates approved as stated. Apply uniformly to all proposals in pipeline.'\n[RESOLVED COMMENT by @m.santos, Feb 16]: 'What about the pending DCAA review of OH composition? Should we caveat these rates?' \u2014 Reply by @d.kowalczyk: 'Premature. Audit isn't complete. We'll adjust if needed.'\n\n**Email \u2014 Subject: 'Rate question - VANGUARD' (Apr 12, 2026)**\nFrom: w.tran@sentinel-ds.com\nTo: pricing-team@sentinel-ds.com\n\n'VANGUARD is LPTA with heavy material. If DCAA forces the CAS 418 reclassification, our material handling adds ~4.8% to material costs. That's potentially $1.2M on our $25M material base. Are we still good with gate review rates or do we need to flag?'\n\n[No response as of Apr 14]",
+  "question": "For the VANGUARD proposal due April 25, should the pricing team continue using the February gate review rates or take action based on the DCAA finding?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "William Tran",
+    "title": "Solutions Architect & Proposal Manager",
+    "organization": "Sentinel Defense Solutions",
+    "years_experience": 15,
+    "domain_expertise": "Government proposal pricing, LPTA vs best-value evaluation, teaming arrangements, technical volume writing"
+  },
+  "tools_available": [],
+  "source_batch": "sentinel-solutions-batch1.json",
+  "choices": [
+    "Continue with February gate review rates as approved \u2014 the DCAA finding is not yet finalized and the CFO explicitly directed no disruption to active proposals.",
+    "Issue a RAM immediately and reprice VANGUARD using the projected post-reclassification rates (OH ~57%, MH 4.8%) since the CAS 418 finding creates a known cost risk.",
+    "Escalate to VP Capture for a risk-acceptance decision \u2014 the gate review rates are technically compliant but the unanswered pricing team email and high material content create a material (>$1M) cost risk on an LPTA bid that should be acknowledged before submission.",
+    "Delay VANGUARD submission and request an extension from the contracting officer until DCAA finalizes the rate determination."
+  ]
+}

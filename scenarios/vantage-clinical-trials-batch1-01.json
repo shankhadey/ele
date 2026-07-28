@@ -1,0 +1,24 @@
+{
+  "title": "Protocol Amendment Effective Date Conflict Across IRB and Sponsor Communications",
+  "category": "temporal_consistency",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "**OnCore CTMS \u2014 Study VHP-2249 (BEACON-3 Phase II)**\nProtocol Version: 4.0 | Sponsor: Aethon Therapeutics\nAmendment 3 submitted to IRB: 2026-02-18\nIRB approval letter uploaded: 2026-03-07\nSite activation for Amendment 3: Pending\n\n**Outlook \u2014 From: clinops-notifications@aethon-therapeutics.com (Feb 20, 2026)**\nTo: james.osei-bonsu@vantagehealth.org, pi-team@vantagehealth.org\nSubject: BEACON-3 Amendment 3 \u2014 Immediate Implementation Notice\n\n\"Dear Investigators, Amendment 3 has been submitted to all IRBs and per sponsor determination constitutes a safety-driven change. Sites are authorized to implement revised exclusion criteria (Section 5.2 \u2014 removal of patients with baseline QTc > 480ms) effective immediately to protect subject safety. Formal IRB approval documentation should follow within 30 days. Please update screening procedures accordingly.\"\n\n**Epic Research Module \u2014 Screening Log**\nSubject 2249-041: Screened 2026-02-24 | QTc at screening: 472ms | Status: Enrolled\nSubject 2249-042: Screened 2026-03-01 | QTc at screening: 488ms | Status: Screen Failure (QTc exclusion)\nSubject 2249-043: Screened 2026-03-03 | QTc at screening: 491ms | Status: Screen Failure (QTc exclusion)\n\n**Microsoft Teams \u2014 Clinical Research Coordinators channel (Feb 22, 2026, 8:47 AM)**\n@karen.lindstrom: Hey team \u2014 got that Aethon email about BEACON QTc change. Are we implementing now or waiting for IRB letter?\n@priya.nair: Dr. Franklin said go ahead, it's a safety thing. We can't enroll someone we know is at risk.\n@karen.lindstrom: Makes sense. Updating the screening checklist in the binder today.\n[thumbs-up reaction from @james.osei-bonsu]\n\n**SharePoint \u2014 /clinical-research/irb-correspondence/BEACON-3/**\nFile: IRB_Approval_Amendment3_2026-03-07.pdf\nApproved changes: \"Revised exclusion criterion 5.2.4 \u2014 QTc prolongation threshold lowered from 500ms to 480ms. Effective date of approval: March 7, 2026.\"\n\n**OneNote \u2014 James Osei-Bonsu's Research Operations notebook (last edited Mar 10, 2026)**\nBEACON-3 Notes:\n- Need to check if 041 is a deviation. Enrolled 2/24 under old criteria (QTc 500ms threshold). Their QTc was 472 so they'd pass under BOTH versions. Should be fine.\n- 042 and 043 screened out using new criteria BEFORE IRB approved. Technically we implemented unapproved amendment procedures. But sponsor said to. And it's more conservative. Gray area \u2014 ask regulatory.\n- FDA 21 CFR 312.30 \u2014 sponsor can authorize safety changes before IRB if risk to subjects. Document rationale.",
+  "question": "From a regulatory compliance standpoint, which subjects (if any) represent protocol deviations requiring reporting, and what is the correct regulatory justification?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "James Osei-Bonsu",
+    "title": "Clinical Trial Operations Manager",
+    "organization": "Vantage Health Partners",
+    "years_experience": 12,
+    "domain_expertise": "Protocol amendments, IRB submissions, informed consent versioning, FDA regulatory compliance"
+  },
+  "tools_available": [],
+  "source_batch": "vantage-clinical-trials-batch1.json",
+  "choices": [
+    "No deviations occurred; the sponsor's immediate implementation notice constitutes authorization under 21 CFR 312.30 for safety-related changes, and all screening decisions were compliant.",
+    "All three subjects (041, 042, 043) are deviations because Amendment 3 procedures were implemented before the IRB approval date of March 7, 2026.",
+    "Only subjects 042 and 043 are deviations \u2014 they were screened using unapproved criteria \u2014 but subject 041 is not because they met both old and new criteria.",
+    "Subject 041 is the only deviation because they were enrolled during the gap period between amendment submission and IRB approval; 042 and 043 were correctly excluded regardless of which criteria version applies."
+  ]
+}

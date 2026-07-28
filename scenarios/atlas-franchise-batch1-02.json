@@ -1,0 +1,24 @@
+{
+  "title": "Territorial Exception Granted by Departed VP Conflicts with New Franchise Award",
+  "category": "precedent_exception",
+  "domain": "compliance_legal",
+  "difficulty": "hard",
+  "scenario_text": "**CRM \u2014 Franchisee Record: 'Peak Athletics #0312'**\nOwner: Jason Whitmore | Brand: Stride & Co. | Territory: Downtown Millbrook, 3-mile radius from 400 Main St | Agreement Effective: Jan 2023 | Status: Active | Regional VP (current): Danielle Foster | Notes: 'Territory includes protected non-compete radius per standard FDD Item 12.'\n\n**CRM \u2014 Franchisee Record: 'Summit Sports Group #0401' (PENDING)**\nProposed Owner: Kenji Nakamura | Brand: Stride & Co. | Proposed Territory: Millbrook Commons, 2.8 miles from 400 Main St | Agreement Status: Pending Approval | Regional VP: Danielle Foster | Note from Danielle (May 2, 2026): 'Territory appears clear per current franchise map. Ready for DocuSign.'\n\n**Outlook \u2014 From: marcus.reid@atlasretail.com To: jason.whitmore.peak312@gmail.com (Aug 15, 2023)**\nSubject: RE: Territory Concern\nJason \u2014 Per our conversation, I'm confirming that your non-compete radius is extended to 5 miles for the Millbrook market given the population density concern you raised. This exception accounts for the rural nature of the surrounding area. I'll have this noted in the system.\n\u2014 Marcus Reid, Regional VP, Eastern Division\n\n**Slack \u2014 #franchise-ops (Aug 16, 2023, 9:02 AM)**\n@marcus.reid: Updated territory note for Peak Athletics. Extended NCC radius to 5mi for Millbrook. Low-density market justification.\n@ops.admin.bot: Territory update logged. [link to CRM record]\n[Note: Marcus Reid left the company in November 2024. His Slack account is deactivated.]\n\n**Google Drive \u2014 /franchise-ops/territory-maps/stride-co-eastern-Q2-2026.pdf**\nMap shows Peak Athletics #0312 with standard 3-mile radius circle. No annotation of 5-mile exception. Map last updated by territory.admin@atlasretail.com, April 2026.\n\n**DocuSign \u2014 Franchise Agreement, Peak Athletics #0312**\nExhibit A, Section 3: 'Protected Territory: 3-mile radius from the designated location at 400 Main Street, Millbrook.' No amendments filed. No addenda.\n\n**CRM \u2014 Activity Log, Peak Athletics #0312**\nAug 15, 2023: Field updated \u2014 'Territory Notes' changed from blank to '5mi NCC per Marcus Reid verbal approval.' Updated by: marcus.reid@atlasretail.com (deactivated user).",
+  "question": "Can Atlas Retail Holdings legally award the Summit Sports Group franchise at Millbrook Commons (2.8 miles from Peak Athletics), given the territory exception documented only in the departed VP's email and Slack message?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Gregory Park",
+    "title": "Franchise Operations Director",
+    "organization": "Atlas Retail Holdings",
+    "years_experience": 15,
+    "domain_expertise": "Franchise agreement interpretation, operations manual versioning, territorial disputes, field exceptions"
+  },
+  "tools_available": [],
+  "source_batch": "atlas-franchise-batch1.json",
+  "choices": [
+    "No \u2014 Marcus Reid's email constitutes a binding territorial modification because he had authority as Regional VP, and the franchisee relied on it; awarding Summit would breach the extended 5-mile commitment",
+    "Yes \u2014 but only after confirming with legal that the email does not constitute an enforceable amendment, and documenting the decision trail given the CRM territory note referencing the 5-mile radius",
+    "No \u2014 the Slack message and CRM activity log confirm organizational awareness of the exception; even without a formal amendment, Atlas cannot claim ignorance and should honor the 5-mile radius",
+    "Yes \u2014 the signed franchise agreement governs and it specifies a 3-mile radius; the email from a departed VP is not a binding amendment, so 2.8 miles is outside the protected territory"
+  ]
+}

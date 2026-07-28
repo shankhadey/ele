@@ -1,0 +1,24 @@
+{
+  "title": "Multi-Location Employee Collusion Ring Hidden Below Individual Thresholds",
+  "category": "cross_system_synthesis",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "Square POS \u2014 Exception Reports (March 2026, across brands)\n\nUrbanEdge \u2014 Herald Square:\nAssociate: James Fontaine | Refund-without-receipt count: 3 (30-day window) | Amounts: $89, $94, $97 | Threshold alert: No (limit: 5 transactions or $500 total)\n\nThreads & Co \u2014 Upper East Side:\nAssociate: Melissa Tran | Refund-without-receipt count: 3 (30-day window) | Amounts: $92, $88, $95 | Threshold alert: No\n\nKineticWear \u2014 Chelsea:\nAssociate: Darnell Washington | Refund-without-receipt count: 2 (30-day window) | Amounts: $91, $96 | Threshold alert: No\n\nNetSuite \u2014 Inventory Reconciliation (March 2026, all brands)\nSKU UE-4412 (UrbanEdge 'Metro Hoodie', retail $95): Inventory variance -8 units across 3 locations (expected shrink: 1-2 units/month/location).\nSKU TC-1187 (Threads & Co 'Silk Camisole', retail $92): Inventory variance -6 units across 2 locations.\nSKU KW-STRIDE-GRY (KineticWear 'Stride Trainer', retail $94): Inventory variance -5 units across 2 locations.\n\nGoogle Sheets \u2014 'LP Exception Log Q1 2026'\nRow 48: Date: 3/22 | Brand: UrbanEdge | Flag: 'Inventory variance UE-4412 above norm' | Status: 'Assigned to cycle count' | Notes: 'Likely receiving error \u2014 checking with DC'\nRow 52: Date: 3/25 | Brand: Threads & Co | Flag: 'TC-1187 variance' | Status: 'Open' | Notes: blank\n\nSlack \u2014 #lp-team (Mar 26, 2026, 2:14 PM)\n@jenny.okafor: Weird one. Pulled the refund details on the Fontaine transactions at Herald Sq. All three refunds were processed to prepaid Visa cards. Different card numbers each time.\n@anthony.dimaggio: Prepaid cards on refund-without-receipt? That's a red flag. Same for the other locations?\n@jenny.okafor: Checking... Tran's refunds went to prepaid Visa too. Washington's went to a regular debit card though.\n@jenny.okafor: Oh wait \u2014 I just ran the card BINs. Fontaine and Tran's prepaid cards are all from the same issuer batch (BIN 4147-83xx). That's a Walgreens gift card BIN.\n@anthony.dimaggio: eyes emoji\n\nSlack \u2014 DM between Jenny Okafor and Anthony DiMaggio (Mar 26, 2026, 3:45 PM)\n@jenny.okafor: One more thing. I looked up Fontaine, Tran, and Washington on LinkedIn. Fontaine and Tran both previously worked at Nordstrom Rack \u2014 same location, overlapping dates. Washington I can't connect yet.\n@anthony.dimaggio: Don't put LinkedIn stuff in the official log. Note the card BIN match only for now. I'll request the prepaid card purchase records from Walgreens corporate through our ORC network.\n\nLooker \u2014 Refund Pattern Dashboard (filtered Mar 2026)\nAll refund-without-receipt transactions $85-$100 across all Atlas brands: 14 total. 8 of those processed by Fontaine, Tran, or Washington. Average for comparable associates: 0-1 per month.",
+  "question": "What evidence pattern supports opening a coordinated internal theft investigation versus treating these as independent low-level policy compliance issues?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Anthony DiMaggio",
+    "title": "Loss Prevention Manager",
+    "organization": "Atlas Retail Holdings",
+    "years_experience": 13,
+    "domain_expertise": "Return fraud detection, ORC analysis, POS exception monitoring across multi-brand retail"
+  },
+  "tools_available": [],
+  "source_batch": "atlas-loss-prevention-batch1.json",
+  "choices": [
+    "Insufficient evidence for coordinated investigation \u2014 each associate is below individual thresholds, the inventory variances could be receiving errors, and the LinkedIn connection is circumstantial; continue monitoring",
+    "Escalate the inventory variances to the distribution center first \u2014 the LP Exception Log suggests a receiving error, and without resolving that root cause, the refund patterns could be explained by legitimate customer returns of merchandise that was never properly received",
+    "Open an investigation into James Fontaine only \u2014 he has the highest transaction count and the inventory variance at his location is largest; the others may be coincidental",
+    "The prepaid card BIN batch match across two associates at different brands, combined with the deliberate sub-threshold transaction amounts ($88-$97 against a $100 policy limit), correlated inventory variances in the same SKU categories, and the prior employment overlap establish a coordinated scheme requiring formal investigation"
+  ]
+}

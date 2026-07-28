@@ -1,0 +1,24 @@
+{
+  "title": "Evidentiary Standard Mismatch Across Regulatory Transitions",
+  "category": "policy_version",
+  "domain": "compliance_legal",
+  "difficulty": "hard",
+  "scenario_text": "**Maxient Case #IX-2025-0298**\nComplainant: Student C | Respondent: Student D\nIncident date: March 8, 2025 | Formal complaint filed: September 19, 2025\nHearing scheduled: February 28, 2026 | Status: Investigation complete, pre-hearing phase\nInvestigator's report (filed Jan 15, 2026): \"Applying clear and convincing evidence standard per current BSU Title IX Policy v6.0 (effective August 1, 2025).\"\n\n**Google Doc \u2014 \"BSU Title IX Policy v5.3\" (archived, effective Sep 2023 \u2014 July 31, 2025)**\nSection 8.2: \"The standard of evidence for all formal complaints shall be preponderance of the evidence.\"\nSection 1.4: \"This policy governs all complaints arising from conduct that occurred during the effective period of this policy.\"\n\n**Google Doc \u2014 \"BSU Title IX Policy v6.0\" (effective August 1, 2025)**\nSection 8.2: \"The standard of evidence for all formal complaints shall be clear and convincing evidence.\"\nSection 1.4: \"This policy governs all formal complaints filed on or after August 1, 2025, regardless of when the underlying conduct occurred.\"\n[RESOLVED COMMENT by @provost.williams, July 15, 2025]: \"Legal counsel recommends 'filed on or after' language to align with DOE guidance. Faculty Senate approved 6-1 in closed session June 30.\"\n\n**Slack \u2014 #title-ix-deputies (Sep 22, 2025, 11:17 AM)**\n@diana.marchetti: Quick clarification for everyone \u2014 Case 0298 and similar transitional matters: v6.0's effective-date language controls. If the formal complaint was filed after 8/1, we use clear and convincing regardless of incident date. I know this feels counterintuitive but that's what legal and Faculty Senate approved.\n@mark.innis: Even if respondent's advisor argues due process concerns about retroactive standard changes?\n@diana.marchetti: Yes. The standard applies to the adjudication process, not the conduct itself. It's procedural not substantive. But flag any pushback to me directly.\n[thumbs-up reaction from @rachel.ogunyemi, @mark.innis]\n\n**Email \u2014 Subject: \"Pre-hearing objection \u2014 Case IX-2025-0298\" (Feb 12, 2026)**\nFrom: respondent-advisor@studentrights.org\nTo: titleix@brightpath.edu, hearing-panel@brightpath.edu\nCC: provost.williams@brightpath.edu\n\"...we formally object to the application of the clear and convincing standard. The alleged conduct occurred in March 2025, when BSU's operative policy (v5.3) applied preponderance. Retroactive application of a higher evidentiary standard to pre-existing conduct violates fundamental due process and OCR guidance...\"\n\n**PeopleSoft HR \u2014 Faculty Senate Records**\nMeeting: June 30, 2025 | Quorum: Yes (6 of 9 present)\nAgenda item 4: \"Title IX Policy revision \u2014 evidentiary standard\"\nVote: 6-1 (2 absent, 1 abstention recorded as absent per bylaws)\nMinutes: NONE FILED (Secretary position vacant June-August 2025)",
+  "question": "The hearing panel asks the Title IX Coordinator to clarify which evidentiary standard applies to Case #IX-2025-0298. What is the correct determination?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Diana Marchetti",
+    "title": "Title IX Coordinator",
+    "organization": "Brightpath State University",
+    "years_experience": 9,
+    "domain_expertise": "Due process requirements, procedural versioning (pre/post 2022 regs), evidence standards, cross-campus jurisdiction"
+  },
+  "tools_available": [],
+  "source_batch": "brightpath-title-ix-batch1.json",
+  "choices": [
+    "Clear and convincing evidence \u2014 because v6.0 Section 1.4 explicitly governs complaints filed after August 1, 2025, the formal complaint was filed September 19, 2025, and this was a deliberate procedural choice approved by Faculty Senate and legal counsel.",
+    "The determination cannot be made until the Faculty Senate minutes are located, because the policy change may not have been properly ratified given the vacant secretary position and missing minutes.",
+    "Preponderance of the evidence \u2014 because the conduct occurred under v5.3's effective period and applying a higher standard retroactively violates due process protections for the respondent.",
+    "Preponderance of the evidence \u2014 because the respondent's advisor raised a timely objection and OCR guidance prohibits retroactive changes to evidentiary standards."
+  ]
+}

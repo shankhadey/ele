@@ -1,0 +1,24 @@
+{
+  "title": "Legacy UOM Conversion Gap in Migrated Purchase History",
+  "category": "cross_system_synthesis",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "Ironforge Manufacturing is 14 months into its SAP S/4HANA migration from SAP ECC. The Monterrey (Mexico) plant still runs ECC 6.0 and is scheduled for cutover in Q3 2026. During a supplier performance review, a discrepancy surfaces in vendor pricing for titanium fastener stock (material 4400-TF-0882 in S/4HANA).\n\n**SAP S/4HANA \u2014 Purchase Order History (migrated records)**\nMaterial: 4400-TF-0882 | Vendor: Precision Alloys Ltd (Vendor #300442)\nPO 450012881 (migrated from legacy): Qty 500 EA @ $14.20/EA = $7,100.00\nPO 450012997 (migrated from legacy): Qty 200 EA @ $14.20/EA = $2,840.00\nPO 450018330 (new, post-migration): Qty 1,000 EA @ $1.42/EA = $1,420.00\n\n**SharePoint \u2014 /migration/mapping-tables/UOM-conversion-log.xlsx (last modified: Nov 2024)**\nRow 2,841: Material 4400-TF-0882 | Legacy UOM: HUN (per hundred) | Target UOM: EA (each)\nConversion factor: 0.01 | Applied to: Material master, BOM, routing\nNote column: \"Historical PO price migration \u2014 FLAG: conversion NOT applied to closed POs per cutover decision doc v2.3. Only open POs at cutover converted.\"\n\n**Microsoft Teams \u2014 #erp-migration-war-room (Feb 12, 2025, 3:47 PM)**\n@raj.chowdhury: Heads up \u2014 closed PO pricing in the migrated history is going to look 100x inflated vs. new POs for any material that was HUN in legacy. We made the call not to restate historical pricing during cutover. It's documented in the cutover decision log.\n@maria.santos: Got it. Should we flag these for procurement reporting?\n@raj.chowdhury: Already raised it in the data steward meeting. Karen said she'd add a note to the reporting wiki.\n[3 emoji reactions: thumbs-up from maria.santos, eyes from dave.kowalski, no reaction from karen.mills]\n\n**SAP ECC (Mexico plant, still live) \u2014 Vendor Master**\nVendor: Precision Alloys de Mexico SA de CV (Vendor #VM-8821)\nPurchasing org: 1200 (Monterrey)\nPayment terms: Net 45\nNote: \"Same entity as HQ vendor 300442 \u2014 see cross-reference in Oracle decomm mapping\"\n\n**Oracle Procurement (decommissioned Dec 2023) \u2014 Archived Extract on SharePoint**\n/migration/oracle-archive/vendor-xref.csv\nRow: Oracle Vendor ID OV-4410 | SAP ECC Vendor VM-8821 | SAP S/4 Vendor 300442 | Entity: \"Precision Alloys Group (all subsidiaries)\"\nNote: \"Consolidated from 3 Oracle vendor IDs (OV-4410, OV-4411, OV-4415) during ECC implementation 2017\"",
+  "question": "A procurement analyst is reviewing total spend with Precision Alloys for contract renegotiation. They pull all PO history from S/4HANA for vendor 300442 and calculate an average unit price of $9.94/EA across 1,700 units. What is the correct interpretation and what action should they take?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Raj Chowdhury",
+    "title": "ERP Migration & Data Governance Lead",
+    "organization": "Ironforge Manufacturing",
+    "years_experience": 11,
+    "domain_expertise": "Data migration, legacy system decommissioning, master data reconciliation, cutover planning"
+  },
+  "tools_available": [],
+  "source_batch": "meta-erp-migration-batch1.json",
+  "choices": [
+    "The migrated historical POs reflect a per-hundred UOM that was not restated during cutover; the true legacy price was $0.142/EA, making the current $1.42/EA actually a price increase \u2014 and the full spend picture requires cross-referencing vendor VM-8821 at the Mexico plant plus the three consolidated Oracle vendor IDs",
+    "Only post-migration POs should be used for negotiation since historical data is unreliable; vendor 300442 is the only relevant entity and the $1.42/EA rate represents the current market price",
+    "The average price is correct; the vendor has been charging inconsistent prices and procurement should flag this in the negotiation as evidence of price erosion opportunity",
+    "The pricing discrepancy indicates a data quality defect in the migration; the historical POs should be corrected in S/4HANA before any analysis, and the Mexico plant data is irrelevant since it is a different legal entity"
+  ]
+}

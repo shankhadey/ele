@@ -1,0 +1,24 @@
+{
+  "title": "Health Score Green but Churn Signals Scattered Across Channels",
+  "category": "cross_system_synthesis",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "**CRM \u2014 Account: TerraLogic Inc.**\nARR: $285K | Health Score: 82 (Green) | NRR: 108% | Segment: Enterprise | CSM: Aisha Patel | Renewal: 62 days out | Last QBR: 6 weeks ago (notes: 'Great session. Champion engaged. Expansion discussion for Q3.')\n\n**Zendesk \u2014 Organization: TerraLogic**\nOpen tickets: 2 (P3, P3) | CSAT last 90 days: 4.2/5 | Ticket #48291 (closed, P2, 3 weeks ago): Agent note: 'Customer contact Raj Menon mentioned they are evaluating alternatives during troubleshooting call. Did not escalate \u2014 resolved in SLA.' | Ticket #48455 (open, P3): Subject: 'SSO configuration for new IdP provider' \u2014 requester: infosec-team@terralogic.io\n\n**Slack \u2014 #customer-success (Tuesday, 3:47 PM)**\n@aisha.patel: Heads up \u2014 saw TerraLogic on the Gong call list. Anyone know why sales is talking to them?\n@marcus.webb: They asked for a pricing refresh. Probably just benchmarking.\n@aisha.patel: Got it, nbd\n[Thread \u2014 2 replies]\n@derek.santos (Wednesday, 9:12 AM): Actually I pulled their Looker usage \u2014 DAU dropped 34% over 8 weeks. Didn't flag bc health score algo weights contract value heavier.\n@aisha.patel: reacted with :eyes:\n[No further replies]\n\n**Google Doc \u2014 'TerraLogic Account Plan H1 2026' (Last edited: 5 weeks ago)**\nSection: Stakeholder Map\n- Champion: VP Eng Raj Menon (strong relationship)\n- EB: CTO Dana Park (met once at EBR)\n[RESOLVED COMMENT by @marcus.webb, 2 weeks ago]: 'Heard from SDR that Raj accepted a role at another company. Not confirmed yet \u2014 keeping this offline until we know more.'\n\n**Zuora \u2014 Subscription: TerraLogic Inc.**\nContract term: Annual | Auto-renew: Yes | Billing contact changed 4 weeks ago from raj.menon@terralogic.io to ap-team@terralogic.io | Last payment: On time.\n\n**PagerDuty \u2014 Alerts (last 30 days)**\nNo customer-impacting incidents for TerraLogic.",
+  "question": "Based on all available signals, what is the correct risk assessment and immediate action for this account?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Aisha Patel",
+    "title": "Senior Customer Success Manager",
+    "organization": "Meridian Systems",
+    "years_experience": 7,
+    "domain_expertise": "Enterprise account management, churn prevention, renewal strategy"
+  },
+  "tools_available": [],
+  "source_batch": "meridian-csm-batch1.json",
+  "choices": [
+    "Account is at-risk due to usage decline only \u2014 reach out to Raj Menon to discuss adoption and schedule a technical win session.",
+    "Account is at-risk due to champion change \u2014 escalate to red, schedule emergency EBR with CTO Dana Park, and loop in sales leadership before renewal.",
+    "Account needs monitoring \u2014 the usage drop is concerning but auto-renew is on, so flag for next QBR discussion in the normal cadence.",
+    "Account is healthy \u2014 health score is green, CSAT is strong, no incidents. Continue standard renewal motion in 60 days."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Referral Attribution Dispute with Conflicting Timestamps Across Systems",
+  "category": "temporal_consistency",
+  "domain": "sales_deal_desk",
+  "difficulty": "hard",
+  "scenario_text": "**CRM \u2014 Opportunity: 'Helix BioSciences \u2014 Enterprise Platform'**\nClose Date: Mar 15, 2026 | Amount: $290K ACV | Stage: Closed Won\nSource Field: 'Partner Referral \u2014 TechForward Solutions'\nInfluence Field: [blank]\nCreated Date: Dec 8, 2025 | First Meeting: Dec 14, 2025\n\n**PRM Portal \u2014 Deal Registration DR-2025-1189**\nPartner: TechForward Solutions | Submitted: Dec 7, 2025 | Prospect: Helix BioSciences\nStatus: Approved | Approved by: marcus.chen | Referral type: Sourced\n\n**PRM Portal \u2014 Deal Registration DR-2025-1203**\nPartner: Quantum Consulting Group | Submitted: Dec 12, 2025 | Prospect: Helix Bio\nStatus: Rejected (Dec 13) | Reason: 'Duplicate \u2014 existing registration by TechForward (DR-2025-1189)'\n\n**Slack \u2014 #channel-conflict (Jan 8, 2026, 11:22 AM)**\n@derek.simmons [Quantum Consulting]: Marcus \u2014 contesting the DR rejection on Helix. We introduced their CTO to your AE at the Gartner event in November. That's sourced, not influenced. TechForward only filed first because we didn't know the prospect's legal name.\n@marcus.chen: Let me pull the event logs. When exactly was the Gartner intro?\n@derek.simmons: Nov 19. I can forward the email from their CTO thanking me for connecting them with your team.\n@marcus.chen: Send it over. I'll review with the deal desk.\n\n**Gmail \u2014 Forwarded to marcus.chen@meridian.io (Jan 9, 2026)**\nFrom: derek.simmons@quantumconsulting.com\n--- Forwarded message ---\nFrom: r.nakamura@helixbio.com\nTo: derek.simmons@quantumconsulting.com\nDate: Nov 20, 2025\nSubject: Re: Great meeting you at Gartner\n\n\"Derek \u2014 thanks for introducing me to the Meridian team yesterday. Looking forward to the demo next week.\"\n\n**Google Sheets \u2014 Gartner Summit Nov 2025 Lead Scan Export**\nRow 47: 'R. Nakamura | Helix BioSciences | Scanned by: @lisa.tran [Meridian AE] | Nov 19, 2025 | Notes: met at partner reception, intro via Derek S (Quantum)'\n\n**Slack \u2014 #partnerships (Jan 10, 2026, 4:55 PM)**\n@marcus.chen: @raj.patel Helix attribution is messy. TechForward has the approved reg but Quantum has proof of first-touch at Gartner 3 weeks prior. Our policy is first-touch for sourced. But TechForward filed the reg first and it's already approved.\n@raj.patel: What does the partner agreement say about contested regs after approval?\n@marcus.chen: 'Approved registrations may be revisited within 30 days if new evidence of prior engagement is presented.' We're at day 34 from approval.\n@raj.patel: :grimacing:\n[No further messages]",
+  "question": "Who should receive 'sourced' referral credit for the Helix BioSciences opportunity?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Marcus Chen",
+    "title": "Partner Program Manager",
+    "organization": "Meridian Systems",
+    "years_experience": 8,
+    "domain_expertise": "Partner tiering, deal registration, referral attribution, channel conflict resolution, co-sell motions"
+  },
+  "tools_available": [],
+  "source_batch": "meridian-partner-batch1.json",
+  "choices": [
+    "Quantum Consulting Group \u2014 the evidence proves first-touch, and the 30-day window clause doesn't apply because the original rejection was based on incomplete information (wrong prospect name 'Helix Bio' vs 'Helix BioSciences').",
+    "TechForward Solutions \u2014 their deal registration was submitted and approved first, and the 30-day contestation window has expired, making the approval final.",
+    "Split credit \u2014 TechForward gets 'sourced' and Quantum gets 'influenced' since both contributed to the deal motion but TechForward has the valid registration.",
+    "Quantum Consulting Group \u2014 the email from Helix's CTO plus the Gartner lead scan prove first-touch on Nov 19, pre-dating TechForward's registration by 18 days, and the sourced attribution policy is first-touch."
+  ]
+}

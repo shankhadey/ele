@@ -1,0 +1,24 @@
+{
+  "title": "Catalog Year Rights Conflict After Articulation Agreement Revision",
+  "category": "policy_version",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "**Banner SIS \u2014 Student Record (ID: BSU-2022-11087)**\nName: Maria Elena Gutierrez-Soto | Admit Term: Fall 2022 | Type: Transfer from Mt. Hood CC\nCatalog Year: 2022-23 | Major: BA Psychology | Credits Earned: 94 | GPA: 3.41\nExpected Graduation: Spring 2026 | Enrollment: Continuous (no breaks)\n\n**DegreeWorks \u2014 Degree Audit (generated Jun 15, 2026)**\nStatus: NOT CLEARED FOR GRADUATION\nDeficiency: PSY 410 (Research Methods) \u2014 Required, not completed\nNote: \"PSY 210 (Intro Research Methods \u2014 Mt. Hood CC) was previously mapped as equivalent. Equivalency removed per articulation agreement v5 (effective Fall 2024). Student must complete PSY 410 or file substitution petition.\"\n\n**Google Drive \u2014 \"Articulation Agreements\" folder**\nFile: MtHoodCC_Psychology_v4.pdf (effective 2020-2024)\n  \u2192 Section 3.2: \"PSY 210 at MHCC satisfies PSY 410 prerequisite AND partial equivalency (lab component waived if GPA > 3.0)\"\nFile: MtHoodCC_Psychology_v5.pdf (effective Fall 2024)\n  \u2192 Section 3.2: \"PSY 210 at MHCC satisfies prerequisite only. Full equivalency discontinued \u2014 lab methodology component no longer aligns with revised PSY 410 learning outcomes.\"\n\n**Google Chat \u2014 Faculty DM between Dr. Leah Morrison (Psych Chair) and Dr. James Whitfield (Jun 2, 2026)**\nMorrison: Jim \u2014 we have 6 students caught in the artic agreement change for PSY 410. They had equivalency under v4 but DegreeWorks stripped it when we loaded v5.\nWhitfield: Wasn't there supposed to be a teach-out provision? I thought we agreed in curriculum committee that anyone admitted under v4 would be held harmless.\nMorrison: That's what I recall too. But I can't find it in the minutes. Karen took notes but she went on sabbatical.\nWhitfield: Check the Canvas shell for the curriculum committee \u2014 she used to post draft minutes there before they went to Faculty Senate.\n:thumbsup: [Morrison reacted]\n\n**Canvas LMS \u2014 \"Curriculum Committee 2023-24\" course shell (unpublished)**\nAnnouncement (posted Nov 14, 2023, by Karen Ostrowski): \"Draft minutes from 11/8 meeting attached. Please review before I submit to Senate.\"\nAttachment: CurrComm_Minutes_Nov8_2023.docx\nContent excerpt: \"Motion 23-14: Articulation agreement revisions for MHCC Psychology pathway. Approved 7-2. AMENDMENT (friendly, accepted): Students admitted under v4 with continuous enrollment retain v4 equivalencies through graduation. No sunset date.\"\n\n**Banner \u2014 Catalog/Curriculum module**\nPSY 410 course record: Last modified Sep 2024. Learning outcomes revised. Lab component now mandatory (4 cr \u2192 5 cr effective Fall 2024).\nNote: No teach-out provision coded. DegreeWorks exception table: Empty for PSY 410/MHCC equivalency.\n\n**Slate (Admissions) \u2014 Transfer Evaluation Record**\nEvaluator notes (Aug 2022): \"PSY 210 \u2014 mapped per artic agreement v4. Equivalency: PSY 410. Confirmed with dept.\"",
+  "question": "Should Maria Elena Gutierrez-Soto be cleared for graduation without completing PSY 410, and what is the authoritative basis for the decision?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Michael Owusu",
+    "title": "Associate Registrar",
+    "organization": "Brightpath State University",
+    "years_experience": 11,
+    "domain_expertise": "Enrollment verification, transfer credit evaluation, academic policy interpretation, FERPA compliance, degree audit exceptions"
+  },
+  "tools_available": [],
+  "source_batch": "brightpath-registrar-batch1.json",
+  "choices": [
+    "No \u2014 the current articulation agreement (v5) governs, and DegreeWorks correctly removed the equivalency. She must complete PSY 410 or petition for a substitution through the standard process.",
+    "No \u2014 while the curriculum committee discussed a teach-out, the motion was never submitted to Faculty Senate (Karen went on sabbatical), so it lacks institutional authority. The student must petition.",
+    "Yes \u2014 catalog year rights mean the 2022-23 catalog governs all of her degree requirements, and since the equivalency existed when she was admitted, it cannot be retroactively revoked under any circumstances.",
+    "Yes \u2014 the curriculum committee motion 23-14 with its accepted amendment constitutes an approved teach-out provision; her continuous enrollment and v4 catalog year entitle her to the original equivalency regardless of the DegreeWorks configuration."
+  ]
+}

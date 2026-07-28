@@ -1,0 +1,24 @@
+{
+  "title": "PEP Status Determination Across Fragmented Customer Data and Archived Communications",
+  "category": "cross_system_synthesis",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "You're conducting periodic EDD refresh on Riverside Development Partners LLC, a real estate investment entity with $12M in deposits across multiple accounts. The relationship came through the 2022 acquisition of Summit Bank. In Dynamics 365 (Summit legacy instance), the customer profile shows: Entity type: LLC; Business purpose: Commercial real estate; Risk rating: Medium; PEP status: No; Last review: 11/2024. The FIS Horizon system lists four authorized signers: James Whitfield, Susan Pak, David Okonkwo, and Thomas Chen. Your sanctions screening tool shows no OFAC matches. While reviewing the original account opening documents in SharePoint (filed under Summit Bank/Commercial Accounts/2019), you notice the operating agreement lists Whitfield at 40%, Pak at 30%, Chen at 20%, and Okonkwo at 10%. A handwritten note on the signature card from 2019 says 'Pak\u2014verify employment' but there's no follow-up documentation. You search Outlook for any correspondence and find an email thread from October 2023 between a former Summit relationship manager (now retired) and the client discussing a planned $2.8M wire to a Dubai commercial property fund. In that thread, Whitfield mentions: 'Susan's in DC this week for State Department meetings\u2014she'll approve when she's back Friday.' You search SharePoint for 'Susan Pak State Department' and find nothing. However, you discover a PDF in an archived folder labeled 'Summit Executive Review 2020' containing quarterly high-value customer summaries. On page 47, a footnote reads: 'Riverside Development\u2014member S. Pak currently serving as Deputy Assistant Secretary, Commerce Dept (Int'l Trade Admin) per LinkedIn\u2014enhanced monitoring assigned.' That monitoring assignment was never migrated to Archer GRC or the current Dynamics instance. You search LinkedIn yourself and find Susan Pak's profile showing: 'Former Deputy Assistant Secretary, U.S. Dept of Commerce (2019-2022); Current: Managing Partner, Riverside Development Partners.' The Commerce Department role would have made her a domestic PEP during her tenure. The current risk rating and PEP determination were both done in November 2024, eight months ago, but the analyst's notes in Archer show only: 'Reviewed D365 profile, no PEP indicators, no adverse media, rating confirmed Medium.'",
+  "question": "What is the appropriate risk rating and PEP classification for this customer relationship going forward?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Keisha Robinson",
+    "title": "AML/BSA Compliance Analyst III",
+    "organization": "Cascade Financial Group",
+    "years_experience": 12,
+    "domain_expertise": "Beneficial ownership, KYC/CDD/EDD, sanctions screening, SAR filing decisions"
+  },
+  "tools_available": [],
+  "source_batch": "cascade-aml-batch1.json",
+  "choices": [
+    "Upgrade to High risk rating and classify as Former Domestic PEP\u2014Pak's prior senior government role requires enhanced monitoring even after exit, and the missed classification represents a control gap that must be remediated",
+    "Maintain Medium risk rating and No PEP status\u2014Pak's government service ended in 2022 (4 years ago), exceeding the typical 2-year cooling-off period for former domestic PEPs",
+    "Maintain Medium risk rating but add PEP monitoring flag\u2014domestic PEPs below ambassadorial rank don't require risk rating changes under FinCEN guidance, but monitoring ensures appropriate oversight",
+    "Upgrade to High risk rating but maintain No PEP status\u2014the enhanced scrutiny is warranted due to large transaction volumes and Dubai wire activity, not PEP classification for a former mid-level Commerce position"
+  ]
+}

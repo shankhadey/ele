@@ -1,0 +1,24 @@
+{
+  "title": "The Hidden Co-Term Approval",
+  "category": "approval_chain",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "AE Marcus Chen submitted a deal for GlobalTech Industries through CPQ on March 15th: $340K TCV, 24-month term, 18% discount. The opportunity shows \"Deal Desk Review\" stage. In the CPQ approval history, you see: (1) Marcus (submitter), (2) Sarah Kim, RVP West (approved March 15, 4:22 PM), (3) yourself (pending).\n\nYou open the Google Sheet pricing matrix (last updated February 2026) which states: \"Deals >$300K TCV require VP Sales approval. Discounts 15-25% require Deal Desk + RVP approval.\"\n\nIn Slack #deal-desk, Marcus posted March 15 at 3:18 PM: \"Need this GlobalTech deal rushed - they're co-terming with an existing contract that renews March 31. Finance wants everything on the same renewal cycle.\" You replied with a \ud83d\udc40 emoji at 3:45 PM.\n\nYou check Confluence and find the \"Deal Approval Policy v2.1\" (published January 15, 2026): \"Co-term deals that modify existing contract end dates require CFO approval regardless of deal size, in addition to standard approval chain.\"\n\nYou search Slack DMs and find a thread from January 28 between Sarah Kim (RVP) and James Park (VP Sales) where James wrote: \"For Q1, I'm delegating all co-term approvals under $500K to RVPs. Finance is overwhelmed with the ERP migration. Just tag me in #deal-desk so I have visibility.\"\n\nYou pull up the GlobalTech account in CRM. Under \"Related Contracts\" you see: Contract #C-8847, $180K ARR, Start: April 1, 2024, End: March 31, 2026. The new deal's CPQ configuration shows End Date: March 31, 2027.\n\nChecking Slack #deal-desk history, you see NO mention of James Park being tagged on this deal. In your Slack DM with Marcus from March 15 at 4:55 PM, he wrote: \"Sarah approved it, we're good right? Customer is signing tomorrow morning.\"",
+  "question": "What is the correct next action for this deal approval?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Rachel Stein",
+    "title": "Senior Deal Desk Manager",
+    "organization": "Meridian Systems",
+    "years_experience": 11,
+    "domain_expertise": "Complex deal structuring, pricing exceptions, CPQ governance"
+  },
+  "tools_available": [],
+  "source_batch": "meridian-deal-desk-batch1.json",
+  "choices": [
+    "Escalate to VP Sales (James Park) for approval - while the January DM delegation exists, the condition was to \"tag me in #deal-desk for visibility\" which wasn't done, making the delegation incomplete",
+    "Approve but require Marcus to tag James Park in #deal-desk retroactively to comply with the delegation conditions Sarah received in January",
+    "Approve immediately - the deal meets the pricing matrix requirements (RVP + Deal Desk for 15-25% discount) and Sarah's January delegation covers co-term approvals under $500K",
+    "Reject and require CFO approval - the Confluence policy v2.1 (January 2026) explicitly requires CFO approval for all co-term deals, which supersedes the informal January delegation"
+  ]
+}

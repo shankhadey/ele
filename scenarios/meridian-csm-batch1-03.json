@@ -1,0 +1,24 @@
+{
+  "title": "Contradictory CSM Commitments Surface at Renewal",
+  "category": "temporal_consistency",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "**CRM \u2014 Account: Praxis Consulting Group**\nARR: $198K | Health Score: 71 (Yellow) | Renewal date: July 15, 2026 | CSM History: @elena.voss (Jan 2025 - Aug 2025), @aisha.patel (Sep 2025 - present) | Opportunity: 'Praxis Renewal FY27' Stage: Negotiation | Notes (by Aisha, last week): 'Customer insisting on locked pricing for 2 years. Says Elena promised this verbally during onboarding.'\n\n**Zendesk \u2014 Ticket #49877 (Open)**\nSubject: 'Renewal pricing dispute' | Customer comment (Praxis COO, Marta Ibarra): 'We were explicitly told by our previous CSM that our rate would be locked for the first 2 renewal cycles as part of the enterprise commitment. This was a condition of us signing. Please honor this.'\n\n**Slack \u2014 #customer-success (Legacy workspace \u2014 meridian-2024.slack.com)**\n[Thread from Feb 2025, found via search]\n@elena.voss: Quick Q \u2014 Praxis is asking for a 2-year rate lock as a signing condition. Can we do that?\n@david.okafor (then-VP CS, now at another company): We don't normally but for $200K+ deals it's been done. Check with deal desk.\n@elena.voss: Deal desk said no formal mechanism. Can I just confirm verbally and we'll figure it out at renewal?\n@david.okafor: :+1:\n[End of thread]\n\n**Google Doc \u2014 'Praxis Onboarding Kickoff Notes' (Created: Jan 15, 2025, by @elena.voss)**\nAttendees: Elena Voss, Marta Ibarra (COO), two Praxis engineers\nSection: 'Agreed Terms'\n- Implementation timeline: 6 weeks\n- Dedicated support channel\n- 'Pricing: locked per agreement'\n[No further detail on duration or formal reference]\n\n**CRM \u2014 Contract Object: Praxis Consulting Group**\nMSA signed: Jan 10, 2025 | Term: 12 months, auto-renew | Pricing clause: 'Standard annual adjustment per published rate card, not to exceed 7% annually.' | No addendum referencing rate lock.\n\n**Confluence \u2014 'Deal Desk Pricing Exceptions' (Current page, last updated Mar 2026)**\nSection 2: 'Rate locks exceeding 12 months require VP Sales + CFO co-approval and must be documented as a contract addendum. Verbal commitments are not binding per company policy (see Legal Advisory 2025-003).'\n\n**Slack \u2014 DM between @aisha.patel and @elena.voss (Oct 2025, when Aisha took over)**\n@aisha.patel: Hey! Taking over Praxis. Anything I should know?\n@elena.voss: Great account. Marta is super engaged. Only thing \u2014 I may have soft-committed to a rate lock situation. Didn't get it in writing but they'll probably bring it up at renewal. Sorry :grimacing:\n@aisha.patel: reacted with :woman-facepalming:",
+  "question": "What is Meridian's actual obligation regarding Praxis's pricing at renewal, and what should Aisha recommend?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Aisha Patel",
+    "title": "Senior Customer Success Manager",
+    "organization": "Meridian Systems",
+    "years_experience": 7,
+    "domain_expertise": "Enterprise account management, renewal strategy, cross-functional coordination"
+  },
+  "tools_available": [],
+  "source_batch": "meridian-csm-batch1.json",
+  "choices": [
+    "Escalate to legal \u2014 the conflicting evidence between the verbal commitment and the written contract creates liability risk that only legal can resolve.",
+    "Honor the 2-year rate lock \u2014 Elena's verbal commitment, the VP's Slack approval, and the kickoff doc constitute a binding agreement. Process as-is with no price increase.",
+    "Offer a 1-year rate lock as compromise \u2014 there's enough evidence of intent to warrant partial accommodation, but not a full 2-year commitment. Escalate to current VP CS for approval.",
+    "No obligation exists \u2014 the MSA explicitly allows annual adjustment up to 7%, no addendum was filed, and company policy states verbal commitments are non-binding. Apply standard pricing."
+  ]
+}

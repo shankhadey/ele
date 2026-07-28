@@ -1,0 +1,24 @@
+{
+  "title": "Expired Safety Interlock Deviation with Conflicting Records",
+  "category": "policy_version",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "Context from SAP S/4HANA (Plant 2 \u2014 Production Orders):\nOrder: 4001892 | Material: FORGE-7741-A (high-temp turbine shaft) | Work Center: CNC-14 | Status: CONFIRMED | Safety interlocks: ALL ACTIVE per system check 06/12/2026.\n\nContext from MasterControl (Quality \u2014 Deviation Log):\nDEV-2025-0087 | Type: Temporary Process Deviation | Equipment: CNC-14 thermal interlock | Approved by: R. Kowalski (EHS Manager) | Effective: 2025-03-14 | Expiry: 2025-09-14 | Status: EXPIRED | Justification: 'Interlock trips at 410\u00b0F but new alloy requires 435\u00b0F soak. Bypass approved pending engineering review of setpoint change.'\n\n**Microsoft Teams \u2014 #plant2-maintenance (Jun 24, 2026, 6:47 AM)**\n@tony.reeves: Heads up \u2014 CNC-14 thermal kicked again last night on the 3rd shift run. Danny just bridged it like usual and kept running. No scrap.\n@miguel.santos: Wait, I thought we closed that deviation last September?\n@tony.reeves: Did we? The jumper's still in place from when Bobby installed it. Nobody told us to pull it.\n@miguel.santos: ...\n[No further replies in thread]\n\n**Paper Logbook \u2014 CNC-14 Equipment History (scanned PDF, Plant 2 floor):**\nEntry dated 2025-03-15: 'Installed thermal bypass jumper per DEV-2025-0087. Signed: B. Hernandez, Maintenance Tech II.'\nNo subsequent entry for removal.\n\n**SharePoint \u2014 /policies/safety/PSM-MOC-procedure (Page version 3, published Jan 2026)**\nSection 4.1: 'Any temporary deviation that alters a safety-critical interlock must be formally closed via MOC process within 30 days of expiration. Failure to close constitutes an unauthorized process change subject to OSHA PSM enforcement.'\n[Version 2 (2024) stated: 'Temporary deviations auto-close on expiry date. No further action required.']\n\n**SAP PM \u2014 Preventive Maintenance Schedule (CNC-14):**\nLast interlock validation: 2026-01-08 | Result: PASS | Performed by: Automated PLC check\nNote: PLC validates interlock CIRCUIT CONTINUITY, not functional setpoint. A bridged interlock passes continuity check.\n\n**Email \u2014 Subject: 'RE: CNC-14 Setpoint Review' (Sep 2, 2025)**\nFrom: j.park@ironforge-mfg.com (Process Engineering)\nTo: r.kowalski@ironforge-mfg.com\nCC: miguel.santos@ironforge-mfg.com\n> Engineering recommends permanent setpoint change to 440\u00b0F.\n> ECN-2025-1104 drafted but needs capital approval ($8K for new sensor rated to 500\u00b0F).\n> Holding pending Q4 budget review.\n\n[No follow-up emails found. ECN-2025-1104 status in Jira: OPEN, unassigned, last updated Sep 2025.]",
+  "question": "A PSM auditor asks: What is Ironforge's current compliance status regarding CNC-14's thermal interlock, and what is the correct immediate action?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Miguel Santos",
+    "title": "Plant Operations Manager",
+    "organization": "Ironforge Manufacturing",
+    "years_experience": 20,
+    "domain_expertise": "Production scheduling, maintenance planning, safety decisions, equipment change-out approvals, PSM compliance"
+  },
+  "tools_available": [],
+  "source_batch": "ironforge-plant-ops-batch1.json",
+  "choices": [
+    "Non-compliant \u2014 the bypass is physically still in place constituting an unauthorized process change under the current PSM-MOC procedure; immediate action is to remove the jumper, halt production on CNC-14, and initiate a retroactive MOC",
+    "Non-compliant \u2014 but the issue is only that ECN-2025-1104 was never completed; once the permanent setpoint change is approved, the bypass becomes authorized retroactively",
+    "Indeterminate \u2014 the policy version that was active when the deviation expired (v2, 2024) said deviations auto-close, so no MOC was required at the time; the new policy cannot be applied retroactively",
+    "Compliant \u2014 the deviation expired in September 2025, meaning the bypass auto-closed per policy, and the January 2026 PM validation confirmed the interlock passed"
+  ]
+}

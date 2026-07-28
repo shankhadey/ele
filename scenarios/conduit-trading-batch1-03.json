@@ -1,0 +1,24 @@
+{
+  "title": "Wind Farm Capacity Payment Eligibility and Interconnection Agreement Version Conflict",
+  "category": "temporal_consistency",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "You're auditing June 2026 capacity payments for Prairie Wind Phase II (commissioned Q2 2023, 180 MW nameplate). Your June SAP settlement shows $0 capacity payment despite the project being fully operational. The PPA (executed 2021, effective 2023) states: \"Buyer shall pay Seller a monthly capacity payment of $4,500/MW for all Qualified Capacity as defined in the Interconnection Agreement.\"\n\nThe Interconnection Agreement in SharePoint (executed 2018 with Western Area Power Administration) defines Qualified Capacity as \"nameplate capacity less any derates documented in Exhibit C, as updated per Section 7.3.\" Exhibit C (dated 2018) shows no derates. However, Section 7.3 states: \"Interconnection Customer must update derates within 90 days of commissioning based on witnessed performance testing.\"\n\nYou find a scanned PDF logbook entry from June 14, 2023 (right after commissioning): \"Performance test completed 6/12/23. Transformer bank T2 limited to 165 MW injection due to WAPA substation thermal constraints. Verbal confirmation from WAPA engineer on-site. Awaiting written update to IA.\" No formal Exhibit C update was ever filed.\n\nYour renewable energy director sends a Teams message on June 24, 2026: \"Katherine, why no capacity payment for Prairie Wind in June? We're injecting 165 MW consistently. Check if it's a SAP mapping issue - node might be wrong.\"\n\nAllegro shows Prairie Wind registered at 180 MW nameplate with node PRAIRIE_230KV. The PPA's payment schedule in Appendix B states: \"Capacity payments commence upon Commercial Operation Date (June 1, 2023) for Qualified Capacity only.\" WAPA's online interconnection register (checked June 27, 2026) now lists Prairie Wind at 165 MW \"per thermal study update March 2024\" but shows no document link. Finance asks: should June 2026 capacity payment be calculated on 180 MW or 165 MW?",
+  "question": "What is the correct Qualified Capacity basis for Prairie Wind's June 2026 capacity payment?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Katherine Engstr\u00f6m",
+    "title": "Power Trading Operations Manager",
+    "organization": "Conduit Energy",
+    "years_experience": 16,
+    "domain_expertise": "Energy market settlements, contract interpretation, counterparty risk"
+  },
+  "tools_available": [],
+  "source_batch": "conduit-trading-batch1.json",
+  "choices": [
+    "180 MW - the nameplate capacity in the executed Interconnection Agreement Exhibit C, as no formal amendment was filed within 90 days",
+    "165 MW - the derate was documented in the June 2023 logbook and WAPA's register reflects the operational reality",
+    "165 MW effective March 2024 only - WAPA's thermal study formalized the derate, so June 2026 should use 180 MW for Jan-Feb and 165 MW thereafter",
+    "0 MW - Conduit failed to update Exhibit C within the 90-day contractual deadline, forfeiting capacity payment eligibility"
+  ]
+}

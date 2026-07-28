@@ -1,0 +1,24 @@
+{
+  "title": "Expired Delegation Authority on Capital Expenditure Approval",
+  "category": "approval_chain",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "During the Q1 SOX walkthrough for the capital expenditure cycle at Ironforge Manufacturing's Cleveland plant, you pull the following evidence for a $1.2M CNC machine purchase (PO 4500089234):\n\n**SAP S/4HANA \u2014 Transaction ME23N (PO Display), PO 4500089234**\nVendor: Haas Automation (VM-00412) | Material: CNC-5AX-UMC1600 | Net value: $1,187,400\nCreated by: T.NGUYEN | Created: 2026-01-28\nRelease strategy: 2-step | Release 1: M.KOWALSKI (2026-01-29) | Release 2: D.PATEL (2026-01-30)\nRelease indicator: Fully released\n\n**SharePoint \u2014 /internal-audit/workpapers/delegation-matrix-2025.xlsx**\nRow 47: D.PATEL | Delegated authority from: R.VASQUEZ (VP Operations) | Authority: Approve CapEx up to $1.5M | Effective: 2025-10-01 | Expiry: 2026-01-15 | Status: Not renewed\n[Version history shows this file was last updated by HR on 2026-01-20 to reflect Patel's delegation expiry]\n\n**Microsoft Teams \u2014 #capex-approvals (2026-01-14, 3:47 PM)**\n@R.Vasquez: Heads up team \u2014 I'm extending Deepak's delegation through end of Q1. Will send the updated form to GRC tomorrow.\n@D.Patel: \ud83d\udc4d\n[No further messages in thread. No updated delegation form found in MasterControl or SharePoint.]\n\n**SAP \u2014 SU53 Authorization Check (pulled during audit)**\nUser D.PATEL | Auth object: M_EINK_FRG | Release group: 02 | Release code: VP | Status: Active\n[SAP role was never deactivated \u2014 technical access persists regardless of delegation matrix]\n\n**MasterControl \u2014 Document search for 'Delegation of Authority'**\nDOC-2025-DA-091: Delegation form for D.PATEL | Effective 2025-10-01 | Expiry 2026-01-15 | Signed by R.VASQUEZ\nNo subsequent delegation document found. Last DOA policy revision (POL-FIN-003 Rev 7) states: 'Delegations must be documented in MasterControl with wet or electronic signature. Verbal or informal extensions are not valid for SOX-controlled processes.'\n\n**Outlook \u2014 Email from D.Patel to Internal Audit (2026-02-10, during fieldwork)**\nSubject: RE: CapEx walkthrough \u2014 PO 4500089234\n'Hi Franklin \u2014 Raj told me the delegation was being extended. I saw his Teams message and assumed it was handled. The PO was urgent because the machine lead time is 14 weeks and we'd miss the Q2 production ramp if we waited.'",
+  "question": "Based on COSO framework and Ironforge's documented controls, how should this finding be classified for the SOX audit?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Franklin Owens",
+    "title": "Internal Audit Manager",
+    "organization": "Ironforge Manufacturing",
+    "years_experience": 14,
+    "domain_expertise": "SOX compliance, control testing, approval authority verification, delegation matrix enforcement"
+  },
+  "tools_available": [],
+  "source_batch": "meta-internal-audit-batch1.json",
+  "choices": [
+    "Control deficiency \u2014 the delegation expired and the approval lacked valid documented authority, but compensating controls (SAP release strategy, amount within threshold) reduce severity below significant deficiency",
+    "Not a deficiency \u2014 R.Vasquez clearly communicated intent to extend the delegation in Teams, and the approval was within the originally authorized dollar threshold",
+    "Significant deficiency \u2014 the control owner's delegation was expired and no valid extension existed in the system of record; the SAP technical access remaining active represents an IT general control gap that compounds the issue",
+    "Material weakness \u2014 management override of the delegation control represents a pervasive breakdown requiring disclosure to the audit committee"
+  ]
+}

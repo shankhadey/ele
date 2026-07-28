@@ -1,0 +1,24 @@
+{
+  "title": "Curtailment Priority Dispute After Undocumented Capacity Expansion",
+  "category": "temporal_consistency",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "Context from OSIsoft PI (SCADA \u2014 Operational Data):\nMeter Point: IND-SUMMIT-001 (Summit Alloys LLC) | Connected load (nameplate): 8,500 kW | Actual peak demand (rolling 12-mo): 11,200 kW | Load factor: 0.78 | Peak recorded: Aug 14, 2025 at 14:42 (11,847 kW)\nAnomaly flag: Demand exceeded registered capacity by >30% continuously since Q2 2025.\n\n**Oracle CC&B (Customer Billing):**\nAccount: 'Summit Alloys LLC' | Rate: IP-1 (Industrial Power) | Contract demand: 8,500 kW | Actual billed demand: 8,500 kW (capped at contract) | Excess demand penalty: NOT applied (system note: 'grandfathered per 2022 demand charge waiver, see attached') | Attachment: Empty \u2014 no document attached.\n\n**SharePoint \u2014 /regulatory/curtailment-priority/2022-Curtailment-Order.pdf:**\nPUC Docket 22-EM-0198 | Emergency Curtailment Priority Order\nTable 3 \u2014 Firm Service Curtailment Sequence:\nPriority 6 (last curtailed): Industrial customers with contract demand > 10,000 kW\nPriority 5: Industrial customers with contract demand 5,000\u201310,000 kW\nPriority 4: Large commercial customers...\n[Table based on registered contract demand as of filing date]\n\n**FileMaker \u2014 Rate Case Tracker (Docket 22-EM-0198):**\nCustomer testimony filed: 14 parties | Summit Alloys: Listed as intervenor\nSettlement note: 'Curtailment priority based on contract demand at time of order. Updates to contract demand trigger reassignment. See Tariff Sheet 45, Section 8.'\n\n**Email \u2014 Subject: 'Summit expansion heads-up' (Apr 3, 2025)**\nFrom: t.nakamura@conduitenergy.com (Account Manager)\nTo: m.hayes@conduitenergy.com\n\nMargaret \u2014 FYI Summit is bringing a new arc furnace online. Their ops manager mentioned it casually at the site visit last week. Probably adds 2,500-3,000 kW. They haven't filed anything with us or requested a contract demand increase. Should I flag it?\n\n**Teams \u2014 DM from m.hayes to t.nakamura (Apr 4, 2025, 8:11 AM)**\nLet's not poke the bear. They're a big intervenor in the rate case and we need their support on the renewable rider. If they want to update their contract demand they'll do it on their own timeline.\n[message has a thumbs-up reaction from t.nakamura]\n\n**IBM Maximo \u2014 Asset Record: Substation Summit Industrial Park**\nTransformer T-SIP-002 loading: 94% of rated capacity (Aug 2025) | Alert: Thermal limit approaching | Maintenance note (Sep 2025): 'Loading increase correlates with Summit Alloys expansion. Notified planning \u2014 no action taken.'\n\n**Context from current event: Grid Emergency declared June 22, 2026.**\nPUC has ordered curtailment through Priority 5. Summit Alloys is classified as Priority 5 (contract demand 8,500 kW = within 5,000-10,000 band). Summit Alloys' counsel has filed an emergency motion arguing they should be Priority 6 based on actual load exceeding 10,000 kW.",
+  "question": "During the June 2026 grid emergency, what is Summit Alloys' correct curtailment priority classification, and does Conduit Energy face regulatory exposure?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Margaret Hayes",
+    "title": "Customer Programs Director",
+    "organization": "Conduit Energy",
+    "years_experience": 18,
+    "domain_expertise": "Key account program management, rate case customer testimony coordination, large C&I customer escalations"
+  },
+  "tools_available": [],
+  "source_batch": "conduit-implementation-batch1.json",
+  "choices": [
+    "Summit Alloys remains Priority 5 because curtailment priority is locked at the time of the 2022 order and cannot be changed without a new docket; Conduit has no regulatory obligation to reclassify",
+    "Summit Alloys is correctly Priority 5 based on their contract demand of 8,500 kW; their failure to update contract demand is their own responsibility and Conduit has no exposure",
+    "Summit Alloys should be reclassified to Priority 6 based on actual metered demand exceeding 10,000 kW; Conduit faces exposure for failing to enforce contract demand updates per Tariff Sheet 45, Section 8",
+    "The question is moot because Summit Alloys' excess demand penalty waiver means they are operating outside their contract, and non-compliant customers should be curtailed first regardless of priority"
+  ]
+}

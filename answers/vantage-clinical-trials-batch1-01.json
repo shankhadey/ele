@@ -1,0 +1,6 @@
+{
+  "scenario_file": "vantage-clinical-trials-batch1-01.json",
+  "correct_answer": "No deviations occurred; the sponsor's immediate implementation notice constitutes authorization under 21 CFR 312.30 for safety-related changes, and all screening decisions were compliant.",
+  "answer_format": "multiple_choice",
+  "rationale": "Under 21 CFR 312.30, a sponsor may authorize immediate implementation of a protocol amendment prior to IRB approval when the change is necessary to eliminate an apparent immediate hazard to subjects. The sponsor's email explicitly invokes this safety rationale for the QTc threshold change. The site's implementation on Feb 22 \u2014 confirmed by the Teams message and James's thumbs-up reaction \u2014 was authorized by the sponsor's notice. Subject 041 (QTc 472ms) passes under both versions and is clean regardless. Subjects 042 and 043 were correctly excluded under the sponsor-authorized safety criteria. Answer B incorrectly treats IRB approval as the sole gating mechanism, ignoring the FDA regulation permitting sponsor-authorized safety changes. Answer C correctly identifies the gap-period concern but fails to apply the 312.30 safety exception that the sponsor invoked. Answer D misidentifies 041 as the problem; since their QTc was below both thresholds (472 < 480 < 500), no version of the criteria would have excluded them."
+}

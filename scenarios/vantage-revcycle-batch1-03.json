@@ -1,0 +1,24 @@
+{
+  "title": "ICD-10 Annual Update Coding Discrepancy with Fee Schedule Lag",
+  "category": "cross_system_synthesis",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "**Cerner RevCycle -- AR Aging Report (pulled 03/15/2026):**\n$387,000 in claims aged 60+ days | Filter: DOS 10/01/2025 -- 12/31/2025 | Payer: MN State Medicaid (MHCP) | Common denial: CO-11 (\"Diagnosis is inconsistent with procedure\") | 23 claims affected | All coded with ICD-10 codes from FY2026 update (effective 10/01/2025)\n\n**Epic -- Coding Queue Notes (11/15/2025):**\nCoder note (T. Andersen): \"FY2026 ICD-10 update loaded into Epic encoder on 10/01. All encounters DOS 10/01+ coded per new guidelines. HCC-relevant specificity codes now required per CMS memo.\"\n\n**SharePoint -- /revcycle/fee-schedules/MHCP-FY2026-fee-schedule.xlsx:**\nFile properties: Last modified: 01/12/2026 | Uploaded by: billing.admin\nSheet notes: \"MHCP published updated fee schedule 01/05/2026, effective retroactive to 10/01/2025. Crosswalk file maps old codes to new reimbursement rates.\"\n\n**Outlook -- Email (12/02/2025):**\nFrom: provider.relations@mhcp.state.mn.us\nTo: billing@vantagehp.org\nSubject: IMPORTANT: FY2026 Code Update -- Processing Delay Notice\n\n\"Please be advised that MHCP claim processing systems will not accept FY2026 ICD-10 codes until our system update completes (estimated January 2026). Claims submitted with new codes before system update will be denied. Providers may submit using FY2025 codes with modifier -32 (mandated services) for tracking, or hold claims until system update.\"\n\n**Slack -- #coding-compliance (unofficial, 12/03/2025, 11:22 AM):**\n@tina.andersen: Just got the MHCP bulletin. They want us to use OLD codes even though CMS says new codes are required as of 10/1? That's a compliance conflict.\n@dr.reshma.gupta (CMO): If we code with old codes we're technically submitting inaccurate diagnoses. That's a false claims risk.\n@michelle.torres: Agreed. We code accurately per CMS. If MHCP denies, we appeal with the bulletin as evidence of their system limitation. Do NOT downcode.\n@tina.andersen: Got it. Keeping FY2026 codes. Flagging all MHCP claims DOS 10/1-12/31 for manual appeal tracking.\n[Thread end -- no further replies]\n\n**Compliance 360 -- Open Item #C360-2025-0441:**\nTitle: \"MHCP FY2026 Coding Discrepancy\" | Status: Under Review | Opened: 12/04/2025 | Owner: Compliance Committee | Last update (01/20/2026): \"MHCP system updated. New codes now accepted. Retroactive processing confirmed. Appeal window for previously denied claims: 120 days from original denial date.\"\n\n**Cerner RevCycle -- Denial Dates on 23 claims:**\nEarliest denial: 11/15/2025 | Latest denial: 01/08/2026",
+  "question": "What is the correct action for the 23 denied MHCP claims totaling $387K, and what is the deadline risk?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Michelle Torres",
+    "title": "Revenue Cycle Director",
+    "organization": "Vantage Health Partners",
+    "years_experience": 16,
+    "domain_expertise": "Claims management, denial resolution, patient identity matching, payer contract interpretation"
+  },
+  "tools_available": [],
+  "source_batch": "vantage-revcycle-batch1.json",
+  "choices": [
+    "Appeal all 23 claims with FY2026 codes citing the MHCP bulletin, but prioritize the 11 claims denied on 11/15/2025 since their 120-day appeal window closes on 03/15/2026 -- the day the AR report was pulled",
+    "Appeal all 23 claims with the original FY2026 codes now that MHCP's system accepts them, citing the MHCP processing delay bulletin as cause; all claims are within the 120-day appeal window",
+    "Recode the claims to FY2025 codes to match the fee schedule that was active at DOS, since the retroactive fee schedule was not uploaded to SharePoint until 01/12/2026 and may not have been applied to these claims",
+    "Resubmit all 23 claims with FY2025 ICD-10 codes and modifier -32 as MHCP originally instructed; the claims are within timely filing and this resolves the CO-11 denial"
+  ]
+}

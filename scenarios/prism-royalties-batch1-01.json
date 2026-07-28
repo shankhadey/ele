@@ -1,0 +1,24 @@
+{
+  "title": "SAG-AFTRA Residual Rate Determination Across Contract Transition",
+  "category": "policy_version",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "**RightsLine \u2014 Title Record: \"Nightfall Season 2\"**\nTitle ID: PRM-4471 | Production Entity: Prism Originals LLC | Episodes: 10 | Production dates: Jan 2025 - Sep 2025 | SAG-AFTRA Agreement: 2023 Television Agreement\n\n**FileMaker \u2014 Production Tracking (legacy, last synced to RightsLine Nov 2024)**\nTitle: \"Nightfall S2\" | Signatory: Prism Media Productions Inc. | SAG agreement filed: 2020 Television Agreement | Production start: Jan 15, 2025 | Episodes covered: 1-10 | Status: ACTIVE\n\n**NetSuite \u2014 Residual Payment Queue (Jun 2026)**\nPayee: Marcus Blevin (performer, recurring role eps 1-10) | Residual type: SVOD Exhibition | Calculation basis: 2023 TV Agreement schedule | Amount: $14,220 | Status: PENDING REVIEW | Note: \"Rate discrepancy flagged \u2014 FileMaker shows 2020 agreement.\"\n\n**Slack \u2014 #royalties (Mar 18, 2025, 3:47 PM)**\n@denise.yamamoto: Quick q \u2014 Nightfall S2 is showing 2020 agreement in FileMaker but they didn't start principal photography until Jan 2025. Should be 2023 rates right?\n@jason.reeves: Production filed their initial signatory paperwork under the 2020 agreement in Oct 2024 (pre-production). SAG confirmed the filing is valid even though cameras rolled in 2025.\n@denise.yamamoto: Even for the back half? Eps 7-10 shot after the July 2025 interim agreement kicked in.\n@jason.reeves: hmm good catch. Let me check with labor relations.\n[thread has one emoji reaction: thinking face from @karen.lu. No further replies.]\n\n**Google Sheets \u2014 \"SAG-AFTRA Agreement Transition Matrix\" (shared by Labor Relations, last edited Jul 3, 2025)**\nRow 14: \"Productions with valid signatory filings under 2020 agreement retain 2020 rates for ALL episodes if principal photography commenced before the 2025 interim effective date (Jul 1, 2025).\"\nRow 15: \"Exception: Any episode with first day of principal photography ON OR AFTER Jul 1, 2025 triggers interim agreement rates for that episode only, regardless of overall production signatory filing.\"\n\n**Outlook \u2014 From: karen.lu@prismmedia.com To: denise.yamamoto@prismmedia.com (Mar 22, 2025, sent but no reply)**\nSubject: RE: Nightfall S2 agreement question\n\"Denise \u2014 talked to SAG rep. They confirmed the signatory filing under the 2020 agreement covers pre-Jul 1 episodes. Eps 8-10 started photography Jul 14, Jul 28, Aug 11 respectively. Those three trigger interim rates. Ep 7 started Jun 22 so it stays under 2020. Jason never followed up on Slack so flagging here instead.\"",
+  "question": "What is the correct residual calculation approach for Marcus Blevin's SVOD exhibition residuals on Nightfall Season 2?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Denise Yamamoto",
+    "title": "Royalty & Residual Accounting Manager",
+    "organization": "Prism Media Group",
+    "years_experience": 14,
+    "domain_expertise": "Guild/union residual calculations, license fee allocation, profit participation, rights window management"
+  },
+  "tools_available": [],
+  "source_batch": "prism-royalties-batch1.json",
+  "choices": [
+    "Apply 2020 TV Agreement rates to all 10 episodes, since the signatory paperwork was filed under that agreement and covers the entire production",
+    "Apply 2020 TV Agreement rates to episodes 1-6 and 2025 interim agreement rates to episodes 7-10, since episodes 7-10 were produced after Jul 1, 2025",
+    "Apply 2020 TV Agreement rates to episodes 1-7 and 2025 interim agreement rates to episodes 8-10, based on actual photography start dates and the signatory filing",
+    "Apply 2023 TV Agreement rates to all 10 episodes, since RightsLine shows 2023 as the governing agreement and it is the system of record"
+  ]
+}

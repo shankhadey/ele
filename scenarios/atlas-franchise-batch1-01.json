@@ -1,0 +1,24 @@
+{
+  "title": "Operations Manual Version Conflict During Franchisee Cure Period",
+  "category": "policy_version",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "**CRM \u2014 Franchisee Record: 'Greenleaf Marketplace #0247'**\nOwner: David & Maria Okonkwo | Brand: Haven Home | Territory: Westbrook Plaza, Unit 12-A | Agreement Effective: Mar 2021 | Ops Manual Version at Signing: v7.2 | Status: Active \u2014 Cure Period\n\n**Google Drive \u2014 /franchise-ops/default-notices/GF0247-default-2026-03-14.pdf (DocuSigned)**\nNotice of Default issued March 14, 2026. Violations cited: (1) Failure to maintain brand standards per Operations Manual v8.1, Section 4.3 \u2014 'All Haven Home locations must maintain a dedicated sensory bar area of no less than 40 sq ft.' (2) Mystery shop score of 62/100 (minimum 75 required). Cure period: 60 days from receipt. Franchisee must demonstrate full compliance by May 13, 2026.\n\n**Google Drive \u2014 /ops-manuals/haven-home/v9.0-effective-2026-04-01.pdf**\nSection 4.3 revised: 'Sensory bar area requirement reduced to 25 sq ft for locations under 1,200 sq ft total retail space.' Change log note: 'Updated per field feedback; smaller footprint locations were unable to comply without sacrificing selling floor.'\n[RESOLVED COMMENT by @gregory.park, Mar 28]: 'Legal reviewed \u2014 v9 changes do NOT retroactively resolve outstanding defaults issued under v8.1. Franchisees in cure must still meet v8.1 standard that was cited in their notice. Adding to FAQ.'\n\n**Slack \u2014 #franchise-ops (April 22, 2026, 2:47 PM)**\n@maria.okonkwo.gf0247: Hi team, I saw the new ops manual v9 went live. Our location is 1,100 sq ft and the sensory bar is 28 sq ft. Under v9 we're compliant. Can we close the default?\n@jennifer.walsh: @gregory.park \u2014 she's technically right about v9. Location qualifies for the small-footprint exception.\n@gregory.park: The default was issued under v8.1. Let me check if we've set precedent on this.\n[Thread \u2014 no further replies]\n\n**Outlook \u2014 From: r.vasquez@atlasretail.com, To: gregory.park@atlasretail.com (April 10, 2026)**\nSubject: RE: RE: Cure period question \u2014 Franchisee #0189\n> Greg, just FYI \u2014 we closed out the Patel default (#0189) last month even though it was issued under v8.1. Their situation was the same \u2014 new manual version resolved the cited violation. Rachel from legal said it was a 'practical call' since enforcing a rescinded standard in litigation would be weak. No formal policy memo though.\n\n**DocuSign \u2014 Franchise Agreement, Greenleaf Marketplace #0247, Exhibit C**\nSection 11.2: 'Franchisee shall comply with the Operations Manual as amended from time to time. In the event of conflict between this Agreement and the Operations Manual, this Agreement shall control.'\nSection 14.1: 'Cure periods shall be measured against the standards cited in the Notice of Default.'",
+  "question": "Should the Greenleaf Marketplace default be closed based on Operations Manual v9.0 compliance, or must the franchisee cure against the v8.1 standard cited in the original default notice?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Gregory Park",
+    "title": "Franchise Operations Director",
+    "organization": "Atlas Retail Holdings",
+    "years_experience": 15,
+    "domain_expertise": "Franchise agreement interpretation, operations manual versioning, field exceptions, performance remediation"
+  },
+  "tools_available": [],
+  "source_batch": "atlas-franchise-batch1.json",
+  "choices": [
+    "Do not close \u2014 Section 14.1 requires cure against the cited standard (v8.1), Gregory's resolved comment confirms this interpretation, and the #0189 precedent was informal with no policy memo",
+    "Do not close \u2014 the Slack thread was never answered, indicating implicit rejection of the franchisee's request, and the cure deadline has not yet passed so no action is required",
+    "Close the default \u2014 precedent was set with Franchisee #0189 where an identical situation was resolved by accepting compliance with the updated manual version",
+    "Close the default \u2014 v9.0 is the current Operations Manual and Section 11.2 says franchisees must comply with the manual 'as amended from time to time'; the v8.1 requirement no longer exists"
+  ]
+}
