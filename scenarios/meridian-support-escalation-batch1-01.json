@@ -1,0 +1,24 @@
+{
+  "title": "SLA Breach Determination Under Legacy Contract Terms During Incident Overlap",
+  "category": "policy_version",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "**Zendesk \u2014 Ticket #ZD-48291 (opened Jun 14, 2026, 9:03 AM PT)**\nOrganization: Hightower Medical Group | Priority: Urgent\nSubject: 'Platform completely down \u2014 cannot access patient scheduling module'\nAgent note (9:15 AM): 'Customer reports full outage of scheduling module. Confirmed SEV-1 criteria met: >50% of licensed users impacted. Assigned to Tier 2.'\nCustomer comment (11:42 AM): 'We are now at 2.5 hours with no resolution. Per our contract, SEV-1 TTR is 2 hours. This is a breach.'\nInternal note (12:01 PM, @t2-lead): 'Checking SLA terms. Customer signed under Enterprise Plus plan in 2024.'\n\n**Confluence \u2014 Support SLA Policy (v3.2, effective Jan 1, 2026)**\nSection 4.1: SEV-1 TTR commitment: 4 hours for Enterprise, 2 hours for Enterprise Plus, 1 hour for Premier.\nSection 4.4: 'SLA timers pause during Scheduled Maintenance Windows and during any declared platform-wide incident where StatusPage is updated to Major or Critical.'\n[Page history: v3.1 (Oct 2025) had identical language for Section 4.4. v2.8 (Mar 2024) stated: 'SLA timers pause only during Scheduled Maintenance Windows.']\n\n**Slack \u2014 #incidents (Jun 14, 2026, 8:47 AM)**\n@incident-bot: :rotating_light: INC-1142 declared. Severity: SEV-2. Service: scheduling-api. Impact: degraded performance for subset of customers.\n@jordan.kim (8:52 AM): Spinning up war room. Blast radius still being assessed.\n@jordan.kim (9:31 AM): Upgrading to SEV-1. Broader impact confirmed.\n@carlos.reyes (9:35 AM): StatusPage updated?\n@jordan.kim (9:38 AM): Will do now.\n[No further thread replies from jordan.kim regarding StatusPage]\n\n**StatusPage \u2014 meridian.statuspage.io (audit log)**\nJun 14, 2026, 9:51 AM: Component 'Scheduling Module' updated to 'Major Outage' by jordan.kim.\nJun 14, 2026, 12:30 PM: Incident resolved.\n\n**PagerDuty \u2014 INC-1142 Timeline**\n8:47 AM: Alert triggered (scheduling-api error rate >5%)\n8:52 AM: Acknowledged by jordan.kim\n9:31 AM: Severity upgraded SEV-2 \u2192 SEV-1\n12:22 PM: Resolved\n\n**CRM \u2014 Account: Hightower Medical Group**\nContract: Enterprise Plus | Signed: Mar 2024 | Renewal: Mar 2025 (renewed under same terms) | ARR: $287K\nNote (from CSM, Apr 2025): 'Customer opted not to migrate to new SLA framework. Grandfathered on v2.8 terms per renewal addendum.'",
+  "question": "Did Meridian breach its SLA commitment to Hightower Medical Group for this incident, and what is the correct TTR calculation?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Carlos Reyes",
+    "title": "Support Escalation Manager",
+    "organization": "Meridian Systems",
+    "years_experience": 9,
+    "domain_expertise": "Severity triage, SLA management, cross-team coordination during incidents"
+  },
+  "tools_available": [],
+  "source_batch": "meridian-support-escalation-batch1.json",
+  "choices": [
+    "No breach. Under current policy v3.2, the SLA timer paused at 9:51 AM when StatusPage was updated to Major, making effective TTR = 1h 48m (within 2-hour commitment).",
+    "Yes, breach occurred. TTR = 2h 31m (timer starts at 9:03 AM, pauses only during Scheduled Maintenance per the customer's grandfathered v2.8 terms, no maintenance window applies).",
+    "Yes, breach occurred. TTR = 3h 19m (9:03 AM ticket open to 12:22 PM resolution). The 2-hour Enterprise Plus TTR was exceeded.",
+    "No breach. The incident was initially declared SEV-2, so SLA timer did not start until the 9:31 AM upgrade to SEV-1, making TTR = 2h 51m but the platform-wide incident pause applies under v3.2."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Parent-Subsidiary CTA Collision During CSM Book Rebalancing",
+  "category": "entity_resolution",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "Context from Gainsight (CTA Dashboard \u2014 Week of Jun 16, 2026):\nCTA-8812: Account 'Prairie Health Cooperative' | Type: Risk | Trigger: NPS response score 3 (Detractor) | Assigned CSM: David Park | Due: Jun 30\nCTA-8819: Account 'PHC Specialty Clinics' | Type: Expansion Opportunity | Trigger: Usage threshold exceeded on Telehealth module | Assigned CSM: Rachel Dominguez | Due: Jul 5\nCTA-8823: Account 'Prairie Health \u2014 Behavioral Sciences Division' | Type: Risk | Trigger: 90-day no-login | Assigned CSM: Unassigned (CSM left company May 30)\n\nContext from Health Cloud CRM:\nAccount: 'Prairie Health Cooperative' | Parent Account: None | ARR: $780K | Contacts: 12 | Contract end: Sep 30, 2026\nAccount: 'PHC Specialty Clinics' | Parent Account: None | ARR: $340K | Contacts: 5 | Contract end: Sep 30, 2026\nAccount: 'Prairie Health Corp' | Parent Account: None | ARR: $0 | Type: 'Holding Entity' | Contacts: 1 (CFO) | No active contract\n[No account exists for 'Prairie Health \u2014 Behavioral Sciences Division']\n\nContext from Looker (CS Dashboard \u2014 Quarterly GRR Forecast):\nRenewal cohort Q3-2026: 14 accounts | At-risk: 2 (includes Prairie Health Cooperative) | Expansion candidates: 3 (includes PHC Specialty Clinics) | Combined renewal ARR: $4.1M\nNote: GRR forecast treats each CRM account as independent entity.\n\n**Slack \u2014 #escalations (Jun 2, 2026, 9:15 AM)**\n@david.park: Quick flag \u2014 Prairie Health's NPS came back ugly. The respondent was their VP of Ops, Dr. Anand Mehta, and his comment said 'we're consolidating vendors across all divisions.'\n@rachel.dominguez: Interesting \u2014 I just got a usage spike alert for PHC Specialty. They're ramping telehealth hard. Doesn't feel like a churn signal to me.\n@david.park: Aren't those the same org? I thought PHC was a subsidiary.\n@rachel.dominguez: \ud83e\udd37 Different account in CRM. Different contract. My book, my number.\n[\ud83d\udc40 reaction from @b.ellsworth]\n\n**Email \u2014 Subject: 'RE: CSM Coverage Gap \u2014 Behavioral Sciences' (Jun 5, 2026)**\nFrom: b.ellsworth@vantagehealth.com\nTo: cs-leadership@vantagehealth.com\nCC: david.park@vantagehealth.com\n\n> On Jun 3, hr-notifications wrote:\n> > Kevin Marsh's last day was May 30. Accounts pending reassignment: 4.\n\nTeam \u2014 one of Kevin's accounts is 'Prairie Health \u2014 Behavioral Sciences Division.' I can't find this in CRM as a standalone account. It might be a Gainsight-only record created during the data migration from our old CSM platform. Needs investigation before we reassign.\n\n**Zendesk \u2014 Org: 'Prairie Health' (single org, no subdivision)**\nOpen tickets: 9 | Avg first response time: 42 hours (SLA target: 8 hours)\nRecent ticket (Jun 10): Subject: 'Contract consolidation inquiry \u2014 who is our single point of contact?' | Requester: anand.mehta@prairiehealth.org | Status: Open, unassigned",
+  "question": "How should CS Operations handle the three CTAs, and what is the correct consolidated renewal risk assessment for the Q3 GRR forecast?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Brian Ellsworth",
+    "title": "Customer Success Operations Manager",
+    "organization": "Vantage Health Partners",
+    "years_experience": 10,
+    "domain_expertise": "Health score methodology, renewal forecasting, CSM capacity planning, escalation workflows"
+  },
+  "tools_available": [],
+  "source_batch": "vantage-cs-ops-batch1.json",
+  "choices": [
+    "Merge CTA-8812 and CTA-8823 as related risk signals but keep CTA-8819 separate since PHC Specialty Clinics shows genuine expansion; GRR risk is $780K plus whatever ARR is attributed to Behavioral Sciences",
+    "Treat as three separate accounts per CRM structure; address each CTA independently; GRR risk applies only to the $780K Prairie Health Cooperative account since the other entities have different contract terms",
+    "Escalate to legal/contracts team for entity clarification before taking any action; the Gainsight-only record indicates a data integrity issue that must be resolved before any renewal forecasting",
+    "Consolidate all three CTAs under one parent entity (Prairie Health Corp); combined ARR at risk is $1.12M; assign single CSM; the expansion signal at PHC Specialty is likely ramp-before-migration, not genuine growth"
+  ]
+}

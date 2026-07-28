@@ -116,15 +116,27 @@ class ScenarioValidator:
     # ------------------------------------------------------------------
     # Word-count constraints
     # ------------------------------------------------------------------
+    # Lower bounds act as a quality gate. Upper bounds are generous so that
+    # realistic scenarios that embed system data (CRM records, Slack threads,
+    # email trails) inline are accepted.
+    SCENARIO_TEXT_MIN_WORDS = 150
+    SCENARIO_TEXT_MAX_WORDS = 5000
+    RATIONALE_MIN_WORDS = 50
+    RATIONALE_MAX_WORDS = 2000
+
     def _validate_word_counts(
         self, scenario: Scenario, errors: List[ValidationError]
     ) -> None:
         sc_wc = _word_count(scenario.scenario_text)
-        if sc_wc < 200 or sc_wc > 500:
+        if sc_wc < self.SCENARIO_TEXT_MIN_WORDS or sc_wc > self.SCENARIO_TEXT_MAX_WORDS:
             errors.append(
                 ValidationError(
                     field="scenario_text",
-                    message=f"scenario_text must contain 200-500 words (got {sc_wc})",
+                    message=(
+                        f"scenario_text must contain "
+                        f"{self.SCENARIO_TEXT_MIN_WORDS}-{self.SCENARIO_TEXT_MAX_WORDS} "
+                        f"words (got {sc_wc})"
+                    ),
                 )
             )
 
@@ -132,11 +144,15 @@ class ScenarioValidator:
         # When loaded from an answer key file the rationale may be shorter.
         if scenario.rationale and scenario.rationale.strip():
             rat_wc = _word_count(scenario.rationale)
-            if rat_wc < 100 or rat_wc > 300:
+            if rat_wc < self.RATIONALE_MIN_WORDS or rat_wc > self.RATIONALE_MAX_WORDS:
                 errors.append(
                     ValidationError(
                         field="rationale",
-                        message=f"rationale must contain 100-300 words (got {rat_wc})",
+                        message=(
+                            f"rationale must contain "
+                            f"{self.RATIONALE_MIN_WORDS}-{self.RATIONALE_MAX_WORDS} "
+                            f"words (got {rat_wc})"
+                        ),
                     )
                 )
 

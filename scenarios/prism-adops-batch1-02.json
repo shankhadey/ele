@@ -1,0 +1,24 @@
+{
+  "title": "Verbal Make-Good Claim Under Revised Policy by Departed Rep",
+  "category": "precedent_exception",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "**HubSpot CRM \u2014 Account: 'Horizon Automotive'**\nDeal owner: Priya Okonkwo (assigned Feb 2026; previously Derek Lam, departed Oct 2025) | ARR: $210K | Last IO: PMG-IO-2025-0118 (expired Aug 2025) | Renewal status: In negotiation | Contact: Ryan Sato, Media Director\n\n**Slack DM \u2014 Derek Lam \u2192 Ryan Sato (external guest) (Oct 3, 2025, 11:14 AM)**\nDerek: hey ryan \u2014 just looked at the final delivery numbers for the summer campaign. we came in about 12% under on the pre-roll completions. totally on us, viewability filter was too aggressive. i'll make sure we get you a make-good flight in Q1. probably 2-3M impressions equivalent.\nRyan: appreciate it man. we'll plan around that for the Q1 buy.\nDerek: \ud83d\udc4a\n\n**Google Drive \u2014 'Make-Good Policy v2.1' (effective Nov 1, 2025)**\nSection 3.1: 'All make-good commitments must be documented via signed addendum to the original IO within 30 days of campaign end. Verbal or written commitments not formalized within this window are non-binding.'\nSection 3.4: 'Make-goods for underdelivery exceeding 10% require Director-level approval and a remediation plan filed in Monday.com.'\n[RESOLVED COMMENT by @natasha.w, Oct 28, 2025]: 'Adding the 30-day clause specifically because of the Derek situation and two other reps making promises we can't track. Existing commitments made before Nov 1 are NOT explicitly grandfathered \u2014 discussed with legal, they said it's gray area but we should handle case-by-case.'\n\n**Monday.com \u2014 Board: 'Make-Good Tracker'**\nNo entry exists for Horizon Automotive or PMG-IO-2025-0118.\n\n**Slack \u2014 #client-services (Mar 12, 2026, 9:03 AM)**\n@priya.o: Ryan from Horizon is asking about a make-good Derek supposedly promised last year. Says it was 2-3M pre-roll impressions for underdelivery on the summer IO. Anyone have context?\n@marcus.r: first I'm hearing of it. nothing in the tracker\n@tasha.w: \ud83d\ude44 of course. check if derek left any notes in the deal record\n@priya.o: nothing in HubSpot. Ryan says he has the slack DM though\n@tasha.w: forward it to me. i need to see the date\n[No further replies in thread]\n\n**NetSuite \u2014 Campaign Performance: PMG-IO-2025-0118**\nBooked pre-roll completions: 18M | Delivered: 15.7M | Delivery rate: 87.2% | Underdelivery: 12.8% | Revenue: $196,400 against $210K IO | Variance credited: $0",
+  "question": "Horizon Automotive's media director is claiming the make-good promised by Derek Lam in October 2025. What is Prism's correct position?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Natasha Williams",
+    "title": "Ad Operations Director",
+    "organization": "Prism Media Group",
+    "years_experience": 11,
+    "domain_expertise": "Programmatic deal reconciliation, advertiser entity management, IO interpretation, cross-platform attribution, make-good decisions"
+  },
+  "tools_available": [],
+  "source_batch": "prism-adops-batch1.json",
+  "choices": [
+    "The make-good is a gray area requiring Director-level review \u2014 the commitment predates the policy, the resolved comment confirms no explicit grandfathering, and the underdelivery is factually confirmed, but no formal documentation exists",
+    "The make-good is void \u2014 Policy v2.1 requires signed addendum within 30 days, which never happened, and the policy took effect Nov 1, 2025 before the 30-day window from Derek's Oct 3 promise would have expired",
+    "The make-good must be denied because there is no entry in Monday.com's Make-Good Tracker and Prism cannot verify the Slack DM since Derek is no longer an employee",
+    "The make-good should be honored \u2014 Derek's Slack DM constitutes a binding commitment made before the new policy took effect, and the 12.8% underdelivery exceeds the 10% threshold confirming it was warranted"
+  ]
+}

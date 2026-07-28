@@ -1,0 +1,24 @@
+{
+  "title": "Policy Harmonization Gap During Integration Transition Period",
+  "category": "policy_version",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "Cascade Financial Group acquired Ridgeline Wealth Advisors in January 2025. You're managing policy harmonization. An HR issue has surfaced where the two organizations' policies conflict and no explicit transition guidance exists for this specific case.\n\n**Workday \u2014 Employee Record**\nName: Derek Yoon | Hire Date (Ridgeline): Mar 2021 | Role: Senior Wealth Advisor | Division: Cascade Wealth (formerly Ridgeline) | Manager: Nina Ashford | Status: Active\nNote: Transferred to Cascade entity on Jul 1, 2025 (Day 100 legal entity cutover)\n\n**ServiceNow \u2014 HR Case HR-2026-1192 (Opened Jun 24, 2026)**\nSubmitted by: Nina Ashford\nDescription: 'Derek Yoon is requesting approval for outside business activity \u2014 he wants to serve on the board of a fintech startup. Under Ridgeline's policy this only required Director approval. Under Cascade's Policy 4.2 it requires SVP approval plus compliance review. Derek argues he submitted the request verbally to his Director at Ridgeline in December 2024 (pre-close) and got a verbal OK. No documentation. What applies?'\n\n**SharePoint \u2014 /policies/hr/outside-business-activities/ (3 documents found)**\n1. 'Policy 4.2 \u2014 Outside Business Activities (Cascade)' \u2014 v3, published Aug 2025: 'SVP approval required for all advisory roles involving financial services entities. Compliance pre-clearance mandatory.'\n2. 'Policy 4.2 \u2014 Outside Activities (Ridgeline Legacy)' \u2014 v1, published 2019: 'Director approval sufficient for board service where no direct client conflict exists.'\n3. 'Policy 4.2 \u2014 Integration Transition Addendum' \u2014 v1, published Feb 2025: 'All employment policies of the acquired entity remain in effect for existing employees until formal notification of policy transition. Transition notifications will be issued by function no later than Day 100.'\n\n**Microsoft Teams \u2014 #hr-integration (Jul 3, 2025, 11:15 AM)**\n@nina.ashford: Quick Q \u2014 did the outside activities policy transition notice go out to the Ridgeline folks?\n@maria.santos: We sent the compensation and benefits transition notices. Outside activities is still pending \u2014 legal wants to review the non-compete implications first.\n@nina.ashford: So what applies to them right now?\n@maria.santos: Technically still the legacy policy until we send formal notice. But please don't publicize that \u2014 we don't want a rush of requests under the old rules.\n[Thread has 2 emoji reactions: :thumbsup: from @nina.ashford, :grimacing: from @j.burke]\n\n**Outlook \u2014 From: legal-integration@cascadefinancial.com (Sep 12, 2025)**\nTo: hr-policy@cascadefinancial.com\nSubject: Outside Business Activities \u2014 Policy Transition Notice\n'Legal has completed review. Please issue the transition notice for outside activities policy to all former Ridgeline employees effective October 1, 2025.'\n\n**SharePoint \u2014 /hr/transition-notices/ (Last item dated: Aug 2025 \u2014 Benefits & Compensation)**\nNo document found for 'Outside Business Activities' transition notice.",
+  "question": "Under the applicable policy framework, what approval is required for Derek Yoon's outside business activity request submitted in June 2026?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Karen Johanssen",
+    "title": "M&A Integration Program Manager",
+    "organization": "Cascade Financial Group",
+    "years_experience": 15,
+    "domain_expertise": "Post-merger integration planning, system consolidation, entity rationalization, policy harmonization"
+  },
+  "tools_available": [],
+  "source_batch": "meta-ma-integration-batch1.json",
+  "choices": [
+    "SVP approval plus compliance review under Cascade's Policy 4.2 \u2014 the transition notice was authorized by legal and should be treated as effectively issued even though no document exists in SharePoint",
+    "No approval needed \u2014 Derek received verbal authorization from his Ridgeline Director in December 2024 before the acquisition closed, which constitutes pre-existing approval",
+    "Director approval under Ridgeline's legacy policy \u2014 the transition notice was never issued, so the legacy policy still applies per the Integration Transition Addendum",
+    "SVP approval plus compliance review under Cascade's Policy 4.2 \u2014 legal authorized the transition notice in September 2025, and it is now June 2026 well past any reasonable transition period"
+  ]
+}

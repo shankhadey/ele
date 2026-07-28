@@ -1,0 +1,6 @@
+{
+  "scenario_file": "vantage-pbm-batch1-01.json",
+  "correct_answer": "Require a new PA under 2026 UM criteria; the P&T Committee explicitly overrode grandfathering for JAK inhibitors",
+  "answer_format": "multiple_choice",
+  "rationale": "The P&T Committee's vote to override grandfathering specifically for JAK inhibitors is documented in a resolved comment on the formulary policy document \u2014 an easy-to-miss location since resolved comments are hidden by default. Linda Marsh confirms this in the Teams thread with a thumbs-down emoji when Patricia asks about grandfathering. Answer A applies the general policy (Section 4.1) without recognizing the class-specific exception voted by P&T. Answer C incorrectly decouples tier placement from PA requirements \u2014 at Vantage, moving to Tier 4 triggers new UM criteria that the existing PA doesn't satisfy. Answer D is overly punitive: requiring a new PA under updated criteria doesn't necessarily mean restarting step therapy from scratch \u2014 the patient's prior biologic failures remain documented in Epic and would likely satisfy the bDMARD step requirement upon re-review. The correct path is a new PA submission referencing prior treatment history."
+}

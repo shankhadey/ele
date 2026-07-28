@@ -1,0 +1,24 @@
+{
+  "title": "MAC Pricing Dispute with Retroactive Contract Amendment Across Merged Entities",
+  "category": "temporal_consistency",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "Vantage's specialty pharmacy is disputing underpayments from Express Scripts on high-cost generic claims. The dispute hinges on which MAC pricing schedule applies and whether a contract amendment signed by the former Lakeside Health entity carries forward post-merger.\n\n**Cerner RevCycle \u2014 Claims Reconciliation Report (May 2026)**\nPharmacy NPI: 1234567890 (Vantage Specialty Pharmacy) | Payer: Express Scripts | Period: Q1 2026\nUnderpayment flag: 47 claims | Total variance: $34,200 | Drug classes affected: Specialty generics (tacrolimus, mycophenolate, generic Revlimid)\nSystem note: \"MAC rates applied do not match contracted rates in PBM agreement VHP-ESI-2024.\"\n\n**SharePoint \u2014 /contracts/pharmacy/PBM/ (folder contents)**\n- VHP-ESI-2024-Master.pdf (Vantage Health Partners PBM Agreement, effective Jul 1, 2024)\n- Lakeside-ESI-2021-Amendment3.pdf (Lakeside Health System, Amendment to PBM Agreement, effective Jan 1, 2022)\n- VHP-ESI-2024-MAC-Schedule-A.xlsx (MAC pricing schedule, last updated Oct 2025)\n\n**SharePoint \u2014 Lakeside-ESI-2021-Amendment3.pdf**\nSection 2.4: \"For specialty generics dispensed by the Lakeside Specialty Pharmacy, MAC pricing shall not fall below AWP minus 25%, notwithstanding standard MAC list updates.\"\nSignatory: Lakeside Health System, Inc.\n[Document metadata: Uploaded to Vantage SharePoint during migration, Mar 2024. No annotation or status flag.]\n\n**Epic Pharmacy Module \u2014 Pharmacy Location Record**\nPharmacy Name: Vantage Specialty Pharmacy | NPI: 1234567890 | Legacy Name: Lakeside Specialty Pharmacy (renamed Aug 2023) | NCPDP: 3340192 | Address: 4500 Lakeview Dr (same physical location as former Lakeside pharmacy)\n\n**Outlook \u2014 Email chain (Apr 28, 2026)**\nFrom: patricia.okonkwo@vantagehealth.org\nTo: contract.disputes@express-scripts.com\nCC: legal@vantagehealth.org\nSubject: MAC Underpayment Dispute - NPI 1234567890 - Q1 2026\n\n\"Per our master agreement VHP-ESI-2024, Section 8.2, MAC rates for specialty generics at this location should reflect the AWP-25% floor carried forward from the Lakeside amendment. Please review and reprocess.\"\n\n> Reply from ESI (May 2, 2026):\n> \"The VHP-ESI-2024 agreement supersedes all prior Lakeside agreements per Section 14.1 (Entire Agreement clause). The MAC floor provision was not incorporated into the current agreement. Standard MAC list applies.\"\n\n**Microsoft Teams \u2014 #pharmacy-finance (May 3, 2026, 11:02 AM)**\n@patricia.okonkwo: ESI is saying the Lakeside MAC floor didn't carry over. Anyone remember if this was negotiated into the Vantage contract?\n@raj.patel (CFO office): I think Mike specifically asked for that during the 2024 negotiation. Check the redline.\n@patricia.okonkwo: Which redline? I only see the executed version on SharePoint.\n@raj.patel: (thinking-face emoji) Mike might have it. Oh wait, he left in January.\n@linda.chen.legal: I pulled the negotiation folder. There IS a redline showing the MAC floor was proposed in Section 8.2 but it was struck during final negotiation. The executed version doesn't include it.\n[Message has 1 reaction: sad-face emoji from @patricia.okonkwo]",
+  "question": "Based on the available evidence, does the AWP-25% MAC pricing floor apply to claims processed at Vantage Specialty Pharmacy (formerly Lakeside Specialty Pharmacy) under the current Express Scripts agreement?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Patricia Okonkwo",
+    "title": "Pharmacy Benefits Operations Manager",
+    "organization": "Vantage Health Partners",
+    "years_experience": 10,
+    "domain_expertise": "Formulary management, prior authorization appeals, PBM contract interpretation, step therapy exceptions"
+  },
+  "tools_available": [],
+  "source_batch": "vantage-pbm-batch1.json",
+  "choices": [
+    "Yes \u2014 the Lakeside amendment's MAC floor carries forward because the pharmacy is the same physical location and NPI, establishing continuity of the contractual benefit",
+    "Yes \u2014 the VHP-ESI-2024 contract's Section 8.2 references MAC pricing for specialty generics, which implicitly incorporates the prior Lakeside terms as industry-standard successor provisions",
+    "No \u2014 the MAC floor was explicitly struck during the VHP-ESI-2024 negotiation, the Entire Agreement clause supersedes prior Lakeside terms, and the executed contract does not contain this provision",
+    "Indeterminate \u2014 without the departed employee Mike's confirmation of negotiation intent, the dispute cannot be resolved and must go to formal arbitration"
+  ]
+}

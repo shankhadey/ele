@@ -1,0 +1,24 @@
+{
+  "title": "Dual-System Customer with Conflicting Balances Post-Acquisition",
+  "category": "entity_resolution",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "You are 14 months into the integration of Lakeshore Community Bank, acquired by Cascade Financial Group in April 2025. The MDM project is overdue and the customer data reconciliation between FIS Horizon (Cascade's core banking platform) and Lakeshore's legacy system (Fiserv DNA) is incomplete. A TSA governs Lakeshore's continued use of Fiserv DNA for deposit operations through September 2026.\n\n**ServiceNow \u2014 INC0078234**\nPriority: P2 | Opened: Jun 22, 2026 | Status: Pending\nCustomer: Margaret Hollis (SSN ending 4471)\nDescription: 'Customer called branch. Says her CD matured and she wants to roll it over. We see her in Horizon with a checking account ($14,200 balance) but no CD. She insists she has a $250K 18-month CD that matured last week.'\nInternal note (Jun 22, @t.morrison): 'Checked Dynamics \u2014 she exists as two records. One under Cascade (acct 7734-001) and one under the old Lakeshore entity (acct LSB-88291). The CD is probably in DNA.'\n\n**Microsoft Teams \u2014 #integration-ops (Jun 22, 2026, 3:47 PM)**\n@t.morrison: Anyone know if CDs that matured post-cutover are supposed to auto-migrate to Horizon? I thought Wave 2 covered term deposits.\n@p.langford: Wave 2 was savings and money market only. Term deposits were pushed to Wave 3 (Aug timeline). CDs maturing before Wave 3 need manual migration per the playbook.\n@t.morrison: So this customer's CD is still in DNA with no Horizon record?\n@p.langford: Correct. But \u2014 heads up \u2014 check the clean room output. Some Lakeshore CDs got flagged for OFAC re-screening before migration. If hers was flagged, ops can't touch it until compliance clears it.\n@t.morrison: :eyes:\n\n**SharePoint \u2014 /integration/wave3/clean-room-output-jun2026.xlsx (Last modified: Jun 18, 2026)**\nRow 2,341: Hollis, Margaret R. | LSB-88291 | Product: 18M CD | Maturity: Jun 15, 2026 | Amount: $250,000 | OFAC Flag: NO | Migration Status: PENDING-WAVE3\n\n**Outlook \u2014 From: compliance-ops@cascadefinancial.com (Jun 10, 2026)**\nTo: integration-program@cascadefinancial.com\nSubject: RE: Pre-migration OFAC Screening \u2014 Batch 14 Results\n'All accounts in Batch 14 cleared. No hits. Batch includes LSB-88200 through LSB-88450. These are greenlit for migration at ops discretion \u2014 no need to wait for Wave 3 scheduling if customer-facing urgency exists.'\n\n**Archer GRC \u2014 Compliance Note CN-2026-0441 (Jun 5, 2026)**\nPolicy: TSA Section 4.2(b) \u2014 'Matured term deposits under the legacy entity must be serviced by the acquiring entity within 5 business days of maturity unless migration has not been operationally completed, in which case the legacy servicer continues under TSA terms.'",
+  "question": "What is the correct operational path to service Margaret Hollis's CD rollover request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Karen Johanssen",
+    "title": "M&A Integration Program Manager",
+    "organization": "Cascade Financial Group",
+    "years_experience": 15,
+    "domain_expertise": "Post-merger integration planning, system consolidation, entity rationalization, policy harmonization"
+  },
+  "tools_available": [],
+  "source_batch": "meta-ma-integration-batch1.json",
+  "choices": [
+    "Process the rollover in Horizon against her existing checking account record (7734-001) since she's already a Cascade customer, and reconcile the legacy CD record later",
+    "Instruct the branch to process the rollover in Fiserv DNA under Lakeshore's entity since the TSA still governs term deposits until Wave 3 completes in August",
+    "Manually migrate her CD record from DNA to Horizon now (she's OFAC-cleared in Batch 14 and greenlit for early migration), then process the rollover in Horizon under her Cascade account",
+    "Escalate to compliance and wait for Wave 3 \u2014 the CD was flagged in the clean room output as PENDING-WAVE3 and cannot be moved until the scheduled migration window"
+  ]
+}

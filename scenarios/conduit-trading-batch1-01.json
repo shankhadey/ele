@@ -1,0 +1,24 @@
+{
+  "title": "Solar PPA Imbalance Charges and SPV Entity Name Resolution",
+  "category": "entity_resolution",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "You're reconciling March 2026 settlement statements for your renewable portfolio. The SAP settlement report shows a $47,300 imbalance charge under counterparty name \"Desert Sky Solar LLC.\" Your Allegro ETRM system has the PPA registered under \"Mohave Solar Holdings II SPV\" with delivery point MEAD_500KV_NODE_7. The contract in SharePoint is titled \"Power Purchase Agreement - Desert Sky Project (2019)\" and references \"Seller: Mohave Solar Holdings II, a Delaware limited liability company, project entity Desert Sky Solar LLC.\"\n\nYour trader sends you a Teams message: \"Katherine - saw the imbalance hit. Desert Sky curtailed 22 MWh on 3/15 due to transmission congestion but scheduling coordinator didn't update day-ahead. Should be their cost per Section 4.7 of the PPA but double-check the amendment.\"\n\nYou find a SharePoint folder with Amendment No. 3 (executed May 2024) that states: \"Effective June 1, 2024, all scheduling responsibilities and associated imbalance costs shall transfer to Buyer. Seller remains responsible for curtailment due to Seller's equipment failure only. For avoidance of doubt, transmission-related curtailment costs are borne by Buyer.\"\n\nAllegro shows the curtailment event tagged as \"EXTERNAL_TRANSMISSION\" with reason code \"MEAD_CONGESTION.\" The invoice from CAISO came to Conduit Energy (as scheduling coordinator of record since June 2024) but was coded in SAP to \"Desert Sky Solar LLC\" because AP matched the delivery point name in their legacy mapping table. Your manager asks whether to pay the invoice or dispute it with the counterparty.",
+  "question": "Who is financially responsible for the $47,300 March 2026 imbalance charge?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Katherine Engstr\u00f6m",
+    "title": "Power Trading Operations Manager",
+    "organization": "Conduit Energy",
+    "years_experience": 16,
+    "domain_expertise": "Energy market settlements, contract interpretation, counterparty risk"
+  },
+  "tools_available": [],
+  "source_batch": "conduit-trading-batch1.json",
+  "choices": [
+    "Conduit Energy - Amendment No. 3 transferred transmission-related imbalance costs to Buyer",
+    "Mohave Solar Holdings II SPV - they are the counterparty of record in the PPA",
+    "Desert Sky Solar LLC - they curtailed generation and caused the imbalance",
+    "CAISO - the scheduling coordinator error was on their system side"
+  ]
+}

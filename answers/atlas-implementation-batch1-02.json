@@ -1,0 +1,6 @@
+{
+  "scenario_file": "atlas-implementation-batch1-02.json",
+  "correct_answer": "No \u2014 the Confluence lessons learned page explicitly documents this was a one-time concession with VP confirmation it should not set precedent, and the Kova SOW specifies fixed-fee for all phases",
+  "answer_format": "multiple_choice",
+  "rationale": "The correct answer requires finding the resolved Confluence comment \u2014 hidden by default in the UI \u2014 which explicitly states the Threadline T&M shift was a one-time concession with VP confirmation that it should NOT set precedent. This directly negates OmniConnect's clause 8.2 argument. Furthermore, the signed Kova SOW (section 5.3) explicitly specifies fixed-fee for all phases including integration testing, which supersedes any general precedent clause. Answer D fails because it only reads the visible Confluence page content and the SOW clause 8.2 without discovering the resolved comment that nullifies the precedent claim. Answer C invents a hybrid approach not supported by either the SOW or any precedent \u2014 it would actually create new unauthorized commercial terms. Answer D misreads the approval chain; clause 8.2 grants Program Manager authority to adjudicate precedent requests, and the ServiceNow CR shows the PM is the first approver in the chain, meaning Kenji has authority to reject at his level."
+}

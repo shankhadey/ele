@@ -1,0 +1,24 @@
+{
+  "title": "Informed Consent Version Mismatch After Mid-Enrollment Amendment",
+  "category": "policy_version",
+  "domain": "compliance_legal",
+  "difficulty": "hard",
+  "scenario_text": "**OnCore CTMS \u2014 Study VHP-3011 (CLARITY Phase III)**\nSponsor: NovaBio Pharmaceuticals | Sites: 4 (Vantage is Site 003)\nICF Version History:\n- v2.0 approved by IRB: 2025-09-12\n- v3.0 (Amendment 5 \u2014 added biomarker sub-study) approved by IRB: 2026-01-22\n- v3.0 effective at site per activation log: 2026-01-28\n\n**Epic Research Module \u2014 Consent Tracking**\nSubject 3011-118: Enrolled 2025-11-04 | Consent signed: v2.0 (2025-11-04)\nSubject 3011-118: Re-consent signed: v3.0 (2026-02-14)\nSubject 3011-122: Enrolled 2026-01-25 | Consent signed: v2.0 (2026-01-25)\nSubject 3011-122: Re-consent: NOT ON FILE\n\n**DocuSign \u2014 Audit Trail for Subject 3011-122**\nDocument: CLARITY_ICF_v2.0_3011-122.pdf\nSigned: 2026-01-25, 2:34 PM CST\nWitnessed by: Karen Lindstrom, CRC\n\n**Outlook \u2014 From: karen.lindstrom@vantagehealth.org (Jan 25, 2026, 3:01 PM)**\nTo: james.osei-bonsu@vantagehealth.org\nSubject: Quick Q \u2014 CLARITY consent version\n\n\"Hey James \u2014 I just consented 122 on v2.0. I know v3.0 was IRB-approved on the 22nd but our binder still only has v2.0 printed. The activation visit isn't until Monday (28th). Are we good? They're not participating in the biomarker sub-study anyway.\"\n\n**Outlook \u2014 From: james.osei-bonsu@vantagehealth.org (Jan 25, 2026, 4:45 PM)**\nTo: karen.lindstrom@vantagehealth.org\nSubject: RE: Quick Q \u2014 CLARITY consent version\n\n\"Good catch. Technically the new ICF is effective at IRB approval date, not site activation. But the only material change in v3.0 is the sub-study language. Since 122 isn't in the sub-study, the risk disclosure in v2.0 is still accurate for their participation. Flag it as a minor deviation, we'll re-consent at their next visit. Don't need to pull them off study.\"\n\n**SharePoint \u2014 /clinical-research/sops/SOP-RC-014_InformedConsent_v6.pdf**\nSection 4.3.2: \"All subjects must be consented using the current IRB-approved version of the ICF. If a subject is consented on a superseded version, this constitutes a protocol deviation. The PI must assess whether the deviation affected the subject's willingness to participate and document the assessment within 5 business days.\"\n\n**Teams \u2014 #clarity-study-team (Jan 28, 2026, 9:15 AM)**\n@james.osei-bonsu: Site activation complete for Amendment 5. New binders distributed. Reminder: any subjects consented between 1/22 and today on v2.0 need re-consent at next visit.\n[No replies]\n\n**OnCore \u2014 Deviation Log**\nNo deviation filed for Subject 3011-122 as of 2026-03-15.",
+  "question": "Based on the SOP, regulatory requirements, and documented communications, what is the current compliance status of Subject 3011-122's participation in the CLARITY study?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "James Osei-Bonsu",
+    "title": "Clinical Trial Operations Manager",
+    "organization": "Vantage Health Partners",
+    "years_experience": 12,
+    "domain_expertise": "Protocol amendments, IRB submissions, informed consent versioning, FDA regulatory compliance"
+  },
+  "tools_available": [],
+  "source_batch": "vantage-clinical-trials-batch1.json",
+  "choices": [
+    "Compliant \u2014 v2.0 was still the effective version at the site because site activation did not occur until January 28; consent obtained January 25 was on the correct version.",
+    "Minor deviation properly managed \u2014 James acknowledged the issue, planned re-consent, and the subject's participation is unaffected because v3.0 changes are not material to their enrollment.",
+    "Reportable protocol deviation with incomplete corrective action \u2014 the SOP requires deviation documentation within 5 business days and re-consent, neither of which have been completed as of March 15.",
+    "Major deviation requiring study withdrawal \u2014 the subject cannot have valid consent on a superseded ICF regardless of materiality; continued participation without current consent violates 21 CFR Part 50."
+  ]
+}

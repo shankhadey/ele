@@ -1,0 +1,6 @@
+{
+  "scenario_file": "meridian-revops-batch1-03.json",
+  "correct_answer": "Recognize ratably over 12 months alongside the subscription \u2014 per current policy v2.1 Section 4.3, since SSP has not been established for the services component",
+  "answer_format": "multiple_choice",
+  "rationale": "David's DM to Lisa explicitly states: 'the rev rec treatment on services follows current guidance (v2.1 sec 4.3).' The grandfathering applies ONLY to the discount rate (contractual obligation from the MSA), not to the revenue recognition methodology. Under v2.1 Section 4.3, when SSP cannot be determined for bundled professional services, the entire arrangement is recognized ratably. The Google Sheet confirms SSP has not been established ('awaiting SSP determination'), which triggers the ratable treatment. Answer A incorrectly extends the grandfathering to rev rec treatment \u2014 David's DM specifically separates these two issues. Answer C is wrong because the discount WAS implicitly approved (David confirmed contractual obligation overrides current discount policy), and the rev rec path is clear under v2.1. Answer D correctly identifies the discount grandfathering but applies the wrong rev rec conclusion \u2014 v2.1 requires SSP establishment before services can be treated as distinct; without SSP, ratable applies to the full arrangement."
+}

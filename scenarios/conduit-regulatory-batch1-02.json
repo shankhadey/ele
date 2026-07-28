@@ -1,0 +1,24 @@
+{
+  "title": "Solar Developer Entity Conversion and Interconnection Queue Priority",
+  "category": "entity_resolution",
+  "domain": "compliance_legal",
+  "difficulty": "hard",
+  "scenario_text": "A 12 MW community solar project is in Conduit Energy's interconnection queue. The developer originally filed as 'Solaris Mountain Partners LLC' in March 2024. In November 2025, the developer converted to a corporation ('Solaris Mountain Energy Corp') for federal ITC transferability purposes. The developer is now requesting to proceed to the facilities study phase under the new entity name while retaining their queue position (#IQ-2024-037).\n\n**Custom FileMaker \u2014 Interconnection Queue Register**\nQueue Position: IQ-2024-037 | Entity: Solaris Mountain Partners LLC\nFacility Size: 12 MW AC | Type: Solar PV + BESS (4 MW / 16 MWh)\nApplication Filed: March 8, 2024 | Feasibility Study Complete: Sept 2024\nSystem Impact Study: Completed Jan 2025 \u2014 no adverse impacts identified\nStatus: Awaiting Facilities Study Agreement execution\nDeposit: $360,000 (received March 2024, from Solaris Mountain Partners LLC operating account)\n\n**SharePoint \u2014 /regulatory/tariffs/interconnection-procedures/Rule-21-Equiv.pdf (v3.2, effective July 2025)**\nSection 4.7.1: 'Queue position is non-transferable and shall be forfeited if the Interconnection Customer assigns or transfers the project to a different entity.'\nSection 4.7.3: 'Changes to project ownership structure that do not constitute a transfer of control shall not affect queue position, provided the Interconnection Customer notifies the Utility within 30 days of such change.'\n\n**SharePoint \u2014 /regulatory/tariffs/interconnection-procedures/Rule-21-Equiv.pdf (v3.1, effective Jan 2023, ARCHIVED)**\nSection 4.7.1: 'Queue position is non-transferable.'\n[Note: v3.1 had no Section 4.7.3 \u2014 the provision distinguishing entity conversion from transfer was added in v3.2]\n\n**Teams \u2014 #interconnection-engineering (Jan 22, 2026, 11:15 AM)**\n@raj.patel: Got a queue position transfer request for IQ-2024-037. Solaris Mountain changed from LLC to Corp.\n@jennifer.kowalski: Is that actually a transfer? Or just a conversion?\n@raj.patel: Legal distinction matters. If it's a 'transfer of control' we bump them. If it's an entity conversion they keep position.\n@jennifer.kowalski: Did they notify us within 30 days? That's the 4.7.3 requirement.\n@raj.patel: Checking.\n[Thread \u2014 no further replies]\n\n**Outlook \u2014 From: solaris.legal@solarismountain.com, To: interconnection@conduit-energy.com (Dec 18, 2025)**\nSubject: Entity Conversion Notice \u2014 Solaris Mountain Partners LLC -> Solaris Mountain Energy Corp\nAttachment: Certificate of Conversion (State of Colorado), Articles of Incorporation\nBody: 'Per Section 4.7.3 of Conduit Energy's Interconnection Procedures, please be advised that Solaris Mountain Partners LLC converted to Solaris Mountain Energy Corp effective December 2, 2025. This is a statutory conversion, not an assignment or transfer. All assets, liabilities, and contracts of the LLC are held by the Corp by operation of law. We request continuation of queue position IQ-2024-037.'\n\n**SAP \u2014 Vendor Master**\nVendor 400892: Solaris Mountain Partners LLC | Status: Active | Tax ID: 84-XXXXXXX\nVendor 401156: Solaris Mountain Energy Corp | Status: Active | Tax ID: 93-XXXXXXX\n[Note: Different EINs due to entity type change]",
+  "question": "Should Conduit Energy preserve queue position IQ-2024-037 for the converted entity?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "William Reeves",
+    "title": "Regulatory Affairs Director",
+    "organization": "Conduit Energy",
+    "years_experience": 22,
+    "domain_expertise": "PUC tariff filings, rate case management, interconnection agreements, regulatory docket tracking"
+  },
+  "tools_available": [],
+  "source_batch": "conduit-regulatory-batch1.json",
+  "choices": [
+    "Yes \u2014 the statutory conversion notice was filed within 30 days (Dec 18 for Dec 2 conversion), satisfying Section 4.7.3, and a statutory conversion is not a transfer of control",
+    "No \u2014 Section 4.7.1 states queue position is non-transferable, and SAP shows two different entities with different Tax IDs, confirming this is a transfer",
+    "No \u2014 the developer filed under v3.1 of the interconnection procedures, which had no Section 4.7.3 carve-out; the version in effect at application governs",
+    "Cannot determine \u2014 the Teams thread is unresolved and the internal review is still pending Raj's confirmation of the 30-day notification requirement"
+  ]
+}

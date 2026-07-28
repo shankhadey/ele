@@ -1,0 +1,24 @@
+{
+  "title": "R2T4 Calculation Dispute Across Merged Campus Records",
+  "category": "cross_system_synthesis",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "**Banner SIS \u2014 Student Record (ID: W00298471)**\nName: Daniel Park-Simmons | Campus: East Campus (merged from former 'Eastview Community College' 5 years ago)\nEnrollment Spring 2026: 12 credits (full-time) | Withdrawal date: Mar 14, 2026 (official)\nPrior ID (legacy Eastview system): EV-10923 | Records migration note: 'Attendance data pre-merge incomplete; LMS is authoritative for post-merge terms'\n\n**Banner Financial Aid \u2014 Disbursement Record**\nPell Grant: $3,298 disbursed (Feb 1, 2026) | Institutional Grant: $2,000 disbursed (Feb 1, 2026)\nDirect Sub Loan: $1,750 disbursed (Feb 1, 2026) | Total Title IV disbursed: $5,048\nR2T4 calculation initiated: Mar 18, 2026 | Status: PENDING \u2014 'Attendance verification required'\n\n**Canvas LMS \u2014 Activity Log (Spring 2026, exported Mar 15)**\nDaniel Park-Simmons | Course: PSYCH 301 \u2014 Last login: Mar 12 | Submissions: 3 of 5 due\nCourse: ENG 204 \u2014 Last login: Mar 14 | Submissions: 4 of 4 due\nCourse: MATH 210 \u2014 Last login: Feb 28 | Submissions: 1 of 4 due\nCourse: SOC 150 \u2014 Last login: Mar 14 | Submissions: 2 of 3 due\n\n**Google Sheets \u2014 'R2T4 Tracking Spring 2026' (Row 28)**\nStudent: Park-Simmons, D. | WD Date: 3/14 | % completed: ???? | Calc by: T. Washington | Notes: 'Conflicting last attendance. Banner shows 3/14 official WD. Canvas shows last academic activity 3/14 for two courses but only 2/28 for MATH 210. Which date do we use? Using 3/14 per WD form. \u2014TW'\n[Cell highlighted yellow \u2014 no resolution noted]\n\n**Slack \u2014 #finaid-team (Mar 20, 2026, 2:08 PM)**\n@t.washington: Hey team \u2014 Park-Simmons R2T4 question. Kid withdrew 3/14 but his MATH 210 last activity was 2/28. Do we treat MATH as a class he never attended (reduce the payment period) or use the module-based definition since it's an online section?\n@k.nakamura: Was it an online or hybrid section?\n@t.washington: Online. East Campus course. Those old Eastview courses are weird \u2014 some still show as 'classroom' in Banner even though they moved online after the merge.\n@k.nakamura: If it's truly online and modular, you'd use the last LMS activity date for that course. But if he submitted assignment 1 of 4, he DID begin attendance.\n@t.washington: Right but that was week 2. He basically ghosted MATH after Feb 28.\n@k.nakamura: Then his last date of attendance for R2T4 is still 3/14 \u2014 you use the latest activity across ALL courses in the period. MATH doesn't change the calc.\n@t.washington: :eyes: oh wait. Shouldn't we check if the ENG 204 submissions on 3/14 were academically related? If they were just discussion posts...\n[Thread ends \u2014 no response]\n\n**Email \u2014 Subject: 'Fwd: Park-Simmons withdrawal circumstances' (Mar 16, 2026)**\nFrom: academic.advising@brightpath.edu\nTo: finaid-withdrawals@brightpath.edu\n\n'FYI \u2014 Daniel told his advisor he stopped attending MATH 210 in late February because the instructor wasn't posting materials. Department confirmed instructor had medical leave; no course activity Feb 25 - Mar 10. Replacement assigned Mar 11. May be relevant for your R2T4 since the student arguably couldn't attend.'",
+  "question": "What is the correct last date of academically-related activity to use in Daniel Park-Simmons's R2T4 calculation, and why?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Jennifer Caldwell",
+    "title": "Director of Financial Aid",
+    "organization": "Brightpath State University",
+    "years_experience": 16,
+    "domain_expertise": "Federal financial aid (Title IV), SAP appeals, professional judgment decisions, institutional aid policy, Return to Title IV"
+  },
+  "tools_available": [],
+  "source_batch": "brightpath-finaid-batch1.json",
+  "choices": [
+    "March 14 \u2014 use the official withdrawal date from the withdrawal form, as that is the institutional determination regardless of LMS activity patterns.",
+    "March 12 \u2014 use the PSYCH 301 last login as the last confirmed academic engagement, since discussion posts in ENG 204 on 3/14 may not qualify as academically-related activity.",
+    "March 14 \u2014 use the latest academically-related activity across all courses in the payment period (ENG 204 and SOC 150 submissions on 3/14), provided those submissions constitute academically-related activity.",
+    "February 28 \u2014 use the earliest 'last activity' date across courses (MATH 210) since he demonstrably disengaged from that course, reducing the payment period percentage."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Rate Card Floor Conflict on Pre-Change Verbal Commitment",
+  "category": "policy_version",
+  "domain": "sales_deal_desk",
+  "difficulty": "hard",
+  "scenario_text": "Context from Google Sheets \u2014 'Q2 2026 Rate Card (FINAL)' (published Apr 1, 2026):\nStreaming Premium Placement | Floor CPM: $38 | Effective: Apr 1, 2026\nStreaming Standard Run-of-Network | Floor CPM: $22 | Effective: Apr 1, 2026\n[Cell comment by @r.nakamura, Mar 28]: 'Approved by CFO. 15% increase over Q1 floors. No grandfathering for unsigned proposals.'\n\nContext from Google Sheets \u2014 'Q1 2026 Rate Card (Archived)' (effective Jan 1 - Mar 31, 2026):\nStreaming Premium Placement | Floor CPM: $33 | Effective: Jan 1, 2026\nStreaming Standard Run-of-Network | Floor CPM: $19 | Effective: Jan 1, 2026\n\nContext from HubSpot CRM:\nDeal: 'Apex Automotive \u2014 H2 Streaming Package' | Amount: $1.6M | Stage: Proposal Sent (Mar 18, 2026) | Owner: Tom\u00e1s Reyes | Close date: Apr 22, 2026 (overdue) | Notes: 'Client excited. Agency (Dentsu) reviewing. Verbal yes from CMO at dinner Mar 12.'\n\nContext from Monday.com \u2014 Proposal Pipeline:\nApex Automotive | Package: Premium Placement (60%) + Standard RON (40%) | Proposed CPMs: $34 (premium) / $20 (RON) | Blended: $28.40 | Status: 'Awaiting signature'\n\nContext from Slack \u2014 #sales-planning (Apr 8, 2026, 2:15 PM):\n@tomas.reyes: Alex \u2014 Apex is ready to sign but Dentsu noticed the IO says Q1 rates. They want to lock those in. Can we honor since we pitched before the floor change?\n@alex.petrov: When did they actually receive the proposal?\n@tomas.reyes: March 18. CMO gave us a verbal at POSSIBLE conference on the 12th.\n@alex.petrov: Verbal doesn't count for grandfathering. I need to check if there's a pending-proposal exception.\n@jess.thornton: :point_up: There isn't one. Rachel's comment on the rate card was explicit.\n\nContext from Slack \u2014 DM between Tom\u00e1s Reyes and Derek Miles (Apr 9, 2026, 8:02 AM):\n@tomas.reyes: Derek, I really need this Apex deal. $1.6M. If we reprice at new floors the blended goes to $32.60 and Dentsu will walk. They have a competing offer from Hulu at $29.\n@derek.miles: What if you restructure the mix? Drop premium to 45%, bump RON to 55%. Gets you to ~$29.20 blended at new floor rates.\n@tomas.reyes: That changes the whole package value prop. Apex specifically wants majority premium for their EV launch.\n@derek.miles: Then you might need to go ask for a one-time exception. VP approval I think?\n@tomas.reyes: :pray:\n\nContext from NetSuite \u2014 Revenue Recognition Notes:\nApex Automotive: No active contract. No signed IO. Last booking: Q3 2025 scatter ($340K).",
+  "question": "Tom\u00e1s wants to close the Apex deal at Q1 CPM floors ($34/$20) citing the verbal commitment and pre-change proposal date. What is the correct pricing decision?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Alexandra Petrov",
+    "title": "VP, Advertising Sales Planning & Strategy",
+    "organization": "Prism Media Group",
+    "years_experience": 13,
+    "domain_expertise": "Upfront marketplace commitments, scatter pricing, audience guarantees, make-good allocation strategy"
+  },
+  "tools_available": [],
+  "source_batch": "prism-sales-planning-batch1.json",
+  "choices": [
+    "Restructure the package mix to 45% premium / 55% RON at Q2 floors to match competitive pricing while maintaining rate card compliance",
+    "Apply Q2 floor rates ($38/$22) with no exceptions \u2014 the rate card explicitly states 'no grandfathering for unsigned proposals' and a verbal commitment has no contractual standing",
+    "Apply Q2 floor rates but approve a one-time VP-level exception to discount premium CPM to $34, citing competitive pressure and deal size",
+    "Honor Q1 rates \u2014 the proposal was sent March 18 before the April 1 floor change, establishing a binding price commitment to the client"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Cross-Entity Lease Execution with Ambiguous LLC Authority",
+  "category": "entity_resolution",
+  "domain": "compliance_legal",
+  "difficulty": "hard",
+  "scenario_text": "A tenant (Briarwood Coffee Roasters) wants to expand from their current 2,400 SF space at NovaTerra's Lakeshore Commons property into an adjacent 1,800 SF suite. The adjacent suite is technically in a different building within the same complex \u2014 and each building is held by a separate LLC.\n\n**Yardi Voyager \u2014 Property Records**\nProperty: Lakeshore Commons - Building A | Owner: NT Lakeshore A LLC | Managing Member: NovaTerra Property Group Inc.\nProperty: Lakeshore Commons - Building B | Owner: NT Lakeshore B LLC | Managing Member: NovaTerra Property Group Inc.\nTenant: Briarwood Coffee Roasters | Current Lease: Suite A-104, Building A | Lease ID: LK-A-2023-017 | Expiry: August 2027\n\n**VTS \u2014 Deal Pipeline**\nDeal: 'Briarwood expansion - Bldg B Suite 201' | Stage: Lease Sent | Landlord Entity on Draft: 'NT Lakeshore A LLC' | Broker note: 'Tenant wants single lease covering both spaces for simplicity. Using same entity as existing lease.'\n\n**iManage \u2014 Entity Files / NT Lakeshore B LLC**\nOperating Agreement: Managing Member authorized to execute leases up to $500K annual base rent without JV partner consent.\nJV Partner: Midwest Realty Partners (35% interest) | Consent threshold: Any lease with annual base rent exceeding $500K OR term exceeding 10 years requires Unanimous Member Consent per Section 7.3(b).\n\n**Shared Network Drive \u2014 \\\\ntserver\\properties\\lakeshore\\amendments\\**\nFile: 'Briarwood_expansion_term_sheet_FINAL.docx' (Last modified: June 12, 2026)\nTerms: Combined rent $47/SF NNN across 4,200 SF = $197,400 annual base rent. Term: 8 years from commencement.\n\n**Outlook \u2014 From: Leasing Director to Victoria Ashworth (June 18, 2026)**\nSubject: 'Quick Q - Briarwood deal'\n'Victoria \u2014 the broker set up the Briarwood expansion lease under NT Lakeshore A LLC since that's their existing landlord entity. Does it matter? Both buildings are ours. Just want to make sure we don't need to change anything before DocuSign goes out tomorrow.'\n[No reply found]\n\n**MRI Software (Legacy System \u2014 Acquired Portfolio) \u2014 Lakeshore Commons - Building B**\nNote (entered during acquisition integration, April 2024): 'JV structure differs from Bldg A. Bldg A is wholly-owned. Bldg B has Midwest Realty at 35%. See iManage for OA. Flag any new leases for governance review.'\n\n**Microsoft Teams \u2014 #leasing-ops (June 19, 2026, 8:33 AM)**\n@rob.castellano (Leasing Director): Sending the Briarwood expansion out today. Standard deal, nothing fancy.\n@lisa.murakami (Paralegal): Which entity? I need to pull the good standing cert.\n@rob.castellano: A LLC, same as their current lease.\n@lisa.murakami: Got it, pulling now.",
+  "question": "What governance issue must be resolved before the Briarwood expansion lease can be validly executed?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Victoria Ashworth",
+    "title": "Corporate Secretary & Governance Director",
+    "organization": "NovaTerra Property Group",
+    "years_experience": 17,
+    "domain_expertise": "Board resolutions, delegation of authority, signatory verification, corporate entity management"
+  },
+  "tools_available": [],
+  "source_batch": "meta-governance-batch1.json",
+  "choices": [
+    "The deal must be restructured so the expansion remains in Building A (finding alternate space) to avoid triggering JV consent rights that would delay the timeline",
+    "The lease must be executed by NT Lakeshore B LLC for the Building B space, requiring a separate lease or a two-party landlord structure, and Midwest Realty Partners must consent because Section 7.3(b) applies to any lease \u2014 the $500K threshold is only for Managing Member unilateral action",
+    "The lease must be executed by NT Lakeshore B LLC (not A LLC) since Suite 201 is in Building B, and Midwest Realty Partners' consent is not required because the annual rent is under $500K",
+    "The lease can be executed by NT Lakeshore A LLC as a master lease covering both buildings since NovaTerra is the Managing Member of both entities"
+  ]
+}

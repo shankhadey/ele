@@ -1,0 +1,24 @@
+{
+  "title": "Vendor DPA Authority After Acquisition and Entity Name Change",
+  "category": "entity_resolution",
+  "domain": "compliance_legal",
+  "difficulty": "hard",
+  "scenario_text": "**Vanta \u2014 Vendor Risk Assessment: 'CloudSync Technologies' (Approved: Aug 2024)**\nRisk Level: Medium | Review Cadence: Annual | DPA Status: Executed\nSub-processor list last updated: Jul 2024\nNotes: Processes PII (email, name, org) for integration sync feature. SOC2 Type II report received Aug 2024 (reporting period Jan-Jun 2024).\n\n**Google Drive \u2014 /Legal/DPAs/Executed/CloudSync_DPA_v2.pdf (signed Aug 12, 2024)**\nParties: Meridian Systems, Inc. ('Controller') and CloudSync Technologies, Inc. ('Processor')\nSection 4.2: Processor shall not engage sub-processors without prior written consent.\nSection 9.1: This agreement is binding upon successors and assigns, provided Controller receives 30-day written notice of any change of control.\nSchedule B \u2014 Approved Sub-processors: AWS (us-east-1), Datadog, Twilio SendGrid\n\n**Slack \u2014 #security-reviews (Mar 18, 2026, 2:44 PM)**\n@priya.v: Heads up \u2014 got a notification from CloudSync that they've been acquired by Nextera Data Corp effective March 1. They're saying 'business as usual, same team, same infrastructure.'\n@jake.morrison: Didn't we just renew with them? Is the DPA still good?\n@priya.v: Checking. The DPA has a successor clause but requires 30-day prior notice. This was sent 18 days after close.\n@jake.morrison: So they're technically in breach?\n@priya.v: Potentially. But the real question is whether Nextera's own sub-processor list matches what we approved.\n[Thread continues below]\n\n**Slack \u2014 #security-reviews thread (Mar 18, 2026, 3:12 PM)**\n@priya.v: Just pulled Nextera's SOC2 from their trust page. Their report lists GCP as primary infra, not AWS. If CloudSync migrates to parent infra, that's a new sub-processor we never approved.\n@jake.morrison: :eyes:\n@priya.v: Also \u2014 Nextera's own DPA template references their 'Nextera Data Corp' entity. Our DPA is with 'CloudSync Technologies Inc' which... might not exist anymore as a legal entity post-merger.\n@engineering-leads: :thumbsup: (3 reactions)\n\n**Jira \u2014 SEC-1142 (Created: Mar 19, 2026)**\nSummary: Evaluate CloudSync/Nextera acquisition impact on data processing authorization\nStatus: In Progress | Priority: High\nComment (@priya.v, Mar 20): 'Confirmed with their legal: CloudSync Technologies Inc was dissolved into Nextera Data Corp on March 8. They are operating as a division, not a subsidiary. The legal entity party to our DPA no longer exists.'\n\n**Confluence \u2014 Security Policy SP-007: Third-Party Data Processing (v3.2, last updated Jan 2026)**\nSection 3.4: 'In the event a vendor undergoes change of control, all data processing activities under existing DPAs shall be suspended within 5 business days of security team awareness unless (a) successor entity executes a new DPA, or (b) existing DPA successor clause was properly invoked with required notice.'\n[RESOLVED COMMENT by @priya.v, Nov 2025]: 'Added the 5-business-day suspension clause after the PartnerStack situation. VP Eng signed off in the Nov governance meeting.'",
+  "question": "As of March 20, 2026, what is the correct compliance status of Meridian's data sharing with the former CloudSync service, and what action is required?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Priya Venkatesh",
+    "title": "Information Security & Compliance Manager",
+    "organization": "Meridian Systems",
+    "years_experience": 10,
+    "domain_expertise": "SOC2, vendor security reviews, data processing agreements, incident disclosure, policy versioning across compliance frameworks"
+  },
+  "tools_available": [],
+  "source_batch": "meridian-infosec-batch1.json",
+  "choices": [
+    "DPA is still valid under the successor clause (Section 9.1); no action required beyond updating the vendor name in Vanta",
+    "Processing is unauthorized because Nextera's sub-processor list includes GCP which was never approved; immediately terminate the vendor relationship",
+    "DPA is in breach due to late notice but processing can continue because the same team and infrastructure are in place; issue a formal warning letter",
+    "Data processing must be suspended within 5 business days of March 18 awareness; the DPA successor clause was not properly invoked (late notice + entity dissolution), and policy SP-007 Section 3.4 mandates suspension"
+  ]
+}

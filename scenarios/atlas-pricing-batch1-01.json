@@ -1,0 +1,24 @@
+{
+  "title": "MAP Enforcement Against Wholesale Partner Under Revised Policy",
+  "category": "policy_version",
+  "domain": "sales_deal_desk",
+  "difficulty": "hard",
+  "scenario_text": "**CRM \u2014 Account: 'Summit Outdoor Distributors' (Wholesale)**\nAccount Owner: Jake Morton | Tier: Gold | Active since: 2022 | Last contract signed: March 2025 | Contract term: 24 months | MSA Clause 9.4 references 'Atlas Retail Holdings MAP Policy v2.1 (Jan 2025)' | Annual wholesale volume: $1.8M across Brands A and C.\n\n**Google Sheets \u2014 'Corporate Pricing Matrix FY26' (last edited May 12, 2026)**\nBrand A \u2014 Apex Trail Boot: MSRP $289 | Wholesale cost $144.50 | MAP $231 | Margin floor 52%\nBrand A \u2014 Apex Trail Boot: Promotional MAP (approved seasonal): $202 (valid Jun 1 - Jun 30 only)\n\n**NetSuite \u2014 Price Rule Log (Jun 2026)**\nRule PR-4492: MAP Policy updated to v3.0, effective April 1, 2026. Key change: promotional MAP windows now require 14-day advance registration via pricing portal. Non-registered promotions default to standard MAP. Notification sent to all wholesale accounts via email blast March 15.\n\n**Slack \u2014 #pricing-team (Jun 18, 2026, 2:47 PM)**\n@jake.morton: Summit Outdoor is advertising the Apex Trail Boot at $195 on their site. Clearly below MAP. Can we send an enforcement letter?\n@laura.svensson: What version are they under contractually?\n@jake.morton: Their MSA says v2.1 but the blast went out in March\n@laura.svensson: Did they register for the seasonal promo window?\n@jake.morton: Let me check\n[Thread \u2014 3 replies]\n@jake.morton (Jun 18, 3:12 PM): No registration in the portal. But... I found this:\n\n**Slack \u2014 #brand-leads (Mar 28, 2026, 5:55 PM)**\n@derek.walsh (Brand A GM): Quick FYI all \u2014 Summit asked if they could run early summer promos per usual. Told them same deal as last year, should be fine.\n@laura.svensson: Derek that's not how it works anymore. New policy requires portal registration.\n@derek.walsh: :thumbsup:\n[No further messages in thread]\n\n**Email \u2014 Subject: 'RE: Summit Outdoor Summer Promo' (Apr 2, 2026)**\nFrom: derek.walsh@atlasretail.com\nTo: summit.buyingteam@summitoutdoor.com\nCC: jake.morton@atlasretail.com\n\n> Hey team \u2014 go ahead and plan your summer promo like last year. We'll make sure you're squared away on our end.\n\nNo record of portal registration for Summit Outdoor in the pricing portal system.",
+  "question": "Can Atlas enforce the new MAP policy (v3.0) against Summit Outdoor for their $195 listing of the Apex Trail Boot?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Laura Svensson",
+    "title": "Pricing Strategy Manager",
+    "organization": "Atlas Retail Holdings",
+    "years_experience": 10,
+    "domain_expertise": "MAP enforcement, promotional pricing governance, wholesale vs DTC price parity, channel conflict resolution"
+  },
+  "tools_available": [],
+  "source_batch": "atlas-pricing-batch1.json",
+  "choices": [
+    "Yes \u2014 but only for the amount below the seasonal promotional MAP of $202; the $195 price is $7 below the approved promotional floor regardless of registration status",
+    "No \u2014 while v3.0 technically applies, Derek Walsh's email created an equitable estoppel situation; Atlas cannot enforce against a partner who relied on an authorized representative's explicit go-ahead",
+    "No \u2014 Summit's contract references MAP v2.1 and the MSA must be amended to enforce a newer version; Atlas has no enforcement standing until contract renewal",
+    "Yes \u2014 MAP v3.0 is effective as of April 1 and the email notification on March 15 constitutes adequate notice; Summit is in violation at $195"
+  ]
+}

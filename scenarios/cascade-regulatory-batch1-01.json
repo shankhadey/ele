@@ -1,0 +1,24 @@
+{
+  "title": "OCC Bulletin Phase-In Conflict Across Legacy Portfolios",
+  "category": "policy_version",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "Cascade Financial Group is implementing OCC Bulletin 2025-18 (revised credit risk management standards). The final rule has a 24-month phase-in from effective date of January 1, 2025, with an optional early adoption provision.\n\n**Archer GRC \u2014 Regulatory Change Record RCR-2025-041 (Created Feb 3, 2025)**\nStatus: Implementation In Progress | Owner: R. Nakamura\nScope: All credit portfolios across CFG consolidated entity\nPhase-in election: Standard (full compliance by Jan 1, 2027)\nNotes: \"Wealth management division (legacy Piedmont Bank portfolio) opted for early adoption per separate attestation filed 3/15/2025. Commercial lending remains on standard timeline.\"\n\n**SharePoint \u2014 /policies/credit-risk/OCC-2025-18-implementation (v3, last edited May 2025)**\nSection 4.1: \"All new credit extensions after June 1, 2025 in early-adoption portfolios must comply with revised concentration limit methodology.\"\n[VERSION HISTORY: v2 (March 2025) stated: \"...after April 1, 2025...\" \u2014 date was pushed back per OCC FAQ issued April 14]\n\n**Microsoft Teams \u2014 #reg-change-implementation (June 4, 2025, 3:47 PM)**\n@sarah.wellington: Quick question \u2014 the Piedmont CRE participations that got moved to the commercial book in the Q1 rebalance, are those under early adoption or standard timeline now?\n@robert.nakamura: Good question. The attestation was filed at portfolio level. If they transferred after the attestation date they should follow the receiving portfolio's election.\n@sarah.wellington: But the loans originated under Piedmont's underwriting standards...\n@robert.nakamura: Origination standards \u2260 phase-in election. It's about where they sit today.\n@sarah.wellington: \ud83d\udc4d\n[Thread ended]\n\n**Outlook \u2014 Subject: \"RE: FW: Concentration limit calc \u2014 Whitfield Plaza deal\" (June 12, 2025)**\nFrom: m.torres@cascadefinancial.com\nTo: credit-committee@cascadefinancial.com\nCC: r.nakamura@cascadefinancial.com\n\n> On June 10, p.chandler wrote:\n> > The Whitfield Plaza participation ($14.2M) originated at Piedmont in November 2024.\n> > It was rebalanced to the commercial book on March 28, 2025 \u2014 13 days AFTER the early adoption attestation.\n> > Do we apply the new concentration methodology or the legacy calc?\n>\n> Per the rebalance transfer memo, effective transfer date was March 31 (quarter-end settlement).\n> But operational booking happened March 28.\n\nMike \u2014 I think we need to pin down whether \"transfer date\" means trade date or settlement date here. The attestation was filed 3/15. If trade date governs, it transferred after attestation under early-adoption rules. If settlement date, same result. But the FIS booking record shows the loan was coded to commercial portfolio on 3/28.\n\n**FIS Horizon \u2014 Loan Detail: LN-2024-PB-08821**\nPortfolio: COMM_CRE (transferred from WM_PIEDMONT, effective 3/28/2025)\nOrigination: 11/14/2024 | Maturity: 11/14/2029\nParticipation amount: $14,200,000\nConcentration code: CRE_OFFICE (legacy methodology applied as of last calc run 5/31/2025)",
+  "question": "For the June 30, 2025 concentration limit calculation, should the Whitfield Plaza participation loan (LN-2024-PB-08821) be calculated using the OCC 2025-18 revised methodology or the legacy methodology?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Robert Nakamura",
+    "title": "Regulatory Change Manager",
+    "organization": "Cascade Financial Group",
+    "years_experience": 14,
+    "domain_expertise": "Regulatory implementation, policy versioning, transition periods, grandfathering provisions, compliance attestation"
+  },
+  "tools_available": [],
+  "source_batch": "cascade-regulatory-batch1.json",
+  "choices": [
+    "Revised methodology \u2014 the loan transferred to the commercial book after the early adoption attestation date, so it follows the receiving portfolio's standard timeline (compliance required by Jan 2027), but since the new extension date of June 1 has not yet passed for standard-timeline portfolios, legacy methodology applies until then",
+    "Revised methodology \u2014 the loan is now in the commercial portfolio which is on the standard timeline, but Section 4.1 requires revised methodology for all positions as of June 1, 2025, and the last calc run on 5/31 was the final legacy run",
+    "Revised methodology \u2014 the loan sat in an early-adoption portfolio at the time the attestation was filed (March 15), so early adoption follows the loan regardless of subsequent transfer",
+    "Legacy methodology \u2014 the loan originated before the final rule effective date and is grandfathered"
+  ]
+}

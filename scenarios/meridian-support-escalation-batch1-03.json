@@ -1,0 +1,24 @@
+{
+  "title": "Reconstructing Escalation Protocol Compliance Across Repeated Incidents",
+  "category": "cross_system_synthesis",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "**Zendesk \u2014 Organization: Lumen Dynamics (3 tickets, last 90 days)**\n\nTicket #ZD-46810 (Apr 5, 2026): Priority: High. Subject: 'SSO login failures intermittent.' Assigned: Tier 1 \u2192 Tier 2 (Apr 5). Resolved: Apr 7. Resolution: 'Auth service restart resolved. Monitoring.'\nInternal note (Apr 7, @tier2-agent): 'Third SSO-related ticket in 6 months. Should this trigger escalation protocol per repeat-incident policy?'\n[No response to internal note]\n\nTicket #ZD-47544 (May 12, 2026): Priority: Urgent. Subject: 'SSO completely broken \u2014 all users locked out.' Assigned: Tier 1 \u2192 Tier 2 (May 12) \u2192 Engineering (May 12). Resolved: May 13. CSAT: 1/5.\nCustomer comment (May 12): 'This is unacceptable. Same issue as last month. We need an RCA and a permanent fix commitment.'\nInternal note (May 14, @alex.foster): 'Customer success is aware. Scheduling exec touchpoint.'\n\nTicket #ZD-49388 (Jun 24, 2026): Priority: Urgent. Subject: 'SSO failures AGAIN.' Status: Open. Opened 52 hours ago.\nCustomer comment (Jun 24): 'Third time. We are done. Legal is drafting a termination notice citing material breach of the uptime SLA. Your CEO will hear from ours.'\n\n**Confluence \u2014 Repeat Incident Escalation Policy (v2, effective Feb 2026)**\nSection 1: 'When a customer experiences 3+ incidents of the same root cause category within a rolling 6-month window, the following protocol is mandatory: (a) Automatic escalation to Support Escalation Manager; (b) RCA delivered within 5 business days; (c) Engineering assigns a DRI for permanent fix; (d) CSM schedules exec alignment within 10 business days.'\nSection 3: 'Failure to trigger this protocol after the qualifying incident constitutes a process violation reportable to VP Support.'\n\n**Jira \u2014 AUTH-2847 (created May 13, 2026)**\nType: Bug | Priority: High | Status: Backlog\nSummary: 'Investigate recurring SSO failures for specific SAML configurations'\nAssignee: Unassigned\nSprint: None\nComment (May 15, @eng-lead): 'Need to prioritize this. Adding to Sprint 26.4 candidates.'\nComment (Jun 2, @eng-lead): 'Pulled from 26.4 due to capacity. Targeting 26.5.'\n:+1: reacted by @jordan.kim\n\n**Slack \u2014 #cs-internal (May 14, 2026, 3:12 PM)**\n@alex.foster: Heads up \u2014 Lumen Dynamics had another SSO failure. Second P1-equivalent in 6 weeks. One more and we hit the repeat-incident threshold.\n@carlos.reyes: :eyes: Got it. If it happens again ping me immediately so we can trigger the protocol proactively.\n@alex.foster: :thumbsup:\n\n**Slack \u2014 #cs-internal (Jun 24, 2026, 10:15 AM)**\n@alex.foster: @carlos.reyes Lumen SSO is down again. This is #3.\n[No reply from carlos.reyes \u2014 OOO per Google Calendar Jun 23-25]\n\n**Google Calendar \u2014 Carlos Reyes**\nJun 23-25, 2026: 'PTO \u2014 Beach Trip' (All day, OOO auto-reply enabled)",
+  "question": "As of June 26 (Carlos returns from PTO), which required steps of the Repeat Incident Escalation Protocol have been completed for Lumen Dynamics, and what is the compliance status?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Carlos Reyes",
+    "title": "Support Escalation Manager",
+    "organization": "Meridian Systems",
+    "years_experience": 9,
+    "domain_expertise": "Severity triage, SLA management, cross-team coordination during incidents"
+  },
+  "tools_available": [],
+  "source_batch": "meridian-support-escalation-batch1.json",
+  "choices": [
+    "Protocol was triggered correctly on Jun 24 when Alex pinged Carlos in Slack. Carlos's OOO status constitutes force majeure; the 5-business-day RCA clock starts Jun 26 when he returns.",
+    "Protocol should not have triggered yet. The Apr 5 ticket was Priority: High, not P1, so it does not count toward the 3-incident threshold. Only two qualifying incidents exist (May 12 and Jun 24).",
+    "Protocol was never formally triggered. Zero of four required steps completed. Full process violation \u2014 reportable to VP Support per Section 3.",
+    "Protocol was partially triggered: CSM is aware (step d initiated informally via Slack), and Engineering has a Jira ticket (step c). Steps (a) and (b) were not completed. Partial compliance \u2014 needs remediation but not a formal violation."
+  ]
+}

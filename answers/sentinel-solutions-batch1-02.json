@@ -1,0 +1,6 @@
+{
+  "scenario_file": "sentinel-solutions-batch1-02.json",
+  "correct_answer": "Obtain written VP Capture approval for Morales's combined 155% allocation across ARTEMIS and NEXUS-C2 before proceeding to Gold Team.",
+  "answer_format": "multiple_choice",
+  "rationale": "After Okoro's update, Morales is allocated 75% on ARTEMIS + 80% on NEXUS-C2 = 155% combined FTE as Key Personnel on concurrent active proposals. Per Section 2.4 of the key personnel policy (v3.1), this requires VP Capture written approval. The resolved comment reveals this was escalated from Director to VP level after a prior incident, making this a board-level governance control. Answer A fails because the HR staffing report only reflects March 31 data and won't catch the April 8 change until May \u2014 after both Gold Teams and potentially after ARTEMIS submission. Answer B addresses the symptom but not the process; the policy allows over-100% allocation WITH VP approval, and the client specifically requested Morales on NEXUS. Answer D is insufficient because capture manager negotiation doesn't satisfy the written VP approval requirement \u2014 this was precisely the failure mode in the FALCON/PEGASUS incident that triggered the policy escalation."
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Partner Deal Registration Under Acquired Entity Name",
+  "category": "entity_resolution",
+  "domain": "sales_deal_desk",
+  "difficulty": "hard",
+  "scenario_text": "**PRM Portal \u2014 Deal Registration DR-2026-0441**\nPartner: 'CloudBridge Consulting' | Partner Tier: Gold | Deal Reg Submitted: Jan 12, 2026\nProspect: Orion Logistics | Estimated ACV: $185K | Stage: Negotiating\nDeal Reg Status: Approved (Jan 14) | Expiration: Apr 14, 2026\nPartner Contact: Amanda Reeves, VP Alliances, amanda@cloudbridge.io\n\n**PRM Portal \u2014 Deal Registration DR-2026-0587**\nPartner: 'Nimbus Digital Solutions' | Partner Tier: Silver | Deal Reg Submitted: Feb 3, 2026\nProspect: Orion Logistics Inc. | Estimated ACV: $210K | Stage: Discovery\nDeal Reg Status: Approved (Feb 5) | Expiration: May 5, 2026\nPartner Contact: Jason Trask, Director Partnerships, j.trask@nimbusdigital.com\n\n**Slack \u2014 #channel-conflict (Feb 8, 2026, 2:47 PM)**\n@marcus.chen: Flagging \u2014 two regs on Orion Logistics. CloudBridge (DR-0441) and Nimbus (DR-0587). First-touch goes to CloudBridge.\n@sarah.oconnell: Nimbus might actually be the same org as CloudBridge now? Thought I saw something about an acquisition.\n@marcus.chen: Looking into it.\n[Thread has no further replies]\n\n**Google Sheets \u2014 Partner Scorecard (Q4 2025 tab, row 34)**\nCloudBridge Consulting | Status: Active | Tier: Gold | Notes: 'Acquired by Nimbus Digital Holdings LLC effective Nov 1, 2025. Retaining brand for existing engagements per MDF agreement.'\n\n**DocuSign \u2014 Partner Agreement (signed Aug 2024)**\nParty: CloudBridge Consulting LLC\nSection 8.2: 'In the event of a change of control, all active deal registrations remain valid through their expiration date. Partner tier status shall be re-evaluated within 60 days of change of control notification.'\n\n**Slack \u2014 #partnerships (Nov 15, 2025, 10:03 AM)**\n@amanda.reeves: Hey team, just wanted to confirm CloudBridge is now part of the Nimbus family. We'll keep running our existing book under the CB brand for now. Happy to chat about how this affects our tier and pipeline.\n@marcus.chen: Congrats! I'll kick off the change-of-control review.\n@amanda.reeves: :pray:\n[No further thread activity; no change-of-control review ticket exists in Jira]",
+  "question": "Given the channel conflict between DR-0441 (CloudBridge) and DR-0587 (Nimbus), who should receive referral credit for the Orion Logistics opportunity?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Marcus Chen",
+    "title": "Partner Program Manager",
+    "organization": "Meridian Systems",
+    "years_experience": 8,
+    "domain_expertise": "Partner tiering, deal registration, referral attribution, channel conflict resolution, co-sell motions"
+  },
+  "tools_available": [],
+  "source_batch": "meridian-partner-batch1.json",
+  "choices": [
+    "CloudBridge gets credit \u2014 they have first-touch with an earlier deal registration timestamp, and the deal reg is still within its validity window.",
+    "Both registrations should be rejected pending a formal change-of-control determination, and the deal should proceed as direct (no partner credit) until resolved.",
+    "Nimbus gets credit \u2014 CloudBridge's deal reg is invalid because the change-of-control review was never completed within 60 days, voiding their active registrations.",
+    "There is no conflict \u2014 CloudBridge and Nimbus are now the same entity (Nimbus Digital Holdings LLC), so both registrations should be merged under one partner record with credit going to DR-0441's earlier timestamp."
+  ]
+}

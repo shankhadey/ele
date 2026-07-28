@@ -1,0 +1,24 @@
+{
+  "title": "Dual-Manager Ghost: Sup Org Conflict After Legacy Entity Merger",
+  "category": "entity_resolution",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "**Workday HCM \u2014 Worker Profile: Priya Venkatesh (EID: 100847)**\nPosition: Director, Client Advisory \u2014 Wealth Management | Sup Org: WM-Advisory-East | Manager: Robert Cheng (SVP, Advisory Services) | Cost Center: CC-5510 | Location: Charlotte, NC | Effective Date of current position: January 15, 2026\n\n**Workday HCM \u2014 Sup Org History for WM-Advisory-East**\nJan 15, 2026: Sup org created (merger of 'PFS-Advisory-East' from Piedmont Financial acquisition)\nJan 15, 2026: Manager assigned: Robert Cheng\nNote: Prior sup org 'PFS-Advisory-East' was under legacy Piedmont hierarchy with mgr: Thomas Whitfield\n\n**Adaptive Planning \u2014 Q1 2026 Headcount Model**\nCC-5510 (Advisory \u2014 East): Planned HC = 12 | Filled = 12 | Manager: Thomas Whitfield\nCC-5510 note: \"Pending re-map to new sup org structure per M&A integration\"\nLast updated: February 3, 2026\n\n**SharePoint \u2014 /org-charts/wealth-management/current.pptx (last modified: December 2025)**\nSlide 4: Advisory Services \u2014 East Region\nShows: Thomas Whitfield (VP, Piedmont Financial Services) \u2192 11 direct reports including Priya Venkatesh\nFooter: \"Draft \u2014 pending integration restructure\"\n\n**ServiceNow HR \u2014 Case HRTASK0020114 (March 3, 2026)**\nRequester: Priya Venkatesh\nSubject: \"Incorrect manager showing in performance review system\"\nDescription: \"My mid-year review is routing to Thomas Whitfield but he's no longer my manager since the reorg. Robert Cheng should be my reviewer. The old Piedmont hierarchy is still showing in some systems.\"\nResolution (March 10): \"Updated Adaptive Planning mapping. Note: Dynamics 365 compensation module still references legacy cost center owner. Ticket opened with IT for CRM sync.\"\n\n**Microsoft Teams \u2014 #hris-integration (February 12, 2026, 3:22 PM)**\n@devon.washington: Heads up \u2014 the Piedmont sup org migration is done in Workday as of 1/15 but Adaptive won't pick it up until the next scheduled sync (first week of March). Until then, Tom Whitfield will still show as cost center owner in any planning reports.\n@rachel.moss: What about Dynamics? Some comp workflows pull manager from there.\n@devon.washington: Dynamics is a separate beast. That's on IT's backlog \u2014 probably Q2 at earliest.\n@rachel.moss: \ud83d\ude2c\n@devon.washington: Yeah. Just flag any routing issues to me directly.\n\n**Outlook \u2014 Email (March 22, 2026)**\nFrom: thomas.whitfield@cascadefinancial.com\nTo: devon.washington@cascadefinancial.com\nSubject: RE: Year-end rating delegation\n> Tom \u2014 can you confirm you're no longer the reviewer for the East advisory team?\n\nDevon \u2014 I still have 'approve' access in the old PFS performance module that hasn't been decommissioned. I haven't used it since January but technically I could still submit ratings. Should I flag this to compliance?\n\n**Dynamics 365 \u2014 Contact Record: Priya Venkatesh**\nReports To: Thomas Whitfield | Department: PFS-Advisory | Last Modified: November 2025",
+  "question": "It is now June 2026. An auditor asks: in how many systems does Priya Venkatesh currently report to the wrong manager, and what is the compliance risk?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Devon Washington",
+    "title": "HRIS & Workforce Planning Manager",
+    "organization": "Cascade Financial Group",
+    "years_experience": 14,
+    "domain_expertise": "Position management, headcount reconciliation, reorg execution, system-of-record conflicts between HR and Finance"
+  },
+  "tools_available": [],
+  "source_batch": "cascade-hris-batch1.json",
+  "choices": [
+    "Two systems (Adaptive Planning and Dynamics 365); moderate risk because cost center ownership affects budget approval routing",
+    "Three systems (Dynamics 365, Adaptive Planning, and SharePoint org chart); moderate risk requiring cleanup but no immediate compliance exposure",
+    "Two systems (Dynamics 365 and the legacy PFS performance module); material compliance risk because an unauthorized individual retains rating approval access",
+    "One system (Dynamics 365 only); low risk since CRM reporting lines don't affect compensation or performance decisions"
+  ]
+}

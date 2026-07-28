@@ -1,0 +1,24 @@
+{
+  "title": "Union Grievance Precedent Invalidated by CBA Renegotiation",
+  "category": "precedent_exception",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "**ServiceNow HR Case \u2014 CASE0013412**\nType: Grievance \u2014 Step 2 | Employee: James Whitfield, Maintenance Technician II (Plant 1) | Union: IAM Local 1847\nOpened: Feb 3, 2026 | Grievance: 'Management violated Article 9 (Overtime Distribution) by assigning weekend overtime to Whitfield out of seniority order on Jan 25-26, 2026.'\nUnion Rep Statement: 'Per Arbitration Award 2019-IAM-0447, overtime must be offered strictly by seniority within classification. Management cannot skip senior employees even if they declined the previous weekend.'\n\n**SharePoint \u2014 /labor-relations/arbitration-awards/2019-IAM-0447.pdf**\nAward Date: Jun 14, 2019 | Arbitrator: Hon. Patricia Voss\nHolding: 'The Company violated Article 9, Section 3 of the 2017-2020 CBA by assigning overtime out of seniority order. The rolling equalization method proposed by Management is rejected. Overtime shall be offered strictly by seniority within classification.'\n\n**SharePoint \u2014 /labor-relations/cba/IAM-Local-1847-CBA-2023-2026.pdf (effective Jul 1, 2023)**\nArticle 9, Section 3 (revised): 'Overtime shall be distributed equitably among qualified employees within classification. The Company shall maintain a rolling overtime equalization list, reset quarterly. Employees who decline overtime shall be credited as if they worked for equalization purposes.'\n[Section 3 footnote]: 'This section supersedes all prior arbitration awards interpreting the previous Article 9 language.'\n\n**Microsoft Teams \u2014 #labor-relations (Feb 5, 2026, 11:30 AM)**\n@pete.donovan (Labor Relations Specialist): @natalie.brennan they're citing the Voss award again. Third time this year.\n@natalie.brennan: Pull the equalization log for Q1. If Whitfield was at the top of the list it's moot regardless.\n@pete.donovan: Checking with Plant 1 maintenance sup.\n\n**Microsoft Teams \u2014 DM @pete.donovan to @natalie.brennan (Feb 5, 2026, 2:15 PM)**\n@pete.donovan: Bad news. I pulled the Q1 equalization log from the shared drive. It hasn't been updated since October. Plant 1 maintenance team has been running OT off a whiteboard.\n@natalie.brennan: \ud83e\udd26\n@pete.donovan: Also \u2014 Whitfield had 12 fewer OT hours than the two guys who were supposedly 'senior' to him. So equalization actually favors giving him the hours.\n@natalie.brennan: Send me the log. Even stale data helps.\n\n**Shared Network Drive \u2014 \\\\\\\\plant1-files\\\\maintenance\\\\OT-log-2025.xlsx**\nLast modified: Oct 18, 2025 | Tab: 'Q4 2025' (empty) | Tab: 'Q3 2025' (last entry Sep 28)\nWhitfield YTD OT hours (through Sep): 142 | Grieger (senior): 167 | Polanski (senior): 154\n\n**Outlook \u2014 From: tom.grieger@ironforge.com To: maint-crew-plant1@ironforge.com (Jan 24, 2026, 6:45 PM)**\nSubject: Weekend OT\n> Can't do this weekend, taking the kids to the lake. Polanski you in?\n[No reply from Polanski in thread]\n\n**ADP \u2014 Overtime Report, Plant 1 Maintenance, Pay Period ending Feb 1, 2026**\nWhitfield: 8.0 OT hours (Jan 25-26) | Grieger: 0.0 | Polanski: 0.0",
+  "question": "At the Step 2 grievance meeting, what is Ironforge's strongest defensible position, and what is the company's primary vulnerability?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Natalie Brennan",
+    "title": "Employee Relations Manager",
+    "organization": "Ironforge Manufacturing",
+    "years_experience": 16,
+    "domain_expertise": "Union grievance handling, CBA interpretation, arbitration precedent, labor relations documentation standards"
+  },
+  "tools_available": [],
+  "source_batch": "ironforge-employee-relations-batch1.json",
+  "choices": [
+    "The grievance should be sustained because management failed to maintain the equalization log as required by the current CBA, meaning the overtime assignment process was procedurally defective regardless of the outcome.",
+    "The grievance should be denied by citing the Voss arbitration award, which established that seniority-based assignment is proper, and Whitfield was assigned correctly within that framework.",
+    "The grievance is not arbitrable because the union is citing a superseded arbitration award, making their Step 2 filing procedurally defective under the CBA's grievance article.",
+    "The grievance should be denied because the 2023 CBA explicitly supersedes the Voss award; the new equalization framework was followed in substance (Whitfield had fewer hours), even though the documentation was not maintained \u2014 but the vulnerability is that the unmaintained log could support a separate ULP or future grievance about record-keeping."
+  ]
+}

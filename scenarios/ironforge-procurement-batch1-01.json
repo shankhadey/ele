@@ -1,0 +1,24 @@
+{
+  "title": "Vendor Entity Resolution Across Legacy Procurement Systems at Blanket PO Renewal",
+  "category": "entity_resolution",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "scenario_text": "Context from SAP Ariba (Supplier Master):\nVendor ID: V-20198 | Name: 'Consolidated Precision Alloys Inc.' | Category: Raw Materials \u2014 Specialty Metals | AVL Status: Approved | Qualification Expiry: 2026-09-30 | Plant Assignment: Cleveland, Monterrey | Blanket PO #4500078812: $340K annual, renewing Jul 1, 2026.\n\nContext from Oracle Procurement (Legacy \u2014 Greenfield Plant):\nSupplier #: OR-3392 | Name: 'CPA Metals LLC' | Status: Active | Last PO: Feb 2026, $42K spot buy for Ti-6Al-4V bar stock | Contact: James Whitfield, same email domain (@cpa-metals.com) as Ariba entry.\n\nContext from SAP QM (Vendor Scorecard):\nVendor: 'Consol. Precision Alloys' | Last audit: Nov 2025 | Score: 72/100 (Below threshold \u2014 minimum 75 for aerospace-qualified suppliers) | Corrective action due: Mar 31, 2026 | Status in QM: 'Conditional \u2014 pending CAPA closure.'\n\n**Microsoft Teams \u2014 #procurement-ops (Apr 2, 2026, 3:47 PM)**\n@sandra.volkov: Does anyone have the CAPA response from CPA? Their corrective action was due end of March.\n@rick.delgado: They sent something on the 28th. Let me dig it up.\n@sandra.volkov: Need it for the blanket renewal. AVL shows them approved but QM has them conditional.\n@rick.delgado: Found it \u2014 they submitted evidence of the furnace recalibration. Henrik reviewed it.\n@sandra.volkov: Did he accept it?\n@rick.delgado: \ud83d\udc4d (reacted with \u2705 emoji to Sandra's message)\n[No further messages in thread]\n\n**SharePoint \u2014 /contracts/vendors/CPA/ (folder last modified: Jan 2023)**\nFile: 'CPA_Qualification_Certificate_2021.pdf'\nCertified entity name: 'Consolidated Precision Alloys Partners LP'\nCertification scope: AS9100D, aerospace-grade titanium and nickel alloys\nCertifying body: NadCap\nNote in file properties (added by prev. procurement mgr, now retired): 'LP converted to Inc. in 2022 restructuring. Same ownership, same facilities. Legal sent updated W-9.'\n\n**Email \u2014 Subject: 'RE: CPA Renewal Review' (Apr 10, 2026)**\nFrom: henrik.johansson@ironforge-mfg.com\nTo: rick.delgado@ironforge-mfg.com\nCC: (none)\n\n> Their CAPA evidence looks solid. Furnace cal records check out.\n> I'm marking them compliant in MasterControl. QM scorecard\n> will update in next sync cycle (usually takes 2-3 weeks).\n\nRick \u2014 go ahead and treat them as qualified for the renewal.\nJust make sure Sandra knows the QM system won't reflect this until mid-April at earliest.",
+  "question": "Sandra needs to determine whether the blanket PO renewal for this supplier can proceed on Jul 1. Considering the vendor identity discrepancies, qualification status, and system lag, what is the correct procurement action?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Sandra Volkov",
+    "title": "Senior Procurement Category Manager",
+    "organization": "Ironforge Manufacturing",
+    "years_experience": 14,
+    "domain_expertise": "Strategic sourcing, supplier qualification, contract negotiation, sole-source justification, vendor risk management"
+  },
+  "tools_available": [],
+  "source_batch": "ironforge-procurement-batch1.json",
+  "choices": [
+    "Block the renewal \u2014 the supplier scorecard shows 72/100 (below 75 threshold), CAPA status is unresolved in QM, and the AVL qualification references a different legal entity (Partners LP vs Inc.)",
+    "Proceed with renewal for the Cleveland plant only \u2014 Oracle's 'CPA Metals LLC' is a separate entity serving Greenfield and must be qualified independently before the blanket PO can cover both plants",
+    "Proceed with renewal \u2014 the four entity names (Inc., LLC, Consol. Precision Alloys, Partners LP) are the same supplier confirmed by the SharePoint note and shared domain; Henrik's email confirms CAPA acceptance pending system sync; qualification is effectively restored",
+    "Escalate for competitive bid \u2014 the blanket PO at $340K exceeds the sole-source threshold ($75K) and the supplier's conditional status triggers mandatory re-sourcing per procurement policy"
+  ]
+}

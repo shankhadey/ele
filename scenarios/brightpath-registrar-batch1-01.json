@@ -1,0 +1,24 @@
+{
+  "title": "Pre-Merge Dual Record Consolidation with Conflicting Enrollment Status",
+  "category": "entity_resolution",
+  "domain": "compliance_legal",
+  "difficulty": "hard",
+  "scenario_text": "**Banner SIS \u2014 Student Record A (Campus East legacy ID: E-2019-4471)**\nName: Thanh Nguyen | Admit Term: Fall 2019 | Campus: East Portland (pre-merge) | Catalog Year: 2019-20\nCredits Earned: 68 | Enrollment Status: Active | Major: BS Computer Science\nHold: None | Advisor: Dr. R. Patel\n\n**Banner SIS \u2014 Student Record B (Campus West legacy ID: W-2021-0893)**\nName: Thanh V. Nguyen | Admit Term: Fall 2021 | Campus: West Portland (pre-merge) | Catalog Year: 2021-22\nCredits Earned: 24 | Enrollment Status: Withdrawn (admin withdrawal, Jan 2024)\nHold: FA Hold \u2014 Return to Title IV balance of $2,340\nAdvisor: Unassigned\n\n**DegreeWorks \u2014 Audit for E-2019-4471**\nDegree Progress: 72% complete | Remaining: 6 upper-division CS courses + capstone\nException Applied: MATH 251 substituted for MATH 260 (approved by Dr. K. Albrecht, retired Dec 2023)\nFlag: \"Multiple PIDM records detected \u2014 possible duplicate\"\n\n**Slate (Admissions) \u2014 Application Record**\nApplicant: Thanh Van Nguyen | DOB: 03/15/2001 | SSN last 4: 7748\nApplied: Spring 2021 (transfer from PCC \u2014 Portland Community College)\nTransfer Credits Evaluated: 24 credits from PCC (articulation agreement v3, effective 2020)\nNote: \"Student previously enrolled at East campus \u2014 readmit vs. new admit? Coded as new per West campus procedure.\"\n\n**Slack \u2014 #registrar-ops (Feb 12, 2026, 9:47 AM)**\n@jennifer.c: Hey @michael.o \u2014 got a student calling about their FA hold. Says they never withdrew from West, claims they were always at East and someone created a duplicate when they took one course through West's continuing ed catalog.\n@michael.o: Which term?\n@jennifer.c: Fall 2023. They say they enrolled in one online section listed under West's schedule.\n@michael.o: Ah, that was during the transition semester when online sections hadn't been consolidated yet.\n@jennifer.c: Right. So the admin withdrawal was probably automated when West's standalone enrollment system got decommissioned.\n[Thread has 1 emoji reaction: :eyes: from @registrar-director]\n\n**Google Doc \u2014 \"Post-Merge ID Reconciliation Log\" (last edited Aug 2024)**\nRow 47: E-2019-4471 / W-2021-0893 | Flagged: Likely duplicate | Action: \"Pending \u2014 need department chair confirmation of continuous enrollment\" | Assigned: T. Okafor (transferred to another department, Sep 2024)\n[RESOLVED COMMENT by @t.okafor, Jul 2024]: \"Confirmed same student via SSN match. Recommend merge into E-record, treat W-credits as earned under E-enrollment. But FA hold needs resolution first \u2014 can't merge with outstanding R2T4 balance.\"",
+  "question": "What is the correct course of action for resolving Thanh Nguyen's records before the student can register for Fall 2026?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Michael Owusu",
+    "title": "Associate Registrar",
+    "organization": "Brightpath State University",
+    "years_experience": 11,
+    "domain_expertise": "Enrollment verification, transfer credit evaluation, academic policy interpretation, FERPA compliance, degree audit exceptions"
+  },
+  "tools_available": [],
+  "source_batch": "brightpath-registrar-batch1.json",
+  "choices": [
+    "Merge both records into E-2019-4471 under the 2019-20 catalog year, but the FA hold must be resolved through Financial Aid's R2T4 recalculation process before the merge can be completed \u2014 the automated withdrawal doesn't automatically void the Title IV liability.",
+    "Merge both records into E-2019-4471, add the 24 West credits to the existing 68, clear the FA hold since the withdrawal was an automated error, and apply the 2019-20 catalog year to all coursework.",
+    "Create a new consolidated record under the post-merge unified ID schema, re-evaluate all transfer credits under the current 2025-26 catalog, and require the student to petition for the MATH 251 substitution again since Dr. Albrecht is no longer available to verify.",
+    "Keep records separate until the FA hold is resolved; the student should register under the East record (E-2019-4471) which has no hold, and reconcile the West record later."
+  ]
+}

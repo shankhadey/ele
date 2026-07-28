@@ -1,0 +1,24 @@
+{
+  "title": "Refund Authority Threshold Change with Undocumented Grace Period",
+  "category": "approval_chain",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "Google Workspace \u2014 'Return & Refund Policy RP-2026-v1' (Published Feb 1, 2026)\nSection 4.2: 'Refund-without-receipt transactions exceeding $100 require Loss Prevention Manager approval. Store managers may approve refunds without receipt up to $100.'\nSection 4.2 (Footnote): 'Replaces RP-2025-v3 Section 4.1, effective immediately upon publication.'\n\nGoogle Workspace \u2014 'Return & Refund Policy RP-2025-v3' (Archived Jan 31, 2026)\nSection 4.1: 'Refund-without-receipt transactions exceeding $300 require LP Director approval. Store managers may approve refunds without receipt up to $300.'\n\nSlack \u2014 #store-managers (Feb 1, 2026, 8:02 AM)\n@corporate.ops: Team \u2014 new return policy RP-2026-v1 is live today. Key change: refund w/o receipt threshold dropped from $300 to $100 for manager-level authority. Please review and confirm.\n[14 of 47 managers reacted with checkmark emoji]\n[No further replies in thread]\n\nSlack \u2014 #store-managers (Feb 3, 2026, 11:15 AM)\n@rachel.nguyen: Quick q \u2014 I have a customer in-store right now with a $180 return, no receipt. Under the old policy I could approve this. Are we really enforcing the new limit starting today?\n@corporate.ops: Policy is effective as of 2/1. Please follow the new threshold.\n@sandra.lowell: @rachel.nguyen just call LP, they're turning these around in under 5 min\n@rachel.nguyen: Got it, thanks\n\nSlack \u2014 DM between Anthony DiMaggio and VP of Retail Ops, Karen Marsh (Feb 1, 2026, 10:22 AM)\n@karen.marsh: Anthony \u2014 heads up, we're going to get a flood of calls on the new $100 limit. Can you give managers a soft 2-week grace period to adjust? Don't formally flag anyone processing between $100-$300 until Feb 15.\n@anthony.dimaggio: Makes sense. I'll tell my team to note but not escalate until the 15th.\n@karen.marsh: Perfect. Don't put that in writing anywhere official though \u2014 I don't want it as a documented exception.\n\nSquare POS \u2014 Exception Report (UrbanEdge, 5 locations, Feb 1-14, 2026)\n23 refund-without-receipt transactions between $100-$300 approved by store managers during this window. None escalated to LP.\n\nSquare POS \u2014 Exception Report (UrbanEdge, Midtown location, Feb 18, 2026)\nAlert: Manager Sandra L. processed refund-without-receipt for $245. Customer: 'T. Whittaker'. No LP approval on file.\n\nGoogle Sheets \u2014 'LP Exception Log Q1 2026'\nRow 12: Date: 2/18 | Brand: UrbanEdge | Location: Midtown | Flag: 'Refund w/o receipt $245, no LP approval' | Manager: Sandra L. | Status: 'Pending review' | Notes: [empty]\n\nZendesk \u2014 Ticket #ZD-438201 (Feb 18, 2026)\nCustomer: T. Whittaker | Subject: 'Refund issue in store'\nAgent note (internal): 'Customer states manager approved refund but it was reversed the next day. Customer upset. Manager Sandra L. says she thought the old policy still applied.'",
+  "question": "Sandra L. processed a $245 refund-without-receipt on Feb 18 without LP approval. How should this be adjudicated?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Anthony DiMaggio",
+    "title": "Loss Prevention Manager",
+    "organization": "Atlas Retail Holdings",
+    "years_experience": 13,
+    "domain_expertise": "Return fraud detection, ORC analysis, POS exception monitoring across multi-brand retail"
+  },
+  "tools_available": [],
+  "source_batch": "atlas-loss-prevention-batch1.json",
+  "choices": [
+    "Inconclusive \u2014 the grace period was never formally documented, creating ambiguity about whether it constitutes a policy modification; escalate to Legal/HR for interpretation before taking action",
+    "No violation \u2014 Sandra's claim that she didn't see the policy update is supported by the fact that only 14 of 47 managers acknowledged the Slack announcement, suggesting insufficient notice",
+    "Clear policy violation \u2014 RP-2026-v1 took effect Feb 1, the published policy requires LP approval over $100, the grace period ended Feb 15, and Sandra processed this transaction on Feb 18; she must be formally flagged",
+    "No violation \u2014 the informal grace period communicated by the VP of Retail Ops via DM to Anthony extends manager authority to $300 through at least Feb 15, and a reasonable interpretation allows additional adjustment time"
+  ]
+}

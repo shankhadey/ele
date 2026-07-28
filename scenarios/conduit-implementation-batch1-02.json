@@ -1,0 +1,24 @@
+{
+  "title": "Dual-Facility Load Aggregation Dispute After Meter Reconfiguration",
+  "category": "cross_system_synthesis",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "Context from Oracle CC&B (Customer Billing):\nAccount 1: 'Wasatch Cold Storage - Facility A' | Account #: 7402-8891 | Rate: LGS-2 | Demand: 1,800 kW | Address: 4500 Industrial Blvd, Unit A\nAccount 2: 'Wasatch Cold Storage Inc.' | Account #: 7402-9103 | Rate: LGS-2 | Demand: 2,400 kW | Address: 4500 Industrial Blvd, Unit B\nCombined billing demand: 4,200 kW | Both accounts pay demand charges independently.\n\n**Esri ArcGIS \u2014 Asset Map Layer (updated Mar 2026):**\nParcel 4500 Industrial Blvd: 2 service points shown. Meter M-7402-A (12.47kV feed from Substation Cottonwood-3) and Meter M-7402-B (12.47kV feed from Substation Cottonwood-3). Note: Both meters feed from same transformer bank (XF-CW3-004). Common bus on customer side confirmed by field survey 11/2024.\n\n**SharePoint \u2014 /customer-programs/line-extensions/LE-2019-0087.pdf (Line Extension Agreement, signed Aug 2019)**\nParties: Conduit Energy and Wasatch Cold Storage Inc.\nSection 4.2: 'Customer agrees to a minimum load commitment of 3,500 kW across both service points for a period of 7 years in consideration of Conduit's contribution of $1.2M toward the dual-feed line extension.'\nSection 4.4: 'For purposes of this Agreement, demand at both service points shall be aggregated and treated as a single load for calculating CIAC refund eligibility.'\nExhibit B: Shows single-line diagram with BOTH meters behind common customer switchgear.\n\n**Teams \u2014 #field-ops (Jan 15, 2026, 2:33 PM)**\n@rick.delgado: FYI just finished the meter reconfiguration at Wasatch Industrial Blvd. Split the interval data streams per the billing team's request. Each meter now reports independently to CC&B.\n@sarah.lindgren: Was there a reason we un-aggregated? I thought those were contractually linked.\n@rick.delgado: Billing put in the work order. Something about system upgrade compatibility. I just did what the WO said.\n[reacted with shrug emoji by @sarah.lindgren]\n\n**SAP \u2014 Financial (Accounts Receivable):**\nWasatch Cold Storage Inc. | Open balance: $0 | Last payment: Mar 2026 | Payment note: 'Customer disputing $18,400 in demand charges from Jan-Feb bills. Claims overcharge due to ratchet applied to split accounts that weren't split before.'\n\n**IBM Maximo \u2014 Work Order WO-2025-11847 (completed Jan 8, 2026):**\nDescription: 'Reconfigure meters M-7402-A and M-7402-B for independent interval data reporting per CC&B system migration requirements.'\nRequester: Billing Operations (auto-generated)\nApprover: None listed\nCompletion note: 'Meters now reporting as separate NMI. Customer not notified per standard practice for internal reconfigs.'",
+  "question": "Is Wasatch Cold Storage's billing dispute regarding the demand charge increase valid, and what should be the resolution?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Margaret Hayes",
+    "title": "Customer Programs Director",
+    "organization": "Conduit Energy",
+    "years_experience": 18,
+    "domain_expertise": "Key account program management, rate case customer testimony coordination, large C&I customer escalations"
+  },
+  "tools_available": [],
+  "source_batch": "conduit-implementation-batch1.json",
+  "choices": [
+    "The dispute is partially valid \u2014 aggregation applied only to CIAC refund calculations per Section 4.4, not to ongoing demand billing; current split billing is correct for tariff purposes",
+    "The dispute is valid \u2014 the Line Extension Agreement requires load aggregation across both service points, making the meter split an internal error that should not affect billing; demand charges should be recalculated on a combined basis",
+    "The dispute is invalid \u2014 each meter is a separate service point under tariff, and demand charges are correctly applied independently regardless of internal reconfiguration",
+    "The dispute cannot be resolved without a new interconnection study since the ArcGIS data shows both meters on the same transformer bank, requiring engineering review"
+  ]
+}

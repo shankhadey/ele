@@ -1,0 +1,24 @@
+{
+  "title": "WARN Act Trigger Date: Which System's Termination Is Authoritative?",
+  "category": "temporal_consistency",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "**Workday HCM \u2014 Termination Report (RIF Wave 2, June 2026)**\nFilter: Cost Center CC-3200 (Retail Banking Ops \u2014 Southeast) | Termination Reason: Position Elimination\n22 workers terminated | Effective dates range: June 28\u201330, 2026\nNotable: 3 workers show effective date of June 30 but 'last day worked' field is blank\n\n**SharePoint \u2014 /legal/rif-planning/wave2-WARN-analysis.docx (last modified June 10, 2026)**\nSection 2: \"WARN threshold analysis \u2014 Southeast region\"\n\"Current planned separations for 90-day lookback window (April 1 \u2013 June 30): 47 total across CC-3200 and CC-3210. Threshold is 50 for single site. Recommend proceeding \u2014 sufficient margin.\"\nSection 3: \"Assumptions: Termination date = Workday effective date. Voluntary resignations excluded.\"\n\n**ServiceNow HR \u2014 Cases filed week of June 16, 2026**\nHRTASK0021200: Employee Jordan Miles (CC-3200) | Subject: \"Requesting earlier separation date\" | Description: \"Jordan has accepted a new role starting June 16. Requesting term date moved from 6/30 to 6/13 to allow clean transition.\" | Approved by: HRBP Lisa Morton | Status: Closed\nHRTASK0021215: Employee Anita Pham (CC-3210) | Subject: \"Extending through July for project handoff\" | Description: \"Anita's manager requesting extension to July 15.\" | Status: Pending VP approval\nHRTASK0021222: Employee David Roark (CC-3200) | Subject: \"Separation agreement dispute\" | Description: \"David's attorney counter-signed agreement with July 5 effective date. Legal reviewing.\" | Status: In Progress\n\n**Microsoft Teams \u2014 #hr-legal-rif (June 18, 2026, 11:03 AM)**\n@lisa.morton: Devon \u2014 Jordan Miles's term date got moved up to 6/13 per his request. Already updated in Workday. Does that pull him into the prior lookback window?\n@devon.washington: If his effective date is now 6/13, he falls into the April-June 13 window instead of April-June 30. Need to check if that changes the count for the earlier period.\n@lisa.morton: The earlier period had 28 separations. Adding Jordan makes 29. Still under 50.\n@devon.washington: Right but double check \u2014 is his separation 'voluntary' since he requested the acceleration? Or still coded as RIF?\n@lisa.morton: Good question. I left the reason code as position elimination since that's the original basis. He just moved the date up.\n@devon.washington: \ud83d\udea8 That matters. If he's counted as involuntary in the earlier window, recount everything.\n[Thread continues below]\n@lisa.morton: Recounted. April 1\u2013June 13 window: 31 involuntary (including Jordan). Still under.\n\n**Outlook \u2014 Email (June 20, 2026, 4:45 PM)**\nFrom: outside.counsel@barrettlaw.com\nTo: legal-rif@cascadefinancial.com\nCC: devon.washington@cascadefinancial.com\nSubject: RE: Roark separation \u2014 effective date\n\"Confirming David Roark's separation agreement is now fully executed with an effective date of June 30, 2026. Note: the agreement contains a 5-day revocation period, meaning the earliest irrevocable date is July 5. For WARN counting purposes, we recommend using the irrevocable date.\"\n\n**Adaptive Planning \u2014 Headcount Forecast (June 2026 snapshot)**\nCC-3210: Shows Anita Pham as 'active' through July 15 (extension assumed approved)\nCC-3200: Shows 22 terms on June 30 (does not reflect Jordan's accelerated date or Roark's revocation-period adjustment)",
+  "question": "Using outside counsel's recommended counting methodology, how many involuntary separations fall within the 90-day lookback window ending June 30, 2026, and does Cascade trigger WARN Act notification requirements for the Southeast site?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Devon Washington",
+    "title": "HRIS & Workforce Planning Manager",
+    "organization": "Cascade Financial Group",
+    "years_experience": 14,
+    "domain_expertise": "Position management, headcount reconciliation, reorg execution, system-of-record conflicts between HR and Finance"
+  },
+  "tools_available": [],
+  "source_batch": "cascade-hris-batch1.json",
+  "choices": [
+    "47 separations; does not trigger WARN (under 50 threshold)",
+    "46 separations; does not trigger WARN \u2014 Jordan's acceleration moves him out of the June 30 window, and Roark's irrevocable date of July 5 moves him out as well",
+    "48 separations; does not trigger WARN (under 50 threshold) \u2014 subtract Jordan (moved to earlier window) and Roark (moved to July), but add Anita's extension keeps her in the window",
+    "45 separations; does not trigger WARN \u2014 Jordan moves to the earlier window, Roark moves to July 5 window, and Anita's extension to July 15 removes her from the June 30 count"
+  ]
+}

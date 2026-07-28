@@ -1,0 +1,24 @@
+{
+  "title": "Cross-Campus Respondent Transfer with Conflicting Interim Measures",
+  "category": "approval_chain",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "**Maxient Case #IX-2026-0147**\nComplainant: Student A (West Campus) | Respondent: Student B (originally West Campus, transferred to East Campus Jan 2026)\nFiled: February 3, 2026 | Incident date: November 12, 2025\nStatus: Formal investigation, supportive measures in place\nCase notes (Feb 4): \"Respondent's enrollment verified via Banner. Note: campus transfer processed 1/6/26. Original no-contact directive issued by Dean Harper (West Campus) on 11/15/25.\"\n\n**Banner SIS \u2014 Student B enrollment record**\nCampus: East Campus (effective 1/6/2026) | Prior: West Campus (Fall 2019 - Fall 2025)\nAdvisor hold: None | Title IX hold: ACTIVE (placed 11/15/25 by user DHARPER)\nRegistration restriction: \"No enrollment in courses cross-listed with [specific section numbers]\" \u2014 restriction campus: WEST\n\n**Google Doc \u2014 \"IX Procedures Manual v7.2\" (last edited August 2025)**\nSection 4.1.3: \"Supportive measures issued by a campus Dean are binding only within that Dean's jurisdictional campus. For respondents who transfer between campuses, the receiving campus Title IX Deputy must independently assess and re-issue measures within 5 business days of the transfer processing date.\"\n[RESOLVED COMMENT by @d.marchetti, Oct 14, 2025]: \"This section was NOT updated for the 2024 reg changes. New regs require continuity of measures across campuses without a gap. Will fix in v7.3 \u2014 but until then, the federal reg controls over this manual. Flagging for training.\"\n\n**Slack \u2014 #title-ix-deputies (Jan 8, 2026, 9:44 AM)**\n@rachel.ogunyemi: Heads up \u2014 Student B just showed up in my East Campus caseload via the transfer. I see Dean Harper's no-contact order in Maxient but my understanding is I need to re-issue under my authority?\n@diana.marchetti: No \u2014 new regs changed this. Harper's measures carry over automatically. Just confirm receipt and log it.\n@rachel.ogunyemi: Got it, will note in Maxient.\n[No further entries in Maxient from Ogunyemi]\n\n**Google Calendar \u2014 \"Title IX Deputy Sync\" (Jan 22, 2026, 2:00 PM)**\nRequired: diana.marchetti (accepted), rachel.ogunyemi (declined \u2014 OOO), mark.innis (accepted)\nAgenda: \"Cross-campus transfer protocols / v7.3 manual update status\"\nNo meeting notes document linked.\n\n**Email \u2014 Subject: \"RE: Student B \u2014 measures confirmation\" (Feb 10, 2026)**\nFrom: respondent-advisor@lawfirm.com\nTo: diana.marchetti@brightpath.edu\n\"...our client was never formally notified by East Campus of any restrictive measures. The only documentation references West Campus jurisdiction. We assert that no valid measures are currently in effect at East Campus and any enforcement action would constitute a due process violation.\"",
+  "question": "The respondent's advisor is challenging the validity of the no-contact directive at East Campus. Based on all available evidence, what is the correct institutional response?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Diana Marchetti",
+    "title": "Title IX Coordinator",
+    "organization": "Brightpath State University",
+    "years_experience": 9,
+    "domain_expertise": "Due process requirements, procedural versioning (pre/post 2022 regs), evidence standards, cross-campus jurisdiction"
+  },
+  "tools_available": [],
+  "source_batch": "brightpath-title-ix-batch1.json",
+  "choices": [
+    "The advisor is correct \u2014 Dean Harper's measures expired upon transfer, and since Deputy Ogunyemi never re-issued them per Section 4.1.3, there is currently no valid no-contact directive at East Campus.",
+    "The measures remain valid under federal regulation (which supersedes the outdated manual), and Marchetti's Slack directive to Ogunyemi constitutes proper institutional continuity \u2014 but the institution must immediately issue formal written notice to the respondent to cure the notification deficiency.",
+    "The measures remain valid because the Banner hold placed by Dean Harper is system-wide and not campus-specific, making the jurisdictional argument moot.",
+    "The measures lapsed due to the 5-business-day re-issuance window in Section 4.1.3, requiring the Title IX Coordinator to issue entirely new measures under a fresh procedural determination."
+  ]
+}

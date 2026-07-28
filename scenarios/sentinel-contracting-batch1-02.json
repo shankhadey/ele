@@ -1,0 +1,24 @@
+{
+  "title": "Option Year Exercise Validity After Performance Lapse",
+  "category": "approval_chain",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "Context from Costpoint \u2014 Contract FA8726-21-C-0198:\nContract type: FFP | CLIN 0001 (base): Oct 2021 - Sep 2023 | CLIN 0002 (Option I): Oct 2023 - Sep 2024 | CLIN 0003 (Option II): Oct 2024 - Sep 2025 | PWS: Cyber threat intelligence analysis support. Option II exercise deadline per FAR 52.217-9 clause: Government must provide preliminary notice 60 days prior and exercise NLT Sep 30, 2024.\n\n**Email \u2014 Subject: 'Option II Exercise \u2014 FA8726' (Aug 1, 2024)**\nFrom: maj.reynolds@us.af.mil (Government CO)\nTo: pat.holloway@sentineldef.com\nCC: contracts-fa8726@sentineldef.com\n\nMs. Holloway \u2014 This serves as preliminary written notice of the Government's intent to exercise Option II on FA8726-21-C-0198. Formal modification to follow.\n\n\u2014 Maj. Reynolds, PCO\n\n**Email \u2014 Subject: 'RE: RE: RE: Option II Mod Signature' (Oct 14, 2024)**\nFrom: pat.holloway@sentineldef.com\nTo: maj.reynolds@us.af.mil\n\n> On Oct 9, maj.reynolds wrote:\n> > Mod is being routed for signature. Expect execution this week.\n> > Apologies for the delay \u2014 our legal review took longer than expected.\n>\n> Pat \u2014 just to confirm, you're continuing performance pending mod execution, correct?\n\nMaj. Reynolds \u2014 confirmed. Team has maintained continuity of performance per your Aug 1 preliminary notice. No gap in deliverables. We treated your notice as authorization to proceed pending the bilateral mod.\n\n**Costpoint \u2014 Labor Charging History (Project FA8726-OPT2):**\nCharges begin: Oct 1, 2024 | Mod P00004 (Option II exercise) signed: Oct 18, 2024 | Total unbilled labor Oct 1-17: $142,800.\n\n**Teams \u2014 #sentinel-contracts-div2 (Oct 3, 2024, 9:15 AM)**\n@pat.holloway: Anyone seen this before? FA8726 option mod still not signed, we started performance Oct 1 based on the preliminary notice alone.\n@linda.castellano: That's a ratification situation if the mod doesn't come through. You have the CO's email authorizing continuation?\n@pat.holloway: I have the Aug 1 preliminary notice and the Oct 9 email saying mod is being routed. Nothing explicitly saying 'authorized to proceed before execution.'\n@linda.castellano: :grimacing: That's thin. The Aug letter says 'intent to exercise' \u2014 intent is not exercise.\n@pat.holloway: Right but we've done this before on CENTCOM task orders. CO's verbal direction plus email trail has always been enough.\n@linda.castellano: Verbal? Was there a call?\n@pat.holloway: Yeah, Sep 27. Let me check if there are notes.\n[No further replies]\n\n**Google Calendar \u2014 'FA8726 Option Discussion' (Sep 27, 2024, 3:00 PM)**\nOrganizer: pat.holloway@sentineldef.com\nAttendees: maj.reynolds@us.af.mil (accepted), j.park@sentineldef.com (accepted)\nLocation: MS Teams call\nNotes/Agenda: [empty \u2014 no attachment, no meeting notes linked]\n\n**SharePoint \u2014 /contracts/FA8726/mods/P00004-option-exercise.pdf:**\nMod P00004 effective date: Oct 1, 2024 | Signed by Govt: Oct 18, 2024 | Signed by Sentinel: Oct 18, 2024 | Period of performance: Oct 1, 2024 - Sep 30, 2025.",
+  "question": "If DCAA questions the $142,800 in labor costs charged between Oct 1-17 (before mod execution), what is the strongest justification for cost allowability?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Patricia Holloway",
+    "title": "Contracting Officer",
+    "organization": "Sentinel Defense Solutions",
+    "years_experience": 19,
+    "domain_expertise": "FAR/DFARS compliance, contract modifications, option year exercises"
+  },
+  "tools_available": [],
+  "source_batch": "sentinel-contracting-batch1.json",
+  "choices": [
+    "The CO's Aug 1 preliminary notice constitutes a constructive exercise of the option under FAR 52.217-9, authorizing performance from the option start date",
+    "The Sep 27 meeting between the CO and contractor, combined with the email trail, establishes authorized direction to proceed \u2014 but the lack of meeting notes weakens the position",
+    "Costs are unallowable because no written authorization existed prior to Oct 18; the preliminary notice only expressed intent, not direction to proceed",
+    "The mod P00004 retroactively sets the effective date to Oct 1, making all costs within the period of performance allowable regardless of signature date"
+  ]
+}

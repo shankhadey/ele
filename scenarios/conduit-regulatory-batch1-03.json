@@ -1,0 +1,24 @@
+{
+  "title": "Net Metering Grandfathering Dispute \u2014 Application vs. Approval Date",
+  "category": "temporal_consistency",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "A commercial customer (Ridgeline Brewing Co.) installed a 285 kW rooftop solar system and is claiming NEM-1 grandfathered status. The PUC's new NEM-2 rule (Docket No. 25-R-103) became effective April 1, 2025, with a grandfathering clause for customers 'enrolled in NEM-1 prior to the effective date.' The dispute centers on whether 'enrolled' means application filed or interconnection approved.\n\n**Custom FileMaker \u2014 Docket Tracking (Docket 25-R-103)**\nRule: Net Energy Metering 2.0 | Effective: April 1, 2025\nGrandfathering: 'Customers enrolled in NEM-1 prior to April 1, 2025 shall remain on NEM-1 for 20 years from PTO date.'\nDefinition of 'enrolled': [NOT EXPLICITLY DEFINED IN RULE TEXT]\nRelated Dockets: 22-R-045 (original NEM-1 implementation), 24-I-088 (NEM-2 rulemaking proceeding)\n\n**SharePoint \u2014 /regulatory/dockets/24-I-088/conduit-reply-brief.pdf**\nPage 14, Paragraph 3: 'Conduit Energy recommends that the Commission define enrollment as the date of interconnection application submittal, consistent with the principle that customers should not be penalized for utility processing timelines.'\n[Note: The PUC's final decision did not adopt Conduit's recommended definition]\n\n**Oracle CC&B \u2014 Customer Billing System**\nAccount: Ridgeline Brewing Co. | Service Address: 4521 Industrial Pkwy, Unit B\nRate Schedule: C-1 (Commercial General Service)\nNEM Flag: NEM-1 | NEM Enrollment Date: April 12, 2025\nInterconnection Application Received: March 14, 2025\nPTO Issued: April 12, 2025\n\n**Outlook \u2014 From: ridgeline.owner@ridgelinebrewing.com, To: solar-interconnection@conduit-energy.com (May 3, 2025)**\nSubject: NEM-1 Grandfathering Dispute\n'We filed our interconnection application on March 14, well before the April 1 cutoff. Our installer confirmed the system was ready for inspection in March but Conduit didn't schedule the inspection until April 8. We shouldn't lose NEM-1 status because of your processing delay.'\n\n**Teams \u2014 #regulatory-affairs (May 5, 2025, 9:23 AM)**\n@william.reeves: Got the Ridgeline complaint. Tricky one. CC&B has enrollment date as April 12 (PTO date). Application was March 14.\n@sarah.oconnell: What did the Commission actually say about 'enrolled'?\n@william.reeves: That's the problem. They didn't define it. Our reply brief advocated for application date but the final order is silent.\n@sarah.oconnell: Any Commission precedent?\n@william.reeves: Checking. I recall Decision 18-D-204 had similar language for the TOU transition...\n[Thread ends]\n\n**SharePoint \u2014 /regulatory/dockets/18-D-204/commission-decision.pdf**\nPage 8: 'For purposes of grandfathering, enrollment shall be deemed to occur upon the utility's receipt of a complete application, not upon final approval or activation of service.'\n[Document metadata: Filed 2018, regarding Time-of-Use rate transition grandfathering]\n\n**Teams \u2014 #regulatory-affairs (May 5, 2025, 2:41 PM)**\n@william.reeves: Found it. Decision 18-D-204 \u2014 TOU grandfathering case. Commission defined enrollment as application receipt date. Not directly NEM but same Commission, same grandfathering concept.\n@sarah.oconnell: strong precedent\n@sarah.oconnell reacted with :white_check_mark:\n@william.reeves: I'll draft the determination. Ridgeline keeps NEM-1.\n[No further messages]",
+  "question": "Based on the available evidence, what is the correct NEM status determination for Ridgeline Brewing Co.?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "William Reeves",
+    "title": "Regulatory Affairs Director",
+    "organization": "Conduit Energy",
+    "years_experience": 22,
+    "domain_expertise": "PUC tariff filings, rate case management, interconnection agreements, regulatory docket tracking"
+  },
+  "tools_available": [],
+  "source_batch": "conduit-regulatory-batch1.json",
+  "choices": [
+    "NEM-1 grandfathered \u2014 Conduit's reply brief in the NEM-2 rulemaking advocated for application date as enrollment, making this Conduit's own stated position",
+    "Cannot determine \u2014 the NEM-2 rule does not define 'enrolled' and no NEM-specific precedent exists; this must be escalated to the PUC for a declaratory ruling",
+    "NEM-2 applies \u2014 CC&B shows enrollment date of April 12, 2025, which is after the April 1 effective date; the system of record governs",
+    "NEM-1 grandfathered \u2014 the application was filed March 14, 2025, and Commission precedent (Decision 18-D-204) defines enrollment as application receipt date"
+  ]
+}

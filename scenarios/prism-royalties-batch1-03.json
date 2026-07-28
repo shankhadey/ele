@@ -1,0 +1,24 @@
+{
+  "title": "WGA Residual Obligation After Rights Window Lapse and Re-License",
+  "category": "temporal_consistency",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "**RightsLine \u2014 Title: \"Parallax\"**\nTitle ID: PRM-3309 | Type: Feature Film | Rights holder: Prism Originals LLC | WGA covered: Yes | Original SVOD window: Jan 2022 - Dec 2024 (expired) | Re-licensed: TVOD/EST window granted to StreamVault, Mar 2025 - Mar 2027 | Residual obligation: Active\n\n**FileMaker \u2014 Title: \"Parallax\" (FM-1142)**\nWriter: Jordan Achebe | WGA Agreement: 2020 MBA | Residual schedule: Pay per \"exhibition\" on new-media platform per Article 15.B | Last residual paid: Q4 2024 (SVOD window) | Residual basis: Distributor's gross | Note (Jan 2023): \"Title moved to RightsLine. FM record frozen. DO NOT UPDATE HERE.\"\n\n**NetSuite \u2014 Residual Accrual (Jun 2026)**\nTitle: Parallax | Payee: Jordan Achebe | Period: Q1 2026 | Platform: StreamVault (TVOD) | Revenue recognized: $312,000 | Residual accrued: $0.00 | Flag: \"No active residual schedule found for TVOD exploitation.\"\n\n**Slack \u2014 #royalties (Apr 8, 2025, 2:14 PM)**\n@denise.yamamoto: Heads up team \u2014 we re-licensed Parallax to StreamVault for TVOD/EST. WGA residuals apply. Need to set up the payment schedule.\n@marcus.hall: Is this a new exhibition or continuation? The 2020 MBA treats TVOD different from SVOD.\n@denise.yamamoto: New exhibition. Different platform, different window, different medium. Article 15.B applies separately.\n@marcus.hall: Got it. But wait - the 2023 MBA replaced 15.B residual calculations for anything licensed after May 2023. Do we use old or new rates?\n@denise.yamamoto: Good question. The WRITING was done under 2020 MBA. Let me check if the re-license date controls or the production date.\n[thread ends \u2014 no resolution posted]\n\n**Google Doc \u2014 \"WGA MBA Transition Guide (Internal)\" (Created by Legal, Sep 2023)**\nSection 3.1: \"For residual purposes, the applicable MBA is determined by the date of the employment agreement under which the covered material was written, NOT the date of subsequent exploitation.\"\nSection 3.2: \"However, for new-media exhibitions commencing after ratification of the 2023 MBA, the residual RATE SCHEDULE from the 2023 MBA applies, even if the underlying work was produced under a prior agreement.\"\n[RESOLVED COMMENT by @legal.intern.patel, Oct 2023]: \"Confirmed with WGA rep: Section 3.2 supersedes 3.1 for rate calculation only. All other terms (covered platforms, payment timing, reporting) follow the original employment MBA. This is confusing but correct.\"\n\n**Outlook \u2014 From: streamvault-reports@streamvault.io To: royalties@prismmedia.com (Apr 30, 2026)**\nSubject: Q1 2026 Exploitation Report \u2014 Parallax\nAttachment: Parallax_Q1_2026_TVOD_EST.xlsx\nBody: \"Per our distribution agreement, attached is the quarterly report. 4,211 TVOD transactions, 1,893 EST transactions. Gross revenue: $312,400. Note: our reporting format changed in Jan 2026; please reference column H for residual-eligible gross (previously column F).\"",
+  "question": "What residual rate framework should Prism apply when calculating Jordan Achebe's WGA residual payment for Q1 2026 TVOD/EST exploitation of Parallax on StreamVault?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Denise Yamamoto",
+    "title": "Royalty & Residual Accounting Manager",
+    "organization": "Prism Media Group",
+    "years_experience": 14,
+    "domain_expertise": "Guild/union residual calculations, license fee allocation, profit participation, rights window management"
+  },
+  "tools_available": [],
+  "source_batch": "prism-royalties-batch1.json",
+  "choices": [
+    "2023 MBA residual rates applied to total gross revenue ($312,400), since the re-license post-dates the 2023 MBA and all terms of the newer agreement apply",
+    "2023 MBA residual rate schedule applied to residual-eligible gross from the StreamVault report, with all other residual terms (covered platforms, payment timing) governed by the 2020 MBA",
+    "No residual obligation exists for TVOD/EST exploitation because the original license was SVOD-only and the WGA agreement tied to that window expired in Dec 2024",
+    "2020 MBA residual rates, since the writing was performed under that agreement and Section 3.1 of the transition guide states the employment agreement date controls"
+  ]
+}

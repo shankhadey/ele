@@ -1,0 +1,24 @@
+{
+  "title": "Emergency Deviation Approval Chain During AS9100 Audit",
+  "category": "approval_chain",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "You're preparing for an AS9100D surveillance audit next week. The auditor has requested complete traceability for Lot #J4782 (titanium valve bodies for aerospace customer Northstar Aero, shipped April 2026). In SAP QM, you find the lot was released with a Material Review Board (MRB) disposition: 'Use As Is' approved by Quality Manager Sarah Chen on April 18, 2026 at 14:32. The NCR (NCR-2026-0447) references a dimensional deviation on bore diameter (spec: 12.50mm \u00b10.02mm, actual: 12.53mm). The SAP record shows Sarah's digital signature and references ECN-5429 as 'pending engineering review.' In MasterControl, ECN-5429 shows status 'Draft' with no approvals - it was initiated April 19 (day after the MRB) by Design Engineer Mike Torres but never routed for signature. However, in the ECN comments field, there's a note from May 3: 'Per Mike's exit interview checklist, transferring ownership to J. Park.' You check Jira and find Mike Torres's last day was April 30, 2026. In a Microsoft Teams chat dated April 17 at 16:45 (day before the MRB decision), Plant Manager Bob Kowalski messaged Sarah: 'Talked to Dave at Northstar - they're OK with the bore being slightly over, needs to clear their tolerance stack. Dave will send email blessing tomorrow but we need to ship tonight for their production line. Can you push the MRB through? I'll take the heat if audit finds it.' You find no email from Northstar's Dave in the shared quality inbox. The PPAP documentation for this part (Rev C, approved 2024) shows the original design authority was Chief Engineer Linda Voss, who retired in December 2025. Current delegation matrix in SharePoint (updated March 2026) shows her authorities transferred to Engineering Director James Palmer for all active aerospace programs.",
+  "question": "Who had the authority to approve the 'Use As Is' disposition for Lot #J4782 under your AS9100D procedures?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Henrik Johansson",
+    "title": "Quality Assurance Manager",
+    "organization": "Ironforge Manufacturing",
+    "years_experience": 17,
+    "domain_expertise": "AS9100/IATF 16949 compliance, deviation management, CAPA, change control"
+  },
+  "tools_available": [],
+  "source_batch": "ironforge-quality-batch1.json",
+  "choices": [
+    "Bob Kowalski (Plant Manager) - he secured customer concession from Northstar prior to the MRB",
+    "No one - the disposition was invalid because ECN-5429 was never completed and the original design authority (Linda Voss) had retired",
+    "Sarah Chen (Quality Manager) - her digital signature in SAP QM constitutes valid MRB approval",
+    "James Palmer (Engineering Director) - as the delegated design authority, only he could authorize deviation from drawing specification"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Cross-System Account Transfer for Estate Settlement with Name Mismatch",
+  "category": "cross_system_synthesis",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "**ServiceNow \u2014 RITM0091456 (opened May 28, 2026)**\nRequest: Transfer assets from deceased individual account to estate account | Source: WP-3382910 (Individual) | Destination: New estate account TBD | Requestor: Thomas Kang (Attorney, Kang & Associates) | Status: Pending \u2014 'Unable to locate matching account in Dynamics 365 for verification'\n\n**WealthPort \u2014 Account #WP-3382910**\nRegistration: 'Yung-Hee Park' | SSN: ***-**-4471 | DOB: 03/22/1941 | Date of death: 05/10/2026 | Account type: Individual TOD | TOD beneficiary: 'James Park (son) \u2014 100%' | AUM: $892K | Advisor: Monica Salazar | Last activity: Quarterly dividend reinvestment 04/2026\n\n**Dynamics 365 \u2014 Contact search results for 'Park':**\n1. James Park | Household: Park Family | Advisor: Monica Salazar | Related accounts: WP-3382910 (listed as TOD beneficiary)\n2. Young-Hee Park | Household: Park Family | Status: Active | Advisor: Monica Salazar | Related accounts: None linked\n3. Grace Park | Household: Park-Tillman | Advisor: Craig Fenton | Unrelated\n\n**Dynamics 365 \u2014 Contact Detail: 'Young-Hee Park'**\nPhone: (704) 555-0193 | Email: yhpark41@gmail.com | SSN last 4: 4471 | DOB: 03/22/1941 | Mailing address: 4521 Magnolia Ln, Charlotte NC 28209 | Notes (Monica Salazar, 2022): 'Client prefers anglicized spelling of name. Legal docs use Yung-Hee.'\n\n**Outlook \u2014 Email chain (May 30, 2026)**\nFrom: thomas.kang@kanglaw.com\nTo: monica.salazar@cascadefinancial.com\nSubject: Park Estate \u2014 Account Transfer\n> Monica, attaching Letters Testamentary and certified death cert for Yung-Hee Park. Per the TOD designation, assets should transfer directly to James. We don't need to go through probate on this one. Can you initiate the non-probate transfer?\n\n**SharePoint \u2014 /policies/transfers/tod-transfer-procedures-v3.pdf (effective Mar 2025)**\nSection 2.1: 'TOD transfers bypass probate. Upon receipt of certified death certificate and verification of beneficiary identity, assets transfer directly to named beneficiary.'\nSection 2.4: 'TOD designations supersede any conflicting instructions in the decedent's will or trust documents.'\nSection 5.2: 'For accounts originating from pre-MDM-migration systems (WealthPort, LegacyTrust), identity verification must cross-reference at minimum two system identifiers (SSN, DOB, address) before processing. Name-only matching is insufficient due to known romanization and transliteration discrepancies in legacy data.'\n\n**Microsoft Teams \u2014 #ops-questions (May 29, 2026, 11:22 AM)**\n@intake.specialist: Got a transfer request RITM0091456 but can't find 'Yung-Hee Park' in D365. Only see 'Young-Hee Park'. Different person?\n@monica.salazar: Same person. Romanization difference from Korean. WealthPort has the legal spelling, D365 has the preferred spelling. SSN and DOB will match.\n@intake.specialist: Thx! Should I just process as TOD direct to James then?\n@monica.salazar: \u2705\n[Thread ends]",
+  "question": "The ops team needs to determine the correct transfer procedure for account WP-3382910. What is the appropriate action?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Elaine Hartwell",
+    "title": "Wealth Management Operations Director",
+    "organization": "Cascade Financial Group",
+    "years_experience": 15,
+    "domain_expertise": "Account transfers, fiduciary responsibility, trust administration, estate settlements, discretionary authority"
+  },
+  "tools_available": [],
+  "source_batch": "cascade-wealth-batch1.json",
+  "choices": [
+    "Process as a standard estate transfer requiring Letters Testamentary, opening a new estate account, and routing through probate procedures",
+    "Reject the request until the name discrepancy between WealthPort ('Yung-Hee Park') and Dynamics 365 ('Young-Hee Park') is formally resolved through the MDM team",
+    "Process as a TOD non-probate transfer directly to James Park after verifying identity match via SSN and DOB cross-reference per Section 5.2, bypassing estate account creation",
+    "Process as TOD transfer but hold pending formal written confirmation from the advisor that the two name variants represent the same individual, since a Teams message is not sufficient authorization"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Vendor Master Deduplication During Ariba Migration Conflicts with Active PO",
+  "category": "cross_system_synthesis",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "During the quarterly vendor master cleanup, a deduplication algorithm flags three records as potential duplicates. A blanket PO renewal is pending against one of them, and procurement needs to know which record is the golden record before the PO can be extended.\n\n**SAP S/4HANA \u2014 Vendor Master:**\nVendor 300042 | Name: 'Precision Coatings LLC' | Address: 1847 Industrial Pkwy, Akron OH 44301 | Tax ID: 34-2918756 | Payment terms: Net 45 | Status: Active | Created: 2022-06-14 | Purchasing Org: 1000\n\n**SAP Ariba \u2014 Supplier Profile:**\nSupplier: 'Precision Coatings Inc.' | DUNS: 07-842-1190 | Address: 1847 Industrial Parkway, Akron OH | Qualification status: Approved (audit date: 2025-09-12) | Category: Surface treatment \u2014 aerospace | Contact: Dave Moretti, dave.m@precisioncoat.com\n\n**Oracle Procurement (legacy, frozen) \u2014 Vendor Record:**\nVendor: ORA-V-8833 | Name: 'PREC COATING' | Address: 1847 IND PKWY AKRON OH | Status: Inactive (migrated) | Cross-ref: 'See SAP 300042' | Last PO: 2020-11-03 | Notes field: 'Formerly Midwest Surface Tech \u2014 name changed 2019 per acquisition. Same facility, same ownership.'\n\n**SAP Ariba \u2014 Blanket PO #4500089921:**\nSupplier: 'Precision Coatings Inc.' | Value: $340K annual | Contract period: 2025-07-01 to 2026-06-30 | Status: Renewal pending | Buyer: @j.kowalski | Spend category: Spec coatings \u2014 aerospace\n\n**Microsoft Teams \u2014 #procurement-ops (Jun 22, 2026, 2:13 PM)**\n@j.kowalski: @ananya.krishnan the dedup tool flagged Precision Coatings as a triple. I need to extend BPO 4500089921 by Friday. Which record do I point the renewal at?\n@ananya.krishnan: The Ariba profile has their current DUNS and qualification. S/4 has the payment config. Oracle is dead \u2014 ignore it except for history.\n@j.kowalski: But Ariba says 'Inc.' and S/4 says 'LLC'. Legal name matters for the contract, right?\n@ananya.krishnan: Good catch. Let me check.\n[No further reply in thread]\n\n**Email \u2014 Subject: 'RE: Precision Coatings entity update' (Mar 8, 2026)**\nFrom: dave.m@precisioncoat.com\nTo: ap@ironforgemfg.com\nCC: j.kowalski@ironforgemfg.com\n\n> Hi team \u2014 quick update: we converted from LLC to Inc. in January 2026 as part of our Series B. New W-9 attached. Tax ID unchanged: 34-2918756. All existing contracts remain valid under the new entity name per our counsel.\n\nPlease update your records. Let me know if you need anything else for the renewal.\n\n**SharePoint \u2014 /procurement/policies/VMP-001 (Vendor Master Policy, v3.0):**\nSection 6.1: 'Where multiple records exist for a single legal entity, the record containing the current tax ID and active qualification status shall be designated the golden record. Legacy records shall be marked as duplicates with a cross-reference to the golden record. Under NO circumstances shall a PO be issued against a legacy or duplicate record.'",
+  "question": "Which vendor record should be designated the golden record for the BPO renewal, and what updates are required before the PO can be extended?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Ananya Krishnan",
+    "title": "Master Data Manager",
+    "organization": "Ironforge Manufacturing",
+    "years_experience": 9,
+    "domain_expertise": "Material master harmonization, vendor master deduplication, cross-system data governance, ERP migration data quality"
+  },
+  "tools_available": [],
+  "source_batch": "ironforge-mdm-batch1.json",
+  "choices": [
+    "Neither is currently valid as a golden record. Per VMP-001, the golden record requires both current tax ID AND active qualification status in one record. The tax ID is in S/4 and qualification is in Ariba. These must be merged first, creating a single consolidated record before any PO extension.",
+    "The BPO should be extended against the Ariba supplier profile 'Precision Coatings Inc.' directly since it matches the current legal name and has the qualification. The S/4 record should be updated afterward during the normal quarterly sync.",
+    "SAP S/4HANA vendor 300042 is the golden record because it contains the payment configuration and tax ID. Update the name from 'LLC' to 'Inc.' per the vendor's email, then extend the BPO against this record.",
+    "SAP Ariba profile is the golden record because it holds the current DUNS and qualification status per VMP-001 section 6.1. Update the S/4 vendor 300042 name to 'Inc.' and link it to Ariba. Extend BPO against the Ariba-linked S/4 record."
+  ]
+}

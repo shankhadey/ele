@@ -1,0 +1,24 @@
+{
+  "title": "SOC2 Control Mapping Discrepancy Across Policy Versions During Audit",
+  "category": "policy_version",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "**Vanta \u2014 SOC2 Type II Audit Prep Dashboard (Audit period: Jul 2025 - Jun 2026)**\nControl CC-7.2: 'Vulnerability Management \u2014 Critical vulnerabilities are remediated within 14 days of identification.'\nStatus: Evidence Gap | Auditor Note (Jun 12, 2026): 'Observed 3 instances where critical vulns exceeded 14-day SLA. Requesting management response.'\n\n**Confluence \u2014 Security Policy SP-012: Vulnerability Management (v4.0, effective Apr 2026)**\nSection 5.1: 'Critical vulnerabilities (CVSS >= 9.0) must be remediated within 14 calendar days.'\nSection 5.4: 'Exceptions require CISO approval documented in Jira with risk acceptance rationale.'\n[Page history: v3.1 (effective Jan 2025) stated: 'Critical vulnerabilities must be remediated within 30 calendar days. High vulnerabilities within 60 days.']\n\n**Jira \u2014 SEC-0891 (Created: Feb 3, 2026)**\nSummary: CVE-2026-1847 \u2014 Critical RCE in auth-service dependency\nPriority: Critical | CVSS: 9.8\nTimeline: Identified Feb 3 \u2192 Patch available Feb 8 \u2192 Deployed to staging Feb 19 \u2192 Production deploy Mar 1 (26 days)\nComment (@jordan.kim, Feb 15): 'Blocked on staging \u2014 change freeze for SOC2 audit prep. Ironic.'\nComment (@priya.v, Feb 20): 'Flagging \u2014 we're past 14 days but technically v3.1 was active which gives 30. Proceeding.'\n\n**Slack \u2014 #security-reviews (Feb 20, 2026, 11:03 AM)**\n@priya.v: Quick gut check \u2014 SEC-0891 is at day 17. Under the current policy (v3.1) we have 30 days. But the new policy draft (v4.0) says 14 days. Auditor might apply the stricter standard retroactively since we told them in the readiness assessment that our target is 14 days.\n@ciso.williams: We committed to 14 days in the SOC2 description of controls. That's what gets audited regardless of internal policy version.\n@priya.v: :grimacing: Got it. So the description of controls is the binding commitment, not the internal policy?\n@ciso.williams: Correct. Always has been.\n[No further replies]\n\n**Jira \u2014 SEC-0923 (Created: Mar 14, 2026)**\nSummary: CVE-2026-2190 \u2014 Critical SQLi in reporting module\nPriority: Critical | CVSS: 9.1\nTimeline: Identified Mar 14 \u2192 Patch available Mar 16 \u2192 Deployed to production Mar 31 (17 days)\nComment (@dev.team.lead, Mar 28): 'WAF rule mitigates exploitation. Compensating control in place since Mar 15.'\nNo exception ticket filed. No CISO approval documented.\n\n**Jira \u2014 SEC-1003 (Created: May 2, 2026)**\nSummary: CVE-2026-3021 \u2014 Critical deserialization in event-processor\nPriority: Critical | CVSS: 9.4\nTimeline: Identified May 2 \u2192 Remediated May 19 (17 days)\nComment (@priya.v, May 10): 'Over SLA per description of controls. Filing exception.'\nException approved by CISO in linked ticket SEC-1003-EX.\n\n**Google Drive \u2014 /Compliance/SOC2/2026/Description_of_Controls_FINAL.docx (last modified: Jun 2025)**\nCC-7.2: 'The Company remediates critical vulnerabilities within 14 days of identification. Compensating controls may be applied when remediation requires extended timelines, subject to CISO approval.'",
+  "question": "The auditor flagged 3 instances exceeding the 14-day SLA. For the management response, how many of the three represent actual control failures versus exceptions or compliant remediations?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Priya Venkatesh",
+    "title": "Information Security & Compliance Manager",
+    "organization": "Meridian Systems",
+    "years_experience": 10,
+    "domain_expertise": "SOC2, vendor security reviews, data processing agreements, incident disclosure, policy versioning across compliance frameworks"
+  },
+  "tools_available": [],
+  "source_batch": "meridian-infosec-batch1.json",
+  "choices": [
+    "Three failures \u2014 all exceeded 14 days and none had compensating controls properly documented per the description of controls",
+    "Two failures (SEC-0891 and SEC-0923) \u2014 the CISO's Slack message establishes the description of controls as binding, making SEC-0891 non-compliant at 26 days without exception; SEC-1003 had proper exception approval",
+    "Zero failures \u2014 all three were compliant under internal policy v3.1 (30-day SLA) which was active during Feb and Mar incidents",
+    "One failure (SEC-0923, the SQLi vuln) \u2014 it had no documented exception or CISO approval; SEC-0891 was under the 30-day internal policy, and SEC-1003 had a proper exception filed"
+  ]
+}

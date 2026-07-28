@@ -1,0 +1,6 @@
+{
+  "scenario_file": "meridian-revops-batch1-01.json",
+  "correct_answer": "ARR = $539,016 (annualized MRR across all 3 Zuora subs: $32,800 + $7,916 + $4,200 x 12); 3 Zuora subscriptions mapped to TerraLogic Inc",
+  "answer_format": "multiple_choice",
+  "rationale": "The Slack thread confirms the entity change letter was signed effective 2/1/2026, with TerraLogic Inc as the surviving entity. David's checkmark emoji constitutes RevOps acknowledgment of the merge. Therefore all three Zuora subscriptions \u2014 including Z-3187 (still billing under legacy DataPipe name) and Z-5002 (the monthly Analytics Add-on created post-acquisition) \u2014 belong to the consolidated entity. The correct ARR is the annualized sum of all MRR: ($32,800 + $7,916 + $4,200) x 12 = $539,016. Answer A uses stale CRM figures that predate the Analytics Add-on and don't reflect actual billing. Answer C incorrectly excludes monthly subscriptions from ARR \u2014 at Meridian, ARR includes all recurring revenue regardless of billing term per their ASC 606 policy. Answer D is overly conservative; the entity letter confirmation in Slack (with David's approval emoji) is sufficient to consolidate without waiting for a formal billing system merge."
+}

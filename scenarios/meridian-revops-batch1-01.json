@@ -1,0 +1,24 @@
+{
+  "title": "Multi-Entity Billing Consolidation After Customer Acquisition",
+  "category": "entity_resolution",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "You are preparing the Q2 board deck and need to reconcile ARR for the account variously known as 'TerraLogic' across systems.\n\n**CRM \u2014 Account Records:**\nAccount: 'TerraLogic Inc.' | ARR: $380K | Opp Stage: Closed Won | Close Date: 2025-03-14 | Owner: Jamie Reeves (AE)\nAccount: 'TerraLogic Solutions (formerly DataPipe)' | ARR: $95K | Opp Stage: Closed Won | Close Date: 2024-11-02 | Owner: Marcus Bell (AE) | Note: 'Migrated from HubSpot. Original close date unclear.'\n\n**Zuora \u2014 Subscription Records:**\nSubscription Z-4491: Customer 'TerraLogic Inc' | MRR: $32,800 | Term: Annual | Start: 2025-03-15 | Products: Platform Pro + API Gateway\nSubscription Z-3187: Customer 'DataPipe Labs LLC' | MRR: $7,916 | Term: Annual | Start: 2024-11-01 | Products: API Gateway (legacy tier)\nSubscription Z-5002: Customer 'TerraLogic' | MRR: $4,200 | Term: Monthly | Start: 2026-02-01 | Products: Analytics Add-on\n\n**Slack \u2014 #revenue-ops (Apr 8, 2026, 11:47 AM)**\n@jamie.reeves: Hey @david.okafor \u2014 TerraLogic closed their DataPipe acquisition in Jan. They want everything on one invoice going forward. Can we merge?\n@david.okafor: Need the signed entity change letter first. Did legal get it?\n@jamie.reeves: Rachel said she has it, let me check\n[Thread \u2014 3 replies]\n@jamie.reeves (Apr 9, 9:02 AM): Got confirmation from Rachel \u2014 entity letter signed, effective 2/1. TerraLogic Inc is the surviving entity.\n@david.okafor: :white_check_mark:\n[No further messages]\n\n**Stripe \u2014 Payment Records:**\nCharge Mar 2026: $32,800 from 'TerraLogic Inc' (card ending 4421)\nCharge Mar 2026: $7,916 from 'DataPipe Labs LLC' (ACH, Wells Fargo account ending 8830)\nCharge Mar 2026: $4,200 from 'TerraLogic Inc' (card ending 4421)\n\n**Google Sheet \u2014 'ARR Reconciliation Q2' (last edited Apr 2, 2026):**\nRow 44: TerraLogic Inc | $380,000 | Source: CRM\nRow 87: DataPipe | $95,000 | Source: CRM | Flag: 'Possible duplicate? Ask Marcus'",
+  "question": "What is the correct consolidated ARR for this customer entity as of April 2026, and how many Zuora subscriptions should be mapped to it?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "David Okafor",
+    "title": "Revenue Operations Manager",
+    "organization": "Meridian Systems",
+    "years_experience": 8,
+    "domain_expertise": "Revenue recognition (ASC 606), data reconciliation across CRM/billing/ERP, forecasting"
+  },
+  "tools_available": [],
+  "source_batch": "meridian-revops-batch1.json",
+  "choices": [
+    "ARR = $488,400 (annualized MRR of Z-4491 + Z-3187 only; exclude Z-5002 because monthly terms are not ARR)",
+    "ARR = $539,016 (annualized MRR across all 3 Zuora subs: $32,800 + $7,916 + $4,200 x 12); 3 Zuora subscriptions mapped to TerraLogic Inc",
+    "ARR = $380K (only the confirmed TerraLogic Inc CRM record); 1 Zuora subscription (Z-4491) until legal formally merges billing entities",
+    "ARR = $475K (CRM sum of both accounts); 2 Zuora subscriptions (Z-4491 + Z-3187)"
+  ]
+}

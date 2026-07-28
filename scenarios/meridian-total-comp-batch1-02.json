@@ -1,0 +1,24 @@
+{
+  "title": "Equity Refresh Discrepancy from Pre-Acquisition Grant Policy",
+  "category": "policy_version",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "Context from Rippling (Employee Records):\nEmployee A: Kai Okafor | Role: Senior Product Manager (L5) | Hire date: Mar 2023 | Origin: Direct hire | Annual equity refresh: 2,400 RSUs (vesting quarterly) | Last refresh: Jan 2026 | Next refresh: Jan 2027\nEmployee B: Nina Petrova | Role: Senior Product Manager (L5) | Hire date: Nov 2022 | Origin: SpectraLab acquisition (closed Feb 2023) | Annual equity refresh: 3,800 RSUs (vesting monthly) | Last refresh: Jul 2025 | Next refresh: Jul 2026\n\nPay Equity Audit Flag (Automated, Mar 2026):\n'ALERT: Two employees in same role/level/geo with >40% variance in annual equity value. Kai Okafor: $96K/yr equity value. Nina Petrova: $152K/yr equity value. Investigate for potential pay equity concern.'\n\nConfluence \u2014 'Equity Programs' Space (Page: 'Refresh Grant Policy v3.1', last edited Nov 2025):\nSection 4.2: 'All employees at L5 receive annual refresh grants of 2,000-3,000 RSUs based on performance rating, vesting quarterly over 1 year. Grants issued in January annually.'\n[Page history shows v2.0 existed until Apr 2024 with no mention of acquisition transitions]\n\nConfluence \u2014 'SpectraLab Integration' Space (Page: 'Compensation Transition Plan', last edited Apr 2023):\n'Acquired employees retain existing equity schedules for 24-month transition period. Monthly vesting cadence honored. Refresh amounts calculated at 1.2x Meridian standard to account for acceleration clause buyout. Transition ends at individual 24-month anniversary of close.'\n[RESOLVED COMMENT by @cfo, Mar 2023]: 'Approved 1.2x multiplier but ONLY for transition period. After 24mo, normalize to standard Meridian refresh policy. Do not auto-extend.'\n\nSlack \u2014 #people-ops (Feb 3, 2026, 9:18 AM):\n@jasmine.torres: Quick check \u2014 do the SpectraLab transition comp arrangements expire based on close date (Feb 2023) or individual start-in-role date?\n@devon.xu: Close date. So Feb 2025 for everyone.\n@jasmine.torres: Nina Petrova got a refresh in Jul 2025 at the old 1.2x rate. That's 5 months past expiration.\n@devon.xu: \ud83d\ude2c Rippling probably auto-calculated based on her profile flag. I don't think anyone manually checked.\n@jasmine.torres: Who owns the transition-off? Was it ever assigned?\n[No reply in thread]\n\nGoogle Sheets \u2014 'SpectraLab Transition Tracker' (last modified: Jun 2023):\nColumn headers: Name | Transition Start | 24mo End Date | Multiplier | Status\nNina Petrova | Feb 2023 | Feb 2025 | 1.2x | 'Active'\n[Sheet appears abandoned \u2014 no updates since Jun 2023, 'Status' column never changed for any employee]",
+  "question": "What is the correct resolution for the pay equity audit flag on Okafor vs. Petrova?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Jasmine Torres",
+    "title": "Senior Total Rewards Analyst",
+    "organization": "Meridian Systems",
+    "years_experience": 9,
+    "domain_expertise": "Compensation band management, equity refresh cycles, job leveling frameworks, pay equity audits"
+  },
+  "tools_available": [],
+  "source_batch": "meridian-total-comp-batch1.json",
+  "choices": [
+    "No action needed \u2014 Petrova's higher equity is explained by the SpectraLab transition policy, which provides a legitimate business justification for the disparity.",
+    "Petrova's Jul 2025 refresh was issued in error at the expired 1.2x transition rate; her next refresh (Jul 2026) should normalize to standard L5 range (2,000-3,000 RSUs, quarterly vesting, January cycle), and the overage on the current grant should be documented as a system processing error.",
+    "Increase Okafor's refresh to match Petrova's 3,800 RSUs to eliminate the pay equity gap, since both are L5 PMs in the same geo.",
+    "Escalate to legal \u2014 the transition period has expired and any continued preferential treatment of acquired employees may constitute discriminatory compensation practice."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Cross-Collateralized Profit Participation with Entity Name Mismatch",
+  "category": "entity_resolution",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "**NetSuite \u2014 Profit Participation Statement (Q1 2026)**\nParticipant: Ridgeway Creative Partners | Title: \"The Longest Winter\" | Participation: 5% of Defined Proceeds after recoupment | Total Revenue to date: $8.2M | Distribution fees deducted: $2.87M (35%) | Recoupment balance: -$1.14M (not yet recouped) | Amount due: $0.00\n\n**RightsLine \u2014 Title: \"The Longest Winter\"**\nTitle ID: PRM-2203 | Licensor: Ridgeway Films LLC | Rights: Worldwide, All Media | License type: Profit participation | Cross-collateralization: Yes \u2014 linked to PRM-2204 (\"Winter's Edge\") | Distribution deal: Prism Distribution Agreement dated Aug 2022\n\n**FileMaker \u2014 Title: \"Longest Winter, The\"**\nID: FM-0887 | Producer: Ridgeway Creative Partners Inc. | Distribution fee: 30% | Cross-coll group: FM-0887, FM-0888 | Notes (Oct 2023): \"Distribution fee updated to 35% per new output deal. See signed amendment in G Drive.\"\n\n**Google Drive \u2014 Folder: /Deals/Ridgeway/Amendments/**\nFile: \"Ridgeway_Output_Deal_Amendment_2023.pdf\" (last modified: Oct 14, 2023)\nSection 4(b): \"Effective for revenue recognized on or after January 1, 2024, the distribution fee shall be thirty-five percent (35%). Revenue recognized prior to January 1, 2024 shall remain subject to the original thirty percent (30%) distribution fee.\"\nSection 4(c): \"For the avoidance of doubt, the cross-collateralization provisions of the Original Agreement remain in full force.\"\n\n**Slack \u2014 #royalties (Feb 12, 2026, 11:03 AM)**\n@tanya.osei: @denise.yamamoto Ridgeway's business affairs attorney called. They're saying we applied 35% dist fee to ALL revenue on Longest Winter, but the first $3.1M came in before Jan 1 2024. They want a restatement.\n@denise.yamamoto: Let me pull the amendment. What entity name did they use?\n@tanya.osei: They said \"Ridgeway Films\" on the call but the participation agreement I have says \"Ridgeway Creative Partners\"\n@denise.yamamoto: Same people. The LLC is the production entity, the Inc. is the participant. Check if Winter's Edge has earned anything yet \u2014 that affects recoupment if we restate.\n@tanya.osei: one sec\n@tanya.osei: Winter's Edge has $620K in revenue per NetSuite, all post-Jan 2024.\n[reacted with :eyes: by @denise.yamamoto]\n\n**NetSuite \u2014 Revenue Detail: \"Winter's Edge\" (PRM-2204)**\nTotal revenue: $620,000 | Distribution fee applied: 35% ($217,000) | Net: $403,000 | Cross-coll status: Pooled with PRM-2203",
+  "question": "If the distribution fee is correctly restated per the amendment's temporal provision, what is the recoupment status of the cross-collateralized pool (The Longest Winter + Winter's Edge)?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Denise Yamamoto",
+    "title": "Royalty & Residual Accounting Manager",
+    "organization": "Prism Media Group",
+    "years_experience": 14,
+    "domain_expertise": "Guild/union residual calculations, license fee allocation, profit participation, rights window management"
+  },
+  "tools_available": [],
+  "source_batch": "prism-royalties-batch1.json",
+  "choices": [
+    "Cannot determine \u2014 the entity name mismatch between 'Ridgeway Films LLC' and 'Ridgeway Creative Partners' means the cross-collateralization linkage is legally questionable",
+    "Recouped \u2014 the $155K fee reduction on pre-2024 revenue plus the Winter's Edge revenue pushes the cross-collateralized pool past breakeven",
+    "Still unrecouped by $1.14M \u2014 the restatement doesn't change recoupment because the fee reduction benefits the participant, not the pool",
+    "Still unrecouped, but by $985,000 \u2014 the restated lower fee on pre-2024 revenue ($155K reduction) improves the pool but doesn't reach breakeven"
+  ]
+}

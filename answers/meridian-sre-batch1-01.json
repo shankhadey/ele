@@ -1,0 +1,6 @@
+{
+  "scenario_file": "meridian-sre-batch1-01.json",
+  "correct_answer": "No \u2014 the exception was never valid because it lacked a Jira Change Request ticket and was not posted in #change-management, regardless of Divya's informal approval",
+  "answer_format": "multiple_choice",
+  "rationale": "Per Confluence Change Management Policy v3.1, Section 4.2, change freeze exceptions require (1) written approval from VP Eng or above, (2) documented in the #change-management channel, AND (3) a linked Jira Change Request ticket. The deploy fails on criteria 2 and 3: Marco posted in #engineering on the legacy workspace (not #change-management), and no Jira CR ticket exists. Divya's DM constitutes informal approval only \u2014 the policy explicitly states 'verbal or informal approvals are not valid per SOC2 control CC-7.2.' Answer C incorrectly treats a Slack DM as valid written authorization under SOC2 controls. Answer C confuses #engineering (legacy workspace) with the required #change-management channel and ignores the missing Jira ticket. Answer D invents a temporal expiration issue \u2014 the timeline from May 12 DM to May 13 communication to May 14 deploy is actually coherent ('tonight' referred to the night of May 13-14), but the deploy is invalid regardless due to the missing formal artifacts."
+}

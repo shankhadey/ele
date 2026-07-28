@@ -1,0 +1,24 @@
+{
+  "title": "Departed Officer's Modification Approval Against Updated Delegation Matrix",
+  "category": "approval_chain",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "**FIS Horizon \u2014 Loan Modification Record (Loan #CL-2023-06290)**\nBorrower: Meridian Logistics Group LLC | Original Commitment: $6.0M term loan | Current Outstanding: $4.1M\nModification Date: 06/15/2025 | Type: Covenant waiver + amortization extension\nModification Details: Waived DSCR covenant (1.20x minimum) for Q2/Q3 2025; extended amortization from 20yr to 25yr; reduced quarterly principal from $75K to $60K.\nApproving Officer: R. Hargrove, SVP Commercial Lending\nRisk Rating: 6 (Special Mention)\n\n**Workday \u2014 HR Record**\nRobert Hargrove | Title at termination: SVP, Commercial Lending | Termination date: 08/30/2025 | Reason: Voluntary resignation\nDelegation of Authority (at time of departure): Up to $5.0M for standard modifications; up to $3.0M for classified asset modifications (Risk Rating 6+)\n\n**SharePoint \u2014 Delegation of Authority Matrix (Version 3.2, effective 03/01/2025)**\nSVP, Commercial Lending:\n- Standard modifications (Risk Rating 1-5): Up to $5.0M\n- Classified asset modifications (Risk Rating 6-8): Up to $3.0M\n- Modifications involving covenant waivers on classified assets: Up to $2.0M (requires co-approval from Credit Risk Officer)\n[Version 2.8 (effective 01/2024) stated: 'SVP authority for all modification types: Up to $5.0M']\n\n**Microsoft Teams \u2014 #credit-risk (06/10/2025, 2:15 PM)**\n@r.hargrove: Running a mod through on Meridian Logistics \u2014 covenant waiver plus amor extension. Total exposure $4.1M, rated 6. Need anything from your side?\n@k.patel (Credit Risk Officer): What's the total mod value? Is this just the waiver or are we looking at economic impact of the amor change?\n@r.hargrove: Waiver is temporary (2 quarters). Amor extension reduces payment by $15K/qtr. Total economic concession maybe $200K NPV?\n@k.patel: Should be fine. \ud83d\udc4d\n[No further messages in thread]\n\n**Outlook \u2014 Email (09/15/2025)**\nFrom: audit-findings@cascadefinancial.com\nTo: t.whitfield@cascadefinancial.com; chief.credit.officer@cascadefinancial.com\nSubject: Loan Modification Audit \u2014 Q2/Q3 2025 Sample\n\n'During our sample review of loan modifications, we identified Loan #CL-2023-06290 (Meridian Logistics) as potentially exceeding the approving officer's delegated authority. Under DOA Matrix v3.2 (effective 03/2025), covenant waivers on classified assets require Credit Risk Officer co-approval with a $2.0M cap. The modification was on a $4.1M classified asset. Please confirm proper authorization was obtained.'\n\n**ServiceNow \u2014 Audit Response Tracking (AR-2025-0087)**\nStatus: Open | Due: 10/15/2025 | Assigned: T. Whitfield\nComment (09/18/2025, @t.whitfield): 'Reviewing. Hargrove departed 08/30. Need to determine if Teams exchange with Patel constitutes co-approval.'\nComment (09/22/2025, @compliance.review): 'DOA Matrix requires co-approval to be documented in the credit file. A Teams thumbs-up does not meet documentation standards per Policy 12.1(b). However, if Patel confirms intent, a retroactive memo may cure the deficiency.'",
+  "question": "Regarding the audit finding on the Meridian Logistics modification: was the modification validly approved, and what remediation (if any) is required?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Thomas Whitfield",
+    "title": "VP, Commercial Lending",
+    "organization": "Cascade Financial Group",
+    "years_experience": 18,
+    "domain_expertise": "Loan origination, credit policy, covenant compliance, loan modifications, workout situations"
+  },
+  "tools_available": [],
+  "source_batch": "cascade-lending-batch1.json",
+  "choices": [
+    "The modification was validly approved \u2014 Hargrove had $5.0M authority for all modification types under the DOA Matrix that was current when the loan was originally booked (v2.8)",
+    "The modification was validly approved \u2014 Patel's thumbs-up in Teams constitutes co-approval from the Credit Risk Officer, satisfying the DOA Matrix v3.2 two-signature requirement",
+    "The modification is void and must be unwound \u2014 Hargrove acted outside his authority on a classified asset, making the covenant waiver and amortization extension unenforceable",
+    "The modification exceeded Hargrove's authority and the Teams thumbs-up from Patel does not constitute valid co-approval; the modification must be re-ratified by an officer with proper authority and a retroactive credit memo must be filed"
+  ]
+}

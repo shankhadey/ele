@@ -1,0 +1,24 @@
+{
+  "title": "Economic Development Rider Expiration with Informal Settlement Commitment",
+  "category": "precedent_exception",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "Context from Oracle CC&B (Customer Billing):\nAccount: 'Rocky Mountain Aggregates LLC' | Rate Schedule: LGS-3 (Large General Service) | EDR Discount: 18% demand charge reduction | EDR Effective: Jul 2021 | EDR Expiration: Jun 30, 2026 | Monthly demand: 4,200 kW | Monthly bill: ~$67K\n\nContext from FileMaker (Rate Case Tracker):\nDocket 21-AL-0445 | 'General Rate Case - Conduit Energy' | Filed: Mar 2021 | Status: Settled | Settlement Date: Jun 2021\nStipulation parties: Conduit, OCC, Staff, CIEC (incl. Rocky Mountain Aggregates as member)\nNote field: 'EDR transition \u2014 see testimony Exh. JMH-4, pg 12-14. 3-step down agreed in principle but NOT in final stip language.'\n\n**Email \u2014 Subject: 'RE: RE: RE: Rocky Mtn EDR sunset' (Jun 14, 2021)**\nFrom: j.hoffman@conduitenergy.com (VP Customer Programs, retired 2023)\nTo: m.hayes@conduitenergy.com\nCC: regulatory-affairs@conduitenergy.com\n\n> On Jun 12, m.hayes wrote:\n> > Jim \u2014 did the step-down get into the final stipulation or not?\n> > Their counsel is asking for written confirmation.\n>\n> It didn't make it into the stip. But I gave Jenkins (their outside counsel)\n> a verbal at the settlement conference that we'd honor a 3-year transition:\n> Year 1 post-expiry: 12% discount, Year 2: 6%, Year 3: full tariff rate.\n> Consider it a gentleman's agreement. If it ever comes up, point them to\n> my rebuttal testimony where I reference the 'transition mechanism.'\n\n[No reply from regulatory-affairs on this thread]\n\n**SharePoint \u2014 /customer-programs/EDR-tracker.xlsx (last modified: Oct 2025)**\nRow 14: Rocky Mountain Aggregates | EDR expires 6/30/2026 | Status: 'Expiring \u2014 standard sunset, no transition' | Owner: M. Hayes\n\n**Teams \u2014 #key-accounts (Feb 3, 2026, 9:47 AM)**\n@margaret.hayes: Heads up \u2014 Rocky Mtn's account manager at Jenkins & Associates called. Says they have 'a commitment from Conduit' about EDR step-down treatment. Anyone know what they're referencing?\n@brian.kowalski: No idea. The stip is clean \u2014 EDR just expires per tariff.\n@margaret.hayes: That's what I thought. Let me dig.\n[Thread has a thumbs-down emoji reaction from @j.petersen (Regulatory Affairs) but no text reply]\n\n**SAP CRM \u2014 Activity Log for Rocky Mountain Aggregates:**\nMar 15, 2026 | Call note (M. Hayes): 'Customer increasingly agitated. Says they sized a $4M expansion based on rate assumptions from the EDR transition commitment. Escalating to Director level.'\nMar 22, 2026 | Meeting note (M. Hayes): 'Met w/ their CFO. They produced a copy of Hoffman's rebuttal testimony (Exh. JMH-4) with highlighted passage referencing transition. No written commitment exists beyond this.'",
+  "question": "Given the EDR expiration on June 30, 2026, what is the appropriate treatment for Rocky Mountain Aggregates' rate transition, and what is the basis for that determination?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Margaret Hayes",
+    "title": "Customer Programs Director",
+    "organization": "Conduit Energy",
+    "years_experience": 18,
+    "domain_expertise": "Key account program management, rate case customer testimony coordination, large C&I customer escalations"
+  },
+  "tools_available": [],
+  "source_batch": "conduit-implementation-batch1.json",
+  "choices": [
+    "Honor the 3-year step-down (12%/6%/0%) based on the retired VP's verbal commitment at the settlement conference, supported by the testimony reference in Exhibit JMH-4",
+    "Apply the standard tariff rate immediately upon EDR expiration on July 1, 2026 \u2014 the stipulation is the governing document and contains no transition provision",
+    "Offer a 1-year courtesy transition at 12% as a customer retention measure, splitting the difference between the formal tariff position and the informal commitment",
+    "Deny any transition but file a tariff amendment with the PUC to create a formal EDR transition rider before the June 30 expiration"
+  ]
+}

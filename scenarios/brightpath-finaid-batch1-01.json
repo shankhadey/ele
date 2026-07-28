@@ -1,0 +1,24 @@
+{
+  "title": "SAP Appeal Precedent After COVID Hardship Policy Sunset",
+  "category": "precedent_exception",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "**Banner Financial Aid Module \u2014 Student Record (ID: B00487231)**\nName: Marcus T. Rivera | Enrollment: Full-time, Senior | Campus: West Campus\nSAP Status: Suspended (cumulative GPA 1.82, completion rate 58%)\nPrior SAP Appeal: Approved Spring 2024, reason code 'COVID-EXT' | Academic plan filed, signed by advisor K. Yamamoto\nCurrent term: Fall 2026 | New appeal submitted: Sep 3, 2026\n\n**Google Sheets \u2014 'FA Appeals Tracker 2026-27' (Row 142)**\nStudent: Rivera, Marcus | Appeal type: SAP | Received: 9/3 | Committee date: TBD | Notes: 'Second appeal. Prior COVID approval. Citing ongoing mental health. Has counseling documentation. \u2014L.Pham'\n\n**Google Doc \u2014 'SAP Policy Updates AY2025-26' (last edited Aug 2025)**\nSection 4.1: 'The COVID-19 Extended Hardship provision (added May 2020) is retired effective Fall 2025. Students previously granted extensions under this provision are not automatically grandfathered. All new appeals must cite qualifying unusual circumstances per standard SAP policy.'\n[RESOLVED COMMENT by @j.caldwell, Jul 14, 2025]: 'Confirming with legal \u2014 students whose prior plan was approved under COVID-EXT and who maintained compliance with their plan through completion are NOT considered to have exhausted their one-time appeal right. They get a fresh appeal under standard criteria. Updated language in 4.1.2.'\n\n**Slack \u2014 #finaid-team (Sep 5, 2026, 9:47 AM)**\n@l.pham: Quick q \u2014 Rivera is back with another SAP appeal. His COVID one was approved S24 but he fell below again. Does the retired COVID policy mean his first appeal 'counts' or not?\n@t.washington: I'd say it counts. Policy says not grandfathered.\n@l.pham: But Jen commented something in the policy doc about this...\n@t.washington: Which doc?\n@l.pham: The AY25-26 updates one. Let me find it.\n[No further replies in thread]\n\n**Email \u2014 Subject: 'RE: Rivera SAP Documentation' (Sep 4, 2026)**\nFrom: counseling@brightpath.edu\nTo: l.pham@brightpath.edu\nAttachment: Rivera_Treatment_Summary.pdf (last modified: Aug 28, 2026)\n\n'Hi Lisa, Attached is Marcus's treatment verification. He's been in consistent treatment since January 2025. His provider confirms the mental health condition is distinct from any COVID-related hardship previously cited. Let me know if you need the diagnostic code for your records.'",
+  "question": "When the SAP Appeals Committee reviews Marcus Rivera's case, what is the correct procedural determination regarding his appeal eligibility?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Jennifer Caldwell",
+    "title": "Director of Financial Aid",
+    "organization": "Brightpath State University",
+    "years_experience": 16,
+    "domain_expertise": "Federal financial aid (Title IV), SAP appeals, professional judgment decisions, institutional aid policy"
+  },
+  "tools_available": [],
+  "source_batch": "brightpath-finaid-batch1.json",
+  "choices": [
+    "Rivera cannot appeal because the COVID-EXT policy was retired and his current hardship must be reviewed under the new policy, which requires VP approval for second appeals.",
+    "Rivera is eligible for a fresh appeal under standard unusual circumstances criteria because his prior COVID-EXT approval, where he maintained compliance, does not exhaust his standard appeal right per Section 4.1.2.",
+    "Rivera has exhausted his one-time SAP appeal right because the COVID-EXT appeal in Spring 2024 counts as his appeal regardless of the policy sunset.",
+    "Rivera's appeal should be held pending legal review since the policy language says students are 'not automatically grandfathered' which implies his prior approval is void."
+  ]
+}

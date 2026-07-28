@@ -1,0 +1,6 @@
+{
+  "scenario_file": "atlas-implementation-batch1-01.json",
+  "correct_answer": "Jul 18 with scope reduction; the CR has only informal VP approval via Slack emoji and has not completed the formal approval chain",
+  "answer_format": "multiple_choice",
+  "rationale": "The correct answer synthesizes across four systems: (1) The Smartsheet still shows Jul 14 but is stale (last updated Jun 2), (2) Jira shows the blocker that necessitated scope change, (3) Slack shows the VP selecting Option A which yields Jul 18, and (4) ServiceNow shows the CR is in Draft with only PM approval completed \u2014 the VP's Slack ':+1:' and 'A' selection constitute informal approval but the formal approval chain (Delivery Lead, VP, Brand GM) is still pending. Answer A is wrong because the CR is not fully approved and Smartsheet is outdated. Answer C conflates the VP's maximum tolerable date (Jul 21) with the actual go-live target (Jul 18) and treats informal Slack selection as formal approval. Answer B is wrong because a CR has been submitted (it exists in ServiceNow as Draft) and the Slack thread does constitute a decision, just not a formally approved one."
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Revenue Recognition Timing Under Pre-Deal-Desk Precedent",
+  "category": "temporal_consistency",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "The controller is asking why $214K in Q1 revenue wasn't recognized as expected. You need to trace the booking and determine the correct rev rec treatment.\n\n**CRM \u2014 Opportunity:**\nAccount: 'Oakmont Partners' | Opp: 'Oakmont \u2014 Analytics Suite Renewal + Expansion' | Amount: $214,000 | Close Date: 2026-01-22 | Stage: Closed Won | Owner: Marcus Bell | Products: Analytics Suite ($164K) + Professional Services ($50K)\nCustom field 'Discount Approval': 'Pre-approved \u2014 see legacy exception'\nCustom field 'Rev Rec Override': blank\n\n**Zuora \u2014 Revenue Schedule:**\nSubscription Z-6120: Customer 'Oakmont Partners LLC' | Total: $164,000 | Recognition: Ratable over 12 months | Start: 2026-02-01 | Status: Active\nNo revenue schedule found for $50K services component.\n\n**Confluence \u2014 'Deal Desk Policy v2.1' (published Aug 2025):**\nSection 4.3: 'All professional services bundled with subscription renewals must have standalone selling price (SSP) established. If SSP cannot be determined, the entire arrangement is recognized ratably over the subscription term per ASC 606-10-32-33.'\nSection 4.5: 'Discount approvals require Deal Desk sign-off for any discount exceeding 15%.'\n\n**Confluence \u2014 'Deal Desk Policy v1.0' (archived, published Jan 2025):**\nSection 3.1: 'Professional services may be recognized point-in-time upon delivery when sold alongside subscriptions, provided services are distinct performance obligations.'\nNote: This was the operative policy before Deal Desk was formally created (Aug 2025).\n\n**Slack \u2014 #deal-desk (Jan 19, 2026, 3:15 PM)**\n@marcus.bell: Oakmont renewal is ready. I applied the 18% discount we gave them last year \u2014 same structure as their original deal from 2024.\n@lisa.park: That's over 15%. Need DD approval per v2.1.\n@marcus.bell: This was pre-approved under the old policy. The discount was part of their original MSA negotiation before deal desk existed.\n@lisa.park: :thinking_face: Let me check with David\n[Thread \u2014 no further replies]\n\n**Slack \u2014 DM from Lisa Park to David Okafor (Jan 20, 2026, 9:41 AM):**\nLisa: Marcus is claiming grandfathered discount for Oakmont. Original deal was in 2024 under v1.0 terms. Do we honor it?\nDavid: If the MSA explicitly states the discount rate, yes \u2014 contractual obligation overrides current policy. But the rev rec treatment on services follows current guidance (v2.1 sec 4.3). Make sure finance knows.\nLisa: :thumbsup:\n\n**Google Sheet \u2014 'Q1 Rev Rec Exceptions' (Finance-owned, last edited Mar 28, 2026):**\nRow 12: Oakmont Partners | $50K services | Status: 'HOLD \u2014 awaiting SSP determination' | Notes: 'AE says point-in-time per old policy. Controller disagrees. Escalated to RevOps.'",
+  "question": "What is the correct revenue recognition treatment for the $50K professional services component of the Oakmont deal?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "David Okafor",
+    "title": "Revenue Operations Manager",
+    "organization": "Meridian Systems",
+    "years_experience": 8,
+    "domain_expertise": "Revenue recognition (ASC 606), data reconciliation across CRM/billing/ERP, forecasting"
+  },
+  "tools_available": [],
+  "source_batch": "meridian-revops-batch1.json",
+  "choices": [
+    "Hold recognition indefinitely until Deal Desk formally approves the discount and establishes SSP \u2014 neither legacy nor current policy can apply without explicit sign-off",
+    "Recognize point-in-time upon delivery \u2014 the deal was structured under v1.0 terms and the grandfathered discount confirms legacy treatment applies to the entire arrangement",
+    "Split: recognize $164K ratably and $50K point-in-time \u2014 the discount is grandfathered but rev rec follows current ASC 606 interpretation which allows distinct performance obligations to be separated",
+    "Recognize ratably over 12 months alongside the subscription \u2014 per current policy v2.1 Section 4.3, since SSP has not been established for the services component"
+  ]
+}

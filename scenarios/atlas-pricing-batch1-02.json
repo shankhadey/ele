@@ -1,0 +1,24 @@
+{
+  "title": "Loyalty Tier Pricing Grandfathering After Program Relaunch",
+  "category": "precedent_exception",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "**Klaviyo \u2014 Customer Segment: 'Legacy Platinum' (Brand B DTC)**\nCustomer: Margaret Holloway | Email: m.holloway@gmail.com | Segment: Legacy Platinum (auto-migrated) | Lifetime spend: $14,200 | Member since: 2021 | Tier benefit: 25% off all full-price items, free shipping, early access.\n\n**Google Doc \u2014 'Brand B Loyalty Program Relaunch \u2014 Final Structure' (v3, last edited Jan 8, 2026)**\nNew tiers effective Feb 1, 2026: Silver (5%), Gold (10%), Platinum (15%), Diamond (20%)\nSection 4: 'All existing members migrate to new tiers based on trailing-12-month spend thresholds.'\n[RESOLVED COMMENT by @laura.svensson, Jan 6, 2026]: 'What about legacy Platinums who had 25% under the old program? 15% is a downgrade.'\n[RESOLVED REPLY by @nina.okafor (Brand B Director), Jan 7]: 'They keep 25% through end of Q2 as courtesy. After that, earn Diamond or drop to new Platinum at 15%.'\n[Comment was resolved by @nina.okafor on Jan 7 \u2014 not reflected in document body]\n\n**Shopify Plus \u2014 Brand B Admin (Jun 2026)**\nDiscount code 'LEGACYPLAT25' \u2014 Status: Active | Auto-applied for segment 'Legacy Platinum' | Discount: 25% | No expiration set.\n\n**Slack \u2014 #brand-leads (May 14, 2026, 11:03 AM)**\n@nina.okafor: Hey pricing team \u2014 are legacy platinums still getting 25%? I thought we said Q2 cutoff.\n@laura.svensson: That was the plan per the relaunch doc. Has anyone updated the Shopify codes?\n@nina.okafor: :eyes:\n@marcus.reid (Brand B Ops): I never got a ticket to change it. Was that supposed to come from pricing or loyalty?\n[No further replies]\n\n**NetSuite \u2014 Margin Report, Brand B (Jun 2026)**\nDTC blended margin: 58.2% (target: 62%) | Flag: 340 customers in 'Legacy Platinum' segment receiving 25% discount | Estimated margin drag: $84K/quarter\n\n**Zendesk \u2014 Ticket #ZD-44891 (Jun 22, 2026)**\nFrom: m.holloway@gmail.com\nSubject: 'My platinum discount didn't apply'\nBody: 'I've been a platinum member since 2021. My last order only gave me 15%. I've always gotten 25%. Please fix this.'\nAgent note: 'Customer placed order via mobile app. App is pulling new tier structure. Desktop site still applies LEGACYPLAT25 code. Inconsistency between channels.'",
+  "question": "Margaret Holloway contacts customer service about her discount discrepancy. What is the correct resolution based on Atlas's current commitments?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Laura Svensson",
+    "title": "Pricing Strategy Manager",
+    "organization": "Atlas Retail Holdings",
+    "years_experience": 10,
+    "domain_expertise": "MAP enforcement, promotional pricing governance, wholesale vs DTC price parity, channel conflict resolution"
+  },
+  "tools_available": [],
+  "source_batch": "atlas-pricing-batch1.json",
+  "choices": [
+    "Honor 25% through June 30 and communicate the upcoming change \u2014 the resolved comment established a Q2 courtesy period, the Shopify code was never turned off (implementation gap, not policy gap), and she is still within the grace window",
+    "Escalate to Brand B Director \u2014 there is no documented policy governing this transition since the grandfathering agreement was in a resolved comment never formalized into the program document",
+    "Apply 15% \u2014 the Q2 grace period expired June 30, the resolved comment confirms the courtesy window, and her new Platinum tier entitles her to 15% under the relaunched program",
+    "Honor 25% \u2014 the relaunch document Section 4 does not mention any grandfathering exception, so the standard migration applies and her legacy rate of 25% is her earned benefit until explicitly revoked with notice"
+  ]
+}

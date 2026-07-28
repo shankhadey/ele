@@ -1,0 +1,24 @@
+{
+  "title": "PIP Policy Version Conflict at 90-Day Review",
+  "category": "policy_version",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "**ServiceNow HR Case \u2014 CASE0012847**\nType: Performance Improvement Plan | Employee: Marcus Rivera, CNC Machinist III (Plant 2) | Manager: Tom Kowalski\nOpened: Sep 12, 2025 | PIP Issued: Sep 15, 2025 | 90-Day Review Due: Dec 15, 2025\nCase notes (Sep 15): 'PIP issued per Progressive Discipline Policy v3.2, Section 4.1. Three documented quality incidents in 60-day window. Final written warning stage per CBA Article 12.'\nCase notes (Nov 3): 'Rivera filed ADA accommodation request \u2014 see CASE0012901. Investigation hold NOT triggered per ER guidance.'\n\n**SharePoint \u2014 /policies/hr/progressive-discipline (Page version 8, published Nov 1, 2025)**\nSection 4.1 (revised): 'PIP duration extended to 120 days for represented employees. Employees on active PIPs as of the effective date transition to the new timeline unless the PIP document explicitly states a fixed duration.'\n[Version 7, published Mar 2023, stated: '90-day PIP for all employees regardless of classification.']\n[RESOLVED COMMENT by @d.hartley, Oct 14]: 'Legal says transition language was added at union's request during CBA side letter negotiation. Only applies to Article 12 grievance-eligible roles.'\n\n**Microsoft Teams \u2014 ER Internal (Nov 8, 2025, 2:44 PM)**\n@tom.kowalski: Natalie \u2014 does the new 120-day thing apply to Rivera? His PIP doc says '90-day improvement period' explicitly.\n@natalie.brennan: Checking with labor counsel. The PIP doc language might make it fixed.\n@tom.kowalski: \ud83d\udc4d\n[No further messages in thread]\n\n**Outlook \u2014 From: jennifer.liu@ironforge.com (outside counsel) To: natalie.brennan@ironforge.com (Nov 12, 2025)**\nSubject: RE: Rivera PIP timeline question\n> Natalie \u2014 the transition clause uses 'unless the PIP document explicitly states a fixed duration.' Rivera's PIP says '90-day improvement period' but does not use the word 'fixed.' My read: the word 'explicitly' requires express language about immutability, not just a stated duration. The 120-day timeline applies.\n>\n> That said, if Tom already communicated Dec 15 verbally to Rivera, changing it now creates a past-practice argument the union could use.\n\n**ADP \u2014 Marcus Rivera (Emp #4412)**\nClassification: Hourly/Non-Exempt | Bargaining Unit: IAM Local 1847 | Seniority Date: 2018-03-04 | Current Status: Active\nRecent Pay Action: Step increase processed Oct 1, 2025 (automatic per CBA wage scale)\n\n**Microsoft Teams \u2014 #plant2-ops (Dec 2, 2025, 7:15 AM)**\n@tom.kowalski: Heads up team, Rivera's PIP review is the 15th. I've already told him that's the date.\n@shift-lead-jenkins: \ud83d\udc40\n@tom.kowalski: It is what it is",
+  "question": "It is now Dec 5, 2025. What is the correct PIP review timeline for Marcus Rivera, and what is the primary risk if the wrong date is applied?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Natalie Brennan",
+    "title": "Employee Relations Manager",
+    "organization": "Ironforge Manufacturing",
+    "years_experience": 16,
+    "domain_expertise": "Performance improvement plans, workplace investigations, union grievance handling, progressive discipline policy application"
+  },
+  "tools_available": [],
+  "source_batch": "ironforge-employee-relations-batch1.json",
+  "choices": [
+    "The 120-day timeline applies per the revised policy's transition clause, but proceeding on Dec 15 is defensible because Tom already communicated that date to Rivera, creating a past-practice issue.",
+    "The 120-day timeline (Jan 14, 2026) applies because outside counsel confirmed the PIP language does not meet the 'explicitly fixed' threshold, and the primary risk of using Dec 15 is a grievance under Article 12 for failure to follow the CBA side letter.",
+    "The 90-day timeline (Dec 15) applies because the PIP document explicitly states '90-day improvement period,' satisfying the carve-out in the revised policy.",
+    "The PIP should be paused entirely due to the pending ADA accommodation request in CASE0012901, making the timeline question moot until the interactive process concludes."
+  ]
+}

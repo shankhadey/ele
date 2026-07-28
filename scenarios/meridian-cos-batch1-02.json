@@ -1,0 +1,24 @@
+{
+  "title": "The Contradictory Reorg Mandate",
+  "category": "cross_system_synthesis",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "It's June 25th and you're preparing the ELT deck for Monday's offsite. The reorg planning has been chaotic. Six weeks ago (May 14), the CEO announced in the ELT Slack channel: \"Flattening directive: every VP should have 8-12 direct reports by Q3. Too many layers, slowing us down. Amanda will track compliance.\"\n\nYou've been monitoring via your reorg tracker (Google Sheet). Current state: VP Product has 6 directs, VP Sales has 14, VP Engineering has 7. Last week, VP Product Jamie Ross submitted a reorg proposal in Asana to add 3 Director-level positions, bringing her to 9 directs (compliant). VP Engineering David Kumar submitted a proposal to consolidate two teams and reduce from 7 to 5 directs, arguing \"my org is already flat, teams need principal-level leadership layers for the platform rebuild.\"\n\nYesterday you attended a board prep meeting (no formal notes, but you took personal notes). CEO James said: \"The board's concerned about our leadership density metrics compared to peers. We need fewer VPs, not more Directors. I'm thinking we should have each VP own bigger portfolios with senior IC tracks instead of management layers.\" CFO Sarah responded: \"Agrees with philosophy but concerned about the Product reorg - Jamie's been explicit she needs those Directors for the Series C buildout.\"\n\nThis morning, you see a calendar hold added to James's schedule: 1:1 with Jamie, June 26th, titled \"Reorg decision.\" You're not invited. You check Slack and find a DM from James to Jamie (you have access to CEO's Slack via your CoS role) from June 24th: \"Let's get you those Director roles approved before the offsite. You've made the case and I don't want this hanging over Q3 planning. Will confirm Thursday.\"\n\nYou also notice the ELT decision log hasn't been updated since May 20th (you've pinged the CEO's EA twice). The May 14 Slack directive is the only written record of the flattening mandate. David is now messaging you asking whether his 7-to-5 consolidation \"meets the flattening requirement or if I need to stretch back to 8.\"",
+  "question": "For the Monday ELT deck summarizing reorg status, what is the accurate current state of the flattening mandate?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Amanda Liu",
+    "title": "Chief of Staff to the CEO",
+    "organization": "Meridian Systems",
+    "years_experience": 9,
+    "domain_expertise": "Executive decision tracking, informal approval channels, reorg execution"
+  },
+  "tools_available": [],
+  "source_batch": "meridian-cos-batch1.json",
+  "choices": [
+    "Selectively enforced: Product has CEO exception for Director additions (compliant path to 9); Engineering's reduction to 5 is non-compliant and must stay at 7 or expand to 8",
+    "In effect with case-by-case exceptions: Flattening remains the default policy, but VPs can make written business cases for variance; Product's case is approved, Engineering should submit formal exception request",
+    "Superseded by board guidance: The flattening mandate is paused pending leadership density strategy; all reorg proposals should be held until CEO clarifies new direction post-offsite",
+    "Active and binding for all VPs: Product's Director additions violate the mandate; Engineering's consolidation creates non-compliance; both need revision to hit 8-12 range"
+  ]
+}

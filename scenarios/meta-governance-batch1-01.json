@@ -1,0 +1,24 @@
+{
+  "title": "Invalid Signatory After Title Change in Reorg",
+  "category": "approval_chain",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "NovaTerra Property Group executed a $14.2M acquisition of a retail parcel through NovaTerra Retail Holdings III LLC in March 2026. The Purchase and Sale Agreement was signed by Marcus Webb, who signed as 'Vice President, Acquisitions.' The board resolution authorizing the transaction (Resolution 2025-041, adopted November 2025) delegated execution authority to 'any officer of the Company holding the title of Vice President or above.'\n\n**iManage \u2014 Corporate Records / Entity Files / NovaTerra Retail Holdings III LLC**\nOperating Agreement (Amended & Restated, September 2024): Managing Member is NovaTerra Property Group Inc. Section 4.2: 'The Managing Member may delegate authority to execute documents on behalf of the Company to any officer of the Managing Member, provided such delegation is evidenced by board resolution or written consent.'\nIncumbency Certificate (filed January 15, 2026): Lists officers as CEO, CFO, COO, General Counsel, SVP of Capital Markets, SVP of Asset Management. No Vice Presidents listed.\n\n**Outlook \u2014 From: HR Business Partner to Marcus Webb (January 8, 2026)**\nSubject: Updated Title \u2014 Effective 1/15\n'Hi Marcus \u2014 Per the restructuring, your title is changing from VP, Acquisitions to Senior Director, Acquisitions effective January 15. Comp and reporting line stay the same. Your updated business cards are being ordered. Let me know if you have questions.'\n\n**Shared Network Drive \u2014 \\\\ntserver\\governance\\DOA-matrix-2026.xlsx (Last modified: January 20, 2026)**\nRow 47: 'Real property acquisitions > $10M' | Required Approval: 'Board Resolution + Officer Signature (VP or above)' | Effective: November 2025\n\n**Microsoft Teams \u2014 #acquisitions-closings (March 2, 2026, 11:47 AM)**\n@marcus.webb: PSA for the Oakdale retail pad is ready for sig. Same deal structure as the Greenfield close last quarter.\n@jennifer.oconnell (Legal): You still have authority from the November resolution right?\n@marcus.webb: Yeah, hasn't changed. Same as always.\n@jennifer.oconnell: :thumbsup:\n[No further messages in thread]\n\n**Diligent Board Portal \u2014 Resolution 2025-041 (Adopted November 14, 2025)**\n'RESOLVED, that any officer of NovaTerra Property Group Inc. holding the title of Vice President or above is hereby authorized to execute, on behalf of NovaTerra Retail Holdings III LLC, all documents necessary to consummate the acquisition of the property located at 4200 Oakdale Boulevard...'\n\n**DocuSign \u2014 Envelope ID: 7F3A-9B2C (Completed March 4, 2026)**\nSigner: Marcus Webb | Title entered: 'Vice President, Acquisitions' | IP: 10.0.4.77 (NovaTerra internal) | Signed: March 4, 2026 2:14 PM",
+  "question": "The title company has raised a signatory authority concern during the post-closing audit. Based on the corporate records, was Marcus Webb's signature on the PSA valid at the time of execution?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Victoria Ashworth",
+    "title": "Corporate Secretary & Governance Director",
+    "organization": "NovaTerra Property Group",
+    "years_experience": 17,
+    "domain_expertise": "Board resolutions, delegation of authority, signatory verification, corporate entity management"
+  },
+  "tools_available": [],
+  "source_batch": "meta-governance-batch1.json",
+  "choices": [
+    "No \u2014 the DOA matrix requires board resolution plus officer signature, and since the incumbency certificate filed January 15 does not list Marcus as an officer at all, he lacked both officer status and VP title",
+    "Yes \u2014 Jennifer O'Connell from Legal confirmed authority via Teams, constituting in-house counsel's verification of signatory capacity",
+    "No \u2014 Marcus was a Senior Director at the time of signing (January 15 title change preceded March 4 execution); the resolution requires the signer to 'hold the title of Vice President or above' and he no longer did",
+    "Yes \u2014 the board resolution authorized VPs, and Marcus held that title when the resolution was adopted in November 2025; authority granted is not retroactively revoked by a title change"
+  ]
+}

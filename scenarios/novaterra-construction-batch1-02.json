@@ -1,0 +1,24 @@
+{
+  "title": "Subcontractor Entity Mismatch on Lien Waiver",
+  "category": "entity_resolution",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "NovaTerra is preparing to close on a $4.8M construction draw for the Riverview Retail Center renovation (owned by NovaTerra Riverview LLC). The lender requires unconditional lien waivers from all subcontractors with contracts over $100K before releasing funds. One waiver is causing a problem.\n\n**Procore \u2014 Riverview Retail Center, Subcontractor Directory**\nVendor: Advanced Mechanical Systems Inc. | Contract: $1.24M | Scope: Full HVAC replacement\nInsurance COI on file: Advanced Mechanical Systems Inc. | EIN: 36-4481902\nContact: Tony Mirovic, President\n\n**DocuSign \u2014 Lien Waiver Package (Draw #4, submitted Jun 12, 2026)**\nConditional Waiver Upon Progress Payment \u2014 $287,000\nSigned by: Tony Mirovic, Member/Manager\nEntity on waiver: \"AMS Holdings LLC\"\nNotarized: Yes | Date: Jun 11, 2026\n\n**Outlook \u2014 Email thread between Robert Fitzgerald and GC (Helm Construction)**\nFrom: j.parsons@helmconstruction.com (Jun 14, 2026)\nSubject: RE: RE: Lien waiver discrepancy \u2014 Advanced Mechanical\n\"Rob \u2014 Tony says AMS Holdings is the parent. They restructured last year for liability purposes. Same people, same bonding company, same work. I've worked with them for 15 years, never an issue.\"\n\n> On Jun 13, r.fitzgerald@novaterra.com wrote:\n> Jim \u2014 the waiver is signed by 'AMS Holdings LLC' but our contract is with 'Advanced Mechanical Systems Inc.' These are different legal entities. Our lender won't accept this. Can you get a corrected waiver from the contracted entity?\n\n**Shared Drive \u2014 \\\\ntserver\\projects\\riverview\\legal\\**\nFile: \"IL Secretary of State - AMS Holdings LLC.pdf\" (downloaded Jun 15, 2026)\n- Formed: Sep 2024 | Manager: Anthony Mirovic | Registered Agent: CSC\n- No filed documentation showing relationship to Advanced Mechanical Systems Inc.\n\nFile: \"Subcontract Agreement - Advanced Mechanical.pdf\"\n- Section 12.1: \"Contractor shall not assign this Agreement without prior written consent of Owner.\"\n- Section 14.3: \"All lien waivers shall be executed by the contracting entity as identified in this Agreement.\"\n\n**Microsoft Teams \u2014 #riverview-project (Jun 16, 2026, 8:15 AM)**\n@tony.mirovic.guest: Rob, Jim \u2014 we dissolved Advanced Mechanical Systems as of Jan 1. AMS Holdings assumed all contracts and obligations. I can send the articles of dissolution if that helps. The bonding company already transferred the bond.\n@j.parsons.guest: See? Same thing. Can we move forward? Draw deadline is Friday.\n[No reply from NovaTerra team]\n\n**Yardi \u2014 Capital Projects, Riverview Retail Center**\nDraw #4 deadline: Jun 20, 2026 | Lender: First Midwest Bank\nPending items: 1 (lien waiver \u2014 Advanced Mechanical / AMS Holdings)\nLate draw penalty: 0.25% of outstanding balance per week",
+  "question": "What should NovaTerra do regarding the AMS Holdings lien waiver to protect the owner's interest while meeting the draw deadline?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Robert Fitzgerald",
+    "title": "Construction & Capital Projects Manager",
+    "organization": "NovaTerra Property Group",
+    "years_experience": 22,
+    "domain_expertise": "Change order management, GMP contracts, subcontractor disputes, lien waivers, substantial completion determinations"
+  },
+  "tools_available": [],
+  "source_batch": "novaterra-construction-batch1.json",
+  "choices": [
+    "Reject the waiver and demand a new one from Advanced Mechanical Systems Inc., since that is the contracted entity and Section 14.3 requires waivers from the contracting entity.",
+    "Accept the waiver with a side letter from the GC (Helm Construction) indemnifying NovaTerra against any lien claims, since the GC is ultimately responsible for subcontractor performance under the prime contract.",
+    "Require an assignment and assumption agreement (with owner consent per Section 12.1) formally transferring the subcontract from Advanced Mechanical Systems Inc. to AMS Holdings LLC, then accept a waiver from AMS Holdings \u2014 and simultaneously obtain the articles of dissolution to confirm Advanced Mechanical no longer exists as a viable entity to sign.",
+    "Accept the AMS Holdings LLC waiver as-is because Tony Mirovic signed both the original contract and the waiver, establishing continuity of the principal regardless of entity name."
+  ]
+}

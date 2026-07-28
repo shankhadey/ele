@@ -1,0 +1,24 @@
+{
+  "title": "Cross-Brand Returns Fraud Ring with Conflicting Identity Signals",
+  "category": "cross_system_synthesis",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "**Looker \u2014 Fraud Analytics Dashboard (Query: 'Refund velocity anomalies, last 30 days')**\nCluster ID: FRC-2291 | Pattern: High-value item purchase followed by return within 48 hours, replacement shipped, then second return of replacement. Net loss per cycle: ~$180-$340 per transaction. Accounts flagged: 6 across 3 brands.\n- Brand 'Luma Home': customer emails jenna.m.watts@gmail.com, jenny.watts88@outlook.com\n- Brand 'UrbanEdge': customer email j.watts.purchasing@yahoo.com\n- Brand 'Kinfolk Supply' (BigCommerce): customer email jennawatts_shop@gmail.com\n\n**Zendesk \u2014 Ticket #ZD-441290 (Luma Home, Jun 18, 2026)**\nCustomer: Jenna Watts | Email: jenna.m.watts@gmail.com\nSubject: 'Wrong item received AGAIN'\nAgent note (internal): 'Third return request in 3 weeks. Customer claims wrong item each time. Photos provided but quality is poor. Approved per return policy \u2014 under $500, no manager override needed. Flagged to #trust-safety per protocol.'\nShipping address: 2847 Maple Ridge Ct, Portland OR 97205\n\n**Zendesk \u2014 Ticket #ZD-441455 (UrbanEdge, Jun 20, 2026)**\nCustomer: J Watts | Email: j.watts.purchasing@yahoo.com\nSubject: 'Damaged in transit'\nAgent note: 'Customer requesting full refund + replacement. High-value order ($489). Address matches another flagged account per fraud notes but different email and different brand so system didn't auto-link. Shipping to: 2847 Maple Ridge Ct, Apt B, Portland OR 97205.'\n[Note: Address is same building, different unit designation]\n\n**Slack \u2014 #trust-safety (Jun 19, 2026, 11:33 AM)**\n@jessica.tran: FYI got a Looker alert on FRC-2291. Looks like a wardrobing ring or return-cycle fraud. Six accounts, same behavioral cluster. IP overlap on 4 of 6. Need to pull device fingerprints.\n@ryan.okonma: Can you cross-check with Riskified? Also check if any of these hit the BigCommerce brand \u2014 we have zero visibility there from our tooling.\n@jessica.tran: Already checked. Kinfolk Supply (BigCommerce) has one matching email pattern but I can't pull transaction data without pinging @alex.moore on the Kinfolk ops team.\n@alex.moore: (Jun 19, 3:15 PM) Pulled it. jennawatts_shop@gmail.com has 4 returns in 2 weeks on Kinfolk. All shipped to a PO Box \u2014 not the Portland address. PO Box 4411, Portland OR 97208.\n@jessica.tran: :eyes:\n[No further messages in thread]\n\n**Riskified \u2014 Account Linking Report (pulled Jun 20, 2026)**\nPayment instruments across cluster FRC-2291:\n- Visa ****3301 (jenna.m.watts@gmail.com, jenny.watts88@outlook.com)\n- Visa ****3301 (j.watts.purchasing@yahoo.com)\n- Mastercard ****8877 (jennawatts_shop@gmail.com)\nDevice fingerprints: DFP-9021 appears on 4 of 6 accounts. DFP-9021 NOT present on the Kinfolk/BigCommerce account (separate browser/device).\n\n**Google Sheet \u2014 'Return Policy by Brand & Channel (v2, updated Mar 2026)'**\nRow for 'Fraud-linked returns': 'If account is confirmed as part of a fraud cluster per T&S, all open refunds frozen pending investigation. Cross-brand enforcement requires VP Loss Prevention sign-off (minimum 3 brands involved). Single-brand action can be taken by T&S Lead.'",
+  "question": "Based on available evidence, can Ryan's team take immediate cross-brand enforcement action against this fraud cluster, or what is the blocker?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Ryan Okonma",
+    "title": "Marketplace Trust & Safety Lead",
+    "organization": "Atlas Retail Holdings",
+    "years_experience": 7,
+    "domain_expertise": "Seller identity verification, ban evasion detection, fraud ring identification, policy enforcement across multi-brand marketplace"
+  },
+  "tools_available": [],
+  "source_batch": "atlas-trust-safety-batch1.json",
+  "choices": [
+    "No \u2014 cross-brand enforcement requires VP Loss Prevention sign-off per policy; the evidence supports 3 brands linked but Ryan cannot authorize this himself regardless of evidence strength.",
+    "Yes \u2014 Ryan can freeze the Luma Home and UrbanEdge accounts immediately as single-brand actions, and escalate Kinfolk Supply separately once device fingerprint data is obtained from BigCommerce.",
+    "Yes \u2014 6 accounts across 3 brands are linked via behavioral cluster, shared payment instrument, and device fingerprint; T&S Lead can authorize cross-brand freeze immediately.",
+    "No \u2014 the Kinfolk Supply (BigCommerce) account lacks device fingerprint overlap and uses a different payment card, so only 2 brands (Luma Home and UrbanEdge) are conclusively linked; cross-brand enforcement requires 3 brands, so VP Loss Prevention sign-off cannot yet be triggered."
+  ]
+}

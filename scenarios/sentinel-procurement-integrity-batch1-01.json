@@ -1,0 +1,24 @@
+{
+  "title": "OCI Firewall Breach via Pre-Establishment Access to Competitive Sensitive Material",
+  "category": "cross_system_synthesis",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "Sentinel Defense Solutions is pursuing a $45M IDIQ recompete under RFP W56HZV-26-R-0012. The program manager assigned to lead the capture effort, Marcus Webb, joined Sentinel 14 months ago from the government client where he served as a Contracting Officer's Technical Representative (COTR) on the incumbent contract.\n\n**SharePoint \u2014 /ethics/oci-disclosures/Webb_Marcus_OCI-2025-031.pdf (filed Feb 2025)**\nOCI Type: Access to Non-Public Information (FAR 9.505-4)\nMitigation: Organizational firewall established. M. Webb prohibited from accessing source selection documentation or competitor pricing from prior government role. Ethics screening completed 02/14/2025. Signed by: R. Chen (Ethics), K. Patel (Contracts VP).\n\n**Costpoint \u2014 Proposal P-26-0087 (created Dec 2024)**\nProgram: Advanced Logistics C2 Recompete\nCapture Lead: Marcus Webb (assigned 01/03/2025)\nCost Volume Status: Draft \u2014 Last modified 03/18/2026\nNote: Initial competitive analysis uploaded 12/22/2024 by J. Morales (BD)\n\n**Teams \u2014 #logistics-c2-capture (Dec 19, 2024, 3:47 PM)**\n@j.morales: Marcus \u2014 since you were on the gov side, can you sanity-check the competitor pricing assumptions in the competitive analysis? Attaching the file.\n@m.webb: Sure, pulling it up now.\n@m.webb: Some of these are way off. I can tell you from the last LPTA eval that [REDACTED]'s wrap rate was significantly lower than what you have here.\n@j.morales: That's gold. Updating the deck.\n[Thread has 3 :thumbsup: reactions from BD team members]\n\n**Teams \u2014 #logistics-c2-capture (Dec 20, 2024, 9:12 AM)**\n@m.webb: Actually let me caveat \u2014 my knowledge is from the source selection I participated in on the gov side. Should I be sharing this?\n@j.morales: I think you're fine as long as you don't share actual proposal docs. This is just your professional judgment right?\n[No further replies in thread]\n\n**Jira \u2014 COMP-2025-088 (OCI Compliance Tracker)**\nCreated: 02/14/2025 | Status: Closed \u2014 Mitigated\nScreening Date: 02/14/2025\nFirewall Effective Date: 02/14/2025\nComment (02/14, @r.chen): 'Standard organizational firewall in place. Webb confirmed no access to competitive sensitive info since joining Sentinel.'\n\n**Outlook \u2014 From: m.webb@sentinel-ds.com To: k.patel@sentinel-ds.com (Feb 13, 2025)**\nSubject: RE: OCI Screening \u2014 Quick Q\n'Karen \u2014 for the disclosure form, it asks if I've accessed any competitive information since joining. I did have some early conversations with the BD team about competitor landscape before the firewall was set up. Nothing from my gov files though \u2014 just my general knowledge from working the program. Should I note that on the form?'\n[No reply found in email archive]",
+  "question": "As the Procurement Integrity & Ethics Officer, you discover this timeline during a pre-submission compliance review. What is the correct determination regarding OCI mitigation adequacy for Proposal P-26-0087?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Raymond Chen",
+    "title": "Procurement Integrity & Ethics Officer",
+    "organization": "Sentinel Defense Solutions",
+    "years_experience": 16,
+    "domain_expertise": "OCI mitigation, source selection firewall, post-award audit, FAR Part 3 compliance, disclosure obligations"
+  },
+  "tools_available": [],
+  "source_batch": "sentinel-procurement-integrity-batch1.json",
+  "choices": [
+    "The OCI mitigation is adequate but needs supplementation \u2014 the December 2024 conversations should be retroactively documented as pre-firewall activity and the competitive analysis file should be sequestered, but the proposal can proceed.",
+    "The OCI mitigation is adequate because Webb's firewall was properly established in February 2025, and his earlier conversations reflected general professional knowledge rather than documented competitive sensitive information.",
+    "The OCI determination cannot be made until the Contracting Officer is consulted, as the government \u2014 not the contractor \u2014 is the ultimate authority on whether an OCI exists under FAR 9.5.",
+    "The OCI mitigation is inadequate because Webb accessed and shared competitive sensitive information derived from source selection participation before the firewall was established, and the mitigation plan's certification that he had 'no access to competitive sensitive info since joining' is contradicted by the Teams record."
+  ]
+}

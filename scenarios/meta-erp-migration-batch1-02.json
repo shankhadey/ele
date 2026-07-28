@@ -1,0 +1,24 @@
+{
+  "title": "Credit Limit Override Lost in Migration \u2014 Customer Escalation",
+  "category": "entity_resolution",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "Ironforge Manufacturing receives an urgent complaint from a long-standing customer whose orders are being blocked in S/4HANA due to credit limit exceeded. The standard credit limit in the migrated master data is $150K, but the customer insists they were approved for $500K years ago.\n\n**SAP S/4HANA \u2014 Customer Master (BP 1004782)**\nName: Great Lakes Machining Corp | Credit limit: $150,000 | Credit exposure: $487,200\nStatus: BLOCKED \u2014 credit exceeded | Sales org: 1000\nMigration note: \"Migrated from ECC customer 0041200. Credit limit set per standard migration rule (highest of: legacy limit, 12-month rolling average receivables).\"\n\n**SAP ECC (archived snapshot, pre-migration) \u2014 Customer Credit Data**\nCustomer: 0041200 | Credit limit field (FD32): $150,000\nText field (rarely used): \"See email \u2014 Rosenthal override to $500K approved 2019-06-14\"\n\n**SharePoint \u2014 /migration/cutover-decisions/credit-migration-rules.docx (v3.1, approved Aug 2024)**\nSection 4.2: \"Customer credit limits will be migrated as the HIGHER of: (a) the value in FD32, or (b) the trailing 12-month average A/R balance. Manual overrides documented outside the credit master will NOT be migrated unless captured in the exception spreadsheet (Appendix B).\"\nAppendix B: [47 rows of customer exceptions] \u2014 Customer 0041200 is NOT listed.\n\n**Email (recovered from Outlook archive via legal hold) \u2014 Subject: \"RE: Credit increase \u2014 Great Lakes Machining\" (Jun 14, 2019)**\nFrom: paul.rosenthal@ironforge.com (former CFO, retired 2022)\nTo: credit.team@ironforge.com\nCC: plant2.controller@ironforge.com\n\n> Approved. Raise to $500K effective immediately. They've been with us since the Dayton days and their payment history is clean. Don't make me fill out the form for this one.\n> \u2014 Paul\n\n**Microsoft Teams \u2014 #customer-escalations (Jun 24, 2026, 9:15 AM)**\n@lisa.tran: Great Lakes is furious. They say their credit was $500K for years and now we're blocking their orders. I can see in ECC there's a text note about an override but nothing in S/4.\n@raj.chowdhury: That's a known gap. Overrides that lived outside FD32 didn't migrate. Was it in the exception spreadsheet?\n@lisa.tran: Checking... no, it wasn't.\n@raj.chowdhury: Then it fell through. The old CFO approved a lot of these informally. We need the original approval evidence to reinstate.\n@greg.hoffman (plant controller): I remember this one. Paul approved it over email. Let me dig it up.\n[Thread continues 2 hours later]\n@greg.hoffman: Found it. Forwarding to credit team now. :white_check_mark:\n\n**Jira \u2014 MIGR-4421 (Data Governance backlog)**\nSummary: \"Audit informal credit overrides not captured in FD32\"\nStatus: Open | Priority: Medium | Created: Sep 2024\nComment (Oct 2024, @raj.chowdhury): \"Identified ~35 customers with text-field references to overrides. Added to data steward queue but no capacity until Q2 2026.\"\nComment (Jun 2026, @lisa.tran): \"Great Lakes just escalated. This is now P1.\"",
+  "question": "What is the correct resolution path for reinstating Great Lakes Machining's credit limit in S/4HANA?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Raj Chowdhury",
+    "title": "ERP Migration & Data Governance Lead",
+    "organization": "Ironforge Manufacturing",
+    "years_experience": 11,
+    "domain_expertise": "Data migration, legacy system decommissioning, master data reconciliation, cutover planning"
+  },
+  "tools_available": [],
+  "source_batch": "meta-erp-migration-batch1.json",
+  "choices": [
+    "Reinstate the $500K limit using the recovered 2019 email as supporting documentation, routed through the current credit approval workflow for validation, while flagging MIGR-4421 as evidence that this was a known migration gap \u2014 not a new request",
+    "Require a brand-new credit review and approval from the current CFO since the original approver (Paul Rosenthal) has retired and his authority is no longer valid \u2014 treat this as a new credit request",
+    "Immediately reinstate the $500K limit in S/4HANA based on the ECC text field reference \u2014 the legacy system is the authoritative record and overrides should be honored without additional approval",
+    "Reject the escalation because the credit migration rules (v3.1 Section 4.2) explicitly state that overrides outside FD32 do not migrate unless in Appendix B \u2014 the customer was not listed, so the $150K limit is correct per policy"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Supplier Quality Failure vs. Plant Manager Emergency Deviation Authority",
+  "category": "precedent_exception",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "scenario_text": "Context from SAP QM (Vendor Scorecard \u2014 Triton Surface Technologies):\nVendor ID: V-20847 | Category: Surface treatment \u2014 hard chrome plating | Plants served: Cleveland, Greenfield | Last audit: Jan 2026 | Score: 61/100 | Status: SUSPENDED \u2014 removed from AVL effective Feb 1, 2026 | Reason: Two consecutive failed audits (Jul 2025: 68, Jan 2026: 61). Below 70 = automatic suspension per QMS-PRO-008 Rev 3.\n\n**SharePoint \u2014 /quality/procedures/QMS-PRO-008-Rev3.pdf (Effective Sep 2024)**\nSection 6.2: 'Suppliers scoring below 70 on two consecutive audits shall be suspended from the AVL. Reinstatement requires: (a) successful corrective action verified by on-site audit, (b) Quality Manager approval, (c) 90-day probationary period with incoming inspection on all lots.'\nSection 6.4: 'Emergency deviation from supplier suspension may be authorized by Plant Manager for production-critical situations. Duration: maximum 30 calendar days. Deviation must be documented in MasterControl within 48 hours.'\n\n**Microsoft Teams \u2014 DM between Tom Brannigan (Cleveland Plant Mgr) and Sandra Volkov (Apr 14, 2026, 6:52 AM)**\nTom: Sandra we have a problem. The Pratt landing gear brackets need hard chrome per spec and Triton is our only qualified plater within 200 miles. Next closest is 6 week lead time. We ship to Pratt on May 2.\nSandra: Triton is suspended. Can't issue a PO.\nTom: I'm invoking Section 6.4. Emergency deviation. 30 days max. I'll own it.\nSandra: You sure? Henrik is going to lose his mind.\nTom: Rather deal with Henrik than miss a Pratt delivery. Sending the deviation form now.\n\n**MasterControl \u2014 Deviation Log:**\n[No entry found for Triton Surface Technologies after Feb 1, 2026]\n\n**SAP Ariba \u2014 Purchase Requisition #10042871 (Created: Apr 14, 2026)**\nVendor: Triton Surface Technologies | Value: $18,400 | Material: Hard chrome plating services \u2014 landing gear brackets | Requested by: T. Brannigan | Status: BLOCKED \u2014 vendor suspended in QM.\n\n**Email \u2014 Subject: 'Triton deviation' (Apr 14, 2026, 7:30 AM)**\nFrom: tom.brannigan@ironforge-mfg.com\nTo: henrik.johansson@ironforge-mfg.com\nCC: sandra.volkov@ironforge-mfg.com\n\nHenrik \u2014 heads up, invoking 6.4 for Triton on the Pratt brackets. 30-day window. I know they're suspended but there's no alternative that meets the May 2 ship date. Will get the MasterControl deviation filed today.\n\n**Microsoft Teams \u2014 #cleveland-plant (Apr 16, 2026, 2:15 PM)**\n@henrik.johansson: @tom.brannigan \u2014 still waiting on that MasterControl entry for the Triton deviation. It's been 48 hours.\n@tom.brannigan: I know, I know. Been dealing with the line 3 shutdown. Will do it tomorrow.\n@henrik.johansson: Policy says 48 hours, Tom. I can't have this hanging.\n[No further messages]",
+  "question": "It is now April 22, 2026. Sandra receives the blocked purchase requisition for Triton in her approval queue. Considering the policy, the deviation authority, and the documentation status, what should Sandra do?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Sandra Volkov",
+    "title": "Senior Procurement Category Manager",
+    "organization": "Ironforge Manufacturing",
+    "years_experience": 14,
+    "domain_expertise": "Strategic sourcing, supplier qualification, contract negotiation, sole-source justification, vendor risk management"
+  },
+  "tools_available": [],
+  "source_batch": "ironforge-procurement-batch1.json",
+  "choices": [
+    "Approve the requisition contingent on Tom filing the MasterControl deviation immediately \u2014 the authority is valid but Sandra must not release the PO until the system-of-record documentation exists to protect audit trail integrity",
+    "Reject the requisition and escalate \u2014 the deviation authority under 6.4 is limited to 30 days and only covers production-critical situations, but since Triton's score is below 70 on two consecutive audits, Section 6.2 supersedes 6.4 and no emergency deviation is permitted",
+    "Reject the requisition \u2014 Triton is suspended from the AVL and the MasterControl deviation was never filed within 48 hours, making the emergency deviation invalid per procedure",
+    "Approve the requisition \u2014 Tom has Plant Manager authority under Section 6.4, his email to Henrik constitutes documented intent, and the 48-hour MasterControl filing is an administrative requirement that doesn't void the deviation authority itself"
+  ]
+}

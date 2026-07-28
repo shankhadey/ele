@@ -1,0 +1,24 @@
+{
+  "title": "Executive Override with Missing Post-Authorization Review",
+  "category": "temporal_consistency",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "During year-end SOX testing, you're evaluating management override controls at Ironforge. Your analytics flagged a transaction where the normal three-way match was bypassed. The evidence trail spans six weeks and multiple systems:\n\n**SAP S/4HANA \u2014 Transaction FB03 (Document Display), Doc 1900045521**\nPosting date: 2025-12-18 | Type: KR (Vendor invoice) | Amount: $347,200\nVendor: Precision Alloys International (VM-00298) | Text: 'Emergency titanium bar stock \u2014 Lot TI-6AL4V-2025-889'\nPosted by: R.VASQUEZ (VP Operations) | Override reason code: 'OP-NECS' (Operational Necessity)\nThree-way match status: Bypassed | GR reference: None | PO reference: None\n[SAP override log \u2014 SM21: Override authorization used; control bypass recorded per SoD exception SA-2025-041]\n\n**MasterControl \u2014 SoD Exception Register**\nSA-2025-041: R.VASQUEZ granted temporary override for AP posting (conflict: requisitioner + approver + poster)\nEffective: 2025-12-15 | Expiry: 2025-12-31 | Condition: 'All overrides require documented post-review by Controller within 5 business days per POL-FIN-008 Section 4.6'\nApproved by: CFO (C.Morrison) on 2025-12-14\n\n**SharePoint \u2014 /finance/policies/POL-FIN-008-Management-Override-Controls-Rev4.docx**\nSection 4.6: 'When management override is exercised under operational necessity, the following compensating controls apply: (a) Controller must perform independent review within 5 business days; (b) Review must be documented in the override log with sign-off; (c) Failure to complete review within 5 business days escalates to Audit Committee.'\n[Document version history: Rev 4 published 2025-09-01. Rev 3 stated '10 business days' \u2014 changed to 5 per audit committee direction after prior year finding.]\n\n**SAP \u2014 Override Review Log (Custom Z-table ZOVERIDE_REV)**\nDoc 1900045521 | Override date: 2025-12-18 | Review due: 2025-12-26 (5 business days, excluding Dec 24-25 holidays)\nReviewer assigned: K.WRIGHT (Controller) | Review status: OPEN | Review date: [blank]\n\n**Microsoft Teams \u2014 DM between K.Wright and F.Owens (2026-01-08)**\n@K.Wright: Hey Franklin \u2014 just flagging, I'm working through the Dec override reviews now. Got backed up with year-end close. The Vasquez one from 12/18 \u2014 I talked to him about it before the break and it's legit, but I haven't put the formal sign-off in the system yet. Will do it this week.\n@F.Owens: \ud83d\udc40\n[No further messages]\n\n**Outlook \u2014 R.Vasquez to Procurement (2025-12-17, 6:44 PM)**\nSubject: URGENT \u2014 titanium shortage for Aerojet lot\n'Team \u2014 our TI-6AL4V supplier shorted us on the last delivery and we're 3 days from halting the Aerojet line. I found bar stock at Precision Alloys but they won't hold it past tomorrow. I'm going to push this through directly. Will sort the paperwork after. Raj \u2014 can you backfill the PO?'\n[Reply from Raj (2025-12-18, 8:01 AM): 'PO created \u2014 4500091002. You'll need to link it to the invoice.']\n[No evidence the invoice was ever linked to PO 4500091002 in SAP.]",
+  "question": "As of the audit fieldwork date (January 10, 2026), what is the status of this override finding?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Franklin Owens",
+    "title": "Internal Audit Manager",
+    "organization": "Ironforge Manufacturing",
+    "years_experience": 14,
+    "domain_expertise": "SOX compliance, management override testing, compensating control evaluation, segregation of duties"
+  },
+  "tools_available": [],
+  "source_batch": "meta-internal-audit-batch1.json",
+  "choices": [
+    "Significant deficiency \u2014 the compensating control required by the SoD exception failed (no documented review within 5 business days), the review was not escalated to Audit Committee as required by POL-FIN-008 Section 4.6, and the invoice remains unmatched to the PO; the verbal Teams message cannot substitute for the required documented sign-off",
+    "Control deficiency \u2014 the compensating control (5-day review) was not completed timely, but the verbal confirmation in Teams and the retroactive PO creation demonstrate the underlying transaction is legitimate",
+    "No finding \u2014 the override was properly authorized via SoD exception SA-2025-041, the operational necessity is well-documented in email, and the Controller verbally confirmed the review was performed",
+    "Material weakness \u2014 an executive bypassed all three procurement controls (requisition, PO, GR) and the only compensating control also failed, representing a complete breakdown in the management override control environment"
+  ]
+}

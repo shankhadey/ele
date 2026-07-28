@@ -1,0 +1,24 @@
+{
+  "title": "Geographic Differential Discontinuation and Leveling Reorg Collision",
+  "category": "cross_system_synthesis",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "Context from Rippling (Compensation Record):\nEmployee: Derek Huang | Role: Engineering Manager (EM, L6) | Location: Austin, TX | Base salary: $248K | Geo-differential applied: 'Austin Tier 2 (-8%)' | Hire date: Sep 2024 | Last comp adjustment: Feb 2026 (annual cycle)\n\nContext from Rippling (Band Configuration, effective Feb 2026):\nL6-EM band: $245K-$295K base (SF benchmark) | Geo-differentials: Tier 1 (SF/NYC): 0% | Tier 2 (Austin/Seattle/Denver): -8% | Tier 3 (all other US): -15%\n\nSlack \u2014 #people-ops (Jan 18, 2026, 4:55 PM):\n@cpo: Heads up team \u2014 board approved eliminating geo-differentials effective Q2. We're moving to national bands. Don't communicate yet, just flag anyone whose current comp would fall below the new unified floor.\n@jasmine.torres: Got it. Timeline for rollout?\n@cpo: April 1 target. Comms go out end of March.\n@jasmine.torres: \ud83d\udc4d\n\nSlack \u2014 #eng-managers (Feb 22, 2026, 10:12 AM):\n@derek.huang: Hey @vp.eng \u2014 I noticed my band shows $245-$295 but with the -8% that puts my effective ceiling at $271K. A couple of my reports are approaching L6 and I want to understand the ceiling for internal promo offers.\n@vp.eng: The geo stuff is going away soon. Don't factor it into promo planning. Think national band.\n@derek.huang: Oh nice, when?\n@vp.eng: Can't say yet officially but plan for Q2.\n\nGoogle Doc \u2014 'FY26 Leveling Reorg Proposal' (Draft, last edited Mar 5, 2026):\nSection: 'Engineering Management Track'\n'Proposal: Collapse L6-EM and L7-EM into single Senior EM band. New band: $270K-$340K. Effective date: TBD (pending comp committee approval).'\n[COMMENT by @jasmine.torres, Mar 6]: 'This conflicts with the geo elimination timeline. If geo goes away Apr 1 but reorg isn't until May/June, there's a window where L6-EMs hit the unified $245-$295 band with no differential. Derek Huang would be at $248K \u2014 fine. But if reorg lands first, the new Senior EM floor is $270K and he'd need a market adjustment.'\n[COMMENT by @cpo, Mar 7]: 'Good catch. Sequence matters. Let's discuss Thursday.'\n\nGoogle Calendar \u2014 'Comp/Leveling Sequencing Discussion' (Mar 13, 2026, 2:00 PM):\nRequired: jasmine.torres \u2713, cpo \u2713, vp.eng \u2717 (no response)\nNotes doc: [linked but empty]\n\nPave Benchmarking (Mar 2026):\nEngineering Manager, Austin TX, Series D: 50th pctile $258K | 65th pctile $271K | 75th pctile $289K",
+  "question": "Derek Huang asks his HRBP what his compensation will be after the upcoming changes. Based on all available information as of mid-March 2026, what is the most accurate answer?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Jasmine Torres",
+    "title": "Senior Total Rewards Analyst",
+    "organization": "Meridian Systems",
+    "years_experience": 9,
+    "domain_expertise": "Compensation band management, geo-differential policy, job leveling frameworks, market adjustments"
+  },
+  "tools_available": [],
+  "source_batch": "meridian-total-comp-batch1.json",
+  "choices": [
+    "His base increases to $269K \u2014 removing the -8% geo-differential from his current $248K effectively restores the pre-differential amount of $269K ($248K / 0.92).",
+    "His base stays at $248K \u2014 the geo-differential elimination means his effective ceiling rises from $271K to $295K, but his current pay doesn't change since he's already within band.",
+    "His base should increase to at least $270K \u2014 the leveling reorg collapses L6/L7 EM into Senior EM with a $270K floor, requiring a market adjustment regardless of sequencing.",
+    "It cannot be determined yet \u2014 the geo elimination and leveling reorg interact, and the sequencing decision (which change lands first) has not been finalized, as evidenced by the empty meeting notes and pending comp committee approval."
+  ]
+}

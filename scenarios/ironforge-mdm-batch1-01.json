@@ -1,0 +1,24 @@
+{
+  "title": "Cross-Plant Material Recall with Fragmented Part Numbering",
+  "category": "entity_resolution",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "A recall notice arrives from supplier Titan Alloys referencing their part number TA-4420-CrMo for a chromium-molybdenum bar stock batch (heat lot H2025-0892) with a metallurgical defect in tensile strength.\n\n**SAP S/4HANA (Cleveland HQ) \u2014 Material Master:**\nMaterial: 10045221 | Desc: 'CrMo Bar 4140 1.5in RD' | Vendor: 300019 (Titan Alloys Corp) | Last GR: 2026-02-18 | Batch: H2025-0892 | Plant: 1000\n\n**SAP S/4HANA (Detroit plant) \u2014 Material Master:**\nMaterial: 20-88-0334 | Desc: 'AISI 4140 RD BAR 38.1MM' | Vendor: 300019 | Last GR: 2026-03-02 | Batch: H2025-0892 | Plant: 2000\n\n**SAP ECC 6.0 (Monterrey plant) \u2014 Material Master:**\nMaterial: MX-MAT-6610 | Desc: 'BARRA RED ACERO 4140 1.5 PLG' | Vendor: 71100204 (Titan Aleaciones SA de CV) | Last GR: 2026-01-28 | Batch: H2025-0892 | Plant: MX01\n\n**Oracle Procurement (legacy, read-only) \u2014 Supplier History:**\nSupplier: TITAN ALLOY INC | ID: ORA-V-4412 | Cross-ref note (added 2019 during migration): 'Now SAP vendor 300019. Mexico entity separate \u2014 see local procurement.'\n\n**Microsoft Teams \u2014 #mdm-data-stewards (Apr 14, 2026, 9:47 AM)**\n@ananya.krishnan: Heads up \u2014 Monterrey vendor 71100204 is the Mexican subsidiary of Titan Alloys. Same parent, same mill, same heats. We never got around to linking them in the vendor master because the tax IDs are different entities.\n@carlos.mendez: Confirmed. They ship from the same Guadalajara mill regardless of which entity invoices.\n@ananya.krishnan: So for recall purposes, MX-MAT-6610 = 10045221 = 20-88-0334. All the same physical material.\n[thumbsup emoji from @henrik.johansson]\n\n**Excel \u2014 Plant Reconciliation Sheet (Detroit, updated quarterly):**\nRow 88: 'Material 20-88-0334 | Legacy Oracle item: ORA-I-22105 | S/4 equiv at CLE: 10045221 | Notes: Same spec, different UoM (mm vs inches). Conversion: 38.1mm = 1.5in'\n\n**SharePoint \u2014 /quality/recall-procedures/SOP-RCL-003 (v2.1, Jan 2025):**\nSection 4.2: 'All recall containment actions must identify affected material across ALL plants using the cross-reference table maintained by MDM. Where no cross-reference exists, assume material is NOT present at other plants until confirmed.'\n[RESOLVED COMMENT by @ananya.krishnan, Nov 2025]: 'Updated to require positive confirmation. Previous version (v1.4) said to quarantine at receiving plant only.'",
+  "question": "Given the recall notice for heat lot H2025-0892, how many plants received affected material and what is the correct containment scope?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Ananya Krishnan",
+    "title": "Master Data Manager",
+    "organization": "Ironforge Manufacturing",
+    "years_experience": 9,
+    "domain_expertise": "Material master harmonization, vendor master deduplication, cross-system data governance, ERP migration data quality"
+  },
+  "tools_available": [],
+  "source_batch": "ironforge-mdm-batch1.json",
+  "choices": [
+    "Three plants (Cleveland, Detroit, Monterrey); all three received heat lot H2025-0892 and the Teams channel confirms vendor 71100204 is the same parent company shipping from the same mill.",
+    "One plant (Cleveland only); per SOP-RCL-003 section 4.2, where no formal cross-reference exists in the system, assume material is not present at other plants until confirmed. The Excel sheet and Teams messages are not the official cross-reference table.",
+    "Two plants (Cleveland and Monterrey); only these two have batch H2025-0892 with GR dates in 2026. Detroit's material 20-88-0334 uses metric dimensions and is likely a different specification.",
+    "Two plants (Cleveland and Detroit); material 10045221 and 20-88-0334 are confirmed linked. Monterrey's vendor is a different legal entity (71100204 vs 300019) so their material is unaffected."
+  ]
+}

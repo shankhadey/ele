@@ -1,0 +1,24 @@
+{
+  "title": "Conflicting Go-Live Dates Across Brand Implementation Workstreams",
+  "category": "cross_system_synthesis",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "Atlas Retail Holdings is deploying a unified loyalty platform across three brands (Vero, Threadline, and the recently acquired Kova). Each brand has a separate implementation workstream with its own PM.\n\n**Smartsheet \u2014 'Unified Loyalty Platform Master Schedule' (last updated Jun 2, 2026)**\nProject: Loyalty Unification | Status: Amber | Phase: UAT\nVero workstream go-live: Jul 14, 2026\nThreadline workstream go-live: Jul 14, 2026\nKova workstream go-live: Jul 28, 2026 (2-week buffer for integration delta)\nMilestone gate 4 (UAT sign-off): Jun 30, 2026 \u2014 all brands\nDependency note: 'Kova POS integration requires Square API v3 migration. Blocked until Vero completes first.'\n\n**Jira \u2014 LOYAL-892 'Kova POS Integration - Square API v3'**\nStatus: In Progress | Assignee: dev.team.kova | Sprint: Sprint 14\nComment (Jun 18, @rachel.osei): 'Vero migration to API v3 hit a snag \u2014 their custom discount logic isn't compatible. Estimating 8 additional dev days.'\nComment (Jun 20, @kenji.nakamura): 'This puts Vero UAT at risk. Can we decouple Kova from the Vero dependency?'\nComment (Jun 20, @rachel.osei): 'Technically yes but we'd need to run parallel API versions during cutover. Adds $18K in T&M.'\n[No further comments]\n\n**Slack \u2014 #implementations (Jun 21, 2026, 9:47 AM)**\n@kenji.nakamura: Heads up \u2014 loyalty go-live for Vero is slipping. Threadline unaffected. Kova TBD pending CR approval.\n@marcus.bell (VP Retail Tech): Can't slip Vero past Jul 21. We have the analyst day keynote on Jul 23 and the CEO is demoing it live.\n@kenji.nakamura: Understood. I'll look at scope reduction options.\n@marcus.bell: :+1:\n\n**Slack \u2014 #implementations (Jun 22, 2026, 3:15 PM)**\n@kenji.nakamura: Option A: drop custom discount logic from Vero go-live (add back in Sprint 16). Saves 6 dev days. Go-live Jul 18.\n@kenji.nakamura: Option B: parallel API versions for Kova decoupling, Vero stays Jul 14 but burn rate goes up $18K.\n@marcus.bell: A. We can't justify the T&M overage to finance right now. Discount logic can wait.\n@kenji.nakamura: Copy. I'll update the SOW amendment and Smartsheet.\n[Thread has 3 :eyes: reactions, no other replies]\n\n**ServiceNow \u2014 CR-2026-0441 'Loyalty Platform Scope Reduction - Vero Custom Discounts'**\nStatus: Draft | Requested by: Kenji Nakamura | Created: Jun 23, 2026\nApproval chain: PM (Kenji) \u2192 Delivery Lead \u2192 VP Retail Tech \u2192 Brand GM (Vero)\nCurrent approvals: PM \u2713 | Delivery Lead: Pending | VP Retail Tech: Pending | Brand GM: Pending\nNote: 'VP verbal approval obtained in Slack. Formal approval pending.'",
+  "question": "Based on all available information as of June 23, what is the current approved go-live date for the Vero workstream and what is the status of the scope reduction that enables it?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Kenji Nakamura",
+    "title": "Enterprise Implementation Program Manager",
+    "organization": "Atlas Retail Holdings",
+    "years_experience": 12,
+    "domain_expertise": "New store technology deployments, vendor coordination, sales-to-delivery handoff, scope management, go-live readiness"
+  },
+  "tools_available": [],
+  "source_batch": "atlas-implementation-batch1.json",
+  "choices": [
+    "Jul 21 per the VP's stated deadline; the scope reduction is approved since the VP explicitly said 'A' in the Slack thread",
+    "Jul 14 is at risk and no new date is confirmed; the Jira blocker has not been resolved and no CR has been formally submitted",
+    "Jul 14 per the Smartsheet master schedule; the scope reduction CR is fully approved and the schedule stands",
+    "Jul 18 with scope reduction; the CR has only informal VP approval via Slack emoji and has not completed the formal approval chain"
+  ]
+}

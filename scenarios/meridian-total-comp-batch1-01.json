@@ -1,0 +1,24 @@
+{
+  "title": "Above-Band Offer Approval Based on Misidentified Precedent",
+  "category": "precedent_exception",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "Context from Greenhouse (Requisition #4892):\nRole: Staff Software Engineer (L6-IC) | Hiring Manager: Marcus Webb | Recruiter: Priya Nair | Status: Offer Pending Approval | Candidate: Jordan Nakamura | Current comp: $285K base + $180K/yr RSU (at competitor) | Proposed offer: $275K base + 12,000 RSUs (4yr vest, 1yr cliff) | Target TCC at L6 midpoint: $310K\n\nContext from Rippling (Compensation Module):\nL6-IC band (effective Jan 2026): $225K-$268K base | Equity range: 8,000-11,000 RSUs | Compa-ratio ceiling for new hires: 1.05 | Note: Band updated during Feb 2026 reorg; prior L6 band was $210K-$255K\n\nSlack \u2014 #comp-committee (Mar 12, 2026, 2:47 PM):\n@marcus.webb: Need approval for above-band base on the Nakamura offer. $275K against $268K ceiling. We did this for Reeves last year \u2014 same situation, external candidate with competing offer.\n@jasmine.torres: Which Reeves hire? Let me pull the comp exception log.\n@marcus.webb: Engineering. Sam Reeves. L6 offer in August.\n@priya.nair: I remember that one \u2014 it was approved in like a day.\n[Thread ends \u2014 no further replies]\n\nSlack \u2014 #people-ops (Aug 14, 2025, 11:03 AM):\n@jasmine.torres: FYI the Reeves exception went through but that was a board-level approval tied to the Klarity acqui-hire package. VP Eng flagged it as one-time. Do NOT use as precedent for future offers.\n@devon.xu reacted with :eyes:\n@rachel.lim reacted with :white_check_mark:\n\nGoogle Sheets \u2014 Offer Exception Tracker (Row 34):\nCandidate: S. Reeves | Date: Aug 2025 | Exception Type: Board-approved acqui-hire | Approver: Board Comp Committee | Notes: 'One-time; not to set precedent per VP Eng + CPO' | Band at time: old L6 ($210K-$255K)\n\nPave Benchmarking Report (pulled Mar 10, 2026):\nStaff SWE, SF Bay Area, Series D SaaS (75th pctile): $272K base | Note: Meridian comp philosophy targets 65th pctile for base, 75th for TCC including equity.\n\nGoogle Calendar \u2014 'Comp Committee Sync' (Mar 14, 2026, 3:00 PM):\nRequired: jasmine.torres \u2713, cpo.office \u2713, vp.eng (declined)\nAgenda doc linked \u2014 contains only header, no content added.",
+  "question": "Should the Nakamura offer at $275K base + 12,000 RSUs be approved as proposed, citing the Reeves precedent?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Jasmine Torres",
+    "title": "Senior Total Rewards Analyst",
+    "organization": "Meridian Systems",
+    "years_experience": 9,
+    "domain_expertise": "Compensation band management, equity refresh cycles, job leveling frameworks, offer approvals"
+  },
+  "tools_available": [],
+  "source_batch": "meridian-total-comp-batch1.json",
+  "choices": [
+    "Yes \u2014 the Reeves exception establishes precedent for above-band L6 offers when candidates have competing offers at higher comp.",
+    "No \u2014 the Reeves exception was a board-level one-time acqui-hire approval explicitly marked as non-precedent-setting; the base exceeds the current band ceiling and requires a new exception request through proper channels.",
+    "No \u2014 the offer cannot proceed because VP Eng declined the comp committee meeting, and VP-level approval is required for any above-band offer.",
+    "Yes \u2014 the $275K base is within market range per Pave data (75th pctile = $272K) and only $7K above band ceiling, making it a de minimis exception the hiring manager can approve."
+  ]
+}

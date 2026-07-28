@@ -1,0 +1,24 @@
+{
+  "title": "Conflicting Service Credit Precedent Under New SLA Policy",
+  "category": "precedent_exception",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "**CRM \u2014 Account: Bridgewater Dynamics**\nARR: $520K | Segment: Strategic | CSM: Aisha Patel | Contract signed: 18 months ago | SLA Tier: Premium\n\n**Zendesk \u2014 Ticket #51033 (Open, P1)**\nSubject: 'Production environment unavailable \u2014 4hr+ outage' | Opened: June 22, 2026, 6:45 AM | Customer comment (June 22, 11:30 AM): 'Per our SLA, this exceeds the 99.95% monthly uptime commitment. Requesting 15% service credit as provided last October per case #38921. Our CFO has flagged this for the next board meeting.'\n\n**Zendesk \u2014 Ticket #38921 (Closed, Oct 2025)**\nSubject: 'Extended outage \u2014 credit request' | Resolution note (by prev CSM @jake.morrison, now departed): 'Approved 15% monthly credit as goodwill. Customer threatened escalation to CEO. VP Sales @rachel.torres approved via Slack DM. No formal exception filed.'\n\n**Confluence \u2014 'Service Credit Policy' (Page version 3, updated Jan 2026)**\nSection 4.1: 'For Premium SLA customers, service credits are calculated at 10% of monthly fee per hour of downtime exceeding SLA, capped at 30% monthly fee. Credits require Director+ approval and must be filed through the Exception Request workflow in CRM.'\n[Version history: v2 (Aug 2025) stated: 'Credits discretionary, approved by CSM manager or above. No cap specified.']\n\n**Slack \u2014 #incidents (June 22, 2026, 7:02 AM)**\n@jordan.kim: SEV-1 declared. Bridgewater and 3 other accounts affected. Root cause: DB failover didn't trigger.\n@jordan.kim (8:45 AM): Failover completed. Services restoring.\n@jordan.kim (9:15 AM): All clear. Total customer-impacting duration: 4 hours 12 minutes.\n\n**Slack \u2014 DM between @aisha.patel and @rachel.torres (June 22, 2:10 PM)**\n@aisha.patel: Bridgewater is asking for 15% credit like Jake gave them in Oct. New policy caps it differently but they're citing precedent.\n@rachel.torres: Jake shouldn't have done that without a formal exception. I don't even remember approving it tbh. What does the current policy say?\n@aisha.patel: 10% per hour over SLA, capped at 30%. So for 4hrs past the threshold it'd be... I need to calc.\n@rachel.torres: Do what the policy says. If they push back, loop me in.\n[No further messages]\n\n**Google Doc \u2014 'Bridgewater Dynamics Account Plan' (Last edited: 2 months ago)**\n[RESOLVED COMMENT by @jake.morrison, Sep 2025]: 'Bridgewater's MSA has a custom SLA addendum \u2014 Section 8.4 overrides standard credit terms. They negotiated 15% flat per qualifying outage event, not per-hour. Legal reviewed. Check the contract attachment in SF.'",
+  "question": "What service credit amount should Aisha offer Bridgewater Dynamics, and through what process?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Aisha Patel",
+    "title": "Senior Customer Success Manager",
+    "organization": "Meridian Systems",
+    "years_experience": 7,
+    "domain_expertise": "Enterprise account management, SLA enforcement, escalation decisions"
+  },
+  "tools_available": [],
+  "source_batch": "meridian-csm-batch1.json",
+  "choices": [
+    "No credit until the formal exception process is followed \u2014 the October credit was improperly approved and cannot serve as precedent.",
+    "15% flat credit per the MSA custom addendum (Section 8.4), processed through CRM Exception Request workflow with Director+ approval.",
+    "10% per hour of downtime (40% total, capped at 30%) via the Exception Request workflow, per the current Confluence policy v3.",
+    "15% credit matching the October precedent (ticket #38921) as goodwill to maintain the relationship, approved by VP Sales."
+  ]
+}

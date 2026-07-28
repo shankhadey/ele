@@ -1,0 +1,24 @@
+{
+  "title": "Change Order Authority Delegation Across Projects",
+  "category": "approval_chain",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "scenario_text": "You are reviewing a disputed change order on the Lincoln Square mixed-use renovation (NovaTerra Lincoln Holdings LLC is the owner entity). The GC submitted CO #017 for $73,400 covering unforeseen structural remediation in the parking garage. The project is under a GMP contract with a total value of $14.2M.\n\n**Procore \u2014 Lincoln Square, Change Order #017 (submitted Apr 8, 2026)**\nStatus: Approved | Approved by: Marcus Webb (Project Manager) | Date approved: Apr 10, 2026\nDescription: Structural steel reinforcement at grid lines C4-C7, level P2. Unforeseen deterioration discovered during demo.\nAttachments: Structural engineer report, RFI #042 response, subcontractor pricing breakdown.\nComment (Marcus Webb, Apr 9): \"Approved per delegation authority. Referencing memo from Dave Kowalski dated 3/15/25.\"\n\n**Outlook \u2014 Email from David Kowalski to Marcus Webb (Mar 15, 2025)**\nSubject: RE: Authority for field decisions \u2014 Wacker Drive\n\"Marcus \u2014 Per our conversation, I'm delegating approval authority for change orders up to $75K on the Wacker Drive project to you while I'm focused on the capital committee through Q2. This is for Wacker only. Loop me in on anything over $50K on other jobs per the capital policy. \u2014DK\"\n\n**iManage \u2014 Document: \"NovaTerra Capital Expenditure Policy v3.2\" (effective Jan 2026)**\nSection 4.1: \"Change orders exceeding $50,000 require Owner Representative (VP-level or above) written approval prior to execution.\"\nSection 4.3: \"Delegation of approval authority must be project-specific and documented via the standard delegation form (Exhibit C). Email delegation is not a recognized form.\"\n\n**Microsoft Teams \u2014 #lincoln-square-project (Apr 11, 2026, 2:47 PM)**\n@marcus.webb: FYI Dave \u2014 approved CO17 yesterday, $73K for the P2 structural work. Used the delegation from last year.\n@dave.kowalski: (thumbs up emoji)\n[No further messages in thread]\n\n**Yardi \u2014 Capital Projects Module, Lincoln Square**\nProject budget: $14.2M GMP | Contingency remaining: $892K | CO total approved to date: $1.34M\nCO #017 status: \"Pending owner ratification\" (auto-flagged by system \u2014 approval authority mismatch)\n\n**Shared Drive \u2014 \\\\ntserver\\projects\\lincoln-square\\contracts\\**\nFile: \"Owner-GC Agreement (AIA A133-2019).pdf\" \u2014 Section 7.3.1: \"Changes in the Work exceeding Fifty Thousand Dollars ($50,000) require written approval of the Owner prior to commencement.\"",
+  "question": "Is Change Order #017 validly approved, and what is the correct next step?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Robert Fitzgerald",
+    "title": "Construction & Capital Projects Manager",
+    "organization": "NovaTerra Property Group",
+    "years_experience": 22,
+    "domain_expertise": "Change order management, GMP contracts, subcontractor disputes, lien waivers, substantial completion determinations"
+  },
+  "tools_available": [],
+  "source_batch": "novaterra-construction-batch1.json",
+  "choices": [
+    "The change order is NOT validly approved because the delegation memo was project-specific to Wacker Drive, not Lincoln Square, and email delegation does not meet the capital policy's Exhibit C requirement \u2014 the CO requires formal VP-level written approval before the work can proceed or payment can be released.",
+    "The change order is validly approved because Kowalski's thumbs-up emoji on Teams constitutes retroactive written owner approval, ratifying Webb's decision.",
+    "The change order is validly approved because Webb's authority extends to $75K per the Kowalski delegation, which applies to all projects Webb manages as a general grant of authority.",
+    "The change order is NOT validly approved and must be rebid, because the GMP contract's contingency should have covered this work rather than processing it as a change order."
+  ]
+}

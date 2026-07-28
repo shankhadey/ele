@@ -1,0 +1,24 @@
+{
+  "title": "Reorg Headcount Phantom: Position Alive in Adaptive but Eliminated in Workday",
+  "category": "cross_system_synthesis",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "**Workday HCM \u2014 Position Management (as of June 15, 2026)**\nPosition ID: P-04217 | Title: Senior Compliance Analyst | Sup Org: Risk & Compliance \u2014 Wealth Mgmt | Cost Center: CC-4420 | Status: Closed \u2014 Eliminated | Effective Date: April 1, 2026 | Incumbent at closure: Marcus Tate (termed 3/31/2026) | Reason: Reorganization\n\n**Adaptive Planning \u2014 FY26 Workforce Model (exported June 20, 2026)**\nCC-4420 (Risk & Compliance \u2014 WM): Planned HC = 18 | Filled = 16 | Open = 2\nOpen positions listed: P-04217 (Sr. Compliance Analyst), P-04301 (Compliance Manager)\nBudgeted comp for P-04217: $142,000 base + 15% target bonus\nLast model refresh: March 28, 2026 (pre-reorg sync)\n\n**ServiceNow HR \u2014 Case HRTASK0019843 (April 14, 2026)**\nRequester: Diane Kowalski (VP, Risk & Compliance)\nSubject: \"Backfill for Marcus's role\"\nDescription: \"Need to open a req for the senior compliance analyst seat. Marcus's last day was 3/31. The wealth management integration work still needs coverage.\"\nAssigned to: Talent Acquisition | Status: In Progress\nTA Comment (April 16): \"Opened REQ-2287 \u2014 titled 'Compliance Integration Specialist' per Diane's updated JD.\"\n\n**Microsoft Teams \u2014 #wm-leadership (April 2, 2026, 8:47 AM)**\n@diane.kowalski: Quick update \u2014 the reorg is official as of yesterday. Marcus's position was eliminated per the restructuring plan. I'm going to submit a new role under a different title that better reflects what we actually need.\n@greg.fontaine: Makes sense. Same band?\n@diane.kowalski: Bumping it to B5 since we're adding the integration scope. Already talked to Devon about it.\n@greg.fontaine: \ud83d\udc4d\n[No further replies]\n\n**SharePoint \u2014 /hr-ops/reorg-tracker-Q2-2026.xlsx (last modified April 3, 2026)**\nRow 34: P-04217 | Action: Eliminate | Effective: 4/1/2026 | Savings realized: YES | Finance notified: YES\nRow 35: [no entry for replacement role]\n\n**Dynamics 365 \u2014 Vendor invoice (May 2026)**\nVendor: Korn Ferry | Description: Executive search \u2014 Compliance Integration Specialist, Wealth Mgmt | PO: linked to CC-4420 | Amount: $38,500 (first installment)",
+  "question": "Finance is flagging CC-4420 as over-planned by 1 FTE because Adaptive shows 2 open positions but only 1 open req exists in Workday. What is the correct current state of headcount for CC-4420, and what action resolves the discrepancy?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Devon Washington",
+    "title": "HRIS & Workforce Planning Manager",
+    "organization": "Cascade Financial Group",
+    "years_experience": 14,
+    "domain_expertise": "Position management, headcount reconciliation, reorg execution, system-of-record conflicts between HR and Finance"
+  },
+  "tools_available": [],
+  "source_batch": "cascade-hris-batch1.json",
+  "choices": [
+    "CC-4420 has 0 net new open positions because the elimination savings were already realized; the new role should be on a different cost center",
+    "The discrepancy cannot be resolved until Diane formally submits a new position creation through the position management workflow in Workday",
+    "CC-4420 has 1 open position (REQ-2287/new role); Adaptive needs a manual sync to remove the eliminated P-04217 and add the new position at B5",
+    "Adaptive is correct (2 open); Workday needs P-04217 reopened since a backfill was approved"
+  ]
+}

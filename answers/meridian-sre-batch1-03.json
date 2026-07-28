@@ -1,0 +1,6 @@
+{
+  "scenario_file": "meridian-sre-batch1-03.json",
+  "correct_answer": "Yes \u2014 PagerDuty is the system of record for escalation routing, the policy was updated May 5, and the system correctly escalated Primary -> Secondary -> SRE Manager",
+  "answer_format": "multiple_choice",
+  "rationale": "Jordan explicitly states in the DM that 'PD is the system of record for escalation routing.' The PagerDuty policy was updated on May 5, 2026, and the incident occurred on May 9. The new policy (Primary -> Secondary -> SRE Manager -> VP Eng) was correctly followed: Priya (L1, no ack at 5 min) -> Alex (L2, no ack at 10 min) -> Nadia (L3, ack at 02:31). The timeline math confirms correct timeout intervals (02:14 + 5min = 02:19 escalation, 02:19 + 10min = 02:29 escalation). Answer A incorrectly treats the stale Confluence runbook as authoritative over the live PagerDuty configuration \u2014 this is a common failure where humans trust documentation over the actual system state. Answer C applies change management policy (which governs code deploys and infrastructure changes) to an operational tool configuration update \u2014 escalation policy changes don't require the same formal CR process. Answer D is factually wrong on the math: L2 escalated at 02:29, which is exactly 10 minutes after the 02:19 L2 page, matching the configured timeout."
+}

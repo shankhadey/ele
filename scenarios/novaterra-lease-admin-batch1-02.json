@@ -1,0 +1,24 @@
+{
+  "title": "COVID Base Year CAM Reconciliation Dispute with Gross-Up Ambiguity",
+  "category": "policy_version",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "**Yardi Voyager \u2014 CAM Reconciliation Worksheet: Lakeshore Commons, 2024 Actuals**\nTenant: Vertex Consulting Group | Suite 300 | Pro-rata share: 8.7% | Base year: 2020 | Expense stop: $12.85/SF (2020 actual) | 2024 actual operating expenses: $18.42/SF | Tenant's estimated overage billed: $4.20/SF | Actual overage: $5.57/SF | Variance due: $1.37/SF = $38,356\n\n**Shared Drive \u2014 \\\\ntserver\\leases\\lakeshore\\vertex\\**\nFile: 'Vertex_Lease_Executed_2020-01-15.pdf'\nSection 7.2: 'Tenant's share of Operating Expenses in excess of Base Year Operating Expenses...'\nSection 7.4: 'Base Year shall mean calendar year 2020 actual Operating Expenses.'\nSection 7.6: 'Operating Expenses shall be adjusted to reflect at least 95% occupancy during any year in which the Building is less than 95% occupied.' [Note: this gross-up clause applies to COMPARISON years only \u2014 no equivalent language for Base Year adjustment]\n\n**MRI Software \u2014 Legacy Portfolio Note (imported record)**\nProperty: Lakeshore Commons | 2020 occupancy: 41% (COVID impact) | 2020 operating expenses as-incurred: $12.85/SF | 2020 expenses if grossed-up to 95%: $17.10/SF | Note added by former SVP R. Hartley (departed 3/2025): 'COVID base year issue \u2014 flag for reconciliation disputes starting 2023. Multiple tenants affected.'\n\n**Outlook \u2014 From: vertex.counsel@kirklandshaw.com To: c.brennan@novaterra.com (1/22/2025)**\n'Ms. Brennan \u2014 Our client disputes the 2024 CAM reconciliation. The 2020 base year reflects artificially depressed expenses due to the pandemic shutdown. Building occupancy was 41%. Had the building been at normal occupancy, expenses would have been materially higher, resulting in a higher expense stop. We believe equitable adjustment is warranted and request the base year be grossed-up to 95% occupancy consistent with Section 7.6 methodology.'\n\n**Outlook \u2014 From: r.hartley@novaterra.com To: leasing-team@novaterra.com (6/12/2023, archived)**\n'Team \u2014 heads up. We're going to start seeing base year disputes on 2020-vintage leases at Lakeshore. I reviewed the Vertex lease specifically. Section 7.6 gross-up only applies to comparison years, NOT the base year. This was intentional \u2014 we negotiated it that way because we wanted a low base year to maximize recoveries. DO NOT concede grossing up the base year. The lease is clear.'\n[This email is in R. Hartley's archived mailbox \u2014 requires legal hold access]\n\n**Teams \u2014 #cam-reconciliation (1/28/2025, 11:15 AM)**\n@c.brennan: Anyone remember the rationale on the Lakeshore 2020 base year gross-up question? Vertex counsel is pushing hard.\n@j.patel: I think Hartley had a view on this before he left. Check his files?\n@c.brennan: His mailbox is archived. Would need legal hold request.\n@j.patel: Maybe just check the lease language? Section 7.6 seems pretty clear to me that gross-up applies generally\n@c.brennan: That's what Vertex is arguing too (thinking_face emoji)",
+  "question": "Based on the lease language, the archived institutional knowledge, and the tenant's counsel's argument, what is the correct position for NovaTerra on the Vertex 2024 CAM reconciliation dispute?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Catherine Brennan",
+    "title": "Senior Lease Administrator",
+    "organization": "NovaTerra Property Group",
+    "years_experience": 18,
+    "domain_expertise": "CAM reconciliation, lease abstracting, rent escalation calculations, tenant entity tracking, landlord entity changes"
+  },
+  "tools_available": [],
+  "source_batch": "novaterra-lease-admin-batch1.json",
+  "choices": [
+    "The dispute should be split \u2014 apply a partial gross-up to the base year using actual 2020 occupancy (41%) as a compromise, resulting in an adjusted stop of approximately $14.90/SF.",
+    "Vertex's position is correct; Section 7.6 gross-up methodology should be applied to the base year, adjusting the expense stop to $17.10/SF, reducing the tenant's 2024 overage to $1.32/SF.",
+    "The reconciliation cannot be finalized until R. Hartley's archived emails are retrieved via legal hold to confirm the original negotiation intent; the matter should be tabled pending that review.",
+    "NovaTerra should maintain that the base year is $12.85/SF as stated in the lease; Section 7.6 gross-up applies only to comparison years, not the base year, and the 2024 overage of $5.57/SF stands as calculated."
+  ]
+}

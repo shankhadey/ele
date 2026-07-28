@@ -1,0 +1,6 @@
+{
+  "scenario_file": "brightpath-finaid-batch1-01.json",
+  "correct_answer": "Rivera is eligible for a fresh appeal under standard unusual circumstances criteria because his prior COVID-EXT approval, where he maintained compliance, does not exhaust his standard appeal right per Section 4.1.2.",
+  "answer_format": "multiple_choice",
+  "rationale": "The critical signal is in Jennifer Caldwell's resolved comment on the Google Doc (hidden by default), which clarifies that students who maintained compliance with their COVID-EXT plan are not considered to have used their standard appeal right \u2014 they get a fresh appeal under normal criteria. Rivera's counseling documentation establishes a distinct, qualifying unusual circumstance (ongoing mental health condition unrelated to COVID). Answer A incorrectly treats the COVID-EXT appeal as consuming the standard appeal right, ignoring the Section 4.1.2 clarification. Answer C fabricates a VP approval requirement that doesn't exist in the policy and conflates the policy sunset with ineligibility. Answer D misreads 'not automatically grandfathered' \u2014 that language refers to continued COVID-EXT extensions, not to appeal eligibility itself. The Slack thread shows staff uncertainty, but the authoritative answer lives in the resolved comment that Lisa Pham was trying to locate."
+}

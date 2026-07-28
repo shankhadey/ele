@@ -1,0 +1,24 @@
+{
+  "title": "Multi-Brand Franchisee Approval Chain Ambiguity After Org Restructure",
+  "category": "approval_chain",
+  "domain": "compliance_legal",
+  "difficulty": "hard",
+  "scenario_text": "**CRM \u2014 Franchisee Record: 'Lakeside Ventures LLC'**\nOwner: Christine Morel | Brands: Haven Home #0088, Stride & Co. #0156 | Status: Active | Agreement Note: 'Multi-brand operator \u2014 performance reviews consolidated per 2024 restructure memo.' Last field visit: Feb 2026 (Haven Home), Nov 2025 (Stride & Co.).\n\n**Google Drive \u2014 /franchise-ops/policies/multi-brand-approval-matrix-v2.pdf (Effective: Jan 2025)**\nSection 2.1: 'Multi-brand operators requesting new unit approval require sign-off from: (1) Brand-level VP, (2) Franchise Operations Director, (3) CFO for any capital commitment exceeding $500K.'\nSection 2.4: 'Transfer of ownership or addition of new brand to existing operator requires all three approvals plus Legal review.'\n\n**Google Drive \u2014 /franchise-ops/policies/multi-brand-approval-matrix-v1.pdf (Effective: Mar 2023, Superseded Jan 2025)**\nSection 2.1: 'Multi-brand operators requesting expansion require sign-off from Regional VP and Franchise Operations Director only.'\n[No CFO requirement. No Legal review requirement.]\n\n**Slack \u2014 #brand-leads (May 15, 2026, 11:23 AM)**\n@danielle.foster: Christine Morel wants to add a third brand (Velo Cycle). She's been a top performer \u2014 mystery shop scores 90+ across both units. I'm supportive.\n@gregory.park: Which approval path? She's adding a brand, not a new unit of existing brand.\n@danielle.foster: Section 2.1 of the multi-brand matrix \u2014 just needs Brand VP + you + CFO right?\n@gregory.park: That's new unit. Adding a brand is 2.4 \u2014 needs Legal too.\n@danielle.foster: Got it. I'll loop in legal.\n@cfo.office: [thumbs up emoji reaction on Danielle's original message]\n\n**Outlook \u2014 From: danielle.foster@atlasretail.com To: legal-franchise@atlasretail.com (May 16, 2026)**\nSubject: Multi-brand addition \u2014 Lakeside Ventures / Velo Cycle\nHi team \u2014 Christine Morel (Lakeside Ventures LLC) is looking to add Velo Cycle as a third brand. Per the approval matrix v2 Section 2.4, we need legal review. Her field visit reports and mystery shop scores are attached. Greg and I are both supportive. CFO office has acknowledged.\nPlease advise on timeline.\n[No reply in thread as of May 27, 2026]\n\n**Google Calendar \u2014 'Franchise Expansion Review' (May 20, 2026, 2:00 PM)**\nRequired: gregory.park (accepted), danielle.foster (accepted), cfo.office (declined), legal-franchise (tentative \u2014 no attendance confirmed)\nAgenda doc: [linked \u2014 document is empty]\nRecurrence: None\n\n**DocuSign \u2014 Pending Envelope: 'Lakeside Ventures LLC \u2014 Velo Cycle Brand Addition Agreement'**\nStatus: Draft | Created by: danielle.foster@atlasretail.com | Signers: christine.morel (franchisee), gregory.park (Franchise Ops), danielle.foster (Brand VP) | Missing signers: CFO, Legal\nCreated: May 22, 2026",
+  "question": "As of May 27, 2026, has the Lakeside Ventures multi-brand addition received sufficient approvals to proceed to franchisee signature under the current approval matrix?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Gregory Park",
+    "title": "Franchise Operations Director",
+    "organization": "Atlas Retail Holdings",
+    "years_experience": 15,
+    "domain_expertise": "Franchise agreement interpretation, approval chain governance, multi-brand operator management"
+  },
+  "tools_available": [],
+  "source_batch": "atlas-franchise-batch1.json",
+  "choices": [
+    "No \u2014 the CFO's emoji reaction is not a formal approval, the CFO declined the review meeting, Legal has not responded, and the approval matrix v2 Section 2.4 requires all three approvals plus Legal review",
+    "Yes \u2014 under the original approval matrix v1, only the Regional VP and Franchise Operations Director were required; since Christine's original agreements predate v2, the v1 approval path applies",
+    "Yes \u2014 Gregory Park and Danielle Foster have both approved, CFO gave a thumbs-up emoji in Slack, and the DocuSign envelope is already drafted and ready to send",
+    "No \u2014 but only because Legal hasn't responded yet; the CFO's Slack emoji constitutes acknowledgment per Atlas's informal approval culture, so only Legal sign-off is outstanding"
+  ]
+}

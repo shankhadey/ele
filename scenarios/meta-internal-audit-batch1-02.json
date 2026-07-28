@@ -1,0 +1,24 @@
+{
+  "title": "Dual-System Approval with Currency Mismatch on Mexico Plant Expenditure",
+  "category": "cross_system_synthesis",
+  "domain": "compliance_legal",
+  "difficulty": "hard",
+  "scenario_text": "You're testing the procure-to-pay cycle at Ironforge's Monterrey plant during interim SOX testing. The plant runs SAP ECC 6.0 while HQ uses S/4HANA. A $485K tooling expenditure for an aerospace customer's part qualification was flagged by analytics because the amounts don't reconcile across systems:\n\n**SAP ECC 6.0 (Monterrey) \u2014 PO 4600003381**\nVendor: Sandvik Coromant Mexico S.A. de C.V. (LIF-002871) | Material: TOOL-KIT-AERO-TI | Net value: MXN 8,342,160.00\nCreated: 2025-11-18 | Release: J.DELGADO (Plant Controller) on 2025-11-19\nExchange rate applied: 17.20 MXN/USD (SAP maintained rate, updated monthly)\n\n**SAP S/4HANA (Cleveland HQ) \u2014 Cross-plant reporting, consolidated view**\nIntercompany PO reference: IC-PO-2025-1847 | USD equivalent shown: $485,009.30\nApproval workflow: Triggered at >$400K USD threshold | Approved by: C.MORRISON (CFO) on 2025-11-22\nApproval basis: '$485K per SAP consolidation report'\n\n**SharePoint \u2014 /finance/fx-rates/monthly-rate-setting-nov2025.xlsx**\n[File properties: Last modified 2025-11-03 by Treasury]\nNov 2025 official rate for MXN/USD: 17.45 (per Treasury policy, rates are set on 1st business day using Bloomberg fixing)\n[Note in cell comment by @Treasury.Analyst]: 'ECC Monterrey rate not updated since Oct \u2014 IT ticket INC-88214 open for rate feed sync issue'\n\n**ServiceNow \u2014 INC-88214**\nOpened: 2025-10-28 | Priority: P3 | Assigned: SAP Basis team\nDescription: 'Monthly FX rate feed from Treasury to ECC Monterrey failed for November cycle. Manual update needed.'\nStatus: Open (as of 2025-12-15 audit date) | No comments since opening.\n\n**Microsoft Teams \u2014 #monterrey-finance (2025-11-17, 9:12 AM)**\n@J.Delgado: @SAP.Support the rate feed is still broken. Can someone manually update MXN rate? We have POs that need to go out this week.\n@SAP.Support: Ticket is with Basis. For now you can use T-code OB08 to update manually.\n@J.Delgado: What rate should I use?\n[Thread ends \u2014 no response. No evidence of manual update in SAP change logs for OB08.]\n\n**Outlook \u2014 J.Delgado to C.Morrison (2025-11-20)**\nSubject: Tooling PO for Aerojet qualification \u2014 needs HQ sign-off\n'Carlos \u2014 PO is MXN 8.3M, roughly $485K at current rates. Need your release for the HQ threshold. Attached is the vendor quote and project justification.'\n[Morrison replied 2025-11-22: 'Approved. Please ensure this hits the Q4 accrual.']",
+  "question": "What is the correct USD value of this expenditure for SOX testing purposes, and what is the control implication of the discrepancy?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Franklin Owens",
+    "title": "Internal Audit Manager",
+    "organization": "Ironforge Manufacturing",
+    "years_experience": 14,
+    "domain_expertise": "SOX compliance, control testing, cross-system reconciliation, FX control environments"
+  },
+  "tools_available": [],
+  "source_batch": "meta-internal-audit-batch1.json",
+  "choices": [
+    "Cannot determine \u2014 the FX rate discrepancy means the transaction should be excluded from the SOX sample until the IT ticket is resolved and the rate is corrected in ECC",
+    "$478,007.45 (Treasury policy rate of 17.45) \u2014 the correct rate per policy was not applied due to a known system deficiency; the CFO approved based on an incorrect amount, but the approval is still valid since the correct amount is lower than what was approved",
+    "$485,009.30 (SAP consolidated rate of 17.20) \u2014 the system-generated amount is authoritative; the rate variance is immaterial and within tolerance",
+    "$478,007.45 (Treasury policy rate of 17.45) \u2014 the stale rate in ECC means the PO was recorded at an incorrect amount; the CFO's approval is invalid because it was based on misstated information, and the amount still exceeds the $400K threshold requiring re-approval at the correct figure"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "title": "DFARS Version Conflict in Equitable Adjustment on Pre-2023 Contract",
+  "category": "policy_version",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "Context from Costpoint \u2014 Contract W91278-20-D-0067, Task Order 0003:\nContract type: T&M | Awarded: Mar 2020 | Task Order 0003 issued: Jun 2022 | Current mod: P00012 (pending, equitable adjustment request). Applicable DFARS edition at award: DFARS 252.243-7002 (Dec 2018). Current DFARS edition: DFARS 252.243-7002 (Jan 2024 revision).\n\n**SharePoint \u2014 /proposals/W91278/TO3/cost-narrative-P00012.docx (last modified Mar 3, 2025):**\nSection 3 \u2014 Equitable Adjustment Basis:\n'Sentinel requests equitable adjustment of $487,200 for the directed scope change under CLIN 0003AA. Labor rates applied per the task order's negotiated ceiling rates. Indirect rates applied: FY24 provisional billing rates per DCMA-approved forward pricing rate agreement (FPRA) dated Nov 2024.'\n\n**Email \u2014 Subject: 'W91278 TO3 \u2014 EA Cost Methodology Question' (Mar 10, 2025)**\nFrom: capt.morrison@us.army.mil\nTo: pat.holloway@sentineldef.com\n\nMs. Holloway \u2014 We're reviewing your EA proposal. Question: you applied FY24 indirect rates, but the changes clause incorporated at contract award references the Dec 2018 DFARS language. Under that version, the equitable adjustment should use rates 'in effect at the time the work was performed.' The directed change occurred in Aug 2024; can you confirm whether the Aug 2024 actual rates or the FY24 FPRA rates are more appropriate?\n\n\u2014 Capt. Morrison, ACO\n\n**Teams \u2014 #sentinel-cost-accounting (Mar 11, 2025, 10:30 AM)**\n@pat.holloway: Linda \u2014 got a question from the ACO on W91278 TO3. They're asking whether we should use actuals or FPRA rates for the EA. DFARS version at award says 'rates in effect at time work performed.'\n@linda.castellano: For a T&M, the ceiling rates on the schedule cap your direct labor. Indirects should be actuals for work already performed, FPRA for forward pricing.\n@pat.holloway: But the EA spans Aug-Dec 2024. Some work performed, some forward.\n@linda.castellano: Then bifurcate. Aug-Nov use actuals (we have those final now), Dec forward use FPRA.\n@pat.holloway: Got it. But wait \u2014 our FY24 actuals came in LOWER than FPRA. $487K was built on FPRA throughout.\n@linda.castellano: :eyes:\n@pat.holloway: Yeah. If we bifurcate, the number drops to maybe $461K.\n@linda.castellano: You already submitted at $487K?\n@pat.holloway: Submitted last week.\n@linda.castellano: You'll need to self-correct before they catch it. CAS 401 consistency issue if you don't.\n[Thread ends]\n\n**Costpoint \u2014 Indirect Rate Summary FY2024:**\nFPRA rates (approved Nov 2024): Fringe 38.2% | OH 64.1% | G&A 12.8%\nActual rates (final, certified Feb 2025): Fringe 37.9% | OH 61.3% | G&A 12.4%\n\n**GovWin \u2014 Contract Notes (internal):**\nW91278-20-D-0067: 'NOTE \u2014 Dec 2018 DFARS changes clause applies. Do NOT cite Jan 2024 revision language in any mods. PCO confirmed in Apr 2023 telecon that contract will not be bilaterally modified to incorporate later DFARS revisions.'",
+  "question": "What is the correct indirect rate methodology for Sentinel's equitable adjustment proposal, and does the submitted $487,200 figure require correction?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Patricia Holloway",
+    "title": "Contracting Officer",
+    "organization": "Sentinel Defense Solutions",
+    "years_experience": 19,
+    "domain_expertise": "FAR/DFARS compliance, contract modifications, T&M contract types, equitable adjustments"
+  },
+  "tools_available": [],
+  "source_batch": "sentinel-contracting-batch1.json",
+  "choices": [
+    "Use actual FY24 rates for Aug-Nov 2024 and FPRA for December forward; the proposal must be self-corrected downward to approximately $461K before the ACO identifies the discrepancy",
+    "Use the FY24 actual rates for the entire period since all work occurred in FY24 and final rates are now certified; the proposal must be corrected but likely to a figure below $461K",
+    "Use the Jan 2024 DFARS revision methodology which allows FPRA rates throughout; the $487,200 is correct under current DFARS",
+    "Use FPRA rates for the entire period (Aug-Dec 2024) as submitted; the $487,200 is correct because FPRA rates are the standard for all forward-priced modifications regardless of when work was performed"
+  ]
+}

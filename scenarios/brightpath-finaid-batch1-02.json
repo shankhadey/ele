@@ -1,0 +1,24 @@
+{
+  "title": "Professional Judgment Override by Unauthorized Counselor Post-Delegation Matrix Update",
+  "category": "approval_chain",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "**Banner Financial Aid Module \u2014 Award Record (ID: B00512984)**\nName: Aisha Okonkwo | Enrollment: Half-time, Junior | Campus: Main Campus\nISIR Status: Verified, C-flag cleared | EFC: $14,200 (as filed)\nPJ Override applied: Aug 19, 2026 | Override type: Income adjustment (loss of employment) | New EFC: $0 | Processed by: R. Guzman\nAward adjusted: Pell increased from $0 to $3,648; institutional need-based grant added $2,500\n\n**Google Doc \u2014 'PJ Delegation Matrix AY2026-27' (v3, effective Jul 1, 2026)**\nSection 2: Professional Judgment Authority Levels\n- Income adjustments > $10,000 impact: Senior Counselor or above\n- Income adjustments resulting in zero EFC: Director approval required\n- Dependency overrides: Associate Director or above\n[Version history: v2 (AY2025-26) stated: 'Income adjustments of any amount: Financial Aid Counselor II or above']\n\n**PeopleSoft HR \u2014 Employee Record**\nRoberto Guzman | Title: Financial Aid Counselor II | Department: Financial Aid | Start date: Mar 2023 | Supervisor: L. Pham (Senior Counselor)\nNote: Promotion to Senior Counselor effective Oct 1, 2026 (approved in PeopleSoft Aug 30, 2026)\n\n**Slack \u2014 #finaid-team (Aug 18, 2026, 3:22 PM)**\n@r.guzman: Hey @l.pham \u2014 I have a student (Okonkwo) whose parent lost their job in June. Documentation checks out. ISIR is clean. Going to process the PJ for income adjustment. EFC goes to zero.\n@l.pham: Sounds straightforward. Go for it. :thumbsup:\n[Thread: 1 reply, 1 emoji reaction]\n\n**Google Chat \u2014 Faculty Advising Channel (Aug 20, 2026, 11:15 AM)**\n@prof.harrison: Quick FYI for advising \u2014 Aisha Okonkwo's aid package was updated yesterday. She should be clear to register for full load next term if she wants. I saw the adjustment in Banner this morning.\n\n**Email \u2014 Subject: 'PJ Delegation Update Reminder' (Jul 8, 2026)**\nFrom: j.caldwell@brightpath.edu\nTo: finaid-all@brightpath.edu\n\n'Team \u2014 Reminder that the updated PJ delegation matrix (v3) is effective as of July 1. Key change: any PJ resulting in zero-EFC now requires my sign-off before processing. Please route these to me or Kenji. I know this adds a step but we got flagged in the program review for insufficient documentation on high-impact PJs. See the matrix doc for full details. \u2014Jen'\n\n**Slate CRM \u2014 Admissions Note (for context)**\nOkonkwo, Aisha: Transfer student from Portland CC (Fall 2025). Scholarship: Dean's Transfer Award $1,500/yr (merit, not need-based). Enrollment counselor: M. Torres.",
+  "question": "During a quarterly file review, the Director discovers this override. What is the correct determination regarding the validity of Guzman's professional judgment action on the Okonkwo record?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Jennifer Caldwell",
+    "title": "Director of Financial Aid",
+    "organization": "Brightpath State University",
+    "years_experience": 16,
+    "domain_expertise": "Federal financial aid (Title IV), SAP appeals, professional judgment decisions, institutional aid policy"
+  },
+  "tools_available": [],
+  "source_batch": "brightpath-finaid-batch1.json",
+  "choices": [
+    "The override is invalid and must be reversed because Guzman lacked authority under the v3 matrix, and a Slack thumbs-up does not constitute Director approval for zero-EFC determinations.",
+    "The override is valid because Guzman's promotion to Senior Counselor was already approved in PeopleSoft on Aug 30, retroactively covering the Aug 19 action.",
+    "The override is valid because Lisa Pham (Senior Counselor) provided implicit approval via Slack, satisfying the 'Senior Counselor or above' threshold for income adjustments.",
+    "The override should be referred to the federal program review team because processing a PJ without proper delegation is a Title IV compliance violation requiring self-disclosure."
+  ]
+}

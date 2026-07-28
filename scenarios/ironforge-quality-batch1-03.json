@@ -1,0 +1,24 @@
+{
+  "title": "Traceability Gap in Material Revision Changeover",
+  "category": "temporal_consistency",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "Your customer Precision Aerospace has issued a field service bulletin requiring identification of all parts shipped between March 15 and April 30, 2026 for potential recall. The affected component is part number 7840-A-REV3 (aluminum mounting bracket). In SAP, you query production history and find 847 units shipped during the window across 8 lot numbers. The drawing revision history in your PLM system shows: Rev 2 (effective through March 22, 2026, 10:00 AM), Rev 3 (effective March 22, 2026, 10:00 AM onwards). ECN-5381 documents the Rev 2\u21923 change: material specification changed from Alloy 6061-T6 to 6063-T6 for cost reduction. The ECN was approved March 15 and released for production March 22. Your SAP material master shows part number 7840-A-REV3 was created March 22 at 09:15 (before the 10:00 AM effectivity time - IT created the record in advance). You examine the 8 lot numbers: Lots J4801-J4805 (produced March 18-21) show material code MAT-6061T6-LD (legacy material code from the 2018 ERP migration). Lots J4811-J4813 (produced March 25-April 28) show material code AL-6063-T6-STD (the current code format from 2024). However, in the Cleveland plant's maintenance Excel tracker (\\\\shared\\Plant1\\maintenance-log.xlsx), you find an entry dated March 23, 08:30 AM: 'Forklift damaged 4 pallets of 6063 alloy in receiving. Material quarantined. Borrowed 2 pallets of 6061 from WIP inventory (old stock, Lot J4799) to keep Line 3 running. Shift supervisor Tony approved. Will replenish when new 6063 delivery arrives 3/25.' This entry was made by Jerry Santos, a maintenance tech who doesn't enter data in SAP. You cross-reference: Lot J4811 (first lot showing 6063 in SAP) was produced March 23, 11:00 AM - 7:45 PM. The forklift incident occurred at 8:30 AM that same day. Production records in SAP show Line 3 ran continuously March 23, no downtime. The 'borrowed' 6061 material from Lot J4799 (produced February 2026 under Rev 2) isn't traced in SAP because it was an informal plant-floor material substitution. First Article Inspection (FAI) for Rev 3 was completed March 24 using Lot J4812 material (definitively 6063 alloy).",
+  "question": "Which lots require inclusion in the potential recall investigation for material specification discrepancy?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Henrik Johansson",
+    "title": "Quality Assurance Manager",
+    "organization": "Ironforge Manufacturing",
+    "years_experience": 17,
+    "domain_expertise": "AS9100/IATF 16949 compliance, deviation management, CAPA, change control"
+  },
+  "tools_available": [],
+  "source_batch": "ironforge-quality-batch1.json",
+  "choices": [
+    "Lots J4801-J4805 only - they were produced before the Rev 3 effectivity date and may have been mislabeled",
+    "All 8 lots (J4801-J4813) - the SAP material master was created before effectivity time, creating traceability uncertainty",
+    "Lots J4801-J4805 and J4811 - all lots showing material code inconsistencies or temporal gaps with the Rev 3 changeover",
+    "Lot J4811 only - the maintenance log indicates old 6061 alloy was used on March 23 despite SAP showing 6063"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "title": "CAS Disclosure Statement Change and Split-Period G&A Allocation",
+  "category": "policy_version",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "Context from Costpoint (Indirect Rate Module): CAS Disclosure Statement Rev 7 effective date: January 1, 2026. Change: G&A allocation base moved from Total Cost Input (TCI) to Value-Added Cost Input (VACI), excluding material and subcontract costs above $100K. Prior revision (Rev 6) used TCI. Forward pricing rate agreement (FPRA) signed with DCMA reflects VACI base effective 1/1/2026. Provisional billing rates updated in system 2/15/2026.\n\n**SharePoint \u2014 /finance/CAS-disclosures/Rev7-approval-chain (uploaded 12/18/2025)**\nFiled with CFAO on 11/30/2025. Acknowledgment received 12/15/2025. Effective date confirmed as 'beginning of contractor's next fiscal year' per CAS 9903.202-3.\n[RESOLVED COMMENT by @l.castellano, 11/22/2025]: 'DCAA fieldwork on FY25 ICS still in progress \u2014 they're using Rev 6 for everything through 12/31. Confirmed verbally with Auditor Jenkins that costs incurred in December that hit the ledger in January will be treated based on incurred date, not posting date.'\n\n**Teams \u2014 #cost-accounting (Jan 14, 2026, 3:47 PM)**\n@kevin.marsh: Linda \u2014 the Orion subcontract (CPFF, $2.3M) had a milestone payment of $1.4M that was accrued in December but the invoice didn't post until Jan 3. Under VACI this would be excluded from base since it's >$100K. Under TCI it was in the base. Which method?\n@l.castellano: Incurred in December = Rev 6 applies. TCI base.\n@kevin.marsh: Got it. But the G&A pool itself \u2014 do we use Jan rates since that's when it booked?\n@l.castellano: No. The cost belongs to Dec cost pool regardless of posting date.\n[Thread ends \u2014 no further replies]\n\n**Email \u2014 Subject: 'RE: FY25 ICS Draft \u2014 Orion Sub Costs' (Mar 2, 2026)**\nFrom: d.jenkins@dcaa.mil\nTo: l.castellano@sentineldefense.com\nCC: dcaa-resident@sentineldefense.com\n\n> On Feb 28, l.castellano wrote:\n> The $1.4M Orion milestone was accrued in FY25 (December) per ASC 606 recognition.\n> We allocated G&A using TCI base consistent with Rev 6.\n\nLinda \u2014 we concur on the incurred-date treatment. However, our preliminary testing shows $218K in material costs from PO 4471-A that posted in January but reference a December delivery receipt. If those are FY25 incurred costs, they'd also go in the TCI base and your FY25 G&A rate denominator increases. Your current ICS draft doesn't include them. Please reconcile.\n\n**Costpoint \u2014 Journal Entry JE-2026-0142 (Jan 8, 2026)**\nDescription: 'Correct Dec material receipt \u2014 PO 4471-A, delivery 12/28, invoice rec'd 1/6'\nDebit: Direct Material Pool (Project NIGHTHAWK-III) $218,000\nCredit: AP Accrual $218,000\nApproval: K. Marsh (Cost Analyst) \u2014 auto-approved per threshold policy\nNote: No project manager sign-off (PM was on PTO 12/23 through 1/7)",
+  "question": "Given the DCAA's finding about PO 4471-A, what is the correct treatment for the $218K in the FY25 Incurred Cost Submission, and what compliance risk exists with the journal entry?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Linda Castellano",
+    "title": "Director of Cost Accounting & Compliance",
+    "organization": "Sentinel Defense Solutions",
+    "years_experience": 20,
+    "domain_expertise": "CAS compliance, indirect rate structure, incurred cost submissions, DCAA audit response, cost allowability"
+  },
+  "tools_available": [],
+  "source_batch": "sentinel-cost-accounting-batch1.json",
+  "choices": [
+    "The $218K belongs in the FY26 G&A pool under VACI (Rev 7) because the journal entry posted in January; no compliance risk since auto-approval met Costpoint threshold policy.",
+    "The $218K belongs in the FY25 G&A base under TCI (Rev 6) because it was incurred in December; the compliance risk is the missing PM sign-off, which doesn't affect CAS treatment but creates a FAR 31.201-2(d) adequacy question for DCAA.",
+    "The $218K should be excluded from both FY25 and FY26 until the PM provides retroactive approval; without project authorization the cost is suspended and potentially unallowable.",
+    "The $218K belongs in FY25 under TCI but should be excluded from the G&A allocation base entirely because material costs over $100K are excluded under the new VACI methodology."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Conflicting SAR Approval Chain Across Three Legacy Policy Frameworks",
+  "category": "approval_chain",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "You've completed a 45-day investigation into suspicious structuring activity by Crescent Auto Group, a dealership customer that came through the 2021 acquisition of Piedmont Community Bank. Your analysis shows 18 cash deposits over 60 days, each between $8,500-$9,700, totaling $164K, with deposits split across three branch locations. The pattern clearly meets SAR filing criteria under 31 CFR 1020.320. You've documented everything in Archer GRC with supporting evidence: deposit tickets, customer statements, branch staff interviews noting the customer insisted on cash despite offered financing, and a suspicious lack of business rationale given the dealership's established banking relationship and credit facility. The issue: which approval matrix applies? The current Cascade Financial Group BSA Policy (v8.2, effective January 2025) requires: Analyst recommendation \u2192 BSA Officer review \u2192 Chief Compliance Officer approval for all SARs. However, Crescent Auto Group's CIF originated in the Piedmont system, and you discover a SharePoint folder labeled 'Piedmont Legacy Procedures' containing their BSA Manual (v3.1, last updated 2020) stating: Analyst recommendation \u2192 Regional Compliance Manager \u2192 BSA Officer (who also files). The Regional Compliance Manager role no longer exists after restructuring. You also find an email chain from March 2024 in your Outlook archive where the Chief Compliance Officer explicitly stated: 'Until MDM completes, legacy Piedmont relationships follow the interim matrix in the 2023 Integration Guide\u2014BSA Officer has final authority for SARs under $250K to expedite filings during transition.' You locate the 2023 Integration Guide on SharePoint, which indeed shows a simplified two-step approval for legacy Piedmont customers. However, a Teams message from your BSA Officer last week mentioned: 'I got pushback from Internal Audit on that interim process\u2014use the current policy for everything now.' No formal policy update or memo exists documenting this change. You're now at day 28 of the investigation with the 30-day initial SAR deadline approaching.",
+  "question": "Which approval process should you follow to ensure both timely filing and regulatory defensibility?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Keisha Robinson",
+    "title": "AML/BSA Compliance Analyst III",
+    "organization": "Cascade Financial Group",
+    "years_experience": 12,
+    "domain_expertise": "Beneficial ownership, KYC/CDD/EDD, sanctions screening, SAR filing decisions"
+  },
+  "tools_available": [],
+  "source_batch": "cascade-aml-batch1.json",
+  "choices": [
+    "Use the interim 2023 Integration Guide two-step process since it was formally published and specifically addresses legacy Piedmont relationships, noting the BSA Officer's Teams message doesn't constitute policy change",
+    "Follow the Piedmont legacy procedure since the customer relationship originated there, substituting the current BSA Officer for the discontinued Regional Compliance Manager role",
+    "Escalate immediately to Chief Compliance Officer with documentation of all three conflicting frameworks, request written clarification of governing policy, and file within 30 days using whatever approval chain is confirmed",
+    "Follow the current Cascade policy (v8.2) with full three-step approval chain, request deadline extension if needed, and document the policy conflict in the SAR narrative"
+  ]
+}

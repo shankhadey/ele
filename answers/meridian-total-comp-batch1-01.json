@@ -1,0 +1,6 @@
+{
+  "scenario_file": "meridian-total-comp-batch1-01.json",
+  "correct_answer": "No \u2014 the Reeves exception was a board-level one-time acqui-hire approval explicitly marked as non-precedent-setting; the base exceeds the current band ceiling and requires a new exception request through proper channels.",
+  "answer_format": "multiple_choice",
+  "rationale": "The critical signal is in the #people-ops Slack message from August 2025, where Jasmine explicitly flagged the Reeves exception as a one-time board-level approval tied to an acqui-hire, not to be used as precedent. This is reinforced by the Offer Exception Tracker showing 'Board Comp Committee' as approver with explicit non-precedent language. Answer A fails because it treats a one-time board exception as binding precedent without reading the informal channel context. Answer C incorrectly applies Pave 75th percentile data when Meridian's comp philosophy targets 65th for base (not 75th), and the 'de minimis' framing has no basis in the approval matrix \u2014 any above-ceiling offer requires formal exception. Answer D reaches the right conclusion for the wrong reason: VP Eng declining a calendar invite doesn't block the process; the real blocker is that this requires a proper exception request since the cited precedent is invalid."
+}

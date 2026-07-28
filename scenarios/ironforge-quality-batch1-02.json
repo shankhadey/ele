@@ -1,0 +1,24 @@
+{
+  "title": "CAPA Procedure Revision During Multi-Month Investigation",
+  "category": "policy_version",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "scenario_text": "CAPA-2026-0089 was initiated February 12, 2026 for recurring weld porosity failures in automotive transmission housings (customer: Midwest Automotive Systems). Root cause investigation spanned four months due to complexity. The CAPA record in MasterControl shows: Initiated 2/12/26, Root Cause Analysis completed 5/8/26, Corrective Action Plan approved 5/22/26, Implementation target 6/15/26. During your monthly management review meeting on June 25, the Quality Director notes that CAPA-2026-0089 is overdue for closure and asks why effectiveness verification wasn't completed within the 90-day target. You review the case timeline. Your CAPA procedure QP-08-002 was at Rev F when this CAPA initiated (effective date: January 15, 2026). That revision required: Root cause within 30 days, corrective action plan within 60 days, implementation within 90 days, effectiveness check at 30 days post-implementation. However, you notice in the SharePoint quality manual folder that QP-08-002 Rev G was published April 1, 2026 (effective date: April 15, 2026) with revised timelines: Root cause within 45 days, corrective action plan within 90 days, implementation within 120 days for 'complex manufacturing process CAPAs' (new category), effectiveness check at 60 days post-implementation. In a Teams channel message dated April 28, Quality Engineer Amy Liu posted: 'Heads up - talked to Henrik, he confirmed CAPA-0089 qualifies as complex manufacturing under new Rev G. Updating my tracker accordingly.' You have no memory of this conversation, but Amy left the company in May (exit date: 5/17/26) and her successor Mark Chen is now managing CAPA-0089. The MasterControl CAPA record header still references 'Procedure: QP-08-002 Rev F' and hasn't been updated. The corrective action (installation of automated weld parameter monitoring system) was completed June 10, 2026, and the first verification samples are scheduled for July 15 (35 days post-implementation, splitting the difference between Rev F's 30 days and Rev G's 60 days).",
+  "question": "Under which procedure revision should CAPA-2026-0089 be evaluated for timeline compliance?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Henrik Johansson",
+    "title": "Quality Assurance Manager",
+    "organization": "Ironforge Manufacturing",
+    "years_experience": 17,
+    "domain_expertise": "AS9100/IATF 16949 compliance, deviation management, CAPA, change control"
+  },
+  "tools_available": [],
+  "source_batch": "ironforge-quality-batch1.json",
+  "choices": [
+    "Rev F - the revision in effect when the CAPA was initiated governs the entire lifecycle",
+    "Rev G - it became effective April 15, before the Root Cause Analysis was completed, and applies to all open CAPAs",
+    "Rev F for phases completed before April 15; Rev G for phases completed after April 15 (hybrid application)",
+    "Rev G - Amy Liu's Teams message and Henrik's verbal confirmation constitute documented reclassification to 'complex manufacturing'"
+  ]
+}

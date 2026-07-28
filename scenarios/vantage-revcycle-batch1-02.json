@@ -1,0 +1,24 @@
+{
+  "title": "Payer Contract Entity Mismatch After Hospital Merger",
+  "category": "policy_version",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "**Cerner RevCycle -- Denial Report (Week of 04/07/2026):**\n47 claims denied by HealthFirst HMO | Total billed: $1.2M | Denial Code: CO-109 (\"Claim/service not covered by this payer/contractor\") | All claims from Riverside Campus providers | DOS range: 03/01/2026 -- 03/31/2026\n\n**SharePoint -- /contracts/payers/HealthFirst/ (folder contents):**\n- HealthFirst-VHP-MasterAgreement-2019.pdf (signed by \"Vantage Health Partners Inc.\")\n- HealthFirst-RMC-Agreement-2017.pdf (signed by \"Riverside Medical Center\" -- pre-merger entity)\n- Amendment-2023-Merger-Transition.pdf (extends RMC agreement through \"transition period ending 12/31/2025\")\n\n**Outlook -- Email thread (01/15/2026):**\nFrom: Lisa.Engstrom@vantagehp.org (Managed Care Director)\nTo: Contracting@healthfirstmn.com\nCC: michelle.torres@vantagehp.org\nSubject: RE: RE: Riverside Campus Transition to Master Agreement\n\n> On 01/10, Contracting@healthfirstmn.com wrote:\n> > We received your request to add Riverside Campus providers to the VHP master agreement.\n> > Our credentialing team needs updated rosters. Please submit via the provider portal by 02/28.\n>\n> Lisa: Roster submitted today via portal. Please confirm receipt and processing timeline.\n\n[No reply in thread]\n\n**Epic -- Credentialing Module (queried 04/08/2026):**\nRiverside Campus providers: 34 active | Status in HealthFirst network: 12 show \"Active-VHP\", 22 show \"Pending-Transition\"\n\n**Microsoft Teams -- Managed Care Team channel (02/27/2026, 4:55 PM):**\nLisa Engstrom: @team heads up -- HealthFirst confirmed via phone they received our roster. Said processing takes 30-45 business days. We should be good by mid-April. No written confirmation yet but I trust Diane over there.\nReaction: 1x thumbs-up from michelle.torres\n\n**QGenda -- Provider Schedule (March 2026):**\nRiverside Campus: 22 of the \"Pending-Transition\" providers had active patient schedules throughout March, seeing HealthFirst HMO patients.\n\n**SharePoint -- /policies/revcycle/timely-filing-guidelines-v3.pdf (effective 01/2026):**\nSection 2.1: \"All claims must be submitted within 90 days of DOS or per payer contract terms, whichever is shorter. HealthFirst HMO: 60-day timely filing limit from DOS.\"",
+  "question": "Given the denial of all 47 Riverside Campus claims for March 2026, what is the correct resolution path and what is the critical deadline?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Michelle Torres",
+    "title": "Revenue Cycle Director",
+    "organization": "Vantage Health Partners",
+    "years_experience": 16,
+    "domain_expertise": "Claims management, denial resolution, patient identity matching, payer contract interpretation"
+  },
+  "tools_available": [],
+  "source_batch": "vantage-revcycle-batch1.json",
+  "choices": [
+    "Escalate to HealthFirst to expedite the 22 pending credentialing transitions, then resubmit claims once providers show Active-VHP status; timely filing deadline is 60 days from DOS (latest: May 30, 2026)",
+    "Appeal the 12 claims from Active-VHP providers under the master agreement immediately, and escalate credentialing for the remaining 22 providers with resubmission before the 60-day timely filing window closes on the earliest DOS (April 30, 2026)",
+    "File all 47 claims under the legacy RMC agreement (HealthFirst-RMC-Agreement-2017.pdf) since the transition amendment expired but the base contract may still be arguable",
+    "Appeal all 47 claims citing the 2019 VHP Master Agreement which covers all VHP facilities; deadline is 60 days from date of denial (approximately June 6, 2026)"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Cross-Brand Return Ring with Shared Payment Instrument",
+  "category": "entity_resolution",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "NetSuite \u2014 Returns Dashboard (Brand: UrbanEdge)\nReturn #RE-20260412: SKU UE-8834 (leather jacket, $389) returned 4/12/2026. Refund issued to Visa ending 4471. Customer: 'David Morales', 118 Flatbush Ave, Brooklyn, NY. Reason: 'Didn't fit.' Store associate: Marcus T. (Location: UrbanEdge SoHo). No receipt \u2014 POS lookup matched purchase from 3/28.\n\nNetSuite \u2014 Returns Dashboard (Brand: Threads & Co)\nReturn #TC-20260415: SKU TC-2209 (cashmere wrap, $275) returned 4/15/2026. Refund issued to Visa ending 4471. Customer: 'D. Morales', 118 Flatbush Ave Apt 3, Brooklyn, NY. Reason: 'Defective.' Store associate: Priya K. (Location: Threads & Co Williamsburg).\n\nShopify \u2014 Online Returns (Brand: KineticWear)\nRMA #KW-9921: Order KW-5567812, SKU KW-APEX-BLK (running shoes, $210) returned via mail 4/18/2026. Refund to PayPal (david.m.nyc@gmail.com). Shipping label origin: Brooklyn, NY 11217. Customer account: 'DaveMNYC'. Account created 3/15/2026.\n\nSquare POS \u2014 Exception Report (Brand: UrbanEdge, SoHo location)\nAlert: Associate Marcus T. processed 4 refund-without-receipt transactions in 14-day window (threshold: 5/30 days). Individual amounts: $389, $215, $178, $290. All within authority limit ($400).\n\nSlack \u2014 #lp-alerts (Apr 19, 2026, 9:47 AM)\n@jenny.okafor: Hey @anthony.dimaggio \u2014 Riskified flagged a velocity cluster on card ending 4471. Seven purchases across 3 brands in 21 days, all high-value apparel. Six have already been returned. The 7th is a $520 coat from Threads & Co purchased yesterday.\n@anthony.dimaggio: Which brands? Do we have a unified customer ID?\n@jenny.okafor: No, separate profiles per brand obviously. But the card match is clean. Also the PayPal on the KW return resolves to the same name.\n@anthony.dimaggio: Put a return hold on the coat. I'll pull the full picture.\n[reacted with: eyes emoji]\n\nGoogle Sheets \u2014 'LP Exception Log Q2 2026'\nRow 34: Date: 4/12 | Brand: UrbanEdge | Flag: 'Refund w/o receipt over $300 \u2014 manager override by Sandra L.' | Notes: 'Sandra approved verbally, Marcus processed. Sandra noted customer was VIP loyalty member.' | Policy ref: 'RP-2025-v3 Sec 4.1'\n\nZendesk \u2014 Ticket #ZD-442918 (Brand: KineticWear)\nCustomer: DaveMNYC | Created: 4/16/2026 | Subject: 'Return label not working'\nAgent note (internal, 4/17): 'Customer demanding expedited return. Mentioned he returns frequently and has never had issues. Offered $25 credit to resolve. Customer accepted but still wants full refund on item.'",
+  "question": "Based on the available evidence, what is the correct next action for Loss Prevention?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Anthony DiMaggio",
+    "title": "Loss Prevention Manager",
+    "organization": "Atlas Retail Holdings",
+    "years_experience": 13,
+    "domain_expertise": "Return fraud detection, ORC analysis, POS exception monitoring across multi-brand retail"
+  },
+  "tools_available": [],
+  "source_batch": "atlas-loss-prevention-batch1.json",
+  "choices": [
+    "Escalate Sandra L. for the manager override on the $389 return \u2014 the exception log shows she approved a refund-without-receipt over the $300 threshold in RP-2025-v3, which requires LP director sign-off",
+    "No action needed yet \u2014 each individual brand's returns are within policy limits, and the card match alone is insufficient without identity verification across brands",
+    "Flag Marcus T. for internal investigation \u2014 his exception count is approaching threshold and the refund-without-receipt on the $389 jacket is the primary concern",
+    "Treat this as a confirmed cross-brand ORC pattern tied to a single actor via payment instrument matching, place holds on all pending returns linked to card 4471 and the associated PayPal, and escalate to the multi-brand fraud committee"
+  ]
+}

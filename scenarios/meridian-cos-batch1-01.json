@@ -1,0 +1,24 @@
+{
+  "title": "The VP Engineering Exception That Wasn't",
+  "category": "precedent_exception",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "You're reviewing a comp exception request for Sarah Chen, a Senior Engineering Manager reporting to VP Engineering David Kumar. The request landed in your inbox yesterday asking for a $40K off-cycle increase to match a competing offer. The formal exception request in Asana references \"CEO verbal approval in our 1:1 on June 18\" and David's Slack message to you says \"Per my conversation with James [CEO], we're green-lit to move forward. Sarah's critical to the platform reorg and we can't lose her.\"\n\nYou check the decision log (Google Doc titled \"Q2 2026 Comp Exceptions\") which shows three approved exceptions this quarter: two retention cases at $25K each for product managers, and one market adjustment at $30K for a sales leader. The log notes: \"CEO guidance 6/12: Hold line on eng comp exceptions until post-Series C. Too many requests, setting bad precedent.\"\n\nYou weren't in the June 18th CEO-David 1:1 (it was added last-minute as a skip-level with Sarah, your calendar shows the decline notification). You check Slack and find a DM thread between James and David from June 20th. David: \"Following up on Sarah's comp situation.\" James: \"Remind me - what's the number?\" David: \"40K to match offer.\" James: \"That's steep. What if we do 25K now and promise another look at year-end?\" David: \"I can try but the offer is 40K more than current.\" James: \"OK try the 25K path first. If she's really walking we'll revisit but I want to see the counter-offer letter.\"\n\nThe Asana exception request attached Sarah's verbal offer summary (no letter), shows $40K, and was submitted June 24th. You also notice in Google Doc version history that David edited the Q2 decision log on June 19th, adding a line \"Engineering retention exceptions approved up to $50K per CEO 6/18 guidance\" but James reverted it 4 hours later with the comment \"let's discuss, don't think this is what I said.\"\n\nHR is waiting for your approval to process. David is pressuring you in Slack: \"Sarah's giving us EOD Monday. Need to move.\"",
+  "question": "What is the correct approval status of Sarah's $40K comp exception?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Amanda Liu",
+    "title": "Chief of Staff to the CEO",
+    "organization": "Meridian Systems",
+    "years_experience": 9,
+    "domain_expertise": "Executive decision tracking, informal approval channels, reorg execution"
+  },
+  "tools_available": [],
+  "source_batch": "meridian-cos-batch1.json",
+  "choices": [
+    "Denied - CEO's June 12 guidance to hold the line on eng exceptions supersedes any informal discussion, and the reorg context doesn't constitute a documented exception",
+    "Approved - CEO gave verbal approval in the June 18 skip-level and the request is within Engineering's retention authority",
+    "Approved for $40K - The CEO's June 20 Slack acknowledgment of \"we'll revisit\" constitutes approval once the threshold condition (she's really walking) is met",
+    "Conditionally approved for $25K pending counter-offer letter - must follow CEO's June 20 Slack guidance before escalating to full $40K"
+  ]
+}

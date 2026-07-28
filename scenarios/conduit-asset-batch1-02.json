@@ -1,0 +1,24 @@
+{
+  "title": "Grandfathered NESC Standard Versus New Development Trigger with Lapsed Budget Authority",
+  "category": "approval_chain",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "scenario_text": "Context from SharePoint \u2014 /engineering/standards/nesc-compliance-matrix.xlsx (last modified: 2024-03-15):\nAsset TL-2290-044 (Distribution pole, wood, installed 1991). Listed as 'Grandfathered \u2014 NESC 2007 edition.' Note in column K: 'Clearance to ground = 22.1 ft (meets 2007 min of 18.5 ft; does NOT meet 2023 min of 23.0 ft for new construction).'\n\nContext from Esri ArcGIS (parcel layer + asset overlay):\nParcel 09-443-012 (adjacent to TL-2290-044) rezoned from Agricultural to Commercial on 2025-11-20. New site plan filed: 3-story mixed-use building. Structure TL-2290-044 is within 15 ft of new building envelope per site plan overlay.\n\nContext from Outlook \u2014 email chain (Subject: 'RE: RE: 2290 pole conflict \u2014 new development on Parcel 09-443'):\nFrom: jessica.huang@conduitenergy.com (Engineering Supervisor)\nTo: doug.brennan@conduitenergy.com\nDate: 2026-01-08\n\n> On Jan 5, tom.nakamura wrote:\n> > Under NESC 234C2, the rezoning and proximity of new structure triggers current-edition compliance.\n> > We need to relocate or raise the pole. Estimate: $185K.\n>\n> Doug \u2014 I confirmed with Steve Martinez (VP, Grid Ops) verbally on Thursday that this should go\n> through as a capital improvement. He said 'just get it done, we'll figure out the bucket later.'\n\nDoug \u2014 Steve approved but his delegation authority caps at $150K for unplanned capital per the 2025 delegation matrix (updated after the rate case). Anything above that needs Karen Albright (SVP, Operations) or it goes to the capital committee.\n\nContext from SAP (Project budget system):\nBlanket WO for 'Distribution Pole Replacements \u2014 2026' | Budget: $2.4M | Spent YTD: $1.9M | Remaining: $500K | Approval authority: VP Grid Ops (Steve Martinez) for individual items up to delegation limit.\n\nContext from Microsoft Teams \u2014 #grid-engineering (2026-01-12, 9:17 AM):\n@tom.nakamura: Filed the Maximo WO for 2290-044 relocation. Tagged it to the blanket. $185K.\n@jessica.huang: (checkmark emoji)\n@doug.brennan: Hold on \u2014 did we get Karen's sign-off? Steve's limit changed after the rate case.\n[Message edited by @doug.brennan at 9:19 AM \u2014 original text not visible]\n@tom.nakamura: Steve said it's fine. He told Jessica directly.\n@doug.brennan: (no reply)\n\nContext from Custom FileMaker (Regulatory filings):\nDocket CE-2025-0034: Conduit Energy 2025 rate case. Approved 2025-09-01. Exhibit 14: Updated delegation of authority matrix. Capital project approval: VP = $150K, SVP = $500K, Capital Committee = $500K+.",
+  "question": "What is the correct disposition of the $185K pole relocation project given all evidence across these systems?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Douglas Brennan",
+    "title": "Asset Integrity Manager",
+    "organization": "Conduit Energy",
+    "years_experience": 25,
+    "domain_expertise": "Infrastructure inspection programs, regulatory compliance for aging assets, capital vs expense decisions"
+  },
+  "tools_available": [],
+  "source_batch": "conduit-asset-batch1.json",
+  "choices": [
+    "The project needs capital committee approval ($500K+) because it should be combined with the existing blanket spend, making the cumulative authorization exceed SVP threshold.",
+    "The project can proceed under the grandfathered NESC 2007 standard since the pole itself is not being modified \u2014 only the adjacent parcel is changing \u2014 so no upgrade trigger exists.",
+    "The project requires SVP (Karen Albright) approval because it exceeds Steve Martinez's $150K delegation limit per the post-rate-case matrix, regardless of blanket WO availability.",
+    "The project is properly authorized \u2014 Steve Martinez has blanket WO authority over the $2.4M distribution pole replacement budget, and $185K is within the remaining $500K balance."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Material Consolidation Traceability Failure in Quality Complaint",
+  "category": "temporal_consistency",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "Ironforge's quality team receives a customer complaint about fatigue cracking in aerospace-grade turbine blade forgings. The complaint references S/4HANA material number 5500-TB-0120. During the 2024 migration, three legacy ECC materials were consolidated into this single golden record. The root cause investigation needs to determine which specific legacy material \u2014 and therefore which production process \u2014 is responsible.\n\n**SAP S/4HANA \u2014 Quality Notification QN-2026-00847**\nMaterial: 5500-TB-0120 (Turbine Blade Forging, Ti-6Al-4V, Aerospace Grade)\nBatch: FG-2025-44821 | Customer: Pratt & Whitney\nDefect: Fatigue cracking at dovetail root | Detection: Customer incoming inspection\nProduction date: Aug 2025 | Plant: 2000 (Cleveland)\n\n**SharePoint \u2014 /migration/mapping-tables/material-consolidation-master.xlsx**\nTarget material 5500-TB-0120 maps from:\n- Legacy ECC MAT-44120: \"Turbine blade forging \u2014 standard geometry (Plant 2000)\"\n- Legacy ECC MAT-44120-A: \"Turbine blade forging \u2014 modified root radius (Plant 2000)\"\n- Legacy ECC MAT-44121: \"Turbine blade forging \u2014 wide chord variant (Plant 3000, Akron)\"\nConsolidation rationale: \"Same alloy, same spec (AMS 4928), same end-use. Variants captured in classification characteristics.\"\n\n**MasterControl \u2014 Document #DC-2022-0445 (Controlled Document)**\nTitle: \"Process Deviation Report \u2014 Modified Dovetail Forging Die\"\nEffective: Mar 2022 | Status: Closed\nDescription: \"MAT-44120-A introduced to accommodate revised customer drawing (P&W Dwg Rev F). Root radius reduced from 2.5mm to 1.8mm per customer request. Die qualification completed per AS9100 clause 8.5.6.\"\nApproval: Quality Director, Engineering VP\n\n**Microsoft Teams \u2014 #quality-engineering (Aug 18, 2025, 11:02 AM)**\n@dave.kowalski: Running the batch trace on QN-2026-00847. S/4 shows material 5500-TB-0120 but I need to know which legacy variant this batch actually came from. The consolidation mapping just shows all three feeding into one number.\n@raj.chowdhury: Check the batch classification characteristics. We migrated the legacy material number into a Z-field on the batch master. Should be ZLEGACY_MATNO.\n@dave.kowalski: Found it \u2014 it's MAT-44120-A.\n@raj.chowdhury: That's the modified root radius one. :eyes:\n@dave.kowalski: Yeah. And the cracking is at the dovetail root. Connecting some dots here.\n[No further messages \u2014 thread ends]\n\n**SAP S/4HANA \u2014 Batch Master FG-2025-44821 (Classification view)**\nCharacteristic ZLEGACY_MATNO: MAT-44120-A\nCharacteristic ZDIE_SET: DS-2022-003\nCharacteristic ZCUST_DWG_REV: F\n\n**Excel \u2014 Plant 2000 Maintenance Log (network drive: \\\\CLE-PROD-01\\maint\\forge-press-PM.xlsx)**\nRow 1,204: Die set DS-2022-003 | Last inspection: Jul 2025 | Cycles since refurb: 8,420\nNote (hand-typed): \"hairline wear mark observed at root cavity, within tolerance per visual. Flagged for next PM window (Oct 2025).\"",
+  "question": "Based on the available evidence, what is the most likely root cause chain for the fatigue cracking in batch FG-2025-44821, and which system contains the earliest indicator that should have triggered preventive action?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Raj Chowdhury",
+    "title": "ERP Migration & Data Governance Lead",
+    "organization": "Ironforge Manufacturing",
+    "years_experience": 11,
+    "domain_expertise": "Data migration, legacy system decommissioning, master data reconciliation, cutover planning"
+  },
+  "tools_available": [],
+  "source_batch": "meta-erp-migration-batch1.json",
+  "choices": [
+    "The root cause cannot be determined without the legacy ECC routing data which was not migrated; the investigation should be paused until the Mexico plant ECC system (which holds backup routing archives) can be queried",
+    "The defect is a customer-specification issue since P&W requested the reduced root radius; Ironforge manufactured to drawing and the complaint should be rejected with reference to MasterControl document DC-2022-0445 showing customer-directed design change",
+    "The reduced root radius (1.8mm per P&W Drawing Rev F) combined with die wear at the root cavity created a stress concentration; the Excel maintenance log noting 'hairline wear mark at root cavity' in July 2025 was the earliest actionable signal that should have triggered die replacement before the August production run",
+    "The material consolidation itself caused the defect by losing process-specific routing information; the SharePoint mapping table is the root cause artifact and all batches of 5500-TB-0120 should be quarantined"
+  ]
+}

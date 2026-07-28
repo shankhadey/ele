@@ -1,0 +1,24 @@
+{
+  "title": "Deceased Client Trust Beneficiary Designation Conflict Across Legacy Systems",
+  "category": "entity_resolution",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "**WealthPort (Legacy Custodian System) \u2014 Account #WP-7734291**\nAccount type: Revocable Living Trust | Registration: 'The Margaret A. Holloway Revocable Trust dtd 05/14/2008' | Trustee: Margaret A. Holloway | Successor Trustee: David R. Holloway (son) | Beneficiaries: David R. Holloway (60%), Sarah Holloway-Park (40%) | Status: Active | Last rebalance: 08/2025 | AUM: $2.34M\n\n**Dynamics 365 \u2014 Contact Record**\nName: Margaret Holloway | Household: Holloway Family | Advisor: Craig Fenton | Status: Deceased (date of death: 03/15/2026) | Linked accounts: 3 (Trust WP-7734291, IRA WP-7734295, TOD WP-7734298) | Notes (04/01/2026, Craig Fenton): 'David called. Wants to begin trust administration. Sending him to ops.'\n\n**SharePoint \u2014 /trusts/holloway/trust-agreement-restated-2019.pdf**\nRestated Trust Agreement dated 11/20/2019. Article IV, Section 3: Upon death of Grantor, trust corpus to be distributed: David R. Holloway (50%), Sarah Holloway-Park (25%), Portland Community Foundation (25%). Page last accessed: 2023-01-08.\n\n**Microsoft Teams \u2014 #wealth-ops-escalations (Apr 3, 2026, 9:47 AM)**\n@craig.fenton: Quick q \u2014 Margaret Holloway passed. WealthPort shows 60/40 David/Sarah but I know she restated. Which version governs?\n@elaine.hartwell: The restated agreement controls. WealthPort was never updated after the 2019 restatement. Happens all the time with the legacy system.\n@craig.fenton: Got it. So 50/25/25 per the restatement?\n@elaine.hartwell: Correct BUT check if there's a subsequent amendment. She came in late 2024 I think.\n@craig.fenton: \ud83d\udc4d\n[No further messages in thread]\n\n**Outlook \u2014 Email from legal@cascadefinancial.com to craig.fenton@cascadefinancial.com (Apr 5, 2026)**\nSubject: RE: Holloway Trust \u2014 Amendment Search\n> Craig, found it. Third Amendment to Restated Trust dated 12/03/2024. Only change: Portland Community Foundation allocation reduced to 15%, remainder (10%) added to Sarah's share. So final split is David 50%, Sarah 35%, PCF 15%. Amendment is executed and notarized. Filing in SharePoint now.\n\n**ServiceNow \u2014 RITM0088234 (opened Apr 3, 2026)**\nRequest: Update beneficiary designations on WP-7734291 | Status: On Hold | Hold reason: 'Pending certified death certificate and Letters Testamentary from David Holloway' | Assigned to: Trust Administration team",
+  "question": "Craig Fenton needs to communicate the correct distribution percentages to David Holloway. Based on all available information, what is the correct beneficiary split for the trust corpus?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Elaine Hartwell",
+    "title": "Wealth Management Operations Director",
+    "organization": "Cascade Financial Group",
+    "years_experience": 15,
+    "domain_expertise": "Account transfers, fiduciary responsibility, trust administration, estate settlements, discretionary authority"
+  },
+  "tools_available": [],
+  "source_batch": "cascade-wealth-batch1.json",
+  "choices": [
+    "David R. Holloway 50%, Sarah Holloway-Park 25%, Portland Community Foundation 25% \u2014 per the restated trust agreement",
+    "David R. Holloway 60%, Sarah Holloway-Park 40% \u2014 per the custodian system of record",
+    "Cannot be determined until Letters Testamentary are received and the ServiceNow hold is cleared",
+    "David R. Holloway 50%, Sarah Holloway-Park 35%, Portland Community Foundation 15% \u2014 per the Third Amendment"
+  ]
+}

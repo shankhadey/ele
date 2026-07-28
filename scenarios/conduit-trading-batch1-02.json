@@ -1,0 +1,24 @@
+{
+  "title": "ISDA Credit Support Annex Threshold Change and Collateral Call Timing",
+  "category": "policy_version",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "It's April 18, 2026. Your credit manager forwards an email from counterparty Apex Power Marketing demanding Conduit Energy post $1.2M in collateral by April 22 under your ISDA Credit Support Annex (CSA). The collateral call cites \"negative mark-to-market of $2.4M on gas swap positions as of April 15, 2026, exceeding Conduit's $1.0M threshold per CSA Section 3(a).\"\n\nYou pull the executed CSA from SharePoint (dated March 2018). Section 3(a) states: \"Threshold for Conduit Energy: USD $1,000,000. Minimum Transfer Amount: USD $250,000.\" However, buried in your Outlook Sent folder, you find an email thread from January 2025 where Apex's credit officer wrote: \"Per our call, we're increasing Conduit's threshold to $1.5M given your improved credit rating (BBB+ as of Q4 2024). Amendment is in legal review, expect execution in March.\" Your credit manager replied: \"Understood, thanks. We'll operate under $1.5M effective Feb 1 pending paperwork.\"\n\nYou check SharePoint's contract amendments folder - no executed amendment exists. You call Apex's back office. Their collateral management system shows Conduit's threshold as $1.0M (never updated). However, their trader mentions in passing: \"Yeah, we've been using $1.5M since February. Our system is wrong but we've honored it for 15 months. Legal never finalized the paperwork but we had a deal.\"\n\nAllegro shows your mark-to-market at -$2.38M on April 15. SAP credit monitoring has been flagging Apex positions against a $1.5M threshold since February 2025. Your finance VP asks: \"Do we legally owe this collateral by April 22?\"",
+  "question": "What is Conduit Energy's legally enforceable collateral obligation under the ISDA CSA as of April 18, 2026?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Katherine Engstr\u00f6m",
+    "title": "Power Trading Operations Manager",
+    "organization": "Conduit Energy",
+    "years_experience": 16,
+    "domain_expertise": "Energy market settlements, contract interpretation, counterparty risk"
+  },
+  "tools_available": [],
+  "source_batch": "conduit-trading-batch1.json",
+  "choices": [
+    "$0 - the $2.4M mark-to-market does not exceed the $1.5M threshold agreed to in January 2025",
+    "$1.25M - calculated as ($2.4M MTM - $1.0M threshold - $250K Minimum Transfer Amount)",
+    "$1.13M - calculated as ($2.38M MTM - $1.5M threshold), rounded to Minimum Transfer Amount",
+    "$1.4M - calculated as ($2.4M MTM - $1.0M executed threshold), rounded to nearest $100K per standard practice"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Accommodation Approval via Unauthorized Channel During Investigation Hold",
+  "category": "approval_chain",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "**ServiceNow HR Case \u2014 CASE0013205**\nType: Workplace Investigation | Employee: Denise Okafor, Quality Engineer (Plant 3 \u2014 Mexico) | Opened: Oct 28, 2025\nStatus: On Hold (FMLA) | Hold Start: Nov 4, 2025 | Investigator: Craig Penner (separated Nov 22, 2025)\nCase notes (Oct 28): 'Complaint filed by D. Okafor alleging hostile work environment. Named respondent: Shift Supervisor Ramos. Interim separation of duties implemented.'\nCase notes (Nov 4): 'Okafor began FMLA leave (serious health condition). Investigation paused per ER SOP 7.3.'\nCase notes (Nov 22): 'Penner's last day. Case reassignment pending.'\n[No further case activity]\n\n**ServiceNow HR Case \u2014 CASE0013288**\nType: Accommodation Request | Employee: Denise Okafor | Opened: Jan 8, 2026\nStatus: Open | Notes (Jan 8): 'Okafor returning from FMLA Jan 20. Requests modified schedule (no night shifts) citing ongoing treatment. Manager Ramos asked to provide essential functions analysis.'\n\n**Microsoft Teams \u2014 DM between @luis.ramos and @karen.cho (Plant 3 HR Coordinator) (Jan 10, 2026, 3:22 PM)**\n@luis.ramos: Karen can we just approve the no-nights thing? I don't want her on my shift anyway tbh. Less drama.\n@karen.cho: I mean I can mark it approved in the system. She's a good worker when she's not causing problems.\n@luis.ramos: Do it. I'll adjust the rotation.\n@karen.cho: Done \u2705\n\n**ADP \u2014 Denise Okafor (Emp #5587)**\nClassification: Salaried/Exempt | Location: Plant 3 (Monterrey) | FMLA Status: Approved through Jan 19, 2026 | Supervisor: Luis Ramos\nSchedule Change Effective: Jan 20, 2026 \u2014 'Day shift only per accommodation'\n\n**SharePoint \u2014 /policies/hr/ada-interactive-process (v2.1, published Aug 2024)**\nSection 3.2: 'All accommodation determinations require completion of the Interactive Process, including (a) identification of essential functions, (b) review by ER or designee with ADA training, and (c) documented good-faith dialogue with the employee. Direct supervisors may NOT approve accommodations unilaterally.'\nSection 5.1: 'Where accommodation involves schedule modification, Workforce Planning must confirm operational feasibility before approval.'\n\n**Outlook \u2014 From: craig.penner@ironforge.com To: natalie.brennan@ironforge.com (Nov 18, 2025)**\nSubject: Okafor case \u2014 heads up before I go\n> Nat \u2014 just flagging this one. Ramos is the named respondent in the harassment complaint. If Okafor comes back and needs anything routed through her manager, there's an obvious conflict. Make sure whoever picks this up knows not to loop Ramos into any decisions about her employment conditions. I left a note in the case but you know how things fall through the cracks here.\n\n**Microsoft Teams \u2014 #hr-team (Jan 15, 2026, 9:05 AM)**\n@karen.cho: Quick update \u2014 Okafor accommodation sorted. She's day shift starting the 20th.\n@natalie.brennan: Wait, who ran the interactive process?\n@karen.cho: Luis approved it, seemed straightforward.\n[No further replies]",
+  "question": "On Jan 15, 2026, Natalie discovers the accommodation was approved. What is the most critical compliance failure, and what must happen before Okafor's return on Jan 20?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Natalie Brennan",
+    "title": "Employee Relations Manager",
+    "organization": "Ironforge Manufacturing",
+    "years_experience": 16,
+    "domain_expertise": "Workplace investigations, ADA interactive process, accommodation requests, conflict-of-interest protocols"
+  },
+  "tools_available": [],
+  "source_batch": "ironforge-employee-relations-batch1.json",
+  "choices": [
+    "The accommodation was approved without Workforce Planning sign-off on operational feasibility; Natalie must obtain their confirmation before Jan 20 to validate the schedule change.",
+    "Karen Cho lacked system authority to mark the accommodation approved; the ADP entry is an unauthorized system change that should be reversed, and the accommodation request should be reprocessed through proper channels.",
+    "The interactive process was not completed (no essential functions analysis, no ER review, no documented dialogue with Okafor), AND the named respondent in an open investigation approved a term/condition of the complainant's employment \u2014 both the accommodation and investigation are now compromised.",
+    "The investigation case (CASE0013205) was never reassigned after Penner's departure, creating a procedural gap; the accommodation is valid but the investigation must be restarted from scratch."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Discretionary Trade Authorization After Missed Annual Review",
+  "category": "approval_chain",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "**WealthPort \u2014 Account #WP-4401837**\nAccount type: Individual Investment Management | Registration: 'Gerald T. Whitmore' | Authority: Discretionary | IPS dated: 06/15/2023 | Risk profile: Moderate Growth | Target allocation: 65% equity / 30% fixed / 5% alternatives | Annual review: Due 06/2024 \u2014 NOT COMPLETED | AUM: $1.87M\n\n**Dynamics 365 \u2014 Activity Log (Advisor: Pamela Reeves)**\n03/10/2026: Call note \u2014 'Gerald mentioned wife diagnosed with early-onset Alzheimer's. Concerned about long-term care costs. Asked about liquidity options. Told him we'd discuss at annual review.'\n05/22/2026: Email sent \u2014 Annual review scheduling invitation\n06/01/2026: Follow-up call \u2014 no answer, left voicemail\n\n**Outlook Calendar \u2014 'Whitmore Annual Review' (originally scheduled Jun 15, 2024)**\nStatus: Cancelled | Cancelled by: Gerald Whitmore (via assistant) | Reason noted in body: 'Mr. Whitmore traveling internationally through August. Will reschedule upon return.' | Reschedule: Never occurred.\n\n**Bloomberg Terminal \u2014 Trade Blotter (Pamela Reeves, Jun 10, 2026)**\nAccount WP-4401837: SELL $280K municipal bonds (AAA-rated, 4.2% yield) | BUY $280K S&P 500 index ETF | Rationale field: 'Rebalancing toward target equity allocation per IPS'\n\n**SharePoint \u2014 /policies/wealth-mgmt/discretionary-trading-policy-v7.pdf (revised Jan 2026)**\nSection 4.1: 'Advisors may execute discretionary trades consistent with the current IPS without prior client approval.'\nSection 4.3: 'An IPS is considered current if the annual review has been completed within the trailing 14 months OR the client has provided written confirmation that no changes to objectives are needed.'\nSection 4.5 (new in v7): 'Material life events communicated by the client constitute constructive notice of potential IPS invalidation. Advisors must document acknowledgment and obtain updated suitability confirmation before executing discretionary trades when material changes are known.'\n\n**Microsoft Teams \u2014 #compliance-questions (Jun 8, 2026, 3:15 PM)**\n@pamela.reeves: If a client's IPS is past due for review but the target allocation hasn't changed, can I still trade discretionary?\n@robert.nakamura: Technically 4.3 gives you 14 months from last review. When was the last one?\n@pamela.reeves: June 2023\n@robert.nakamura: That's 36 months. Way past the window. You'd need written confirmation or a new review.\n@pamela.reeves: Even if I'm just rebalancing to existing targets?\n@robert.nakamura: \ud83d\ude2c I'd get sign-off. Especially post-v7.\n[Thread ends]",
+  "question": "Compliance is reviewing Pamela Reeves' June 10 trade on the Whitmore account. Was the discretionary trade properly authorized?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Elaine Hartwell",
+    "title": "Wealth Management Operations Director",
+    "organization": "Cascade Financial Group",
+    "years_experience": 15,
+    "domain_expertise": "Account transfers, fiduciary responsibility, trust administration, estate settlements, discretionary authority"
+  },
+  "tools_available": [],
+  "source_batch": "cascade-wealth-batch1.json",
+  "choices": [
+    "Yes \u2014 the trade was consistent with the IPS target allocation (moving toward 65% equity), which is all discretionary authority requires under Section 4.1",
+    "No \u2014 the advisor was explicitly warned by compliance in the Teams channel not to proceed, and executed the trade anyway two days later",
+    "No \u2014 the IPS annual review is 36 months overdue, exceeding the 14-month currency window in Section 4.3, so discretionary authority is suspended",
+    "No \u2014 even if the IPS were current, Section 4.5 requires updated suitability confirmation because the advisor had constructive notice of a material life event (wife's Alzheimer's diagnosis and liquidity concerns), making the existing risk profile potentially invalid"
+  ]
+}

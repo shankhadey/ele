@@ -1,0 +1,24 @@
+{
+  "title": "Cross-Acquisition Beneficial Owner Mismatch During High-Risk Client Review",
+  "category": "entity_resolution",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "You're conducting enhanced due diligence on Apex Industrial Holdings LLC, a commercial client flagged for elevated wire activity to high-risk jurisdictions. The relationship originated from the 2023 acquisition of Mountain States Bank. In Dynamics 365 (legacy Mountain States instance), the beneficial ownership structure shows: Robert Chen (45%), Maria Volkov (30%), Apex Management Services LLC (25%). The CDD refresh date is 08/15/2024, and the risk rating is 'Medium.' The FIS Horizon core banking system lists the primary signer as Robert Chen with a Charlotte business address. During your OFAC screening review, you notice a fuzzy match alert from three months ago on 'M. Volkova' that was dispositioned as 'false positive\u2014common name' by a junior analyst who left the company in January. You pull the original CDD file from SharePoint (archived under Mountain States Bank folder structure) and find a 2022 beneficial ownership certification listing Maria Volkova at 30% with a Moscow correspondence address. While searching for updated documentation, you discover a forwarded email thread in Outlook from your manager's archive (June 2024) where the client's accountant mentions casually: 'Maria sold her stake to Chen last year but we're still working on the operating agreement amendment\u2014should be done by end of Q2.' The accountant's email signature shows a firm in Vienna, Austria. You also find a CTR filed two weeks ago for a $45K cash deposit by Robert Chen, noting '100% owner' in the narrative. Your sanctions screening tool shows no current SDN matches, but Volkova's last known address in the 2022 file is in a region now subject to enhanced OFAC guidance issued in March 2025. The client submitted no updated beneficial ownership certifications since the CDD refresh 10 months ago, despite the ownership change mentioned informally.",
+  "question": "What is the most critical compliance action required before proceeding with the current EDD review?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Keisha Robinson",
+    "title": "AML/BSA Compliance Analyst III",
+    "organization": "Cascade Financial Group",
+    "years_experience": 12,
+    "domain_expertise": "Beneficial ownership, KYC/CDD/EDD, sanctions screening, SAR filing decisions"
+  },
+  "tools_available": [],
+  "source_batch": "cascade-aml-batch1.json",
+  "choices": [
+    "Update the Dynamics 365 record to reflect Chen at 100% based on the CTR narrative and accountant email, then complete EDD using the updated information",
+    "Escalate the OFAC fuzzy match to the sanctions screening team for re-disposition based on the Moscow address and current enhanced guidance, then proceed with EDD",
+    "Immediately file a SAR for potential sanctions evasion based on the informal ownership transfer and Vienna accountant connection without filing updated beneficial ownership",
+    "Suspend all transaction activity and obtain current beneficial ownership certification with supporting documentation before completing any further risk assessment, as the ownership structure is materially uncertain"
+  ]
+}

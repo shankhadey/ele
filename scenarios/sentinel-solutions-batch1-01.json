@@ -1,0 +1,24 @@
+{
+  "title": "Teaming Partner Entity Change Mid-Proposal with Stale SAM Registration",
+  "category": "entity_resolution",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "Context from GovWin (Opportunity ID: GW-2026-44891):\nAgency: DHS/CISA | Title: Cyber Threat Intelligence Platform (CTIP) | Type: Best Value | Est. Value: $48M/5yr IDIQ | Proposals Due: Apr 18, 2026.\nTeaming: Sentinel (Prime, CAGE: 3K7R2) with Aethon Cyber Group (Sub, CAGE: 5M9P1) for Threat Intel CLIN.\n\nContext from SharePoint \u2014 /proposals/CTIP-2026/teaming/:\nTeaming Agreement signed Dec 12, 2025 between Sentinel Defense Solutions (Div. 2) and Aethon Cyber Group LLC.\nPast Performance Volume (Draft v3, last edit Mar 28, 2026): References 3 Aethon contracts \u2014 DHS EINSTEIN III (Contract FA8721-19-C-0034), NSA SHARKTOOTH (classified ref), and FBI CTAS (Contract 15F06823C0091).\n\n**Email \u2014 Subject: 'FW: FW: Aethon News' (Mar 14, 2026)**\nFrom: j.kowalski@sentinel-ds.com\nTo: w.tran@sentinel-ds.com\nCC: capture-team-ctip@sentinel-ds.com\n\n> > Original from Aethon Cyber Group (Feb 28):\n> > 'Pleased to announce our merger with Ridgeline Systems effective March 1.\n> > We are now operating as Ridgeline-Aethon Inc.'\n>\n> Will \u2014 FYI. Not sure if this affects anything on our side.\n\nJake K.\n\n**Teams \u2014 #ctip-proposal (Mar 15, 2026, 9:41 AM)**\n@w.tran: Jake, saw the Aethon email. Checking SAM.gov now.\n@j.kowalski: Cool. Their POC says 'nothing changes for us' so I think we're fine.\n@w.tran: Their CAGE 5M9P1 still shows Aethon Cyber Group LLC as the legal entity in SAM. Registration current through Nov 2026.\n@j.kowalski: Perfect, no action needed then.\n[Thread ended]\n\n**SAM.gov \u2014 Entity lookup (queried Apr 10, 2026):**\nCAGE 5M9P1: Aethon Cyber Group LLC | Status: Active | Expiration: Nov 14, 2026\nCAGE 8J2L6: Ridgeline-Aethon Inc. | Status: Active | Registered: Mar 8, 2026 | Small Business: No\nNote: CAGE 5M9P1 \u2014 entity marked for administrative update pending next annual renewal.\n\n**Monday.com \u2014 CTIP Proposal Schedule:**\nPink Team: Complete | Red Team: Apr 5 (complete) | Gold Team: Apr 14 | Submission: Apr 18\nRed Team finding #7 (Apr 5): 'Past performance volume references Aethon Cyber Group. Confirm entity name matches proposal cover and teaming agreement. Status: Resolved - per Jake, SAM still shows Aethon.'\n\n**SharePoint \u2014 /policies/proposals/past-performance-guide.docx (v2.3, Oct 2024)**\nSection 4.1: 'Past performance citations must reference the exact legal entity name as registered in SAM.gov at time of proposal submission... Where a successor entity exists, Offerors must demonstrate the organizational continuity and provide novation or change-of-name documentation per FAR 42.12.'",
+  "question": "Given the information available as of April 10, 2026, what is the correct course of action for the past performance volume referencing Aethon's contracts?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "William Tran",
+    "title": "Solutions Architect & Proposal Manager",
+    "organization": "Sentinel Defense Solutions",
+    "years_experience": 15,
+    "domain_expertise": "Government proposal pricing, LPTA vs best-value evaluation, teaming arrangements, technical volume writing"
+  },
+  "tools_available": [],
+  "source_batch": "sentinel-solutions-batch1.json",
+  "choices": [
+    "Retain the Aethon entity name for the citations but add a novation/continuity letter from Ridgeline-Aethon Inc. demonstrating successor relationship per FAR 42.12, and flag that CAGE 5M9P1 is pending administrative update.",
+    "Replace all references to 'Aethon Cyber Group' with 'Ridgeline-Aethon Inc.' and update the CAGE code to 8J2L6 since that is the current operating entity.",
+    "No changes needed \u2014 CAGE 5M9P1 is still active under 'Aethon Cyber Group LLC' in SAM, so the past performance citations remain valid as written.",
+    "Remove Aethon's past performance citations entirely since the merged entity may no longer meet the teaming agreement terms, and substitute Sentinel's own cyber contracts."
+  ]
+}

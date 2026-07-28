@@ -1,0 +1,24 @@
+{
+  "title": "Forecasting Conflict Between CRM Pipeline and Usage Signals",
+  "category": "cross_system_synthesis",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "It's forecast call prep for Q2 close. The VP of Sales is projecting $1.8M in expansion bookings from Helios Corp. You need to validate or flag this number.\n\n**CRM \u2014 Opportunity Record:**\nAccount: 'Helios Corp' | Opp: 'Helios Platform Expansion \u2014 Enterprise Tier' | Amount: $1,800,000 | Stage: Negotiation | Close Date: 2026-06-28 | Next Steps: 'Contract in legal review' | Owner: Priya Sharma (Enterprise AE)\nAccount field 'Contract Type': Multi-year | Field 'Payment Terms': Net-60\n\n**Zuora \u2014 Current Subscription:**\nCustomer: 'Helios Corporation' | Current ARR: $620,000 | Product: Platform Pro (250 seats) | Usage (last 90 days): Avg 112 seats active | Overage: $0 | Contract end: 2026-09-30\n\n**Slack \u2014 #customer-success (May 14, 2026, 2:33 PM)**\n@aisha.patel: Heads up \u2014 Helios is going through a reorg. My champion (VP Eng) is moving to a different BU. New VP starts in July.\n@carlos.reyes: Didn't they also open 2 P1s last month?\n@aisha.patel: Yeah, both resolved but the CTO mentioned 'reevaluating vendor stack' in our last exec sync. Wouldn't read too much into it but noting it here.\n\n**Looker \u2014 Usage Dashboard (pulled Jun 20, 2026):**\nHelios Corp \u2014 Platform Pro:\n- Seats provisioned: 250\n- Seats active (30-day): 98\n- Seats active (90-day): 112\n- API calls (Jun MTD): 45% below contracted threshold\n- Feature adoption: 3 of 8 modules actively used\n- Trend: Declining MoM for 4 consecutive months\n\n**Slack \u2014 DM between Priya Sharma and Jamie Reeves (Jun 18, 2026):**\nPriya: Between us \u2014 Helios legal is pushing back on the 3-year term. They want annual with an out clause. I might need to restructure this.\nJamie: Does David know? That changes the booking number right?\nPriya: Not yet. Let me see if I can save the multi-year first. Don't mention in forecast call pls.\n\n**Google Doc \u2014 'Q2 Forecast Assumptions' (shared with RevOps, last edited Jun 15):**\nHelios Corp: $1.8M expansion. Assumes 3-year multi-year commitment at Enterprise tier (500 seats). SSP allocation: 70% platform / 30% services. Ratable recognition over term.",
+  "question": "Based on all available signals, what forecast adjustment recommendation should RevOps present at the Q2 forecast call?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "David Okafor",
+    "title": "Revenue Operations Manager",
+    "organization": "Meridian Systems",
+    "years_experience": 8,
+    "domain_expertise": "Revenue recognition (ASC 606), data reconciliation across CRM/billing/ERP, forecasting"
+  },
+  "tools_available": [],
+  "source_batch": "meridian-revops-batch1.json",
+  "choices": [
+    "Downgrade to $620K flat renewal at risk \u2014 usage at 39% of provisioned seats with declining trend and champion departure signals likely churn, not expansion",
+    "Move to $1.2M \u2014 apply a standard 30% haircut for multi-year-to-annual conversion risk while keeping the expansion assumption intact",
+    "Flag as at-risk; recommend re-forecasting to ~$600K annual booking (restructured as 1-year deal at current usage levels) with expansion upside removed from Q2 commit",
+    "Keep at $1.8M \u2014 the opportunity is in Negotiation stage with contract in legal review; AE-level DMs about deal structure are premature concerns"
+  ]
+}

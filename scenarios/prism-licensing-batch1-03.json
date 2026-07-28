@@ -1,0 +1,24 @@
+{
+  "title": "Holdback Conflict Between Legacy Distributor Grant and New DTC Deal",
+  "category": "approval_chain",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "scenario_text": "**RightsLine \u2014 Holdback Agreement (HB-2023-0091)**\nTitle: 'Dead Frequency' (feature film)\nGrantee: Pinnacle Home Entertainment\nHoldback Type: EST exclusive, North America\nHoldback Window: 6 months from theatrical release date (actual: Sep 15, 2023 \u2014 Mar 15, 2024)\nExtension Clause: 'If theatrical gross exceeds $15M domestic, holdback extends an additional 3 months.'\nTheatrical Gross (per agreement): References Box Office Mojo tracking\nStatus: Active\n\n**Monday.com \u2014 Content Pipeline Board (Card: 'Dead Frequency \u2014 DTC Launch')**\nOwner: Prism Streaming Team\nPlanned TVOD Launch: Jan 5, 2024\nPlanned EST Launch: Feb 1, 2024\nStatus: 'Ready for launch' (moved to this column Dec 18, 2023)\nComment (Dec 20, @j.navarro): 'Legal cleared this for Jan launch. No conflicts found in RL.'\n\n**Slack \u2014 #content-ops (Dec 22, 2023, 9:15 AM)**\n@christopher.adebayo: Hey @j.navarro \u2014 did you check the Pinnacle holdback on Dead Frequency? It's EST exclusive through March.\n@j.navarro: I checked RightsLine. Holdback ends Mar 15 per HB-2023-0091. Our EST launch is Feb 1 \u2014 that's inside the window. Pulling it back.\n@christopher.adebayo: Wait \u2014 did it cross $15M domestic? If so it extends to June.\n@j.navarro: Checking...\n[Thread continues 2 hours later]\n@j.navarro: BOM shows $16.2M. :grimacing: So the holdback runs through Jun 15, 2024?\n@christopher.adebayo: Yeah. TVOD should still be fine though \u2014 holdback is EST-only.\n@j.navarro: :thumbsup: Updating the board. EST pushed to Jul.\n\n**Monday.com \u2014 Same Card (updated Dec 22, 2023)**\nEST Launch: Changed to 'Jul 1, 2024'\nComment (@j.navarro): 'EST pushed per holdback extension. TVOD Jan 5 still good.'\n\n**Google Drive \u2014 Deal Memo (GM-2023-PIN-007, Last Modified: Mar 2023)**\nSection 4.1: 'The holdback granted herein was approved by VP Content Operations (M. Ishida) on behalf of Prism Media Group.'\nSection 4.3: 'Any modification, waiver, or early termination of this holdback requires approval at the same level or above as the original grant.'\n\n**Slack \u2014 #reorg-announcements (Feb 5, 2024)**\n@hr.team: Org update effective immediately: Content Operations now reports to Chief Revenue Officer (S. Whitfield). VP Content Ops role eliminated. M. Ishida transitioning to advisory role through Q2.\n\n**Notion \u2014 Editorial Calendar (Q3 2024 Planning, last edited May 2026)**\nDead Frequency EST launch: Listed as 'Jul 1, 2024' with note: 'Holdback cleared. Approved by J. Navarro (Sr. Content Coordinator).'",
+  "question": "Pinnacle Home Entertainment requests an early termination of the holdback in April 2024 (offering to waive exclusivity 2 months early). Who at Prism has the authority to approve this waiver?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Christopher Adebayo",
+    "title": "Content Licensing & Acquisitions Manager",
+    "organization": "Prism Media Group",
+    "years_experience": 9,
+    "domain_expertise": "Territorial rights management, rights reversion, holdback periods, licensor entity tracking, sublicensing restrictions"
+  },
+  "tools_available": [],
+  "source_batch": "prism-licensing-batch1.json",
+  "choices": [
+    "M. Ishida \u2014 he originally approved the holdback and the deal memo requires 'same level or above'; his advisory role preserves his signing authority through Q2",
+    "J. Navarro (Sr. Content Coordinator) \u2014 he has been managing the Dead Frequency release and already made the holdback-related scheduling decision",
+    "Christopher Adebayo (Content Licensing Manager) \u2014 he identified the holdback conflict and has operational ownership of distributor relationships",
+    "S. Whitfield (Chief Revenue Officer) \u2014 as the new leader of Content Operations post-reorg, she holds authority at or above the level of the original approver"
+  ]
+}

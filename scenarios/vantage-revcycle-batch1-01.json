@@ -1,0 +1,24 @@
+{
+  "title": "Cross-Facility Patient Identity Match with Payer Denial",
+  "category": "entity_resolution",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "**Epic (Lakewood Campus) -- Patient Record:**\nMRN: VHP-L-4492817 | Name: Margaret A. Kowalski | DOB: 03/14/1948 | SSN: ***-**-6271 | Primary Insurance: BlueCross MN PPO | Subscriber ID: XWB992014487 | Last encounter: 02/18/2026 (hip arthroplasty, DRG 470)\n\n**Cerner RevCycle -- Claim Denial (received 03/11/2026):**\nClaim #: CLM-2026-00881247 | Billed: $42,300 | DOS: 02/18/2026 | Denial Code: CO-4 (\"The procedure code is inconsistent with the modifier used or a required modifier is missing\") | ERA Payer Remark: \"Duplicate service -- patient received identical procedure at network facility on 01/22/2026. See prior auth PA-8841203.\"\n\n**Epic (Riverside Campus -- merged entity) -- Patient Record:**\nMRN: RMC-0087341 | Name: Maggie Kowalski-Dent | DOB: 03/14/1948 | SSN: ***-**-6271 | Primary Insurance: BCBS Minnesota | Subscriber ID: XWB992014487 | Encounter 01/22/2026: Right knee arthroscopy (CPT 29881), Dr. Pham\n\n**Health Cloud CRM -- Care Coordination Note (02/01/2026):**\nAccount: Margaret Kowalski | Note by RN Care Coordinator: \"Pt called re: upcoming L hip replacement at Lakewood. Confirmed she is same pt as Riverside MRN ending in 7341 -- name discrepancy due to recent marriage. MPI merge request submitted 01/28. Awaiting HIM review.\"\n\n**Slack -- #rev-cycle-denials (unofficial channel, 03/12/2026, 9:47 AM):**\n@jenna.park: Got a CO-4 on the Kowalski arthroplasty but the ERA remark says duplicate. That's not a CO-4, that's a CO-18 issue. Payer applied wrong denial code.\n@michelle.torres: Was the MPI merge completed before the claim dropped?\n@jenna.park: Checking... no, HIM still has it in queue. Claim went out with the old Lakewood MRN only.\n@michelle.torres: That explains it. Payer saw two different patients with same subscriber ID getting ortho procedures 4 weeks apart. Flag it -- we need the merge done before appeal.\n[Thread: 3 additional replies, then silence]\n\n**SharePoint -- /contracts/payers/BCBS-MN/VHP-Amendment-2024.pdf (last modified 08/2024):**\nSection 9.4: \"Claims for services rendered at any Vantage Health Partners facility shall be adjudicated under this agreement regardless of which campus-specific TIN was used for submission, provided the rendering provider holds active credentials within the VHP medical staff.\"",
+  "question": "What is the correct primary action to resolve this denial and ensure successful reimbursement?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Michelle Torres",
+    "title": "Revenue Cycle Director",
+    "organization": "Vantage Health Partners",
+    "years_experience": 16,
+    "domain_expertise": "Claims management, denial resolution, patient identity matching, payer contract interpretation"
+  },
+  "tools_available": [],
+  "source_batch": "vantage-revcycle-batch1.json",
+  "choices": [
+    "Complete the MPI merge first to unify MRNs, then appeal citing Section 9.4 of the BCBS-MN amendment and the distinct CPT codes proving non-duplicate services on a single unified patient record",
+    "Submit a corrected claim with modifier 59 (distinct procedural service) to override the duplicate edit, referencing both encounters as distinct anatomical sites",
+    "Refile the claim under the Riverside Campus TIN since the payer contract amendment covers all VHP facilities, bypassing the MPI issue entirely",
+    "Appeal the CO-4 denial citing incorrect denial reason code, as the procedure was a hip arthroplasty (DRG 470) not a duplicate of the knee arthroscopy (CPT 29881) -- no MPI merge needed"
+  ]
+}

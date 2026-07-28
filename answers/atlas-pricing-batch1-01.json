@@ -1,0 +1,6 @@
+{
+  "scenario_file": "atlas-pricing-batch1-01.json",
+  "correct_answer": "No \u2014 while v3.0 technically applies, Derek Walsh's email created an equitable estoppel situation; Atlas cannot enforce against a partner who relied on an authorized representative's explicit go-ahead",
+  "answer_format": "multiple_choice",
+  "rationale": "The critical signal is Derek Walsh's April 2 email explicitly telling Summit to 'go ahead and plan your summer promo like last year,' sent AFTER Laura corrected him in Slack (which he acknowledged with a thumbsup but clearly ignored). Derek, as Brand A GM, is an authorized representative of Atlas. Summit relied on his written instruction. This creates an estoppel problem \u2014 Atlas cannot enforce a policy requirement (portal registration) that its own representative told the partner to disregard. Answer A ignores the estoppel created by Derek's email and treats notification alone as sufficient. Answer D is wrong because most MAP policies operate as standalone documents incorporated by reference; the MSA language typically allows the referenced policy to be updated with notice. Answer D correctly identifies the promotional MAP but misses the fundamental enforceability problem \u2014 registration non-compliance is excused by Derek's instruction regardless of the price floor math."
+}

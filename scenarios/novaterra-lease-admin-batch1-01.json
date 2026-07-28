@@ -1,0 +1,24 @@
+{
+  "title": "Landlord Entity Change and Unexecuted SNDA at Lease Renewal",
+  "category": "entity_resolution",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "**Yardi Voyager \u2014 Property: 200 Parkview Plaza, Suite 400**\nTenant: DataSync Corp | Lease ID: PV-2019-0412 | Landlord Entity: Parkview Office Partners LLC | Term: 7 yrs commencing 4/1/2019 | NNN w/ CPI escalator | Base rent: $42.50/SF | Renewal option: 5-yr at 95% FMV\n\n**Shared Drive \u2014 \\\\ntserver\\properties\\parkview\\acquisitions\\**\nFile: 'NovaTerra_Parkview_Acquisition_Closing_Memo.pdf' (dated 9/15/2024)\nPurchaser: NovaTerra Parkview Holdings LLC | Seller: Parkview Office Partners LLC | All tenant leases assigned per Section 14 of PSA | SNDA delivery required within 90 days of closing per buyer's lender.\n\n**DocuSign \u2014 Envelope: SNDA-PV-2024-batch**\nStatus: Sent (10/2/2024) | Recipients: 14 tenants | DataSync Corp (Suite 400): Status = 'Declined' (10/18/2024) | Reason noted by signer: 'Counsel advises we cannot execute without landlord confirming TI reimbursement obligation transfers.'\n\n**Outlook \u2014 From: j.morrison@novaterra.com To: c.brennan@novaterra.com (11/4/2024)**\n'Catherine \u2014 DataSync never signed the SNDA. Their counsel is being difficult about the TI carryover. I spoke with Marcus at lunch and he said just proceed without it for now, the assignment clause in the PSA covers us. Let's circle back after year-end.'\n\n**MRI Software (acquired portfolio) \u2014 Tenant Ledger Cross-Ref**\nNote: DataSync Corp also appears as tenant at Meridian Tower (acquired portfolio), Suite 1200, under lease MER-2021-0087 with landlord entity 'Greystone Capital Realty LLC' (pre-acquisition name). That SNDA WAS executed post-acquisition.\n\n**Outlook \u2014 From: DataSync legal (forwarded chain, 2/3/2025)**\n> Original from DataSync counsel \u2192 NovaTerra legal:\n> 'Per our earlier correspondence, DataSync intends to exercise its renewal option at Parkview. However, we note the SNDA remains unexecuted. Our position is that renewal notice must be delivered to the original landlord entity (Parkview Office Partners LLC) as named in the lease, since no attornment has been established with NovaTerra Parkview Holdings LLC.'\n\n**Teams \u2014 #parkview-leasing (2/5/2025, 3:47 PM)**\n@c.brennan: Has anyone dealt with a renewal notice addressed to a dissolved entity?\n@m.santos: Parkview Office Partners wasn't dissolved, it was just the seller. Check the PSA assignment language.\n@c.brennan: Right but the tenant is saying without the SNDA they don't recognize us as landlord\n@m.santos: (thumbs_up emoji, no further reply)",
+  "question": "DataSync Corp has sent renewal notice addressed to 'Parkview Office Partners LLC.' Given the unexecuted SNDA, the PSA assignment clause, and the tenant's position, what is the correct administrative determination regarding the validity of this renewal notice?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Catherine Brennan",
+    "title": "Senior Lease Administrator",
+    "organization": "NovaTerra Property Group",
+    "years_experience": 18,
+    "domain_expertise": "CAM reconciliation, lease abstracting, rent escalation calculations, tenant entity tracking, landlord entity changes"
+  },
+  "tools_available": [],
+  "source_batch": "novaterra-lease-admin-batch1.json",
+  "choices": [
+    "The renewal notice is invalid because it was not delivered to the current landlord entity (NovaTerra Parkview Holdings LLC); DataSync must re-deliver to the correct entity within the option exercise window.",
+    "The renewal notice is valid; the PSA assignment transferred all landlord rights and obligations regardless of the unexecuted SNDA, and the tenant's delivery to the original named entity constitutes constructive notice to the successor.",
+    "The renewal notice is invalid because the unexecuted SNDA means no attornment relationship exists; NovaTerra has no standing as landlord until the SNDA is executed.",
+    "The renewal cannot be processed until both the SNDA and TI reimbursement transfer are resolved; the notice should be held in abeyance pending legal resolution."
+  ]
+}

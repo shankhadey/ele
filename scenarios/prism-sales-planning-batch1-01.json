@@ -1,0 +1,24 @@
+{
+  "title": "Upfront Make-Good Credits and Successor Entity Claim After Acquisition",
+  "category": "precedent_exception",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "Context from HubSpot CRM:\nAccount: 'Radiant Brands' | Primary Contact: Derek Calloway, SVP Media | Deal Stage: Renewal | ARR: $2.8M (upfront commitment) | Notes field: 'Acquired Lumen Digital Media in Jan 2026. Wants all Lumen commitments honored under Radiant umbrella.'\n\nContext from NetSuite:\nCustomer: 'Lumen Digital Media Inc.' | Outstanding credits: $412K in ADU make-goods | Credit memo #CM-8834 issued Nov 2025, approved by Marcus Webb (SVP, Ad Sales \u2014 departed Feb 2026) | Terms: 'To be applied against Q1-Q2 2026 scatter inventory at original upfront CPM.'\n\nContext from Google Doc \u2014 'Make-Good & ADU Policy v3.2' (last edited Aug 2025):\nSection 4.1: 'Make-good credits are non-transferable between accounts unless approved by SVP Ad Sales or above.'\n[RESOLVED COMMENT by @marcus.webb, Oct 12 2025]: 'Adding exception language for M&A scenarios \u2014 if acquiring entity assumes all media obligations under the original IO, credits follow. Legal reviewed, no signoff doc exists yet.'\n\nContext from Monday.com \u2014 Upfront Tracker 2025-2026:\nLumen Digital Media | Original commitment: $1.4M | Delivered: $988K | Under-delivery: $412K | Guarantee: A25-54, 1.2 rating | Actual delivery: 0.87 rating | Status: 'ADU owed \u2014 pending stewardship resolution'\n\nContext from Slack \u2014 #upfront-war-room (Mar 14, 2026, 9:47 AM):\n@derek.miles: Radiant's agency (GroupM) is threatening to pull their Q3 scatter unless we honor the Lumen make-goods under the Radiant IO. They say Marcus approved the transfer before he left.\n@jess.thornton: I never saw that in writing. The policy says non-transferable.\n@derek.miles: There's supposedly a comment on the policy doc. Can someone check?\n@jess.thornton: :eyes:\n[Thread: 2 replies]\n  @alex.petrov: I see Marcus's resolved comment from October. It says credits follow if acquiring entity assumes all media obligations. Did Radiant actually assume Lumen's IO?\n  @derek.miles: Their agency says yes but I haven't seen the assignment letter. Just a verbal from GroupM.\n\nContext from Email \u2014 Subject: 'FW: Lumen/Radiant Transition' (Jan 22, 2026):\nFrom: m.webb@prismmedia.com (Marcus Webb \u2014 now departed)\nTo: finance-ops@prismmedia.com\nCC: legal@prismmedia.com\n\n> Confirming that per my conversation with GroupM, Radiant Brands will be assuming all outstanding Lumen media obligations effective Feb 1. Please update billing accordingly.\n\n[No reply from legal on this thread. Finance replied: 'Updated billing entity. Credits not yet transferred \u2014 awaiting formal assignment documentation.']",
+  "question": "Radiant Brands is demanding the $412K in ADU make-good credits be applied to their Q3 scatter buy at the original upfront CPM. Based on all available evidence, what is the correct course of action?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Alexandra Petrov",
+    "title": "VP, Advertising Sales Planning & Strategy",
+    "organization": "Prism Media Group",
+    "years_experience": 13,
+    "domain_expertise": "Upfront marketplace commitments, scatter pricing, audience guarantees, make-good allocation strategy"
+  },
+  "tools_available": [],
+  "source_batch": "prism-sales-planning-batch1.json",
+  "choices": [
+    "Honor the transfer but apply current scatter CPM rates instead of the original upfront CPM, since the credits are being used outside their original commitment window",
+    "Deny the transfer \u2014 policy v3.2 Section 4.1 clearly states credits are non-transferable, and Marcus Webb's comment was never formally adopted into policy",
+    "Escalate to current SVP Ad Sales for fresh approval since Marcus Webb departed and his authority expired with his departure",
+    "Honor the transfer at original upfront CPM \u2014 Marcus's resolved comment created an M&A exception, his email confirms intent, and finance already updated the billing entity, establishing precedent even without the formal assignment letter"
+  ]
+}

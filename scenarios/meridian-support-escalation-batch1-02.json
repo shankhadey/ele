@@ -1,0 +1,24 @@
+{
+  "title": "Severity Downgrade Authority During Off-Hours Handoff",
+  "category": "approval_chain",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "**PagerDuty \u2014 INC-1198 (Jun 21, 2026)**\n11:14 PM PT: Alert fired \u2014 data-export-service latency >30s. Auto-classified P1.\n11:18 PM: Acknowledged by @priya.nair (on-call Tier 2, APAC shift).\n11:45 PM: Priya added note: 'Confirmed isolated to batch export jobs. Real-time API unaffected. Downgrading to P2 per runbook criteria \u2014 fewer than 5 customers impacted, no real-time data loss.'\n11:46 PM: Severity changed P1 \u2192 P2 by priya.nair.\n\n**Zendesk \u2014 Ticket #ZD-49102 (opened Jun 21, 2026, 11:22 PM)**\nOrganization: DataVault Partners | Priority: High (auto-set from PagerDuty integration)\nContact: Marcus Webb, Head of Data Engineering\nComment (11:22 PM): 'Our nightly export pipeline has stalled. We run compliance reporting on this data \u2014 if it's not delivered by 6 AM ET our regulatory filing is at risk.'\nComment (Jun 22, 6:47 AM): 'Nothing delivered. This is the third critical incident this quarter. Escalating to our exec sponsor. Expect a call from our CTO to yours.'\n\n**Slack \u2014 #support-escalations (Jun 22, 2026, 7:03 AM)**\n@marcus.webb.external: @carlos.reyes I've been told to reach out directly. We have a regulatory deadline and your team downgraded our incident overnight.\n@carlos.reyes (7:15 AM): Looking into it now. Let me review the timeline.\n@alex.foster (7:22 AM): FYI this customer is on the retention watch list. CSM flagged them after the Q1 QBR.\n\n**Slack \u2014 #support-escalations (Jun 22, 2026, 7:31 AM)**\n@carlos.reyes: @priya.nair can you walk me through the downgrade decision?\n@priya.nair (7:45 AM): Per the P1 criteria in the runbook, it needs to be 'customer-impacting with data loss risk OR >10 customers affected.' Batch jobs don't qualify as real-time data loss and monitoring showed 3 customers queued.\n@carlos.reyes (7:48 AM): Did you check tier classification for DataVault?\n@priya.nair (7:52 AM): :thinking: I checked the Zendesk org but their tier field was blank. Assumed standard.\n\n**Confluence \u2014 Incident Severity Runbook (v6, last updated May 2026)**\nP1 Criteria: 'Service degradation impacting real-time functionality for >10 customers OR any degradation impacting a Premier/Strategic-tier customer regardless of scope.'\nSection 7.2 \u2014 Downgrade Authority: 'P1 \u2192 P2 downgrade requires Escalation Manager approval during business hours. During off-hours, on-call Tier 2 may downgrade if runbook criteria are clearly unmet, with mandatory review by Escalation Manager next business day.'\n[RESOLVED COMMENT by @carlos.reyes, May 12]: 'Added the Premier/Strategic clause after the Pinnacle Health incident. Previously this only referenced customer count.'\n\n**CRM \u2014 Account: DataVault Partners**\nTier: Strategic | ARR: $412K | Health Score: Red\nCSM: Alex Foster | Exec Sponsor: VP Engineering (Meridian)\nNote (Apr 2026, @alex.foster): 'Customer warned at QBR they are evaluating alternatives. Two more incidents and they walk. Flagged for retention watch.'",
+  "question": "Was Priya's severity downgrade procedurally valid, and what is the correct next action?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Carlos Reyes",
+    "title": "Support Escalation Manager",
+    "organization": "Meridian Systems",
+    "years_experience": 9,
+    "domain_expertise": "Severity triage, SLA management, cross-team coordination during incidents"
+  },
+  "tools_available": [],
+  "source_batch": "meridian-support-escalation-batch1.json",
+  "choices": [
+    "Invalid downgrade. DataVault is a Strategic-tier customer, triggering the 'any degradation impacting Premier/Strategic-tier' P1 clause regardless of scope. Next action: retroactively reclassify as P1, initiate SLA breach review, and engage exec sponsor.",
+    "Valid downgrade. Runbook criteria for P1 were not met (fewer than 10 customers, no real-time impact). Next action: apologize to customer for the delayed resolution but confirm severity was correctly assessed.",
+    "Partially valid. The downgrade followed runbook criteria as written but the customer's regulatory deadline creates a de facto P1 regardless of technical impact. Next action: create a new P1 ticket for the business impact.",
+    "Invalid downgrade. Off-hours Tier 2 does not have authority to downgrade P1 incidents without Escalation Manager approval. Next action: escalate to VP Support for process violation review."
+  ]
+}

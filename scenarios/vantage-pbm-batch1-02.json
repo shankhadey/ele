@@ -1,0 +1,24 @@
+{
+  "title": "Step Therapy Exception Precedent for Biosimilar-Intolerant Pediatric Patients",
+  "category": "precedent_exception",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "A pediatric rheumatologist at Vantage Children's Clinic submits a PA for Enbrel (etanercept, brand) for a 14-year-old with JIA who failed methotrexate. The current formulary requires step through biosimilar Erelzi first before brand Enbrel.\n\n**PBM Portal (Express Scripts) \u2014 PA Determination, Jun 12, 2026**\nPA Request #VHP-2026-08812 | Drug: Enbrel 25mg SQ weekly | Patient: [Pediatric, Age 14] | Requesting Provider: Dr. Anita Sharma | Status: DENIED | Denial Reason: Step therapy not met \u2014 patient has not tried formulary-preferred biosimilar (Erelzi) | Appeal deadline: Jul 12, 2026\n\n**Epic Pharmacy Module \u2014 Medication History**\nPatient has no prior biologic use. Failed MTX 15mg/m2 x 4 months (elevated LFTs, documented discontinuation). No biosimilar trial documented.\n\n**Outlook \u2014 Email from Dr. Sharma to Patricia Okonkwo (Jun 13, 2026, 7:22 AM)**\nSubject: Enbrel denial - need precedent info\n\"Patricia \u2014 I remember that 6 months ago the P&T Committee discussed pediatric biosimilar interchangeability concerns and granted exceptions for patients under 16. Dr. Reeves presented data on immunogenicity differences in the peds population. Can you check if that applies here? I can't find anything in the formulary docs about it.\"\n\n**SharePoint \u2014 /pharmacy/committees/pt-committee/minutes/ (folder listing)**\n- PT_Minutes_2026-01.pdf (12 pages)\n- PT_Minutes_2025-12.pdf (14 pages) \n- PT_Minutes_2025-11.pdf \u2014 FILE NOT FOUND (broken link)\n- PT_Minutes_2025-10.pdf (9 pages)\n\n**OneNote \u2014 Dr. Reeves' Notebook (shared with pharmacy ops team), Page: \"P&T Nov 2025 prep\"**\nLast modified: Nov 18, 2025\n\"Presented peds biosimilar data. Committee voted 7-2 to allow DAW exceptions for patients <16 when prescriber documents immunogenicity concern. NOT a formulary change \u2014 classified as UM criteria exception for peds only. Linda said she'd update the UM criteria doc but wanted to wait for legal review.\"\n[Checkbox unchecked]: \"Follow up: was UM doc ever updated?\"\n\n**Microsoft Teams \u2014 #pharmacy-ops (Dec 5, 2025, 3:15 PM)**\n@linda.marsh: FYI the legal review on the peds biosimilar exception language is done. I'll update the UM criteria after the holidays.\n@patricia.okonkwo: (checkmark emoji)\n[No subsequent messages reference this update]\n\n**SharePoint \u2014 /pharmacy/formulary/UM-criteria-2026-v1.pdf (Published Jan 30, 2026)**\n[Document searched: no mention of pediatric exception, biosimilar bypass, or age-based DAW criteria. Document references \"UM Criteria v2026.1 \u2014 approved by P&T Jan 2026 meeting.\"]",
+  "question": "Should Patricia support Dr. Sharma's appeal for brand Enbrel based on the P&T Committee's pediatric exception, given that the exception never made it into the published UM criteria document?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Patricia Okonkwo",
+    "title": "Pharmacy Benefits Operations Manager",
+    "organization": "Vantage Health Partners",
+    "years_experience": 10,
+    "domain_expertise": "Formulary management, prior authorization appeals, PBM contract interpretation, step therapy exceptions"
+  },
+  "tools_available": [],
+  "source_batch": "vantage-pbm-batch1.json",
+  "choices": [
+    "Require the patient to trial biosimilar Erelzi first, then file a new exception if immunogenicity issues arise \u2014 the precedent only applies to patients with documented biosimilar intolerance",
+    "Support the appeal citing the P&T Committee's November 2025 vote as documented precedent; the committee's decision is authoritative even though the UM criteria document was never updated",
+    "Deny the appeal; the P&T Committee vote is not valid because the November meeting minutes are missing and the exception was never codified in the UM criteria document",
+    "Escalate to the P&T Committee for a new vote since the prior decision was never formalized and the current UM criteria supersede informal committee notes"
+  ]
+}

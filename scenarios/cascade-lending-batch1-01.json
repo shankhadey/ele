@@ -1,0 +1,24 @@
+{
+  "title": "Borrower Restructuring Invalidates Guaranty Entity Reference",
+  "category": "entity_resolution",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "**FIS Horizon \u2014 Loan System (Loan #CL-2024-08817)**\nBorrower: Bridgewater Industrial Partners LLC | Commitment: $4.2M revolving line | Risk Rating: 5 (Pass) | Outstanding: $2.8M | Maturity: 09/2027\nGuarantor(s): Bridgewater Holdings Inc. (unlimited personal guaranty executed 03/2022)\nCovenant compliance: DSCR 1.25x minimum (last tested 12/2025: 1.31x) | LTV max 75% (current: 68%)\n\n**Dynamics 365 \u2014 Customer Record**\nEntity: 'Bridgewater Industrial Partners LLC' | Primary Contact: Marcus Devlin, CFO\nRelated Entities: 'Bridgewater Holdings Inc.' (parent \u2014 INACTIVE since 07/2025), 'Bridgewater Capital Group Inc.' (new parent \u2014 created 08/2025)\nNote (08/15/2025, @r.martinez): 'Customer restructured. Holdings dissolved into new parent entity per their counsel. Updated D365 linkage.'\n\n**SharePoint \u2014 /credit-memos/bridgewater/ (Credit Memo dated 03/2022)**\nApproval: SVP Commercial Lending (J. Okafor)\nSection 4 \u2014 Guaranty Structure: 'Unlimited continuing guaranty from Bridgewater Holdings Inc., the 100% parent of borrower. Guaranty to remain in effect for duration of facility regardless of changes in ownership structure per Section 8(c) of guaranty agreement.'\n\n**Microsoft Teams \u2014 #commercial-lending-ops (09/12/2025, 3:47 PM)**\n@sarah.mills: Legal flagged something on the Bridgewater file. The guaranty references 'Bridgewater Holdings Inc.' which technically no longer exists.\n@tom.whitfield: Did they do an assignment and assumption to the new parent?\n@sarah.mills: Checking with outside counsel. Marcus said it was a 'simple conversion' not a dissolution.\n@tom.whitfield: Big difference. If Holdings was dissolved, the guaranty may have terminated by operation of law.\n@sarah.mills: \ud83d\ude2c\n[Thread \u2014 no further replies]\n\n**Outlook \u2014 Email from external counsel (10/03/2025)**\nFrom: j.brennan@kirklandpartners.com\nTo: s.mills@cascadefinancial.com\nCC: legal-commercial@cascadefinancial.com\nSubject: RE: Bridgewater Holdings \u2014 Entity Status\n\n'Sarah \u2014 confirmed with NC Secretary of State. Bridgewater Holdings Inc. was administratively dissolved 07/01/2025. A new entity, Bridgewater Capital Group Inc., was formed 07/15/2025 with identical ownership. However, there was no formal assignment of the guaranty obligation. The successor entity argument is fact-dependent under NC law but the 2-week gap creates risk. Recommend obtaining a new guaranty or ratification from Capital Group. Happy to draft.'\n\n**ServiceNow \u2014 Annual Review Workflow (CR-2025-4421)**\nStatus: In Progress | Assigned: S. Mills | Due: 12/15/2025\nTask: Complete annual credit review for Bridgewater Industrial Partners\nComment (11/20/2025, @s.mills): 'Guaranty issue still unresolved. Leaving risk rating at 5 pending legal resolution.'\nComment (12/01/2025, @audit.team): 'Per loan policy 7.3, unsupported guaranty = immediate downgrade to Watch. Please confirm status or adjust rating by COB 12/10.'",
+  "question": "The borrower has requested a $600K draw on the revolver, which would bring total outstanding to $3.4M. Given the current state of the guaranty, the entity restructuring, and applicable credit policy, what is the correct course of action?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Thomas Whitfield",
+    "title": "VP, Commercial Lending",
+    "organization": "Cascade Financial Group",
+    "years_experience": 18,
+    "domain_expertise": "Loan origination, credit policy, covenant compliance, loan modifications, workout situations"
+  },
+  "tools_available": [],
+  "source_batch": "cascade-lending-batch1.json",
+  "choices": [
+    "Escalate to SVP for exception approval since the original approving officer (J. Okafor) is still on staff and can authorize continued advances under the existing commitment",
+    "Decline the draw until a new guaranty or ratification is obtained from Bridgewater Capital Group Inc., and downgrade the risk rating to Watch per Policy 7.3",
+    "Approve the draw \u2014 the guaranty's Section 8(c) survives changes in ownership structure, and the DSCR and LTV covenants are in compliance",
+    "Approve the draw \u2014 Bridgewater Capital Group is the legal successor with identical ownership, so the guaranty transfers automatically under NC law"
+  ]
+}

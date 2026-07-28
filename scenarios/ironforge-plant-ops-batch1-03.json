@@ -1,0 +1,24 @@
+{
+  "title": "Grandfathered Equipment and Implicit MOC Acceptance",
+  "category": "approval_chain",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "Context from SAP S/4HANA (Equipment Master \u2014 Plant 3):\nEquipment: FURN-301 (Batch Annealing Furnace #1) | Installed: 2009 | Last major overhaul: 2021 | Status: ACTIVE | Classification: PSM-covered process | Operating pressure: 45 psig | Max temp: 1,750\u00b0F | Linked PM orders: 47 active\n\n**MasterControl \u2014 PSM Mechanical Integrity Records:**\nFURN-301 last inspection: Jan 2026 | Result: SATISFACTORY | Inspector notes: 'Relief valve RV-301A tested at 52 psig (set point 50 psig). Within \u00b110% tolerance per API 576. Vessel wall thickness: 0.412\" (minimum required: 0.375\" per original design).'\n\n**SharePoint \u2014 /engineering/standards/PSM-equipment-standards-2024.pdf (published Jul 2024)**\nSection 6.2: 'All PSM-covered pressure vessels installed after January 1, 2015 must meet ASME Section VIII Div 1, 2017 Edition or later. Minimum wall thickness calculated per UG-27 with corrosion allowance of 0.0625\".'\nSection 6.4: 'Equipment installed prior to 2015 is exempt from Section 6.2 requirements PROVIDED it has undergone formal grandfathering review per MOC-EXT-001 process and maintains satisfactory mechanical integrity results.'\n\n**Microsoft Teams \u2014 #engineering-standards (Mar 12, 2024, 2:15 PM)**\n@janet.morrison (Process Engineering Director): Team \u2014 new PSM equipment standard is going out in July. We need to identify all pre-2015 equipment that needs grandfathering review. @miguel.santos can you pull the list for Plant 3?\n@miguel.santos: Will do. Off the top of my head it's FURN-301, FURN-302, REAC-101, and the old quench tank QT-205.\n@janet.morrison: Perfect. Let's get MOC-EXT-001 forms started for each. Target completion before the standard publishes.\n@miguel.santos: \ud83d\udc4d\n[Thread has 2 additional replies \u2014 both from other plant managers confirming their lists]\n\n**SAP \u2014 MOC (Management of Change) Log:**\nMOC-2024-0045: FURN-302 grandfathering review | Status: APPROVED (Jun 2024)\nMOC-2024-0046: REAC-101 grandfathering review | Status: APPROVED (Jun 2024)\nMOC-2024-0047: QT-205 grandfathering review | Status: APPROVED (Jul 2024)\n[No MOC record found for FURN-301]\n\n**Email \u2014 Subject: 'Plant 3 Grandfathering Status' (Jun 28, 2024)**\nFrom: miguel.santos@ironforge-mfg.com\nTo: janet.morrison@ironforge-mfg.com\n\n'Janet \u2014 FURN-302, REAC-101, and QT-205 are all through MOC review and approved. FURN-301 is more complex \u2014 the original design calcs are missing from the files (pre-digital era). I'm working with the OEM to reconstruct them. Should have it wrapped up in a few weeks.'\n\n**Janet Morrison's status in ADP: TERMINATED (Aug 15, 2024 \u2014 retirement)**\n[No reply to Miguel's email found. No subsequent emails regarding FURN-301 grandfathering.]\n\n**Maximo \u2014 Work Order History (FURN-301):**\n47 completed PM work orders since Jul 2024 | 3 corrective maintenance orders | All signed off by qualified maintenance personnel | No operational restrictions noted | Equipment continuously operated for production since standard publication.",
+  "question": "During a corporate PSM audit, the auditor asks: Is FURN-301 currently authorized to operate under Ironforge's PSM equipment standards? What is the correct finding?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Miguel Santos",
+    "title": "Plant Operations Manager",
+    "organization": "Ironforge Manufacturing",
+    "years_experience": 20,
+    "domain_expertise": "Production scheduling, maintenance planning, PSM compliance, equipment lifecycle management, Management of Change processes"
+  },
+  "tools_available": [],
+  "source_batch": "ironforge-plant-ops-batch1.json",
+  "choices": [
+    "Authorized \u2014 Miguel's thumbs-up emoji in the Teams thread acknowledging the grandfathering task list, combined with 2 years of continued operation with management knowledge, constitutes implicit MOC approval",
+    "Not applicable \u2014 FURN-301 was installed in 2009 (pre-2015) and is therefore fully exempt from the 2024 standard under the pre-2015 installation clause in Section 6.2",
+    "Not authorized \u2014 FURN-301 lacks a completed MOC-EXT-001 grandfathering review as required by Section 6.4; the process was initiated but never completed due to the engineering director's departure, and no formal exemption or interim authorization exists in the system",
+    "Authorized \u2014 FURN-301 passes mechanical integrity inspections and has operated continuously since 2009; the satisfactory inspection results constitute de facto grandfathering acceptance"
+  ]
+}

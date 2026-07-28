@@ -1,0 +1,24 @@
+{
+  "title": "B&P to Funded Contract Reclassification with Prior-Year Rate Impact",
+  "category": "temporal_consistency",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "Context from Costpoint (Project Module): Project CEDAR-PROPOSAL created 6/15/2025. Charge type: B&P (Bid & Proposal). Total costs accumulated: $347,200 through 9/30/2025. Project closed 10/1/2025. Indirect rates applied: FY25 provisional rates (OH: 62%, Fringe: 38.2%, G&A: 14.1%).\n\nNew project created: CEDAR-OPS, Contract FA8721-26-C-0019 (FFP), awarded 1/12/2026, period of performance 2/1/2026 - 1/31/2029. Contract includes CLIN 0001AA \u2014 NRE (Non-Recurring Engineering) which explicitly states: 'The contractor's proposal preparation costs for the technical volume engineering analysis are considered pre-contract costs allowable under this CLIN per FAR 31.205-32.'\n\n**Outlook \u2014 From: l.castellano@sentineldefense.com (Jan 22, 2026)**\nTo: kevin.marsh@sentineldefense.com; r.oconnor@sentineldefense.com\nSubject: CEDAR reclassification \u2014 READ BEFORE PROCESSING\n\nKevin/Rachel \u2014 The contract explicitly allows pre-contract cost recovery on the NRE CLIN. We need to reclassify $192K of the B&P costs (the engineering analysis portion only, NOT the volumes/pricing labor) from the B&P pool to direct on CEDAR-OPS.\n\nIMPORTANT: FY25 final rates haven't been negotiated yet. The reclassification reduces our FY25 B&P pool, which will change the numerator for FY25 IR&D/B&P rate calculation. Use PROVISIONAL rates for now and flag for true-up once finals are set.\n\n**Excel \u2014 'FY25 B&P Pool Reconciliation.xlsx' (last modified: 2/3/2026 by K. Marsh)**\nTab 'CEDAR Reclass':\n| Cost Element | Original B&P | Reclass to Direct | Remaining B&P |\n| Engineering Labor | $142,000 | $142,000 | $0 |\n| ODCs (test materials) | $50,000 | $50,000 | $0 |\n| Overhead (applied) | $88,040 | \u2014 | \u2014 |\n| Total | $280,040 | $192,000 | $88,040 |\nNote in cell F12: 'Per Linda \u2014 only base costs. OH reapplied at project rate when moved to CEDAR-OPS. Confirmed in call 1/28.'\n\n**Teams \u2014 #finance-ops (Feb 10, 2026, 11:02 AM)**\n@r.oconnor: Quick flag \u2014 the FY25 ICS draft shows B&P pool at $4.8M but that's pre-CEDAR reclass. Should be $4.608M after removing the $192K. Updating now.\n@kevin.marsh: Wait \u2014 do we also back out the OH that was applied to those B&P costs? The $88K in overhead was in the OH pool allocated to B&P.\n@r.oconnor: Good catch. Pinging Linda.\n[No reply in thread as of 2/10]\n\n**Teams DM \u2014 @l.castellano to @r.oconnor (Feb 11, 2026, 8:14 AM)**\nRachel \u2014 yes, back out the OH from the B&P pool. The overhead gets reapplied at the CEDAR-OPS project overhead rate (which is different \u2014 that's a manufacturing-support rate at 58%, not the G&A-only rate). Don't touch the fringe \u2014 that stays with the labor wherever it lands. Update the ICS draft and I'll review Thursday.",
+  "question": "After the full reclassification is processed correctly, what happens to the FY25 indirect rate pools, and which approval is still missing that could jeopardize the cost allowability of the reclassified amount?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Linda Castellano",
+    "title": "Director of Cost Accounting & Compliance",
+    "organization": "Sentinel Defense Solutions",
+    "years_experience": 20,
+    "domain_expertise": "CAS compliance, indirect rate structure, incurred cost submissions, DCAA audit response, cost allowability"
+  },
+  "tools_available": [],
+  "source_batch": "sentinel-cost-accounting-batch1.json",
+  "choices": [
+    "The B&P pool decreases by $192,000 (base costs only); the FY25 OH pool decreases by $88,040 (OH backed out per Linda's DM); the missing approval is the CAS-required written notification to the CFAO of a change in cost accounting practice.",
+    "The B&P pool decreases by $192,000 (base costs only); the FY25 OH pool decreases by $88,040; the missing approval is the DCAA pre-approval of the reclassification before it can be included in the ICS.",
+    "The B&P pool decreases by $192,000 (base costs only); the OH pool is unaffected because overhead follows the cost it's applied to; the missing approval is the Contracting Officer's written consent for pre-contract cost recovery.",
+    "The B&P pool decreases by $280,040 (base + OH); the FY25 OH pool decreases by $88,040; no approval is missing because the contract language in CLIN 0001AA provides sufficient authorization."
+  ]
+}
