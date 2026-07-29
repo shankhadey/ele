@@ -34,7 +34,6 @@ from dotenv import load_dotenv
 load_dotenv("linkedin_ai_manager/.env")
 load_dotenv(".env")
 
-from ele.core import paths
 from ele.core.cli import App, AppConfig
 from ele.core.models_integration import APIConfig, OpenAIAdapter, BedrockAdapter
 
@@ -50,13 +49,8 @@ DEFAULT_EVAL_CONFIG = _ROOT / "config" / "eval_config.json"
 # ── Helpers ───────────────────────────────────────────────────────
 
 def load_scenarios(directory: Path) -> List[Dict[str, Any]]:
-    """Load all .json scenario files from a directory tree (skips TEMPLATE).
-
-    Recursive: picks up scenarios under subdirectories such as
-    ``scenarios/counterfactuals/`` so paired-counterfactual files can live
-    in their own folder without polluting the top-level scenario listing.
-    """
-    files = sorted(glob.glob(str(directory / "**" / "*.json"), recursive=True))
+    """Load all .json scenario files from a directory (skips TEMPLATE)."""
+    files = sorted(glob.glob(str(directory / "*.json")))
     scenarios = []
     for f in files:
         if Path(f).stem.upper() == "TEMPLATE":
@@ -203,18 +197,6 @@ def main():
     parser.add_argument("--category", help="Filter scenarios by category")
     parser.add_argument("--domain", help="Filter scenarios by domain")
     parser.add_argument("--difficulty", help="Filter scenarios by difficulty")
-    parser.add_argument("--split",
-                        choices=["dev", "core_test", "challenge", "counterfactual", "holdout"],
-                        help="Filter scenarios by evaluation split")
-    parser.add_argument("--condition", choices=["direct", "deliberate", "scaffold"],
-                        default=None,
-                        help="Prompting condition (§5.2). When explicitly passed (incl. "
-                             "'direct'), results are written to results/conditions/"
-                             "<condition>/ so the three conditions are colocated and "
-                             "comparable. Omit it entirely for the canonical results/ run.")
-    parser.add_argument("--manifest", default=None,
-                        help="Run only scenarios listed in a validation manifest "
-                             "(validation/manifests/*.json).")
     parser.add_argument("--scenario", action="append", default=None,
                         help="Run specific scenario file(s). Can be repeated: --scenario 005_*.json --scenario 001_*.json")
     parser.add_argument("--scenarios-dir", default=str(DEFAULT_SCENARIOS_DIR),
@@ -236,27 +218,12 @@ def main():
     else:
         app_config = AppConfig.from_env()
 
-    # CLI --condition overrides the configured prompting condition (§5.2).
-    if args.condition:
-        app_config.eval_prompt_condition = args.condition
-
     app = App(app_config)
 
     # ── Load scenarios ────────────────────────────────────────────
     scenarios_dir = Path(args.scenarios_dir)
 
-    if args.manifest:
-        # Load only the scenarios listed in a validation manifest (by filename).
-        manifest = json.loads(Path(args.manifest).read_text())
-        wanted = {item["scenario_key"] for item in manifest.get("items", [])}
-        all_scenarios = load_scenarios(scenarios_dir)
-        raw_scenarios = [s for s in all_scenarios if s.get("_source_file") in wanted]
-        missing = wanted - {s.get("_source_file") for s in raw_scenarios}
-        if missing:
-            print(f"  ⚠ {len(missing)} manifest scenario(s) not found on disk")
-        print(f"Loaded {len(raw_scenarios)}/{len(wanted)} manifest scenario(s) "
-              f"from {args.manifest}\n")
-    elif args.scenario:
+    if args.scenario:
         # Load specific scenario files (supports glob patterns)
         raw_scenarios = []
         for pattern in args.scenario:
@@ -287,7 +254,7 @@ def main():
     if args.list_scenarios:
         for i, s in enumerate(raw_scenarios, 1):
             print(f"  {i}. {s.get('title', 'Untitled')}")
-            print(f"     Category: {s.get('category')}  Domain: {s.get('domain')}  Difficulty: {s.get('difficulty')}  Split: {s.get('split', 'challenge')}")
+            print(f"     Category: {s.get('category')}  Domain: {s.get('domain')}  Difficulty: {s.get('difficulty')}")
             print(f"     Format: {s.get('answer_format')}  Contributor: {s.get('contributor', {}).get('name', 'Unknown')}")
             print()
         return 0
@@ -364,7 +331,6 @@ def main():
             category=args.category,
             domain=args.domain,
             difficulty=args.difficulty,
-            split=args.split,
         )
 
         if not eval_result.get("success"):
@@ -381,14 +347,14 @@ def main():
                 sr = r.scored_result
                 scenario = app.repository.get_scenario(r.scenario_id)
                 title = scenario.title if scenario else r.scenario_id[:8]
-                status = "✓" if (sr and sr.is_correct) else "✗"
+                status = "✓" if (sr and sr.final_score >= 0.5) else "✗"
                 score = f"{sr.final_score:.1f}" if sr else "?"
                 method = f"[{sr.scoring_method.value}]" if sr else ""
                 tool_calls = f", tool_calls={len(r.tool_invocations)}" if r.tool_invocations else ""
                 print(f"    {status} {title}: score={score} {method}, latency={r.latency_ms}ms{tool_calls}")
 
-            # Write complete per-scenario transcripts (private data dir)
-            log_dir = paths.logs_dir() / f"{model_id}_{eval_result['run_id'][:8]}"
+            # Write complete per-scenario transcripts
+            log_dir = _ROOT / "logs" / f"{model_id}_{eval_result['run_id'][:8]}"
             write_transcripts(app, run, log_dir)
             print(f"  Transcripts saved: {log_dir}")
 
@@ -406,18 +372,8 @@ def main():
         print("  No results yet.")
 
     # ── Export results ────────────────────────────────────────────
-    # Direct-condition runs go to results/; non-direct conditions go to
-    # results/conditions/<condition>/ so they never collide with the
-    # direct-condition leaderboard (build_results_table globs results/*.json).
-    # When --condition is explicitly passed (including 'direct'), colocate the
-    # run under results/conditions/<condition>/ so the RQ3 comparison reads all
-    # three conditions from the same place. With no --condition, the run is the
-    # canonical results/ headline run.
-    if args.condition:
-        results_dir = paths.results_dir() / "conditions" / args.condition
-    else:
-        results_dir = paths.results_dir()
-    results_dir.mkdir(parents=True, exist_ok=True)
+    results_dir = _ROOT / "results"
+    results_dir.mkdir(exist_ok=True)
     for entry in lb:
         run_id = entry["run_id"]
         export = app.export_results(run_id, "json")

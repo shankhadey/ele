@@ -17,10 +17,6 @@ from reportlab.platypus import (
 
 _ROOT = Path(__file__).resolve().parent.parent
 
-import sys as _sys
-_sys.path.insert(0, str(_ROOT.parent))  # make `ele` importable
-from ele.core import paths  # noqa: E402
-
 MODELS = {
     "Kimi K2.5": ("results/kimi-k2.5_d2b77b49.json", "Bedrock (moonshotai.kimi-k2.5)"),
     "Claude Opus 5": ("results/claude-opus-5_6dfacb94.json", "Bedrock (us.anthropic.claude-opus-5)"),
@@ -33,9 +29,7 @@ LIGHT = colors.HexColor("#EAF0F6")
 
 
 def load(path):
-    # MODELS paths are "results/<file>"; resolve <file> against the
-    # configured results dir (private repo when set).
-    return json.load(open(paths.results_dir() / Path(path).name))
+    return json.load(open(_ROOT / path))
 
 
 def pct(n, d):
@@ -70,7 +64,7 @@ def main():
     small = ParagraphStyle("small", parent=styles["Normal"], fontSize=8, textColor=colors.grey)
 
     doc = SimpleDocTemplate(
-        str(paths.results_dir() / "ELE_Model_Comparison.pdf"),
+        str(_ROOT / "results" / "ELE_Model_Comparison.pdf"),
         pagesize=letter, topMargin=0.7 * inch, bottomMargin=0.7 * inch,
         leftMargin=0.75 * inch, rightMargin=0.75 * inch,
     )
@@ -192,7 +186,7 @@ def main():
         "results re-scored uniformly.", small))
 
     doc.build(story)
-    print(f"PDF written to: {paths.results_dir() / 'ELE_Model_Comparison.pdf'}")
+    print(f"PDF written to: {_ROOT / 'results' / 'ELE_Model_Comparison.pdf'}")
 
 
 if __name__ == "__main__":

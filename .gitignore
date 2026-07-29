@@ -22,6 +22,9 @@ answers/
 logs/
 results/
 
+# Per-scenario transcripts (regenerated on each run)
+logs/
+
 # Environment
 .env
 .kiro_tmp
