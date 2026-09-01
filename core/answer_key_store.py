@@ -15,7 +15,6 @@ import logging
 from pathlib import Path
 from typing import Dict, Optional
 
-from ele.core import paths
 from ele.core.models import AnswerKey
 
 logger = logging.getLogger(__name__)
@@ -25,9 +24,8 @@ class AnswerKeyStore:
     """Loads answer keys from a directory and serves them by scenario filename."""
 
     def __init__(self, answers_dir: Optional[Path] = None) -> None:
-        # Default: the configured answers/ directory (private repo when
-        # ELE_PRIVATE_DIR / ele_private_dir is set; local answers/ otherwise).
-        self._dir = answers_dir or paths.answers_dir()
+        # Default: answers/ sibling of the scenarios/ directory
+        self._dir = answers_dir or (Path(__file__).parent.parent / "answers")
         self._keys: Dict[str, AnswerKey] = {}
         self._load_all()
 
@@ -36,18 +34,15 @@ class AnswerKeyStore:
     _META_FILES: frozenset[str] = frozenset({"CANARIES.json"})
 
     def _load_all(self) -> None:
-        """Load all answer key files from the answers directory tree.
+        """Load all answer key files from the answers directory.
 
-        Recursive: scans ``answers/`` and every subdirectory so
-        counterfactual answer keys under ``answers/counterfactuals/`` are
-        picked up alongside the top-level batch files. Files named in
-        ``_META_FILES`` or starting with an underscore are treated as
-        manifests/notices and skipped.
+        Files whose name starts with an underscore, or that appear in
+        ``_META_FILES``, are treated as manifests/notices and skipped.
         """
         if not self._dir.exists():
             logger.warning("Answer key directory not found: %s", self._dir)
             return
-        for path in sorted(self._dir.rglob("*.json")):
+        for path in sorted(self._dir.glob("*.json")):
             if path.name in self._META_FILES or path.name.startswith("_"):
                 continue
             try:

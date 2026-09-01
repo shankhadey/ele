@@ -34,6 +34,55 @@ ELE tests six categories that no existing benchmark measures:
 
 See [TAXONOMY.md](TAXONOMY.md) for the full taxonomy with detailed example scenarios, correct answers, and rationale.
 
+## Evaluation Splits
+
+ELE separates primary evaluation from stress-testing:
+
+- **ELE-Core/Test** — the model-blind primary evaluation set. Scenarios
+  enter this set by human review only, without any conditioning on
+  model performance. Reports on Core/Test support unbiased inference
+  about average enterprise capability.
+- **ELE-Challenge** — a stress-test set that may contain
+  adversarially-authored or difficulty-focused scenarios. Reports on
+  Challenge are interpreted as targeted analysis of failure-prone cases,
+  not as unbiased average performance.
+
+Every scenario carries an explicit `split` field. Results are reported
+per split so the two are never conflated.
+
+## Scoring
+
+Correctness is decision-level and binary. Comparison proceeds in two
+stages:
+
+1. **Exact match** (case- and whitespace-normalized). If the extracted
+   answer matches the correct answer, the item is counted correct.
+2. **LLM-as-a-judge** (mandatory) grades non-exact responses on
+   [0.0, 1.0]. An item is counted correct iff the judge score is at least
+   the correctness threshold (default **0.9**). There is no lexical /
+   semantic-similarity fallback; a wrong organizational action is scored
+   0 regardless of how well the response paraphrases the correct one.
+
+If the LLM judge is not configured, evaluation refuses to start. See
+`DESIGN.md` for the pipeline details.
+
+## Contamination and Release Policy
+
+To keep the benchmark diagnostic, correct answers are not published.
+
+- Scenarios (questions, context, choices) are released under CC BY 4.0.
+- Answer keys — correct answers and rationales — are held privately by
+  the maintainers. `scripts/export_public_bundle.py` produces a bundle
+  that deliberately excludes the answer directory.
+- Every answer key carries a unique canary token
+  (`ELE-CANARY-<hex>`). `scripts/check_answer_leakage.py` scans model
+  outputs and logs for these tokens to detect contamination.
+- The repository ships a `robots.txt` that opts out of general web
+  crawlers and named AI training crawlers.
+- Answer keys are governed by an evaluation-only license
+  (`answers/LICENSE-answers`) that prohibits training use and public
+  redistribution.
+
 ## Call for Contributors
 
 **We're recruiting enterprise practitioners to contribute scenarios.** Not academics. People who make these judgment calls in their day jobs.
@@ -64,11 +113,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for submission guidelines, the scenario t
 |-------|----------|-----------|
 | Taxonomy published, contributor recruitment opens | Q1 2026 | Public announcement |
 | Scenario collection period | Q1-Q2 2026 | Target: 500-1,000 raw submissions |
-| Round 1 filtering (model testing) | Q2 2026 | Scenarios that stump frontier models |
-| Round 2 review (human expert) | Q2-Q3 2026 | Final dataset of 300-500 scenarios |
-| Evaluation runs against frontier models | Q3 2026 | Benchmark results |
-| Paper submission | Q3-Q4 2026 | Target: Nature Machine Intelligence |
-| Public dataset release | Q4 2026 | HuggingFace + this repo |
+| Human expert review (all submissions) | Q2-Q3 2026 | Realism, defensibility, calibration |
+| ELE-Core/Test freeze (model-blind primary set) | Q3 2026 | Primary evaluation set locked before running target models |
+| Evaluation runs across model families | Q3 2026 | Aggregate results by category, domain, split |
+| Paper submission | Q3-Q4 2026 | Target venue: ICLR 2027 (datasets & benchmarks) |
+| Public scenario release (answer key held private) | Q4 2026 | Scenarios on HuggingFace + this repo; answer keys held privately by the maintainers |
 
 ## How to Get Involved
 

@@ -1,13 +1,19 @@
-"""Scoring system for the AI Model Evaluation Workflow.
+"""Scoring system for the ELE evaluation workflow.
 
-Provides answer extraction, exact matching, semantic similarity,
-LLM-as-a-judge scoring, and orchestrated scoring for model responses.
+Two-stage decision pipeline:
 
-Scoring pipeline (in order):
-  1. Extract answer from model response (multi-strategy regex)
-  2. Exact match check  →  score = 1.0 if matched
-  3. If not exact and judge is enabled  →  call LLM judge  →  score = judge_score
-  4. If judge disabled or unavailable  →  bag-of-words cosine similarity fallback
+  1. Answer extraction (multi-strategy regex).
+  2. Exact match  → final_score = 1.0, is_correct = True.
+  3. Non-exact    → LLM-as-a-judge (mandatory) grades the response against
+                    the held-out correct answer and rationale on [0.0, 1.0].
+                    is_correct = judge_score >= correctness_threshold (0.9 by
+                    default — strict, decision-level, no semantic partial
+                    credit for a wrong action).
+
+Bag-of-words cosine similarity is still computed as a diagnostic column
+(``similarity_score``) for debugging judge disagreements, but it never
+contributes to ``final_score`` or the correctness decision. If the LLM
+judge is unavailable, scoring raises rather than silently degrading.
 """
 
 from __future__ import annotations
@@ -29,15 +35,29 @@ except ImportError:  # pragma: no cover
     openai = None  # type: ignore[assignment]
 
 
+# Correctness threshold. Judge scores at or above this count as a correct
+# decision; anything below is a wrong decision, regardless of paraphrase
+# quality. Strict by design — see the module docstring.
+DEFAULT_CORRECTNESS_THRESHOLD: float = 0.9
+
+
+class ScoringError(RuntimeError):
+    """Raised when scoring cannot produce a decision.
+
+    The two failure modes both raise this: (1) the LLM judge is not
+    configured and the response was not an exact match, and (2) the LLM
+    judge was configured but every attempt failed. Both must fail loudly
+    so evaluation results never contain silently-degraded scores.
+    """
+
+
 # --- Enumerations ---
 
 class ScoringMethodEnum(Enum):
     """How the final score was determined."""
     EXACT = "exact"
     LLM_JUDGE = "llm_judge"
-    SEMANTIC = "semantic"
-    PARTIAL = "partial"
-    NONE = "none"
+    NONE = "none"          # judge decided wrong (score < correctness_threshold)
 
 
 # --- Configuration ---
@@ -45,14 +65,14 @@ class ScoringMethodEnum(Enum):
 @dataclass
 class LLMJudgeConfig:
     """Configuration for the LLM-as-a-judge scorer."""
-    # Which OpenAI model to use as the judge
+    # Which OpenAI-compatible model to use as the judge
     model: str = "gpt-4o-mini"
     # API key — if empty, falls back to OPENAI_API_KEY env var
     api_key: str = ""
     # Temperature for the judge (low = more deterministic)
     temperature: float = 0.0
-    # Score threshold above which the judge verdict counts as "correct"
-    correct_threshold: float = 0.5
+    # Number of retry attempts on a judge failure before raising
+    max_retries: int = 1
     # System prompt injected before the judge user message
     system_prompt: str = (
         "You are an expert evaluator assessing whether a model's answer is "
@@ -62,13 +82,17 @@ class LLMJudgeConfig:
 
 @dataclass
 class ScoringConfig:
-    """Tunable knobs for the scoring pipeline."""
-    similarity_threshold: float = 0.75
-    similarity_weight: float = 0.8
+    """Configuration for the scoring pipeline.
+
+    The LLM judge is mandatory: any non-exact-match response is graded by
+    the judge, and if the judge is not configured, scoring raises
+    ``ScoringError`` at score time. There is no lexical fallback.
+    """
+    # Score awarded for an exact match
     exact_match_bonus: float = 1.0
-    # Kept for config-file compatibility; not used by the bag-of-words fallback
-    embedding_model: str = "text-embedding-3-small"
-    # LLM judge — set to a LLMJudgeConfig instance to enable
+    # Judge score at or above this counts as a correct decision
+    correctness_threshold: float = DEFAULT_CORRECTNESS_THRESHOLD
+    # LLM judge configuration — required for scoring non-exact responses
     llm_judge: Optional[LLMJudgeConfig] = None
 
 
@@ -82,12 +106,15 @@ class ScoredResult:
     correct_answer: str
     extracted_answer: str
     exact_match: bool
+    # Bag-of-words cosine similarity between extracted answer and correct
+    # answer. Diagnostic only — never contributes to final_score.
     similarity_score: float
     final_score: float
+    is_correct: bool
     scoring_method: ScoringMethodEnum
     extraction_strategies_attempted: List[str] = field(default_factory=list)
     explanation: str = ""
-    # LLM judge fields (populated only when judge is used)
+    # LLM judge fields (populated only when the judge decides)
     judge_score: Optional[float] = None
     judge_reasoning: Optional[str] = None
     # Full judge trace (populated only when the judge is invoked)
@@ -196,20 +223,20 @@ def calculate_exact_match(
 
 
 # ------------------------------------------------------------------ #
-# Semantic similarity (lightweight fallback)
+# Bag-of-words cosine similarity (diagnostic only — never scores)
 # ------------------------------------------------------------------ #
 
 def _simple_tokenize(text: str) -> set[str]:
-    """Bag-of-words tokenizer for the built-in similarity fallback."""
+    """Bag-of-words tokenizer for the diagnostic similarity column."""
     return set(re.findall(r"\w+", text.lower()))
 
 
 def calculate_semantic_similarity(response: str, correct_answer: str) -> float:
-    """Compute similarity between response and correct answer.
+    """Bag-of-words cosine similarity between two strings.
 
-    Uses a bag-of-words cosine similarity as a lightweight default.
-    Can be swapped for embedding-based similarity by replacing this
-    function body with an API call to sentence-transformers or OpenAI.
+    Diagnostic only. This value is written into the ``similarity_score`` column
+    of every scored result to help debug judge disagreements, but it does
+    NOT contribute to ``final_score`` or the correctness decision.
     """
     if not response.strip() or not correct_answer.strip():
         return 0.0
@@ -221,7 +248,6 @@ def calculate_semantic_similarity(response: str, correct_answer: str) -> float:
         return 0.0
 
     intersection = tokens_a & tokens_b
-    # Cosine similarity for binary vectors
     denom = math.sqrt(len(tokens_a)) * math.sqrt(len(tokens_b))
     if denom == 0:
         return 0.0
@@ -247,11 +273,14 @@ You are evaluating whether a model's answer is correct for an enterprise reasoni
 ## Rationale (for context)
 {rationale}
 
-Evaluate the model's answer on a scale from 0.0 to 1.0:
-- 1.0 = Completely correct (same meaning as the correct answer)
-- 0.7-0.9 = Mostly correct (right direction, minor gaps or imprecision)
-- 0.4-0.6 = Partially correct (captures some key elements but misses important ones)
-- 0.1-0.3 = Mostly wrong (a few correct elements but fundamentally incorrect)
+Evaluate whether the model's answer expresses the same organizational decision
+as the correct answer. Do NOT reward partial understanding when the recommended
+action is wrong. Score on a scale from 0.0 to 1.0:
+
+- 1.0 = Same decision as the correct answer (paraphrase acceptable)
+- 0.7-0.9 = Substantially the same decision with minor imprecision
+- 0.4-0.6 = Overlaps on some elements but the recommended action is different
+- 0.1-0.3 = Wrong decision but touches related concepts
 - 0.0 = Completely wrong or no answer
 
 Respond in this exact format:
@@ -274,10 +303,11 @@ def llm_judge_score(
     model_response: str,
     judge_config: LLMJudgeConfig,
 ) -> Optional[JudgeResult]:
-    """Call an LLM to judge whether *model_response* correctly answers the scenario.
+    """Call an LLM to judge whether ``model_response`` correctly answers the scenario.
 
     Returns a ``JudgeResult`` on success, or ``None`` if the judge call fails
-    (network error, parse failure, etc.) so the caller can fall back gracefully.
+    (network error, parse failure, etc.). Callers must decide how to handle
+    ``None``; ``score_response`` retries and then raises ``ScoringError``.
     """
     if openai is None:
         logger.warning("openai package not installed; LLM judge unavailable")
@@ -325,8 +355,6 @@ def llm_judge_score(
     return JudgeResult(score=score, reasoning=reasoning, raw_response=raw, prompt=prompt)
 
 
-
-
 def score_response(
     scenario: Scenario,
     response: str,
@@ -335,10 +363,13 @@ def score_response(
     """Score a model response against a scenario's correct answer.
 
     Pipeline:
-      1. Extract answer (multi-strategy regex)
-      2. Exact match  →  score = 1.0
-      3. LLM judge (if configured)  →  score = judge output
-      4. Bag-of-words cosine similarity fallback
+      1. Extract answer (multi-strategy regex).
+      2. Exact match  → final_score = 1.0, is_correct = True.
+      3. Non-exact    → LLM judge (mandatory) grades on [0, 1].
+                        is_correct = judge_score >= correctness_threshold.
+
+    Raises ``ScoringError`` if the judge is not configured or every judge
+    attempt fails. There is no lexical fallback.
     """
     if config is None:
         config = ScoringConfig()
@@ -354,84 +385,80 @@ def score_response(
             if 0 <= idx < len(scenario.choices):
                 effective_extracted = scenario.choices[idx]
 
-    # 3. Exact match
+    # 3. Exact match check
     exact = calculate_exact_match(
         effective_extracted, scenario.correct_answer, scenario.answer_format
     )
 
-    # Always compute bag-of-words similarity for record-keeping
+    # Always compute bag-of-words similarity for the diagnostic column.
+    # This does not feed into final_score or the correctness decision.
     similarity = calculate_semantic_similarity(effective_extracted, scenario.correct_answer)
 
-    # 4. Determine final score
-    judge_score: Optional[float] = None
-    judge_reasoning: Optional[str] = None
-    judge_prompt: Optional[str] = None
-    judge_raw_response: Optional[str] = None
-
     if exact:
-        final_score = config.exact_match_bonus  # 1.0
-        method = ScoringMethodEnum.EXACT
-        explanation = "Exact match"
+        return ScoredResult(
+            scenario_id=scenario.id,
+            model_response=response,
+            correct_answer=scenario.correct_answer,
+            extracted_answer=extracted,
+            exact_match=True,
+            similarity_score=similarity,
+            final_score=config.exact_match_bonus,
+            is_correct=True,
+            scoring_method=ScoringMethodEnum.EXACT,
+            extraction_strategies_attempted=strategies,
+            explanation="Exact match",
+        )
 
-    elif config.llm_judge is not None:
-        # Use LLM judge as the primary non-exact scorer
+    # 4. Non-exact → LLM judge is mandatory.
+    if config.llm_judge is None:
+        raise ScoringError(
+            f"Scenario {scenario.id}: LLM judge is required for non-exact-match "
+            "scoring but is not configured. Set eval_judge_enabled=true and "
+            "supply a judge model / API key in eval_config.json."
+        )
+
+    # Retry once on judge failure before giving up.
+    attempts = max(1, 1 + config.llm_judge.max_retries)
+    judge_result: Optional[JudgeResult] = None
+    last_error: Optional[str] = None
+    for attempt in range(attempts):
         judge_result = llm_judge_score(scenario, response, config.llm_judge)
         if judge_result is not None:
-            judge_score = judge_result.score
-            judge_reasoning = judge_result.reasoning
-            judge_prompt = judge_result.prompt
-            judge_raw_response = judge_result.raw_response
-            final_score = judge_result.score
-            method = ScoringMethodEnum.LLM_JUDGE
-            explanation = (
-                f"LLM judge score: {judge_result.score:.3f}. "
-                f"{judge_result.reasoning}"
-            )
-        else:
-            # Judge failed — fall back to bag-of-words
-            logger.warning(
-                "LLM judge unavailable for scenario %s; falling back to similarity",
-                scenario.id,
-            )
-            final_score, method, explanation = _similarity_score(similarity, config)
+            break
+        last_error = f"attempt {attempt + 1} of {attempts} failed"
+        logger.warning(
+            "LLM judge attempt %d/%d failed for scenario %s",
+            attempt + 1, attempts, scenario.id,
+        )
 
-    else:
-        # No judge configured — use bag-of-words similarity
-        final_score, method, explanation = _similarity_score(similarity, config)
+    if judge_result is None:
+        raise ScoringError(
+            f"Scenario {scenario.id}: LLM judge failed after {attempts} attempt(s). "
+            f"{last_error or ''} Fix judge configuration or check API availability."
+        )
+
+    is_correct = judge_result.score >= config.correctness_threshold
+    method = ScoringMethodEnum.LLM_JUDGE if is_correct else ScoringMethodEnum.NONE
+    explanation = (
+        f"LLM judge score: {judge_result.score:.3f} "
+        f"(threshold {config.correctness_threshold:.2f}). "
+        f"{judge_result.reasoning}"
+    )
 
     return ScoredResult(
         scenario_id=scenario.id,
         model_response=response,
         correct_answer=scenario.correct_answer,
         extracted_answer=extracted,
-        exact_match=exact,
+        exact_match=False,
         similarity_score=similarity,
-        final_score=final_score,
+        final_score=judge_result.score,
+        is_correct=is_correct,
         scoring_method=method,
         extraction_strategies_attempted=strategies,
         explanation=explanation,
-        judge_score=judge_score,
-        judge_reasoning=judge_reasoning,
-        judge_prompt=judge_prompt,
-        judge_raw_response=judge_raw_response,
-    )
-
-
-def _similarity_score(
-    similarity: float, config: ScoringConfig
-) -> tuple[float, ScoringMethodEnum, str]:
-    """Compute final score from bag-of-words similarity."""
-    if similarity >= config.similarity_threshold:
-        return (
-            similarity * config.similarity_weight,
-            ScoringMethodEnum.PARTIAL,
-            (
-                f"Partial credit: similarity {similarity:.3f} >= threshold "
-                f"{config.similarity_threshold}, weighted by {config.similarity_weight}"
-            ),
-        )
-    return (
-        0.0,
-        ScoringMethodEnum.NONE,
-        f"No credit: similarity {similarity:.3f} < threshold {config.similarity_threshold}",
+        judge_score=judge_result.score,
+        judge_reasoning=judge_result.reasoning,
+        judge_prompt=judge_result.prompt,
+        judge_raw_response=judge_result.raw_response,
     )

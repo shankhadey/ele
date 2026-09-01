@@ -324,11 +324,17 @@ One or more scenarios following the format above. Each scenario should:
 
 ### Quality Bar
 
-Scenarios go through a two-round review process:
+Every accepted scenario passes human expert review by practitioners in the
+relevant domain. Reviewers assess whether the scenario is realistic, whether
+the correct answer is clearly the best answer, whether the rationale
+identifies the context elements that actually matter, and whether the
+self-assessed difficulty is calibrated.
 
-**Round 1:** Scenarios are tested against frontier LLMs (GPT-5, Claude, Gemini). If models consistently get the answer right, the scenario isn't testing organizational reasoning. It's testing general knowledge. We keep only scenarios that stump at least 2 of 3 frontier models.
-
-**Round 2:** Human expert review by practitioners in the relevant domain. Reviewers assess whether the scenario is realistic, the answer is defensible, and the reasoning is sound.
+We deliberately do **not** use model-failure as an inclusion criterion for
+the primary evaluation set (see the *Evaluation Splits* section below).
+Filtering scenarios on whether specific frontier models fail would
+condition the dataset on those models' current weaknesses, biasing both
+absolute accuracy estimates and any comparison with future models.
 
 ---
 
@@ -348,30 +354,83 @@ We aim for broad coverage across enterprise functions:
 
 ---
 
+## Evaluation Splits
+
+ELE distinguishes two evaluation sets so that representativeness and
+difficulty are measured separately.
+
+- **ELE-Core/Test.** The primary, model-blind evaluation set. Items enter
+  this set on the strength of human-defined inclusion criteria only, never
+  on whether a target model succeeds or fails. Reports on ELE-Core/Test
+  support unbiased inference about average enterprise capability within
+  the sampling frame.
+
+- **ELE-Challenge.** A stress-test set. May include adversarially-authored
+  or model-failure-selected scenarios. Reports on ELE-Challenge are
+  interpreted as difficulty-focused stress tests, not as unbiased average
+  performance.
+
+Each scenario carries an explicit `split` field. Metrics are reported
+per split so an aggregate accuracy on one split is never confused with
+performance on the other.
+
 ## Evaluation Methodology
 
 ### Scoring
 
-Each scenario is scored on two dimensions:
+Correctness is decision-level and binary. Every scenario has a single
+defensible correct answer. Two comparison paths, in order:
 
-**1. Answer correctness** (binary or graduated)
-- Multiple choice: correct/incorrect
-- Short answer: exact match or semantic equivalence (judged by evaluator LLM with human verification)
+**1. Exact match.** Case- and whitespace-normalized comparison of the
+extracted answer to the correct answer. If it matches, the scenario is
+counted correct.
 
-**2. Reasoning quality** (0-3 scale)
-- 0: No reasoning or completely wrong reasoning
-- 1: Partially correct reasoning but misses critical context or precedent
-- 2: Mostly correct reasoning with minor gaps
-- 3: Complete reasoning that correctly identifies and weighs all relevant context
+**2. LLM-as-a-judge (mandatory).** For non-exact answers, an LLM judge
+grades the response against the stored correct answer and rationale on a
+[0.0, 1.0] scale at temperature 0. A scenario is counted correct iff
+the judge score is at least the correctness threshold (default **0.9**,
+strict by design).
+
+There is no lexical / semantic-similarity fallback for correctness. A
+response that discusses relevant concepts but recommends a different
+organizational action is operationally wrong and is scored 0. A
+bag-of-words cosine similarity is still computed and stored as a
+per-record diagnostic column to help debug judge disagreements, but it
+never contributes to the correctness decision.
+
+If the LLM judge is not configured, scoring raises rather than
+silently falling back to a weaker method.
 
 ### Metrics
 
-- **Overall accuracy** (% correct across all scenarios)
+- **Overall accuracy** (% correct across all scenarios, per split)
 - **Category accuracy** (% correct by taxonomy category)
 - **Domain accuracy** (% correct by business function)
-- **Reasoning score** (average reasoning quality across scenarios)
-- **Consistency score** (do models give the same answer when scenarios are rephrased or reordered?)
-- **Calibration** (how well does the model's confidence match its accuracy?)
+- **Difficulty accuracy** (% correct by self-labelled difficulty)
+- **Split accuracy** (% correct on ELE-Core/Test vs ELE-Challenge)
+- **95% Wilson confidence intervals** on aggregate accuracy
+
+## Contamination and Release Policy
+
+Public ELE artifacts (scenarios, taxonomy, evaluation code, aggregate
+results) are released for research use. The answer keys — correct answers
+and rationales — are held privately by the maintainers so that a model
+under evaluation cannot retrieve them from the public web or find them
+in a training corpus.
+
+Concretely:
+
+- Answer keys live in a separate directory that is deliberately excluded
+  from every public bundle produced by `scripts/export_public_bundle.py`.
+- Each answer key carries a unique canary token of the form
+  `ELE-CANARY-<hex>`. `scripts/check_answer_leakage.py` scans model
+  outputs and log files for these tokens; a hit is evidence that the
+  answer key has been ingested by a training corpus.
+- The repository includes a `robots.txt` that opts out of general web
+  crawlers and named AI training crawlers.
+- Answer keys are governed by an evaluation-only license
+  (`answers/LICENSE-answers`) that prohibits inclusion in training data
+  or public redistribution.
 
 ---
 
@@ -393,11 +452,11 @@ ELE sits at the intersection of three converging research streams:
 |---|---|---|
 | Taxonomy published, contributor recruitment opens | Q1 2026 | Public announcement |
 | Scenario collection period | Q1-Q2 2026 | Target: 500-1,000 raw submissions |
-| Round 1 filtering (model testing) | Q2 2026 | Reduce to ~400-600 qualifying scenarios |
-| Round 2 review (human expert) | Q2-Q3 2026 | Final dataset of 300-500 scenarios |
-| Evaluation runs against frontier models | Q3 2026 | Benchmark results |
-| Paper submission | Q3-Q4 2026 | Target: Nature Machine Intelligence |
-| Public dataset release | Q4 2026 | HuggingFace + dedicated site |
+| Human expert review (all submissions) | Q2-Q3 2026 | Realism, defensibility, calibration |
+| ELE-Core/Test freeze (model-blind primary set) | Q3 2026 | Primary evaluation set locked before running target models |
+| Evaluation runs across model families | Q3 2026 | Aggregate results by category, domain, split |
+| Paper submission | Q3-Q4 2026 | Target venue: ICLR 2027 (datasets & benchmarks) |
+| Public scenario release (answer key held private) | Q4 2026 | HuggingFace + dedicated site; answer keys not published |
 
 ---
 

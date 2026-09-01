@@ -44,7 +44,7 @@ Think of it as a "Humanity's Last Exam" but for enterprise operations — not tr
 │   │    2. Inject tool data if tools enabled              │      │
 │   │    3. Send to model (with timeout)                   │      │
 │   │    4. Extract answer from response                   │      │
-│   │    5. Score (exact match + semantic similarity)      │      │
+│   │    5. Score (exact match or mandatory LLM judge)     │      │
 │   │    6. Record result                                  │      │
 │   │                                                      │      │
 │   │  Supports: parallel execution, rate limiting,        │      │
@@ -69,8 +69,12 @@ Think of it as a "Humanity's Last Exam" but for enterprise operations — not tr
 │   │                                                      │      │
 │   │  1. Extract answer (multi-strategy: regex patterns)  │      │
 │   │  2. Exact match (case/whitespace normalized)         │      │
-│   │  3. Semantic similarity (bag-of-words cosine)        │      │
-│   │  4. Final score: exact=1.0, partial=sim*weight, 0.0  │      │
+│   │     → final=1.0, is_correct=True                     │      │
+│   │  3. Otherwise LLM-as-a-judge (MANDATORY)             │      │
+│   │     → final=judge_score in [0.0, 1.0]                │      │
+│   │     → is_correct = judge_score >= 0.9 (strict)       │      │
+│   │  4. Bag-of-words similarity is diagnostic ONLY;      │      │
+│   │     never contributes to is_correct                  │      │
 │   └──────────────────────────────────────────────────────┘      │
 └──────────────────────────┬──────────────────────────────────────┘
                            │
@@ -143,9 +147,12 @@ python -m evaluation_workflow.run --model gpt-4o-mini --scenario "scenarios/005_
      (MC: "The answer is C", leading letter, letter+paren, trailing)
      (EM: "Answer: ...", "The answer is ...", last line fallback)
    - For MC: map letter → full choice text for comparison
-   - Exact match? → score = 1.0
-   - Not exact but similar? → score = similarity × weight (max 0.8)
-   - Below threshold? → score = 0.0
+   - Exact match? → final_score = 1.0, is_correct = True
+   - Otherwise → LLM-as-a-judge grades on [0.0, 1.0] (MANDATORY;
+     scoring raises if not configured)
+       - is_correct = judge_score >= 0.9 (strict threshold)
+   - Bag-of-words similarity is computed for record-keeping only
+     (never contributes to is_correct)
         │
         ▼
 7. AGGREGATE & STORE
@@ -168,9 +175,25 @@ We don't need a database for evaluation runs. Each run loads scenarios, evaluate
 
 We originally used `ThreadPoolExecutor` for timeouts, but it caused the process to hang — orphan threads from timed-out model calls would block `sys.exit()`. `signal.SIGALRM` cleanly interrupts the main thread on Unix. The tradeoff is it doesn't work inside threads (falls back to no timeout), but that's fine since we use it in the main execution path.
 
-### Why bag-of-words similarity instead of embeddings?
+### Why the LLM judge is mandatory
 
-The semantic similarity scorer uses a simple bag-of-words cosine similarity. It's not as good as embedding-based similarity, but it has zero external dependencies and zero API cost. The function is designed to be swapped — replace the body of `calculate_semantic_similarity()` with an OpenAI embeddings call or sentence-transformers and everything else stays the same.
+Correctness in ELE is a decision-level judgment. Two responses can be
+lexically far apart and still express the same organizational decision,
+and two responses can be lexically similar while recommending opposite
+actions. A bag-of-words fallback for correctness would routinely reward
+the second case, so it is gone.
+
+The scoring pipeline now has exactly two decision paths: exact match, or
+an LLM judge scoring the response against the correct answer and
+rationale on [0.0, 1.0] at temperature 0. If the judge is not configured,
+scoring raises rather than silently degrading. `is_correct` is `True`
+iff the judge score is at or above the strict correctness threshold
+(default 0.9); anything below scores 0.
+
+Bag-of-words cosine similarity is still computed and written into the
+`similarity_score` column of every scored result, but purely as a
+diagnostic to help debug judge disagreements. It never contributes to
+`is_correct`.
 
 ### Why a strict scenario parser?
 
@@ -187,21 +210,24 @@ When tools are enabled, the system pre-fetches data (e.g., emails) and injects i
 Stores scenarios in a `Dict[str, List[Scenario]]` — the key is the scenario ID, the value is a list of versions (index 0 = original). This gives us:
 
 - Versioning: `update_scenario()` appends a new version, both are retrievable
-- Filtering: by category, domain, difficulty, contributor, status
+- Filtering: by category, domain, difficulty, contributor, status, split
 - Review exclusion: scenarios with `status=pending_review` are excluded from evaluations
 - Contributor tracking: stats per contributor (total submitted, acceptance rate)
+- Split awareness: every scenario is tagged `core_test` or `challenge`; queries and result reports separate the two so unbiased Core/Test performance is never conflated with adversarial Challenge performance
 
 ### Scoring System (scoring.py)
 
-The scoring pipeline has four stages:
+The scoring pipeline has two decision stages plus a diagnostic:
 
-1. Answer extraction — tries multiple regex strategies in order of specificity. For multiple choice, it looks for patterns like "The answer is C", a leading letter, "C)", or a trailing letter. For exact match, it looks for "Answer: ...", "The answer is ...", "Final answer: ...", or falls back to the last line. Each strategy is logged so you can debug extraction failures.
+1. **Answer extraction** — tries multiple regex strategies in order of specificity. For multiple choice, it looks for patterns like "The answer is C", a leading letter, "C)", or a trailing letter. For exact match, it looks for "Answer: ...", "The answer is ...", "Final answer: ...", or falls back to the last line. Each strategy is logged so you can debug extraction failures.
 
-2. Letter-to-choice mapping — if the model says "C" and the choices are ["Option A", "Option B", "Option C"], it maps "C" → "Option C" before comparing against the correct answer.
+2. **Letter-to-choice mapping** — if the model says "C" and the choices are ["Option A", "Option B", "Option C"], it maps "C" → "Option C" before comparing against the correct answer.
 
-3. Exact match — case-insensitive, whitespace-normalized string comparison.
+3. **Exact match** — case-insensitive, whitespace-normalized string comparison. On match: `final_score = 1.0`, `is_correct = True`.
 
-4. Semantic similarity — bag-of-words cosine similarity as a fallback for partial credit.
+4. **LLM-as-a-judge** (mandatory) — for non-exact answers, an LLM judge grades the response against the stored correct answer and rationale on [0.0, 1.0] at temperature 0. `is_correct` is `True` iff the judge score is at or above the strict correctness threshold (default `0.9`). If the judge is not configured, scoring raises `ScoringError`; if a specific call fails, it retries once and then raises. There is no lexical fallback.
+
+5. **Bag-of-words similarity (diagnostic only)** — cosine similarity between the extracted answer and the correct answer is written into every scored record for debugging judge disagreements. It never contributes to `is_correct`.
 
 ### Evaluation Engine (engine.py)
 
@@ -227,9 +253,9 @@ Any class that implements `invoke()`, `supports_tools()`, and `get_capabilities(
 
 Stores `EvaluationResults` objects keyed by run ID. Provides:
 
-- Aggregate metrics: accuracy, exact match rate, avg similarity, avg latency, total tokens
-- Breakdowns: by category, domain, difficulty
-- Confidence intervals: 95% CI using normal approximation (when n ≥ 30)
+- Aggregate metrics: accuracy (derived from the `is_correct` flag), exact match rate, avg diagnostic similarity, avg latency, total tokens
+- Breakdowns: by category, domain, difficulty, and split (`core_test` vs `challenge`)
+- Confidence intervals: 95% Wilson-style CI using normal approximation (when n ≥ 30)
 - Leaderboard: all models ranked by accuracy
 - Run comparison: side-by-side metrics for multiple runs
 - Export: JSON and CSV formats with identical data
@@ -491,7 +517,8 @@ All tools follow the same pattern:
 
 - Real Anthropic adapter (stub exists, needs SDK wiring)
 - Real Gmail/Slack/SharePoint tools (interfaces ready, need credentials)
-- Embedding-based semantic similarity (function is swappable)
 - Web UI / dashboard (results are JSON files for now)
 - Database-backed storage (in-memory works, interfaces are stable)
 - Authentication for scenario submission (currently open)
+- Counterfactual pair authoring: paired scenarios that flip a single decision-critical fact so the correct action must change (data-side work — schema and scoring hook are pending)
+- Human baseline harness: sampling script, blinded response form, and κ / α metrics for measuring practitioner accuracy on ELE-Core/Test

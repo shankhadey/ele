@@ -19,7 +19,8 @@
     "category": "cross_system_synthesis",
     "domain": "finance_revops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -41,7 +42,8 @@
     "category": "approval_chain",
     "domain": "procurement_vendor",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -84,7 +86,8 @@
         "success": true,
         "error": null
       }
-    ]
+    ],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -149,7 +152,8 @@
         "success": true,
         "error": null
       }
-    ]
+    ],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -171,7 +175,8 @@
     "category": "precedent_exception",
     "domain": "customer_success_support",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -193,7 +198,8 @@
     "category": "policy_version",
     "domain": "compliance_legal",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -215,7 +221,8 @@
     "category": "precedent_exception",
     "domain": "compliance_legal",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -237,7 +244,8 @@
     "category": "approval_chain",
     "domain": "compliance_legal",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -259,7 +267,8 @@
     "category": "cross_system_synthesis",
     "domain": "customer_success_support",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -281,7 +290,8 @@
     "category": "precedent_exception",
     "domain": "customer_success_support",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -303,7 +313,8 @@
     "category": "approval_chain",
     "domain": "customer_success_support",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -325,7 +336,8 @@
     "category": "entity_resolution",
     "domain": "finance_revops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -347,7 +359,8 @@
     "category": "approval_chain",
     "domain": "finance_revops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -369,7 +382,8 @@
     "category": "cross_system_synthesis",
     "domain": "finance_revops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -391,7 +405,8 @@
     "category": "policy_version",
     "domain": "sales_deal_desk",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -413,7 +428,8 @@
     "category": "precedent_exception",
     "domain": "sales_deal_desk",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -435,7 +451,8 @@
     "category": "temporal_consistency",
     "domain": "sales_deal_desk",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -457,7 +474,8 @@
     "category": "entity_resolution",
     "domain": "compliance_legal",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -479,7 +497,8 @@
     "category": "cross_system_synthesis",
     "domain": "compliance_legal",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": false
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -501,7 +520,8 @@
     "category": "policy_version",
     "domain": "compliance_legal",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": false
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -523,7 +543,8 @@
     "category": "precedent_exception",
     "domain": "hr_people_ops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -545,7 +566,8 @@
     "category": "approval_chain",
     "domain": "hr_people_ops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -567,7 +589,8 @@
     "category": "cross_system_synthesis",
     "domain": "hr_people_ops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -589,7 +612,8 @@
     "category": "entity_resolution",
     "domain": "compliance_legal",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -611,7 +635,8 @@
     "category": "policy_version",
     "domain": "compliance_legal",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -633,7 +658,8 @@
     "category": "temporal_consistency",
     "domain": "compliance_legal",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -655,7 +681,8 @@
     "category": "approval_chain",
     "domain": "compliance_legal",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -677,7 +704,8 @@
     "category": "policy_version",
     "domain": "compliance_legal",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -699,7 +727,8 @@
     "category": "temporal_consistency",
     "domain": "compliance_legal",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -721,7 +750,8 @@
     "category": "entity_resolution",
     "domain": "compliance_legal",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -743,7 +773,8 @@
     "category": "approval_chain",
     "domain": "compliance_legal",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -765,7 +796,8 @@
     "category": "cross_system_synthesis",
     "domain": "compliance_legal",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -787,7 +819,8 @@
     "category": "cross_system_synthesis",
     "domain": "hr_people_ops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -809,7 +842,8 @@
     "category": "entity_resolution",
     "domain": "hr_people_ops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -831,7 +865,8 @@
     "category": "temporal_consistency",
     "domain": "hr_people_ops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": false
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -853,7 +888,8 @@
     "category": "entity_resolution",
     "domain": "finance_revops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -875,7 +911,8 @@
     "category": "policy_version",
     "domain": "finance_revops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -897,7 +934,8 @@
     "category": "approval_chain",
     "domain": "finance_revops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -919,7 +957,8 @@
     "category": "policy_version",
     "domain": "compliance_legal",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": false
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -941,7 +980,8 @@
     "category": "temporal_consistency",
     "domain": "compliance_legal",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -963,7 +1003,8 @@
     "category": "cross_system_synthesis",
     "domain": "compliance_legal",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -985,7 +1026,8 @@
     "category": "entity_resolution",
     "domain": "finance_revops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1007,7 +1049,8 @@
     "category": "approval_chain",
     "domain": "finance_revops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1029,7 +1072,8 @@
     "category": "cross_system_synthesis",
     "domain": "finance_revops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1051,7 +1095,8 @@
     "category": "temporal_consistency",
     "domain": "engineering_devops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1073,7 +1118,8 @@
     "category": "approval_chain",
     "domain": "engineering_devops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1095,7 +1141,8 @@
     "category": "cross_system_synthesis",
     "domain": "engineering_devops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1117,7 +1164,8 @@
     "category": "precedent_exception",
     "domain": "customer_success_support",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": false
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1139,7 +1187,8 @@
     "category": "cross_system_synthesis",
     "domain": "customer_success_support",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1161,7 +1210,8 @@
     "category": "temporal_consistency",
     "domain": "customer_success_support",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1183,7 +1233,8 @@
     "category": "policy_version",
     "domain": "compliance_legal",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1205,7 +1256,8 @@
     "category": "entity_resolution",
     "domain": "compliance_legal",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1227,7 +1279,8 @@
     "category": "temporal_consistency",
     "domain": "compliance_legal",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1249,7 +1302,8 @@
     "category": "entity_resolution",
     "domain": "procurement_vendor",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": false
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1271,7 +1325,8 @@
     "category": "policy_version",
     "domain": "procurement_vendor",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1293,7 +1348,8 @@
     "category": "approval_chain",
     "domain": "procurement_vendor",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1315,7 +1371,8 @@
     "category": "entity_resolution",
     "domain": "finance_revops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1337,7 +1394,8 @@
     "category": "policy_version",
     "domain": "finance_revops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": false
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1359,7 +1417,8 @@
     "category": "temporal_consistency",
     "domain": "finance_revops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": false
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1381,7 +1440,8 @@
     "category": "policy_version",
     "domain": "hr_people_ops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1403,7 +1463,8 @@
     "category": "approval_chain",
     "domain": "hr_people_ops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1425,7 +1486,8 @@
     "category": "precedent_exception",
     "domain": "hr_people_ops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1447,7 +1509,8 @@
     "category": "entity_resolution",
     "domain": "finance_revops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1469,7 +1532,8 @@
     "category": "cross_system_synthesis",
     "domain": "finance_revops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": false
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1491,7 +1555,8 @@
     "category": "temporal_consistency",
     "domain": "finance_revops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": false
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1513,7 +1578,8 @@
     "category": "policy_version",
     "domain": "engineering_devops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1535,7 +1601,8 @@
     "category": "precedent_exception",
     "domain": "engineering_devops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1557,7 +1624,8 @@
     "category": "approval_chain",
     "domain": "engineering_devops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1579,7 +1647,8 @@
     "category": "entity_resolution",
     "domain": "procurement_vendor",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": false
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1601,7 +1670,8 @@
     "category": "policy_version",
     "domain": "procurement_vendor",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1623,7 +1693,8 @@
     "category": "precedent_exception",
     "domain": "procurement_vendor",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": false
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1645,7 +1716,8 @@
     "category": "approval_chain",
     "domain": "engineering_devops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1667,7 +1739,8 @@
     "category": "policy_version",
     "domain": "engineering_devops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1689,7 +1762,8 @@
     "category": "temporal_consistency",
     "domain": "engineering_devops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1711,7 +1785,8 @@
     "category": "precedent_exception",
     "domain": "hr_people_ops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1733,7 +1808,8 @@
     "category": "cross_system_synthesis",
     "domain": "hr_people_ops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": false
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1755,7 +1831,8 @@
     "category": "approval_chain",
     "domain": "hr_people_ops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1777,7 +1854,8 @@
     "category": "cross_system_synthesis",
     "domain": "customer_success_support",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1799,7 +1877,8 @@
     "category": "precedent_exception",
     "domain": "customer_success_support",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1821,7 +1900,8 @@
     "category": "temporal_consistency",
     "domain": "customer_success_support",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": false
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1843,7 +1923,8 @@
     "category": "approval_chain",
     "domain": "sales_deal_desk",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1865,7 +1946,8 @@
     "category": "precedent_exception",
     "domain": "sales_deal_desk",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1887,7 +1969,8 @@
     "category": "policy_version",
     "domain": "sales_deal_desk",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1909,7 +1992,8 @@
     "category": "entity_resolution",
     "domain": "compliance_legal",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1931,7 +2015,8 @@
     "category": "policy_version",
     "domain": "compliance_legal",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1953,7 +2038,8 @@
     "category": "approval_chain",
     "domain": "compliance_legal",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1975,7 +2061,8 @@
     "category": "entity_resolution",
     "domain": "sales_deal_desk",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -1997,7 +2084,8 @@
     "category": "precedent_exception",
     "domain": "sales_deal_desk",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": false
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2019,7 +2107,8 @@
     "category": "temporal_consistency",
     "domain": "sales_deal_desk",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2041,7 +2130,8 @@
     "category": "entity_resolution",
     "domain": "finance_revops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2063,7 +2153,8 @@
     "category": "cross_system_synthesis",
     "domain": "finance_revops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2085,7 +2176,8 @@
     "category": "temporal_consistency",
     "domain": "finance_revops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2107,7 +2199,8 @@
     "category": "approval_chain",
     "domain": "engineering_devops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2129,7 +2222,8 @@
     "category": "temporal_consistency",
     "domain": "engineering_devops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2151,7 +2245,8 @@
     "category": "cross_system_synthesis",
     "domain": "engineering_devops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2173,7 +2268,8 @@
     "category": "policy_version",
     "domain": "customer_success_support",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": false
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2195,7 +2291,8 @@
     "category": "approval_chain",
     "domain": "customer_success_support",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2217,7 +2314,8 @@
     "category": "cross_system_synthesis",
     "domain": "customer_success_support",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2239,7 +2337,8 @@
     "category": "precedent_exception",
     "domain": "hr_people_ops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2261,7 +2360,8 @@
     "category": "policy_version",
     "domain": "hr_people_ops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2283,7 +2383,8 @@
     "category": "cross_system_synthesis",
     "domain": "hr_people_ops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2305,7 +2406,8 @@
     "category": "cross_system_synthesis",
     "domain": "engineering_devops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2327,7 +2429,8 @@
     "category": "entity_resolution",
     "domain": "finance_revops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2349,7 +2452,8 @@
     "category": "temporal_consistency",
     "domain": "engineering_devops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2371,7 +2475,8 @@
     "category": "approval_chain",
     "domain": "compliance_legal",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": false
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2393,7 +2498,8 @@
     "category": "entity_resolution",
     "domain": "compliance_legal",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2415,7 +2521,8 @@
     "category": "policy_version",
     "domain": "compliance_legal",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": false
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2437,7 +2544,8 @@
     "category": "approval_chain",
     "domain": "compliance_legal",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2459,7 +2567,8 @@
     "category": "cross_system_synthesis",
     "domain": "compliance_legal",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": false
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2481,7 +2590,8 @@
     "category": "temporal_consistency",
     "domain": "compliance_legal",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2503,7 +2613,8 @@
     "category": "entity_resolution",
     "domain": "finance_revops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2525,7 +2636,8 @@
     "category": "policy_version",
     "domain": "finance_revops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2547,7 +2659,8 @@
     "category": "cross_system_synthesis",
     "domain": "finance_revops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": false
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2569,7 +2682,8 @@
     "category": "approval_chain",
     "domain": "procurement_vendor",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2591,7 +2705,8 @@
     "category": "entity_resolution",
     "domain": "procurement_vendor",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2613,7 +2728,8 @@
     "category": "policy_version",
     "domain": "procurement_vendor",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2635,7 +2751,8 @@
     "category": "entity_resolution",
     "domain": "finance_revops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2657,7 +2774,8 @@
     "category": "policy_version",
     "domain": "finance_revops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2679,7 +2797,8 @@
     "category": "cross_system_synthesis",
     "domain": "finance_revops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2701,7 +2820,8 @@
     "category": "entity_resolution",
     "domain": "finance_revops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2723,7 +2843,8 @@
     "category": "temporal_consistency",
     "domain": "finance_revops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2745,7 +2866,8 @@
     "category": "cross_system_synthesis",
     "domain": "finance_revops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2767,7 +2889,8 @@
     "category": "entity_resolution",
     "domain": "sales_deal_desk",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2789,7 +2912,8 @@
     "category": "precedent_exception",
     "domain": "sales_deal_desk",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2811,7 +2935,8 @@
     "category": "cross_system_synthesis",
     "domain": "sales_deal_desk",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2833,7 +2958,8 @@
     "category": "entity_resolution",
     "domain": "procurement_vendor",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2855,7 +2981,8 @@
     "category": "policy_version",
     "domain": "procurement_vendor",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2877,7 +3004,8 @@
     "category": "approval_chain",
     "domain": "procurement_vendor",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2899,7 +3027,8 @@
     "category": "policy_version",
     "domain": "finance_revops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2921,7 +3050,8 @@
     "category": "entity_resolution",
     "domain": "finance_revops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": false
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2943,7 +3073,8 @@
     "category": "temporal_consistency",
     "domain": "finance_revops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2965,7 +3096,8 @@
     "category": "precedent_exception",
     "domain": "sales_deal_desk",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -2987,7 +3119,8 @@
     "category": "policy_version",
     "domain": "sales_deal_desk",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3009,7 +3142,8 @@
     "category": "cross_system_synthesis",
     "domain": "sales_deal_desk",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3031,7 +3165,8 @@
     "category": "entity_resolution",
     "domain": "procurement_vendor",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3053,7 +3188,8 @@
     "category": "approval_chain",
     "domain": "procurement_vendor",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3075,7 +3211,8 @@
     "category": "policy_version",
     "domain": "procurement_vendor",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3097,7 +3234,8 @@
     "category": "policy_version",
     "domain": "finance_revops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3119,7 +3257,8 @@
     "category": "temporal_consistency",
     "domain": "finance_revops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3141,7 +3280,8 @@
     "category": "approval_chain",
     "domain": "finance_revops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3163,7 +3303,8 @@
     "category": "cross_system_synthesis",
     "domain": "compliance_legal",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3185,7 +3326,8 @@
     "category": "approval_chain",
     "domain": "compliance_legal",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3207,7 +3349,8 @@
     "category": "temporal_consistency",
     "domain": "compliance_legal",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3229,7 +3372,8 @@
     "category": "entity_resolution",
     "domain": "sales_deal_desk",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3251,7 +3395,8 @@
     "category": "approval_chain",
     "domain": "sales_deal_desk",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3273,7 +3418,8 @@
     "category": "policy_version",
     "domain": "sales_deal_desk",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3295,7 +3441,8 @@
     "category": "temporal_consistency",
     "domain": "compliance_legal",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": false
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3317,7 +3464,8 @@
     "category": "policy_version",
     "domain": "compliance_legal",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3339,7 +3487,8 @@
     "category": "approval_chain",
     "domain": "compliance_legal",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3361,7 +3510,8 @@
     "category": "cross_system_synthesis",
     "domain": "customer_success_support",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3383,7 +3533,8 @@
     "category": "entity_resolution",
     "domain": "customer_success_support",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3405,7 +3556,8 @@
     "category": "temporal_consistency",
     "domain": "customer_success_support",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": false
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3427,7 +3579,8 @@
     "category": "entity_resolution",
     "domain": "compliance_legal",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3449,7 +3602,8 @@
     "category": "policy_version",
     "domain": "compliance_legal",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3471,7 +3625,8 @@
     "category": "cross_system_synthesis",
     "domain": "compliance_legal",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": false
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3493,7 +3648,8 @@
     "category": "policy_version",
     "domain": "finance_revops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3515,7 +3671,8 @@
     "category": "precedent_exception",
     "domain": "finance_revops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": false
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3537,7 +3694,8 @@
     "category": "temporal_consistency",
     "domain": "finance_revops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3559,7 +3717,8 @@
     "category": "entity_resolution",
     "domain": "finance_revops",
     "difficulty": "expert",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3581,7 +3740,8 @@
     "category": "policy_version",
     "domain": "finance_revops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   },
   {
     "run_id": "67dca2c5-cb6a-4d76-9b65-ff3546d66594",
@@ -3603,6 +3763,7 @@
     "category": "cross_system_synthesis",
     "domain": "finance_revops",
     "difficulty": "hard",
-    "tool_invocations": []
+    "tool_invocations": [],
+    "is_correct": true
   }
 ]

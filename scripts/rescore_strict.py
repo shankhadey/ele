@@ -38,8 +38,6 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 _ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(_ROOT.parent))  # make `ele` importable
-from ele.core import paths  # noqa: E402
 
 
 def recompute_is_correct(record: Dict[str, Any], threshold: float) -> bool:
@@ -111,7 +109,7 @@ def main() -> int:
             for match in sorted(glob.glob(pat)):
                 files.append(Path(match))
     else:
-        files = sorted(paths.results_dir().glob("*.json"))
+        files = sorted((_ROOT / "results").glob("*.json"))
 
     if not files:
         print("No results files matched.", file=sys.stderr)

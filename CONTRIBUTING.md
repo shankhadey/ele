@@ -35,6 +35,7 @@ Each scenario submission should follow this structure. You can submit via pull r
   "category": "One of: entity_resolution | precedent_exception | cross_system_synthesis | policy_version | approval_chain | temporal_consistency",
   "domain": "One of: sales_deal_desk | customer_success_support | finance_revops | hr_people_ops | engineering_devops | compliance_legal | procurement_vendor | other",
   "difficulty": "One of: standard | hard | expert",
+  "split": "One of: core_test | challenge  (optional; defaults to challenge for new submissions)",
   "scenario": "The full scenario text, including context from multiple systems. 200-500 words. Present information the way it would appear across different enterprise tools: CRM records, support tickets, billing data, Slack messages, policy documents, email trails, etc.",
   "question": "A clear, specific question with an unambiguous correct answer.",
   "answer_format": "One of: multiple_choice | exact_match",
@@ -91,20 +92,36 @@ Send your scenario (in JSON format or plain text following the template structur
 
 ## Review Process
 
-### Round 1: Model Testing
-
-Each submitted scenario is tested against frontier LLMs (GPT-5, Claude, Gemini). We keep only scenarios where at least 2 of 3 frontier models fail. If models consistently get the right answer, the scenario is testing general knowledge, not organizational reasoning.
-
-### Round 2: Human Expert Review
-
-Practitioners in the relevant domain review each qualifying scenario for:
+Every submission is reviewed by practitioners in the relevant domain
+against four criteria:
 
 - **Realism:** Does this reflect a genuine organizational decision pattern?
 - **Answer defensibility:** Is the correct answer clearly the best answer?
 - **Reasoning quality:** Does the rationale correctly identify which context elements matter?
 - **Difficulty calibration:** Is the self-assessed difficulty appropriate?
 
-Scenarios that pass both rounds are included in the final dataset.
+Scenarios that pass expert review are included in the dataset.
+
+We deliberately do **not** filter scenarios by whether specific frontier
+models get them wrong. Screening on target-model failure would condition
+the dataset on those models' current weaknesses and bias both absolute
+accuracy estimates and comparisons with future models.
+
+### Where accepted scenarios land
+
+Each scenario is assigned to one of two splits (see the `split` field in
+the JSON template):
+
+- **`core_test`** — the primary, model-blind evaluation set. Reserved for
+  scenarios that satisfy the inclusion criteria without any model-based
+  filtering. Reports on this split support unbiased inference about
+  average enterprise capability.
+- **`challenge`** — the stress-test set. May contain adversarially-authored
+  or model-failure-selected scenarios and is used for difficulty-focused
+  analysis.
+
+New submissions default to `challenge`. Promotion into `core_test` is a
+deliberate human decision made after review.
 
 ## Example Submissions
 

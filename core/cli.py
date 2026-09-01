@@ -20,10 +20,8 @@ from ele.core.models import (
     AnswerFormatEnum,
     CategoryEnum,
     Contributor,
-    CounterfactualRoleEnum,
     DifficultyEnum,
     DomainEnum,
-    PromptConditionEnum,
     Scenario,
     ScenarioFilters,
     SplitEnum,
@@ -70,18 +68,13 @@ class AppConfig:
     eval_rate_limit_per_minute: int = 0
     eval_enable_tools: bool = False
     # LLM judge — mandatory. eval_judge_enabled must be True and a model
-    # must be supplied. For the openai provider the API key may come from
-    # env; for the bedrock provider ambient AWS credentials are used.
+    # must be supplied; the API key may come from env if not set here.
     eval_judge_enabled: bool = True
-    eval_judge_provider: str = "openai"        # "openai" | "bedrock"
     eval_judge_model: str = "gpt-4o-mini"
     eval_judge_api_key: str = ""
-    eval_judge_region: str = "us-west-2"       # bedrock only
     # Judge score at or above this threshold counts as a correct decision.
     # Strict by design — see scoring.py for rationale.
     eval_correctness_threshold: float = 0.9
-    # Prompting condition (§5.2): "direct" | "deliberate" | "scaffold".
-    eval_prompt_condition: str = "direct"
 
     @classmethod
     def from_env(cls) -> "AppConfig":
@@ -102,14 +95,11 @@ class AppConfig:
             eval_enable_tools=os.environ.get("EVAL_ENABLE_TOOLS", "").lower()
             in ("1", "true", "yes"),
             eval_judge_enabled=judge_enabled_env in ("1", "true", "yes"),
-            eval_judge_provider=os.environ.get("EVAL_JUDGE_PROVIDER", "openai"),
             eval_judge_model=os.environ.get("EVAL_JUDGE_MODEL", "gpt-4o-mini"),
             eval_judge_api_key=os.environ.get("EVAL_JUDGE_API_KEY", ""),
-            eval_judge_region=os.environ.get("EVAL_JUDGE_REGION", "us-west-2"),
             eval_correctness_threshold=float(
                 os.environ.get("EVAL_CORRECTNESS_THRESHOLD", "0.9")
             ),
-            eval_prompt_condition=os.environ.get("EVAL_PROMPT_CONDITION", "direct"),
         )
 
     @classmethod
@@ -125,12 +115,9 @@ class AppConfig:
             eval_rate_limit_per_minute=data.get("eval_rate_limit_per_minute", 0),
             eval_enable_tools=data.get("eval_enable_tools", False),
             eval_judge_enabled=data.get("eval_judge_enabled", True),
-            eval_judge_provider=data.get("eval_judge_provider", "openai"),
             eval_judge_model=data.get("eval_judge_model", "gpt-4o-mini"),
             eval_judge_api_key=data.get("eval_judge_api_key", ""),
-            eval_judge_region=data.get("eval_judge_region", "us-west-2"),
             eval_correctness_threshold=data.get("eval_correctness_threshold", 0.9),
-            eval_prompt_condition=data.get("eval_prompt_condition", "direct"),
         )
 
 
@@ -140,10 +127,9 @@ class App:
     def __init__(self, config: Optional[AppConfig] = None) -> None:
         self.config = config or AppConfig()
 
-        # LLM judge is mandatory. Refuse to start if it's disabled or if the
-        # selected backend has no usable credentials — this prevents silent
-        # degradation into a legacy lexical-fallback code path that no longer
-        # exists.
+        # LLM judge is mandatory. Refuse to start if it's disabled or if no
+        # API key is resolvable — this prevents silent degradation into a
+        # legacy lexical-fallback code path that no longer exists.
         if not self.config.eval_judge_enabled:
             raise ValueError(
                 "LLM judge is mandatory but eval_judge_enabled=false. "
@@ -154,35 +140,16 @@ class App:
                 "LLM judge is mandatory but eval_judge_model is empty. "
                 "Set eval_judge_model in eval_config.json."
             )
-
-        judge_provider = (self.config.eval_judge_provider or "openai").lower()
-        judge_api_key = ""
-        if judge_provider == "bedrock":
-            # Bedrock authenticates via ambient AWS credentials; verify they
-            # resolve so we fail fast rather than mid-run.
-            try:
-                import boto3
-                if boto3.Session().get_credentials() is None:
-                    raise ValueError(
-                        "LLM judge provider is 'bedrock' but no AWS credentials "
-                        "are resolvable. Configure AWS credentials (e.g. via "
-                        "environment or profile) before running."
-                    )
-            except ImportError as exc:
-                raise ValueError(
-                    "LLM judge provider is 'bedrock' but boto3 is not installed."
-                ) from exc
-        else:
-            judge_api_key = (
-                self.config.eval_judge_api_key
-                or os.environ.get("OPENAI_API_KEY", "")
+        judge_api_key = (
+            self.config.eval_judge_api_key
+            or os.environ.get("OPENAI_API_KEY", "")
+        )
+        if not judge_api_key:
+            raise ValueError(
+                "LLM judge is mandatory but no API key is available. "
+                "Set eval_judge_api_key in eval_config.json or export "
+                "OPENAI_API_KEY."
             )
-            if not judge_api_key:
-                raise ValueError(
-                    "LLM judge is mandatory but no API key is available. "
-                    "Set eval_judge_api_key in eval_config.json or export "
-                    "OPENAI_API_KEY (or switch eval_judge_provider to 'bedrock')."
-                )
 
         self.repository = ScenarioRepository()
         self.tool_registry = ToolRegistry()
@@ -192,9 +159,7 @@ class App:
             correctness_threshold=self.config.eval_correctness_threshold,
             llm_judge=LLMJudgeConfig(
                 model=self.config.eval_judge_model,
-                provider=judge_provider,
                 api_key=judge_api_key,
-                region=self.config.eval_judge_region,
             ),
         )
         self.engine = EvaluationEngine(
@@ -345,13 +310,6 @@ class App:
             difficulty=DifficultyEnum(difficulty) if difficulty else None,
             split=SplitEnum(split) if split else None,
         )
-        try:
-            prompt_condition = PromptConditionEnum(self.config.eval_prompt_condition)
-        except ValueError as exc:
-            raise ValueError(
-                f"Unknown eval_prompt_condition '{self.config.eval_prompt_condition}'. "
-                f"Must be one of {[c.value for c in PromptConditionEnum]}."
-            ) from exc
         eval_config = EvaluationConfig(
             timeout_seconds=self.config.eval_timeout_seconds,
             max_tokens=self.config.eval_max_tokens,
@@ -359,7 +317,6 @@ class App:
             parallel_workers=self.config.eval_parallel_workers,
             rate_limit_per_minute=self.config.eval_rate_limit_per_minute,
             enable_tools=self.config.eval_enable_tools,
-            prompt_condition=prompt_condition,
         )
 
         try:
@@ -400,15 +357,6 @@ class App:
                     domain=scenario.domain.value if scenario else "",
                     difficulty=scenario.difficulty.value if scenario else "",
                     split=scenario.split.value if scenario else "",
-                    counterfactual_pair_id=(
-                        scenario.counterfactual_pair_id if scenario else None
-                    ),
-                    counterfactual_role=(
-                        scenario.counterfactual_role.value
-                        if (scenario and scenario.counterfactual_role)
-                        else None
-                    ),
-                    prompt_condition=self.config.eval_prompt_condition,
                     judge_score=sr.judge_score if sr else None,
                     judge_reasoning=sr.judge_reasoning if sr else None,
                     tool_invocations=r.tool_invocations,
@@ -504,14 +452,6 @@ def _dict_to_scenario(data: Dict[str, Any]) -> Scenario:
             f"Unknown split '{split_raw}'. Must be one of "
             f"{[s.value for s in SplitEnum]}."
         ) from exc
-    role_raw = data.get("counterfactual_role")
-    try:
-        role = CounterfactualRoleEnum(role_raw) if role_raw else None
-    except ValueError as exc:
-        raise ValueError(
-            f"Unknown counterfactual_role '{role_raw}'. Must be one of "
-            f"{[r.value for r in CounterfactualRoleEnum]}."
-        ) from exc
     return Scenario(
         title=data.get("title", ""),
         category=CategoryEnum(data["category"]),
@@ -526,9 +466,6 @@ def _dict_to_scenario(data: Dict[str, Any]) -> Scenario:
         choices=data.get("choices", []),
         tools_available=data.get("tools_available", []),
         split=split,
-        counterfactual_pair_id=data.get("counterfactual_pair_id"),
-        counterfactual_role=role,
-        changed_fact=data.get("changed_fact"),
     )
 
 
@@ -562,8 +499,7 @@ def build_parser() -> argparse.ArgumentParser:
     p_list.add_argument("--difficulty", default=None)
     p_list.add_argument("--contributor", default=None)
     p_list.add_argument("--status", default=None)
-    p_list.add_argument("--split", default=None,
-                        choices=["dev", "core_test", "challenge", "counterfactual", "holdout"])
+    p_list.add_argument("--split", default=None, choices=["core_test", "challenge"])
 
     # register-model
     p_model = sub.add_parser("register-model", help="Register an AI model")
@@ -579,8 +515,7 @@ def build_parser() -> argparse.ArgumentParser:
     p_eval.add_argument("--category", default=None)
     p_eval.add_argument("--domain", default=None)
     p_eval.add_argument("--difficulty", default=None)
-    p_eval.add_argument("--split", default=None,
-                        choices=["dev", "core_test", "challenge", "counterfactual", "holdout"])
+    p_eval.add_argument("--split", default=None, choices=["core_test", "challenge"])
 
     # get-results
     p_results = sub.add_parser("get-results", help="Get results for an evaluation run")

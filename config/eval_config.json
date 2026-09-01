@@ -1,6 +1,4 @@
 {
-  "_comment_private_dir": "Root of the PRIVATE ELEAnswers repo holding answers/, logs/, results/. Relative paths resolve against the repo root. Override with env ELE_PRIVATE_DIR, or per-dir env ELE_ANSWERS_DIR / ELE_LOGS_DIR / ELE_RESULTS_DIR. Remove this key to fall back to local ./answers, ./logs, ./results.",
-  "ele_private_dir": "../ELEAnswers",
   "eval_timeout_seconds": 60,
   "eval_max_tokens": 4096,
   "eval_temperature": 0.0,
@@ -8,8 +6,7 @@
   "eval_rate_limit_per_minute": 0,
   "eval_enable_tools": true,
   "eval_judge_enabled": true,
-  "eval_judge_provider": "bedrock",
-  "eval_judge_model": "us.anthropic.claude-opus-4-6-v1",
-  "eval_judge_region": "us-west-2",
+  "eval_judge_model": "gpt-4o-mini",
+  "eval_judge_api_key": "",
   "eval_correctness_threshold": 0.9
 }

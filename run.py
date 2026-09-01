@@ -197,6 +197,8 @@ def main():
     parser.add_argument("--category", help="Filter scenarios by category")
     parser.add_argument("--domain", help="Filter scenarios by domain")
     parser.add_argument("--difficulty", help="Filter scenarios by difficulty")
+    parser.add_argument("--split", choices=["core_test", "challenge"],
+                        help="Filter scenarios by evaluation split")
     parser.add_argument("--scenario", action="append", default=None,
                         help="Run specific scenario file(s). Can be repeated: --scenario 005_*.json --scenario 001_*.json")
     parser.add_argument("--scenarios-dir", default=str(DEFAULT_SCENARIOS_DIR),
@@ -254,7 +256,7 @@ def main():
     if args.list_scenarios:
         for i, s in enumerate(raw_scenarios, 1):
             print(f"  {i}. {s.get('title', 'Untitled')}")
-            print(f"     Category: {s.get('category')}  Domain: {s.get('domain')}  Difficulty: {s.get('difficulty')}")
+            print(f"     Category: {s.get('category')}  Domain: {s.get('domain')}  Difficulty: {s.get('difficulty')}  Split: {s.get('split', 'challenge')}")
             print(f"     Format: {s.get('answer_format')}  Contributor: {s.get('contributor', {}).get('name', 'Unknown')}")
             print()
         return 0
@@ -331,6 +333,7 @@ def main():
             category=args.category,
             domain=args.domain,
             difficulty=args.difficulty,
+            split=args.split,
         )
 
         if not eval_result.get("success"):
