@@ -21,6 +21,7 @@ from __future__ import annotations
 import logging
 import math
 import re
+import time
 from dataclasses import dataclass, field
 from enum import Enum
 from typing import Any, Dict, List, Optional
@@ -64,15 +65,28 @@ class ScoringMethodEnum(Enum):
 
 @dataclass
 class LLMJudgeConfig:
-    """Configuration for the LLM-as-a-judge scorer."""
-    # Which OpenAI-compatible model to use as the judge
+    """Configuration for the LLM-as-a-judge scorer.
+
+    ``provider`` selects the backend: "openai" (default) calls the OpenAI
+    Chat Completions API; "bedrock" calls AWS Bedrock via the Converse API
+    (authenticated by the ambient AWS credentials, no api_key needed).
+    """
+    # Which model to use as the judge. For bedrock this is an inference
+    # profile ID or on-demand model ID (e.g. "us.anthropic.claude-sonnet-5").
     model: str = "gpt-4o-mini"
-    # API key — if empty, falls back to OPENAI_API_KEY env var
+    # Backend: "openai" or "bedrock"
+    provider: str = "openai"
+    # API key (openai only) — if empty, falls back to OPENAI_API_KEY env var
     api_key: str = ""
+    # AWS region (bedrock only)
+    region: str = "us-west-2"
     # Temperature for the judge (low = more deterministic)
     temperature: float = 0.0
-    # Number of retry attempts on a judge failure before raising
-    max_retries: int = 1
+    # Number of retry attempts on a judge failure before raising. With
+    # exponential backoff this rides out transient provider throttling.
+    max_retries: int = 4
+    # Base seconds for exponential backoff between judge retries.
+    retry_backoff_seconds: float = 0.5
     # System prompt injected before the judge user message
     system_prompt: str = (
         "You are an expert evaluator assessing whether a model's answer is "
@@ -298,28 +312,11 @@ class JudgeResult:
     prompt: str = ""
 
 
-def llm_judge_score(
-    scenario: "Scenario",
-    model_response: str,
-    judge_config: LLMJudgeConfig,
-) -> Optional[JudgeResult]:
-    """Call an LLM to judge whether ``model_response`` correctly answers the scenario.
-
-    Returns a ``JudgeResult`` on success, or ``None`` if the judge call fails
-    (network error, parse failure, etc.). Callers must decide how to handle
-    ``None``; ``score_response`` retries and then raises ``ScoringError``.
-    """
+def _judge_call_openai(prompt: str, judge_config: LLMJudgeConfig) -> Optional[str]:
+    """Call the OpenAI Chat Completions API. Returns raw text or None on failure."""
     if openai is None:
-        logger.warning("openai package not installed; LLM judge unavailable")
+        logger.warning("openai package not installed; OpenAI judge unavailable")
         return None
-
-    prompt = _JUDGE_PROMPT_TEMPLATE.format(
-        question=scenario.question,
-        correct_answer=scenario.correct_answer,
-        model_answer=model_response or "(no answer)",
-        rationale=scenario.rationale or "(no rationale provided)",
-    )
-
     try:
         kwargs: Dict[str, Any] = {"api_key": judge_config.api_key} if judge_config.api_key else {}
         client = openai.OpenAI(**kwargs)
@@ -331,9 +328,80 @@ def llm_judge_score(
                 {"role": "user", "content": prompt},
             ],
         )
-        raw = response.choices[0].message.content or ""
+        return response.choices[0].message.content or ""
     except Exception as exc:
-        logger.warning("LLM judge call failed: %s", exc)
+        logger.warning("OpenAI judge call failed: %s", exc)
+        return None
+
+
+def _judge_call_bedrock(prompt: str, judge_config: LLMJudgeConfig) -> Optional[str]:
+    """Call AWS Bedrock via the Converse API. Returns raw text or None on failure.
+
+    Uses ambient AWS credentials (no api_key). The system prompt is prepended
+    to the user message because not every Bedrock model accepts a separate
+    system block through Converse.
+    """
+    try:
+        import boto3
+    except ImportError:
+        logger.warning("boto3 not installed; Bedrock judge unavailable")
+        return None
+    full_prompt = f"{judge_config.system_prompt}\n\n{prompt}"
+    messages = [{"role": "user", "content": [{"text": full_prompt}]}]
+    inference_config: Dict[str, Any] = {"maxTokens": 512, "temperature": judge_config.temperature}
+    try:
+        client = boto3.client("bedrock-runtime", region_name=judge_config.region)
+        try:
+            response = client.converse(
+                modelId=judge_config.model,
+                messages=messages,
+                inferenceConfig=inference_config,
+            )
+        except Exception as exc:
+            # Some models deprecate temperature — retry without it.
+            if "temperature" in str(exc).lower():
+                inference_config.pop("temperature", None)
+                response = client.converse(
+                    modelId=judge_config.model,
+                    messages=messages,
+                    inferenceConfig=inference_config,
+                )
+            else:
+                raise
+        blocks = response.get("output", {}).get("message", {}).get("content", [])
+        return "".join(b.get("text", "") for b in blocks)
+    except Exception as exc:
+        logger.warning("Bedrock judge call failed: %s", exc)
+        return None
+
+
+def llm_judge_score(
+    scenario: "Scenario",
+    model_response: str,
+    judge_config: LLMJudgeConfig,
+) -> Optional[JudgeResult]:
+    """Call an LLM to judge whether ``model_response`` correctly answers the scenario.
+
+    Dispatches to the OpenAI or Bedrock backend based on
+    ``judge_config.provider``. Returns a ``JudgeResult`` on success, or
+    ``None`` if the judge call fails (network error, parse failure, etc.).
+    Callers must decide how to handle ``None``; ``score_response`` retries
+    and then raises ``ScoringError``.
+    """
+    prompt = _JUDGE_PROMPT_TEMPLATE.format(
+        question=scenario.question,
+        correct_answer=scenario.correct_answer,
+        model_answer=model_response or "(no answer)",
+        rationale=scenario.rationale or "(no rationale provided)",
+    )
+
+    provider = (judge_config.provider or "openai").lower()
+    if provider == "bedrock":
+        raw = _judge_call_bedrock(prompt, judge_config)
+    else:
+        raw = _judge_call_openai(prompt, judge_config)
+
+    if raw is None:
         return None
 
     # Parse SCORE and REASONING from the response
@@ -409,6 +477,26 @@ def score_response(
             explanation="Exact match",
         )
 
+    # 3b. Empty / no-answer short-circuit. An empty or whitespace-only
+    # response can never express the correct organizational decision, so
+    # score it wrong directly. This avoids spending a judge call to grade
+    # "(no answer)" and removes a fragile edge case (empty inputs are the
+    # most likely to coincide with provider throttling on the judge).
+    if not response or not response.strip():
+        return ScoredResult(
+            scenario_id=scenario.id,
+            model_response=response,
+            correct_answer=scenario.correct_answer,
+            extracted_answer=extracted,
+            exact_match=False,
+            similarity_score=similarity,
+            final_score=0.0,
+            is_correct=False,
+            scoring_method=ScoringMethodEnum.NONE,
+            extraction_strategies_attempted=strategies,
+            explanation="Empty model response — scored wrong without judge.",
+        )
+
     # 4. Non-exact → LLM judge is mandatory.
     if config.llm_judge is None:
         raise ScoringError(
@@ -417,7 +505,9 @@ def score_response(
             "supply a judge model / API key in eval_config.json."
         )
 
-    # Retry once on judge failure before giving up.
+    # Retry on judge failure with exponential backoff before giving up, so a
+    # transient provider throttle does not turn a scorable scenario into an
+    # error. attempts = 1 + max_retries.
     attempts = max(1, 1 + config.llm_judge.max_retries)
     judge_result: Optional[JudgeResult] = None
     last_error: Optional[str] = None
@@ -430,6 +520,9 @@ def score_response(
             "LLM judge attempt %d/%d failed for scenario %s",
             attempt + 1, attempts, scenario.id,
         )
+        # Exponential backoff (0.5s, 1s, 2s, ...) except after the last attempt.
+        if attempt < attempts - 1:
+            time.sleep(config.llm_judge.retry_backoff_seconds * (2 ** attempt))
 
     if judge_result is None:
         raise ScoringError(

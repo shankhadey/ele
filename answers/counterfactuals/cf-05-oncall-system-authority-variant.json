@@ -1,0 +1,8 @@
+{
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-01328E51A740",
+  "scenario_file": "cf-05-oncall-system-authority-variant.json",
+  "correct_answer": "Payments Platform \u2014 the CMDB is the authoritative source of service ownership at Radial.",
+  "answer_format": "multiple_choice",
+  "rationale": "The CMDB was updated on August 21 to transfer ownership of payments-gateway from Checkout Reliability to Payments Platform via change ticket CHG-8842. The runbook still shows the old owner because it has not been synced. Under ENG-3.2 the CMDB governs when the sources disagree. The incident commander pages Payments Platform. Option B pages a team that no longer owns the service. Option C wakes both teams unnecessarily and dilutes accountability. Option D bypasses the authoritative source of record for a routing question that the CMDB already answers."
+}

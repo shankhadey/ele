@@ -1,0 +1,8 @@
+{
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-FB375C6E5C07",
+  "scenario_file": "009_pto_carryover_policy_version.json",
+  "correct_answer": "120 hours \u2014 v2.0 governs because the separation date is March 15, and v2.0 applies to departures on or after January 1 regardless of accrual.",
+  "answer_format": "multiple_choice",
+  "rationale": "Cordelia's policies are explicit about the operative date: v2.0 applies to departures on or after January 1, regardless of when the PTO was accrued. Elena's separation date is March 15 of the current year, so v2.0 governs. Under v2.0 the cap is 120 hours; her 168-hour balance is paid at 120 and the remaining 48 hours are forfeited. The date the resignation was submitted (November 12 of the prior year) is not the operative event; the operative event is the separation itself. The v2.0 policy language of 'regardless of when the PTO was accrued' overrides the manager's fairness argument and the pro-rating theory in option D \u2014 the policy explicitly disclaims that theory. Options A and B misread the operative event. Option D constructs a proration rule the policy does not contain."
+}

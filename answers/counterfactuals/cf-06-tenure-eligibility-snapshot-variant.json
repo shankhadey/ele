@@ -1,0 +1,8 @@
+{
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-B4C95622B877",
+  "scenario_file": "cf-06-tenure-eligibility-snapshot-variant.json",
+  "correct_answer": "Not eligible \u2014 count her tenure as of the March 1 policy publication date; enter FY26 sabbatical eligibility as declined.",
+  "answer_format": "multiple_choice",
+  "rationale": "The policy fixes December 31 as the measurement date. Mariam's hire date of January 4 puts her at exactly four years and eleven months on the following December 31 \u2014 one month short of the five-year threshold. Parental leave counts as continuous service but does not add tenure; it preserves what she has. She is not eligible for FY26. She will be eligible for FY27 after crossing five years on the next snapshot. Option A misreads the tenure calculation. Option C uses the wrong measurement date (January 15) and even by that measure she would not clear five years. Option D again escalates a routine calculation."
+}

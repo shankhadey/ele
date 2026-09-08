@@ -121,6 +121,11 @@ class ScenarioRepository:
                     continue
                 if filters.split is not None and s.split != filters.split:
                     continue
+                if (
+                    filters.counterfactual_pair_id is not None
+                    and s.counterfactual_pair_id != filters.counterfactual_pair_id
+                ):
+                    continue
 
             results.append(copy.deepcopy(s))
         return results

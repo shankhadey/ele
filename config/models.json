@@ -1,40 +1,53 @@
 {
   "models": [
     {
-      "id": "gpt-4o-mini",
-      "provider": "openai",
-      "model_name": "gpt-4o-mini",
-      "api_key_env": "OPENAI_API_KEY"
-    },
-    {
-      "id": "gpt-4o",
-      "provider": "openai",
-      "model_name": "gpt-4o",
-      "api_key_env": "OPENAI_API_KEY"
-    },
-    {
-      "id": "claude-sonnet-5",
+      "id": "gpt-5.6-terra",
       "provider": "bedrock",
-      "model_name": "us.anthropic.claude-sonnet-5",
-      "region": "us-west-2"
+      "model_name": "us.openai.gpt-5.6-terra",
+      "region": "us-west-2",
+      "matrix_slot": "OpenAI frontier"
     },
     {
       "id": "claude-opus-5",
       "provider": "bedrock",
       "model_name": "us.anthropic.claude-opus-5",
-      "region": "us-west-2"
+      "region": "us-west-2",
+      "matrix_slot": "Anthropic frontier"
     },
     {
-      "id": "kimi-k2.5",
+      "id": "gemma-3-27b",
       "provider": "bedrock",
-      "model_name": "moonshotai.kimi-k2.5",
-      "region": "us-west-2"
+      "model_name": "google.gemma-3-27b-it",
+      "region": "us-west-2",
+      "matrix_slot": "Google (open-weight)"
     },
     {
-      "id": "claude-fable-5",
+      "id": "qwen3-235b",
       "provider": "bedrock",
-      "model_name": "us.anthropic.claude-fable-5",
-      "region": "us-west-2"
+      "model_name": "qwen.qwen3-235b-a22b-2507-v1:0",
+      "region": "us-west-2",
+      "matrix_slot": "Open-weight A"
+    },
+    {
+      "id": "llama4-maverick",
+      "provider": "bedrock",
+      "model_name": "us.meta.llama4-maverick-17b-instruct-v1:0",
+      "region": "us-west-2",
+      "matrix_slot": "Open-weight B"
+    },
+    {
+      "id": "deepseek-v3.2",
+      "provider": "bedrock",
+      "model_name": "deepseek.v3.2",
+      "region": "us-west-2",
+      "matrix_slot": "Open-weight C"
+    },
+    {
+      "id": "nova-micro",
+      "provider": "bedrock",
+      "model_name": "us.amazon.nova-micro-v1:0",
+      "region": "us-west-2",
+      "matrix_slot": "Smaller / efficient"
     }
   ]
 }

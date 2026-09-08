@@ -49,8 +49,13 @@ DEFAULT_EVAL_CONFIG = _ROOT / "config" / "eval_config.json"
 # ── Helpers ───────────────────────────────────────────────────────
 
 def load_scenarios(directory: Path) -> List[Dict[str, Any]]:
-    """Load all .json scenario files from a directory (skips TEMPLATE)."""
-    files = sorted(glob.glob(str(directory / "*.json")))
+    """Load all .json scenario files from a directory tree (skips TEMPLATE).
+
+    Recursive: picks up scenarios under subdirectories such as
+    ``scenarios/counterfactuals/`` so paired-counterfactual files can live
+    in their own folder without polluting the top-level scenario listing.
+    """
+    files = sorted(glob.glob(str(directory / "**" / "*.json"), recursive=True))
     scenarios = []
     for f in files:
         if Path(f).stem.upper() == "TEMPLATE":
@@ -197,7 +202,8 @@ def main():
     parser.add_argument("--category", help="Filter scenarios by category")
     parser.add_argument("--domain", help="Filter scenarios by domain")
     parser.add_argument("--difficulty", help="Filter scenarios by difficulty")
-    parser.add_argument("--split", choices=["core_test", "challenge"],
+    parser.add_argument("--split",
+                        choices=["dev", "core_test", "challenge", "counterfactual", "holdout"],
                         help="Filter scenarios by evaluation split")
     parser.add_argument("--scenario", action="append", default=None,
                         help="Run specific scenario file(s). Can be repeated: --scenario 005_*.json --scenario 001_*.json")
@@ -350,7 +356,7 @@ def main():
                 sr = r.scored_result
                 scenario = app.repository.get_scenario(r.scenario_id)
                 title = scenario.title if scenario else r.scenario_id[:8]
-                status = "✓" if (sr and sr.final_score >= 0.5) else "✗"
+                status = "✓" if (sr and sr.is_correct) else "✗"
                 score = f"{sr.final_score:.1f}" if sr else "?"
                 method = f"[{sr.scoring_method.value}]" if sr else ""
                 tool_calls = f", tool_calls={len(r.tool_invocations)}" if r.tool_invocations else ""

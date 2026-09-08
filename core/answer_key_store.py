@@ -34,15 +34,18 @@ class AnswerKeyStore:
     _META_FILES: frozenset[str] = frozenset({"CANARIES.json"})
 
     def _load_all(self) -> None:
-        """Load all answer key files from the answers directory.
+        """Load all answer key files from the answers directory tree.
 
-        Files whose name starts with an underscore, or that appear in
-        ``_META_FILES``, are treated as manifests/notices and skipped.
+        Recursive: scans ``answers/`` and every subdirectory so
+        counterfactual answer keys under ``answers/counterfactuals/`` are
+        picked up alongside the top-level batch files. Files named in
+        ``_META_FILES`` or starting with an underscore are treated as
+        manifests/notices and skipped.
         """
         if not self._dir.exists():
             logger.warning("Answer key directory not found: %s", self._dir)
             return
-        for path in sorted(self._dir.glob("*.json")):
+        for path in sorted(self._dir.rglob("*.json")):
             if path.name in self._META_FILES or path.name.startswith("_"):
                 continue
             try:

@@ -1,0 +1,8 @@
+{
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-433C1E9F6356",
+  "scenario_file": "cf-05-oncall-system-authority-base.json",
+  "correct_answer": "Checkout Reliability \u2014 the runbook in Confluence still names them as the responder.",
+  "answer_format": "multiple_choice",
+  "rationale": "Both the CMDB and the runbook agree that payments-gateway is owned by Checkout Reliability. There is no open ownership-transfer ticket; the two sources are consistent. Under ENG-3.2 the CMDB governs when the sources disagree, but here they do not disagree, and both point to Checkout Reliability. The incident commander pages Checkout Reliability. Option A would name Payments Platform without any evidence of ownership. Option C is a documentation-hygiene response to a non-conflict. Option D delays response for triage that the CMDB already provides."
+}

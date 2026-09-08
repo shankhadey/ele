@@ -1,0 +1,8 @@
+{
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-D8D9ECABB126",
+  "scenario_file": "cf-01-commission-plan-effective-date-variant.json",
+  "correct_answer": "Apply the FY26 plan (6% base + 4% multi-year accelerator) \u2014 commission of $48,000.",
+  "answer_format": "multiple_choice",
+  "rationale": "The customer-signed contract execution date is October 3, three days after the FY26 plan effective date of October 1. The Salesforce Close Date of September 28 is a stage field, not a legal execution date; the Deal Desk memo's 'submitted for FY25 payout as pre-effective' assertion is not authoritative because the plan is unambiguous about execution date. FY26 pays 6% base on $480,000 TCV = $28,800, plus the 4% multi-year accelerator on the three-year term = 4% \u00d7 $480,000 = $19,200, for a total of $48,000. Option C stops at the base component and misses the accelerator. Option A misapplies the FY25 plan because the execution date crossed the effective date. Option D treats a routine plan-boundary calculation as requiring the Compensation Committee, which is not the governance path here."
+}

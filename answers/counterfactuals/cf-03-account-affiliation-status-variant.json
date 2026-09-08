@@ -1,0 +1,8 @@
+{
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-3035AD3FF18B",
+  "scenario_file": "cf-03-account-affiliation-status-variant.json",
+  "correct_answer": "Tier 2 (12% discount) \u2014 apply each contract at its own $475k / $875k ARR to Tier 2 individually.",
+  "answer_format": "multiple_choice",
+  "rationale": "As of September 30, Merlin Analytics was divested from Aster Holdings and now sits under Beacon Vantage Partners in the Account Hierarchy. Kestrel and Merlin therefore no longer share a parent and do not qualify for combination under the policy. The two contracts must be tiered individually: Kestrel at $475k ARR lands in Tier 1 by itself, and Merlin at $875k ARR lands in Tier 2. Because Deal Desk's standard practice is to apply the higher of the two tiers uniformly across a co-signed engagement so the AE is not disadvantaged by the divestiture timing, both contracts price at Tier 2 (12%). Option A applies the affiliated-buyer rule to an entity that is no longer affiliated. Option C ignores that Merlin on its own qualifies for Tier 2. Option D again treats a policy-covered case as needing a CRO exception."
+}

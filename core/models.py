@@ -57,16 +57,43 @@ class StatusEnum(Enum):
 class SplitEnum(Enum):
     """Which evaluation split a scenario belongs to.
 
-    - core_test:  primary, model-blind evaluation set. Items enter this set
-                  according to human-defined inclusion criteria without
-                  conditioning on whether target models succeed or fail.
-                  Used for unbiased inference about average enterprise capability.
-    - challenge:  adversarial / difficulty-focused set. May include items
-                  selected because earlier models struggled. Reported as
-                  stress-test performance.
+    The five splits correspond to the ELE benchmark architecture:
+
+    - dev:            Public development / debugging set. Not used for
+                      headline claims. May contain publicly-released answers.
+    - core_test:      Primary, model-blind evaluation set. Items enter this
+                      set on human-defined inclusion criteria only, without
+                      conditioning on whether target models succeed or fail.
+                      Used for unbiased inference about average enterprise
+                      capability.
+    - challenge:      Adversarial / difficulty-focused stress-test set. May
+                      include items selected because earlier models struggled.
+                      Reported as stress-test performance.
+    - counterfactual: Paired scenarios where one decision-critical fact is
+                      changed so that the correct action must change with it.
+                      Members are linked by ``counterfactual_pair_id`` and
+                      distinguished by ``counterfactual_role`` (base vs
+                      variant). Used to test causal responsiveness to
+                      organizational evidence.
+    - holdout:        Fully private future-use set for contamination-resistant
+                      longitudinal evaluation. Never publicly released.
     """
+    DEV = "dev"
     CORE_TEST = "core_test"
     CHALLENGE = "challenge"
+    COUNTERFACTUAL = "counterfactual"
+    HOLDOUT = "holdout"
+
+
+class CounterfactualRoleEnum(Enum):
+    """Which member of a counterfactual pair a scenario is.
+
+    A CF pair has exactly one BASE and one VARIANT. The VARIANT differs from
+    the BASE in a single decision-critical fact, and the correct action
+    must change between the two.
+    """
+    BASE = "base"
+    VARIANT = "variant"
 
 
 class RunStatusEnum(Enum):
@@ -133,6 +160,14 @@ class Scenario:
     # do not enter the model-blind core test set by accident. Assign
     # explicitly (in the scenario JSON) to move an item into core_test.
     split: SplitEnum = SplitEnum.CHALLENGE
+    # Counterfactual-pair linkage. Populated only for scenarios in the
+    # COUNTERFACTUAL split. counterfactual_pair_id links the two members;
+    # counterfactual_role distinguishes them; changed_fact documents (in
+    # plain English) the one decision-critical fact that was altered in
+    # the VARIANT relative to the BASE. Non-CF scenarios leave these None.
+    counterfactual_pair_id: Optional[str] = None
+    counterfactual_role: Optional[CounterfactualRoleEnum] = None
+    changed_fact: Optional[str] = None
 
     def to_dict(self) -> Dict[str, Any]:
         """Serialize the scenario to a plain dictionary."""
@@ -144,6 +179,9 @@ class Scenario:
         d["answer_format"] = self.answer_format.value
         d["status"] = self.status.value
         d["split"] = self.split.value
+        d["counterfactual_role"] = (
+            self.counterfactual_role.value if self.counterfactual_role else None
+        )
         return d
 
     def to_json(self) -> str:
@@ -161,6 +199,11 @@ class Scenario:
         d["status"] = StatusEnum(d["status"])
         # Split defaults to CHALLENGE for scenarios that predate this field.
         d["split"] = SplitEnum(d["split"]) if "split" in d else SplitEnum.CHALLENGE
+        # Counterfactual role: optional, only set for CF-split members.
+        role = d.get("counterfactual_role")
+        d["counterfactual_role"] = (
+            CounterfactualRoleEnum(role) if role else None
+        )
         d["contributor"] = Contributor.from_dict(d["contributor"])
         return cls(**d)
 
@@ -179,6 +222,8 @@ class ScenarioFilters:
     contributor_name: Optional[str] = None
     status: Optional[StatusEnum] = None
     split: Optional[SplitEnum] = None
+    # Optional pair-id filter, useful when scoring a specific CF pair.
+    counterfactual_pair_id: Optional[str] = None
 
 
 @dataclass

@@ -32,11 +32,8 @@ from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
 _ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(_ROOT.parent))  # make `ele` importable
-from ele.core import paths  # noqa: E402
-
 _DEFAULT_SCENARIOS = _ROOT / "scenarios" / "counterfactuals"
-_DEFAULT_ANSWERS = paths.answers_dir()
+_DEFAULT_ANSWERS = _ROOT / "answers"
 
 _META_ANSWER_FILES = frozenset({"CANARIES.json", "NOTICE.md", "LICENSE-answers"})
 

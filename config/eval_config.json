@@ -6,7 +6,8 @@
   "eval_rate_limit_per_minute": 0,
   "eval_enable_tools": true,
   "eval_judge_enabled": true,
-  "eval_judge_model": "gpt-4o-mini",
-  "eval_judge_api_key": "",
+  "eval_judge_provider": "bedrock",
+  "eval_judge_model": "us.anthropic.claude-opus-4-6-v1",
+  "eval_judge_region": "us-west-2",
   "eval_correctness_threshold": 0.9
 }

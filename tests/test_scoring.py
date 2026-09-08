@@ -397,14 +397,37 @@ def test_score_response_raises_when_judge_not_configured():
 def test_score_response_raises_when_judge_fails_after_retries():
     """A non-exact response for which every judge call fails must raise ScoringError."""
     scenario = _make_scenario_for_judge()
-    config = _scoring_config()
+    # Pin a small retry count with zero backoff so the test is fast and the
+    # attempt count is deterministic regardless of the production default.
+    config = ScoringConfig(
+        llm_judge=LLMJudgeConfig(
+            model="gpt-4o-mini", api_key="test-key",
+            max_retries=1, retry_backoff_seconds=0.0,
+        ),
+        correctness_threshold=0.9,
+    )
 
     with patch("ele.core.scoring.llm_judge_score", return_value=None) as mock_judge:
         with pytest.raises(ScoringError, match="LLM judge failed"):
             score_response(scenario, "completely unrelated answer", config)
 
-    # Called at least twice: initial attempt plus one retry (max_retries default 1).
+    # attempts = 1 + max_retries = 2.
     assert mock_judge.call_count == 2
+
+
+def test_score_response_empty_response_scored_wrong_without_judge():
+    """An empty/whitespace response is scored wrong directly, never hitting the judge."""
+    scenario = _make_scenario_for_judge()
+    config = _scoring_config()
+
+    with patch("ele.core.scoring.llm_judge_score") as mock_judge:
+        result = score_response(scenario, "   \n  ", config)
+
+    mock_judge.assert_not_called()
+    assert result.is_correct is False
+    assert result.final_score == 0.0
+    assert result.scoring_method == ScoringMethodEnum.NONE
+    assert result.judge_score is None
 
 
 def test_score_response_never_uses_semantic_similarity_for_correctness():
