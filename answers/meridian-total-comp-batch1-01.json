@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-8BCFED0B99EF",
   "scenario_file": "meridian-total-comp-batch1-01.json",
   "correct_answer": "No \u2014 the Reeves exception was a board-level one-time acqui-hire approval explicitly marked as non-precedent-setting; the base exceeds the current band ceiling and requires a new exception request through proper channels.",
   "answer_format": "multiple_choice",

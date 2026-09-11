@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-9CD58A47C1E5",
   "scenario_file": "sentinel-procurement-integrity-batch1-01.json",
   "correct_answer": "The OCI mitigation is inadequate because Webb accessed and shared competitive sensitive information derived from source selection participation before the firewall was established, and the mitigation plan's certification that he had 'no access to competitive sensitive info since joining' is contradicted by the Teams record.",
   "answer_format": "multiple_choice",

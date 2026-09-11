@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-5E6CDACCB093",
   "scenario_file": "meta-internal-audit-batch1-01.json",
   "correct_answer": "Significant deficiency \u2014 the control owner's delegation was expired and no valid extension existed in the system of record; the SAP technical access remaining active represents an IT general control gap that compounds the issue",
   "answer_format": "multiple_choice",

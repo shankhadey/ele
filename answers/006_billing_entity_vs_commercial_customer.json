@@ -1,0 +1,8 @@
+{
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-2376B71AD1AE",
+  "scenario_file": "006_billing_entity_vs_commercial_customer.json",
+  "correct_answer": "Orion Beverages EU is on the hook; flag only Orion Beverages EU for credit hold.",
+  "answer_format": "multiple_choice",
+  "rationale": "Vertex's CAO memo is explicit: for dunning and collections the NetSuite billing customer is the party owing the money. The invoice was issued to Orion Beverages EU under a payment term that Orion Beverages EU agreed to, and Orion Beverages North America is a separate legal entity even though both subsidiaries roll up to the same commercial parent in Salesforce. The Salesforce commercial-customer hierarchy is not the source of legal payment obligation. Option B misapplies the commercial hierarchy to a collections question. Option C invents joint liability that neither the signed order form nor Vertex's policy establishes. Option D delays a routine collections action on a workflow that Vertex's memo says belongs to NetSuite. The correct action is to flag Orion Beverages EU alone; the renewal-risk conversation with the AE about the parent-level commercial relationship is a separate track."
+}

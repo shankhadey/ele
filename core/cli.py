@@ -20,10 +20,13 @@ from ele.core.models import (
     AnswerFormatEnum,
     CategoryEnum,
     Contributor,
+    CounterfactualRoleEnum,
     DifficultyEnum,
     DomainEnum,
+    PromptConditionEnum,
     Scenario,
     ScenarioFilters,
+    SplitEnum,
     StatusEnum,
 )
 from ele.core.models_integration import (
@@ -54,30 +57,37 @@ from ele.core.answer_key_store import AnswerKeyStore
 
 @dataclass
 class AppConfig:
-    """Configuration loaded from file or environment variables."""
-    scoring_similarity_threshold: float = 0.75
-    scoring_similarity_weight: float = 0.8
+    """Configuration loaded from file or environment variables.
+
+    The LLM judge is mandatory. Startup validates that a judge model is
+    configured and that an API key is resolvable via the config field or
+    the OPENAI_API_KEY environment variable. There is no lexical fallback.
+    """
     eval_timeout_seconds: int = 60
     eval_max_tokens: int = 4096
     eval_temperature: float = 0.0
     eval_parallel_workers: int = 1
     eval_rate_limit_per_minute: int = 0
     eval_enable_tools: bool = False
-    # LLM judge — enabled by default
+    # LLM judge — mandatory. eval_judge_enabled must be True and a model
+    # must be supplied. For the openai provider the API key may come from
+    # env; for the bedrock provider ambient AWS credentials are used.
     eval_judge_enabled: bool = True
+    eval_judge_provider: str = "openai"        # "openai" | "bedrock"
     eval_judge_model: str = "gpt-4o-mini"
     eval_judge_api_key: str = ""
+    eval_judge_region: str = "us-west-2"       # bedrock only
+    # Judge score at or above this threshold counts as a correct decision.
+    # Strict by design — see scoring.py for rationale.
+    eval_correctness_threshold: float = 0.9
+    # Prompting condition (§5.2): "direct" | "deliberate" | "scaffold".
+    eval_prompt_condition: str = "direct"
 
     @classmethod
     def from_env(cls) -> "AppConfig":
         """Load configuration from environment variables."""
+        judge_enabled_env = os.environ.get("EVAL_JUDGE_ENABLED", "true").lower()
         return cls(
-            scoring_similarity_threshold=float(
-                os.environ.get("EVAL_SCORING_THRESHOLD", "0.75")
-            ),
-            scoring_similarity_weight=float(
-                os.environ.get("EVAL_SCORING_WEIGHT", "0.8")
-            ),
             eval_timeout_seconds=int(
                 os.environ.get("EVAL_TIMEOUT_SECONDS", "60")
             ),
@@ -91,10 +101,15 @@ class AppConfig:
             ),
             eval_enable_tools=os.environ.get("EVAL_ENABLE_TOOLS", "").lower()
             in ("1", "true", "yes"),
-            eval_judge_enabled=os.environ.get("EVAL_JUDGE_ENABLED", "").lower()
-            in ("1", "true", "yes"),
+            eval_judge_enabled=judge_enabled_env in ("1", "true", "yes"),
+            eval_judge_provider=os.environ.get("EVAL_JUDGE_PROVIDER", "openai"),
             eval_judge_model=os.environ.get("EVAL_JUDGE_MODEL", "gpt-4o-mini"),
             eval_judge_api_key=os.environ.get("EVAL_JUDGE_API_KEY", ""),
+            eval_judge_region=os.environ.get("EVAL_JUDGE_REGION", "us-west-2"),
+            eval_correctness_threshold=float(
+                os.environ.get("EVAL_CORRECTNESS_THRESHOLD", "0.9")
+            ),
+            eval_prompt_condition=os.environ.get("EVAL_PROMPT_CONDITION", "direct"),
         )
 
     @classmethod
@@ -103,19 +118,19 @@ class AppConfig:
         with open(path) as f:
             data = json.load(f)
         return cls(
-            scoring_similarity_threshold=data.get(
-                "scoring_similarity_threshold", 0.75
-            ),
-            scoring_similarity_weight=data.get("scoring_similarity_weight", 0.8),
             eval_timeout_seconds=data.get("eval_timeout_seconds", 60),
             eval_max_tokens=data.get("eval_max_tokens", 4096),
             eval_temperature=data.get("eval_temperature", 0.0),
             eval_parallel_workers=data.get("eval_parallel_workers", 1),
             eval_rate_limit_per_minute=data.get("eval_rate_limit_per_minute", 0),
             eval_enable_tools=data.get("eval_enable_tools", False),
-            eval_judge_enabled=data.get("eval_judge_enabled", False),
+            eval_judge_enabled=data.get("eval_judge_enabled", True),
+            eval_judge_provider=data.get("eval_judge_provider", "openai"),
             eval_judge_model=data.get("eval_judge_model", "gpt-4o-mini"),
             eval_judge_api_key=data.get("eval_judge_api_key", ""),
+            eval_judge_region=data.get("eval_judge_region", "us-west-2"),
+            eval_correctness_threshold=data.get("eval_correctness_threshold", 0.9),
+            eval_prompt_condition=data.get("eval_prompt_condition", "direct"),
         )
 
 
@@ -124,17 +139,63 @@ class App:
 
     def __init__(self, config: Optional[AppConfig] = None) -> None:
         self.config = config or AppConfig()
+
+        # LLM judge is mandatory. Refuse to start if it's disabled or if the
+        # selected backend has no usable credentials — this prevents silent
+        # degradation into a legacy lexical-fallback code path that no longer
+        # exists.
+        if not self.config.eval_judge_enabled:
+            raise ValueError(
+                "LLM judge is mandatory but eval_judge_enabled=false. "
+                "Enable the judge in eval_config.json."
+            )
+        if not self.config.eval_judge_model:
+            raise ValueError(
+                "LLM judge is mandatory but eval_judge_model is empty. "
+                "Set eval_judge_model in eval_config.json."
+            )
+
+        judge_provider = (self.config.eval_judge_provider or "openai").lower()
+        judge_api_key = ""
+        if judge_provider == "bedrock":
+            # Bedrock authenticates via ambient AWS credentials; verify they
+            # resolve so we fail fast rather than mid-run.
+            try:
+                import boto3
+                if boto3.Session().get_credentials() is None:
+                    raise ValueError(
+                        "LLM judge provider is 'bedrock' but no AWS credentials "
+                        "are resolvable. Configure AWS credentials (e.g. via "
+                        "environment or profile) before running."
+                    )
+            except ImportError as exc:
+                raise ValueError(
+                    "LLM judge provider is 'bedrock' but boto3 is not installed."
+                ) from exc
+        else:
+            judge_api_key = (
+                self.config.eval_judge_api_key
+                or os.environ.get("OPENAI_API_KEY", "")
+            )
+            if not judge_api_key:
+                raise ValueError(
+                    "LLM judge is mandatory but no API key is available. "
+                    "Set eval_judge_api_key in eval_config.json or export "
+                    "OPENAI_API_KEY (or switch eval_judge_provider to 'bedrock')."
+                )
+
         self.repository = ScenarioRepository()
         self.tool_registry = ToolRegistry()
         self.model_registry = ModelRegistry()
         self.results_store = ResultsStore()
         self.scoring_config = ScoringConfig(
-            similarity_threshold=self.config.scoring_similarity_threshold,
-            similarity_weight=self.config.scoring_similarity_weight,
+            correctness_threshold=self.config.eval_correctness_threshold,
             llm_judge=LLMJudgeConfig(
                 model=self.config.eval_judge_model,
-                api_key=self.config.eval_judge_api_key,
-            ) if self.config.eval_judge_enabled else None,
+                provider=judge_provider,
+                api_key=judge_api_key,
+                region=self.config.eval_judge_region,
+            ),
         )
         self.engine = EvaluationEngine(
             repository=self.repository,
@@ -211,6 +272,7 @@ class App:
         difficulty: Optional[str] = None,
         contributor: Optional[str] = None,
         status: Optional[str] = None,
+        split: Optional[str] = None,
     ) -> List[Dict[str, Any]]:
         """Query scenarios with optional filters."""
         filters = ScenarioFilters(
@@ -219,6 +281,7 @@ class App:
             difficulty=DifficultyEnum(difficulty) if difficulty else None,
             contributor_name=contributor,
             status=StatusEnum(status) if status else None,
+            split=SplitEnum(split) if split else None,
         )
         scenarios = self.repository.query_scenarios(filters)
         return [s.to_dict() for s in scenarios]
@@ -273,13 +336,22 @@ class App:
         category: Optional[str] = None,
         domain: Optional[str] = None,
         difficulty: Optional[str] = None,
+        split: Optional[str] = None,
     ) -> Dict[str, Any]:
         """Create and run an evaluation, store results, return summary."""
         filters = ScenarioFilters(
             category=CategoryEnum(category) if category else None,
             domain=DomainEnum(domain) if domain else None,
             difficulty=DifficultyEnum(difficulty) if difficulty else None,
+            split=SplitEnum(split) if split else None,
         )
+        try:
+            prompt_condition = PromptConditionEnum(self.config.eval_prompt_condition)
+        except ValueError as exc:
+            raise ValueError(
+                f"Unknown eval_prompt_condition '{self.config.eval_prompt_condition}'. "
+                f"Must be one of {[c.value for c in PromptConditionEnum]}."
+            ) from exc
         eval_config = EvaluationConfig(
             timeout_seconds=self.config.eval_timeout_seconds,
             max_tokens=self.config.eval_max_tokens,
@@ -287,6 +359,7 @@ class App:
             parallel_workers=self.config.eval_parallel_workers,
             rate_limit_per_minute=self.config.eval_rate_limit_per_minute,
             enable_tools=self.config.eval_enable_tools,
+            prompt_condition=prompt_condition,
         )
 
         try:
@@ -314,6 +387,7 @@ class App:
                     correct_answer=sr.correct_answer if sr else "",
                     extracted_answer=sr.extracted_answer if sr else "",
                     exact_match=sr.exact_match if sr else False,
+                    is_correct=sr.is_correct if sr else False,
                     similarity_score=sr.similarity_score if sr else 0.0,
                     final_score=sr.final_score if sr else 0.0,
                     scoring_method=sr.scoring_method.value if sr else "",
@@ -325,6 +399,16 @@ class App:
                     category=scenario.category.value if scenario else "",
                     domain=scenario.domain.value if scenario else "",
                     difficulty=scenario.difficulty.value if scenario else "",
+                    split=scenario.split.value if scenario else "",
+                    counterfactual_pair_id=(
+                        scenario.counterfactual_pair_id if scenario else None
+                    ),
+                    counterfactual_role=(
+                        scenario.counterfactual_role.value
+                        if (scenario and scenario.counterfactual_role)
+                        else None
+                    ),
+                    prompt_condition=self.config.eval_prompt_condition,
                     judge_score=sr.judge_score if sr else None,
                     judge_reasoning=sr.judge_reasoning if sr else None,
                     tool_invocations=r.tool_invocations,
@@ -400,6 +484,9 @@ def _dict_to_scenario(data: Dict[str, Any]) -> Scenario:
 
     correct_answer and rationale are optional — they may be absent when
     the scenario uses a separate answer key file.
+
+    Unlabelled scenarios default to the CHALLENGE split; ELE-Core/Test items
+    must set ``split: "core_test"`` explicitly in their JSON.
     """
     contributor_data = data.get("contributor", {})
     contributor = Contributor(
@@ -409,6 +496,22 @@ def _dict_to_scenario(data: Dict[str, Any]) -> Scenario:
         years_experience=contributor_data.get("years_experience", 0),
         domain_expertise=contributor_data.get("domain_expertise", ""),
     )
+    split_raw = data.get("split", "challenge")
+    try:
+        split = SplitEnum(split_raw)
+    except ValueError as exc:
+        raise ValueError(
+            f"Unknown split '{split_raw}'. Must be one of "
+            f"{[s.value for s in SplitEnum]}."
+        ) from exc
+    role_raw = data.get("counterfactual_role")
+    try:
+        role = CounterfactualRoleEnum(role_raw) if role_raw else None
+    except ValueError as exc:
+        raise ValueError(
+            f"Unknown counterfactual_role '{role_raw}'. Must be one of "
+            f"{[r.value for r in CounterfactualRoleEnum]}."
+        ) from exc
     return Scenario(
         title=data.get("title", ""),
         category=CategoryEnum(data["category"]),
@@ -422,6 +525,10 @@ def _dict_to_scenario(data: Dict[str, Any]) -> Scenario:
         contributor=contributor,
         choices=data.get("choices", []),
         tools_available=data.get("tools_available", []),
+        split=split,
+        counterfactual_pair_id=data.get("counterfactual_pair_id"),
+        counterfactual_role=role,
+        changed_fact=data.get("changed_fact"),
     )
 
 
@@ -455,6 +562,8 @@ def build_parser() -> argparse.ArgumentParser:
     p_list.add_argument("--difficulty", default=None)
     p_list.add_argument("--contributor", default=None)
     p_list.add_argument("--status", default=None)
+    p_list.add_argument("--split", default=None,
+                        choices=["dev", "core_test", "challenge", "counterfactual", "holdout"])
 
     # register-model
     p_model = sub.add_parser("register-model", help="Register an AI model")
@@ -470,6 +579,8 @@ def build_parser() -> argparse.ArgumentParser:
     p_eval.add_argument("--category", default=None)
     p_eval.add_argument("--domain", default=None)
     p_eval.add_argument("--difficulty", default=None)
+    p_eval.add_argument("--split", default=None,
+                        choices=["dev", "core_test", "challenge", "counterfactual", "holdout"])
 
     # get-results
     p_results = sub.add_parser("get-results", help="Get results for an evaluation run")
@@ -524,6 +635,7 @@ def main(argv: Optional[List[str]] = None) -> int:
             difficulty=args.difficulty,
             contributor=args.contributor,
             status=args.status,
+            split=args.split,
         )
         print(json.dumps(scenarios, indent=2))
         return 0
@@ -545,6 +657,7 @@ def main(argv: Optional[List[str]] = None) -> int:
             category=args.category,
             domain=args.domain,
             difficulty=args.difficulty,
+            split=args.split,
         )
         print(json.dumps(result, indent=2))
         return 0 if result.get("success") else 1

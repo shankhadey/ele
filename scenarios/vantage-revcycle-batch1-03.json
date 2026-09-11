@@ -20,5 +20,6 @@
     "Appeal all 23 claims with the original FY2026 codes now that MHCP's system accepts them, citing the MHCP processing delay bulletin as cause; all claims are within the 120-day appeal window",
     "Recode the claims to FY2025 codes to match the fee schedule that was active at DOS, since the retroactive fee schedule was not uploaded to SharePoint until 01/12/2026 and may not have been applied to these claims",
     "Resubmit all 23 claims with FY2025 ICD-10 codes and modifier -32 as MHCP originally instructed; the claims are within timely filing and this resolves the CO-11 denial"
-  ]
+  ],
+  "split": "challenge"
 }

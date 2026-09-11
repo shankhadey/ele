@@ -20,5 +20,6 @@
     "Obtain VP Eng approval, formally document that GC was given reasonable time but did not provide approval by deadline, and send notification citing the BAA's 24-hour obligation \u2014 accepting the internal process deviation as lesser risk than a potential HIPAA violation",
     "Send notification immediately under Priya's own authority since the breach affects fewer than 500 unique data subjects per tenant (the 12K records may include duplicates)",
     "Escalate to VP Eng to override GC's delay and send notification before the 24hr BAA deadline, since HIPAA obligations supersede internal approval processes"
-  ]
+  ],
+  "split": "challenge"
 }

@@ -20,5 +20,6 @@
     "Reject the request until the name discrepancy between WealthPort ('Yung-Hee Park') and Dynamics 365 ('Young-Hee Park') is formally resolved through the MDM team",
     "Process as a TOD non-probate transfer directly to James Park after verifying identity match via SSN and DOB cross-reference per Section 5.2, bypassing estate account creation",
     "Process as TOD transfer but hold pending formal written confirmation from the advisor that the two name variants represent the same individual, since a Teams message is not sufficient authorization"
-  ]
+  ],
+  "split": "challenge"
 }

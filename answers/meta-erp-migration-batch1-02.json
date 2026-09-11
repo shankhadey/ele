@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-20E561F70362",
   "scenario_file": "meta-erp-migration-batch1-02.json",
   "correct_answer": "Reinstate the $500K limit using the recovered 2019 email as supporting documentation, routed through the current credit approval workflow for validation, while flagging MIGR-4421 as evidence that this was a known migration gap \u2014 not a new request",
   "answer_format": "multiple_choice",

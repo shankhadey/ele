@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-F21D6EB8F263",
   "scenario_file": "novaterra-lease-admin-batch1-02.json",
   "correct_answer": "NovaTerra should maintain that the base year is $12.85/SF as stated in the lease; Section 7.6 gross-up applies only to comparison years, not the base year, and the 2024 overage of $5.57/SF stands as calculated.",
   "answer_format": "multiple_choice",

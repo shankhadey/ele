@@ -20,5 +20,6 @@
     "Approve but require Marcus to tag James Park in #deal-desk retroactively to comply with the delegation conditions Sarah received in January",
     "Approve immediately - the deal meets the pricing matrix requirements (RVP + Deal Desk for 15-25% discount) and Sarah's January delegation covers co-term approvals under $500K",
     "Reject and require CFO approval - the Confluence policy v2.1 (January 2026) explicitly requires CFO approval for all co-term deals, which supersedes the informal January delegation"
-  ]
+  ],
+  "split": "challenge"
 }

@@ -1,0 +1,24 @@
+{
+  "title": "Which PTO Carryover Policy Applies to a March Departure",
+  "category": "policy_version",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "split": "core_test",
+  "scenario_text": "Cordelia Aerospace operates a PTO policy that changed at the start of this calendar year. The 'PTO Policy v1.7' was in effect from January 2023 through December 31 of last year. It stated: 'Upon voluntary departure, employees are paid out for their accrued and unused PTO balance up to a cap of 200 hours. Any balance above 200 hours at separation is forfeited.'\n\n'PTO Policy v2.0' has been in effect since January 1 of the current year. It states: 'Upon voluntary departure, employees are paid out for their accrued and unused PTO balance up to a cap of 120 hours. Any balance above 120 hours at separation is forfeited. This policy applies to departures on or after January 1, regardless of when the PTO was accrued.'\n\nElena Marquez is a senior program manager who is voluntarily resigning. Her signed resignation letter, submitted November 12 of last year, gave notice through her last working day of March 15 of the current year (an unusually long four-month transition to complete a customer commitment). Elena's accrued PTO balance on her last working day is 168 hours. Workday shows: PTO accrued through separation = 168 hours; separation date = March 15 (current year); resignation received and acknowledged November 12 (prior year).\n\nPayroll is preparing Elena's final paycheck and asks HR which policy governs the PTO payout. HR notes that under v1.7 Elena would be paid for all 168 hours; under v2.0 she would be paid for 120 and forfeit 48. Elena's manager has argued that because Elena submitted her resignation in November, she should be paid under v1.7 as a matter of fairness. The v2.0 policy document is silent on resignations submitted before January 1 but taking effect after.",
+  "question": "Under Cordelia's policies, how many hours of PTO should Payroll pay out to Elena in her final paycheck?",
+  "answer_format": "multiple_choice",
+  "choices": [
+    "168 hours \u2014 v1.7 governs because the resignation was submitted before January 1.",
+    "168 hours \u2014 v1.7 governs because Elena accrued the PTO during periods when v1.7 was in effect.",
+    "120 hours \u2014 v2.0 governs because the separation date is March 15, and v2.0 applies to departures on or after January 1 regardless of accrual.",
+    "144 hours \u2014 pro-rated between v1.7 and v2.0 based on the proportion of the accrual earned before and after January 1."
+  ],
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": []
+}

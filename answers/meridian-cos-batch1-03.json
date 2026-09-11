@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-D5E7A037193B",
   "scenario_file": "meridian-cos-batch1-03.json",
   "correct_answer": "Incomplete approval chain - CEO expressed concerns about two-level jump in June 10 1:1 and requested Group PM intermediate step; no documented reversal of that guidance exists",
   "answer_format": "multiple_choice",

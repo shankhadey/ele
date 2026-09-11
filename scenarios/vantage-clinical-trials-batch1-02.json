@@ -20,5 +20,6 @@
     "Minor deviation properly managed \u2014 James acknowledged the issue, planned re-consent, and the subject's participation is unaffected because v3.0 changes are not material to their enrollment.",
     "Reportable protocol deviation with incomplete corrective action \u2014 the SOP requires deviation documentation within 5 business days and re-consent, neither of which have been completed as of March 15.",
     "Major deviation requiring study withdrawal \u2014 the subject cannot have valid consent on a superseded ICF regardless of materiality; continued participation without current consent violates 21 CFR Part 50."
-  ]
+  ],
+  "split": "challenge"
 }

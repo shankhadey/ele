@@ -20,5 +20,6 @@
     "Apply new Policy 3.2 (75% LTV, 1.25x DSCR) \u2014 the transition guidance explicitly states only loans with issued commitment letters are grandfathered, and no commitment letter was issued",
     "Approve at 78% LTV under the old policy since the credit memo was submitted on 10/28, one day before the new policy was approved by credit committee",
     "Restructure to 75% LTV to comply with new policy but offer a rate concession to preserve the relationship, since the competing term sheet from First National makes this a retention risk"
-  ]
+  ],
+  "split": "challenge"
 }

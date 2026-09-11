@@ -20,5 +20,6 @@
     "No \u2014 Section 4.7.1 states queue position is non-transferable, and SAP shows two different entities with different Tax IDs, confirming this is a transfer",
     "No \u2014 the developer filed under v3.1 of the interconnection procedures, which had no Section 4.7.3 carve-out; the version in effect at application governs",
     "Cannot determine \u2014 the Teams thread is unresolved and the internal review is still pending Raj's confirmation of the 30-day notification requirement"
-  ]
+  ],
+  "split": "challenge"
 }

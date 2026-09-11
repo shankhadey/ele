@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-92037F5BE9C5",
   "scenario_file": "conduit-asset-batch1-01.json",
   "correct_answer": "The reinspection likely occurred in 2017 (WO 400182 covered Structures 14-20) but there is no individual structure report for Str 19 in SharePoint, and the GIS date was set by a batch upload \u2014 the evidence is insufficient to demonstrate compliance to the PUC.",
   "answer_format": "multiple_choice",

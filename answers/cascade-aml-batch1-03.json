@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-D200AF7FA51C",
   "scenario_file": "cascade-aml-batch1-03.json",
   "correct_answer": "Upgrade to High risk rating and classify as Former Domestic PEP\u2014Pak's prior senior government role requires enhanced monitoring even after exit, and the missed classification represents a control gap that must be remediated",
   "answer_format": "multiple_choice",

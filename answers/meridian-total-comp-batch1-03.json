@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-2ACD0FF2854C",
   "scenario_file": "meridian-total-comp-batch1-03.json",
   "correct_answer": "It cannot be determined yet \u2014 the geo elimination and leveling reorg interact, and the sequencing decision (which change lands first) has not been finalized, as evidenced by the empty meeting notes and pending comp committee approval.",
   "answer_format": "multiple_choice",

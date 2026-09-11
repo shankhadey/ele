@@ -20,5 +20,6 @@
     "No violation \u2014 Sandra's claim that she didn't see the policy update is supported by the fact that only 14 of 47 managers acknowledged the Slack announcement, suggesting insufficient notice",
     "Clear policy violation \u2014 RP-2026-v1 took effect Feb 1, the published policy requires LP approval over $100, the grace period ended Feb 15, and Sandra processed this transaction on Feb 18; she must be formally flagged",
     "No violation \u2014 the informal grace period communicated by the VP of Retail Ops via DM to Anthony extends manager authority to $300 through at least Feb 15, and a reasonable interpretation allows additional adjustment time"
-  ]
+  ],
+  "split": "challenge"
 }

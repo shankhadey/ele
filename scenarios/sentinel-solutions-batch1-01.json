@@ -20,5 +20,6 @@
     "Replace all references to 'Aethon Cyber Group' with 'Ridgeline-Aethon Inc.' and update the CAGE code to 8J2L6 since that is the current operating entity.",
     "No changes needed \u2014 CAGE 5M9P1 is still active under 'Aethon Cyber Group LLC' in SAM, so the past performance citations remain valid as written.",
     "Remove Aethon's past performance citations entirely since the merged entity may no longer meet the teaming agreement terms, and substitute Sentinel's own cyber contracts."
-  ]
+  ],
+  "split": "challenge"
 }

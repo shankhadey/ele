@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-FD64DBDD9AFB",
   "scenario_file": "ironforge-mdm-batch1-02.json",
   "correct_answer": "Neither is currently valid as a golden record. Per VMP-001, the golden record requires both current tax ID AND active qualification status in one record. The tax ID is in S/4 and qualification is in Ariba. These must be merged first, creating a single consolidated record before any PO extension.",
   "answer_format": "multiple_choice",

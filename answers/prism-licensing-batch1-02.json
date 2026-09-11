@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-28402433B9D7",
   "scenario_file": "prism-licensing-batch1-02.json",
   "correct_answer": "US, UK, Australia, New Zealand, Germany, France, Benelux, and Nordics, but the German window is subject to a 6-month holdback from first-run SVOD making TVOD/EST unavailable there until the holdback clears",
   "answer_format": "multiple_choice",

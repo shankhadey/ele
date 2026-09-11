@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-79421BD93675",
   "scenario_file": "ironforge-employee-relations-batch1-01.json",
   "correct_answer": "The 120-day timeline (Jan 14, 2026) applies because outside counsel confirmed the PIP language does not meet the 'explicitly fixed' threshold, and the primary risk of using Dec 15 is a grievance under Article 12 for failure to follow the CBA side letter.",
   "answer_format": "multiple_choice",

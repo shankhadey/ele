@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-F0764394EF8C",
   "scenario_file": "novaterra-construction-batch1-03.json",
   "correct_answer": "GMP savings calculated as $268,000 minus the $185,000 owner allowance = $83,000 in true contractor contingency savings, split 75/25: Owner receives $62,250, Contractor receives $20,750. The $185,000 in unspent allowances reverts entirely to Owner per Exhibit D and Capital Policy Section 5.4.",
   "answer_format": "multiple_choice",

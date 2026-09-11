@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-DDF6A508B9F2",
   "scenario_file": "meridian-partner-batch1-01.json",
   "correct_answer": "There is no conflict \u2014 CloudBridge and Nimbus are now the same entity (Nimbus Digital Holdings LLC), so both registrations should be merged under one partner record with credit going to DR-0441's earlier timestamp.",
   "answer_format": "multiple_choice",

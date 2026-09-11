@@ -20,5 +20,6 @@
     "VP Supply Chain approval required \u2014 the $92K renewal exceeds the new $75K threshold, the renewal date (Aug 15) is in Q3 2026 so the grace period does not apply, and Sandra has correctly escalated to Maria",
     "Category Manager can approve \u2014 the original PO was issued before Oct 1, 2025 under the $100K threshold, and renewals of pre-existing POs are governed by the policy version in effect at original issuance",
     "The renewal cannot proceed at $92K \u2014 Rick's quote shows the actual value is $95.7K which changes the approval tier and requires a new PO rather than a renewal"
-  ]
+  ],
+  "split": "challenge"
 }

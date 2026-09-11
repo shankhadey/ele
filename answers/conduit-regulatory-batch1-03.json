@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-6139A18EF25B",
   "scenario_file": "conduit-regulatory-batch1-03.json",
   "correct_answer": "NEM-1 grandfathered \u2014 the application was filed March 14, 2025, and Commission precedent (Decision 18-D-204) defines enrollment as application receipt date",
   "answer_format": "multiple_choice",

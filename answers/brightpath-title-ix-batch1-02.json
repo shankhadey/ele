@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-30CCF7CF933B",
   "scenario_file": "brightpath-title-ix-batch1-02.json",
   "correct_answer": "Clear and convincing evidence \u2014 because v6.0 Section 1.4 explicitly governs complaints filed after August 1, 2025, the formal complaint was filed September 19, 2025, and this was a deliberate procedural choice approved by Faculty Senate and legal counsel.",
   "answer_format": "multiple_choice",

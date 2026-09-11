@@ -13,7 +13,7 @@ from dataclasses import dataclass, field
 from enum import Enum
 from typing import Any, Dict, List, Optional, Protocol, Tuple
 
-from ele.core.models import AnswerFormatEnum, Scenario
+from ele.core.models import AnswerFormatEnum, PromptConditionEnum, Scenario
 
 
 # --- Enumerations ---
@@ -187,6 +187,84 @@ class AnthropicAdapter(ModelInterface):
         )
 
 
+class BedrockAdapter(ModelInterface):
+    """Adapter for AWS Bedrock models via the unified Converse API.
+
+    Works across providers (Anthropic Claude, Moonshot Kimi, Amazon Nova,
+    Meta Llama, etc.) using inference profile IDs or on-demand model IDs.
+    """
+
+    def __init__(
+        self,
+        model_id: str = "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+        region: str = "us-west-2",
+        api_config: Optional[APIConfig] = None,
+    ) -> None:
+        self.model_id = model_id
+        self.region = region
+        self.api_config = api_config or APIConfig()
+        self._client: Any = None
+
+    def _get_client(self) -> Any:
+        if self._client is None:
+            try:
+                import boto3
+            except ImportError:
+                raise ImportError("boto3 is required for Bedrock: pip install boto3")
+            self._client = boto3.client("bedrock-runtime", region_name=self.region)
+        return self._client
+
+    def invoke(
+        self,
+        prompt: str,
+        tools: Optional[List[Dict[str, Any]]] = None,
+        config: Optional[Dict[str, Any]] = None,
+    ) -> ModelResponse:
+        client = self._get_client()
+        cfg = config or {}
+        messages = [{"role": "user", "content": [{"text": prompt}]}]
+        inference_config: Dict[str, Any] = {
+            "maxTokens": cfg.get("max_tokens", 2048),
+            "temperature": cfg.get("temperature", 0.0),
+        }
+        try:
+            response = client.converse(
+                modelId=self.model_id,
+                messages=messages,
+                inferenceConfig=inference_config,
+            )
+        except Exception as exc:
+            # Some newer models (e.g. Claude Sonnet 5 / Opus 5) deprecate
+            # temperature — retry without it.
+            if "temperature" in str(exc).lower():
+                inference_config.pop("temperature", None)
+                response = client.converse(
+                    modelId=self.model_id,
+                    messages=messages,
+                    inferenceConfig=inference_config,
+                )
+            else:
+                raise
+        # Extract text from the response content blocks
+        content_blocks = response.get("output", {}).get("message", {}).get("content", [])
+        text = "".join(b.get("text", "") for b in content_blocks)
+        usage = response.get("usage", {})
+        tokens = usage.get("totalTokens", 0)
+        stop_reason = response.get("stopReason", "stop")
+        return ModelResponse(text=text, tokens_used=tokens, finish_reason=stop_reason)
+
+    def supports_tools(self) -> bool:
+        return True
+
+    def get_capabilities(self) -> ModelCapabilities:
+        return ModelCapabilities(
+            supports_tools=True,
+            supports_multimodal=False,
+            max_tokens=4096,
+            provider=ProviderEnum.CUSTOM,
+        )
+
+
 class LocalModelAdapter(ModelInterface):
     """Adapter for local models served via an OpenAI-compatible API (Ollama, vLLM)."""
 
@@ -258,13 +336,34 @@ class ModelRegistry:
 
 # --- Prompt formatting ---
 
+# Fixed structured organizational-reasoning scaffold (paper §5.2). Applied
+# identically across models. It elicits the evidence-selection procedure ELE
+# measures, without hinting at the answer or the scenario's category.
+_SCAFFOLD_STEPS = [
+    "Before deciding, work through these steps explicitly:",
+    "1. Operative entity: identify which entity, account, or party the decision is actually about.",
+    "2. Authoritative evidence: identify which system or record governs each relevant fact, and reconcile any conflicts between sources.",
+    "3. Governing policy or precedent: identify which policy version or prior precedent applies, including its effective date and scope.",
+    "4. Approval authority: identify who actually holds the required authority (delegation, thresholds, business unit), not merely the most senior title.",
+    "5. Temporal state: consider what was known or committed at the relevant time and whether later events legitimately supersede it.",
+    "Then state your decision.",
+]
+
+
 def format_prompt(
     scenario: Scenario,
     tools: Optional[List[Dict[str, Any]]] = None,
+    condition: PromptConditionEnum = PromptConditionEnum.DIRECT,
 ) -> str:
     """Build a standardized prompt string from a scenario.
 
     The prompt contains the scenario context, question, and answer format.
+    ``condition`` (paper §5.2) selects the direct, deliberate, or structured
+    scaffold framing. Non-direct conditions elicit reasoning first and then
+    require the final answer on a fixed, parseable line ("The answer is X" for
+    multiple choice, "Answer: ..." for free text) so answer extraction is
+    unaffected. No condition leaks the gold answer, category, or rationale.
+
     If tools are available, they are listed with their parameter schemas only —
     no coaching on what to search for or how to use them.
     """
@@ -279,17 +378,48 @@ def format_prompt(
         "",
     ]
 
-    if scenario.answer_format == AnswerFormatEnum.MULTIPLE_CHOICE and scenario.choices:
+    is_mc = (
+        scenario.answer_format == AnswerFormatEnum.MULTIPLE_CHOICE and scenario.choices
+    )
+    if is_mc:
         parts.append("## Answer Choices")
         parts.append("")
         for idx, choice in enumerate(scenario.choices):
             letter = chr(ord("A") + idx)
             parts.append(f"{letter}. {choice}")
         parts.append("")
-        parts.append("Respond with ONLY the letter of the correct answer (A, B, C, or D).")
+
+    # Reasoning framing (non-direct conditions).
+    if condition == PromptConditionEnum.DELIBERATE:
+        parts.append("## Analysis")
+        parts.append("")
+        parts.append("Think step by step and reason carefully through the scenario "
+                     "and all of its evidence before deciding.")
+        parts.append("")
+    elif condition == PromptConditionEnum.SCAFFOLD:
+        parts.append("## Analysis")
+        parts.append("")
+        parts.extend(_SCAFFOLD_STEPS)
+        parts.append("")
+
+    # Final-answer instruction. Direct = answer only; non-direct = reason then
+    # a fixed parseable final line.
+    if is_mc:
+        if condition == PromptConditionEnum.DIRECT:
+            parts.append("Respond with ONLY the letter of the correct answer.")
+        else:
+            parts.append("After your analysis, end your response with a line in "
+                         "exactly this form:")
+            parts.append("The answer is X")
+            parts.append("where X is the letter of the correct answer.")
         parts.append("")
     else:
-        parts.append("Respond with ONLY the final answer, as concisely as possible.")
+        if condition == PromptConditionEnum.DIRECT:
+            parts.append("Respond with ONLY the final answer, as concisely as possible.")
+        else:
+            parts.append("After your analysis, end your response with a line in "
+                         "exactly this form:")
+            parts.append("Answer: <your final answer>")
         parts.append("")
 
     if tools:

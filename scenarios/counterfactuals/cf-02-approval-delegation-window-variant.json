@@ -1,0 +1,27 @@
+{
+  "title": "Delegated Approval Within and Outside the Window (variant)",
+  "category": "approval_chain",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-02",
+  "counterfactual_role": "variant",
+  "scenario_text": "Farthom Industries requires CMO approval for any marketing purchase over $150,000. On October 30, the CMO Angela Reyes sent a written delegation email \u2014 copied to the General Counsel and archived in the Delegation of Authority (DoA) register \u2014 stating: 'For my parental leave from November 4 through November 28, I delegate marketing approval authority up to $250,000 to VP Marketing Priya Menon and to Marketing Director Alan Wu; either may approve within the amount limit. Purchases above $250,000 must wait for my return.'\n\nOn December 3, Alan Wu submits a purchase requisition to renew Farthom's marketing automation stack (Marketo, Drift, and 6sense) for one year. The line-item total is $220,000. The Coupa PR routing shows: Alan Wu \u2192 VP Marketing \u2192 CMO \u2192 CFO (exception threshold at $200,000). Alan's justification memo references the CMO's delegation and asks Procurement to release the PO after his own approval since VP Marketing Priya is traveling in a customer briefing this week.\n\nThe delegation email remains visible in the DoA register but the record shows the delegation window ended November 28. Angela Reyes has been back in the office since November 29 and is actively approving in Coupa.",
+  "question": "Given the delegation in place, whose approval is needed to release this $220,000 marketing-tools renewal purchase order?",
+  "answer_format": "multiple_choice",
+  "choices": [
+    "Marketing Director alone \u2014 she holds delegated authority for this purchase.",
+    "Marketing Director plus a courtesy notification to the CMO.",
+    "The full standard chain: Marketing Director, VP Marketing, CMO, then CFO for the exception threshold.",
+    "The CMO directly, since delegation of executive-level approvals is not permitted at Farthom."
+  ],
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "changed_fact": "The purchase-request submission date moved from November 12 (inside the CMO's parental-leave delegation window that ran November 4 through November 28) to December 3 (after the delegation window closed)."
+}

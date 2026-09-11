@@ -20,5 +20,6 @@
     "The abatement transferred validly because the city paralegal's email acknowledgment of the merger documents constitutes written consent on behalf of the City of Elgin.",
     "The abatement automatically transferred because a statutory merger is not a 'transfer' under Illinois law; the city's notice is without legal basis and can be ignored.",
     "The abatement is void because the Transfer Consent was never signed (only a draft exists on the network drive); NovaTerra must reapply for a new PILOT agreement."
-  ]
+  ],
+  "split": "challenge"
 }

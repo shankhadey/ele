@@ -1,0 +1,8 @@
+{
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-98138549AAA1",
+  "scenario_file": "008_sla_credit_cross_system_calculation.json",
+  "correct_answer": "Use the Prometheus customer-stream figure (99.85%): credit is 10% of $200,000 = $20,000.",
+  "answer_format": "multiple_choice",
+  "rationale": "Exhibit B of the MSA names Larkspur's internal instrumentation of the customer's actual request stream as the contractual measurement basis. That is the Prometheus figure of 99.85%. The Datadog synthetic monitor and the Status Page are provided for transparency but are explicitly not the contractual measurement basis, so the customer's claim citing the Datadog dashboard is not enforceable at 30%. From 99.85% availability, Trellis is 0.05 percentage points below 99.9%; because the contract compensates in 0.1-point increments, this rounds up to one 0.1-point increment (this is how the credit schedule is interpreted in the Exhibit B worked-example table, which specifies rounding up in the customer's favor). One increment = 10% of April fees = 10% of $200,000 = $20,000. Option A applies the wrong data source. Option B invents a rounding tolerance that would zero out the credit and is not supported by the contract. Option D uses the Status Page, which is explicitly not the contractual measurement basis."
+}

@@ -20,5 +20,6 @@
     "One plant (Cleveland only); per SOP-RCL-003 section 4.2, where no formal cross-reference exists in the system, assume material is not present at other plants until confirmed. The Excel sheet and Teams messages are not the official cross-reference table.",
     "Two plants (Cleveland and Monterrey); only these two have batch H2025-0892 with GR dates in 2026. Detroit's material 20-88-0334 uses metric dimensions and is likely a different specification.",
     "Two plants (Cleveland and Detroit); material 10045221 and 20-88-0334 are confirmed linked. Monterrey's vendor is a different legal entity (71100204 vs 300019) so their material is unaffected."
-  ]
+  ],
+  "split": "challenge"
 }

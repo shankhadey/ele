@@ -20,5 +20,6 @@
     "Use the FY24 actual rates for the entire period since all work occurred in FY24 and final rates are now certified; the proposal must be corrected but likely to a figure below $461K",
     "Use the Jan 2024 DFARS revision methodology which allows FPRA rates throughout; the $487,200 is correct under current DFARS",
     "Use FPRA rates for the entire period (Aug-Dec 2024) as submitted; the $487,200 is correct because FPRA rates are the standard for all forward-priced modifications regardless of when work was performed"
-  ]
+  ],
+  "split": "challenge"
 }

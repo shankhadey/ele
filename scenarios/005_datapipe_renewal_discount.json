@@ -18,5 +18,6 @@
     "organization": "Acme Corp",
     "years_experience": 8,
     "domain_expertise": "customer_success_support"
-  }
+  },
+  "split": "core_test"
 }

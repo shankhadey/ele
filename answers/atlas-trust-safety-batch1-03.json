@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-E9F050CD9C01",
   "scenario_file": "atlas-trust-safety-batch1-03.json",
   "correct_answer": "No \u2014 the enforcement committee meeting had no notes, the VP Loss Prevention declined attendance, and legal did not respond; without documented approval from the committee and required stakeholders, the category-specific 12-month window in Section 3.4 applies.",
   "answer_format": "multiple_choice",

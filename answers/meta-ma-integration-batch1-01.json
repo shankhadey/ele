@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-4680B2376938",
   "scenario_file": "meta-ma-integration-batch1-01.json",
   "correct_answer": "Manually migrate her CD record from DNA to Horizon now (she's OFAC-cleared in Batch 14 and greenlit for early migration), then process the rollover in Horizon under her Cascade account",
   "answer_format": "multiple_choice",

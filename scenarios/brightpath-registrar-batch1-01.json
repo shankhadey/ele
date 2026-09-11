@@ -20,5 +20,6 @@
     "Merge both records into E-2019-4471, add the 24 West credits to the existing 68, clear the FA hold since the withdrawal was an automated error, and apply the 2019-20 catalog year to all coursework.",
     "Create a new consolidated record under the post-merge unified ID schema, re-evaluate all transfer credits under the current 2025-26 catalog, and require the student to petition for the MATH 251 substitution again since Dr. Albrecht is no longer available to verify.",
     "Keep records separate until the FA hold is resolved; the student should register under the East record (E-2019-4471) which has no hold, and reconcile the West record later."
-  ]
+  ],
+  "split": "challenge"
 }

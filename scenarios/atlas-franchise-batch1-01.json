@@ -20,5 +20,6 @@
     "Do not close \u2014 the Slack thread was never answered, indicating implicit rejection of the franchisee's request, and the cure deadline has not yet passed so no action is required",
     "Close the default \u2014 precedent was set with Franchisee #0189 where an identical situation was resolved by accepting compliance with the updated manual version",
     "Close the default \u2014 v9.0 is the current Operations Manual and Section 11.2 says franchisees must comply with the manual 'as amended from time to time'; the v8.1 requirement no longer exists"
-  ]
+  ],
+  "split": "challenge"
 }

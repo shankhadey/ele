@@ -1,0 +1,27 @@
+{
+  "title": "Prior Fee Waiver as Precedent or as One-Off (variant)",
+  "category": "precedent_exception",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-04",
+  "counterfactual_role": "variant",
+  "scenario_text": "Northlight Software charges customers a $12,000 annual re-onboarding fee when a customer skips two consecutive quarterly business reviews. Support Manager Diana Ochoa is reviewing a re-onboarding fee waiver request from the account Elemental Retail, submitted this week after Elemental skipped Q2 and Q3 QBRs.\n\nIn Salesforce, the Elemental account carries a prior waiver from eighteen months ago. The prior waiver record contains: 'Waived $12,000 re-onboarding fee after Elemental skipped Q3 and Q4 2024 QBRs during their ERP migration.' Approved by then-VP of Customer Success Ravi Menon. The account note tag is set to 'ONE-TIME \u2014 non-precedential; granted solely due to ERP migration disruption.' Ravi Menon has since left the company; his successor is Grace Park.\n\nNorthlight's precedent policy states: 'Prior waivers marked ONE-TIME are not precedent-setting. Prior waivers marked PERM-GRANT bind future decisions for the same account and same fee type unless explicitly revoked in writing by the current VP of Customer Success.' The current request cites the prior waiver by note ID and asks for the same treatment.",
+  "question": "Given the customer's request and the prior waiver on file, what is the correct response from the Support team?",
+  "answer_format": "multiple_choice",
+  "choices": [
+    "Grant the waiver by precedent and update the account note; no additional approvals needed.",
+    "Decline the waiver and explain that the prior waiver was a one-time accommodation with no forward-looking scope.",
+    "Decline the waiver but offer a 10% renewal credit as a goodwill gesture without setting precedent.",
+    "Escalate to the VP of Customer Success for a fresh case-by-case decision, treating both waivers as unrelated."
+  ],
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "changed_fact": "The scope tag on the prior waiver in Salesforce changed from 'PERM-GRANT \u2014 will honor going forward' (base) to 'ONE-TIME \u2014 non-precedential' (variant)."
+}

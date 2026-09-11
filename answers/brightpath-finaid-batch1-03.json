@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-FBA835BF35C6",
   "scenario_file": "brightpath-finaid-batch1-03.json",
   "correct_answer": "March 14 \u2014 use the latest academically-related activity across all courses in the payment period (ENG 204 and SOC 150 submissions on 3/14), provided those submissions constitute academically-related activity.",
   "answer_format": "multiple_choice",

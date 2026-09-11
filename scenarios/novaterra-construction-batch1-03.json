@@ -20,5 +20,6 @@
     "GMP savings of $268,000 split 75/25: Owner receives $201,000, Contractor receives $67,000. The entire difference between revised GMP and actual cost is subject to the savings clause.",
     "GMP savings calculated as $268,000 minus the $185,000 owner allowance = $83,000 in true contractor contingency savings, split 75/25: Owner receives $62,250, Contractor receives $20,750. The $185,000 in unspent allowances reverts entirely to Owner per Exhibit D and Capital Policy Section 5.4.",
     "Contractor receives the full $268,000 remaining contingency because Article 6.5.1 designates it as contractor's contingency for their exclusive use, and savings sharing in 6.3.2 does not override this provision."
-  ]
+  ],
+  "split": "challenge"
 }

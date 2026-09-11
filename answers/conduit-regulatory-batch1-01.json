@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-F75DA0000647",
   "scenario_file": "conduit-regulatory-batch1-01.json",
   "correct_answer": "Apply $8.15/kW-month to 3.8 MW and $9.20/kW-month to 0.4 MW, per the original IA Section 8.5 and 2014 amendment Section 2(b)",
   "answer_format": "multiple_choice",

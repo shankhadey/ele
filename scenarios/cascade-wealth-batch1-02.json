@@ -20,5 +20,6 @@
     "No \u2014 the advisor was explicitly warned by compliance in the Teams channel not to proceed, and executed the trade anyway two days later",
     "No \u2014 the IPS annual review is 36 months overdue, exceeding the 14-month currency window in Section 4.3, so discretionary authority is suspended",
     "No \u2014 even if the IPS were current, Section 4.5 requires updated suitability confirmation because the advisor had constructive notice of a material life event (wife's Alzheimer's diagnosis and liquidity concerns), making the existing risk profile potentially invalid"
-  ]
+  ],
+  "split": "challenge"
 }

@@ -20,5 +20,6 @@
     "Valid downgrade. Runbook criteria for P1 were not met (fewer than 10 customers, no real-time impact). Next action: apologize to customer for the delayed resolution but confirm severity was correctly assessed.",
     "Partially valid. The downgrade followed runbook criteria as written but the customer's regulatory deadline creates a de facto P1 regardless of technical impact. Next action: create a new P1 ticket for the business impact.",
     "Invalid downgrade. Off-hours Tier 2 does not have authority to downgrade P1 incidents without Escalation Manager approval. Next action: escalate to VP Support for process violation review."
-  ]
+  ],
+  "split": "challenge"
 }

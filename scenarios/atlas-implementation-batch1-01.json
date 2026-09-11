@@ -20,5 +20,6 @@
     "Jul 14 is at risk and no new date is confirmed; the Jira blocker has not been resolved and no CR has been formally submitted",
     "Jul 14 per the Smartsheet master schedule; the scope reduction CR is fully approved and the schedule stands",
     "Jul 18 with scope reduction; the CR has only informal VP approval via Slack emoji and has not completed the formal approval chain"
-  ]
+  ],
+  "split": "challenge"
 }

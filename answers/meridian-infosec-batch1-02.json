@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-07D33DB6DE00",
   "scenario_file": "meridian-infosec-batch1-02.json",
   "correct_answer": "Two failures (SEC-0891 and SEC-0923) \u2014 the CISO's Slack message establishes the description of controls as binding, making SEC-0891 non-compliant at 26 days without exception; SEC-1003 had proper exception approval",
   "answer_format": "multiple_choice",

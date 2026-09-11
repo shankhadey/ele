@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-8DCDEC3996E9",
   "scenario_file": "meridian-support-escalation-batch1-03.json",
   "correct_answer": "Protocol was never formally triggered. Zero of four required steps completed. Full process violation \u2014 reportable to VP Support per Section 3.",
   "answer_format": "multiple_choice",

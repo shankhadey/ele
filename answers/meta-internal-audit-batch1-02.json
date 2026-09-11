@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-4017C63ADE77",
   "scenario_file": "meta-internal-audit-batch1-02.json",
   "correct_answer": "$478,007.45 (Treasury policy rate of 17.45) \u2014 the correct rate per policy was not applied due to a known system deficiency; the CFO approved based on an incorrect amount, but the approval is still valid since the correct amount is lower than what was approved",
   "answer_format": "multiple_choice",

@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-320AD4E86AC8",
   "scenario_file": "vantage-cs-ops-batch1-03.json",
   "correct_answer": "The bed census integration is not yet delivered; financial exposure is $5K/day starting May 10 (when the customer removed their blocker), totaling approximately $240K through today",
   "answer_format": "multiple_choice",

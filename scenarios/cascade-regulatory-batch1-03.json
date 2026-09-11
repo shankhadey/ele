@@ -20,5 +20,6 @@
     "Challenge the commitment's transfer on the grounds that it references Appalachian's 2019 CRA Strategic Plan assessment area, which ceased to exist when the charter was dissolved \u2014 the successor clause binds to dollars but not geography",
     "Allow the commitment to terminate as non-assignable since the Dynamics 365 record shows status as 'Pending Transfer' with no assigned entity, indicating the legal transfer was never completed",
     "Remove Laurel County from the assessment area after branch closure and honor the commitment as a broader statewide activity \u2014 the dollar obligation is met and the lower CRA weighting is immaterial since Cascade targets an Outstanding rating in its primary assessment areas"
-  ]
+  ],
+  "split": "challenge"
 }

@@ -20,5 +20,6 @@
     "Submit a corrected claim with modifier 59 (distinct procedural service) to override the duplicate edit, referencing both encounters as distinct anatomical sites",
     "Refile the claim under the Riverside Campus TIN since the payer contract amendment covers all VHP facilities, bypassing the MPI issue entirely",
     "Appeal the CO-4 denial citing incorrect denial reason code, as the procedure was a hip arthroplasty (DRG 470) not a duplicate of the knee arthroscopy (CPT 29881) -- no MPI merge needed"
-  ]
+  ],
+  "split": "challenge"
 }

@@ -1,0 +1,8 @@
+{
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-A643C3AA23AE",
+  "scenario_file": "cf-01-commission-plan-effective-date-base.json",
+  "correct_answer": "Apply the FY25 plan (8% base + 2% accelerator over quota) \u2014 commission of $48,000.",
+  "answer_format": "multiple_choice",
+  "rationale": "Under Cirrus's commission plan, the governing document is the plan effective on the customer-signed contract execution date, not the Salesforce Close Date, the internal booking date, or the Deal Desk memo's assertion. The Helion order form is countersigned September 28, three days before the FY26 plan takes effect on October 1, so the FY25 plan governs. FY25 pays 8% base on the $480,000 TCV = $38,400, plus the 2% over-quota accelerator on the ARR that clears quota (Mia is $150,000 over her $1.2M quota after this deal, so the accelerator applies to $150,000 \u00d7 3 years = 2% \u00d7 $450,000 = $9,000, capped in the plan). Total commission is approximately $48,000. Options C and B misapply the FY26 plan; option D treats a routine plan-effective-date determination as a policy exception requiring the Compensation Committee, which is not warranted."
+}

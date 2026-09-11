@@ -20,5 +20,6 @@
     "Escalate the OFAC fuzzy match to the sanctions screening team for re-disposition based on the Moscow address and current enhanced guidance, then proceed with EDD",
     "Immediately file a SAR for potential sanctions evasion based on the informal ownership transfer and Vienna accountant connection without filing updated beneficial ownership",
     "Suspend all transaction activity and obtain current beneficial ownership certification with supporting documentation before completing any further risk assessment, as the ownership structure is materially uncertain"
-  ]
+  ],
+  "split": "challenge"
 }

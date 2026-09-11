@@ -20,5 +20,6 @@
     "Reject the requisition and escalate \u2014 the deviation authority under 6.4 is limited to 30 days and only covers production-critical situations, but since Triton's score is below 70 on two consecutive audits, Section 6.2 supersedes 6.4 and no emergency deviation is permitted",
     "Reject the requisition \u2014 Triton is suspended from the AVL and the MasterControl deviation was never filed within 48 hours, making the emergency deviation invalid per procedure",
     "Approve the requisition \u2014 Tom has Plant Manager authority under Section 6.4, his email to Henrik constitutes documented intent, and the 48-hour MasterControl filing is an administrative requirement that doesn't void the deviation authority itself"
-  ]
+  ],
+  "split": "challenge"
 }

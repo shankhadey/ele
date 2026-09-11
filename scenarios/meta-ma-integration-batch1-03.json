@@ -20,5 +20,6 @@
     "Pay the invoice \u2014 it's on the TSA schedule, the amount matches the annual equivalent of the monthly rate, and the TSA runs through December 2026",
     "Escalate to legal \u2014 the TSA schedule says the service runs through December 2026, but procurement says non-renewal; these conflict and AP cannot unilaterally decide",
     "Reject the invoice \u2014 procurement confirmed non-renewal and contract expiry on June 30, 2026; the invoice is for a renewal period Cascade has explicitly declined"
-  ]
+  ],
+  "split": "challenge"
 }

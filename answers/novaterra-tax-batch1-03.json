@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-ABE361536C21",
   "scenario_file": "novaterra-tax-batch1-03.json",
   "correct_answer": "Accrue taxes at the pre-consolidation rates ($187K + $412K = $599K) because the consolidation is likely void due to lack of owner consent from both LLCs, and the TIF district application to the west parcel is either an error or requires boundary amendment verification \u2014 the conservative accrual protects against restatement risk.",
   "answer_format": "multiple_choice",

@@ -20,5 +20,6 @@
     "Yes \u2014 the CMO gave explicit approval via the checkmark emoji in the #brand-leads Slack thread; this constitutes written approval per Section 7.2",
     "Partially compliant \u2014 the CMO approval covers the depth (40%) but the cross-brand conflict with Brand B creates a separate violation under Section 7.4 that requires retroactive review",
     "No \u2014 regardless of CMO approval, the promotion was not submitted 30 days in advance per Section 7.4, making it procedurally non-compliant even if substantively authorized"
-  ]
+  ],
+  "split": "challenge"
 }

@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-DEE82D4CAE4E",
   "scenario_file": "vantage-cs-ops-batch1-02.json",
   "correct_answer": "Consolidate all three CTAs under one parent entity (Prairie Health Corp); combined ARR at risk is $1.12M; assign single CSM; the expansion signal at PHC Specialty is likely ramp-before-migration, not genuine growth",
   "answer_format": "multiple_choice",

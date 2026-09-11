@@ -1,0 +1,24 @@
+{
+  "title": "Retention Policy at Time of Collection vs. Time of Deletion",
+  "category": "temporal_consistency",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "split": "core_test",
+  "scenario_text": "Stanford Analytics operates a customer-support platform that stores transcripts of customer support chats. Stanford has had three successive retention policies:\n\nPolicy R-2020 (effective January 2020 through July 2022): 'Support chat transcripts shall be retained for two years from the date of the chat, then deleted.'\n\nPolicy R-2022 (effective August 2022 through December 2024): 'Support chat transcripts shall be retained for five years from the date of the chat, then deleted. This policy applies prospectively; transcripts collected under R-2020 continue to follow the R-2020 two-year retention.'\n\nPolicy R-2025 (effective January 2025, current): 'Support chat transcripts shall be retained for three years from the date of the chat, then deleted. This policy applies prospectively; transcripts collected under earlier policies continue to follow the retention schedule that was in effect when they were collected.'\n\nThe Data Privacy Office is running a retention-compliance audit. Three transcripts are on the review list. Transcript T1 is a customer chat from March 2021, currently still stored. Transcript T2 is a customer chat from October 2023, currently still stored. Transcript T3 is a customer chat from June 2025, currently still stored. The audit date is October of the current year.\n\nThe Data Privacy Officer's assistant argues that 'the current policy is R-2025, so all three transcripts should follow the three-year rule.' The DPO disagrees and asks the compliance analyst to determine which of the three transcripts should already have been deleted, based on the retention policy that was in effect when each was collected.",
+  "question": "Which of the three transcripts should already have been deleted by the audit date, under the correct application of Stanford's retention policies?",
+  "answer_format": "multiple_choice",
+  "choices": [
+    "Only T1 (March 2021) \u2014 it exceeded its two-year R-2020 retention in March 2023 and should have been deleted then.",
+    "T1 and T2 \u2014 both exceed the current three-year rule under R-2025 and should be deleted immediately.",
+    "T1, T2, and T3 \u2014 all three should be deleted under the current R-2025 rule.",
+    "None \u2014 R-2025 replaces earlier policies, so the three-year clock restarts for all stored transcripts from the date of R-2025's effective date."
+  ],
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": []
+}

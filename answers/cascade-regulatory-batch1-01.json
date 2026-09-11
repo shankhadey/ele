@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-763C0B41FC9B",
   "scenario_file": "cascade-regulatory-batch1-01.json",
   "correct_answer": "Revised methodology \u2014 the loan sat in an early-adoption portfolio at the time the attestation was filed (March 15), so early adoption follows the loan regardless of subsequent transfer",
   "answer_format": "multiple_choice",

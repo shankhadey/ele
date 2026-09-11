@@ -20,5 +20,6 @@
     "10s \u2014 the Confluence page (version 4) is the runbook-linked authoritative source and it still specifies 10s flat default",
     "3s \u2014 SRE-2287 is still Open/unimplemented, meaning the pre-SRE-2201 configuration (3s) is what's actually deployed",
     "5s \u2014 Jordan approved the tiered approach in Slack, making shared-critical services subject to the 5s maximum"
-  ]
+  ],
+  "split": "challenge"
 }

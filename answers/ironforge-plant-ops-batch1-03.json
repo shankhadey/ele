@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-EDCD1A2C3650",
   "scenario_file": "ironforge-plant-ops-batch1-03.json",
   "correct_answer": "Not authorized \u2014 FURN-301 lacks a completed MOC-EXT-001 grandfathering review as required by Section 6.4; the process was initiated but never completed due to the engineering director's departure, and no formal exemption or interim authorization exists in the system",
   "answer_format": "multiple_choice",

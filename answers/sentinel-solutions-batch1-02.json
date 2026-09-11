@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-1FBB2BFC91D3",
   "scenario_file": "sentinel-solutions-batch1-02.json",
   "correct_answer": "Obtain written VP Capture approval for Morales's combined 155% allocation across ARTEMIS and NEXUS-C2 before proceeding to Gold Team.",
   "answer_format": "multiple_choice",

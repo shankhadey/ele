@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-618CE0D8E965",
   "scenario_file": "prism-sales-planning-batch1-01.json",
   "correct_answer": "Escalate to current SVP Ad Sales for fresh approval since Marcus Webb departed and his authority expired with his departure",
   "answer_format": "multiple_choice",

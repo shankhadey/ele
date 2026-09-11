@@ -1,0 +1,8 @@
+{
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-514B5F9F0547",
+  "scenario_file": "cf-03-account-affiliation-status-base.json",
+  "correct_answer": "Tier 3 (18% discount) \u2014 treat Kestrel and Merlin as one combined buyer at $1.35M ARR.",
+  "answer_format": "multiple_choice",
+  "rationale": "The policy is explicit: contracts held by legal entities under common majority ownership are combined for tier calculation when the affiliation is documented in the Blueriver Account Hierarchy. Both Kestrel and Merlin are wholly owned subsidiaries of Aster Holdings per the current hierarchy record. Combined ARR is $475k + $875k = $1.35M, which falls in the $1M\u2013$2M range and qualifies for Tier 3 at 18%. Option B ignores the affiliation rule and applies the tier to each contract individually. Option C reads Salesforce distinctness as authoritative, but the policy names the Account Hierarchy as authoritative for tier calculation. Option D routes to CRO for a bespoke exception even though the standard policy fully covers this case."
+}

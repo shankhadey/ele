@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-DD233ADD9C7B",
   "scenario_file": "cascade-aml-batch1-01.json",
   "correct_answer": "Suspend all transaction activity and obtain current beneficial ownership certification with supporting documentation before completing any further risk assessment, as the ownership structure is materially uncertain",
   "answer_format": "multiple_choice",

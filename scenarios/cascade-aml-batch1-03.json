@@ -20,5 +20,6 @@
     "Maintain Medium risk rating and No PEP status\u2014Pak's government service ended in 2022 (4 years ago), exceeding the typical 2-year cooling-off period for former domestic PEPs",
     "Maintain Medium risk rating but add PEP monitoring flag\u2014domestic PEPs below ambassadorial rank don't require risk rating changes under FinCEN guidance, but monitoring ensures appropriate oversight",
     "Upgrade to High risk rating but maintain No PEP status\u2014the enhanced scrutiny is warranted due to large transaction volumes and Dubai wire activity, not PEP classification for a former mid-level Commerce position"
-  ]
+  ],
+  "split": "challenge"
 }

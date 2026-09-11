@@ -20,5 +20,6 @@
     "Support the appeal citing the P&T Committee's November 2025 vote as documented precedent; the committee's decision is authoritative even though the UM criteria document was never updated",
     "Deny the appeal; the P&T Committee vote is not valid because the November meeting minutes are missing and the exception was never codified in the UM criteria document",
     "Escalate to the P&T Committee for a new vote since the prior decision was never formalized and the current UM criteria supersede informal committee notes"
-  ]
+  ],
+  "split": "challenge"
 }

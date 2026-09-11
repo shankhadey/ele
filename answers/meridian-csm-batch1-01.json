@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-7739105745E2",
   "scenario_file": "meridian-csm-batch1-01.json",
   "correct_answer": "Account is at-risk due to champion change \u2014 escalate to red, schedule emergency EBR with CTO Dana Park, and loop in sales leadership before renewal.",
   "answer_format": "multiple_choice",

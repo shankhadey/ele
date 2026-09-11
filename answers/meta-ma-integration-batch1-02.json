@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-089879D0C1E5",
   "scenario_file": "meta-ma-integration-batch1-02.json",
   "correct_answer": "Director approval under Ridgeline's legacy policy \u2014 the transition notice was never issued, so the legacy policy still applies per the Integration Transition Addendum",
   "answer_format": "multiple_choice",

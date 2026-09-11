@@ -20,5 +20,6 @@
     "Accrue taxes at the new combined TIF rate ($187K equivalent for the full parcel) because the county's consolidation is the legal reality until formally reversed; investigate the TIF boundary question separately.",
     "Accrue taxes at the pre-consolidation rates ($187K + $412K = $599K) because the consolidation is likely void due to lack of owner consent from both LLCs, and the TIF district application to the west parcel is either an error or requires boundary amendment verification \u2014 the conservative accrual protects against restatement risk.",
     "Accrue taxes at the full non-TIF rate for the combined parcel ($24M at full rate) because the TIF overlay is clearly an assessor error since the 2019 boundary map excludes the west parcel."
-  ]
+  ],
+  "split": "challenge"
 }

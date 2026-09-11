@@ -20,5 +20,6 @@
     "Whether Marcus's thumbs-up emoji in Slack constitutes an authorized make-good commitment that Prism must now honor",
     "Whether the $45K gap is a pacing issue (campaign still has 22 days remaining) versus a structural delivery failure \u2014 since the pacing report projects $361K end-of-flight, the actual shortfall is ~$18.8K, not $45K",
     "Whether the IO frequency cap (3x/user/day across all creatives) was violated \u2014 making this Prism's trafficking error requiring a make-good for the full $45K underdelivery"
-  ]
+  ],
+  "split": "challenge"
 }

@@ -20,5 +20,6 @@
     "Treat as three separate accounts per CRM structure; address each CTA independently; GRR risk applies only to the $780K Prairie Health Cooperative account since the other entities have different contract terms",
     "Escalate to legal/contracts team for entity clarification before taking any action; the Gainsight-only record indicates a data integrity issue that must be resolved before any renewal forecasting",
     "Consolidate all three CTAs under one parent entity (Prairie Health Corp); combined ARR at risk is $1.12M; assign single CSM; the expansion signal at PHC Specialty is likely ramp-before-migration, not genuine growth"
-  ]
+  ],
+  "split": "challenge"
 }

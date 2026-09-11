@@ -20,5 +20,6 @@
     "Approve the request; the vendor's announcement confirms existing agreements remain in effect, and the BAA is still marked Active in Compliance 360.",
     "Deny the request; a new BAA must be executed with Orion Data Group Inc. (or its appropriate subsidiary) before any PHI disclosure can resume, because the original covered entity \u2014 Clearview Health Analytics LLC \u2014 has undergone a change in legal ownership that potentially dissolves the BAA.",
     "Approve the request but only for de-identified data; the DUA addendum allows limited data sets without needing a BAA update."
-  ]
+  ],
+  "split": "challenge"
 }

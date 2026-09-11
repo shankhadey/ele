@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-F456DC41A941",
   "scenario_file": "vantage-clinical-trials-batch1-01.json",
   "correct_answer": "No deviations occurred; the sponsor's immediate implementation notice constitutes authorization under 21 CFR 312.30 for safety-related changes, and all screening decisions were compliant.",
   "answer_format": "multiple_choice",

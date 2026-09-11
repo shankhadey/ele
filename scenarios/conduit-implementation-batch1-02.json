@@ -20,5 +20,6 @@
     "The dispute is valid \u2014 the Line Extension Agreement requires load aggregation across both service points, making the meter split an internal error that should not affect billing; demand charges should be recalculated on a combined basis",
     "The dispute is invalid \u2014 each meter is a separate service point under tariff, and demand charges are correctly applied independently regardless of internal reconfiguration",
     "The dispute cannot be resolved without a new interconnection study since the ArcGIS data shows both meters on the same transformer bank, requiring engineering review"
-  ]
+  ],
+  "split": "challenge"
 }

@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-0D8BA6B4B0C2",
   "scenario_file": "brightpath-title-ix-batch1-01.json",
   "correct_answer": "The measures remain valid under federal regulation (which supersedes the outdated manual), and Marchetti's Slack directive to Ogunyemi constitutes proper institutional continuity \u2014 but the institution must immediately issue formal written notice to the respondent to cure the notification deficiency.",
   "answer_format": "multiple_choice",

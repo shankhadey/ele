@@ -20,5 +20,6 @@
     "Both registrations should be rejected pending a formal change-of-control determination, and the deal should proceed as direct (no partner credit) until resolved.",
     "Nimbus gets credit \u2014 CloudBridge's deal reg is invalid because the change-of-control review was never completed within 60 days, voiding their active registrations.",
     "There is no conflict \u2014 CloudBridge and Nimbus are now the same entity (Nimbus Digital Holdings LLC), so both registrations should be merged under one partner record with credit going to DR-0441's earlier timestamp."
-  ]
+  ],
+  "split": "challenge"
 }

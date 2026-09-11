@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-B5CEF3FC4785",
   "scenario_file": "atlas-franchise-batch1-01.json",
   "correct_answer": "Do not close \u2014 Section 14.1 requires cure against the cited standard (v8.1), Gregory's resolved comment confirms this interpretation, and the #0189 precedent was informal with no policy memo",
   "answer_format": "multiple_choice",

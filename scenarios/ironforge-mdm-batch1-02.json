@@ -20,5 +20,6 @@
     "The BPO should be extended against the Ariba supplier profile 'Precision Coatings Inc.' directly since it matches the current legal name and has the qualification. The S/4 record should be updated afterward during the normal quarterly sync.",
     "SAP S/4HANA vendor 300042 is the golden record because it contains the payment configuration and tax ID. Update the name from 'LLC' to 'Inc.' per the vendor's email, then extend the BPO against this record.",
     "SAP Ariba profile is the golden record because it holds the current DUNS and qualification status per VMP-001 section 6.1. Update the S/4 vendor 300042 name to 'Inc.' and link it to Ariba. Extend BPO against the Ariba-linked S/4 record."
-  ]
+  ],
+  "split": "challenge"
 }

@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-8C1B6D909F4D",
   "scenario_file": "ironforge-plant-ops-batch1-01.json",
   "correct_answer": "Non-compliant \u2014 the bypass is physically still in place constituting an unauthorized process change under the current PSM-MOC procedure; immediate action is to remove the jumper, halt production on CNC-14, and initiate a retroactive MOC",
   "answer_format": "multiple_choice",

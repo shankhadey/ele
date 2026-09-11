@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-5D8B9C33683D",
   "scenario_file": "ironforge-procurement-batch1-02.json",
   "correct_answer": "VP Supply Chain approval required \u2014 the $92K renewal exceeds the new $75K threshold, the renewal date (Aug 15) is in Q3 2026 so the grace period does not apply, and Sandra has correctly escalated to Maria",
   "answer_format": "multiple_choice",

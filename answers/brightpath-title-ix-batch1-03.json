@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-EF08906C9A34",
   "scenario_file": "brightpath-title-ix-batch1-03.json",
   "correct_answer": "IR remains ineligible \u2014 Section 11.3(a) explicitly keys the exclusion to 'at the time of the alleged conduct,' the incident occurred September 22 while Student E was enrolled in Faculty Member F's course, and the current enrollment status is irrelevant to the eligibility determination.",
   "answer_format": "multiple_choice",

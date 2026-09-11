@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-4BC4B2DE5D3E",
   "scenario_file": "atlas-loss-prevention-batch1-02.json",
   "correct_answer": "Clear policy violation \u2014 RP-2026-v1 took effect Feb 1, the published policy requires LP approval over $100, the grace period ended Feb 15, and Sandra processed this transaction on Feb 18; she must be formally flagged",
   "answer_format": "multiple_choice",

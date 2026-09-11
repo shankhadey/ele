@@ -1,0 +1,18 @@
+{
+  "n_scenarios": 10,
+  "trials": 3,
+  "models": {
+    "nova-micro": {
+      "n_scenarios_scored": 10,
+      "unanimous_rate": 100.0,
+      "mean_agreement": 100.0,
+      "majority_accuracy": 100.0
+    },
+    "gpt-5.6-terra": {
+      "n_scenarios_scored": 10,
+      "unanimous_rate": 90.0,
+      "mean_agreement": 96.66666666666666,
+      "majority_accuracy": 100.0
+    }
+  }
+}

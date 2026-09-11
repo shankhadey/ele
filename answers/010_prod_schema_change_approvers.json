@@ -1,0 +1,8 @@
+{
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-71287A40C27F",
+  "scenario_file": "010_prod_schema_change_approvers.json",
+  "correct_answer": "The Director of Data Platform (Zara Patel), the CDO (Reid Fernandez), and the DPO (Anna Bezier), because the rename is a destructive schema change and the table carries a PII tag.",
+  "answer_format": "multiple_choice",
+  "rationale": "Barrow's policy classifies renames as destructive schema changes, in the same category as drops and type narrowings, regardless of whether the underlying data type or value contents change. The rationale is that renames break every downstream consumer that references the old column name and therefore require the same review path as any breaking change. Because the change contains a rename, the destructive-path additional approvers apply: Director of Data Platform (Zara Patel) and Chief Data Officer (Reid Fernandez). Separately, the table is tagged PII in the Data Catalog, which triggers DPO approval (Anna Bezier) regardless of the additive/destructive classification. Priya's argument that a rename is 'harmless' is a common misreading of the policy but is not what the policy says. Option A relies on that misreading. Option B recognizes the PII trigger but misses the destructive-path trigger. Option D invents a 'Data Steward exception' that is not in Barrow's policy."
+}

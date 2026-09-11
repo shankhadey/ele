@@ -20,5 +20,6 @@
     "Apply $8.15/kW-month to 3.8 MW and $9.20/kW-month to 0.4 MW, per the original IA Section 8.5 and 2014 amendment Section 2(b)",
     "Apply QF-3 capacity rate of $12.40/kW-month to all 4.2 MW, as the current tariff supersedes the 2008 agreement",
     "Apply $8.15/kW-month to all 4.2 MW, as Section 12.1 governs all provisions by the tariff at the Effective Date"
-  ]
+  ],
+  "split": "challenge"
 }

@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-476D80528B32",
   "scenario_file": "cascade-hris-batch1-01.json",
   "correct_answer": "CC-4420 has 1 open position (REQ-2287/new role); Adaptive needs a manual sync to remove the eliminated P-04217 and add the new position at B5",
   "answer_format": "multiple_choice",

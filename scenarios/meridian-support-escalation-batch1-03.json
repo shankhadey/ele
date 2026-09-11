@@ -20,5 +20,6 @@
     "Protocol should not have triggered yet. The Apr 5 ticket was Priority: High, not P1, so it does not count toward the 3-incident threshold. Only two qualifying incidents exist (May 12 and Jun 24).",
     "Protocol was never formally triggered. Zero of four required steps completed. Full process violation \u2014 reportable to VP Support per Section 3.",
     "Protocol was partially triggered: CSM is aware (step d initiated informally via Slack), and Engineering has a Jira ticket (step c). Steps (a) and (b) were not completed. Partial compliance \u2014 needs remediation but not a formal violation."
-  ]
+  ],
+  "split": "challenge"
 }

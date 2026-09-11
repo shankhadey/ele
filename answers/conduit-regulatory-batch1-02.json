@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-9ED28B31A03C",
   "scenario_file": "conduit-regulatory-batch1-02.json",
   "correct_answer": "Yes \u2014 the statutory conversion notice was filed within 30 days (Dec 18 for Dec 2 conversion), satisfying Section 4.7.3, and a statutory conversion is not a transfer of control",
   "answer_format": "multiple_choice",

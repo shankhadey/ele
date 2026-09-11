@@ -20,5 +20,6 @@
     "Conduit should apply the 2.0% floor since it avoids the CPI ambiguity entirely; the price should be $25.46 x 1.02 = $25.97/MWh",
     "Conduit should reject the invoice and halt payment until legal provides formal guidance, as the contract is too ambiguous to determine the correct price without an amendment",
     "Conduit must accept CPI-W Denver metro (4.1%) because the contract is ambiguous and the developer's interpretation is reasonable; the price should be $26.50/MWh"
-  ]
+  ],
+  "split": "challenge"
 }

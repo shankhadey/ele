@@ -20,5 +20,6 @@
     "All three subjects (041, 042, 043) are deviations because Amendment 3 procedures were implemented before the IRB approval date of March 7, 2026.",
     "Only subjects 042 and 043 are deviations \u2014 they were screened using unapproved criteria \u2014 but subject 041 is not because they met both old and new criteria.",
     "Subject 041 is the only deviation because they were enrolled during the gap period between amendment submission and IRB approval; 042 and 043 were correctly excluded regardless of which criteria version applies."
-  ]
+  ],
+  "split": "challenge"
 }

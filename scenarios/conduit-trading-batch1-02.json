@@ -20,5 +20,6 @@
     "$1.25M - calculated as ($2.4M MTM - $1.0M threshold - $250K Minimum Transfer Amount)",
     "$1.13M - calculated as ($2.38M MTM - $1.5M threshold), rounded to Minimum Transfer Amount",
     "$1.4M - calculated as ($2.4M MTM - $1.0M executed threshold), rounded to nearest $100K per standard practice"
-  ]
+  ],
+  "split": "challenge"
 }

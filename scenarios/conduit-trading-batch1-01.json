@@ -20,5 +20,6 @@
     "Mohave Solar Holdings II SPV - they are the counterparty of record in the PPA",
     "Desert Sky Solar LLC - they curtailed generation and caused the imbalance",
     "CAISO - the scheduling coordinator error was on their system side"
-  ]
+  ],
+  "split": "challenge"
 }

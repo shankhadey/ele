@@ -1,0 +1,24 @@
+{
+  "title": "Which Customer Owes the Overdue Invoice",
+  "category": "entity_resolution",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "split": "core_test",
+  "scenario_text": "Vertex Software runs a Salesforce commercial hierarchy and a NetSuite billing hierarchy that are intentionally not the same tree. Salesforce organizes accounts by commercial customer (the entity the deal was negotiated with). NetSuite organizes customers by billing legal entity (the entity that pays and to which invoices are issued). Vertex's Chief Accounting Officer's memo of last April states: 'For dunning and collections, the NetSuite billing customer is the party owing the money. For expansion and renewal negotiations, the Salesforce commercial customer is the party the AE engages. When they diverge, follow the entity indicated by the workflow.'\n\nThe Salesforce account 'Orion Beverages Group' is the commercial customer for a three-year SaaS contract signed last year with total ARR of $840,000. Orion Beverages Group is a holding company. Its two operating subsidiaries, 'Orion Beverages North America' and 'Orion Beverages EU,' are separate legal entities and are set up in NetSuite as two distinct billing customers with two distinct payment terms. The signed order form allocates $500,000 ARR to be billed to Orion Beverages North America and $340,000 ARR to Orion Beverages EU. Invoicing has followed that allocation for four quarters. Both subsidiaries are wholly owned by Orion Beverages Group; that ownership is documented in the D&B feed and reflected in the Salesforce account hierarchy.\n\nThis quarter, Orion Beverages EU is 62 days past due on its $85,000 invoice. Orion Beverages North America is current. The collections analyst has three inputs. Sarah in Salesforce Customer Success shows the commercial customer 'Orion Beverages Group' with an 'excellent' health score. NetSuite shows a 62-day-past-due AR balance owed by 'Orion Beverages EU' only. The Salesforce AE emails asking whether the whole commercial customer should be marked as at-risk, or only the specific subsidiary.\n\nThe renewal for the entire three-year contract is 190 days out. The collections analyst has been asked to identify who is on the hook for the overdue invoice and which of the two accounts, if any, should be flagged in the credit-hold workflow.",
+  "question": "Which entity is legally responsible for the overdue $85,000 invoice, and which account should collections flag in the credit-hold workflow this week?",
+  "answer_format": "multiple_choice",
+  "choices": [
+    "Orion Beverages EU is on the hook; flag only Orion Beverages EU for credit hold.",
+    "Orion Beverages Group is on the hook as the commercial customer; flag the Salesforce parent account.",
+    "Both Orion Beverages EU and Orion Beverages North America are jointly on the hook; flag both.",
+    "Neither subsidiary is on the hook until the commercial parent has been formally notified; hold the flag until the AE confirms."
+  ],
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": []
+}

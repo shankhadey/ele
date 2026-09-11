@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-2DEE833BE557",
   "scenario_file": "cascade-hris-batch1-03.json",
   "correct_answer": "45 separations; does not trigger WARN \u2014 Jordan moves to the earlier window, Roark moves to July 5 window, and Anita's extension to July 15 removes her from the June 30 count",
   "answer_format": "multiple_choice",

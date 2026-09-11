@@ -1,0 +1,8 @@
+{
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-AACD38EFBA7F",
+  "scenario_file": "cf-02-approval-delegation-window-base.json",
+  "correct_answer": "Marketing Director alone \u2014 she holds delegated authority for this purchase.",
+  "answer_format": "multiple_choice",
+  "rationale": "The CMO's delegation is a formal, written, time-bounded instrument covering the November 4 \u2013 November 28 window. The PR is submitted November 12, which is inside the window; the delegated amount limit ($250,000) covers the $220,000 requisition; and the DoA register confirms the delegation is active. Under Farthom's DoA framework a valid delegation replaces the normal approver rather than supplementing them, so Alan Wu can approve directly. Option B adds an informal courtesy step that the delegation email did not require. Option C ignores the valid delegation. Option D is factually wrong at Farthom \u2014 the delegation email itself is countersigned by the General Counsel, indicating the practice is permitted."
+}

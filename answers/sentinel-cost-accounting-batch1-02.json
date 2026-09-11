@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-BE64B8E65703",
   "scenario_file": "sentinel-cost-accounting-batch1-02.json",
   "correct_answer": "The B&P pool decreases by $192,000 (base costs only); the FY25 OH pool decreases by $88,040 (OH backed out per Linda's DM); the missing approval is the CAS-required written notification to the CFAO of a change in cost accounting practice.",
   "answer_format": "multiple_choice",

@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-ADFE9E1C8DB8",
   "scenario_file": "conduit-asset-batch1-03.json",
   "correct_answer": "The capital committee approved a full replacement justified by the 3.2 score (end-of-life), but the PUC filing justifies the same dollar amount using the 4.7 corrosion score \u2014 creating a disconnect where the internal justification, approved scope, and regulatory filing tell three different stories about the same $1.2M expenditure.",
   "answer_format": "multiple_choice",

@@ -20,5 +20,6 @@
     "Non-compliant at both levels \u2014 total deal margin is 54.8% which is below the 55% floor even under the more permissive v2.1 rules",
     "Compliant at deal level but requires restructuring \u2014 use the +/-10% platform allocation discretion clause in the IO to shift more volume to linear until streaming hits 45% independently",
     "Non-compliant \u2014 the board directive on P&L separation (Jan 2026) supersedes the sales approval matrix (May 2026), making the streaming portion's 43% margin a violation regardless of blended calculation"
-  ]
+  ],
+  "split": "challenge"
 }

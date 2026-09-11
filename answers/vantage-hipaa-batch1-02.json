@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-66F390BD810A",
   "scenario_file": "vantage-hipaa-batch1-02.json",
   "correct_answer": "Original waiver elements only (demographics, admit/discharge dates, diagnosis codes, BNP, troponin, ejection fraction) for Vantage Main Campus patients only \u2014 the waiver text is the controlling document and was never formally amended.",
   "answer_format": "multiple_choice",

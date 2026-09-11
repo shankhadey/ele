@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-427F72294349",
   "scenario_file": "meridian-deal-desk-batch1-03.json",
   "correct_answer": "Contact James Park to sign immediately - the deal was submitted and approved under v2.3 (May 22-23), so it must follow v2.3 rules requiring VP Sales signature regardless of when the customer signed",
   "answer_format": "multiple_choice",

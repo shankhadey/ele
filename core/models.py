@@ -54,6 +54,72 @@ class StatusEnum(Enum):
     ARCHIVED = "archived"
 
 
+class SplitEnum(Enum):
+    """Which evaluation split a scenario belongs to.
+
+    The five splits correspond to the ELE benchmark architecture:
+
+    - dev:            Public development / debugging set. Not used for
+                      headline claims. May contain publicly-released answers.
+    - core_test:      Primary, model-blind evaluation set. Items enter this
+                      set on human-defined inclusion criteria only, without
+                      conditioning on whether target models succeed or fail.
+                      Used for unbiased inference about average enterprise
+                      capability.
+    - challenge:      Adversarial / difficulty-focused stress-test set. May
+                      include items selected because earlier models struggled.
+                      Reported as stress-test performance.
+    - counterfactual: Paired scenarios where one decision-critical fact is
+                      changed so that the correct action must change with it.
+                      Members are linked by ``counterfactual_pair_id`` and
+                      distinguished by ``counterfactual_role`` (base vs
+                      variant). Used to test causal responsiveness to
+                      organizational evidence.
+    - holdout:        Fully private future-use set for contamination-resistant
+                      longitudinal evaluation. Never publicly released.
+    """
+    DEV = "dev"
+    CORE_TEST = "core_test"
+    CHALLENGE = "challenge"
+    COUNTERFACTUAL = "counterfactual"
+    HOLDOUT = "holdout"
+
+
+class CounterfactualRoleEnum(Enum):
+    """Which member of a counterfactual pair a scenario is.
+
+    A CF pair has exactly one BASE and one VARIANT. The VARIANT differs from
+    the BASE in a single decision-critical fact, and the correct action
+    must change between the two.
+    """
+    BASE = "base"
+    VARIANT = "variant"
+
+
+class PromptConditionEnum(Enum):
+    """Prompting condition for an evaluation run (paper §5.2).
+
+    - direct:     the model receives the scenario, question, and answer format
+                  with a concise instruction to select the best action. No
+                  reasoning is elicited. (Default.)
+    - deliberate: a generic 'think step by step' instruction is added before
+                  the answer. Approximates an unstructured deliberation
+                  condition. (Native provider reasoning-mode toggling is a
+                  documented follow-up; support varies and hidden CoT is not
+                  scored.)
+    - scaffold:   a fixed structured organizational-reasoning checklist is
+                  added (operative entity, authoritative evidence, governing
+                  policy/precedent + effective date, approval authority,
+                  temporal state) before the answer.
+
+    All conditions preserve the answer format and never leak the gold answer,
+    category, or rationale.
+    """
+    DIRECT = "direct"
+    DELIBERATE = "deliberate"
+    SCAFFOLD = "scaffold"
+
+
 class RunStatusEnum(Enum):
     """Status of an evaluation run."""
     PENDING = "pending"
@@ -114,6 +180,18 @@ class Scenario:
     updated_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
     version: int = 1
     status: StatusEnum = StatusEnum.ACTIVE
+    # Evaluation split — defaults to CHALLENGE so new/unlabelled scenarios
+    # do not enter the model-blind core test set by accident. Assign
+    # explicitly (in the scenario JSON) to move an item into core_test.
+    split: SplitEnum = SplitEnum.CHALLENGE
+    # Counterfactual-pair linkage. Populated only for scenarios in the
+    # COUNTERFACTUAL split. counterfactual_pair_id links the two members;
+    # counterfactual_role distinguishes them; changed_fact documents (in
+    # plain English) the one decision-critical fact that was altered in
+    # the VARIANT relative to the BASE. Non-CF scenarios leave these None.
+    counterfactual_pair_id: Optional[str] = None
+    counterfactual_role: Optional[CounterfactualRoleEnum] = None
+    changed_fact: Optional[str] = None
 
     def to_dict(self) -> Dict[str, Any]:
         """Serialize the scenario to a plain dictionary."""
@@ -124,6 +202,10 @@ class Scenario:
         d["difficulty"] = self.difficulty.value
         d["answer_format"] = self.answer_format.value
         d["status"] = self.status.value
+        d["split"] = self.split.value
+        d["counterfactual_role"] = (
+            self.counterfactual_role.value if self.counterfactual_role else None
+        )
         return d
 
     def to_json(self) -> str:
@@ -139,6 +221,13 @@ class Scenario:
         d["difficulty"] = DifficultyEnum(d["difficulty"])
         d["answer_format"] = AnswerFormatEnum(d["answer_format"])
         d["status"] = StatusEnum(d["status"])
+        # Split defaults to CHALLENGE for scenarios that predate this field.
+        d["split"] = SplitEnum(d["split"]) if "split" in d else SplitEnum.CHALLENGE
+        # Counterfactual role: optional, only set for CF-split members.
+        role = d.get("counterfactual_role")
+        d["counterfactual_role"] = (
+            CounterfactualRoleEnum(role) if role else None
+        )
         d["contributor"] = Contributor.from_dict(d["contributor"])
         return cls(**d)
 
@@ -156,6 +245,9 @@ class ScenarioFilters:
     difficulty: Optional[DifficultyEnum] = None
     contributor_name: Optional[str] = None
     status: Optional[StatusEnum] = None
+    split: Optional[SplitEnum] = None
+    # Optional pair-id filter, useful when scoring a specific CF pair.
+    counterfactual_pair_id: Optional[str] = None
 
 
 @dataclass

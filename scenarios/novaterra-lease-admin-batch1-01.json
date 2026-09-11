@@ -20,5 +20,6 @@
     "The renewal notice is valid; the PSA assignment transferred all landlord rights and obligations regardless of the unexecuted SNDA, and the tenant's delivery to the original named entity constitutes constructive notice to the successor.",
     "The renewal notice is invalid because the unexecuted SNDA means no attornment relationship exists; NovaTerra has no standing as landlord until the SNDA is executed.",
     "The renewal cannot be processed until both the SNDA and TI reimbursement transfer are resolved; the notice should be held in abeyance pending legal resolution."
-  ]
+  ],
+  "split": "challenge"
 }

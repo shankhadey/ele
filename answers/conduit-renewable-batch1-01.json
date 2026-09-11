@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-A30D121965CC",
   "scenario_file": "conduit-renewable-batch1-01.json",
   "correct_answer": "Yes \u2014 the PPA contractually assigns RECs to Conduit upon energy delivery regardless of registry status, but the M-RETS transfer must be completed before retirement can occur for PUC filing purposes",
   "answer_format": "multiple_choice",

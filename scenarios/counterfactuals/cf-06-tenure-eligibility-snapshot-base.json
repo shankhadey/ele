@@ -1,0 +1,26 @@
+{
+  "title": "Employee Tenure Relative to the Benefit's Snapshot Date (base)",
+  "category": "temporal_consistency",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-06",
+  "counterfactual_role": "base",
+  "scenario_text": "Aegis Holdings publishes an annual Long-Service Sabbatical benefit. The FY26 policy, published March 1, states: 'Employees with at least five years of continuous service as of the December 31 snapshot date of the prior calendar year are eligible for a four-week paid sabbatical in the following fiscal year.'\n\nMariam Youssef is a program manager in the Aegis Networks division. Workday shows her original hire date as December 5, six years and one month before the FY26 snapshot date of December 31 of last year. She had one interval of absence: a fifteen-month parental leave, which under Aegis's continuity policy explicitly counts as continuous service. There has been no termination or re-hire.\n\nMariam submitted her FY26 sabbatical request through the HR portal on January 15, six weeks before the policy was published. Her direct manager approved the request in principle pending HR verification. Payroll is preparing the FY26 benefit-file update and asks whether Mariam is eligible and what date to record.",
+  "question": "Is Mariam Youssef eligible for the FY26 Long-Service Sabbatical, and what should Payroll enter on her benefit file?",
+  "answer_format": "multiple_choice",
+  "choices": [
+    "Eligible \u2014 count her tenure as of the December 31 snapshot date; enter FY26 sabbatical eligibility.",
+    "Not eligible \u2014 count her tenure as of the March 1 policy publication date; enter FY26 sabbatical eligibility as declined.",
+    "Eligible \u2014 count her tenure as of the January 15 request submission date; enter FY26 sabbatical eligibility.",
+    "Route to Legal for a determination on how re-hire tenure interacts with the sabbatical rule."
+  ],
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": []
+}

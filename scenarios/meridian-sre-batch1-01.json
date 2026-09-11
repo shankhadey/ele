@@ -20,5 +20,6 @@
     "Yes \u2014 Marco communicated the exception in #engineering which constitutes a written channel notification; the only violation was the shortened canary window",
     "Yes \u2014 VP Engineering (Divya) gave explicit approval via DM, which constitutes written authorization; the deploy was valid but the canary duration was the root policy violation",
     "No \u2014 the exception expired because Divya's approval was given on May 12 for 'tonight' but the deploy happened on May 14, making the approval stale"
-  ]
+  ],
+  "split": "challenge"
 }

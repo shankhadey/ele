@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-F6466566792A",
   "scenario_file": "prism-royalties-batch1-03.json",
   "correct_answer": "2023 MBA residual rate schedule applied to residual-eligible gross from the StreamVault report, with all other residual terms (covered platforms, payment timing) governed by the 2020 MBA",
   "answer_format": "multiple_choice",

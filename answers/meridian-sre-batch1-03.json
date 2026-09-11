@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-1993A7E7F149",
   "scenario_file": "meridian-sre-batch1-03.json",
   "correct_answer": "Yes \u2014 PagerDuty is the system of record for escalation routing, the policy was updated May 5, and the system correctly escalated Primary -> Secondary -> SRE Manager",
   "answer_format": "multiple_choice",

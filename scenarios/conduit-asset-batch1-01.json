@@ -20,5 +20,6 @@
     "The reinspection was completed in 2017 as part of WO 400182; the GIS attribute confirms it; the company is in compliance.",
     "The reinspection did not occur; the missing SharePoint report and the Maximo 2018 entry (not 2017) prove the 2017 work order skipped Structure 19.",
     "The 2018 Maximo climbing inspection satisfies the 5-year reinspection requirement from the 2012 finding, making the 2017 question moot."
-  ]
+  ],
+  "split": "challenge"
 }

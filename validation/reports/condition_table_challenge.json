@@ -1,0 +1,145 @@
+{
+  "split": "challenge",
+  "rows": [
+    {
+      "model": "gpt-5.6-terra",
+      "cells": {
+        "direct": {
+          "acc": 86.66666666666667,
+          "n": 30,
+          "errors": 0
+        },
+        "deliberate": {
+          "acc": 86.66666666666667,
+          "n": 30,
+          "errors": 0
+        },
+        "scaffold": {
+          "acc": 83.33333333333334,
+          "n": 30,
+          "errors": 0
+        }
+      }
+    },
+    {
+      "model": "claude-opus-5",
+      "cells": {
+        "direct": {
+          "acc": 93.33333333333333,
+          "n": 30,
+          "errors": 0
+        },
+        "deliberate": {
+          "acc": 93.33333333333333,
+          "n": 30,
+          "errors": 0
+        },
+        "scaffold": {
+          "acc": 83.33333333333334,
+          "n": 30,
+          "errors": 0
+        }
+      }
+    },
+    {
+      "model": "gemma-3-27b",
+      "cells": {
+        "direct": {
+          "acc": 83.33333333333334,
+          "n": 30,
+          "errors": 0
+        },
+        "deliberate": {
+          "acc": 83.33333333333334,
+          "n": 30,
+          "errors": 0
+        },
+        "scaffold": {
+          "acc": 86.66666666666667,
+          "n": 30,
+          "errors": 0
+        }
+      }
+    },
+    {
+      "model": "qwen3-235b",
+      "cells": {
+        "direct": {
+          "acc": 96.66666666666667,
+          "n": 30,
+          "errors": 0
+        },
+        "deliberate": {
+          "acc": 93.33333333333333,
+          "n": 30,
+          "errors": 0
+        },
+        "scaffold": {
+          "acc": 90.0,
+          "n": 30,
+          "errors": 0
+        }
+      }
+    },
+    {
+      "model": "llama4-maverick",
+      "cells": {
+        "direct": {
+          "acc": 90.0,
+          "n": 30,
+          "errors": 0
+        },
+        "deliberate": {
+          "acc": 93.33333333333333,
+          "n": 30,
+          "errors": 0
+        },
+        "scaffold": {
+          "acc": 90.0,
+          "n": 30,
+          "errors": 0
+        }
+      }
+    },
+    {
+      "model": "deepseek-v3.2",
+      "cells": {
+        "direct": {
+          "acc": 93.33333333333333,
+          "n": 30,
+          "errors": 0
+        },
+        "deliberate": {
+          "acc": 93.33333333333333,
+          "n": 30,
+          "errors": 0
+        },
+        "scaffold": {
+          "acc": 83.33333333333334,
+          "n": 30,
+          "errors": 0
+        }
+      }
+    },
+    {
+      "model": "nova-micro",
+      "cells": {
+        "direct": {
+          "acc": 86.66666666666667,
+          "n": 30,
+          "errors": 0
+        },
+        "deliberate": {
+          "acc": 80.0,
+          "n": 30,
+          "errors": 0
+        },
+        "scaffold": {
+          "acc": 86.66666666666667,
+          "n": 30,
+          "errors": 0
+        }
+      }
+    }
+  ]
+}

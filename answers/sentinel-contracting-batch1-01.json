@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-C00077E4FE28",
   "scenario_file": "sentinel-contracting-batch1-01.json",
   "correct_answer": "No \u2014 Ridgeline recertified as other-than-small due to a merger/acquisition, which triggers mandatory loss of SB credit from the recertification date forward",
   "answer_format": "multiple_choice",

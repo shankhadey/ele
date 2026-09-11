@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-53D47CAC558E",
   "scenario_file": "meridian-csm-batch1-03.json",
   "correct_answer": "Offer a 1-year rate lock as compromise \u2014 there's enough evidence of intent to warrant partial accommodation, but not a full 2-year commitment. Escalate to current VP CS for approval.",
   "answer_format": "multiple_choice",

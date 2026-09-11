@@ -1,0 +1,8 @@
+{
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-627388E5CD34",
+  "scenario_file": "cf-04-fee-waiver-precedent-scope-variant.json",
+  "correct_answer": "Decline the waiver and explain that the prior waiver was a one-time accommodation with no forward-looking scope.",
+  "answer_format": "multiple_choice",
+  "rationale": "The prior waiver is explicitly tagged ONE-TIME with the scope statement 'granted solely due to ERP migration disruption.' Northlight's precedent policy says ONE-TIME waivers are not precedent-setting; the customer cannot rely on it. Diana should decline and explain the scope. Option A applies precedent that the tag explicitly denies. Option C offers a discretionary credit that the policy does not authorize at the Support Manager level and that would itself create an unintended new precedent. Option D escalates unnecessarily \u2014 the scope tag makes the decision, and the escalation would land on the same policy language."
+}

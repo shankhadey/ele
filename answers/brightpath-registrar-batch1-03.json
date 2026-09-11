@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-02DF6443A7F6",
   "scenario_file": "brightpath-registrar-batch1-03.json",
   "correct_answer": "Yes \u2014 as a pre-merge West campus student with continuous enrollment, the West campus policy (no time limit) applies per the transition memorandum; however, the petition must go to the Academic Standards Committee, not the Associate Registrar.",
   "answer_format": "multiple_choice",

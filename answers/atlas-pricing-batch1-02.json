@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-38FA68173451",
   "scenario_file": "atlas-pricing-batch1-02.json",
   "correct_answer": "Honor 25% through June 30 and communicate the upcoming change \u2014 the resolved comment established a Q2 courtesy period, the Shopify code was never turned off (implementation gap, not policy gap), and she is still within the grace window",
   "answer_format": "multiple_choice",

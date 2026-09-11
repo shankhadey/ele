@@ -20,5 +20,6 @@
     "No \u2014 only one linking signal (payment instrument) is confirmed; the different EIN, address, device fingerprints, and owner name mean this does not meet the two-signal threshold.",
     "Yes \u2014 the shared payment instrument plus shared beneficial ownership (spousal/household relationship confirmed via KYC) constitutes two linking signals under Policy v3.0 Section 4.2; initiate suspension.",
     "Yes \u2014 the shared bank account alone is sufficient to confirm ban evasion; suspend NovaCraft Goods immediately per payment instrument match."
-  ]
+  ],
+  "split": "challenge"
 }

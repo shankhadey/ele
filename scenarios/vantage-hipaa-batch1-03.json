@@ -20,5 +20,6 @@
     "Yes, this is a breach, but it falls under the low-probability exception \u2014 the access was brief, no evidence of re-disclosure, the information was not further used, and the employee had a prior clinical relationship that reduces the probability of compromise.",
     "No breach \u2014 the employee's Teams message demonstrates legitimate clinical concern about allergy documentation, her prior treatment relationship establishes reasonable basis for access, and Epic confirms she previously documented the allergy.",
     "No breach determination can be made yet \u2014 the investigation requires the employee interview (scheduled March 25) before the Privacy Officer can apply the four-factor risk assessment under the Breach Notification Rule."
-  ]
+  ],
+  "split": "challenge"
 }

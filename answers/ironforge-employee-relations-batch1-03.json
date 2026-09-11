@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-FE40911F9503",
   "scenario_file": "ironforge-employee-relations-batch1-03.json",
   "correct_answer": "The grievance should be denied because the 2023 CBA explicitly supersedes the Voss award; the new equalization framework was followed in substance (Whitfield had fewer hours), even though the documentation was not maintained \u2014 but the vulnerability is that the unmaintained log could support a separate ULP or future grievance about record-keeping.",
   "answer_format": "multiple_choice",

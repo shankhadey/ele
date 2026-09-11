@@ -20,5 +20,6 @@
     "Recognize point-in-time upon delivery \u2014 the deal was structured under v1.0 terms and the grandfathered discount confirms legacy treatment applies to the entire arrangement",
     "Split: recognize $164K ratably and $50K point-in-time \u2014 the discount is grandfathered but rev rec follows current ASC 606 interpretation which allows distinct performance obligations to be separated",
     "Recognize ratably over 12 months alongside the subscription \u2014 per current policy v2.1 Section 4.3, since SSP has not been established for the services component"
-  ]
+  ],
+  "split": "challenge"
 }

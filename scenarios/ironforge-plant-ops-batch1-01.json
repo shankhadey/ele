@@ -20,5 +20,6 @@
     "Non-compliant \u2014 but the issue is only that ECN-2025-1104 was never completed; once the permanent setpoint change is approved, the bypass becomes authorized retroactively",
     "Indeterminate \u2014 the policy version that was active when the deviation expired (v2, 2024) said deviations auto-close, so no MOC was required at the time; the new policy cannot be applied retroactively",
     "Compliant \u2014 the deviation expired in September 2025, meaning the bypass auto-closed per policy, and the January 2026 PM validation confirmed the interlock passed"
-  ]
+  ],
+  "split": "challenge"
 }
