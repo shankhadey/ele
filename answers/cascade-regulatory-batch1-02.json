@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-DC278CCCEAE4",
   "scenario_file": "cascade-regulatory-batch1-02.json",
   "correct_answer": "The gap represents a genuine compliance deficiency \u2014 the regulation was effective March 1, 2024, Cascade's policy was updated to reflect the $3,000 threshold, but implementation was incomplete because the legacy Piedmont rule engine was not included in the system change; the institution's control environment failed to ensure the policy was operationalized across all platforms",
   "answer_format": "multiple_choice",

@@ -20,5 +20,6 @@
     "Two failures (SEC-0891 and SEC-0923) \u2014 the CISO's Slack message establishes the description of controls as binding, making SEC-0891 non-compliant at 26 days without exception; SEC-1003 had proper exception approval",
     "Zero failures \u2014 all three were compliant under internal policy v3.1 (30-day SLA) which was active during Feb and Mar incidents",
     "One failure (SEC-0923, the SQLi vuln) \u2014 it had no documented exception or CISO approval; SEC-0891 was under the 30-day internal policy, and SEC-1003 had a proper exception filed"
-  ]
+  ],
+  "split": "challenge"
 }

@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-2D928B8E3C91",
   "scenario_file": "sentinel-contracting-batch1-02.json",
   "correct_answer": "The mod P00004 retroactively sets the effective date to Oct 1, making all costs within the period of performance allowable regardless of signature date",
   "answer_format": "multiple_choice",

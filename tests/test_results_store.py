@@ -27,37 +27,65 @@ from ele.core.results_store import (
 
 # --- Generators ---
 
-scored_result_records = st.builds(
-    ScoredResultRecord,
-    scenario_id=st.uuids().map(str),
-    model_response=st.text(min_size=1, max_size=50),
-    correct_answer=st.text(min_size=1, max_size=50),
-    extracted_answer=st.text(min_size=0, max_size=50),
-    exact_match=st.booleans(),
-    similarity_score=st.floats(min_value=0.0, max_value=1.0, allow_nan=False),
-    final_score=st.floats(min_value=0.0, max_value=1.0, allow_nan=False),
-    scoring_method=st.sampled_from(["exact", "semantic", "partial", "none"]),
-    explanation=st.text(max_size=30),
-    latency_ms=st.integers(min_value=0, max_value=60000),
-    tokens_used=st.integers(min_value=0, max_value=10000),
-    status=st.sampled_from(["success", "timeout", "error"]),
-    category=st.sampled_from([
-        "entity_resolution", "precedent_exception", "cross_system_synthesis",
-        "policy_version", "approval_chain", "temporal_consistency",
-    ]),
-    domain=st.sampled_from([
-        "sales_deal_desk", "customer_success_support", "finance_revops",
-        "hr_people_ops", "engineering_devops", "compliance_legal",
-        "procurement_vendor", "other",
-    ]),
-    difficulty=st.sampled_from(["standard", "hard", "expert"]),
-)
+@st.composite
+def scored_result_records(draw: st.DrawFn) -> ScoredResultRecord:
+    """Generate a scored-result record whose fields are internally consistent.
+
+    Under the current scoring pipeline, a record is one of:
+      - Exact match: exact_match=True, is_correct=True, final_score=1.0,
+                     scoring_method='exact'.
+      - Judge-decided correct: exact_match=False, judge_score >= 0.9,
+                               is_correct=True, final_score=judge_score,
+                               scoring_method='llm_judge'.
+      - Judge-decided wrong: exact_match=False, judge_score < 0.9,
+                             is_correct=False, final_score=judge_score,
+                             scoring_method='none'.
+    """
+    exact = draw(st.booleans())
+    if exact:
+        final_score = 1.0
+        is_correct = True
+        method = "exact"
+        judge_score = None
+    else:
+        judge_score = draw(st.floats(min_value=0.0, max_value=1.0, allow_nan=False))
+        final_score = judge_score
+        is_correct = judge_score >= 0.9
+        method = "llm_judge" if is_correct else "none"
+
+    return ScoredResultRecord(
+        scenario_id=str(draw(st.uuids())),
+        model_response=draw(st.text(min_size=1, max_size=50)),
+        correct_answer=draw(st.text(min_size=1, max_size=50)),
+        extracted_answer=draw(st.text(min_size=0, max_size=50)),
+        exact_match=exact,
+        is_correct=is_correct,
+        similarity_score=draw(st.floats(min_value=0.0, max_value=1.0, allow_nan=False)),
+        final_score=final_score,
+        scoring_method=method,
+        explanation=draw(st.text(max_size=30)),
+        latency_ms=draw(st.integers(min_value=0, max_value=60000)),
+        tokens_used=draw(st.integers(min_value=0, max_value=10000)),
+        status=draw(st.sampled_from(["success", "timeout", "error"])),
+        category=draw(st.sampled_from([
+            "entity_resolution", "precedent_exception", "cross_system_synthesis",
+            "policy_version", "approval_chain", "temporal_consistency",
+        ])),
+        domain=draw(st.sampled_from([
+            "sales_deal_desk", "customer_success_support", "finance_revops",
+            "hr_people_ops", "engineering_devops", "compliance_legal",
+            "procurement_vendor", "other",
+        ])),
+        difficulty=draw(st.sampled_from(["standard", "hard", "expert"])),
+        split=draw(st.sampled_from(["core_test", "challenge"])),
+        judge_score=judge_score,
+    )
 
 
 @st.composite
 def evaluation_results(draw: st.DrawFn) -> EvaluationResults:
     """Generate a complete EvaluationResults object."""
-    records = draw(st.lists(scored_result_records, min_size=1, max_size=20))
+    records = draw(st.lists(scored_result_records(), min_size=1, max_size=20))
     run_id = str(draw(st.uuids()))
     model_id = draw(st.sampled_from(["model-a", "model-b", "model-c"]))
     model_name = draw(st.sampled_from(["GPT-4", "Claude-3", "Llama-3"]))
@@ -88,13 +116,13 @@ def evaluation_results(draw: st.DrawFn) -> EvaluationResults:
 # For any set of scored results, overall accuracy equals (correct / total) * 100
 # **Validates: Requirements 6.1**
 # ------------------------------------------------------------------
-@given(records=st.lists(scored_result_records, min_size=1, max_size=30))
+@given(records=st.lists(scored_result_records(), min_size=1, max_size=30))
 @settings(max_examples=100)
 def test_accuracy_calculation(records: list):
-    """Overall accuracy must equal (count of results with score >= 0.5 / total) * 100."""
+    """Overall accuracy = (count of is_correct=True / total) * 100."""
     metrics = calculate_aggregate_metrics(records)
     total = len(records)
-    correct = sum(1 for r in records if r.final_score >= 0.5)
+    correct = sum(1 for r in records if r.is_correct)
     expected = (correct / total) * 100
     assert abs(metrics.overall_accuracy - expected) < 1e-9
 
@@ -104,7 +132,7 @@ def test_accuracy_calculation(records: list):
 # For any evaluation, average latency equals sum of latencies / count
 # **Validates: Requirements 6.5**
 # ------------------------------------------------------------------
-@given(records=st.lists(scored_result_records, min_size=1, max_size=30))
+@given(records=st.lists(scored_result_records(), min_size=1, max_size=30))
 @settings(max_examples=100)
 def test_latency_statistics(records: list):
     """Average latency must equal sum of all latencies divided by count."""

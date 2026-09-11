@@ -20,5 +20,6 @@
     "165 MW - the derate was documented in the June 2023 logbook and WAPA's register reflects the operational reality",
     "165 MW effective March 2024 only - WAPA's thermal study formalized the derate, so June 2026 should use 180 MW for Jan-Feb and 165 MW thereafter",
     "0 MW - Conduit failed to update Exhibit C within the 90-day contractual deadline, forfeiting capacity payment eligibility"
-  ]
+  ],
+  "split": "challenge"
 }

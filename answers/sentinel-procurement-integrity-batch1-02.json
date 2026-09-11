@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-0BAC11368223",
   "scenario_file": "sentinel-procurement-integrity-batch1-02.json",
   "correct_answer": "Immediately stand down one proposal and notify the Contracting Officer of the conflict, because even under separate CAGE codes, FAR 9.5 requires disclosure when affiliated entities bid on the same procurement \u2014 and the shared 'Data Fusion' personnel intelligence between divisions further compromises the firewall.",
   "answer_format": "multiple_choice",

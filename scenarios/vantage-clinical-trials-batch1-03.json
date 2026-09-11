@@ -20,5 +20,6 @@
     "The compliance gap is the unauthorized disclosure of DSMB-confidential information in the unofficial Slack channel; Priya's message implies the hold is safety-related, which could constitute unblinding. Immediate action: report to sponsor and document in deviation log.",
     "The compliance gap is the missed IRB notification deadline \u2014 the SOP requires notification within 10 business days of an enrollment hold, the regulatory affairs team advised filing, but no submission exists in SharePoint as of April 15. Immediate action: file IRB-4C form with the DSMB email as supporting documentation.",
     "The compliance gap is that Subject 1887-068 remains in screening status without a documented hold rationale in their study record \u2014 the site must formally withdraw the subject from screening or document the hold in Epic."
-  ]
+  ],
+  "split": "challenge"
 }

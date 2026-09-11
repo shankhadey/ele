@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-DA0F3D9C4FB8",
   "scenario_file": "atlas-franchise-batch1-03.json",
   "correct_answer": "No \u2014 the CFO's emoji reaction is not a formal approval, the CFO declined the review meeting, Legal has not responded, and the approval matrix v2 Section 2.4 requires all three approvals plus Legal review",
   "answer_format": "multiple_choice",

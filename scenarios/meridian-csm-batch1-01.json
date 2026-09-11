@@ -20,5 +20,6 @@
     "Account is at-risk due to champion change \u2014 escalate to red, schedule emergency EBR with CTO Dana Park, and loop in sales leadership before renewal.",
     "Account needs monitoring \u2014 the usage drop is concerning but auto-renew is on, so flag for next QBR discussion in the normal cadence.",
     "Account is healthy \u2014 health score is green, CSAT is strong, no incidents. Continue standard renewal motion in 60 days."
-  ]
+  ],
+  "split": "challenge"
 }

@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-C3698EF1FF85",
   "scenario_file": "cascade-hris-batch1-02.json",
   "correct_answer": "Two systems (Dynamics 365 and the legacy PFS performance module); material compliance risk because an unauthorized individual retains rating approval access",
   "answer_format": "multiple_choice",

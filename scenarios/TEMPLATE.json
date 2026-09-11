@@ -9,6 +9,8 @@
 
   "difficulty": "PICK ONE: standard | hard | expert",
 
+  "split": "PICK ONE: core_test | challenge  (default is challenge; core_test is reserved for the model-blind primary evaluation set)",
+
   "scenario_text": "Your scenario context here. Must be 200-500 words. Describe the enterprise situation with data from multiple systems that creates the reasoning challenge.",
 
   "question": "The specific question the model must answer based on the scenario.",

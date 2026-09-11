@@ -20,5 +20,6 @@
     "Remove James Park from the DocuSign envelope and mark as complete - v2.4 is now in effect, and deals are governed by the policy in effect at time of final execution, not submission, so this renewal no longer requires VP Sales approval",
     "Keep the workflow as-is and escalate to RevOps - there's a policy version conflict between submission date (v2.3) and current date (v2.4), requiring a process exception determination",
     "Remove James Park from the DocuSign envelope and mark as complete - v2.4 (effective June 1) eliminates VP requirement for 12% renewals, and the customer signed May 28 before the policy took effect, so the old approval chain applies but can be administratively completed"
-  ]
+  ],
+  "split": "challenge"
 }

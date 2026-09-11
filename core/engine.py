@@ -24,6 +24,7 @@ from threading import Lock
 from typing import Any, Dict, List, Optional
 
 from ele.core.models import (
+    PromptConditionEnum,
     ResultStatusEnum,
     RunStatusEnum,
     Scenario,
@@ -62,6 +63,7 @@ class EvaluationConfig:
     retry_on_failure: bool = False
     max_retries: int = 1
     max_tool_rounds: int = 5  # max tool-call iterations per scenario
+    prompt_condition: PromptConditionEnum = PromptConditionEnum.DIRECT  # §5.2
 
 
 # --- Result models ---
@@ -78,6 +80,7 @@ class ScenarioResult:
     status: ResultStatusEnum = ResultStatusEnum.SUCCESS
     error_message: Optional[str] = None
     scored_result: Optional[ScoredResult] = None
+    prompt: str = ""  # the initial prompt sent to the model
 
 
 @dataclass
@@ -244,7 +247,7 @@ class EvaluationEngine:
                         "parameters": self._tool_registry.get_tool_schema(tid) or {},
                     })
 
-        prompt = format_prompt(scenario, tools_for_prompt)
+        prompt = format_prompt(scenario, tools_for_prompt, config.prompt_condition)
 
         start = time.monotonic()
         try:
@@ -273,6 +276,7 @@ class EvaluationEngine:
                 tokens_used=tokens_used,
                 status=ResultStatusEnum.SUCCESS,
                 scored_result=scored,
+                prompt=prompt,
             )
 
         except TimeoutError:
@@ -348,6 +352,7 @@ class EvaluationEngine:
                 result_text = format_tool_result(tool_id, result)
                 invocation_record = {
                     "round": round_num + 1,
+                    "assistant_text": text,
                     "tool_id": tool_id,
                     "parameters": tool_params,
                     "result": result,
@@ -357,6 +362,7 @@ class EvaluationEngine:
                 result_text = f"TOOL_RESULT: {tool_id} — Error: {exc}"
                 invocation_record = {
                     "round": round_num + 1,
+                    "assistant_text": text,
                     "tool_id": tool_id,
                     "parameters": tool_params,
                     "result": None,

@@ -20,5 +20,6 @@
     "15% flat credit per the MSA custom addendum (Section 8.4), processed through CRM Exception Request workflow with Director+ approval.",
     "10% per hour of downtime (40% total, capped at 30%) via the Exception Request workflow, per the current Confluence policy v3.",
     "15% credit matching the October precedent (ticket #38921) as goodwill to maintain the relationship, approved by VP Sales."
-  ]
+  ],
+  "split": "challenge"
 }

@@ -20,5 +20,6 @@
     "Processing is unauthorized because Nextera's sub-processor list includes GCP which was never approved; immediately terminate the vendor relationship",
     "DPA is in breach due to late notice but processing can continue because the same team and infrastructure are in place; issue a formal warning letter",
     "Data processing must be suspended within 5 business days of March 18 awareness; the DPA successor clause was not properly invoked (late notice + entity dissolution), and policy SP-007 Section 3.4 mandates suspension"
-  ]
+  ],
+  "split": "challenge"
 }

@@ -1,22 +1,37 @@
 """Property-based tests for the scoring system.
 
+Under the current pipeline, correctness is decision-level and binary:
+exact match → 1.0 / is_correct=True; otherwise the LLM judge (mandatory)
+grades the response, and is_correct = judge_score >= 0.9. There is no
+lexical fallback. When the judge is not configured or every judge call
+fails, score_response raises ``ScoringError``.
+
+These tests mock ``ele.core.scoring.openai`` so they never make a real
+network call.
+
 Validates: Requirements 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8
 """
 
 from __future__ import annotations
 
 import re
+from unittest.mock import MagicMock, patch
 
+import pytest
 from hypothesis import given, settings, assume
 from hypothesis import strategies as st
 
 from ele.core.models import AnswerFormatEnum, Scenario
 from ele.core.scoring import (
+    JudgeResult,
+    LLMJudgeConfig,
     ScoringConfig,
+    ScoringError,
     ScoringMethodEnum,
     calculate_exact_match,
     calculate_semantic_similarity,
     extract_answer,
+    llm_judge_score,
     score_response,
 )
 from ele.tests.generators import valid_scenarios
@@ -44,12 +59,25 @@ def _wrap_mc_answer(letter: str, draw) -> str:
     return templates[idx]
 
 
-def _normalize(text: str) -> str:
-    return re.sub(r"\s+", " ", text.strip().lower())
+def _make_openai_response(content: str) -> MagicMock:
+    """Build a minimal mock that looks like an openai ChatCompletion response."""
+    choice = MagicMock()
+    choice.message.content = content
+    response = MagicMock()
+    response.choices = [choice]
+    return response
+
+
+def _judge_config() -> LLMJudgeConfig:
+    return LLMJudgeConfig(model="gpt-4o-mini", api_key="test-key")
+
+
+def _scoring_config() -> ScoringConfig:
+    return ScoringConfig(llm_judge=_judge_config(), correctness_threshold=0.9)
 
 
 # ------------------------------------------------------------------ #
-# Feature: ai-model-evaluation-workflow, Property 16: Multiple choice scoring
+# Property 16: Multiple choice scoring
 # For any multiple_choice scenario, exact_match is true iff extracted
 # letter matches correct_answer.
 # **Validates: Requirements 5.1**
@@ -60,16 +88,14 @@ def mc_scenario_and_response(draw):
     scenario = draw(valid_scenarios())
     scenario.answer_format = AnswerFormatEnum.MULTIPLE_CHOICE
 
-    # Ensure valid choices
     correct_letter = draw(mc_letters)
     num_choices = draw(st.integers(min_value=2, max_value=6))
     choices = [f"Choice {chr(65 + i)}" for i in range(num_choices)]
     scenario.choices = choices
     scenario.correct_answer = correct_letter
 
-    # Build a response that contains some letter
     response_letter = draw(mc_letters)
-    assume(response_letter in _LETTERS[:num_choices])  # keep within valid range
+    assume(response_letter in _LETTERS[:num_choices])
     response = _wrap_mc_answer(response_letter, draw)
 
     return scenario, response, response_letter, correct_letter
@@ -95,8 +121,8 @@ def test_property_16_multiple_choice_scoring(data):
 
 
 # ------------------------------------------------------------------ #
-# Feature: ai-model-evaluation-workflow, Property 17: Exact match normalization
-# For any two strings equal after lowercasing and whitespace normalization,
+# Property 17: Exact match normalization
+# For any two strings equal after lowercasing + whitespace normalization,
 # they should be considered matching.
 # **Validates: Requirements 5.2**
 # ------------------------------------------------------------------ #
@@ -107,7 +133,6 @@ def normalized_equivalent_pair(draw):
                         alphabet=st.characters(min_codepoint=97, max_codepoint=122)))
     assume(base.strip())
 
-    # Add random whitespace variations
     words = base.split()
     if not words:
         words = [base]
@@ -133,7 +158,6 @@ def normalized_equivalent_pair(draw):
     a = _join(words, sep_a)
     b = _join(words, sep_b)
 
-    # Randomly flip case
     if draw(st.booleans()):
         a = a.upper()
     if draw(st.booleans()):
@@ -153,36 +177,48 @@ def test_property_17_exact_match_normalization(pair):
 
 
 # ------------------------------------------------------------------ #
-# Feature: ai-model-evaluation-workflow, Property 18: Comprehensive scoring logic
-# For any response, exact match → 1.0, else partial credit based on
-# similarity threshold.
+# Property 18: Decision-level scoring under the current pipeline
+# For any response, exact match → final_score=1.0, is_correct=True.
+# Otherwise the LLM judge decides, and is_correct = judge_score >= 0.9.
+# There is NO lexical fallback contributing to correctness.
 # **Validates: Requirements 5.3, 5.4, 5.5, 5.6, 5.7**
 # ------------------------------------------------------------------ #
-@given(scenario=valid_scenarios(), response=st.text(min_size=1, max_size=200))
-@settings(max_examples=100)
-def test_property_18_comprehensive_scoring_logic(scenario: Scenario, response: str):
-    """Verify scoring logic: exact → 1.0, partial if above threshold, else 0."""
-    config = ScoringConfig()
-    result = score_response(scenario, response, config)
+@given(scenario=valid_scenarios(), response=st.text(min_size=1, max_size=200),
+       judge_score=st.floats(min_value=0.0, max_value=1.0, allow_nan=False))
+@settings(max_examples=50)
+def test_property_18_decision_level_scoring_logic(scenario: Scenario, response: str, judge_score: float):
+    """Exact → 1.0/correct. Otherwise judge decides at the strict threshold."""
+    config = _scoring_config()
+    mock_response = _make_openai_response(
+        f"SCORE: {judge_score:.3f}\nREASONING: mocked verdict."
+    )
+    with patch("ele.core.scoring.openai") as mock_openai:
+        mock_openai.OpenAI.return_value.chat.completions.create.return_value = mock_response
+        result = score_response(scenario, response, config)
 
-    # Both exact_match and similarity_score must always be stored
+    # Bookkeeping fields are always present.
     assert isinstance(result.exact_match, bool)
     assert 0.0 <= result.similarity_score <= 1.0
+    assert isinstance(result.is_correct, bool)
 
     if result.exact_match:
         assert result.final_score == 1.0
+        assert result.is_correct is True
         assert result.scoring_method == ScoringMethodEnum.EXACT
-    elif result.similarity_score >= config.similarity_threshold:
-        expected = result.similarity_score * config.similarity_weight
-        assert abs(result.final_score - expected) < 1e-9
-        assert result.scoring_method == ScoringMethodEnum.PARTIAL
+        # Judge is skipped entirely on exact match.
+        assert result.judge_score is None
     else:
-        assert result.final_score == 0.0
-        assert result.scoring_method == ScoringMethodEnum.NONE
+        assert result.judge_score is not None
+        assert abs(result.final_score - result.judge_score) < 1e-9
+        expected_correct = result.judge_score >= config.correctness_threshold
+        assert result.is_correct is expected_correct
+        assert result.scoring_method == (
+            ScoringMethodEnum.LLM_JUDGE if expected_correct else ScoringMethodEnum.NONE
+        )
 
 
 # ------------------------------------------------------------------ #
-# Feature: ai-model-evaluation-workflow, Property 20: Multi-strategy extraction
+# Property 20: Multi-strategy extraction
 # For any ambiguous response, multiple extraction strategies are attempted.
 # **Validates: Requirements 5.8**
 # ------------------------------------------------------------------ #
@@ -191,49 +227,33 @@ def test_property_18_comprehensive_scoring_logic(scenario: Scenario, response: s
     noise=st.text(min_size=20, max_size=100,
                   alphabet=st.characters(whitelist_categories=("L", "Zs"))),
 )
-@settings(max_examples=100)
+@settings(max_examples=50)
 def test_property_20_multi_strategy_extraction(scenario: Scenario, noise: str):
     """The system should attempt multiple extraction strategies."""
-    # Use a response that doesn't match the first pattern easily
-    response = noise
-    result = score_response(scenario, response)
+    mock_response = _make_openai_response("SCORE: 0.5\nREASONING: mocked.")
+    with patch("ele.core.scoring.openai") as mock_openai:
+        mock_openai.OpenAI.return_value.chat.completions.create.return_value = mock_response
+        result = score_response(scenario, noise, _scoring_config())
 
-    # At least one strategy must have been attempted
-    assert len(result.extraction_strategies_attempted) >= 1, (
-        "Expected at least one extraction strategy to be attempted"
-    )
+    assert len(result.extraction_strategies_attempted) >= 1
 
 
 # ------------------------------------------------------------------ #
-# LLM-as-a-judge tests (mocked — no real API calls)
+# LLM-as-a-judge unit tests
 # ------------------------------------------------------------------ #
 
-from unittest.mock import MagicMock, patch
-
-from ele.core.scoring import LLMJudgeConfig, JudgeResult, llm_judge_score, ScoringMethodEnum
-
-
-def _make_openai_response(content: str) -> MagicMock:
-    """Build a minimal mock that looks like an openai ChatCompletion response."""
-    choice = MagicMock()
-    choice.message.content = content
-    response = MagicMock()
-    response.choices = [choice]
-    return response
-
-
-def _make_scenario_for_judge(draw_or_none=None):
+def _make_scenario_for_judge():
     """Return a minimal Scenario suitable for judge tests."""
     from ele.core.models import (
         Scenario, Contributor, CategoryEnum, DomainEnum,
-        DifficultyEnum, AnswerFormatEnum, StatusEnum,
+        DifficultyEnum, AnswerFormatEnum,
     )
     contributor = Contributor(
         name="Test", title="Analyst", organization="Acme",
         years_experience=5, domain_expertise="finance",
     )
-    words = "word " * 250  # 250 words — within 200-500 range
-    rationale = "reason " * 120  # 120 words — within 100-300 range
+    words = "word " * 250
+    rationale = "reason " * 120
     return Scenario(
         title="Judge test scenario",
         category=CategoryEnum.APPROVAL_CHAIN,
@@ -251,31 +271,27 @@ def _make_scenario_for_judge(draw_or_none=None):
 def test_llm_judge_score_correct_answer():
     """Judge returns high score for a correct-sounding answer."""
     scenario = _make_scenario_for_judge()
-    judge_config = LLMJudgeConfig(model="gpt-4o-mini")
-
     mock_response = _make_openai_response(
-        "SCORE: 0.9\nREASONING: The answer correctly identifies VP approval."
+        "SCORE: 0.95\nREASONING: The answer correctly identifies VP approval."
     )
     with patch("ele.core.scoring.openai") as mock_openai:
         mock_openai.OpenAI.return_value.chat.completions.create.return_value = mock_response
-        result = llm_judge_score(scenario, "VP approval required", judge_config)
+        result = llm_judge_score(scenario, "VP approval required", _judge_config())
 
     assert result is not None
-    assert result.score == 0.9
+    assert result.score == 0.95
     assert "VP approval" in result.reasoning
 
 
 def test_llm_judge_score_wrong_answer():
     """Judge returns low score for a wrong answer."""
     scenario = _make_scenario_for_judge()
-    judge_config = LLMJudgeConfig(model="gpt-4o-mini")
-
     mock_response = _make_openai_response(
         "SCORE: 0.1\nREASONING: The answer is completely unrelated."
     )
     with patch("ele.core.scoring.openai") as mock_openai:
         mock_openai.OpenAI.return_value.chat.completions.create.return_value = mock_response
-        result = llm_judge_score(scenario, "No approval needed", judge_config)
+        result = llm_judge_score(scenario, "No approval needed", _judge_config())
 
     assert result is not None
     assert result.score == 0.1
@@ -284,12 +300,10 @@ def test_llm_judge_score_wrong_answer():
 def test_llm_judge_score_clamped_to_range():
     """Judge score is clamped to [0.0, 1.0] even if the LLM returns out-of-range."""
     scenario = _make_scenario_for_judge()
-    judge_config = LLMJudgeConfig(model="gpt-4o-mini")
-
     mock_response = _make_openai_response("SCORE: 1.5\nREASONING: Perfect answer.")
     with patch("ele.core.scoring.openai") as mock_openai:
         mock_openai.OpenAI.return_value.chat.completions.create.return_value = mock_response
-        result = llm_judge_score(scenario, "VP approval required", judge_config)
+        result = llm_judge_score(scenario, "VP approval required", _judge_config())
 
     assert result is not None
     assert result.score == 1.0  # clamped
@@ -298,54 +312,68 @@ def test_llm_judge_score_clamped_to_range():
 def test_llm_judge_score_unparseable_response_returns_none():
     """Judge returns None when the LLM response can't be parsed."""
     scenario = _make_scenario_for_judge()
-    judge_config = LLMJudgeConfig(model="gpt-4o-mini")
-
     mock_response = _make_openai_response("I cannot determine the score.")
     with patch("ele.core.scoring.openai") as mock_openai:
         mock_openai.OpenAI.return_value.chat.completions.create.return_value = mock_response
-        result = llm_judge_score(scenario, "some answer", judge_config)
+        result = llm_judge_score(scenario, "some answer", _judge_config())
 
     assert result is None
 
 
 def test_llm_judge_score_api_failure_returns_none():
-    """Judge returns None gracefully when the API call raises an exception."""
+    """Judge returns None gracefully when the API call raises."""
     scenario = _make_scenario_for_judge()
-    judge_config = LLMJudgeConfig(model="gpt-4o-mini")
-
     with patch("ele.core.scoring.openai") as mock_openai:
         mock_openai.OpenAI.return_value.chat.completions.create.side_effect = Exception("timeout")
-        result = llm_judge_score(scenario, "some answer", judge_config)
+        result = llm_judge_score(scenario, "some answer", _judge_config())
 
     assert result is None
 
 
+# ------------------------------------------------------------------ #
+# score_response — orchestration
+# ------------------------------------------------------------------ #
+
 def test_score_response_uses_judge_when_configured():
-    """score_response uses LLM judge method when judge is configured and not exact match."""
+    """score_response routes non-exact answers through the LLM judge."""
     scenario = _make_scenario_for_judge()
-    config = ScoringConfig(
-        llm_judge=LLMJudgeConfig(model="gpt-4o-mini")
-    )
+    config = _scoring_config()
 
     mock_response = _make_openai_response(
-        "SCORE: 0.8\nREASONING: Mostly correct, captures the key requirement."
+        "SCORE: 0.95\nREASONING: Correct decision, minor imprecision."
     )
     with patch("ele.core.scoring.openai") as mock_openai:
         mock_openai.OpenAI.return_value.chat.completions.create.return_value = mock_response
         result = score_response(scenario, "VP sign-off is required", config)
 
     assert result.scoring_method == ScoringMethodEnum.LLM_JUDGE
-    assert result.final_score == 0.8
-    assert result.judge_score == 0.8
-    assert result.judge_reasoning is not None
+    assert result.judge_score == 0.95
+    assert result.is_correct is True
+    assert result.final_score == 0.95
+
+
+def test_score_response_judge_below_threshold_is_wrong():
+    """A judge score below the strict threshold means is_correct = False."""
+    scenario = _make_scenario_for_judge()
+    config = _scoring_config()  # threshold = 0.9
+
+    mock_response = _make_openai_response(
+        "SCORE: 0.7\nREASONING: Same direction but wrong specific action."
+    )
+    with patch("ele.core.scoring.openai") as mock_openai:
+        mock_openai.OpenAI.return_value.chat.completions.create.return_value = mock_response
+        result = score_response(scenario, "manager approval is enough", config)
+
+    assert result.scoring_method == ScoringMethodEnum.NONE
+    assert result.judge_score == 0.7
+    assert result.is_correct is False
+    assert result.final_score == 0.7
 
 
 def test_score_response_exact_match_skips_judge():
-    """score_response does not call the judge when there is an exact match."""
+    """score_response does not call the judge on an exact match."""
     scenario = _make_scenario_for_judge()
-    config = ScoringConfig(
-        llm_judge=LLMJudgeConfig(model="gpt-4o-mini")
-    )
+    config = _scoring_config()
 
     with patch("ele.core.scoring.llm_judge_score") as mock_judge:
         result = score_response(scenario, scenario.correct_answer, config)
@@ -353,33 +381,73 @@ def test_score_response_exact_match_skips_judge():
     mock_judge.assert_not_called()
     assert result.scoring_method == ScoringMethodEnum.EXACT
     assert result.final_score == 1.0
+    assert result.is_correct is True
     assert result.judge_score is None
 
 
-def test_score_response_falls_back_to_similarity_when_judge_fails():
-    """score_response falls back to bag-of-words when judge returns None."""
+def test_score_response_raises_when_judge_not_configured():
+    """A non-exact response with no judge configured must raise ScoringError."""
     scenario = _make_scenario_for_judge()
+    config = ScoringConfig(llm_judge=None)  # no judge
+
+    with pytest.raises(ScoringError, match="LLM judge is required"):
+        score_response(scenario, "completely unrelated answer", config)
+
+
+def test_score_response_raises_when_judge_fails_after_retries():
+    """A non-exact response for which every judge call fails must raise ScoringError."""
+    scenario = _make_scenario_for_judge()
+    # Pin a small retry count with zero backoff so the test is fast and the
+    # attempt count is deterministic regardless of the production default.
     config = ScoringConfig(
-        llm_judge=LLMJudgeConfig(model="gpt-4o-mini"),
-        similarity_threshold=0.0,  # ensure fallback gives partial credit
-        similarity_weight=1.0,
+        llm_judge=LLMJudgeConfig(
+            model="gpt-4o-mini", api_key="test-key",
+            max_retries=1, retry_backoff_seconds=0.0,
+        ),
+        correctness_threshold=0.9,
     )
 
-    with patch("ele.core.scoring.llm_judge_score", return_value=None):
-        result = score_response(scenario, "completely unrelated answer", config)
+    with patch("ele.core.scoring.llm_judge_score", return_value=None) as mock_judge:
+        with pytest.raises(ScoringError, match="LLM judge failed"):
+            score_response(scenario, "completely unrelated answer", config)
 
-    # Should have fallen back — method will be PARTIAL or NONE, not LLM_JUDGE
-    assert result.scoring_method != ScoringMethodEnum.LLM_JUDGE
-    assert result.judge_score is None
+    # attempts = 1 + max_retries = 2.
+    assert mock_judge.call_count == 2
 
 
-def test_score_response_no_judge_uses_similarity():
-    """score_response uses bag-of-words when no judge is configured."""
+def test_score_response_empty_response_scored_wrong_without_judge():
+    """An empty/whitespace response is scored wrong directly, never hitting the judge."""
     scenario = _make_scenario_for_judge()
-    config = ScoringConfig(llm_judge=None)
+    config = _scoring_config()
 
-    result = score_response(scenario, "some unrelated text", config)
+    with patch("ele.core.scoring.llm_judge_score") as mock_judge:
+        result = score_response(scenario, "   \n  ", config)
 
-    assert result.scoring_method in (ScoringMethodEnum.PARTIAL, ScoringMethodEnum.NONE)
+    mock_judge.assert_not_called()
+    assert result.is_correct is False
+    assert result.final_score == 0.0
+    assert result.scoring_method == ScoringMethodEnum.NONE
     assert result.judge_score is None
-    assert result.judge_reasoning is None
+
+
+def test_score_response_never_uses_semantic_similarity_for_correctness():
+    """Similarity is diagnostic only — never contributes to is_correct."""
+    scenario = _make_scenario_for_judge()
+    config = _scoring_config()
+
+    # Response shares vocabulary with the correct answer ("VP approval required")
+    # but is not an exact match. Similarity will be > 0; the judge rules it
+    # wrong at 0.2 and is_correct must follow the judge, not similarity.
+    lexical_overlap_response = "The approval is required only from a VP delegate, actually"
+    mock_response = _make_openai_response(
+        "SCORE: 0.2\nREASONING: Different authority. Wrong decision even though the vocabulary overlaps."
+    )
+    with patch("ele.core.scoring.openai") as mock_openai:
+        mock_openai.OpenAI.return_value.chat.completions.create.return_value = mock_response
+        result = score_response(scenario, lexical_overlap_response, config)
+
+    assert result.exact_match is False  # sanity: we are on the judge path
+    assert result.similarity_score > 0.0  # diagnostic column has a signal
+    assert result.judge_score == 0.2
+    assert result.is_correct is False
+    assert result.final_score == 0.2

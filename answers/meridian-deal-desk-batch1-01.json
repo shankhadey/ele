@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-424EFC79C056",
   "scenario_file": "meridian-deal-desk-batch1-01.json",
   "correct_answer": "Escalate to VP Sales (James Park) for approval - while the January DM delegation exists, the condition was to \"tag me in #deal-desk for visibility\" which wasn't done, making the delegation incomplete",
   "answer_format": "multiple_choice",

@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-85CA07AB1C74",
   "scenario_file": "002_approval_chain.json",
   "correct_answer": "Procurement Manager, VP of IT, CTO, CFO, CEO, CISO, Board",
   "answer_format": "multiple_choice",

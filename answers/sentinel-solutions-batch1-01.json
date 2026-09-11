@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-1D8F8CBC2849",
   "scenario_file": "sentinel-solutions-batch1-01.json",
   "correct_answer": "Retain the Aethon entity name for the citations but add a novation/continuity letter from Ridgeline-Aethon Inc. demonstrating successor relationship per FAR 42.12, and flag that CAGE 5M9P1 is pending administrative update.",
   "answer_format": "multiple_choice",

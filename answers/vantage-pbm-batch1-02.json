@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-CA47DE794DFF",
   "scenario_file": "vantage-pbm-batch1-02.json",
   "correct_answer": "Support the appeal citing the P&T Committee's November 2025 vote as documented precedent; the committee's decision is authoritative even though the UM criteria document was never updated",
   "answer_format": "multiple_choice",

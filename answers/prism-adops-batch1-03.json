@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-98A6354317A0",
   "scenario_file": "prism-adops-batch1-03.json",
   "correct_answer": "A partial credit is owed only after validating the actual overlap exposure using LiveRamp's deterministic match \u2014 Amplitude's 6.8x estimate and Mindshare's '30%+' claim are both probabilistic and neither is contractually authoritative",
   "answer_format": "multiple_choice",

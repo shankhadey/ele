@@ -20,5 +20,6 @@
     "In effect with case-by-case exceptions: Flattening remains the default policy, but VPs can make written business cases for variance; Product's case is approved, Engineering should submit formal exception request",
     "Superseded by board guidance: The flattening mandate is paused pending leadership density strategy; all reorg proposals should be held until CEO clarifies new direction post-offsite",
     "Active and binding for all VPs: Product's Director additions violate the mandate; Engineering's consolidation creates non-compliance; both need revision to hit 8-12 range"
-  ]
+  ],
+  "split": "challenge"
 }

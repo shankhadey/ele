@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-049310457652",
   "scenario_file": "ironforge-quality-batch1-03.json",
   "correct_answer": "Lots J4801-J4805 and J4811 - all lots showing material code inconsistencies or temporal gaps with the Rev 3 changeover",
   "answer_format": "multiple_choice",

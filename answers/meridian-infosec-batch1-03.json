@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-F05D2E64ECC5",
   "scenario_file": "meridian-infosec-batch1-03.json",
   "correct_answer": "Obtain VP Eng approval, formally document that GC was given reasonable time but did not provide approval by deadline, and send notification citing the BAA's 24-hour obligation \u2014 accepting the internal process deviation as lesser risk than a potential HIPAA violation",
   "answer_format": "multiple_choice",

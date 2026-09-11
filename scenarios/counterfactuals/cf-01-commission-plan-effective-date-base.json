@@ -1,0 +1,26 @@
+{
+  "title": "Commission Plan Effective-Date Boundary (base)",
+  "category": "policy_version",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-01",
+  "counterfactual_role": "base",
+  "scenario_text": "Cirrus Analytics operates on a fiscal year that runs October 1 through September 30. The FY26 commission plan, published to the field on August 15, replaces the FY25 plan and becomes effective for all deals with a customer-signed contract execution date on or after October 1, 2025. The FY26 plan pays 6% of ARR as base commission plus a 4% multi-year accelerator on any term over 24 months. The FY25 plan pays 8% of ARR as base commission plus a 2% accelerator on ARR that clears the rep's annual quota.\n\nAccount Executive Mia Torres closed a three-year, $480,000 TCV / $160,000 ARR deal with the enterprise buyer Helion Freight. The Salesforce opportunity shows: Close Date September 28, Stage 'Closed Won'. The signed order form in DocuSign is countersigned by the Helion CFO on September 28 at 11:47 PM Eastern. NetSuite booked the deal on October 2 (the next business day). Mia's FY25 annual quota was $1,200,000 and she is at $1,050,000 in booked ARR before this deal, so the deal brings her over quota. Her Deal Desk approval memo notes 'submitted for FY25 payout as pre-effective.' Payroll is preparing the October commission run and asks which plan governs this deal.",
+  "question": "Which commission structure should Payroll apply to Mia Torres's $480,000 deal, and what is the resulting commission owed?",
+  "answer_format": "multiple_choice",
+  "choices": [
+    "Apply the FY25 plan (8% base + 2% accelerator over quota) \u2014 commission of $48,000.",
+    "Apply the FY26 plan (6% base + 4% multi-year accelerator) \u2014 commission of $48,000.",
+    "Apply the FY26 plan (6% base + 4% multi-year accelerator) \u2014 commission of $28,800.",
+    "Withhold payment and escalate to the Compensation Committee for a case-by-case ruling."
+  ],
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": []
+}

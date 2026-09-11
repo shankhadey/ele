@@ -20,5 +20,6 @@
     "Three systems (Dynamics 365, Adaptive Planning, and SharePoint org chart); moderate risk requiring cleanup but no immediate compliance exposure",
     "Two systems (Dynamics 365 and the legacy PFS performance module); material compliance risk because an unauthorized individual retains rating approval access",
     "One system (Dynamics 365 only); low risk since CRM reporting lines don't affect compensation or performance decisions"
-  ]
+  ],
+  "split": "challenge"
 }

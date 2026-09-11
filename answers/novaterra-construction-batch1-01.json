@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-EEC02DB24EBE",
   "scenario_file": "novaterra-construction-batch1-01.json",
   "correct_answer": "The change order is NOT validly approved because the delegation memo was project-specific to Wacker Drive, not Lincoln Square, and email delegation does not meet the capital policy's Exhibit C requirement \u2014 the CO requires formal VP-level written approval before the work can proceed or payment can be released.",
   "answer_format": "multiple_choice",

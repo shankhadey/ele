@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-12F598EF2B63",
   "scenario_file": "meridian-revops-batch1-03.json",
   "correct_answer": "Recognize ratably over 12 months alongside the subscription \u2014 per current policy v2.1 Section 4.3, since SSP has not been established for the services component",
   "answer_format": "multiple_choice",

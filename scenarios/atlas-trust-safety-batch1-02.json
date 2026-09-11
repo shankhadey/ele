@@ -20,5 +20,6 @@
     "Yes \u2014 Ryan can freeze the Luma Home and UrbanEdge accounts immediately as single-brand actions, and escalate Kinfolk Supply separately once device fingerprint data is obtained from BigCommerce.",
     "Yes \u2014 6 accounts across 3 brands are linked via behavioral cluster, shared payment instrument, and device fingerprint; T&S Lead can authorize cross-brand freeze immediately.",
     "No \u2014 the Kinfolk Supply (BigCommerce) account lacks device fingerprint overlap and uses a different payment card, so only 2 brands (Luma Home and UrbanEdge) are conclusively linked; cross-brand enforcement requires 3 brands, so VP Loss Prevention sign-off cannot yet be triggered."
-  ]
+  ],
+  "split": "challenge"
 }

@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-4FE9897791A1",
   "scenario_file": "novaterra-tax-batch1-01.json",
   "correct_answer": "The abatement was never validly transferred (no City Council consent per Section 9.2), but NovaTerra has a strong equitable estoppel defense because the city accepted PILOT payments for 3 years post-merger without objection, combined with evidence of notification that was acknowledged but never acted upon.",
   "answer_format": "multiple_choice",

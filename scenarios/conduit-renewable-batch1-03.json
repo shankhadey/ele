@@ -20,5 +20,6 @@
     "The extension is void because Marcus lacked delegation authority; Conduit can terminate without penalty under the sunset clause effective June 30, 2027 (18 months from original COD)",
     "The extension is valid \u2014 Marcus's email constitutes binding consent under the delegation matrix's email approval provision, and the 30-day wet signature requirement is an internal administrative matter",
     "The extension status is indeterminate \u2014 the delegation matrix was violated, no amendment was executed, and SAP shows no record; Conduit should treat the original COD as controlling and issue a cure notice"
-  ]
+  ],
+  "split": "challenge"
 }

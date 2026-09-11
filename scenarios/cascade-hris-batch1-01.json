@@ -20,5 +20,6 @@
     "The discrepancy cannot be resolved until Diane formally submits a new position creation through the position management workflow in Workday",
     "CC-4420 has 1 open position (REQ-2287/new role); Adaptive needs a manual sync to remove the eliminated P-04217 and add the new position at B5",
     "Adaptive is correct (2 open); Workday needs P-04217 reopened since a backfill was approved"
-  ]
+  ],
+  "split": "challenge"
 }

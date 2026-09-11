@@ -20,5 +20,6 @@
     "Instruct the branch to process the rollover in Fiserv DNA under Lakeshore's entity since the TSA still governs term deposits until Wave 3 completes in August",
     "Manually migrate her CD record from DNA to Horizon now (she's OFAC-cleared in Batch 14 and greenlit for early migration), then process the rollover in Horizon under her Cascade account",
     "Escalate to compliance and wait for Wave 3 \u2014 the CD was flagged in the clean room output as PENDING-WAVE3 and cannot be moved until the scheduled migration window"
-  ]
+  ],
+  "split": "challenge"
 }

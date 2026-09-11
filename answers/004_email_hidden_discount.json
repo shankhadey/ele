@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-16BBEF7F160A",
   "scenario_file": "004_email_hidden_discount.json",
   "correct_answer": "$425,000 per year, $850,000 total",
   "answer_format": "multiple_choice",

@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-5BDDD8513388",
   "scenario_file": "conduit-implementation-batch1-03.json",
   "correct_answer": "Summit Alloys should be reclassified to Priority 6 based on actual metered demand exceeding 10,000 kW; Conduit faces exposure for failing to enforce contract demand updates per Tariff Sheet 45, Section 8",
   "answer_format": "multiple_choice",

@@ -20,5 +20,6 @@
     "Real 22% price increase correctly reflected. The vendor's 2026 price schedule shows $48.70/C = $0.487/EA. The SAP info record's previous price of $0.399/EA matches the old Oracle price of $39.85/C converted correctly. The migration was done right; the plant manager is wrong.",
     "Pure migration error. The Oracle price was $398.50/C ($3.985/EA) and the SAP price of $0.487/EA is clearly wrong \u2014 it appears the system divided by 1000 instead of 100 during conversion. The real current price should be $4.87/EA. No actual increase occurred.",
     "The data is too inconsistent to determine. The reconciliation sheet shows 'pending verification,' the Teams DM reveals the migration team ran out of time, and the SAP info record previous price conflicts with the Oracle history. This requires a manual audit with the vendor before any conclusion."
-  ]
+  ],
+  "split": "challenge"
 }

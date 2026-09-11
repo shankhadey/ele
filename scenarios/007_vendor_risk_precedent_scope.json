@@ -1,0 +1,24 @@
+{
+  "title": "Prior Vendor-Risk Exception, New Category of Data",
+  "category": "precedent_exception",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "split": "core_test",
+  "scenario_text": "Halcyon Health is contracting a new module from the SaaS vendor 'BrightBridge Labs' for clinical-note transcription. The module ingests audio recordings and produces structured clinical notes stored in Halcyon's EHR. Under Halcyon's Vendor Risk Framework, any new SaaS module that processes Category IV data (protected health information subject to HIPAA) must complete a full Vendor Risk Review (VRR) before contract signature. A full VRR takes 45 to 60 days.\n\nProcurement points to a prior VRR-exception decision. Six months ago, the CISO granted a written exception for a different BrightBridge Labs module \u2014 a patient-satisfaction survey tool \u2014 that allowed Halcyon to skip the full VRR and rely on the vendor's SOC 2 Type II report plus a signed BAA. The exception memo, archived in the GRC portal, contains the following scope language: 'Exception granted for BrightBridge Labs\u2019 Patient Satisfaction Survey module only. Scope is limited to survey data (Category II). Any BrightBridge module that processes Category III or IV data must complete a full VRR; this exception does not extend to additional modules or data categories from the same vendor.'\n\nThe clinical-note transcription module clearly processes Category IV PHI. BrightBridge Labs points procurement to the prior exception and asks Halcyon to streamline the review the same way. The vendor argues that Halcyon has already assessed their SOC 2 posture and can reuse that assessment. The clinical operations team is under pressure to launch the module for a January pilot and would like to avoid a two-month VRR. Procurement has been asked whether the prior exception carries over.",
+  "question": "Given the prior VRR exception and the current module, what is the correct action from Halcyon's Vendor Risk Office?",
+  "answer_format": "multiple_choice",
+  "choices": [
+    "Extend the prior exception to the transcription module; require an updated BAA and rely on the existing SOC 2 review.",
+    "Require a full VRR because the prior exception's scope explicitly excludes Category III/IV data and additional modules from the same vendor.",
+    "Grant a partial exception: skip the technical assessment but complete the data-flow assessment before signature.",
+    "Escalate to the CISO for a fresh case-by-case decision, treating the prior exception as unrelated context."
+  ],
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": []
+}

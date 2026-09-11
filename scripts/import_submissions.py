@@ -150,6 +150,10 @@ def transform_scenario(raw: Dict[str, Any], source_batch: str, index: int) -> Op
         "category": category,
         "domain": domain,
         "difficulty": difficulty,
+        # Newly-imported submissions land in ELE-Challenge by default.
+        # Promoting an item into ELE-Core/Test requires explicit human
+        # decision and is done by editing the scenario JSON.
+        "split": raw.get("split", "challenge"),
         "scenario_text": scenario_text,
         "question": question,
         "answer_format": answer_format,

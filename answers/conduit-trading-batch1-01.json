@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-2454E9CD7B61",
   "scenario_file": "conduit-trading-batch1-01.json",
   "correct_answer": "Conduit Energy - Amendment No. 3 transferred transmission-related imbalance costs to Buyer",
   "answer_format": "multiple_choice",

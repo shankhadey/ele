@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-55EEFD69C8E7",
   "scenario_file": "novaterra-construction-batch1-02.json",
   "correct_answer": "Require an assignment and assumption agreement (with owner consent per Section 12.1) formally transferring the subcontract from Advanced Mechanical Systems Inc. to AMS Holdings LLC, then accept a waiver from AMS Holdings \u2014 and simultaneously obtain the articles of dissolution to confirm Advanced Mechanical no longer exists as a viable entity to sign.",
   "answer_format": "multiple_choice",

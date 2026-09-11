@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-6C806673B0D2",
   "scenario_file": "brightpath-finaid-batch1-01.json",
   "correct_answer": "Rivera is eligible for a fresh appeal under standard unusual circumstances criteria because his prior COVID-EXT approval, where he maintained compliance, does not exhaust his standard appeal right per Section 4.1.2.",
   "answer_format": "multiple_choice",

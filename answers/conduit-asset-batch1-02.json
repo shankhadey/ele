@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-ABBEA18E61E4",
   "scenario_file": "conduit-asset-batch1-02.json",
   "correct_answer": "The project requires SVP (Karen Albright) approval because it exceeds Steve Martinez's $150K delegation limit per the post-rate-case matrix, regardless of blanket WO availability.",
   "answer_format": "multiple_choice",

@@ -20,5 +20,6 @@
     "Yes \u2014 retire under SunVista Project 4 LLC since that's the registered entity in M-RETS and the RECs are already properly attributed",
     "Yes \u2014 the PPA contractually assigns RECs to Conduit upon energy delivery regardless of registry status, but the M-RETS transfer must be completed before retirement can occur for PUC filing purposes",
     "No \u2014 RECs cannot be claimed until the M-RETS account transfer is completed and CleanPower Holdings is the registered entity; filing must exclude these RECs"
-  ]
+  ],
+  "split": "challenge"
 }

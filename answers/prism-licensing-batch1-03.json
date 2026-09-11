@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-254390E8568F",
   "scenario_file": "prism-licensing-batch1-03.json",
   "correct_answer": "S. Whitfield (Chief Revenue Officer) \u2014 as the new leader of Content Operations post-reorg, she holds authority at or above the level of the original approver",
   "answer_format": "multiple_choice",

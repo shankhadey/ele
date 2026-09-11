@@ -20,5 +20,6 @@
     "All 8 lots (J4801-J4813) - the SAP material master was created before effectivity time, creating traceability uncertainty",
     "Lots J4801-J4805 and J4811 - all lots showing material code inconsistencies or temporal gaps with the Rev 3 changeover",
     "Lot J4811 only - the maintenance log indicates old 6061 alloy was used on March 23 despite SAP showing 6063"
-  ]
+  ],
+  "split": "challenge"
 }

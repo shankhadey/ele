@@ -20,5 +20,6 @@
     "Control deficiency \u2014 the compensating control (5-day review) was not completed timely, but the verbal confirmation in Teams and the retroactive PO creation demonstrate the underlying transaction is legitimate",
     "No finding \u2014 the override was properly authorized via SoD exception SA-2025-041, the operational necessity is well-documented in email, and the Controller verbally confirmed the review was performed",
     "Material weakness \u2014 an executive bypassed all three procurement controls (requisition, PO, GR) and the only compensating control also failed, representing a complete breakdown in the management override control environment"
-  ]
+  ],
+  "split": "challenge"
 }

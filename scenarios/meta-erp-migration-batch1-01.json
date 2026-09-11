@@ -20,5 +20,6 @@
     "Only post-migration POs should be used for negotiation since historical data is unreliable; vendor 300442 is the only relevant entity and the $1.42/EA rate represents the current market price",
     "The average price is correct; the vendor has been charging inconsistent prices and procurement should flag this in the negotiation as evidence of price erosion opportunity",
     "The pricing discrepancy indicates a data quality defect in the migration; the historical POs should be corrected in S/4HANA before any analysis, and the Mexico plant data is irrelevant since it is a different legal entity"
-  ]
+  ],
+  "split": "challenge"
 }

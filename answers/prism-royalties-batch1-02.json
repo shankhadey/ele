@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-3F57AAFF34C6",
   "scenario_file": "prism-royalties-batch1-02.json",
   "correct_answer": "Still unrecouped, but by $985,000 \u2014 the restated lower fee on pre-2024 revenue ($155K reduction) improves the pool but doesn't reach breakeven",
   "answer_format": "multiple_choice",

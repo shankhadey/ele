@@ -20,5 +20,6 @@
     "Allow both proposals to proceed since they are submitted under different CAGE codes, which the government treats as separate legal entities for source selection purposes.",
     "Escalate to the Contracts VP for a business decision on which division should pursue HELIOS, since this is a capture strategy conflict rather than a procurement integrity issue.",
     "Immediately stand down one proposal and notify the Contracting Officer of the conflict, because even under separate CAGE codes, FAR 9.5 requires disclosure when affiliated entities bid on the same procurement \u2014 and the shared 'Data Fusion' personnel intelligence between divisions further compromises the firewall."
-  ]
+  ],
+  "split": "challenge"
 }

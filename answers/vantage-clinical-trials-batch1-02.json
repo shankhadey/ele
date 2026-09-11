@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-B5C131967390",
   "scenario_file": "vantage-clinical-trials-batch1-02.json",
   "correct_answer": "Reportable protocol deviation with incomplete corrective action \u2014 the SOP requires deviation documentation within 5 business days and re-consent, neither of which have been completed as of March 15.",
   "answer_format": "multiple_choice",

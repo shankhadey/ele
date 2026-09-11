@@ -20,5 +20,6 @@
     "A partial credit is owed only after validating the actual overlap exposure using LiveRamp's deterministic match \u2014 Amplitude's 6.8x estimate and Mindshare's '30%+' claim are both probabilistic and neither is contractually authoritative",
     "No credit is owed because the trafficker's Feb 8 note proves cross-platform dedup was technically impossible, making the IO frequency language unenforceable as a performance guarantee",
     "No credit is owed \u2014 each platform individually honored the 5x cap, and the IO was structured as two separate orders (0087 and 0088) making each independently compliant"
-  ]
+  ],
+  "split": "challenge"
 }

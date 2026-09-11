@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-6DBF6109293C",
   "scenario_file": "meridian-cos-batch1-02.json",
   "correct_answer": "Selectively enforced: Product has CEO exception for Director additions (compliant path to 9); Engineering's reduction to 5 is non-compliant and must stay at 7 or expand to 8",
   "answer_format": "multiple_choice",

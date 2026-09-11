@@ -20,5 +20,6 @@
     "$478,007.45 (Treasury policy rate of 17.45) \u2014 the correct rate per policy was not applied due to a known system deficiency; the CFO approved based on an incorrect amount, but the approval is still valid since the correct amount is lower than what was approved",
     "$485,009.30 (SAP consolidated rate of 17.20) \u2014 the system-generated amount is authoritative; the rate variance is immaterial and within tolerance",
     "$478,007.45 (Treasury policy rate of 17.45) \u2014 the stale rate in ECC means the PO was recorded at an incorrect amount; the CFO's approval is invalid because it was based on misstated information, and the amount still exceeds the $400K threshold requiring re-approval at the correct figure"
-  ]
+  ],
+  "split": "challenge"
 }

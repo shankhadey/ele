@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-0FB4ED3F650C",
   "scenario_file": "meta-governance-batch1-01.json",
   "correct_answer": "No \u2014 the DOA matrix requires board resolution plus officer signature, and since the incumbency certificate filed January 15 does not list Marcus as an officer at all, he lacked both officer status and VP title",
   "answer_format": "multiple_choice",

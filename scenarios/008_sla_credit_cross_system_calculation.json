@@ -1,0 +1,24 @@
+{
+  "title": "SLA Credit With Three Systems Telling Different Stories",
+  "category": "cross_system_synthesis",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "split": "core_test",
+  "scenario_text": "Larkspur Communications operates a real-time messaging API. The enterprise contract with the customer 'Trellis Media' contains an SLA of 99.9% monthly availability for the messaging API. Falling below 99.9% in a calendar month entitles Trellis to a service credit equal to 10% of that month's fees for each 0.1 percentage point below 99.9%, up to a monthly cap of 50%.\n\nThree systems record availability for the month of April. The Datadog synthetic monitor pings the API from six regions every 30 seconds; Datadog reports monthly availability of 99.72%. The internal Prometheus stack, based on the customer's actual request stream, reports 99.85% availability for Trellis specifically. The Status Page (statuspage.io), which is human-edited by the SRE on-call and used as the customer-facing incident timeline, records two incidents in April: 42 minutes on April 8 and 18 minutes on April 22, for a total of 60 minutes of downtime, which over a 30-day month equals 99.86% availability.\n\nLarkspur's Master Services Agreement, Exhibit B, defines the SLA measurement as follows: 'Availability shall be calculated from the customer\u2019s actual request volume as recorded by Larkspur\u2019s internal instrumentation, excluding scheduled maintenance windows properly notified to the customer at least seven days in advance. Third-party synthetic monitors and the public Status Page are provided for transparency but are not the contractual measurement basis.'\n\nTrellis's April invoice fees for the messaging API line item were $200,000. Trellis has filed a formal service-credit claim citing the Datadog dashboard and asking for a 30% credit. Customer Success asks the Deal Desk-Finance liaison for the correct credit.",
+  "question": "Which availability figure governs the credit calculation, and what is the correct service credit owed to Trellis for April?",
+  "answer_format": "multiple_choice",
+  "choices": [
+    "Use the Datadog synthetic figure (99.72%): credit is 20% of $200,000 = $40,000.",
+    "Use the Prometheus customer-stream figure (99.85%): credit is 0% because 99.85% is above the 99.9% threshold interpreted with rounding tolerance.",
+    "Use the Prometheus customer-stream figure (99.85%): credit is 10% of $200,000 = $20,000.",
+    "Use the Status Page figure (99.86%): credit is 10% of $200,000 = $20,000."
+  ],
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": []
+}

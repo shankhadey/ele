@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-F670A002D394",
   "scenario_file": "vantage-hipaa-batch1-01.json",
   "correct_answer": "Deny the request; a new BAA must be executed with Orion Data Group Inc. (or its appropriate subsidiary) before any PHI disclosure can resume, because the original covered entity \u2014 Clearview Health Analytics LLC \u2014 has undergone a change in legal ownership that potentially dissolves the BAA.",
   "answer_format": "multiple_choice",

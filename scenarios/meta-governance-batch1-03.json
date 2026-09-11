@@ -20,5 +20,6 @@
     "The approval is valid \u2014 the updated DOA was never formally communicated to budget holders, the notification email was never sent, and the Yardi system still reflected the old thresholds; the CFO acted reasonably based on available information",
     "The approval is invalid but curable \u2014 the CEO can provide retroactive co-approval to ratify the expenditure under the new DOA matrix, since the substantive threshold (CEO + CFO joint) can still be met",
     "The approval is valid \u2014 the SharePoint page is marked as 'version 3' but the shared drive matrix (the system of record referenced in Yardi's workflow configuration) was never updated, meaning the old policy remained operative"
-  ]
+  ],
+  "split": "challenge"
 }

@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-AEEACA35C621",
   "scenario_file": "sentinel-procurement-integrity-batch1-03.json",
   "correct_answer": "Sentinel has significant defective pricing exposure because the January rate revision memo constitutes cost or pricing data that was 'reasonably available' before certification, Castellano's email proves awareness, and the Patel email shows a deliberate decision not to disclose \u2014 creating potential liability under TINA even though outside counsel advised otherwise.",
   "answer_format": "multiple_choice",

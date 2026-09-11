@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-64FE1764075B",
   "scenario_file": "vantage-hipaa-batch1-03.json",
   "correct_answer": "No breach determination can be made yet \u2014 the investigation requires the employee interview (scheduled March 25) before the Privacy Officer can apply the four-factor risk assessment under the Breach Notification Rule.",
   "answer_format": "multiple_choice",

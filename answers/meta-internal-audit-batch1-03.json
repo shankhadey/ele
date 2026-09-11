@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-1C947DCC5805",
   "scenario_file": "meta-internal-audit-batch1-03.json",
   "correct_answer": "Significant deficiency \u2014 the compensating control required by the SoD exception failed (no documented review within 5 business days), the review was not escalated to Audit Committee as required by POL-FIN-008 Section 4.6, and the invoice remains unmatched to the PO; the verbal Teams message cannot substitute for the required documented sign-off",
   "answer_format": "multiple_choice",

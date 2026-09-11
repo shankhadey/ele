@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-F0011A38C60E",
   "scenario_file": "cascade-wealth-batch1-02.json",
   "correct_answer": "No \u2014 even if the IPS were current, Section 4.5 requires updated suitability confirmation because the advisor had constructive notice of a material life event (wife's Alzheimer's diagnosis and liquidity concerns), making the existing risk profile potentially invalid",
   "answer_format": "multiple_choice",

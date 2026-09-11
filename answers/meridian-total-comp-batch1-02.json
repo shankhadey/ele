@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-30B7531EE6F9",
   "scenario_file": "meridian-total-comp-batch1-02.json",
   "correct_answer": "Petrova's Jul 2025 refresh was issued in error at the expired 1.2x transition rate; her next refresh (Jul 2026) should normalize to standard L5 range (2,000-3,000 RSUs, quarterly vesting, January cycle), and the overage on the current grant should be documented as a system processing error.",
   "answer_format": "multiple_choice",

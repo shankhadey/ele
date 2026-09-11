@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-A08D2E198B23",
   "scenario_file": "prism-sales-planning-batch1-02.json",
   "correct_answer": "Apply Q2 floor rates ($38/$22) with no exceptions \u2014 the rate card explicitly states 'no grandfathering for unsigned proposals' and a verbal commitment has no contractual standing",
   "answer_format": "multiple_choice",

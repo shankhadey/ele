@@ -20,5 +20,6 @@
     "Not a deficiency \u2014 R.Vasquez clearly communicated intent to extend the delegation in Teams, and the approval was within the originally authorized dollar threshold",
     "Significant deficiency \u2014 the control owner's delegation was expired and no valid extension existed in the system of record; the SAP technical access remaining active represents an IT general control gap that compounds the issue",
     "Material weakness \u2014 management override of the delegation control represents a pervasive breakdown requiring disclosure to the audit committee"
-  ]
+  ],
+  "split": "challenge"
 }

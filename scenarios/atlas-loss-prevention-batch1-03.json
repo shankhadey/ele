@@ -20,5 +20,6 @@
     "Escalate the inventory variances to the distribution center first \u2014 the LP Exception Log suggests a receiving error, and without resolving that root cause, the refund patterns could be explained by legitimate customer returns of merchandise that was never properly received",
     "Open an investigation into James Fontaine only \u2014 he has the highest transaction count and the inventory variance at his location is largest; the others may be coincidental",
     "The prepaid card BIN batch match across two associates at different brands, combined with the deliberate sub-threshold transaction amounts ($88-$97 against a $100 policy limit), correlated inventory variances in the same SKU categories, and the prior employment overlap establish a coordinated scheme requiring formal investigation"
-  ]
+  ],
+  "split": "challenge"
 }

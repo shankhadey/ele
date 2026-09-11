@@ -20,5 +20,6 @@
     "No action needed yet \u2014 each individual brand's returns are within policy limits, and the card match alone is insufficient without identity verification across brands",
     "Flag Marcus T. for internal investigation \u2014 his exception count is approaching threshold and the refund-without-receipt on the $389 jacket is the primary concern",
     "Treat this as a confirmed cross-brand ORC pattern tied to a single actor via payment instrument matching, place holds on all pending returns linked to card 4471 and the associated PayPal, and escalate to the multi-brand fraud committee"
-  ]
+  ],
+  "split": "challenge"
 }

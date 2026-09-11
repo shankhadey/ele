@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-A7BDE78C8178",
   "scenario_file": "005_datapipe_renewal_discount.json",
   "correct_answer": "Up to 15% via service-impact exception for the incidents, PLUS escalation to VP for strategic retention exception (up to 25%) given the competitive threat; recommend presenting both paths to the decision-maker",
   "answer_format": "multiple_choice",

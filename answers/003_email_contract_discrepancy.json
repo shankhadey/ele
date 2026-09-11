@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-3D4D54183932",
   "scenario_file": "003_email_contract_discrepancy.json",
   "correct_answer": "$760,000",
   "answer_format": "exact_match",

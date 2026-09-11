@@ -1,0 +1,8 @@
+{
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-091D3946662E",
+  "scenario_file": "007_vendor_risk_precedent_scope.json",
+  "correct_answer": "Require a full VRR because the prior exception's scope explicitly excludes Category III/IV data and additional modules from the same vendor.",
+  "answer_format": "multiple_choice",
+  "rationale": "The prior exception memo defines its scope explicitly: it covers only the Patient Satisfaction Survey module and only Category II data, and it disclaims coverage for additional modules or higher-category data from the same vendor. The clinical-note transcription module fails both scope tests: it is a different module, and it processes Category IV PHI. The prior exception therefore is not precedential and cannot be reused. Option A ignores the explicit scope language and would create a material HIPAA risk. Option C invents an intermediate ('partial') tier that Halcyon's Vendor Risk Framework does not offer. Option D escalates a determination the framework already answers unambiguously; escalation would return the same outcome and waste time. This tests the recognition that a prior exception's usefulness as precedent is bounded by the scope language attached to it, not by the identity of the vendor."
+}

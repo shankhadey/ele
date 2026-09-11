@@ -1,0 +1,8 @@
+{
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-4BBC30250C06",
+  "scenario_file": "cf-02-approval-delegation-window-variant.json",
+  "correct_answer": "The full standard chain: Marketing Director, VP Marketing, CMO, then CFO for the exception threshold.",
+  "answer_format": "multiple_choice",
+  "rationale": "The delegation is bounded to November 4 \u2013 November 28. The PR is submitted December 3, which is outside the window; the delegation has therefore lapsed regardless of whether the DoA register still displays the historical record. Once the CMO has returned and is actively approving in Coupa, the standard approval chain resumes. The renewal at $220,000 exceeds the $200,000 exception threshold, so the CFO must also sign. Option A relies on a lapsed delegation. Option B misreads the delegation as a permanent grant. Option D remains factually wrong at Farthom because the delegation is a legitimate instrument when active \u2014 it simply is not active anymore."
+}

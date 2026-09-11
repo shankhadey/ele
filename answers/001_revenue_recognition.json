@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-77F474553862",
   "scenario_file": "001_revenue_recognition.json",
   "correct_answer": "January 5, 2025",
   "answer_format": "exact_match",

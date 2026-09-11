@@ -20,5 +20,6 @@
     "Require a brand-new credit review and approval from the current CFO since the original approver (Paul Rosenthal) has retired and his authority is no longer valid \u2014 treat this as a new credit request",
     "Immediately reinstate the $500K limit in S/4HANA based on the ECC text field reference \u2014 the legacy system is the authoritative record and overrides should be honored without additional approval",
     "Reject the escalation because the credit migration rules (v3.1 Section 4.2) explicitly state that overrides outside FD32 do not migrate unless in Appendix B \u2014 the customer was not listed, so the $150K limit is correct per policy"
-  ]
+  ],
+  "split": "challenge"
 }

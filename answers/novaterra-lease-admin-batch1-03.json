@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-4240E547491B",
   "scenario_file": "novaterra-lease-admin-batch1-03.json",
   "correct_answer": "The sublease consent was granted based on an incomplete financial review \u2014 Polaris was formed only 5 months before the sublease application, making the D&B rating unreliable, and no personal guaranty was obtained for a newly-formed entity controlled by the primary tenant's principal.",
   "answer_format": "multiple_choice",

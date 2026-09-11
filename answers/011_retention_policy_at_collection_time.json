@@ -1,0 +1,8 @@
+{
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-224796F77458",
+  "scenario_file": "011_retention_policy_at_collection_time.json",
+  "correct_answer": "Only T1 (March 2021) \u2014 it exceeded its two-year R-2020 retention in March 2023 and should have been deleted then.",
+  "answer_format": "multiple_choice",
+  "rationale": "Each of Stanford's retention policies is prospective and explicitly preserves the retention schedule in effect when data was collected. Under R-2020, T1 (March 2021) was subject to a two-year retention that expired in March 2023. R-2022 explicitly grandfathered R-2020-era transcripts to their two-year rule, so T1 should have been deleted in March 2023. T2 (October 2023) was collected under R-2022 and is subject to a five-year retention, deletable in October 2028. T3 (June 2025) was collected under R-2025 and is subject to a three-year retention, deletable in June 2028. At the audit date of October of the current year, only T1 is overdue for deletion. Option B applies R-2025's three-year rule retroactively and would incorrectly demand T2's deletion (T2's own R-2022 schedule has not expired). Option C is worse \u2014 it also captures T3, which under any of the three policies is still within its retention window. Option D reverses the direction of 'prospective' and would restart the clock, which none of the policies do."
+}

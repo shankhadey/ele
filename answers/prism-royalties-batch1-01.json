@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-B33B8DB037ED",
   "scenario_file": "prism-royalties-batch1-01.json",
   "correct_answer": "Apply 2020 TV Agreement rates to episodes 1-7 and 2025 interim agreement rates to episodes 8-10, based on actual photography start dates and the signatory filing",
   "answer_format": "multiple_choice",

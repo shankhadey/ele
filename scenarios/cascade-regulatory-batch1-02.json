@@ -20,5 +20,6 @@
     "The finding is time-barred \u2014 the examination review period begins July 2024, but the monitoring gap started March 2024, and the OCC should have identified this in the prior examination cycle; Cascade can argue lack of timely supervisory notice as a mitigating factor",
     "The gap is a de minimis technical issue \u2014 the regulation took effect March 1 but Cascade's policy correctly set the $3,000 threshold and the 3-day implementation delay was within acceptable tolerance; the legacy engine issue is a vendor defect, not a compliance failure",
     "The gap represents a genuine compliance deficiency \u2014 the regulation was effective March 1, 2024, Cascade's policy was updated to reflect the $3,000 threshold, but implementation was incomplete because the legacy Piedmont rule engine was not included in the system change; the institution's control environment failed to ensure the policy was operationalized across all platforms"
-  ]
+  ],
+  "split": "challenge"
 }

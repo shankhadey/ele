@@ -18,5 +18,6 @@
     "organization": "GlobalTech Inc",
     "years_experience": 15,
     "domain_expertise": "procurement_vendor"
-  }
+  },
+  "split": "core_test"
 }

@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-9B2F8B345B1F",
   "scenario_file": "cascade-aml-batch1-02.json",
   "correct_answer": "Escalate immediately to Chief Compliance Officer with documentation of all three conflicting frameworks, request written clarification of governing policy, and file within 30 days using whatever approval chain is confirmed",
   "answer_format": "multiple_choice",

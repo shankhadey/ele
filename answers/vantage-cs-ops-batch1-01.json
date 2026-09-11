@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-EFEA2B3CC6E3",
   "scenario_file": "vantage-cs-ops-batch1-01.json",
   "correct_answer": "High risk; the executive sponsor departure was never logged in Health Cloud CRM, so the champion-change trigger in the health score methodology never fired, and the CSM hasn't updated the account since February",
   "answer_format": "multiple_choice",

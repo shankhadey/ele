@@ -1,0 +1,23 @@
+{
+  "probe": "answer_order",
+  "n_scenarios": 12,
+  "seed": 3,
+  "models": {
+    "nova-micro": {
+      "base_accuracy": 100.0,
+      "permuted_accuracy": 100.0,
+      "decision_flip_rate": 0.0,
+      "position_stability": 100.0,
+      "n": 12,
+      "n_both_scored": 12
+    },
+    "gpt-5.6-terra": {
+      "base_accuracy": 91.66666666666666,
+      "permuted_accuracy": 100.0,
+      "decision_flip_rate": 8.333333333333332,
+      "position_stability": 91.66666666666666,
+      "n": 12,
+      "n_both_scored": 12
+    }
+  }
+}

@@ -20,5 +20,6 @@
     "The acceptance criteria are ambiguous due to the unresolved Google Doc comment; the matter must go to dispute resolution before either party can claim acceptance or rejection",
     "The kickoff Google Doc governs because it was shared with all parties and used as the working specification throughout delivery; FulfillPro has met criteria (3.4s < 5s)",
     "The CRM opportunity notes confirm the 2-second requirement was the customer's intent, but since the kickoff doc was the operative project document, FulfillPro should be given a cure period to reach 2s"
-  ]
+  ],
+  "split": "challenge"
 }

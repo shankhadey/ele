@@ -20,5 +20,6 @@
     "46 separations; does not trigger WARN \u2014 Jordan's acceleration moves him out of the June 30 window, and Roark's irrevocable date of July 5 moves him out as well",
     "48 separations; does not trigger WARN (under 50 threshold) \u2014 subtract Jordan (moved to earlier window) and Roark (moved to July), but add Anita's extension keeps her in the window",
     "45 separations; does not trigger WARN \u2014 Jordan moves to the earlier window, Roark moves to July 5 window, and Anita's extension to July 15 removes her from the June 30 count"
-  ]
+  ],
+  "split": "challenge"
 }

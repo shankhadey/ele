@@ -20,5 +20,6 @@
     "The correction cannot proceed because Susan Park (original approver) must re-approve; Section 5.5 does not apply since Park is still employed, just transferred; the risk is an invalid correction creating a FAR 52.216-7 billing discrepancy.",
     "The correction has supervisor approval but lacks formal PM approval in the system per Section 5.4; Torres' emoji is not a system-of-record approval; the most significant risk is that the correction generates fee on THORNFIELD ($589) without CO notification, which could be construed as an improper cost transfer benefiting the contractor.",
     "The correction is blocked by the 60-day policy (August to February exceeds 60 days) and requires VP-level exception; the risk is DCAA interpreting the delayed correction as evidence of systemic timekeeping deficiency."
-  ]
+  ],
+  "split": "challenge"
 }

@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-101B0D56982E",
   "scenario_file": "ironforge-mdm-batch1-01.json",
   "correct_answer": "Three plants (Cleveland, Detroit, Monterrey); all three received heat lot H2025-0892 and the Teams channel confirms vendor 71100204 is the same parent company shipping from the same mill.",
   "answer_format": "multiple_choice",

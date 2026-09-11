@@ -1,0 +1,27 @@
+{
+  "title": "Same Buyer or Independent Buyers for the Volume-Tier Discount (variant)",
+  "category": "entity_resolution",
+  "domain": "sales_deal_desk",
+  "difficulty": "hard",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-03",
+  "counterfactual_role": "variant",
+  "scenario_text": "Blueriver Data publishes a volume-tier discount ladder for enterprise licenses: Tier 1 at $250k\u2013$500k combined ARR (7% discount), Tier 2 at $500k\u2013$1M (12%), Tier 3 at $1M\u2013$2M (18%). The policy states: 'For the purpose of tier calculation, contracts held by legal entities under common majority ownership are combined into a single buyer of record, provided both contracts are within the same trailing twelve months and the affiliation is documented in the Blueriver Account Hierarchy.'\n\nTwo active opportunities are up for signature this quarter. Opportunity A is a new $475,000 ARR renewal from Kestrel Logistics. Opportunity B is a $875,000 ARR expansion from Merlin Analytics. The two accounts appear separately in Salesforce with distinct primary contacts and distinct billing addresses.\n\nThe Blueriver Account Hierarchy shows Kestrel Logistics as a wholly owned subsidiary of Aster Holdings. It also shows that Merlin Analytics was divested from Aster Holdings on September 30 and acquired by the private-equity firm Beacon Vantage Partners; the hierarchy record was refreshed October 5 and Merlin now sits under Beacon Vantage rather than Aster Holdings. Deal Desk asks which volume tier applies.",
+  "question": "Under Blueriver's volume-tier discount policy, what tier should this combined engagement receive?",
+  "answer_format": "multiple_choice",
+  "choices": [
+    "Tier 3 (18% discount) \u2014 treat Kestrel and Merlin as one combined buyer at $1.35M ARR.",
+    "Tier 2 (12% discount) \u2014 apply each contract at its own $475k / $875k ARR to Tier 2 individually.",
+    "Tier 1 (7% discount) \u2014 the two contracts do not share a buyer of record for policy purposes.",
+    "No standard tier \u2014 route to CRO for a bespoke pricing exception because affiliation is unclear."
+  ],
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "changed_fact": "In the variant, Merlin Analytics was divested from Aster Holdings on September 30 and now belongs to a private-equity buyer; the two accounts no longer share a parent."
+}

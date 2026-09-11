@@ -20,5 +20,6 @@
     "No one - the disposition was invalid because ECN-5429 was never completed and the original design authority (Linda Voss) had retired",
     "Sarah Chen (Quality Manager) - her digital signature in SAP QM constitutes valid MRB approval",
     "James Palmer (Engineering Director) - as the delegated design authority, only he could authorize deviation from drawing specification"
-  ]
+  ],
+  "split": "challenge"
 }

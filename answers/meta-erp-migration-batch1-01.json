@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-3FCDDEEAD65D",
   "scenario_file": "meta-erp-migration-batch1-01.json",
   "correct_answer": "The migrated historical POs reflect a per-hundred UOM that was not restated during cutover; the true legacy price was $0.142/EA, making the current $1.42/EA actually a price increase \u2014 and the full spend picture requires cross-referencing vendor VM-8821 at the Mexico plant plus the three consolidated Oracle vendor IDs",
   "answer_format": "multiple_choice",

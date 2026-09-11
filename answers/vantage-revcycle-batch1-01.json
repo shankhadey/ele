@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-EA489F759757",
   "scenario_file": "vantage-revcycle-batch1-01.json",
   "correct_answer": "Complete the MPI merge first to unify MRNs, then appeal citing Section 9.4 of the BCBS-MN amendment and the distinct CPT codes proving non-duplicate services on a single unified patient record",
   "answer_format": "multiple_choice",

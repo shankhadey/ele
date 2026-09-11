@@ -12,5 +12,6 @@
     "organization": "Acme Corp",
     "years_experience": 12,
     "domain_expertise": "finance_revops"
-  }
+  },
+  "split": "core_test"
 }

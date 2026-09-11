@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-B547220DF4E6",
   "scenario_file": "novaterra-tax-batch1-02.json",
   "correct_answer": "Amend the filing by July 28 to pivot from income approach to comparable sales approach using the 2022-2023 retail comps already in the file, abandoning the cap rate argument entirely while the comps still support a value below $28.4M.",
   "answer_format": "multiple_choice",

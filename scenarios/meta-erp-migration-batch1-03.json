@@ -20,5 +20,6 @@
     "The defect is a customer-specification issue since P&W requested the reduced root radius; Ironforge manufactured to drawing and the complaint should be rejected with reference to MasterControl document DC-2022-0445 showing customer-directed design change",
     "The reduced root radius (1.8mm per P&W Drawing Rev F) combined with die wear at the root cavity created a stress concentration; the Excel maintenance log noting 'hairline wear mark at root cavity' in July 2025 was the earliest actionable signal that should have triggered die replacement before the August production run",
     "The material consolidation itself caused the defect by losing process-specific routing information; the SharePoint mapping table is the root cause artifact and all batches of 5500-TB-0120 should be quarantined"
-  ]
+  ],
+  "split": "challenge"
 }

@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-1150325CEA17",
   "scenario_file": "meridian-infosec-batch1-01.json",
   "correct_answer": "Data processing must be suspended within 5 business days of March 18 awareness; the DPA successor clause was not properly invoked (late notice + entity dissolution), and policy SP-007 Section 3.4 mandates suspension",
   "answer_format": "multiple_choice",

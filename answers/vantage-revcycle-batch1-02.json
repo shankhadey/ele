@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-B96020DF0F6D",
   "scenario_file": "vantage-revcycle-batch1-02.json",
   "correct_answer": "Appeal the 12 claims from Active-VHP providers under the master agreement immediately, and escalate credentialing for the remaining 22 providers with resubmission before the 60-day timely filing window closes on the earliest DOS (April 30, 2026)",
   "answer_format": "multiple_choice",

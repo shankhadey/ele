@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-0F12D42E02BC",
   "scenario_file": "atlas-loss-prevention-batch1-01.json",
   "correct_answer": "Treat this as a confirmed cross-brand ORC pattern tied to a single actor via payment instrument matching, place holds on all pending returns linked to card 4471 and the associated PayPal, and escalate to the multi-brand fraud committee",
   "answer_format": "multiple_choice",

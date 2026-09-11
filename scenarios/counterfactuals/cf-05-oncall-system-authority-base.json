@@ -1,0 +1,26 @@
+{
+  "title": "Which System of Record Owns Payments-Gateway Oncall (base)",
+  "category": "cross_system_synthesis",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-05",
+  "counterfactual_role": "base",
+  "scenario_text": "Radial operates its production services under a strict ownership model. The Radial Configuration Management Database (CMDB), maintained by the Platform Reliability Office, is the authoritative system of record for service ownership. The engineering wiki hosts a companion 'Oncall Runbook Index' that is expected to mirror the CMDB but is manually maintained by Site Reliability Engineering (SRE) and occasionally lags the CMDB.\n\nThe company Standard 'ENG-3.2 Incident Response' states: 'When the CMDB and any secondary directory disagree about service ownership, the CMDB record governs.' The standard has been in force for two years and is unchanged as of last quarter.\n\nAt 03:14 UTC, PagerDuty fires a P1 for the payments-gateway service after error rates cross 3% for five minutes. The incident commander opens the Oncall Runbook Index in Confluence and sees 'payments-gateway \u2014 primary responder: Checkout Reliability (last edited February).' The CMDB entry for payments-gateway also lists the primary owner as Checkout Reliability, last updated by the Platform Reliability Office in June. There is no open ownership-transfer ticket for payments-gateway.",
+  "question": "PagerDuty just fired a P1 for the payments-gateway service. Which team should the incident commander page for primary response?",
+  "answer_format": "multiple_choice",
+  "choices": [
+    "Payments Platform \u2014 the CMDB is the authoritative source of service ownership at Radial.",
+    "Checkout Reliability \u2014 the runbook in Confluence still names them as the responder.",
+    "Both teams simultaneously, since the sources disagree and time is critical.",
+    "Neither team; page the on-call SRE manager and let them route it after triage."
+  ],
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": []
+}

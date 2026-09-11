@@ -20,5 +20,6 @@
     "The bed census integration is not yet delivered; financial exposure is $0 because the delay is caused by the customer's Epic API credentialing block, which constitutes a force majeure exemption",
     "The bed census integration is not yet delivered; financial exposure is $5K/day starting May 10 (when the customer removed their blocker), totaling approximately $240K through today",
     "The bed census integration is not yet delivered; financial exposure is approximately $290K ($5K/day x 58 days past the Apr 30 deadline), mitigated only partially by the customer-side credentialing delay through May 10"
-  ]
+  ],
+  "split": "challenge"
 }

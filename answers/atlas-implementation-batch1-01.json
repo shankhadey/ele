@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-FFC51E3ACCF9",
   "scenario_file": "atlas-implementation-batch1-01.json",
   "correct_answer": "Jul 18 with scope reduction; the CR has only informal VP approval via Slack emoji and has not completed the formal approval chain",
   "answer_format": "multiple_choice",

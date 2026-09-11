@@ -20,5 +20,6 @@
     "Yes \u2014 PagerDuty is the system of record for escalation routing, the policy was updated May 5, and the system correctly escalated Primary -> Secondary -> SRE Manager",
     "No \u2014 the Confluence runbook is the authoritative escalation reference and it specifies EM at Level 2, which PagerDuty skipped",
     "No \u2014 Nadia's policy change was never formally approved; the Slack thumbsup reactions do not constitute a valid change approval per Meridian's change management policy"
-  ]
+  ],
+  "split": "challenge"
 }

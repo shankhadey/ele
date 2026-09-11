@@ -314,23 +314,40 @@ class TestConfigLoading:
 
     def test_from_env_defaults(self):
         config = AppConfig.from_env()
-        assert config.scoring_similarity_threshold == 0.75
+        assert config.eval_correctness_threshold == 0.9
         assert config.eval_timeout_seconds == 60
+        assert config.eval_judge_enabled is True
 
     def test_from_env_custom(self, monkeypatch):
-        monkeypatch.setenv("EVAL_SCORING_THRESHOLD", "0.9")
+        monkeypatch.setenv("EVAL_CORRECTNESS_THRESHOLD", "0.95")
         monkeypatch.setenv("EVAL_TIMEOUT_SECONDS", "120")
         monkeypatch.setenv("EVAL_ENABLE_TOOLS", "true")
         config = AppConfig.from_env()
-        assert config.scoring_similarity_threshold == 0.9
+        assert config.eval_correctness_threshold == 0.95
         assert config.eval_timeout_seconds == 120
         assert config.eval_enable_tools is True
 
     def test_from_file(self, tmp_path):
         config_file = tmp_path / "config.json"
         config_file.write_text(
-            '{"scoring_similarity_threshold": 0.85, "eval_parallel_workers": 4}'
+            '{"eval_correctness_threshold": 0.85, "eval_parallel_workers": 4}'
         )
         config = AppConfig.from_file(str(config_file))
-        assert config.scoring_similarity_threshold == 0.85
+        assert config.eval_correctness_threshold == 0.85
         assert config.eval_parallel_workers == 4
+
+    def test_app_startup_rejects_missing_judge(self):
+        """App must refuse to start if the LLM judge is disabled."""
+        import pytest
+        config = AppConfig(eval_judge_enabled=False)
+        with pytest.raises(ValueError, match="LLM judge is mandatory"):
+            App(config)
+
+    def test_app_startup_rejects_missing_api_key(self, monkeypatch):
+        """App must refuse to start if no judge API key is resolvable."""
+        import pytest
+        monkeypatch.delenv("OPENAI_API_KEY", raising=False)
+        monkeypatch.delenv("EVAL_JUDGE_API_KEY", raising=False)
+        config = AppConfig(eval_judge_api_key="")
+        with pytest.raises(ValueError, match="no API key"):
+            App(config)

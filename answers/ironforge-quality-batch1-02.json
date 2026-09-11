@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-497005D22676",
   "scenario_file": "ironforge-quality-batch1-02.json",
   "correct_answer": "Rev F - the revision in effect when the CAPA was initiated governs the entire lifecycle",
   "answer_format": "multiple_choice",

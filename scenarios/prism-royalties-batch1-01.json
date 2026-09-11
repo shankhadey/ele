@@ -20,5 +20,6 @@
     "Apply 2020 TV Agreement rates to episodes 1-6 and 2025 interim agreement rates to episodes 7-10, since episodes 7-10 were produced after Jul 1, 2025",
     "Apply 2020 TV Agreement rates to episodes 1-7 and 2025 interim agreement rates to episodes 8-10, based on actual photography start dates and the signatory filing",
     "Apply 2023 TV Agreement rates to all 10 episodes, since RightsLine shows 2023 as the governing agreement and it is the system of record"
-  ]
+  ],
+  "split": "challenge"
 }

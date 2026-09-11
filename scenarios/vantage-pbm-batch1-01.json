@@ -20,5 +20,6 @@
     "Require a new PA under 2026 UM criteria; the P&T Committee explicitly overrode grandfathering for JAK inhibitors",
     "Process at Tier 4 but without requiring a new PA, since the patient has a valid approval on file regardless of tier placement",
     "Reject and require the patient to restart step therapy (fail 2 bDMARDs) before Xeljanz can be re-authorized"
-  ]
+  ],
+  "split": "challenge"
 }

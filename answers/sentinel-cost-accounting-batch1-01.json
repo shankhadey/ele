@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-FBA625DA8635",
   "scenario_file": "sentinel-cost-accounting-batch1-01.json",
   "correct_answer": "The $218K belongs in the FY25 G&A base under TCI (Rev 6) because it was incurred in December; the compliance risk is the missing PM sign-off, which doesn't affect CAS treatment but creates a FAR 31.201-2(d) adequacy question for DCAA.",
   "answer_format": "multiple_choice",

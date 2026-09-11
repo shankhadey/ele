@@ -1,0 +1,24 @@
+{
+  "title": "Who Actually Has to Sign the Production DB Schema Change",
+  "category": "approval_chain",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "split": "core_test",
+  "scenario_text": "The 'Change Approval Policy for Production Data Systems' at Barrow Analytics specifies the following: schema changes that add columns and are additive-only (no drops, no renames, no type narrowing) require sign-off from the on-call Database Reliability Engineer and the owning service's tech lead; schema changes that drop columns, rename columns, or narrow types are 'destructive' and additionally require Director of Data Platform approval and Chief Data Officer approval; schema changes on any table that carries a PII tag additionally require the Data Protection Officer's approval, regardless of whether the change is additive or destructive.\n\nThe proposed change is: 'Add column customer_segment (nullable varchar(64)) to the table analytics.customer_summary. Also rename column ltv_estimate to ltv_estimate_v1 to make room for a new ltv_estimate that will be introduced in a separate release.' The submitting engineer, Priya Reddy, argues in the change ticket that the rename is a 'harmless label swap' because it does not change data types or drop data, and that this is 'additive-only for approval purposes.'\n\nThe table analytics.customer_summary is tagged in the internal Data Catalog as 'contains PII' (it references customer email addresses joined from an upstream table). The on-call DRE is Marcus Kim; the service tech lead is Sam Ortiz; the Director of Data Platform is Zara Patel; the CDO is Reid Fernandez; the DPO is Anna Bezier. The change ticket in ServiceNow currently has approvals from Marcus Kim (DRE) and Sam Ortiz (tech lead). Priya has asked the change board to release her change tonight.",
+  "question": "Under Barrow's policy, which additional approvals are required before this change can be released?",
+  "answer_format": "multiple_choice",
+  "choices": [
+    "None; the DRE and tech-lead sign-offs already recorded are sufficient because the change is materially additive.",
+    "Only the DPO (Anna Bezier), because of the PII tag; the rename is a label swap that does not trigger the destructive path.",
+    "The Director of Data Platform (Zara Patel), the CDO (Reid Fernandez), and the DPO (Anna Bezier), because the rename is a destructive schema change and the table carries a PII tag.",
+    "Only the CDO (Reid Fernandez) as executive escalation; the DPO tag is satisfied by the tech lead's sign-off under the Data Steward exception."
+  ],
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": []
+}

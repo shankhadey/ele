@@ -20,5 +20,6 @@
     "Yes, breach occurred. TTR = 2h 31m (timer starts at 9:03 AM, pauses only during Scheduled Maintenance per the customer's grandfathered v2.8 terms, no maintenance window applies).",
     "Yes, breach occurred. TTR = 3h 19m (9:03 AM ticket open to 12:22 PM resolution). The 2-hour Enterprise Plus TTR was exceeded.",
     "No breach. The incident was initially declared SEV-2, so SLA timer did not start until the 9:31 AM upgrade to SEV-1, making TTR = 2h 51m but the platform-wide incident pause applies under v3.2."
-  ]
+  ],
+  "split": "challenge"
 }

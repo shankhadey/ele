@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-47798597353A",
   "scenario_file": "meta-erp-migration-batch1-03.json",
   "correct_answer": "The reduced root radius (1.8mm per P&W Drawing Rev F) combined with die wear at the root cavity created a stress concentration; the Excel maintenance log noting 'hairline wear mark at root cavity' in July 2025 was the earliest actionable signal that should have triggered die replacement before the August production run",
   "answer_format": "multiple_choice",

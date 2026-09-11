@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-A0873B797EB6",
   "scenario_file": "meridian-partner-batch1-03.json",
   "correct_answer": "TechForward Solutions \u2014 their deal registration was submitted and approved first, and the 30-day contestation window has expired, making the approval final.",
   "answer_format": "multiple_choice",

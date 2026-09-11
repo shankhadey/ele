@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-D8162E995D22",
   "scenario_file": "prism-sales-planning-batch1-03.json",
   "correct_answer": "Non-compliant \u2014 the board directive on P&L separation (Jan 2026) supersedes the sales approval matrix (May 2026), making the streaming portion's 43% margin a violation regardless of blended calculation",
   "answer_format": "multiple_choice",

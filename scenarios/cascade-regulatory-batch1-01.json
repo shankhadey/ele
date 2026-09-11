@@ -20,5 +20,6 @@
     "Revised methodology \u2014 the loan is now in the commercial portfolio which is on the standard timeline, but Section 4.1 requires revised methodology for all positions as of June 1, 2025, and the last calc run on 5/31 was the final legacy run",
     "Revised methodology \u2014 the loan sat in an early-adoption portfolio at the time the attestation was filed (March 15), so early adoption follows the loan regardless of subsequent transfer",
     "Legacy methodology \u2014 the loan originated before the final rule effective date and is grandfathered"
-  ]
+  ],
+  "split": "challenge"
 }

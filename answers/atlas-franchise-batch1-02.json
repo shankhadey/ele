@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-D5D50E32A28F",
   "scenario_file": "atlas-franchise-batch1-02.json",
   "correct_answer": "Yes \u2014 but only after confirming with legal that the email does not constitute an enforceable amendment, and documenting the decision trail given the CRM territory note referencing the 5-mile radius",
   "answer_format": "multiple_choice",

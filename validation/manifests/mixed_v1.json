@@ -1,0 +1,438 @@
+{
+  "created_at": "2026-09-08T13:41:15.506622+00:00",
+  "seed": 42,
+  "split_filter": null,
+  "requested_n": 40,
+  "population_size": 179,
+  "sample_size": 40,
+  "coverage": {
+    "by_category": {
+      "cross_system_synthesis": 7,
+      "precedent_exception": 4,
+      "approval_chain": 8,
+      "temporal_consistency": 7,
+      "entity_resolution": 7,
+      "policy_version": 7
+    },
+    "by_domain": {
+      "finance_revops": 10,
+      "procurement_vendor": 5,
+      "engineering_devops": 3,
+      "compliance_legal": 10,
+      "customer_success_support": 4,
+      "hr_people_ops": 5,
+      "sales_deal_desk": 3
+    },
+    "by_split": {
+      "core_test": 4,
+      "challenge": 32,
+      "counterfactual": 4
+    },
+    "by_answer_format": {
+      "exact_match": 1,
+      "multiple_choice": 39
+    }
+  },
+  "items": [
+    {
+      "scenario_key": "001_revenue_recognition.json",
+      "category": "cross_system_synthesis",
+      "domain": "finance_revops",
+      "split": "core_test",
+      "difficulty": "hard",
+      "answer_format": "exact_match",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "007_vendor_risk_precedent_scope.json",
+      "category": "precedent_exception",
+      "domain": "procurement_vendor",
+      "split": "core_test",
+      "difficulty": "expert",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "010_prod_schema_change_approvers.json",
+      "category": "approval_chain",
+      "domain": "engineering_devops",
+      "split": "core_test",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "011_retention_policy_at_collection_time.json",
+      "category": "temporal_consistency",
+      "domain": "compliance_legal",
+      "split": "core_test",
+      "difficulty": "expert",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "atlas-franchise-batch1-03.json",
+      "category": "approval_chain",
+      "domain": "compliance_legal",
+      "split": "challenge",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "atlas-implementation-batch1-03.json",
+      "category": "approval_chain",
+      "domain": "customer_success_support",
+      "split": "challenge",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "atlas-loss-prevention-batch1-01.json",
+      "category": "entity_resolution",
+      "domain": "finance_revops",
+      "split": "challenge",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "atlas-loss-prevention-batch1-03.json",
+      "category": "cross_system_synthesis",
+      "domain": "finance_revops",
+      "split": "challenge",
+      "difficulty": "expert",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "atlas-trust-safety-batch1-02.json",
+      "category": "cross_system_synthesis",
+      "domain": "compliance_legal",
+      "split": "challenge",
+      "difficulty": "expert",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "brightpath-finaid-batch1-01.json",
+      "category": "precedent_exception",
+      "domain": "hr_people_ops",
+      "split": "challenge",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "brightpath-finaid-batch1-02.json",
+      "category": "approval_chain",
+      "domain": "hr_people_ops",
+      "split": "challenge",
+      "difficulty": "expert",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "brightpath-title-ix-batch1-02.json",
+      "category": "policy_version",
+      "domain": "compliance_legal",
+      "split": "challenge",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "cascade-aml-batch1-01.json",
+      "category": "entity_resolution",
+      "domain": "compliance_legal",
+      "split": "challenge",
+      "difficulty": "expert",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "cf-01-commission-plan-effective-date-variant.json",
+      "category": "policy_version",
+      "domain": "finance_revops",
+      "split": "counterfactual",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": "cf-01",
+      "counterfactual_role": "variant"
+    },
+    {
+      "scenario_key": "cf-02-approval-delegation-window-variant.json",
+      "category": "approval_chain",
+      "domain": "procurement_vendor",
+      "split": "counterfactual",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": "cf-02",
+      "counterfactual_role": "variant"
+    },
+    {
+      "scenario_key": "cf-03-account-affiliation-status-base.json",
+      "category": "entity_resolution",
+      "domain": "sales_deal_desk",
+      "split": "counterfactual",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": "cf-03",
+      "counterfactual_role": "base"
+    },
+    {
+      "scenario_key": "cf-06-tenure-eligibility-snapshot-base.json",
+      "category": "temporal_consistency",
+      "domain": "hr_people_ops",
+      "split": "counterfactual",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": "cf-06",
+      "counterfactual_role": "base"
+    },
+    {
+      "scenario_key": "conduit-asset-batch1-03.json",
+      "category": "cross_system_synthesis",
+      "domain": "engineering_devops",
+      "split": "challenge",
+      "difficulty": "expert",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "conduit-implementation-batch1-03.json",
+      "category": "temporal_consistency",
+      "domain": "customer_success_support",
+      "split": "challenge",
+      "difficulty": "expert",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "conduit-renewable-batch1-01.json",
+      "category": "entity_resolution",
+      "domain": "procurement_vendor",
+      "split": "challenge",
+      "difficulty": "expert",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "conduit-trading-batch1-03.json",
+      "category": "temporal_consistency",
+      "domain": "finance_revops",
+      "split": "challenge",
+      "difficulty": "expert",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "ironforge-employee-relations-batch1-01.json",
+      "category": "policy_version",
+      "domain": "hr_people_ops",
+      "split": "challenge",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "ironforge-quality-batch1-03.json",
+      "category": "temporal_consistency",
+      "domain": "engineering_devops",
+      "split": "challenge",
+      "difficulty": "expert",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "meridian-csm-batch1-02.json",
+      "category": "precedent_exception",
+      "domain": "customer_success_support",
+      "split": "challenge",
+      "difficulty": "expert",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "meridian-deal-desk-batch1-03.json",
+      "category": "policy_version",
+      "domain": "sales_deal_desk",
+      "split": "challenge",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "meridian-infosec-batch1-01.json",
+      "category": "entity_resolution",
+      "domain": "compliance_legal",
+      "split": "challenge",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "meridian-revops-batch1-03.json",
+      "category": "temporal_consistency",
+      "domain": "finance_revops",
+      "split": "challenge",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "meridian-support-escalation-batch1-03.json",
+      "category": "cross_system_synthesis",
+      "domain": "customer_success_support",
+      "split": "challenge",
+      "difficulty": "expert",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "meridian-total-comp-batch1-03.json",
+      "category": "cross_system_synthesis",
+      "domain": "hr_people_ops",
+      "split": "challenge",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "meta-governance-batch1-01.json",
+      "category": "approval_chain",
+      "domain": "compliance_legal",
+      "split": "challenge",
+      "difficulty": "expert",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "meta-ma-integration-batch1-01.json",
+      "category": "entity_resolution",
+      "domain": "finance_revops",
+      "split": "challenge",
+      "difficulty": "expert",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "meta-ma-integration-batch1-02.json",
+      "category": "policy_version",
+      "domain": "finance_revops",
+      "split": "challenge",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "novaterra-tax-batch1-01.json",
+      "category": "entity_resolution",
+      "domain": "finance_revops",
+      "split": "challenge",
+      "difficulty": "expert",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "prism-adops-batch1-02.json",
+      "category": "precedent_exception",
+      "domain": "sales_deal_desk",
+      "split": "challenge",
+      "difficulty": "expert",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "prism-licensing-batch1-02.json",
+      "category": "policy_version",
+      "domain": "procurement_vendor",
+      "split": "challenge",
+      "difficulty": "expert",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "prism-licensing-batch1-03.json",
+      "category": "approval_chain",
+      "domain": "procurement_vendor",
+      "split": "challenge",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "sentinel-cost-accounting-batch1-03.json",
+      "category": "approval_chain",
+      "domain": "finance_revops",
+      "split": "challenge",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "vantage-clinical-trials-batch1-01.json",
+      "category": "temporal_consistency",
+      "domain": "compliance_legal",
+      "split": "challenge",
+      "difficulty": "expert",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "vantage-hipaa-batch1-02.json",
+      "category": "policy_version",
+      "domain": "compliance_legal",
+      "split": "challenge",
+      "difficulty": "expert",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    },
+    {
+      "scenario_key": "vantage-hipaa-batch1-03.json",
+      "category": "cross_system_synthesis",
+      "domain": "compliance_legal",
+      "split": "challenge",
+      "difficulty": "expert",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": null,
+      "counterfactual_role": null
+    }
+  ]
+}

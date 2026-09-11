@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-EB8BAFA7A453",
   "scenario_file": "cascade-lending-batch1-02.json",
   "correct_answer": "Apply new Policy 3.2 (75% LTV, 1.25x DSCR) \u2014 the transition guidance explicitly states only loans with issued commitment letters are grandfathered, and no commitment letter was issued",
   "answer_format": "multiple_choice",

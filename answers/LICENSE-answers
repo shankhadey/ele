@@ -1,0 +1,34 @@
+ELE Answer Key — Evaluation-Only License
+========================================
+
+Copyright (c) 2026 The ELE Authors.
+
+The files in this directory ("Answer Keys") are held-out ground truth for
+the Enterprise's Last Exam (ELE) benchmark. Access to the Answer Keys is
+granted solely for the purpose of scoring model responses against the
+benchmark. Any other use requires prior written permission from the ELE
+Authors.
+
+You may:
+  - Read and use the Answer Keys locally to score model responses.
+  - Reference aggregate benchmark results in publications and reports.
+
+You may NOT:
+  - Include the Answer Keys, in whole or in part, in any dataset used to
+    train, pretrain, fine-tune, distill, or otherwise adapt a machine
+    learning model.
+  - Publish the Answer Keys on the public web, upload them to public
+    dataset repositories, or index them in any search engine, embeddings
+    store, or retrieval system that could return them to a model under
+    evaluation.
+  - Redistribute the Answer Keys, in whole or in part, without the ELE
+    Authors' written permission.
+
+Each Answer Key file contains a `_canary` token that is unique to that
+scenario. The presence of an ELE canary token in a model's outputs is
+evidence that the model or its training corpus has been contaminated
+with the Answer Keys. Reproduction of canary tokens is a per se
+violation of this license.
+
+This Evaluation-Only License is intended to preserve the integrity of
+the ELE benchmark. It is offered "AS IS", without warranty of any kind.

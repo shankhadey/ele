@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-17EE25C60830",
   "scenario_file": "ironforge-procurement-batch1-01.json",
   "correct_answer": "Proceed with renewal \u2014 the four entity names (Inc., LLC, Consol. Precision Alloys, Partners LP) are the same supplier confirmed by the SharePoint note and shared domain; Henrik's email confirms CAPA acceptance pending system sync; qualification is effectively restored",
   "answer_format": "multiple_choice",

@@ -1,0 +1,154 @@
+{
+  "created_at": "2026-09-08T13:41:15.354984+00:00",
+  "seed": 42,
+  "split_filter": "counterfactual",
+  "requested_n": null,
+  "population_size": 12,
+  "sample_size": 12,
+  "coverage": {
+    "by_category": {
+      "policy_version": 2,
+      "approval_chain": 2,
+      "entity_resolution": 2,
+      "precedent_exception": 2,
+      "cross_system_synthesis": 2,
+      "temporal_consistency": 2
+    },
+    "by_domain": {
+      "finance_revops": 2,
+      "procurement_vendor": 2,
+      "sales_deal_desk": 2,
+      "customer_success_support": 2,
+      "engineering_devops": 2,
+      "hr_people_ops": 2
+    },
+    "by_split": {
+      "counterfactual": 12
+    },
+    "by_answer_format": {
+      "multiple_choice": 12
+    }
+  },
+  "items": [
+    {
+      "scenario_key": "cf-01-commission-plan-effective-date-base.json",
+      "category": "policy_version",
+      "domain": "finance_revops",
+      "split": "counterfactual",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": "cf-01",
+      "counterfactual_role": "base"
+    },
+    {
+      "scenario_key": "cf-01-commission-plan-effective-date-variant.json",
+      "category": "policy_version",
+      "domain": "finance_revops",
+      "split": "counterfactual",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": "cf-01",
+      "counterfactual_role": "variant"
+    },
+    {
+      "scenario_key": "cf-02-approval-delegation-window-base.json",
+      "category": "approval_chain",
+      "domain": "procurement_vendor",
+      "split": "counterfactual",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": "cf-02",
+      "counterfactual_role": "base"
+    },
+    {
+      "scenario_key": "cf-02-approval-delegation-window-variant.json",
+      "category": "approval_chain",
+      "domain": "procurement_vendor",
+      "split": "counterfactual",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": "cf-02",
+      "counterfactual_role": "variant"
+    },
+    {
+      "scenario_key": "cf-03-account-affiliation-status-base.json",
+      "category": "entity_resolution",
+      "domain": "sales_deal_desk",
+      "split": "counterfactual",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": "cf-03",
+      "counterfactual_role": "base"
+    },
+    {
+      "scenario_key": "cf-03-account-affiliation-status-variant.json",
+      "category": "entity_resolution",
+      "domain": "sales_deal_desk",
+      "split": "counterfactual",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": "cf-03",
+      "counterfactual_role": "variant"
+    },
+    {
+      "scenario_key": "cf-04-fee-waiver-precedent-scope-base.json",
+      "category": "precedent_exception",
+      "domain": "customer_success_support",
+      "split": "counterfactual",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": "cf-04",
+      "counterfactual_role": "base"
+    },
+    {
+      "scenario_key": "cf-04-fee-waiver-precedent-scope-variant.json",
+      "category": "precedent_exception",
+      "domain": "customer_success_support",
+      "split": "counterfactual",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": "cf-04",
+      "counterfactual_role": "variant"
+    },
+    {
+      "scenario_key": "cf-05-oncall-system-authority-base.json",
+      "category": "cross_system_synthesis",
+      "domain": "engineering_devops",
+      "split": "counterfactual",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": "cf-05",
+      "counterfactual_role": "base"
+    },
+    {
+      "scenario_key": "cf-05-oncall-system-authority-variant.json",
+      "category": "cross_system_synthesis",
+      "domain": "engineering_devops",
+      "split": "counterfactual",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": "cf-05",
+      "counterfactual_role": "variant"
+    },
+    {
+      "scenario_key": "cf-06-tenure-eligibility-snapshot-base.json",
+      "category": "temporal_consistency",
+      "domain": "hr_people_ops",
+      "split": "counterfactual",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": "cf-06",
+      "counterfactual_role": "base"
+    },
+    {
+      "scenario_key": "cf-06-tenure-eligibility-snapshot-variant.json",
+      "category": "temporal_consistency",
+      "domain": "hr_people_ops",
+      "split": "counterfactual",
+      "difficulty": "hard",
+      "answer_format": "multiple_choice",
+      "counterfactual_pair_id": "cf-06",
+      "counterfactual_role": "variant"
+    }
+  ]
+}

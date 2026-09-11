@@ -20,5 +20,6 @@
     "High risk; the executive sponsor departure was never logged in Health Cloud CRM, so the champion-change trigger in the health score methodology never fired, and the CSM hasn't updated the account since February",
     "Medium risk; the support tickets are concerning but James Whitfield confirmed renewal intent at the EBR so budget is still approved through FY27",
     "High risk; the health score algorithm over-weights contract value and the Pendo usage drop hasn't been factored into the adoption component yet due to a 90-day lag"
-  ]
+  ],
+  "split": "challenge"
 }

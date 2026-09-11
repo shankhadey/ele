@@ -20,5 +20,6 @@
     "Original waiver elements plus SDOH and medication history for both campuses \u2014 the IRB chair verbally confirmed the original waiver covers the v2.0 expansion, and protocol approval extends the population scope.",
     "Original waiver elements for both campuses, but not the new data elements \u2014 the population expansion is covered by protocol amendment approval, but new data elements require explicit waiver amendment.",
     "Original waiver elements only (demographics, admit/discharge dates, diagnosis codes, BNP, troponin, ejection fraction) for Vantage Main Campus patients only \u2014 the waiver text is the controlling document and was never formally amended."
-  ]
+  ],
+  "split": "challenge"
 }

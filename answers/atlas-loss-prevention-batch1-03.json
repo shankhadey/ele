@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-618F37749421",
   "scenario_file": "atlas-loss-prevention-batch1-03.json",
   "correct_answer": "The prepaid card BIN batch match across two associates at different brands, combined with the deliberate sub-threshold transaction amounts ($88-$97 against a $100 policy limit), correlated inventory variances in the same SKU categories, and the prior employment overlap establish a coordinated scheme requiring formal investigation",
   "answer_format": "multiple_choice",

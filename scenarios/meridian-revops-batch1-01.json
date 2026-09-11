@@ -20,5 +20,6 @@
     "ARR = $539,016 (annualized MRR across all 3 Zuora subs: $32,800 + $7,916 + $4,200 x 12); 3 Zuora subscriptions mapped to TerraLogic Inc",
     "ARR = $380K (only the confirmed TerraLogic Inc CRM record); 1 Zuora subscription (Z-4491) until legal formally merges billing entities",
     "ARR = $475K (CRM sum of both accounts); 2 Zuora subscriptions (Z-4491 + Z-3187)"
-  ]
+  ],
+  "split": "challenge"
 }

@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-5A52EF8A236C",
   "scenario_file": "atlas-implementation-batch1-02.json",
   "correct_answer": "No \u2014 the Confluence lessons learned page explicitly documents this was a one-time concession with VP confirmation it should not set precedent, and the Kova SOW specifies fixed-fee for all phases",
   "answer_format": "multiple_choice",

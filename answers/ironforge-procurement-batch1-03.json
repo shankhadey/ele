@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-98D91EEA6D6D",
   "scenario_file": "ironforge-procurement-batch1-03.json",
   "correct_answer": "Approve the requisition \u2014 Tom has Plant Manager authority under Section 6.4, his email to Henrik constitutes documented intent, and the 48-hour MasterControl filing is an administrative requirement that doesn't void the deviation authority itself",
   "answer_format": "multiple_choice",

@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-F934349ED715",
   "scenario_file": "cascade-lending-batch1-01.json",
   "correct_answer": "Decline the draw until a new guaranty or ratification is obtained from Bridgewater Capital Group Inc., and downgrade the risk rating to Watch per Policy 7.3",
   "answer_format": "multiple_choice",

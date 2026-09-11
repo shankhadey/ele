@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-8E13AD87C99D",
   "scenario_file": "cascade-wealth-batch1-01.json",
   "correct_answer": "David R. Holloway 50%, Sarah Holloway-Park 35%, Portland Community Foundation 15% \u2014 per the Third Amendment",
   "answer_format": "multiple_choice",

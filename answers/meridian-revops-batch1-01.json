@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-C2195BEBDEEA",
   "scenario_file": "meridian-revops-batch1-01.json",
   "correct_answer": "ARR = $539,016 (annualized MRR across all 3 Zuora subs: $32,800 + $7,916 + $4,200 x 12); 3 Zuora subscriptions mapped to TerraLogic Inc",
   "answer_format": "multiple_choice",

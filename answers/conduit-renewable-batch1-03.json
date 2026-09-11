@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-616151A42E8D",
   "scenario_file": "conduit-renewable-batch1-03.json",
   "correct_answer": "The extension is likely enforceable against Conduit due to apparent authority and subsequent ratification (Dave's thumbs-up in January), but is procedurally deficient and creates audit risk; termination under the sunset clause would likely fail",
   "answer_format": "multiple_choice",

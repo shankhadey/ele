@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-0F47A36A211A",
   "scenario_file": "brightpath-finaid-batch1-02.json",
   "correct_answer": "The override is invalid and must be reversed because Guzman lacked authority under the v3 matrix, and a Slack thumbs-up does not constitute Director approval for zero-EFC determinations.",
   "answer_format": "multiple_choice",

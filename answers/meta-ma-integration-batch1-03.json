@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-89DF9B43730D",
   "scenario_file": "meta-ma-integration-batch1-03.json",
   "correct_answer": "Reject the invoice \u2014 procurement confirmed non-renewal and contract expiry on June 30, 2026; the invoice is for a renewal period Cascade has explicitly declined",
   "answer_format": "multiple_choice",

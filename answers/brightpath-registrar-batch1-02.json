@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-3D0DF57D408B",
   "scenario_file": "brightpath-registrar-batch1-02.json",
   "correct_answer": "Yes \u2014 the curriculum committee motion 23-14 with its accepted amendment constitutes an approved teach-out provision; her continuous enrollment and v4 catalog year entitle her to the original equivalency regardless of the DegreeWorks configuration.",
   "answer_format": "multiple_choice",

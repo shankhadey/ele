@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-A0076D728105",
   "scenario_file": "prism-adops-batch1-02.json",
   "correct_answer": "The make-good is a gray area requiring Director-level review \u2014 the commitment predates the policy, the resolved comment confirms no explicit grandfathering, and the underdelivery is factually confirmed, but no formal documentation exists",
   "answer_format": "multiple_choice",

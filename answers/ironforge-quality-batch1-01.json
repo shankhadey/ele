@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-EB353A03A544",
   "scenario_file": "ironforge-quality-batch1-01.json",
   "correct_answer": "James Palmer (Engineering Director) - as the delegated design authority, only he could authorize deviation from drawing specification",
   "answer_format": "multiple_choice",

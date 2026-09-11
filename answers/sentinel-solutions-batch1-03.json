@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-90021FE82E58",
   "scenario_file": "sentinel-solutions-batch1-03.json",
   "correct_answer": "Escalate to VP Capture for a risk-acceptance decision \u2014 the gate review rates are technically compliant but the unanswered pricing team email and high material content create a material (>$1M) cost risk on an LPTA bid that should be acknowledged before submission.",
   "answer_format": "multiple_choice",

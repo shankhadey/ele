@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-D569A5BCED36",
   "scenario_file": "meta-governance-batch1-03.json",
   "correct_answer": "The approval is invalid but curable \u2014 the CEO can provide retroactive co-approval to ratify the expenditure under the new DOA matrix, since the substantive threshold (CEO + CFO joint) can still be met",
   "answer_format": "multiple_choice",

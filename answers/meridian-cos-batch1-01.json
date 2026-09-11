@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-A84EA301457F",
   "scenario_file": "meridian-cos-batch1-01.json",
   "correct_answer": "Conditionally approved for $25K pending counter-offer letter - must follow CEO's June 20 Slack guidance before escalating to full $40K",
   "answer_format": "multiple_choice",

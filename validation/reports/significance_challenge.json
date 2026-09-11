@@ -1,0 +1,374 @@
+{
+  "split": "challenge",
+  "alpha": 0.05,
+  "n_models": 7,
+  "accuracy": {
+    "gpt-5.6-terra": 85.25641025641025,
+    "claude-opus-5": 85.8974358974359,
+    "gemma-3-27b": 77.56410256410257,
+    "qwen3-235b": 83.97435897435898,
+    "llama4-maverick": 84.61538461538461,
+    "deepseek-v3.2": 81.41025641025641,
+    "nova-micro": 75.0
+  },
+  "n_comparisons": 21,
+  "comparisons": [
+    {
+      "model_a": "gpt-5.6-terra",
+      "model_b": "claude-opus-5",
+      "n_shared": 156,
+      "acc_a": 85.25641025641025,
+      "acc_b": 85.8974358974359,
+      "discordant_a_only": 7,
+      "discordant_b_only": 8,
+      "mcnemar_p": 1.0,
+      "mcnemar_method": "exact_binomial",
+      "acc_diff_pct": -0.641025641025641,
+      "bootstrap_ci95": [
+        -5.769230769230769,
+        3.8461538461538463
+      ],
+      "significant_holm": false
+    },
+    {
+      "model_a": "gpt-5.6-terra",
+      "model_b": "gemma-3-27b",
+      "n_shared": 156,
+      "acc_a": 85.25641025641025,
+      "acc_b": 77.56410256410257,
+      "discordant_a_only": 18,
+      "discordant_b_only": 6,
+      "mcnemar_p": 0.022655844688415597,
+      "mcnemar_method": "exact_binomial",
+      "acc_diff_pct": 7.6923076923076925,
+      "bootstrap_ci95": [
+        1.9230769230769231,
+        14.102564102564102
+      ],
+      "significant_holm": false
+    },
+    {
+      "model_a": "gpt-5.6-terra",
+      "model_b": "qwen3-235b",
+      "n_shared": 156,
+      "acc_a": 85.25641025641025,
+      "acc_b": 83.97435897435898,
+      "discordant_a_only": 13,
+      "discordant_b_only": 11,
+      "mcnemar_p": 0.8388197422027599,
+      "mcnemar_method": "exact_binomial",
+      "acc_diff_pct": 1.282051282051282,
+      "bootstrap_ci95": [
+        -4.487179487179487,
+        7.6923076923076925
+      ],
+      "significant_holm": false
+    },
+    {
+      "model_a": "gpt-5.6-terra",
+      "model_b": "llama4-maverick",
+      "n_shared": 156,
+      "acc_a": 85.25641025641025,
+      "acc_b": 84.61538461538461,
+      "discordant_a_only": 12,
+      "discordant_b_only": 11,
+      "mcnemar_p": 1.0,
+      "mcnemar_method": "exact_binomial",
+      "acc_diff_pct": 0.641025641025641,
+      "bootstrap_ci95": [
+        -5.128205128205128,
+        7.051282051282051
+      ],
+      "significant_holm": false
+    },
+    {
+      "model_a": "gpt-5.6-terra",
+      "model_b": "deepseek-v3.2",
+      "n_shared": 156,
+      "acc_a": 85.25641025641025,
+      "acc_b": 81.41025641025641,
+      "discordant_a_only": 15,
+      "discordant_b_only": 9,
+      "mcnemar_p": 0.30745625495910683,
+      "mcnemar_method": "exact_binomial",
+      "acc_diff_pct": 3.8461538461538463,
+      "bootstrap_ci95": [
+        -1.9230769230769231,
+        10.256410256410255
+      ],
+      "significant_holm": false
+    },
+    {
+      "model_a": "gpt-5.6-terra",
+      "model_b": "nova-micro",
+      "n_shared": 156,
+      "acc_a": 85.25641025641025,
+      "acc_b": 75.0,
+      "discordant_a_only": 25,
+      "discordant_b_only": 9,
+      "mcnemar_p": 0.010097314647507214,
+      "mcnemar_method": "cc_chisquare",
+      "acc_diff_pct": 10.256410256410255,
+      "bootstrap_ci95": [
+        3.205128205128205,
+        17.307692307692307
+      ],
+      "significant_holm": false
+    },
+    {
+      "model_a": "claude-opus-5",
+      "model_b": "gemma-3-27b",
+      "n_shared": 156,
+      "acc_a": 85.8974358974359,
+      "acc_b": 77.56410256410257,
+      "discordant_a_only": 22,
+      "discordant_b_only": 9,
+      "mcnemar_p": 0.03114121059579674,
+      "mcnemar_method": "cc_chisquare",
+      "acc_diff_pct": 8.333333333333332,
+      "bootstrap_ci95": [
+        1.282051282051282,
+        15.384615384615385
+      ],
+      "significant_holm": false
+    },
+    {
+      "model_a": "claude-opus-5",
+      "model_b": "qwen3-235b",
+      "n_shared": 156,
+      "acc_a": 85.8974358974359,
+      "acc_b": 83.97435897435898,
+      "discordant_a_only": 14,
+      "discordant_b_only": 11,
+      "mcnemar_p": 0.6900379657745292,
+      "mcnemar_method": "exact_binomial",
+      "acc_diff_pct": 1.9230769230769231,
+      "bootstrap_ci95": [
+        -4.487179487179487,
+        8.333333333333332
+      ],
+      "significant_holm": false
+    },
+    {
+      "model_a": "claude-opus-5",
+      "model_b": "llama4-maverick",
+      "n_shared": 156,
+      "acc_a": 85.8974358974359,
+      "acc_b": 84.61538461538461,
+      "discordant_a_only": 14,
+      "discordant_b_only": 12,
+      "mcnemar_p": 0.84451926747294,
+      "mcnemar_method": "cc_chisquare",
+      "acc_diff_pct": 1.282051282051282,
+      "bootstrap_ci95": [
+        -5.128205128205128,
+        7.6923076923076925
+      ],
+      "significant_holm": false
+    },
+    {
+      "model_a": "claude-opus-5",
+      "model_b": "deepseek-v3.2",
+      "n_shared": 156,
+      "acc_a": 85.8974358974359,
+      "acc_b": 81.41025641025641,
+      "discordant_a_only": 16,
+      "discordant_b_only": 9,
+      "mcnemar_p": 0.22952294349670185,
+      "mcnemar_method": "exact_binomial",
+      "acc_diff_pct": 4.487179487179487,
+      "bootstrap_ci95": [
+        -1.9230769230769231,
+        10.897435897435898
+      ],
+      "significant_holm": false
+    },
+    {
+      "model_a": "claude-opus-5",
+      "model_b": "nova-micro",
+      "n_shared": 156,
+      "acc_a": 85.8974358974359,
+      "acc_b": 75.0,
+      "discordant_a_only": 27,
+      "discordant_b_only": 10,
+      "mcnemar_p": 0.008528852154051891,
+      "mcnemar_method": "cc_chisquare",
+      "acc_diff_pct": 10.897435897435898,
+      "bootstrap_ci95": [
+        3.8461538461538463,
+        18.58974358974359
+      ],
+      "significant_holm": false
+    },
+    {
+      "model_a": "gemma-3-27b",
+      "model_b": "qwen3-235b",
+      "n_shared": 156,
+      "acc_a": 77.56410256410257,
+      "acc_b": 83.97435897435898,
+      "discordant_a_only": 5,
+      "discordant_b_only": 15,
+      "mcnemar_p": 0.04138946533203136,
+      "mcnemar_method": "exact_binomial",
+      "acc_diff_pct": -6.41025641025641,
+      "bootstrap_ci95": [
+        -12.179487179487179,
+        -0.641025641025641
+      ],
+      "significant_holm": false
+    },
+    {
+      "model_a": "gemma-3-27b",
+      "model_b": "llama4-maverick",
+      "n_shared": 156,
+      "acc_a": 77.56410256410257,
+      "acc_b": 84.61538461538461,
+      "discordant_a_only": 4,
+      "discordant_b_only": 15,
+      "mcnemar_p": 0.019210815429687594,
+      "mcnemar_method": "exact_binomial",
+      "acc_diff_pct": -7.051282051282051,
+      "bootstrap_ci95": [
+        -12.82051282051282,
+        -1.9230769230769231
+      ],
+      "significant_holm": false
+    },
+    {
+      "model_a": "gemma-3-27b",
+      "model_b": "deepseek-v3.2",
+      "n_shared": 156,
+      "acc_a": 77.56410256410257,
+      "acc_b": 81.41025641025641,
+      "discordant_a_only": 6,
+      "discordant_b_only": 12,
+      "mcnemar_p": 0.23788452148437547,
+      "mcnemar_method": "exact_binomial",
+      "acc_diff_pct": -3.8461538461538463,
+      "bootstrap_ci95": [
+        -8.974358974358974,
+        1.282051282051282
+      ],
+      "significant_holm": false
+    },
+    {
+      "model_a": "gemma-3-27b",
+      "model_b": "nova-micro",
+      "n_shared": 156,
+      "acc_a": 77.56410256410257,
+      "acc_b": 75.0,
+      "discordant_a_only": 14,
+      "discordant_b_only": 10,
+      "mcnemar_p": 0.5412561893463139,
+      "mcnemar_method": "exact_binomial",
+      "acc_diff_pct": 2.564102564102564,
+      "bootstrap_ci95": [
+        -3.8461538461538463,
+        8.333333333333332
+      ],
+      "significant_holm": false
+    },
+    {
+      "model_a": "qwen3-235b",
+      "model_b": "llama4-maverick",
+      "n_shared": 156,
+      "acc_a": 83.97435897435898,
+      "acc_b": 84.61538461538461,
+      "discordant_a_only": 5,
+      "discordant_b_only": 6,
+      "mcnemar_p": 1.0,
+      "mcnemar_method": "exact_binomial",
+      "acc_diff_pct": -0.641025641025641,
+      "bootstrap_ci95": [
+        -5.128205128205128,
+        3.205128205128205
+      ],
+      "significant_holm": false
+    },
+    {
+      "model_a": "qwen3-235b",
+      "model_b": "deepseek-v3.2",
+      "n_shared": 156,
+      "acc_a": 83.97435897435898,
+      "acc_b": 81.41025641025641,
+      "discordant_a_only": 7,
+      "discordant_b_only": 3,
+      "mcnemar_p": 0.3437499999999996,
+      "mcnemar_method": "exact_binomial",
+      "acc_diff_pct": 2.564102564102564,
+      "bootstrap_ci95": [
+        -1.282051282051282,
+        6.41025641025641
+      ],
+      "significant_holm": false
+    },
+    {
+      "model_a": "qwen3-235b",
+      "model_b": "nova-micro",
+      "n_shared": 156,
+      "acc_a": 83.97435897435898,
+      "acc_b": 75.0,
+      "discordant_a_only": 19,
+      "discordant_b_only": 5,
+      "mcnemar_p": 0.006610751152038588,
+      "mcnemar_method": "exact_binomial",
+      "acc_diff_pct": 8.974358974358974,
+      "bootstrap_ci95": [
+        3.205128205128205,
+        14.743589743589745
+      ],
+      "significant_holm": false
+    },
+    {
+      "model_a": "llama4-maverick",
+      "model_b": "deepseek-v3.2",
+      "n_shared": 156,
+      "acc_a": 84.61538461538461,
+      "acc_b": 81.41025641025641,
+      "discordant_a_only": 12,
+      "discordant_b_only": 7,
+      "mcnemar_p": 0.3592834472656259,
+      "mcnemar_method": "exact_binomial",
+      "acc_diff_pct": 3.205128205128205,
+      "bootstrap_ci95": [
+        -1.9230769230769231,
+        8.333333333333332
+      ],
+      "significant_holm": false
+    },
+    {
+      "model_a": "llama4-maverick",
+      "model_b": "nova-micro",
+      "n_shared": 156,
+      "acc_a": 84.61538461538461,
+      "acc_b": 75.0,
+      "discordant_a_only": 22,
+      "discordant_b_only": 7,
+      "mcnemar_p": 0.00932958471977156,
+      "mcnemar_method": "cc_chisquare",
+      "acc_diff_pct": 9.615384615384617,
+      "bootstrap_ci95": [
+        3.205128205128205,
+        16.025641025641026
+      ],
+      "significant_holm": false
+    },
+    {
+      "model_a": "deepseek-v3.2",
+      "model_b": "nova-micro",
+      "n_shared": 156,
+      "acc_a": 81.41025641025641,
+      "acc_b": 75.0,
+      "discordant_a_only": 16,
+      "discordant_b_only": 6,
+      "mcnemar_p": 0.052478790283203014,
+      "mcnemar_method": "exact_binomial",
+      "acc_diff_pct": 6.41025641025641,
+      "bootstrap_ci95": [
+        0.641025641025641,
+        12.179487179487179
+      ],
+      "significant_holm": false
+    }
+  ]
+}

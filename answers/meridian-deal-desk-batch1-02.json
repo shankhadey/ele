@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-CFEE8C617546",
   "scenario_file": "meridian-deal-desk-batch1-02.json",
   "correct_answer": "Reject - the precedent doesn't apply because DataCore's ramp was tied to a contractual deployment milestone (SOW with phased rollout), while Apex's ramp is for customer cash flow management, which Finance explicitly flagged as problematic",
   "answer_format": "multiple_choice",

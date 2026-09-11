@@ -1,4 +1,6 @@
 {
+  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
+  "_canary": "ELE-CANARY-8AFB638F0483",
   "scenario_file": "conduit-implementation-batch1-01.json",
   "correct_answer": "Honor the 3-year step-down (12%/6%/0%) based on the retired VP's verbal commitment at the settlement conference, supported by the testimony reference in Exhibit JMH-4",
   "answer_format": "multiple_choice",
