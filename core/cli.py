@@ -23,6 +23,7 @@ from ele.core.models import (
     CounterfactualRoleEnum,
     DifficultyEnum,
     DomainEnum,
+    PromptConditionEnum,
     Scenario,
     ScenarioFilters,
     SplitEnum,
@@ -79,6 +80,8 @@ class AppConfig:
     # Judge score at or above this threshold counts as a correct decision.
     # Strict by design — see scoring.py for rationale.
     eval_correctness_threshold: float = 0.9
+    # Prompting condition (§5.2): "direct" | "deliberate" | "scaffold".
+    eval_prompt_condition: str = "direct"
 
     @classmethod
     def from_env(cls) -> "AppConfig":
@@ -106,6 +109,7 @@ class AppConfig:
             eval_correctness_threshold=float(
                 os.environ.get("EVAL_CORRECTNESS_THRESHOLD", "0.9")
             ),
+            eval_prompt_condition=os.environ.get("EVAL_PROMPT_CONDITION", "direct"),
         )
 
     @classmethod
@@ -126,6 +130,7 @@ class AppConfig:
             eval_judge_api_key=data.get("eval_judge_api_key", ""),
             eval_judge_region=data.get("eval_judge_region", "us-west-2"),
             eval_correctness_threshold=data.get("eval_correctness_threshold", 0.9),
+            eval_prompt_condition=data.get("eval_prompt_condition", "direct"),
         )
 
 
@@ -340,6 +345,13 @@ class App:
             difficulty=DifficultyEnum(difficulty) if difficulty else None,
             split=SplitEnum(split) if split else None,
         )
+        try:
+            prompt_condition = PromptConditionEnum(self.config.eval_prompt_condition)
+        except ValueError as exc:
+            raise ValueError(
+                f"Unknown eval_prompt_condition '{self.config.eval_prompt_condition}'. "
+                f"Must be one of {[c.value for c in PromptConditionEnum]}."
+            ) from exc
         eval_config = EvaluationConfig(
             timeout_seconds=self.config.eval_timeout_seconds,
             max_tokens=self.config.eval_max_tokens,
@@ -347,6 +359,7 @@ class App:
             parallel_workers=self.config.eval_parallel_workers,
             rate_limit_per_minute=self.config.eval_rate_limit_per_minute,
             enable_tools=self.config.eval_enable_tools,
+            prompt_condition=prompt_condition,
         )
 
         try:
@@ -395,6 +408,7 @@ class App:
                         if (scenario and scenario.counterfactual_role)
                         else None
                     ),
+                    prompt_condition=self.config.eval_prompt_condition,
                     judge_score=sr.judge_score if sr else None,
                     judge_reasoning=sr.judge_reasoning if sr else None,
                     tool_invocations=r.tool_invocations,

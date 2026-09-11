@@ -96,6 +96,30 @@ class CounterfactualRoleEnum(Enum):
     VARIANT = "variant"
 
 
+class PromptConditionEnum(Enum):
+    """Prompting condition for an evaluation run (paper §5.2).
+
+    - direct:     the model receives the scenario, question, and answer format
+                  with a concise instruction to select the best action. No
+                  reasoning is elicited. (Default.)
+    - deliberate: a generic 'think step by step' instruction is added before
+                  the answer. Approximates an unstructured deliberation
+                  condition. (Native provider reasoning-mode toggling is a
+                  documented follow-up; support varies and hidden CoT is not
+                  scored.)
+    - scaffold:   a fixed structured organizational-reasoning checklist is
+                  added (operative entity, authoritative evidence, governing
+                  policy/precedent + effective date, approval authority,
+                  temporal state) before the answer.
+
+    All conditions preserve the answer format and never leak the gold answer,
+    category, or rationale.
+    """
+    DIRECT = "direct"
+    DELIBERATE = "deliberate"
+    SCAFFOLD = "scaffold"
+
+
 class RunStatusEnum(Enum):
     """Status of an evaluation run."""
     PENDING = "pending"

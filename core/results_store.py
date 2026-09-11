@@ -173,6 +173,8 @@ class ScoredResultRecord:
     domain: str = ""
     difficulty: str = ""
     split: str = ""                          # dev | core_test | challenge | counterfactual | holdout
+    # Prompting condition (§5.2): direct | deliberate | scaffold.
+    prompt_condition: str = "direct"
     # Counterfactual pair linkage — only populated for CF-split records.
     # Together these let calculate_counterfactual_metrics group per-scenario
     # results into pairs without re-loading the scenario definitions.
@@ -512,6 +514,7 @@ class ResultsStore:
                 "domain": sr.domain,
                 "difficulty": sr.difficulty,
                 "split": sr.split,
+                "prompt_condition": sr.prompt_condition,
                 "counterfactual_pair_id": sr.counterfactual_pair_id,
                 "counterfactual_role": sr.counterfactual_role,
                 "tool_invocations": tool_trace,

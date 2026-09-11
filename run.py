@@ -205,6 +205,15 @@ def main():
     parser.add_argument("--split",
                         choices=["dev", "core_test", "challenge", "counterfactual", "holdout"],
                         help="Filter scenarios by evaluation split")
+    parser.add_argument("--condition", choices=["direct", "deliberate", "scaffold"],
+                        default=None,
+                        help="Prompting condition (§5.2). When explicitly passed (incl. "
+                             "'direct'), results are written to results/conditions/"
+                             "<condition>/ so the three conditions are colocated and "
+                             "comparable. Omit it entirely for the canonical results/ run.")
+    parser.add_argument("--manifest", default=None,
+                        help="Run only scenarios listed in a validation manifest "
+                             "(validation/manifests/*.json).")
     parser.add_argument("--scenario", action="append", default=None,
                         help="Run specific scenario file(s). Can be repeated: --scenario 005_*.json --scenario 001_*.json")
     parser.add_argument("--scenarios-dir", default=str(DEFAULT_SCENARIOS_DIR),
@@ -226,12 +235,27 @@ def main():
     else:
         app_config = AppConfig.from_env()
 
+    # CLI --condition overrides the configured prompting condition (§5.2).
+    if args.condition:
+        app_config.eval_prompt_condition = args.condition
+
     app = App(app_config)
 
     # ── Load scenarios ────────────────────────────────────────────
     scenarios_dir = Path(args.scenarios_dir)
 
-    if args.scenario:
+    if args.manifest:
+        # Load only the scenarios listed in a validation manifest (by filename).
+        manifest = json.loads(Path(args.manifest).read_text())
+        wanted = {item["scenario_key"] for item in manifest.get("items", [])}
+        all_scenarios = load_scenarios(scenarios_dir)
+        raw_scenarios = [s for s in all_scenarios if s.get("_source_file") in wanted]
+        missing = wanted - {s.get("_source_file") for s in raw_scenarios}
+        if missing:
+            print(f"  ⚠ {len(missing)} manifest scenario(s) not found on disk")
+        print(f"Loaded {len(raw_scenarios)}/{len(wanted)} manifest scenario(s) "
+              f"from {args.manifest}\n")
+    elif args.scenario:
         # Load specific scenario files (supports glob patterns)
         raw_scenarios = []
         for pattern in args.scenario:
@@ -381,8 +405,18 @@ def main():
         print("  No results yet.")
 
     # ── Export results ────────────────────────────────────────────
-    results_dir = _ROOT / "results"
-    results_dir.mkdir(exist_ok=True)
+    # Direct-condition runs go to results/; non-direct conditions go to
+    # results/conditions/<condition>/ so they never collide with the
+    # direct-condition leaderboard (build_results_table globs results/*.json).
+    # When --condition is explicitly passed (including 'direct'), colocate the
+    # run under results/conditions/<condition>/ so the RQ3 comparison reads all
+    # three conditions from the same place. With no --condition, the run is the
+    # canonical results/ headline run.
+    if args.condition:
+        results_dir = _ROOT / "results" / "conditions" / args.condition
+    else:
+        results_dir = _ROOT / "results"
+    results_dir.mkdir(parents=True, exist_ok=True)
     for entry in lb:
         run_id = entry["run_id"]
         export = app.export_results(run_id, "json")

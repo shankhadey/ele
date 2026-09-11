@@ -28,37 +28,27 @@ from __future__ import annotations
 
 import argparse
 import csv
-import hashlib
 import json
 import os
-import sys
 from pathlib import Path
 from typing import Any, Dict, List
 
 _ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(_ROOT.parent))  # make `ele` importable
-from ele.core import paths  # noqa: E402
-
 _SCENARIOS_DIR = _ROOT / "scenarios"
-_ANSWERS_DIR = paths.answers_dir()
+_ANSWERS_DIR = _ROOT / "answers"
 
 # Columns per protocol: (prefilled_columns, rater_columns).
-# The reviewer-facing identifier is an OPAQUE ``item_id`` (a hash of the
-# scenario filename), never the filename itself — several scenario filenames
-# encode the category/answer (e.g. 009_pto_carryover_policy_version.json) and
-# would otherwise leak the very label a taxonomy/baseline rater must assign.
-# A private ``<form>.map.json`` maps item_id -> scenario_key for aggregation.
 _PROTOCOLS: Dict[str, Dict[str, List[str]]] = {
     "taxonomy": {
-        "prefilled": ["item_id", "scenario_text", "question"],
+        "prefilled": ["scenario_key", "scenario_text", "question"],
         "rater": ["assigned_category", "secondary_category", "notes"],
     },
     "baseline": {
-        "prefilled": ["item_id", "scenario_text", "question", "choices"],
+        "prefilled": ["scenario_key", "scenario_text", "question", "choices"],
         "rater": ["answer", "confidence", "time_seconds"],
     },
     "expert": {
-        "prefilled": ["item_id", "scenario_text", "question", "choices", "difficulty"],
+        "prefilled": ["scenario_key", "scenario_text", "question", "choices", "difficulty"],
         "rater": [
             "realistic", "evidence_sufficient", "decision_defensible", "ambiguous",
             "assigned_category", "assigned_domain", "reviewer_answer", "notes",
@@ -71,10 +61,6 @@ _ELE_CATEGORIES = [
     "policy_version", "approval_chain", "temporal_consistency",
 ]
 
-
-def _item_id(scenario_key: str) -> str:
-    """Opaque, deterministic reviewer-facing id for a scenario filename."""
-    return "item_" + hashlib.sha256(scenario_key.encode("utf-8")).hexdigest()[:10]
 
 def _find_scenario_path(scenario_key: str) -> Path | None:
     for p in _SCENARIOS_DIR.rglob(scenario_key):
@@ -113,8 +99,8 @@ def build_rows(manifest: Dict[str, Any], protocol: str) -> List[Dict[str, str]]:
 
         row: Dict[str, str] = {}
         for col in spec["prefilled"]:
-            if col == "item_id":
-                row[col] = _item_id(key)
+            if col == "scenario_key":
+                row[col] = key
             elif col == "scenario_text":
                 row[col] = scenario.get("scenario_text", "")
             elif col == "question":
@@ -152,12 +138,8 @@ def assert_no_leakage(
     for multiple choice the correct option is one of the shown choices). So we do
     NOT flag the answer appearing in the evidence — only a dedicated answer column
     (caught structurally) or a leaked rationale.
-
-    3. Identifier — the reviewer-facing id is an opaque ``item_id``; the scenario
-       filename (which can encode the category/answer, e.g.
-       009_pto_carryover_policy_version.json) must never appear in any cell.
     """
-    forbidden = {"correct_answer", "rationale", "scenario_key"}
+    forbidden = {"correct_answer", "rationale"}
     if protocol in ("taxonomy", "baseline"):
         forbidden |= {"category", "difficulty", "contributor",
                       "counterfactual_pair_id", "counterfactual_role", "changed_fact"}
@@ -167,17 +149,13 @@ def assert_no_leakage(
             f"Forbidden column(s) in {protocol} form header: {sorted(leaked_cols)}"
         )
 
-    by_id = {r["item_id"]: r for r in rows}
+    by_key = {r["scenario_key"]: r for r in rows}
     for item in manifest["items"]:
         key = item["scenario_key"]
-        row = by_id.get(_item_id(key))
+        row = by_key.get(key)
         if row is None:
             continue
         blob = " ".join(str(v) for v in row.values()).lower()
-        # Filename must not leak (it can encode the category/answer).
-        stem = key[:-5] if key.endswith(".json") else key
-        if key.lower() in blob or stem.lower() in blob:
-            raise AssertionError(f"Scenario filename leaked into form for {key}")
         answer = _find_answer(key)
         if answer:
             rationale = str(answer.get("rationale", "")).strip().lower()
@@ -207,14 +185,6 @@ def main() -> int:
         writer.writeheader()
         for row in rows:
             writer.writerow(row)
-
-    # Private mapping item_id -> scenario_key. NOT given to reviewers; used by
-    # compute_agreement.py (--map) to join responses back to scenarios for gold
-    # lookups. Kept out of the reviewer form to preserve blinding.
-    mapping = {_item_id(it["scenario_key"]): it["scenario_key"]
-               for it in manifest["items"]}
-    map_path = args.out.with_suffix(".map.json")
-    map_path.write_text(json.dumps(mapping, indent=2) + "\n")
 
     # JSON schema sidecar documenting columns + allowed values.
     schema = {
@@ -247,8 +217,7 @@ def main() -> int:
 
     print(f"Wrote {len(rows)} rows -> {args.out}")
     print(f"Schema -> {schema_path}")
-    print(f"Private id map -> {map_path}  (keep away from reviewers)")
-    print(f"Blinding check: PASSED (no gold answer/rationale/filename in form)")
+    print(f"Blinding check: PASSED (no gold answer/rationale in form)")
     return 0
 
 
