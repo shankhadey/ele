@@ -1,0 +1,25 @@
+{
+  "title": "Ellsworth Retail failed charge: 'dunning will retry' versus a customer heading out the door",
+  "category": "cross_system_synthesis",
+  "domain": "finance_revops",
+  "difficulty": "standard",
+  "scenario_text": "A mid-market Ellsworth Retail customer's $4,200 monthly subscription charge failed again in Stripe. In the #billing Slack channel the billing analyst writes: 'Card declined - probably an expired card. Dunning will auto-retry over the next few days, no action needed on our side.' In Salesforce the account health field still reads 'green' from a check run last quarter.\n\nThe surrounding systems suggest this is not a routine decline. Stripe shows this is the third consecutive failed charge over three weeks, with two prior dunning retries already exhausted, and no updated payment method has been added. Last month the customer self-downgraded from the Business plan to the cheapest Starter tier. In Zendesk, the customer opened a ticket four days ago asking, 'How do we export all of our historical data out of the platform?' And in Amplitude, the account's usage has fallen to nearly zero over the past two weeks - almost no logins and no new records created.\n\nThe analyst's 'dunning will handle it' reading is reasonable for a one-off expired card. But it does not account for the pattern: repeated payment failure with no card update, a plan downgrade, an explicit data-export request, and collapsing usage. Individually, none of these is alarming; together they describe a customer who is disengaging and likely preparing to leave, for whom passive dunning retries will not recover the revenue. You are reviewing failed-payment exceptions. What should you do with this account?",
+  "question": "What should you do with this account?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Grace Whitmore",
+    "title": "Revenue Operations Manager",
+    "organization": "Hollowell Media",
+    "years_experience": 8,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Let Stripe's dunning process keep retrying automatically; most card declines resolve themselves without intervention.",
+    "Immediately suspend the account for non-payment after three failed charges to enforce the billing terms.",
+    "Flag the account as high churn risk and have Customer Success reach out directly: the repeated payment failures combined with the data-export request, the plan downgrade, and near-zero usage signal an intent to leave that passive dunning will not resolve.",
+    "Send a firmer dunning email adding a late-payment penalty to prompt the customer to update their card."
+  ]
+}

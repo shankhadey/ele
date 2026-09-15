@@ -1,0 +1,25 @@
+{
+  "title": "A Freeze Deploy That the Policy Still Permits",
+  "category": "temporal_consistency",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "scenario_text": "A release manager at Bramble Cloud must decide whether a fix can ship during the code freeze, given how a comparable deploy was handled during the last freeze.\n\n**Decision A (2024-06, mid-year freeze)**\nA hotfix was deployed during the freeze to remediate an active Sev-1 outage after the on-call Director approved it. Note: 'Freeze policy permits changes that remediate an active Sev-1 or Sev-2 incident, with Director approval.'\n\n**Current request C (2024-12-20, holiday freeze)**\nAn active Sev-2 incident is degrading checkout latency for a subset of customers. Engineering has a targeted fix ready and the on-call Director has approved the deploy. The team wants to ship before the freeze lifts and points to the June deploy as the model.\n\n**Change Freeze Policy (current, unchanged since 2023-11)**\nDuring a freeze, only changes that remediate an active Sev-1 or Sev-2 incident may deploy, and each requires Director approval. All other changes are blocked until the freeze lifts. The Sev-1/Sev-2-with-Director-approval exception has been in force since November 2023 and was not modified for the holiday freeze.\n\n**Slack \u2014 #releases**\nEng: 'We shipped a hotfix during the June freeze on the Director's OK. This is the same situation \u2014 let's do it again.'\nRelease mgr: 'Let me confirm this is a live Sev-1 or Sev-2 and that the Director has actually signed off. If both hold, the policy still allows it.'\n\nThe incident is a confirmed active Sev-2, and the on-call Director has approved the deploy in writing.",
+  "question": "How should the release manager handle the proposed deploy during the freeze?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Marcus Feld",
+    "title": "Release Engineering Manager",
+    "organization": "Bramble Cloud",
+    "years_experience": 12,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Block the deploy until the freeze lifts, since all changes are frozen during the freeze window.",
+    "Allow the deploy with the Director's approval: it remediates an active Sev-2 incident, which the unchanged freeze policy expressly permits, so the June deploy is valid precedent here.",
+    "Require VP Engineering approval in addition to the Director's, given the sensitivity of deploying during a freeze.",
+    "Deploy only a partial mitigation now and hold the full fix until the freeze lifts as a compromise."
+  ]
+}

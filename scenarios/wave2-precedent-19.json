@@ -1,0 +1,19 @@
+{
+  "title": "Sabbatical Eligibility Claimed Under a Retired Policy",
+  "category": "precedent_exception",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "You are an HR advisor at Stanhope Labs. A research scientist, Elena Marsh, is requesting a 6-week paid sabbatical, stating she has 'earned' it. You must determine eligibility.\n\nActive policy: Sabbatical Program SAB-3, effective 2024-07-01. Paid sabbatical eligibility requires seven continuous years of full-time service; eligible employees accrue a 6-week paid sabbatical at the 7-year mark. SAB-3 replaced SAB-2, which had granted a 4-week paid sabbatical at 5 years of service. SAB-3 explicitly states that sabbatical eligibility and length are governed by the policy in effect on the date the sabbatical is requested, and that prior lower service thresholds do not carry forward.\n\nPrecedent (HR log): 2024-03-15, scientist 'Victor Hale' was granted a 4-week paid sabbatical at 5 years of service, approved under SAB-2. Note: \"5-year milestone sabbatical per SAB-2.\"\n\nCurrent facts: Elena has 5 years and 4 months of continuous full-time service as of her request date of 2025-02-01. She has not reached 7 years. She argues, \"Victor took his sabbatical at 5 years, and I'm past 5 years too, so I qualify for the same thing.\" There is no leadership-approved exception and no other special circumstance on file. HR records confirm Elena's service has been continuous and full-time with no breaks, and her manager supports the request but acknowledges he is unsure which threshold now applies. Elena has not previously taken a sabbatical, and no accrual was carried over from any earlier policy. You need to confirm her eligibility before responding to the request.",
+  "question": "Is Elena eligible for a paid sabbatical now, and why? Give the decision and the controlling reason in one short phrase.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Cordelia Nash",
+    "title": "HR Advisor, People Operations",
+    "organization": "Stanhope Labs",
+    "years_experience": 7,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge"
+}

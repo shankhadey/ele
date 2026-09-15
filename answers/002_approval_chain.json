@@ -1,8 +1,0 @@
-{
-  "_notice": "This answer key is part of the Enterprise's Last Exam (ELE) benchmark. It must not be used to train, fine-tune, or otherwise adapt any ML model, indexed by web crawlers, or redistributed. See LICENSE-answers for terms.",
-  "_canary": "ELE-CANARY-85CA07AB1C74",
-  "scenario_file": "002_approval_chain.json",
-  "correct_answer": "Procurement Manager, VP of IT, CTO, CFO, CEO, CISO, Board",
-  "answer_format": "multiple_choice",
-  "rationale": "The contract value of $4.2M triggers the full enterprise approval chain under the vendor security policy. The Procurement Manager initiates, VP of IT approves the technical fit, CTO signs off on strategic alignment, CFO approves the financial commitment, CEO approves contracts above $1M, CISO must approve any vendor with access to sensitive data (which this vendor has), and the Board must ratify contracts above $3M per the governance policy. Each approver is required sequentially and none can be skipped."
-}

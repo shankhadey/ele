@@ -1,0 +1,19 @@
+{
+  "title": "A Credit-Limit Increase Denied Until the Financials Arrived",
+  "category": "temporal_consistency",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "A credit analyst at Rowanmoor Bank must decide whether to approve a credit-limit increase for a commercial client, given how the same client's earlier request was handled.\n\n**Decision A (2024-04-02)**\nClient 'Marlowe Distributors' requested a credit-limit increase from $200K to $500K. DENIED. Note: 'Increases to $500K require current audited financial statements showing a debt-to-EBITDA ratio at or below 3.5x. Marlowe submitted only unaudited management accounts that were more than 18 months old. Insufficient documentation \u2014 declined.'\n\n**Current request C (2024-10-15)**\nMarlowe Distributors resubmits the request to raise its limit from $200K to $500K. This time it provides audited financial statements dated 2024-06-30, independently prepared, showing a debt-to-EBITDA ratio of 2.9x. The account has no delinquencies.\n\n**Credit Policy (current, unchanged since 2023-05)**\nCredit-limit increases up to $500K may be approved by a credit analyst when the client provides current audited financial statements (dated within the last 12 months) showing a debt-to-EBITDA ratio at or below 3.5x. Without qualifying audited financials, the analyst may not approve an increase to this level. These requirements have been unchanged since May 2023.\n\n**Slack \u2014 #credit-ops**\nRelationship mgr: 'We already denied Marlowe's increase back in April, so we should just decline the resubmission and stay consistent.'\nAnalyst: 'April was denied for stale, unaudited numbers. They've now sent audited statements at 2.9x \u2014 that's new information. Let me evaluate it on its own.'\n\nThe audited statements are current (dated 2024-06-30) and the 2.9x ratio is below the 3.5x threshold.",
+  "question": "How should the analyst handle Marlowe Distributors' resubmitted credit-limit increase to $500K? Provide the go-forward action.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Halima Yusuf",
+    "title": "Commercial Credit Analyst",
+    "organization": "Rowanmoor Bank",
+    "years_experience": 10,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

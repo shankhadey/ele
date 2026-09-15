@@ -1,0 +1,25 @@
+{
+  "title": "Reconciling Three Payment-Term Decisions Made Across a Policy Change",
+  "category": "temporal_consistency",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "A finance agent at Orimoto Systems must decide how to handle a customer's payment-term request, given how similar requests were handled over the past year.\n\n**Decision A (2025-05)**\nCustomer 'Beacon Retail' | 3-year deal | ARR $380K. Requested Net-75 terms (standard is Net-30). Finance approved. Note: 'Seasonal retailer; cash cycle justifies extended terms. Common for retail vertical.'\n\n**Decision B (2025-10)**\nCustomer 'Larkspur Retail' | 2-year deal | ARR $240K. Requested Net-75. Finance DENIED. Note: 'Per updated Cash Management Policy (effective 2025-08-01), terms beyond Net-45 require CFO exception and a minimum ARR of $400K for CFO review. Larkspur is $240K — below threshold.'\n\n**Decision C (today, 2026-06)**\nCustomer 'Cinder Retail' | 3-year deal | ARR $560K. Requesting Net-75. Seasonal retailer, similar profile to Beacon Retail.\n\n**Cash Management Policy (current, effective 2025-08-01)**\nTerms beyond Net-45 require CFO exception review. Only customers with ARR >= $400K are eligible for CFO review. Approved exceptions should document the business justification.\n\n**Slack — #finance**\nAE: 'Beacon got Net-75 in the retail vertical, so Cinder should just get it too.'\nAgent: 'Beacon was before the August policy. Let me check whether Cinder even clears the new threshold.'",
+  "question": "How should the agent handle Cinder Retail's Net-75 request?",
+  "answer_format": "multiple_choice",
+  "choices": [
+    "Approve Net-75 outright, consistent with Decision A — seasonal retailers have an established precedent for extended terms",
+    "Deny Net-75, consistent with Decision B — the current policy restricts terms beyond Net-45",
+    "Escalate to the CFO for exception review — Cinder's $560K ARR clears the $400K threshold under the current policy, and the seasonal-retail justification from Decision A is valid supporting context for the exception",
+    "Offer Net-45 as a compromise without any exception review, since that is the maximum the current policy allows without escalation"
+  ],
+  "contributor": {
+    "name": "Hannah Portela",
+    "title": "Revenue Operations Manager",
+    "organization": "Orimoto Systems",
+    "years_experience": 9,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "batch2.json",
+  "split": "challenge"
+}

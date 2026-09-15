@@ -1,0 +1,19 @@
+{
+  "title": "Erasure Request Colliding With a Statutory Retention Mandate",
+  "category": "precedent_exception",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "You are the records and privacy officer at Palatine Civic Systems, which operates benefits-administration services for a public-sector agency. A former benefits claimant, 'R. Alvear,' has submitted a data-erasure request, and the intake team wants to process the deletion to meet the response clock.\n\nActive policy: Records Retention Standard RRS-2, effective 2024-10-01. Erasure requests are fulfilled within 30 days by a records officer UNLESS the record is subject to a statutory retention mandate - benefits determination records must be retained for seven years from the final determination - in which case erasure is refused for the mandated fields, the requester is informed of the statutory basis, and the records officer documents the refusal. Only records outside any active statutory retention window are eligible for standard erasure.\n\nPrecedent (erasure log): 2025-02-11, claimant 'D. Prewett,' erasure processed in full by a records officer. Note: \"Benefits determination finalized in 2016; seven-year retention window expired; no statutory bar - standard erasure applied.\"\n\nCurrent facts: Alvear's benefits determination was finalized on 2022-05-30, placing the record squarely inside the seven-year statutory retention window (through 2029). The intake team writes: \"We erased Prewett's benefits record with no issue - Alvear is the same kind of claimant record, so let's just delete and close it.\"",
+  "question": "State the decision and the single controlling reason as one short phrase.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Adaeze Whitmore",
+    "title": "Records and Privacy Officer",
+    "organization": "Palatine Civic Systems",
+    "years_experience": 12,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

@@ -1,0 +1,19 @@
+{
+  "title": "One Subscriber, Two Regional Accounts",
+  "category": "entity_resolution",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "Bjornstad Telecom operates separate regional billing systems and a fraud-and-loyalty audit flagged a possible duplicate subscriber. The North region CRM has customer N-33120 \"Erik Solberg,\" mobile line, national ID ending 4471, DOB 1990-11-02, personal email erik.solberg@fastmail.no, address in Tromso, loyalty tier Gold (since 2019). The South region CRM has customer S-88044 \"Erik Solberg,\" broadband line, national ID ending 4471, DOB 1990-11-02, personal email erik.solberg@fastmail.no, address in Kristiansand (recorded after a relocation in 2023), loyalty tier Bronze (created 2023). The two systems never shared a key, so each region minted its own customer ID. Both records share the identical national ID (ending 4471), DOB, and personal email; the addresses differ only because the subscriber moved from the North to the South region. A retention offer requires the subscriber's true loyalty tenure, which should reflect the earliest continuous relationship across regions rather than the newer regional record. The audit must decide whether N-33120 and S-88044 are the same person and, if so, which loyalty start date represents the subscriber's true tenure. The retention team cannot extend the tenure-based offer until the two regional records are confirmed as one subscriber, and the North and South systems will not be technically merged until a later data-platform project, so the audit must make the determination manually. Provide that loyalty start year.",
+  "question": "If the two regional records are the same subscriber, what loyalty start year represents the subscriber's true tenure?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Silje Nordvik",
+    "title": "Customer Data Audit Lead",
+    "organization": "Bjornstad Telecom",
+    "years_experience": 9,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

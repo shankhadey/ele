@@ -1,0 +1,25 @@
+{
+  "title": "Enterprise Discount on a Renewal Under the New DGP",
+  "category": "precedent_exception",
+  "domain": "sales_deal_desk",
+  "difficulty": "hard",
+  "scenario_text": "You are on Deal Desk at Larchmont Software. AE Priya Menon is renewing GlobalMart's ELA at a 42% list discount and wants it approved today. The renewal ACV is $780K.\n\nActive policy: Discount Governance Policy v4.0, effective 2024-07-01. Tiers: 0-25% AE self-approve; 26-35% Regional Sales Director; 36-45% VP Sales AND Deal Desk sign-off (both required); >45% CRO. v4.0 explicitly added the dual VP+Deal Desk requirement for the 36-45% band, which under the prior v3.2 had needed only the Regional Sales Director.\n\nPriya's Slack note: \"Deal Desk \u2014 we already set precedent here. Last year I closed GlobalMart's sister account (GlobalMart EU, $610K ACV) at 41% and RSD Tom Alvarez approved it solo. Same customer family, same discount range. Please just mirror that approval and we're done.\"\n\nDeal-desk log for the cited precedent: GlobalMart EU, closed 2024-03-18, 41% discount, approver Tom Alvarez (Regional Sales Director), policy version at time of decision: DGP v3.2. Notes field: \"Approved per v3.2 tier table.\"\n\nThere is no competitive-threat flag, no strategic-logo exception, and no CRO pre-authorization on the current GlobalMart renewal. Finance confirms the deal is a standard renewal with no unusual terms.\n\nPriya is pushing to close before end of quarter, which is in two days, and argues that re-routing to VP Sales will blow the timeline.",
+  "question": "What should Deal Desk do with the 42% GlobalMart renewal?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Daniel Okafor",
+    "title": "Senior Deal Desk Manager",
+    "organization": "Larchmont Software",
+    "years_experience": 11,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Approve it under Regional Sales Director sign-off alone, mirroring the GlobalMart EU precedent, since it is the same customer family in the same discount band.",
+    "Route it for both VP Sales and Deal Desk sign-off as required by DGP v4.0 for the 36-45% band; the GlobalMart EU precedent was decided under the superseded v3.2 tiers and does not apply.",
+    "Approve it at Deal Desk level only, since Deal Desk sign-off is one of the two v4.0 requirements and that is sufficient to honor precedent.",
+    "Escalate it to the CRO because same-family discount stacking pushes the effective concession above the 45% threshold."
+  ]
+}

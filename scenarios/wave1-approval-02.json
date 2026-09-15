@@ -1,0 +1,25 @@
+{
+  "title": "Two Purchase Orders, One Deliverable, Split Under the Plant Manager Limit",
+  "category": "approval_chain",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "scenario_text": "A procurement-audit agent at Blackwood Manufacturing is checking authorization on a capital spare purchase.\n\n**Procurement Authority Matrix**\n- Up to $25,000: Plant Manager.\n- $25,001-$100,000: Procurement Director, with 3 competitive quotes attached.\n- Above $100,000: VP Operations AND Finance review.\n- Anti-splitting rule: 'A single requisition or deliverable must not be divided across multiple purchase orders to remain under an approval threshold. The aggregate value of POs sharing a requisition or covering one asset determines the required approval tier.'\n\n**Coupa Purchase Orders**\n- PO-8801: Vendor 'MidStates Drive Co.', $24,800, approved by Plant Manager (Rick S.), 2026-05-11.\n- PO-8802: Vendor 'MidStates Drive Co.', $23,900, approved by Plant Manager (Rick S.), 2026-05-11.\n- Both cite requisition REQ-556 and the same line description: 'Conveyor drive motors, Line 3 rebuild (matched pair).'\n\n**Slack #plant-procurement (reconstructed)**\n- Buyer: 'Vendor says the pair is $48,700 together. Want it on one PO?'\n- Rick S. (Plant Manager): 'Split it into two so both stay under my $25K sign-off, otherwise it goes to the Director and we wait on quotes.'\n- Buyer: 'Done - PO-8801 and PO-8802 cut, both approved by you.'\n\nNo Procurement Director approval exists anywhere in Coupa, Slack, or email, and no competitive quotes are attached to REQ-556. The two motors are a matched pair that must be installed together for the Line 3 rebuild, and neither can function on its own.",
+  "question": "What should the audit conclude about the authorization of this purchase?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Rebecca Coyle",
+    "title": "Procurement Compliance Lead",
+    "organization": "Blackwood Manufacturing",
+    "years_experience": 13,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Valid - each purchase order is below the $25,000 Plant Manager limit and was approved by the correct role.",
+    "Valid, but a documentation cleanup is needed - obtain three quotes retroactively and note both POs in the file; the approvals stand.",
+    "Invalid - the two POs share requisition REQ-556 and cover one matched-pair deliverable, so the anti-splitting rule sets the governing value at $48,700, which requires Procurement Director approval plus three competitive quotes; the purchase must be re-authorized at that tier.",
+    "Invalid - the aggregate exceeds the capital threshold and requires VP Operations and Finance review before any PO can be issued."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Sponsorship Divided Into Two Expense Claims to Stay Under the Director Threshold",
+  "category": "approval_chain",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "scenario_text": "A spend-controls audit agent at Marlstone Foods is reviewing employee-submitted expenses tied to a single event.\n\n**Expense / Discretionary Spend Authority Matrix**\n- Up to $5,000 per expense: line Manager.\n- $5,001-$25,000: Department Director, with a business justification.\n- Above $25,000: VP.\n- Anti-splitting rule: 'Expenses funding one event, sponsorship, or purchase must be aggregated; the combined amount determines the approval tier. Claims may not be divided to remain under a threshold.'\n\n**Expense System Records**\n- EXP-5501: Submitter 'Grant H.', $4,750, memo 'Regional Foodservice Expo - booth sponsorship (part 1)'. Approved by Manager (Iris B.), 2026-05-02.\n- EXP-5502: Submitter 'Grant H.', $4,750, memo 'Regional Foodservice Expo - booth sponsorship (part 2)'. Approved by Manager (Iris B.), 2026-05-02.\n- Both reference the same expo, same vendor invoice 'FE-8890', same sponsorship package.\n\n**Slack #marketing-ops (reconstructed)**\n- Grant H.: 'Expo booth sponsorship is $9,500 on one invoice. Do I file it as one claim?'\n- Iris B. (Manager): 'File it as two $4,750 claims so each stays under my $5K sign-off - a $9,500 claim goes to the Director with a justification and that's a hassle.'\n- Grant H.: 'Done - EXP-5501 and EXP-5502, both approved by you.'\n\nBoth claims fund one sponsorship package on one vendor invoice; the aggregate is $9,500.",
+  "question": "What should the audit conclude about the authorization of this spend?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Iris Boyd",
+    "title": "Procurement and Spend Compliance Analyst",
+    "organization": "Marlstone Foods",
+    "years_experience": 7,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Valid - each claim is under the $5,000 Manager limit and was approved by the correct role.",
+    "Valid, but needs a documentation cleanup - attach the business justification retroactively and note that the two claims relate; the manager approvals stand.",
+    "Invalid - both claims fund one sponsorship on one invoice, so the anti-splitting rule aggregates them to $9,500, which requires Department Director approval with a business justification; the spend must be recombined and re-authorized at the Director tier.",
+    "Invalid - the aggregate requires VP approval because event sponsorships are marketing commitments that always escalate to the VP."
+  ]
+}

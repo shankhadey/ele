@@ -1,0 +1,19 @@
+{
+  "title": "Ivybridge Foods credit review: 'always pays' versus a returned payment and downgrade",
+  "category": "cross_system_synthesis",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "Ivybridge Foods' credit team is asked to approve a $540,000 order from Meadowbank Grocers, a five-year wholesale customer, on the customer's standard net-60 terms; the sales director also wants to raise their credit line to fund a planned expansion. In the #credit-risk Slack channel the account's sales director writes: 'Meadowbank has been with us forever and always pays. This is a rock-solid account, let's approve the order and bump the limit so we don't slow them down.'\n\nSeveral systems complicate that view. In NetSuite, Meadowbank's average days-sales-outstanding has climbed from 38 to 71 days over the last quarter, and their current aging shows $210,000 past 60 days. The bank notified accounts receivable yesterday that Meadowbank's most recent ACH payment of $95,000 was returned for insufficient funds, the first NSF on this account in five years. A third-party credit monitor (Dun & Bradstreet) dropped Meadowbank's score two tiers last week and placed them on a 'high delinquency risk' watch, and a news alert flagged that a regional supplier filed a lawsuit against Meadowbank for non-payment.\n\nThe sales director's 'always pays' assessment reflects the account's multi-year history but predates the returned payment and the credit downgrade, both of which landed in the past week. Individually, DSO drift, one late invoice, or a credit-score change might be tolerable. Together - a returned payment, ballooning past-due balances, a two-tier downgrade, and a non-payment lawsuit - they point to a customer in acute financial distress, and approving a large order on open terms would deepen the exposure.\n\nYou own credit risk for this account. What should you do with the $540,000 order?",
+  "question": "What should the credit team do with Meadowbank's $540,000 order?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Marta Cortes",
+    "title": "Director of Credit and Collections",
+    "organization": "Aldworth Foods",
+    "years_experience": 14,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge"
+}

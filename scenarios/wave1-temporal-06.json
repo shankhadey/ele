@@ -1,0 +1,25 @@
+{
+  "title": "A Code-Freeze Exception That No Longer Exists",
+  "category": "temporal_consistency",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "scenario_text": "A release manager at Tarrington Labs must decide whether a fix can ship during the end-of-quarter code freeze, given how a comparable fix was handled during the last freeze.\n\n**Decision A (2023-12, Q4 freeze)**\nA Sev-3 bug fix (minor UI defect, no customer data impact) was deployed during the freeze after the engineering director signed off. Note: 'Freeze policy at the time allowed Sev-3 fixes to deploy with director approval.'\n\n**Current request C (2024-03-27, Q1 freeze)**\nA Sev-3 fix (cosmetic layout issue in an admin console) is ready. The team wants to deploy before the freeze lifts and has asked the director to approve it 'like last time.'\n\n**Code Freeze Policy (current, updated 2024-02, in force for this freeze)**\nDuring an end-of-quarter freeze, only Sev-1 and Sev-2 fixes may deploy. Sev-3 and lower fixes may NOT deploy during the freeze under any approval level and must wait until the freeze lifts. The prior Sev-3-with-director-approval exception was removed in the February update. A genuine severity reclassification to Sev-2 (with the criteria met) is the only route to deploy a currently-Sev-3 issue.\n\n**Slack \u2014 #releases**\nEng: 'We shipped a Sev-3 in December's freeze with the director's sign-off. Let's get the same approval and push this.'\nRelease mgr: 'December was under the old freeze policy. The Sev-3 exception got removed in February \u2014 director sign-off won't unlock it now.'\n\nThe fix is genuinely cosmetic and does not meet Sev-2 criteria. No reclassification is warranted on the merits.",
+  "question": "How should the release manager handle the Sev-3 fix during the current freeze?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Nikhil Advani",
+    "title": "Release Engineering Manager",
+    "organization": "Tarrington Labs",
+    "years_experience": 12,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Deploy the Sev-3 fix with engineering director approval, exactly as was done during the December freeze.",
+    "Hold the Sev-3 fix until the freeze lifts, because the February update removed the Sev-3-with-director-approval exception and no approval level can unlock a Sev-3 deploy during the freeze.",
+    "Obtain director approval and, if the director hesitates, escalate to the VP of Engineering to authorize the deploy.",
+    "Deploy a partial hotfix now and ship the remainder after the freeze lifts as a compromise."
+  ]
+}

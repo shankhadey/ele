@@ -1,0 +1,25 @@
+{
+  "title": "Copyleft Dependency in a Shipped Product With Dueling Precedents",
+  "category": "precedent_exception",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "You own open-source governance at Trevelyan Networks. A team wants to add a GPL-licensed library, 'Quillfeather,' into a customer-distributed network appliance firmware to save build time. They want a quick Engineering Director approval.\n\nActive policy: Open Source Software Policy OSS-3, effective 2025-03-01. GPL and AGPL components are prohibited in software distributed to customers; they may be used only for internal-only tooling, and even then require Open Source Program Office (OSPO) plus Legal approval. Any request to use copyleft components in a distributed product is not approvable by an Engineering Director and must be either redesigned to a permissive-licensed alternative or escalated to OSPO and Legal, who may only approve internal-use scoping. OSS-3 replaced OSS-2, which had let an Engineering Director approve GPL libraries that were merely 'dynamically linked' in shipped products.\n\nPrecedent A (OSS approval log): 2024-08-22, GPL library 'Marrowgate' approved by Engineering Director Piotr Vane for a shipped product as 'dynamically linked.' Policy version at decision: OSS-2. Note: \"Dynamic-link GPL approved per OSS-2.\"\n\nPrecedent B (OSS approval log): 2025-04-10, AGPL library request for a distributed service was denied for product use by OSPO and Legal, who approved it only for an internal analytics tool. Policy version at decision: OSS-3. Note: \"Copyleft not permitted in distributed product; internal-only scope approved.\"\n\nCurrent facts: Quillfeather is GPL and would ship inside the customer appliance firmware (a distributed product). The team writes: \"Piotr approved a GPL dynamic-link library for a shipped product before, so an Engineering Director can approve Quillfeather too.\"",
+  "question": "How should the request to use Quillfeather (GPL) in the distributed firmware be handled?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Ophelia Ganesan",
+    "title": "Open Source Governance Lead",
+    "organization": "Trevelyan Networks",
+    "years_experience": 12,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "An Engineering Director may approve it as a dynamically linked GPL component, mirroring the Marrowgate precedent for a shipped product.",
+    "It is not approvable for the distributed product under OSS-3; the team must redesign to a permissive-licensed alternative, or escalate to OSPO and Legal, who could approve copyleft only for internal-only use, following the OSS-3 precedent.",
+    "It is automatically approved because GPL is an OSI-recognized open-source license and therefore always permitted.",
+    "An Engineering Director may approve it provided the team publishes the appliance's full source code to satisfy the GPL."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Iris Cloud incident: 'one noisy tenant' versus a region-wide auth failure",
+  "category": "cross_system_synthesis",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "scenario_text": "At 09:14 UTC Iris Cloud's on-call is paged for elevated login failures. In the #inc-bridge Slack channel the incident commander writes at 09:20: 'This is isolated to one big tenant that's hammering us with a misconfigured client. I don't want to post to the public status page and alarm everyone over a single noisy customer. Keeping it internal for now.'\n\nOther systems say otherwise. In Datadog, authentication error rates are elevated across all tenants in the us-east region, not one, and the token-service dependency is returning 5xx at 18% and climbing. In PagerDuty, three separate services in us-east have paged in the last ten minutes, all downstream of the same token service. In Zendesk, login-failure tickets have arrived from eleven distinct customers in six minutes. And the status pages of two of Iris's own downstream partners have flipped to 'degraded,' citing Iris authentication. The company's SLA commits to public status updates within 15 minutes of a confirmed multi-tenant incident.\n\nEach signal alone is arguable: one tenant can generate noise, 5xx rates fluctuate, and a few tickets cluster by chance. But together - region-wide auth errors, a climbing token-service failure rate, multiple downstream services paging, eleven customers reporting in minutes, and partners already posting degradation - they show a confirmed multi-tenant incident, not one noisy customer, and the SLA clock for public communication is running. The IC's 'single tenant' read predates the region-wide error breakdown and the partner status changes. You are the incident-response lead reviewing the bridge. What should you do?",
+  "question": "What should the incident-response lead do about incident communications?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Renata Alvarez",
+    "title": "Director of Incident Management",
+    "organization": "Thera Cloud Services",
+    "years_experience": 12,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Keep the incident internal and hold off on the status page; the commander attributes it to a single misconfigured tenant.",
+    "Reach out privately to the one large tenant to fix their client configuration and continue monitoring before any public post.",
+    "Declare a public multi-tenant incident and post to the status page now, then notify affected customers: region-wide auth errors, the climbing token-service failure, multiple downstream pages, and partners already reporting degradation confirm broad impact within the SLA communication window.",
+    "Wait until the token-service 5xx rate crosses 50% before posting publicly, to avoid a premature status update."
+  ]
+}

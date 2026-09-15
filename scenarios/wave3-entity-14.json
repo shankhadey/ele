@@ -1,0 +1,25 @@
+{
+  "title": "Same Company Name, Two Different Manufacturers",
+  "category": "entity_resolution",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "scenario_text": "Vestfold Manufacturing is consolidating its supplier master in SAP and a fuzzy-match routine proposes merging two vendors that share the exact legal name \"Precision Components Ltd.\" Vendor V-4400 \"Precision Components Ltd\" is registered in Sheffield, United Kingdom (company number 03219884, VAT GB682114770, remit GBP to a UK bank, category: machined steel brackets, YTD spend GBP 240,000, contact sales@precisioncomponents.co.uk). Vendor V-5100 \"Precision Components Ltd\" is registered in Auckland, New Zealand (company number 1180992, NZBN 9429041220110, remit NZD to a New Zealand bank, category: injection-molded plastics, YTD spend NZD 190,000, contact orders@precisioncomponents.co.nz). The match routine fired at 0.99 because the legal names are byte-for-byte identical. But the two carry different company registration numbers, different tax IDs (UK VAT vs NZ NZBN), different countries, different currencies and banks, different product categories, and different domains and contacts. There is no corporate linkage in D&B; they are unrelated firms that happen to share a common generic name. A junior buyer, seeing identical names, is about to approve the merge to \"clean up the duplicate.\" The buyer notes that both suppliers currently have open purchase orders in flight, one for a steel-bracket shipment due next month and one for a molded-plastics run, so a mistaken merge would immediately entangle two unrelated deliveries and their payment terms under a single vendor record.",
+  "question": "Should the two \"Precision Components Ltd\" vendors be merged?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Bjorn Aalborg",
+    "title": "Supplier Master Data Lead",
+    "organization": "Vestfold Manufacturing",
+    "years_experience": 8,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Yes, merge them, because an identical legal name is conclusive proof of a single supplier recorded twice.",
+    "No, keep them separate; despite identical names they are distinct legal entities in different countries with different registration numbers, tax IDs, banks, and product lines.",
+    "Yes, merge them but keep both bank accounts so payments can go to either country as needed.",
+    "No, but only because the currencies differ; if both billed in the same currency they would be the same vendor."
+  ]
+}

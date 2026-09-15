@@ -1,0 +1,19 @@
+{
+  "title": "Relocation Reimbursement Request Citing a Prior Exception",
+  "category": "precedent_exception",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "You are an HR Business Partner at Pemberton Foods. A newly hired senior analyst, Jordan Blake, is requesting $12,000 in relocation reimbursement. Their offer letter did not include a relocation package.\n\nActive policy: Relocation & Mobility Policy RM-5, effective 2024-01-01. Relocation benefits are provided only when a signed relocation addendum is attached to the offer at the time of hire. Employees hired without a relocation addendum are not eligible for relocation reimbursement, and post-hire relocation requests require a Compensation Committee exception with a documented business justification (e.g., an employer-initiated office move).\n\nJordan's manager forwards a precedent: on 2023-10-04, employee Priya Shah received $9,500 in post-hire relocation reimbursement despite having no addendum. The HR case note reads: \"Approved by VP HR as a one-time equity adjustment because the recruiter verbally promised relocation support and failed to add the addendum \u2014 company error. Documented as a correction of a recruiting mistake; explicitly not a general post-hire relocation entitlement and not to be cited as precedent for voluntary relocations.\"\n\nCurrent facts: Jordan's recruiter confirms no relocation was ever discussed or promised, verbally or in writing. Jordan relocated voluntarily to be closer to the office. There is no employer-initiated move. The manager argues, \"We paid Priya without an addendum, so Jordan should get the same treatment \u2014 it's only fair.\"",
+  "question": "Is Jordan eligible for relocation reimbursement, and why? Give the decision plus the controlling reason in one short phrase.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Regina Alcott",
+    "title": "Senior HR Business Partner",
+    "organization": "Pemberton Foods",
+    "years_experience": 10,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge"
+}

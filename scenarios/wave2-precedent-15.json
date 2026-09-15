@@ -1,0 +1,25 @@
+{
+  "title": "Business-Class Travel Under the Tightened T&E Threshold",
+  "category": "precedent_exception",
+  "domain": "other",
+  "difficulty": "hard",
+  "scenario_text": "You administer travel approvals at Osgood Systems. A sales director, Tomas Vega, has booked a business-class fare for a 6-hour transcontinental flight and wants it approved for reimbursement. He is citing a colleague's trip.\n\nActive policy: Travel & Expense Policy TE-4, effective 2025-01-01. Air travel is economy by default. Business-class fares are reimbursable only for flights with a scheduled duration over 8 hours, OR with advance written VP approval for shorter flights. TE-4 raised the automatic business-class duration threshold to over 8 hours from the prior over-5-hours rule under TE-3, and it also added the VP-approval route for shorter flights.\n\nPrecedent (expense log): 2024-09-22, employee 'Renata Cho' was reimbursed for a business-class fare on a 6-hour flight, approved by her manager. Policy version at decision: TE-3. Note: \"Over 5 hours; business class allowed per TE-3, manager approved.\"\n\nCurrent facts: Tomas's flight is 6 hours. He obtained his manager's verbal OK but has no advance written VP approval. His stated reason is \"I need to be rested for the client meeting.\" Tomas argues, \"Renata flew business on a 6-hour flight last year with just her manager's sign-off, so mine should be reimbursable the same way.\" The booking was made two days ago and has not yet been expensed; the itinerary confirms a single nonstop segment of roughly six hours. No VP was consulted before booking, and there is no medical accommodation or other special circumstance on file. Finance has flagged the fare for review and asked you to determine whether it can be reimbursed as booked.",
+  "question": "Is Tomas's business-class fare reimbursable as booked?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Harriet Beaumont",
+    "title": "Travel and Expense Program Manager",
+    "organization": "Osgood Systems",
+    "years_experience": 8,
+    "domain_expertise": "other"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Yes; a 6-hour flight qualifies for business class with manager approval, mirroring the Renata Cho precedent.",
+    "No; under TE-4 a 6-hour flight is business-class-eligible only with advance written VP approval, which Tomas does not have, so as booked it is reimbursable only at economy fare.",
+    "Yes; business class is always reimbursable for sales directors regardless of flight duration.",
+    "No; business class is never reimbursable at Osgood Systems for domestic flights under any circumstances."
+  ]
+}

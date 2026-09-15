@@ -1,0 +1,19 @@
+{
+  "title": "Redeeming Banked SLA Credits After a Credit Cap Was Introduced",
+  "category": "policy_version",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "Mensa Cloud issues SLA service credits under its Service Credit Policy.\n\nVersion 1 (in effect through 2024-12-31): \"SLA breaches earn service credits with no cap on accumulation; credits carry indefinitely and are redeemable against future invoices.\"\n\nVersion 2 (effective 2025-01-01): \"Service credits earned are capped at 10% of the monthly recurring charge (MRC) per calendar quarter; unredeemed credits expire 12 months after issuance.\" v2 includes a transition clause: \"Credits accrued through December 31, 2024 are frozen as a protected balance that carries without expiry and is not subject to the quarterly cap. Credits earned on or after January 1, 2025 are subject to the 10%-of-MRC quarterly cap and the 12-month expiry. Redemptions draw first from newly earned (post-2024) credits, then from the frozen balance.\"\n\nThe billing/credit ledger for customer Blue Harbor shows: Frozen protected balance as of 2024-12-31 = $8,000; MRC = $20,000. In Q1 2025, breach events would nominally earn $3,500 in credits. On 2025-03-20 the customer redeemed $2,500 against an invoice.\n\nA customer success operations analyst emails billing on 2025-03-31: \"Closing Blue Harbor's Q1 credits. They had $8,000 banked from last year, Q1 breaches came to $3,500 nominal, and they redeemed $2,500 in March. What redeemable balance is left, and how is it split between the old and new buckets?\"\n\nUsing the policy history, the transition clause, and the ledger, determine the remaining redeemable credit balance and its allocation.",
+  "question": "After Q1 2025, what redeemable credit balance remains for Blue Harbor, and how is it allocated?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Tomas Herrera",
+    "title": "Customer Success Operations Lead",
+    "organization": "Mensa Cloud",
+    "years_experience": 10,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

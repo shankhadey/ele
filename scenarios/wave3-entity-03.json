@@ -1,0 +1,25 @@
+{
+  "title": "Carve-Out: Which Contracts Move With the Business Unit",
+  "category": "entity_resolution",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "Skagen Energy's legal operations team is updating its contract system after a divestiture. Seller \"Meridian Power Group, Inc.\" (EIN 52-7781200) sold its retail electricity book to buyer \"Aurora Grid Retail LLC\" (EIN 88-4432019) in an asset carve-out closing 2024-05-01. Skagen holds two supply agreements with Meridian: SA-100, a wholesale generation supply contract tied to Meridian's generation fleet, and SA-200, a demand-response services contract that served Meridian's retail customer accounts. The purchase agreement's schedule of assigned contracts (Exhibit C) lists SA-200 among the \"Retail Business Assigned Contracts\" transferred to Aurora Grid Retail LLC by an assignment-and-assumption agreement effective 2024-05-01, and expressly lists SA-100 among \"Excluded Contracts\" retained by Meridian. Skagen's Ironclad repository currently shows both contracts still pointing to counterparty \"Meridian Power Group, Inc.\" A vendor-master update also arrived: Aurora Grid Retail LLC provided a new W-9 (EIN 88-4432019), new remit-to, and new banking (routing 026009593, account ending 3310). Meridian's generation entity retains its original EIN and banking. An analyst proposes reassigning both SA-100 and SA-200 to Aurora because \"the whole relationship moved to the buyer.\" Skagen's AP has already received one invoice under SA-100 from Meridian's retained banking and a separate remittance notice referencing SA-200 from Aurora, and the analyst must reconcile both before the next payment run so that neither obligation is paid to the wrong counterparty.",
+  "question": "How should the two supply agreements be reassigned in the contract and vendor systems?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Henrik Aas",
+    "title": "Contract Lifecycle Manager",
+    "organization": "Skagen Energy",
+    "years_experience": 13,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Reassign both SA-100 and SA-200 to Aurora Grid Retail LLC (EIN 88-4432019), since the divestiture transferred the counterparty relationship to the buyer.",
+    "Leave both SA-100 and SA-200 with Meridian Power Group, Inc., since Skagen was not a party to the purchase agreement and asset sales never move third-party contracts.",
+    "Reassign only SA-200 to Aurora Grid Retail LLC (EIN 88-4432019) per the Exhibit C assignment, and keep SA-100 with Meridian Power Group, Inc. as an Excluded Contract.",
+    "Split each contract in half between Meridian and Aurora because both entities now share the customer base created before the carve-out."
+  ]
+}

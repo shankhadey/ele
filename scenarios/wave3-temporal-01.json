@@ -1,0 +1,19 @@
+{
+  "title": "A Supplier Payment-Term Request Denied for a Missing Discount",
+  "category": "temporal_consistency",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "A procurement analyst at Thornbury Payments must decide whether to move a supplier from the standard Net 60 to accelerated Net 30 payment terms, given how a comparable request was handled earlier this year.\n\n**Decision A (2024-03-11)**\nSupplier 'Halcyon Print Services' requested Net 30 terms. DENIED. Note: 'Supplier offered no early-payment discount and is not designated critical or sole-source. Accelerated terms not justified; kept at Net 60.'\n\n**Current request C (2024-08-27)**\nSupplier 'Verdant Packaging' requests a move to Net 30. Verdant has attached a signed offer of a 2.5% early-payment discount in exchange for the faster terms. Verdant is a routine, non-critical supplier, and no other exceptions are outstanding.\n\n**Supplier Payment-Terms Policy (current, unchanged since 2023-06)**\nSuppliers default to Net 60. Procurement may move a supplier to Net 30 only if the supplier offers an early-payment discount of at least 2% OR the supplier is designated critical or sole-source. Suppliers who meet neither condition remain on Net 60. The 2% discount threshold and the critical-supplier path have been in force since June 2023.\n\n**Slack \u2014 #procurement**\nBuyer: 'We turned down a Net 30 request back in March for a supplier in the same tier, so let's keep Verdant on Net 60 and stay consistent.'\nAnalyst: 'March was denied for a specific reason. Let me check what Verdant is actually offering before I call that a precedent.'\n\nThe March denial rested on the absence of both an early-payment discount and a critical designation. Verdant is offering a 2.5% discount, which clears the 2% threshold.",
+  "question": "How should the analyst handle Verdant Packaging's request to move to Net 30 terms? Provide the go-forward action.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Marisol Reyes",
+    "title": "Procurement Analyst",
+    "organization": "Thornbury Payments",
+    "years_experience": 8,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

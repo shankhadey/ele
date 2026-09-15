@@ -1,0 +1,25 @@
+{
+  "title": "Parent, Subsidiary, and the Duplicate Opportunity",
+  "category": "entity_resolution",
+  "domain": "sales_deal_desk",
+  "difficulty": "hard",
+  "scenario_text": "Belrose Media's deal desk is reviewing a flagged \"duplicate\" opportunity before quarter close. Salesforce shows Account \"Northwind Publishing Group\" (D-U-N-S 08-441-2290, HQ Chicago) with a child account \"Northwind Digital, Inc.\" (D-U-N-S 08-559-7731, HQ Austin) linked via the Parent Account field. Two open opportunities exist: OPP-7781 \"Northwind Publishing Group \u2013 Enterprise Renewal\" ($480,000, close 03-31, on the parent) and OPP-8123 \"Northwind Digital \u2013 New Ad Platform\" ($265,000, close 03-29, on the child). A rep filed a merge request claiming these are the same customer and the pipeline is double-counted. Evidence: both accounts share the same corporate mailing address on file (used for invoicing convenience), and the economic buyer email on both opportunities is cfo@northwind.com. However, Ironclad holds two separate MSAs: one with \"Northwind Publishing Group\" (master services, print+editorial) and a distinct one with \"Northwind Digital, Inc.\" (SaaS ad platform, different signatory, different EIN 36-4477121 vs parent 36-2298004). NetSuite bills the two entities on separate customer IDs with separate POs. The child was formed in 2022 as a wholly-owned digital subsidiary. The renewal (OPP-7781) covers only the print/editorial products under the parent's MSA; the ad platform (OPP-8123) is a net-new SaaS deal under the subsidiary's MSA.",
+  "question": "Should the two opportunities be merged, and how should the pipeline be treated?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Sofia Reyes",
+    "title": "Deal Desk Lead",
+    "organization": "Belrose Media",
+    "years_experience": 8,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Merge both opportunities onto the parent account, because the shared CFO email and mailing address prove it is one buying entity, so pipeline is $480,000 not $745,000.",
+    "Keep both opportunities separate; they are distinct legal entities (different EINs and separate MSAs) in a parent/subsidiary relationship, so total pipeline of $745,000 is correct.",
+    "Delete the subsidiary opportunity OPP-8123 as a duplicate, since a wholly-owned subsidiary's revenue must roll up entirely into the parent record.",
+    "Merge the accounts but keep the opportunities, reparenting OPP-8123 to the parent because the subsidiary is not a real customer of record."
+  ]
+}

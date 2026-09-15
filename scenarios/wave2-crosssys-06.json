@@ -1,0 +1,19 @@
+{
+  "title": "Fordham Media expansion: 'POC went great' versus a flatlined trial",
+  "category": "cross_system_synthesis",
+  "domain": "sales_deal_desk",
+  "difficulty": "hard",
+  "scenario_text": "A $900,000 expansion at Fordham Media is forecast as Commit to close this quarter, with twelve days left; it hinges on the customer adopting a new analytics module after a 30-day proof of concept. In the #forecast Slack channel the AE writes: 'The POC went great, the champion is thrilled, and they're just working through procurement. Keep it in Commit.' In Salesforce the opportunity note from two weeks ago reads 'successful POC, strong momentum.'\n\nNewer signals cut against that. In Pendo, telemetry for the customer's POC workspace shows usage of the new module fell to zero eleven days ago and never recovered; the two evaluators who drove the trial have not logged in since. A Gong call from four days ago captured the customer's data lead saying the module 'is missing the cohort-export capability we told them was a hard requirement, and we're now comparing it against another vendor.' Zendesk holds two POC-period tickets about that exact missing feature, both unresolved. The DocuSign order form the AE prepared was never sent to the customer.\n\nThe AE's 'POC went great' note predates the usage cliff and the Gong call by more than a week and reflects an early, optimistic read. Individually, a usage dip, one critical comment, or an unsent order form might not sink the deal. Together - a POC that flatlined, a stated hard-requirement gap, an active competitive comparison, and no contract in motion - they show the evaluation effectively failed and the expansion cannot land this quarter on its current basis.\n\nYou run deal desk and are scrubbing the Commit category. What should you recommend for this opportunity?",
+  "question": "What should deal desk recommend for this $900,000 expansion?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Theo Ainsworth",
+    "title": "Senior Deal Desk Manager",
+    "organization": "Westmere Media",
+    "years_experience": 9,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge"
+}

@@ -1,0 +1,25 @@
+{
+  "title": "A Renewal Uplift Waiver Across a Straddled Rule",
+  "category": "temporal_consistency",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "A deal desk analyst at Sycamore Grid must decide whether a multi-year contract can waive its annual uplift, given two prior decisions that straddle a rule change.\n\n**Decision A (2024-01-22)**\nCustomer 'Ordell Utilities' | 3-year contract | had a service-credit incident in the prior term. Requested a waiver of the 4% annual uplift. DENIED. Note: 'Under the uplift policy then in effect, uplift waivers were granted only to customers with a clean service record in the prior term. Ordell had a service-credit incident, so the waiver was denied.'\n\n**Decision B (2024-08-19)**\nCustomer 'Pell Energy' | 3-year contract | also had a prior service-credit incident. Requested the same waiver and it was APPROVED. Note: 'Under the revised uplift policy effective 2024-07-01, uplift waivers turn on committed contract term, not service history: any contract of 3 years or longer qualifies for a waiver. Pell qualified on term.'\n\n**Current request C (2024-12-05)**\nCustomer 'Quillon Power' | 3-year contract | had a service-credit incident last term. Requests a waiver of the 4% annual uplift.\n\n**Uplift Waiver Policy (current, effective 2024-07-01)**\nAnnual uplift waivers are granted to any contract with a committed term of 3 years or longer, regardless of prior service history. Service-credit incidents no longer disqualify a customer from a waiver. Term-based qualification has applied since July 1, 2024.\n\n**Slack \u2014 #deal-desk**\nAE: 'We denied Ordell's uplift waiver in January over a service-credit incident, and Quillon had one too. Same denial?'\nAnalyst: 'Ordell was under the old service-history rule. We approved Pell in August on term alone. Let me line Quillon up against the current policy.'\n\nQuillon is a 3-year contract with a prior service-credit incident, just like Pell was.",
+  "question": "How should the analyst handle Quillon Power's uplift-waiver request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Nathaniel Osei",
+    "title": "Deal Desk Analyst",
+    "organization": "Sycamore Grid",
+    "years_experience": 12,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Deny the waiver, consistent with the January denial of Ordell's waiver over a service-credit incident.",
+    "Approve the waiver, because the current rule grants a waiver to any 3-year-or-longer contract regardless of service history \u2014 so the August Pell approval, not the pre-July Ordell denial, is the governing precedent.",
+    "Escalate the waiver to VP Sales, since waiving uplift for a customer with a prior service-credit incident exceeds Deal Desk authority.",
+    "Waive only 2% of the 4% uplift as a compromise given the prior service-credit incident."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "SLA Credit Exception: Does a Goodwill Precedent Set a Binding Rule?",
+  "category": "precedent_exception",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "A customer success manager at Lumen Cloud must decide the SLA credit owed to customer 'Ardent Media' after a multi-service outage, and whether a prior goodwill gesture obligates a larger credit.\n\n**Contract (Ardent Media, Enterprise tier)**\nUptime SLA: 99.9% monthly. Credit schedule: 99.0-99.9% = 5% monthly fee credit; 95.0-98.99% = 15%; below 95.0% = 30%. Credits are the 'sole and exclusive remedy' and must be requested within 30 days. Monthly fee: $40,000.\n\n**Monitoring (Datadog) — last month**\nMeasured uptime for Ardent's production tenant: 98.4%. Root cause: regional dependency failure. The outage window is fully attributable to Lumen (no customer-side or force-majeure exclusion applies).\n\n**Precedent — CRM note, 8 months ago (customer 'Ardent Media')**\n'Outage last month measured 99.2% (5% credit tier). CSM issued a 15% goodwill credit instead of 5% because the AE wanted to protect the upcoming upsell. Approved as one-time goodwill by CS Director. Note: not to be treated as a standing entitlement.'\n\n**Slack — #cs-escalations (today)**\nAE: 'Ardent is asking for 30% again like last time. We gave them 15% before at a lower severity, so 30% now seems consistent.'\nCSM: 'Last time was goodwill, not the schedule. Let me check the actual measured number.'\n\nArdent has submitted the credit request within the 30-day window.",
+  "question": "What SLA credit percentage should Lumen Cloud apply for last month's outage? Answer with the percentage.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Sofia Bernal",
+    "title": "Customer Success Manager",
+    "organization": "Lumen Cloud",
+    "years_experience": 7,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "batch2.json",
+  "split": "challenge"
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Jessamine Labs CVE: 'unused code path' versus live exploitation indicators",
+  "category": "cross_system_synthesis",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "A dependency scanner (Snyk) flags a critical remote-code-execution CVE in a logging library used across Jessamine Labs' services. In the #appsec Slack channel, a senior security engineer triages it: 'I looked at this. We only pull that library in transitively and we don't touch the vulnerable deserialization path. Real-world risk is low for us - I'm setting the Jira ticket to Low and we'll pick it up in normal patch cadence next sprint.' The Jira ticket is duly downgraded.\n\nOther systems complicate that call. In GitHub, a code search shows the library is not merely transitive: a logging utility merged last sprint calls the exact vulnerable API directly, and that utility is deployed to the customer-facing ingestion service. The engineer's mental model predates that merge.\n\nMore urgently, Splunk (the SIEM) shows that one ingestion host began making outbound LDAP/JNDI-style callbacks to an unrecognized external IP starting about 40 minutes ago - a signature consistent with active exploitation of this class of vulnerability. CrowdStrike has raised a medium-severity detection on the same host for an unexpected child process spawned by the service's JVM. Datadog shows a small spike in outbound connections from that host to the same unknown IP.\n\nNo single alert is a confirmed breach on its own: the SIEM callback could theoretically be a scanner, the EDR detection is 'medium,' and the CVE was rated low by a human. But the newer runtime signals directly contradict the 'we don't use the vulnerable path' assumption. You are the on-call security lead reviewing the queue. What should you do?",
+  "question": "What is the appropriate response given the combined signals?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Devin Osei",
+    "title": "Principal Security Incident Responder",
+    "organization": "Brackenridge Cloud",
+    "years_experience": 13,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Leave the Jira ticket at Low priority and patch on the normal cadence next sprint; the senior engineer confirmed the vulnerable code path is not used.",
+    "Schedule the library upgrade as routine dependency hygiene and monitor the scanner for any change in severity.",
+    "Declare a security incident and isolate the affected ingestion host now: the confirmed direct call to the vulnerable API plus the outbound JNDI-style callbacks and the EDR detection indicate probable active exploitation, which overrides the earlier 'unused path' assessment.",
+    "Add a firewall rule blocking the unknown outbound IP and close the CVE ticket, since that stops the observed callback traffic."
+  ]
+}

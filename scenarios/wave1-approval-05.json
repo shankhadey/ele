@@ -1,0 +1,25 @@
+{
+  "title": "Sub-Processor Onboarding With DPO and Security Sign-Off Both Present",
+  "category": "approval_chain",
+  "domain": "compliance_legal",
+  "difficulty": "hard",
+  "scenario_text": "A privacy-compliance audit agent at Edgemont Cloud is validating authorization to add a new data sub-processor.\n\n**Sub-Processor Approval Authority Matrix**\n- Sub-processor that handles NO personal data: Privacy Analyst approval.\n- Sub-processor that processes customer personal data (PII) in an EXISTING approved region: DPO (Data Protection Officer) approval AND Security review, with a completed vendor security questionnaire (SIG) on file.\n- Sub-processor that processes PII in a NEW region not previously approved: DPO approval AND Security review AND General Counsel approval.\n\n**Vendor Onboarding Ticket**\n- VND-330: Add sub-processor 'NimbusQueue' (managed message queue).\n- Data handled: customer PII (contact records). Processing region: EU (an existing approved region on Edgemont's sub-processor register).\n- Approved by (field): 'DPO - Rachel K.'\n- Attachments: SIG questionnaire (completed), Security review report (status: Passed).\n\n**Email / Slack trail (reconstructed)**\n- Security Engineer (2026-04-10): 'SIG reviewed for NimbusQueue, no blocking findings. Security sign-off = Passed. Attached to VND-330.'\n- Rachel K., DPO (2026-04-12): 'Confirmed EU region, already on our register. DPA amendment executed. DPO approval granted.'\n- General Counsel is not in the thread; the region is not new.\n\nEdgemont's sub-processor register, attached to VND-330, confirms the EU is already an approved processing region for customer PII, and the executed DPA amendment is linked in the ticket. Both the Security sign-off and the DPO approval carry timestamps and named approvers, and no new geography is introduced by adding NimbusQueue.",
+  "question": "What should the audit conclude about the authorization of this sub-processor onboarding?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Rachel Kingsley",
+    "title": "Data Protection Officer",
+    "organization": "Edgemont Cloud",
+    "years_experience": 14,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Invalid - the onboarding is missing General Counsel approval, which is required whenever a sub-processor processes customer PII.",
+    "Valid and complete - the sub-processor processes PII in an existing approved region, and both required controls for that tier are satisfied: DPO approval is recorded and the Security review with a completed SIG questionnaire is on file, so authorization is proper.",
+    "Valid, but a documentation cleanup is needed - the DPA amendment should be re-filed and the SIG re-dated before the approval can be relied upon.",
+    "Invalid - adding any external sub-processor requires General Counsel and Board privacy-committee approval, so the onboarding must be escalated before it stands."
+  ]
+}

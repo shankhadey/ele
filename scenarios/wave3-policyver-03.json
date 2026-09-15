@@ -1,0 +1,19 @@
+{
+  "title": "Business-Class Airfare on a Trip Taken Before the T&E Change",
+  "category": "policy_version",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "Cassiopeia Media reimburses employee travel under its Travel & Expense (T&E) Policy.\n\nVersion 3 (in effect through 2025-02-28): \"Business-class airfare is reimbursable for any single flight segment with scheduled duration of 6 hours or more. Meal per diem is $75 per full travel day.\"\n\nVersion 4 (effective 2025-03-01): \"Business-class airfare is reimbursable only for a single flight segment with scheduled duration of 8 hours or more; otherwise economy is reimbursed. Meal per diem is $60 per full travel day.\" v4 includes a transition clause: \"The T&E version in effect on the expense transaction date (the date the expense is incurred) governs reimbursement, regardless of the date the expense report is submitted or approved. Expenses with a transaction date on or before February 28, 2025 are reimbursed under v3.\"\n\nConcur shows expense report ER-8890 (employee: J. Alvarez) with two line items: (1) Airfare, business class, $2,410, single flight segment scheduled duration 7 hours 5 minutes, Transaction Date 2025-02-26; (2) Meals, 2 full travel days, Transaction Dates 2025-02-26 and 2025-02-27. The report was submitted 2025-03-10 and is pending manager approval.\n\nThe manager messages HR shared services on 2025-03-11: \"Reviewing ER-8890. The business-class ticket is a 7-hour flight and the trip was late February, but it was submitted in March after the new 8-hour rule. Is the business-class fare reimbursable, and what per diem rate applies to the two meal days?\"\n\nUsing the policy history, the transition clause, and the Concur record, determine whether the business-class airfare is reimbursable and the applicable per diem rate.",
+  "question": "Is the business-class airfare on ER-8890 reimbursable, and what per diem rate applies to the two travel days?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Nadia Brooks",
+    "title": "Total Rewards Analyst",
+    "organization": "Cassiopeia Media",
+    "years_experience": 8,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

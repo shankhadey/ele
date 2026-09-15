@@ -1,0 +1,19 @@
+{
+  "title": "Pyxis Learning go-live stall: 'customer is just slow' versus a hard integration block",
+  "category": "cross_system_synthesis",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "Pyxis Learning sold a district-wide rollout to a large school system, with a contractual go-live tied to the start of term in 12 days and a payment milestone attached to activation. In the #onboarding Slack channel the implementation manager writes: 'The district is just slow to move - they always are with procurement. Rosters will trickle in. I'm confident we hit go-live; this is normal public-sector pace.'\n\nOther systems show a specific blocker, not general slowness. In the onboarding tracker (Asana), the 'SIS roster sync' task has been blocked for nine days, and every downstream task depends on it. In Zendesk, the district's IT lead filed a ticket stating their student information system requires a signed data-privacy addendum (a state student-data-privacy law) before they will open the API - and that addendum is not in the contract. In the product logs, zero rosters have synced and no district admin has completed SSO setup. In the CRM, the deal's legal contact emailed: 'Our counsel will not authorize the data feed without the state-required privacy addendum executed first.' Legal has not yet been looped in.\n\nEach fact could look like ordinary onboarding drag. But together - a nine-day hard block on the foundational sync task, an explicit legal precondition rooted in state law, zero technical progress, and counsel refusing to open the feed - they show go-live is blocked on a contract/legal gap, not customer pace, and no amount of nudging rosters will clear it. The implementation manager's 'they're just slow' read predates the district counsel's email. You own this onboarding. What is the single most important action to take now?",
+  "question": "What single action should be taken now to unblock go-live?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Deborah Nkemelu",
+    "title": "Head of Implementation",
+    "organization": "Elpis EdTech",
+    "years_experience": 9,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

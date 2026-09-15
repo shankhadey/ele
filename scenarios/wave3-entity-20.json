@@ -1,0 +1,19 @@
+{
+  "title": "Two Employees, One Name: The False Merge",
+  "category": "entity_resolution",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "Hedmark Retail Group runs a deduplication pass on its HRIS after acquiring a regional chain and a match rule proposes merging two employee records that share a common name. Workday record E-21100 is \"Maria Johansen,\" national ID ending 2277, DOB 1992-07-14, hire date 2021-03-01, work location Oslo store, personal email maria.j92@gmail.com, bank account ending 5510. Workday record E-66540 is \"Maria Johansen,\" national ID ending 9903, DOB 1988-01-30, hire date 2024-05-15 (came in through the acquisition), work location Bergen distribution center, personal email mjohansen.bergen@outlook.com, bank account ending 8842. The match rule fired at 0.86 on the identical full name and a shared employer. But the two carry different national IDs (2277 vs 9903), different dates of birth (1992 vs 1988), different personal emails, different work locations, and different bank accounts. \"Maria Johansen\" is a common name in the region. An overzealous data steward is about to approve the merge to reduce the duplicate count, which would combine two different people's pay, tax, and benefits into one record. The steward's dashboard rewards reducing the duplicate count, but a payroll run is scheduled for the end of the week, so an incorrect merge would surface immediately as a paycheck and tax-reporting error affecting two different people. Provide the correct action as a short directive.",
+  "question": "What is the correct action for the two \"Maria Johansen\" records?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Kari Ulriken",
+    "title": "HRIS Data Governance Lead",
+    "organization": "Hedmark Retail Group",
+    "years_experience": 8,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

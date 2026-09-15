@@ -25,8 +25,11 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 _ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(_ROOT.parent))  # make `ele` importable
+from ele.core import paths  # noqa: E402
+
 SCENARIOS_DIR = _ROOT / "scenarios"
-ANSWERS_DIR = _ROOT / "answers"
+ANSWERS_DIR = paths.answers_dir()
 
 GITHUB_API = "https://api.github.com/repos/shankhadey/ele/contents/submissions"
 

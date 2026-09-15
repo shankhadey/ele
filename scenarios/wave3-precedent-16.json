@@ -1,0 +1,25 @@
+{
+  "title": "Change-Freeze Deploy With Two Competing Same-Policy Precedents",
+  "category": "precedent_exception",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "You are the release manager at Caelum Analytics during a declared production change freeze. A product team wants to ship a new dashboard feature to production now, citing a customer commitment, and points to a deploy that was allowed during the same freeze last week.\n\nActive policy: Change Management Standard CMS-4, effective 2025-01-01 (unchanged all year). During a declared freeze, only two kinds of change may deploy: (1) an emergency fix for an active Sev1/Sev2 production incident, approved by the Director of Engineering plus the on-call Incident Commander; and (2) a non-emergency change that has obtained a freeze-exception waiver from the VP of Engineering with a documented, dated business justification. No other deploys are permitted until the freeze lifts.\n\nPrecedent A (change log): 2025-06-02, during this freeze, a critical authentication security patch was deployed, approved by the Director of Engineering and the on-call Incident Commander. Note: \"Emergency fix for active Sev2; deployed under the emergency path.\"\n\nPrecedent B (change log): 2025-06-05, during this freeze, a marketing-page feature deploy was blocked and required a VP freeze-exception waiver before it shipped two days later. Note: \"Non-emergency feature; VP waiver obtained per CMS-4.\"\n\nCurrent facts: The dashboard feature is a planned enhancement; there is no active Sev1/Sev2 incident. No VP waiver has been requested. The team writes: \"A deploy went out during the freeze last week with just Director and IC sign-off, so let's do the same for our feature.\"",
+  "question": "What is the correct handling of the dashboard feature deploy during the freeze?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Callum Devereux",
+    "title": "Release Manager",
+    "organization": "Caelum Analytics",
+    "years_experience": 13,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Approve it with Director of Engineering and on-call Incident Commander sign-off, mirroring the security-patch deploy from last week.",
+    "Do not deploy under the emergency path (no active Sev1/Sev2 exists); the governing precedent is the blocked feature deploy, so obtain a VP of Engineering freeze-exception waiver with a documented business justification, or wait for the freeze to lift.",
+    "Approve it, because two prior deploys during this same freeze establish that freeze deploys are routinely permitted.",
+    "Approve it because a signed customer commitment automatically qualifies the change as a Sev2 incident under CMS-4."
+  ]
+}

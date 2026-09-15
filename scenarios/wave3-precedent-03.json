@@ -1,0 +1,25 @@
+{
+  "title": "Skipping Security Review for a PHI-Handling Vendor",
+  "category": "precedent_exception",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "You are the third-party risk lead at Cordus Health, a healthcare analytics company. The product team wants to onboard a new subprocessor, 'Kestrel Data Labs,' that will ingest and transform protected health information (PHI), and they want to skip the full security review to hit a launch date.\n\nActive policy: Third-Party Security Review Policy TSR v3, effective 2025-01-15. Any vendor that will access, store, or process PHI must complete a full security review before contract signature. The only waiver path is an expedited waiver for vendors that hold a current HITRUST certification AND will have no PHI access, approved by the CISO. TSR v3 removed the 'low-risk self-attestation' shortcut that existed under TSR v2, which had let a security analyst waive review for vendors below a spend threshold.\n\nPrecedent (risk register): 2024-08-19, vendor 'Pallett Integrations' onboarded with review waived via analyst self-attestation. Policy version at decision: TSR v2. Note: \"Below spend threshold; self-attestation shortcut applied.\"\n\nCurrent facts: Kestrel will directly process PHI, holds no HITRUST certification, and the annual spend is modest. The product lead argues: \"We waived Pallett last year with a quick self-attestation and it was fine. Kestrel's spend is even smaller, so let's do the same and move on.\"",
+  "question": "How should the Kestrel Data Labs onboarding be handled?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Priya Ramanathan",
+    "title": "Third-Party Risk Lead",
+    "organization": "Cordus Health",
+    "years_experience": 11,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Waive the review via analyst self-attestation, mirroring the Pallett Integrations precedent, since Kestrel's spend is below the threshold.",
+    "Require a full security review before contract signature, because TSR v3 mandates it for any PHI-handling vendor; the self-attestation shortcut was removed with v2, and Kestrel qualifies for no waiver path.",
+    "Grant the CISO expedited waiver, because a low-spend vendor presents limited risk regardless of PHI access.",
+    "Allow onboarding now and schedule the security review to complete within 90 days after go-live."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "A Defective-Goods Refund the Policy Still Grants",
+  "category": "temporal_consistency",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "A support lead at Maplethorpe Retail must decide whether to approve a refund outside the standard 30-day window, given how a comparable refund was handled last month.\n\n**Decision A (2024-06-12)**\nCustomer 'Ida Brenner' requested a refund 40 days after purchase for a product that failed due to a manufacturing defect. APPROVED for $320 at the agent level. Note: 'Defective-goods refunds are allowed up to 60 days, and agents may approve up to $500. Within policy \u2014 approved.'\n\n**Current request C (2024-07-18)**\nCustomer 'Owen Radley' requests a refund 45 days after purchase for a product with a confirmed manufacturing defect (verified by the returns team). The refund amount is $410. The account is otherwise ordinary and no other issues are flagged.\n\n**Refund Policy (current, unchanged this year)**\nStandard refunds are available within 30 days. Refunds for products with a confirmed manufacturing defect are available up to 60 days from purchase, and agents may approve defective-goods refunds up to $500 without escalation. Amounts above $500 require supervisor approval. The 60-day defective-goods window and the $500 agent ceiling have not changed this year.\n\n**Slack \u2014 #cx-support**\nAgent: 'We refunded a defective item past the 30-day mark just last month for Ida. Owen's looks like the same situation \u2014 can we just do the same?'\nLead: 'Let me confirm Owen's defect is verified and the amount is under the agent ceiling. If it is, this is a clean repeat.'\n\nOwen's defect is confirmed, he is at day 45 (within the 60-day window), and $410 is below the $500 ceiling.",
+  "question": "How should the lead handle Owen Radley's refund request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Priya Nandakumar",
+    "title": "Customer Support Team Lead",
+    "organization": "Maplethorpe Retail",
+    "years_experience": 6,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Deny the refund because it falls outside the standard 30-day refund window.",
+    "Approve the $410 refund at the agent level: the defect is confirmed, day 45 is within the 60-day defective-goods window, and $410 is under the $500 ceiling, so the June approval is valid precedent under the unchanged policy.",
+    "Escalate the refund to a supervisor, given that it falls outside the standard 30-day window.",
+    "Offer a partial refund or store credit as a compromise for a purchase this far past 30 days."
+  ]
+}

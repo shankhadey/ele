@@ -1,0 +1,25 @@
+{
+  "title": "PHI Sub-Processor Onboarded Without Privacy, Legal, or Security Sign-Off",
+  "category": "approval_chain",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "A vendor-governance audit agent at Chalcedony Pharma is reviewing a newly onboarded data vendor.\n\n**Vendor Onboarding Authority Matrix**\n- Standard vendor (no access to company or customer data): Procurement approval.\n- Vendor processing personal data (PII): add Privacy Officer approval and a Legal-executed Data Processing Agreement (DPA).\n- Vendor processing protected health information (PHI): add ALL of the above PLUS a Security assessment (SIG/BitSight) and a signed HIPAA Business Associate Agreement (BAA) before any data is shared.\n\n**Vendor Onboarding Record**\n- VEN-4180: Vendor 'Slaterock Data Labs', service 'de-identification and analytics on patient claims data'.\n- Data classification (system field): 'PHI - patient claims incl. diagnosis codes'.\n- Approved by (field): 'Procurement - Hal M.' Status: 'Active - production data feed enabled 2026-06-20.'\n- Privacy Officer approval: (empty). Legal DPA: (empty). Security assessment: (empty). BAA: (empty).\n\n**Slack #vendor-onboarding (reconstructed)**\n- Analyst: 'Slaterock needs the claims feed to start their de-id work. Procurement done?'\n- Hal M. (Procurement): 'Approved on my end, turn on the feed so they can start.'\n- Analyst: 'Do we need Privacy and a BAA since it's PHI?'\n- Hal M.: 'They de-identify it, so it's probably fine. We can paper the BAA later.'\n\nThe vendor receives PHI (patient claims with diagnosis codes), and the feed is live. No Privacy approval, DPA, Security assessment, or BAA exists.",
+  "question": "What should the audit conclude about the authorization of this vendor onboarding?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Hallie Moreno",
+    "title": "Privacy and Vendor Risk Manager",
+    "organization": "Chalcedony Pharma",
+    "years_experience": 12,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Valid - Procurement approved the vendor, and because Slaterock de-identifies the data the PHI controls do not apply.",
+    "Valid, but needs a documentation cleanup - execute the BAA and DPA retroactively while the feed keeps running; the onboarding decision itself was sound.",
+    "Invalid - a vendor receiving PHI requires Privacy Officer approval, a Legal-executed DPA, a Security assessment, and a signed BAA before data is shared; none exist, so a live PHI feed was enabled without required authorization and must be suspended until those approvals are obtained.",
+    "Invalid - onboarding any data vendor requires full Board of Directors approval and an on-site audit before a contract can be signed."
+  ]
+}

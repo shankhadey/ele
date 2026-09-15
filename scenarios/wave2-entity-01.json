@@ -1,0 +1,25 @@
+{
+  "title": "Merger of Equals, One Authoritative Successor",
+  "category": "entity_resolution",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "Corfe Media's deal desk is closing a complex account before quarter-end. In 2024-02 two former customers completed a merger of equals: \"Vantage Broadcasting Corp\" (Salesforce account A-3310, EIN 45-2210981, D-U-N-S 07-118-4432) and \"Signal Networks LLC\" (account A-4890, EIN 82-6640117, D-U-N-S 09-556-2210). The combined company reincorporated in Delaware as \"VantageSignal Media, Inc.\" with a newly issued EIN 88-3391045 and a single D-U-N-S 11-902-3345, effective 2024-02-15. Two renewal opportunities are open: OPP-5501 (\"Vantage - Ad Server Renewal,\" $360,000, close 03-31, on A-3310) and OPP-5620 (\"Signal - Analytics Renewal,\" $240,000, close 03-31, on A-4890). Ironclad now holds a single novation agreement, signed 2024-02-20, stating that VantageSignal Media, Inc. assumes all prior contracts of both predecessor entities, superseding the two former MSAs, under one master order form and one consolidated billing profile. NetSuite has provisioned a new customer record C-9007 for VantageSignal Media, Inc. and flagged the two legacy records for closure. The account executive wants to leave both opportunities on the old accounts \"because that's where the pipeline history lives,\" and is unsure which legal name, EIN, and DUNS should be authoritative going forward. The customer's procurement contact confirmed by email from contracts@vantagesignal.com that all future POs will be issued under the new entity and that the predecessor entities will be dissolved after wind-down.",
+  "question": "Which entity and identifiers should be treated as authoritative for the renewals, and how should the two opportunities be handled?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Nadia Farrow",
+    "title": "Deal Desk Manager",
+    "organization": "Corfe Media",
+    "years_experience": 12,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Keep the two opportunities on legacy accounts A-3310 and A-4890 with their original EINs, since pipeline history and the original MSAs still govern the renewals.",
+    "Reparent both opportunities to the new VantageSignal Media, Inc. record (C-9007, EIN 88-3391045, DUNS 11-902-3345), because the novation agreement makes the merged entity the authoritative successor for all prior contracts.",
+    "Merge everything onto Vantage Broadcasting (A-3310) as the surviving entity, since it was the larger customer and its EIN 45-2210981 should be retained.",
+    "Close both opportunities as lost and create one new opportunity under a placeholder account until the predecessor entities are formally dissolved."
+  ]
+}

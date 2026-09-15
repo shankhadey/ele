@@ -1,0 +1,25 @@
+{
+  "title": "Master Agreement Signed by General Counsel Alone Above the Co-Signature Threshold",
+  "category": "approval_chain",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "A contracts-audit agent at Basalt Dynamics is validating signature authority on an executed master services agreement.\n\n**Contract Signature Authority Matrix**\n- Total contract value (TCV) up to $250,000: Director of Legal Operations may sign.\n- $250,001-$1,000,000: General Counsel may sign, with a risk memo in the CLM.\n- Above $1,000,000: General Counsel AND CEO must both sign.\n- Override: ANY contract containing non-standard indemnity or an uncapped-liability clause requires General Counsel AND CEO co-signature regardless of TCV, plus a Legal risk memo.\n\n**CLM (Contract Lifecycle Management) Record**\n- MSA-3391, counterparty 'Orerock Data Partners'. TCV: $1,400,000 over 3 years.\n- Clause flag: 'Liability cap: NONE (customer-requested uncapped indemnity for data-loss events).'\n- Signed by (field): 'General Counsel - Dana R.' Executed 2026-06-02. CEO signature block: (empty). Risk memo: attached.\n\n**Email trail (reconstructed)**\n- Sales lead -> Dana R.: 'Orerock will sign this week but only with uncapped indemnity on data loss. TCV is $1.4M. Can you get it over the line? CEO is traveling.'\n- Dana R. (General Counsel): 'I've written the risk memo and I'm comfortable. I'll sign so we don't lose the window; we can brief the CEO afterward.'\n- Sales lead: 'Executed - signer is you.'\n- (no CEO signature or approval appears in the CLM, email, or Slack)\n\nThe agreement both exceeds $1,000,000 TCV and carries an uncapped-liability clause, and no CEO signature was ever recorded.",
+  "question": "What should the audit conclude about the signature authorization on this MSA?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Dana Reyes",
+    "title": "Associate General Counsel, Commercial",
+    "organization": "Basalt Dynamics",
+    "years_experience": 13,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Valid - the General Counsel is the top legal signatory and attached the required risk memo, so her signature binds the company.",
+    "Valid, but the file needs a documentation cleanup - obtain the CEO's countersignature as a formality afterward; the executed agreement already stands on the GC's signature.",
+    "Invalid - both the $1.4M TCV and the uncapped-liability clause independently require General Counsel AND CEO co-signature; the GC's authority tops out at $1M for standard terms, so the MSA was executed without sufficient signing authority and must be re-signed with the CEO before it is binding.",
+    "Invalid - a contract of this value and risk must be approved by the full Board of Directors before any officer may sign it."
+  ]
+}

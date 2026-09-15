@@ -1,0 +1,25 @@
+{
+  "title": "Purge Eligibility for a Record Created Before the Retention Extension",
+  "category": "policy_version",
+  "domain": "compliance_legal",
+  "difficulty": "hard",
+  "scenario_text": "Norwood Health governs record disposition through a Data Retention Policy for customer interaction records.\n\nVersion 1 (effective January 1, 2020) states: \"Customer interaction records are retained for 7 years from the record's creation date, after which they are purged, absent a legal hold.\"\n\nVersion 2 (effective January 1, 2025) states: \"Customer interaction records are retained for 10 years from the record's creation date.\" v2 includes a transition clause: \"Records created before January 1, 2025 remain subject to the retention period in effect at creation (v1: 7 years). Records created on or after January 1, 2025 follow v2 (10 years). The retention period is measured from the record's creation date and does not change retroactively.\"\n\nThe records management system shows record R-118204 (customer interaction log) with Creation Date 2019-06-01 and no legal hold flag. It is currently February 2026.\n\nA records analyst emails the compliance lead on 2026-02-03: \"Running the quarterly disposition queue. R-118204 is a customer interaction log from June 2019, and it surfaced as a candidate. Under the new 10-year rule that started in 2025, is this record now locked until 2029, or is it already clear to purge under the schedule that was in place when it was created? There's no legal hold flag on it in the system.\"\n\nUsing the policy history, the transition clause, and the system record, determine when R-118204 becomes eligible for purge.",
+  "question": "When does record R-118204 become eligible for purge?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Adaeze Nwosu",
+    "title": "Records & Information Governance Counsel",
+    "organization": "Norwood Health",
+    "years_experience": 10,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "R-118204 becomes eligible for purge on June 1, 2026, applying v1's 7-year period, the version in effect at the record's 2019-06-01 creation.",
+    "R-118204 must be retained until June 1, 2029, because v2's 10-year period now applies to all records regardless of creation date.",
+    "R-118204 was already eligible for purge on January 1, 2025, the date v2 superseded v1.",
+    "R-118204 becomes eligible for purge on June 1, 2026 only if a legal hold is first placed and then released."
+  ]
+}

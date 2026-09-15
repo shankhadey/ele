@@ -1,0 +1,25 @@
+{
+  "title": "Net-90 Terms After the CFO-Approval Policy Took Effect",
+  "category": "temporal_consistency",
+  "domain": "sales_deal_desk",
+  "difficulty": "hard",
+  "scenario_text": "A deal desk analyst at Pennington Cloud must decide how to handle an extended payment-term request, given how a similar request was handled last year.\n\n**Decision A (2023-08)**\nCustomer 'Halden Freight' | 2-year deal | ARR $220K. Requested Net-90 (standard is Net-30). The regional Sales Director approved it directly. Note at the time: 'Directors may approve up to Net-90 at their discretion for strategic logos.'\n\n**Current request C (2024-03-19)**\nCustomer 'Marlowe Systems' | 2-year deal | ARR $310K. Requesting Net-90. The AE has attached the Halden approval as supporting evidence.\n\n**Payment Terms Policy (current, effective 2024-01-01)**\nAny payment terms beyond Net-45 now require CFO approval. Sales Directors may approve up to Net-45 only. There is no ARR floor for CFO review, and CFO exceptions remain available for terms up to Net-90 with a documented business justification. The prior director-discretion authority for Net-90 was retired when this policy took effect.\n\n**Slack \u2014 #deal-desk**\nAE: 'We gave Halden Net-90 last year on the Director's sign-off, so Marlowe should just get the same. Let's not overcomplicate it.'\nAnalyst: 'Halden closed in August \u2014 that was before the January terms policy. Let me confirm who can actually approve Net-90 now.'\n\nThe AE is pushing to close before quarter-end and wants the analyst to grant Net-90 under the Director's authority to avoid the CFO queue. No CFO exception has been requested yet, and the business justification field on the Marlowe deal is currently blank.",
+  "question": "How should the analyst handle Marlowe Systems' Net-90 request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Priya Raman",
+    "title": "Deal Desk Manager",
+    "organization": "Pennington Cloud",
+    "years_experience": 11,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Grant Net-90 under the Sales Director's authority, citing the Halden Freight approval as established precedent for strategic logos.",
+    "Route the Net-90 request to the CFO for exception review with a documented business justification, because the Halden approval predates the January 1, 2024 policy that retired director discretion for terms beyond Net-45.",
+    "Offer Net-45 as a compromise so the deal stays within the Sales Director's current authority and avoids CFO escalation entirely.",
+    "Deny the Net-90 request outright, since terms beyond Net-45 are no longer permitted at Pennington Cloud."
+  ]
+}

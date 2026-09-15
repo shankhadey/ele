@@ -1,0 +1,25 @@
+{
+  "title": "Which Discount Precedent Governs a Single-Year Renewal",
+  "category": "precedent_exception",
+  "domain": "sales_deal_desk",
+  "difficulty": "hard",
+  "scenario_text": "You are the deal-desk manager at Antonia Therapeutics, a biotech software vendor. AE Dev Rao is renewing 'Corland Diagnostics' and wants an 18% discount. He points to a prior 18% approval to argue it should be routine.\n\nActive policy: Discount Governance DG-3, effective 2025-01-01 (unchanged since). Renewal discounts above the 10% standard cap require a qualifying factor and the matching approval: a documented competitive displacement OR a multi-year commitment unlocks up to 18% with VP Sales approval. Absent any qualifying factor, renewals are capped at the 10% standard discount, self-approved by the AE. 'The customer got it last time' is not itself a qualifying factor.\n\nPrecedent A (deal log): 2024-11-04, 'Verrick Labs,' 18% renewal discount approved by VP Sales. Note: \"Documented competitive displacement (active POC with rival) plus a 3-year commitment - qualifying factors present.\"\n\nPrecedent B (deal log): 2025-02-19, 'Munroe Assays,' requested 18% but was held to 10%. Note: \"Single-year renewal, no competitive threat, no qualifying factor - standard cap applied.\"\n\nCurrent facts: The Corland renewal is a single-year term with no competitive evaluation on record and no multi-year commitment. Dev writes: \"Verrick got 18% a few months ago, so Corland should get 18% too - let's not overcomplicate it.\"",
+  "question": "What discount applies to the Corland Diagnostics renewal, and via which path?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Marcus Feld",
+    "title": "Deal Desk Manager",
+    "organization": "Antonia Therapeutics",
+    "years_experience": 9,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "18% via VP Sales approval, mirroring the Verrick Labs precedent for a comparable renewal.",
+    "10% standard discount, self-approved by the AE, because Corland is a single-year renewal with no qualifying factor - matching the governing Munroe Assays precedent.",
+    "18% self-approved by the AE, since a prior 18% approval for another account sets the going rate.",
+    "14% as a midpoint compromise between the standard cap and the prior 18% approval."
+  ]
+}

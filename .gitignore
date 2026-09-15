@@ -14,11 +14,13 @@ venv/
 .pytest_cache/
 .hypothesis/
 
-# Results (regenerated on each run — commit specific ones manually)
-results/*.json
-
-# Per-scenario transcripts (regenerated on each run)
+# Held-out ground truth + run artifacts now live in the PRIVATE ELEAnswers
+# repo (see core/paths.py and config/eval_config.json "ele_private_dir").
+# These entries keep any local ./answers, ./logs, ./results checkout (or a
+# symlink to the private repo) from ever being committed to the public repo.
+answers/
 logs/
+results/
 
 # Environment
 .env

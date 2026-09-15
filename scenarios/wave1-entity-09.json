@@ -1,0 +1,25 @@
+{
+  "title": "Same Name, Different Companies",
+  "category": "entity_resolution",
+  "domain": "compliance_legal",
+  "difficulty": "hard",
+  "scenario_text": "Harborline Shipping's legal ops team is running a sanctions and conflict-of-interest screen before onboarding a new counterparty. A paralegal flags a potential match: an existing counterparty and a new one both appear as \"Pinnacle Marine Services.\" Existing record (in the contracts system, Ironclad): \"Pinnacle Marine Services LLC,\" formed in Louisiana, EIN 72-1990043, registered agent in Baton Rouge, primary contact ops@pinnaclemarinela.com, provides tug-and-barge services on the Gulf. New onboarding record (in the vendor intake form): \"Pinnacle Marine Services Ltd,\" incorporated in Singapore (UEN 201844772K), registered office at Raffles Quay, primary contact admin@pinnacle-marine.sg, provides ship-agency and port-call services in Southeast Asia. The paralegal proposes linking them as one global vendor \"to simplify master data.\" A due-diligence report notes: no common ownership, no shared officers, no shared beneficial owners; the two firms have never had a corporate relationship, and the name overlap is coincidental (both descriptive of marine services). A prior 2019 email thread in the system shows Harborline's own counsel once noted \"the Singapore Pinnacle is unrelated to our Louisiana Pinnacle; do not conflate.\" One of the two entities appears on a watchlist hit that the screen must attribute correctly; the hit references UEN 201844772K.",
+  "question": "How should Harborline treat the two \"Pinnacle Marine Services\" records, and where does the watchlist hit attach?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Grace Okonkwo",
+    "title": "Legal Operations & Compliance Lead",
+    "organization": "Harborline Shipping",
+    "years_experience": 9,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Link them as one global vendor and attach the watchlist hit to the combined record, since the identical name indicates a single multinational firm.",
+    "Keep them as two separate, unrelated entities; attach the watchlist hit only to the Singapore entity (UEN 201844772K), and do not let it taint the Louisiana LLC.",
+    "Keep them separate but attach the watchlist hit to both records as a precaution, because shared naming creates reputational risk for the Louisiana entity.",
+    "Treat the Louisiana LLC as the parent and the Singapore Ltd as its overseas branch, attaching the hit to the parent group."
+  ]
+}

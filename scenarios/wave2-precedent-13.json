@@ -1,0 +1,25 @@
+{
+  "title": "Off-Cycle Raise Tier With a Documented Competing Offer",
+  "category": "precedent_exception",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "You are an HR Business Partner at Marlborough Health. A manager wants an off-cycle pay increase for a senior data engineer, Priya Nandakumar, whom the team cannot afford to lose. You must set the tier and approval path.\n\nActive policy: Compensation Adjustment Policy CAP-3, effective 2025-01-01. Off-cycle increases: up to 5% of base may be approved by the People Manager plus the HRBP. A retention exception of up to 15% is unlocked ONLY when there is a documented, written competing external offer on file for the employee, AND requires VP of People approval. Absent a written external offer, the ceiling is 5% regardless of manager sentiment.\n\nPrecedent (comp log): 2024-11-08, engineer 'Owen Radley' received a 5% off-cycle increase approved by his manager and the HRBP. Note: \"Strong performer, flight-risk concern raised by manager, but no written external offer on file; capped at 5%.\"\n\nCurrent facts: Priya has provided HR a written offer letter from a competitor, verified authentic, for a base 19% higher than her current salary; it is saved in her employee file. Her manager is requesting a 14% increase to retain her. The manager says, \"We gave Owen 5% for retention, so let's do 5% for Priya too and route it the same way.\"",
+  "question": "What increase tier and approval path apply to Priya's retention request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Delphine Okonkwo",
+    "title": "Senior HR Business Partner",
+    "organization": "Marlborough Health",
+    "years_experience": 11,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Up to 5% approved by the manager and HRBP, mirroring the Owen Radley retention increase for a comparable flight-risk situation.",
+    "A retention exception of up to 15% (covering the requested 14%) requiring VP of People approval, because Priya has a documented written competing external offer on file.",
+    "Any amount the manager requests, approved by the manager and HRBP, since retaining a critical engineer is a business necessity.",
+    "No increase is permitted off-cycle; retention must wait for the annual compensation cycle."
+  ]
+}

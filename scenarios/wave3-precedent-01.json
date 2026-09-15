@@ -1,0 +1,25 @@
+{
+  "title": "Net 90 Payment Terms Under the Tightened Deal Approval Framework",
+  "category": "precedent_exception",
+  "domain": "sales_deal_desk",
+  "difficulty": "hard",
+  "scenario_text": "You are on Deal Desk at Aurelia Freight Systems, a logistics software provider. AE Lena Cho is closing a new logo, Brightline Haulage, at $610K ACV and has verbally agreed to Net 90 payment terms to beat a competitor. She wants terms locked before quarter-end.\n\nActive policy: Deal Approval Framework DAF v4, effective 2025-03-01. Non-standard payment terms are tiered: Net 0-45 AE self-approves; Net 46-75 requires VP Finance; anything beyond Net 75 requires CFO approval plus a written cash-flow impact memo. DAF v4 lowered the CFO trigger to 'beyond Net 75' from the prior 'beyond Net 120' under DAF v3, which had allowed VP Finance to approve any terms up to Net 120.\n\nLena's CRM note: \"Deal Desk - precedent settled. Last November I closed Carrick Freight at Net 90 and VP Finance Tomas Weir approved it directly, no CFO. Same terms, comparable size. Just mirror Tomas's sign-off so we can paper this.\"\n\nDeal-desk log for the cited precedent: Carrick Freight, closed 2024-11-08, Net 90 terms, approver Tomas Weir (VP Finance), policy version at decision: DAF v3. Note: \"Within VP Finance authority under v3 (<= Net 120).\"\n\nCurrent Brightline deal: no strategic-account flag, standard product, no unusual clauses beyond the payment terms. Finance confirms nothing else is atypical and no CFO pre-authorization exists.",
+  "question": "What approval is required for Brightline Haulage's Net 90 payment terms?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Selene Marchetti",
+    "title": "Deal Desk Lead",
+    "organization": "Aurelia Freight Systems",
+    "years_experience": 8,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "VP Finance approval alone, mirroring the Carrick Freight precedent for identical Net 90 terms on a comparable deal.",
+    "CFO approval plus a written cash-flow impact memo, because DAF v4 requires CFO sign-off for any terms beyond Net 75; the Carrick precedent was decided under the superseded v3.",
+    "AE self-approval, since Net 90 is a routine timing concession that does not change the contract value.",
+    "Regional Sales Director approval, because payment timing is a sales concession rather than a finance decision."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Cobalt Harbor renewal: green health score versus an auto-renew opt-out",
+  "category": "cross_system_synthesis",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "Cobalt Harbor is a $480,000 ARR account with a renewal 58 days out. In Salesforce, the account health score is green, and the CSM logged last month's QBR as 'positive - strong executive alignment.' In the #cs-renewals Slack channel this morning, the CSM wrote: 'Not worried about Cobalt Harbor. Champion loves us, exec sponsor is engaged, this renewal is basically a formality.' The named opportunity sits at 'Renewal - Commit.'\n\nThe picture from the other systems is different. In Amplitude, weekly active users for the Cobalt Harbor workspace have fallen 62% over the past six weeks. The two power users who drove roughly 70% of API calls last quarter have not logged in for 19 days. Adoption of the modules tied to their expansion clause has flatlined.\n\nZendesk shows three tickets opened in the last two weeks about the upcoming SSO migration. One, from an admin, includes the line: 'We're re-evaluating our tooling stack for next year and need to understand data export options.'\n\nThe newest signal is in the billing system, Zuora: four days ago a Cobalt Harbor billing administrator toggled the auto-renew flag from ON to OFF. No one on the account team has referenced this in Salesforce or Slack. The CSM's 'formality' note predates the opt-out by nine days.\n\nYou are reviewing the book of business ahead of the weekly renewals forecast. The green health score and the CSM's confidence are the loudest voices in the room, but the account team has not reconciled them against the usage decline, the competitive-evaluation language, or the auto-renew opt-out. What should you recommend?",
+  "question": "What action should you recommend for the Cobalt Harbor renewal?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Priya Nadar",
+    "title": "Director of Customer Success",
+    "organization": "Dunmore Analytics",
+    "years_experience": 12,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Treat the renewal as low-risk and leave it in Commit; the CSM's QBR and the green health score are the most reliable read of the relationship.",
+    "Open a support-priority escalation focused on the SSO migration tickets, since technical friction is the primary risk to the account.",
+    "Launch a retention/save play now and escalate to the account exec: the auto-renew opt-out, the 62% usage collapse, and the competitive-evaluation ticket together indicate active churn risk that the green health score no longer reflects.",
+    "Take no action until the scheduled renewal call in 58 days, since no single account metric has crossed its individual alert threshold."
+  ]
+}

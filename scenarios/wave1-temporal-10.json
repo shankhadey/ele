@@ -1,0 +1,19 @@
+{
+  "title": "A Write-Off Approved Before the Controller Limit Dropped",
+  "category": "temporal_consistency",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "A finance analyst at Wardlow Networks must confirm the required approval for a bad-debt write-off, given how a similar write-off was handled earlier this year.\n\n**Decision A (2024-02)**\nAn $18,000 bad-debt write-off was approved by the Controller alone. Note: 'Under the delegation of authority then in effect, the Controller could approve write-offs up to $25,000 without CFO involvement.'\n\n**Current request C (2024-07-10)**\nAn $18,000 bad-debt write-off is proposed for an uncollectible customer balance. The AR manager wants the Controller to approve it solo, the same way the February write-off was handled.\n\n**Delegation of Authority Policy (current, effective 2024-05-01)**\nThe Controller may approve bad-debt write-offs up to $10,000 without further sign-off. Write-offs above $10,000 now require CFO approval. The prior Controller limit of $25,000 was lowered to $10,000 when this policy took effect on May 1, 2024.\n\n**Slack \u2014 #finance-ops**\nAR mgr: 'The Controller approved an $18K write-off solo back in February \u2014 no issue. Let's just have her sign this one the same way.'\nAnalyst: 'February was before the May delegation change. The Controller's limit dropped to $10K. Let me confirm who has to approve $18K now.'\n\nThe AR manager is treating the February approval as proof the Controller can act alone at this amount. The write-off has not yet been routed to the CFO.",
+  "question": "Whose approval is required for the $18,000 bad-debt write-off under the current policy?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Hana Kimura",
+    "title": "Finance Operations Analyst",
+    "organization": "Wardlow Networks",
+    "years_experience": 9,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge"
+}

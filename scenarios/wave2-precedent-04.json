@@ -1,0 +1,25 @@
+{
+  "title": "Erasure Request on an Account Under Active Legal Hold",
+  "category": "precedent_exception",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "You are a privacy operations lead at Denby Cloud. A GDPR right-to-erasure request has arrived for the account of former customer contact 'M. Aldridge.' The Support team wants to process the deletion this week to meet the statutory clock.\n\nActive policy: Data Subject Request Standard DSR-3, effective 2024-09-01. Erasure requests must be fulfilled within 30 days UNLESS the data is subject to an active litigation legal hold, in which case erasure is suspended, the requester is informed of the lawful basis for delay, and Legal/DPO must document the suspension. DSR-3 removed the prior 'inactive account' shortcut in DSR-2, which had let a Support Lead delete data for dormant accounts without checking the legal-hold register.\n\nPrecedent A (DSR log): 2024-05-30, account 'T. Prewitt,' erasure processed by Support Lead Kai Osei without a hold check under the inactive-account shortcut. Policy version at decision: DSR-2. Note: \"Dormant account; deleted per shortcut.\"\n\nPrecedent B (DSR log): 2025-01-18, account 'R. Delacroix,' erasure suspended because the account was flagged in the litigation legal-hold register; DPO Nora Finch documented the suspension and notified the requester. Policy version at decision: DSR-3.\n\nCurrent facts: The Aldridge account is flagged in the litigation legal-hold register for an active commercial dispute; Legal confirms the hold is live. Support argues, \"Kai deleted the Prewitt account with no drama and no hold check \u2014 this is the same kind of inactive record, so let's just delete and close the ticket.\"",
+  "question": "How should Denby Cloud handle the erasure request for the Aldridge account?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Adaeze Whitlock",
+    "title": "Privacy Operations Lead",
+    "organization": "Denby Cloud",
+    "years_experience": 11,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Process the deletion now via the Support Lead, mirroring the Prewitt precedent, since it is an equivalent inactive account.",
+    "Suspend the erasure because the account is under an active litigation legal hold, inform the requester of the lawful basis for delay, and have the DPO document the suspension, following the Delacroix precedent under DSR-3.",
+    "Delete the non-litigation fields immediately and retain only the litigation-relevant records, closing the erasure ticket as partially fulfilled.",
+    "Process the deletion but archive an encrypted backup copy in case the litigation team later needs it."
+  ]
+}

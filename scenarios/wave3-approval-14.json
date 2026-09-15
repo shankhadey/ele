@@ -1,0 +1,25 @@
+{
+  "title": "Emergency Hotfix Deployed - Post-Incident Review Now Past Its Deadline",
+  "category": "approval_chain",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "A change-management audit agent at Rhyolite Software is reviewing an emergency production hotfix, with an audit date of 2026-08-24.\n\n**Change Authority Matrix**\n- Normal change: Change Manager approval before deploy, scheduled window.\n- Emergency change (active SEV-1/SEV-2 only): the on-call engineer MAY deploy immediately with a logged verbal authorization from the Director of Engineering, BUT the change is conditional and requires (a) a validated rollback plan attached within 24 hours and (b) a post-incident review (PIR) signed off by the Change Manager within 5 business days of deploy. Missing the PIR by the deadline puts the change out of compliance.\n\n**Jira Change Record**\n- CHG-6612: 'Emergency hotfix to payment-gateway timeout handling to stop checkout failures.'\n- Deployed: 2026-08-11 (Monday). Type: Emergency.\n- Approved by (field): 'On-call - Jae R.; Director of Eng verbal authorization logged 2026-08-11 20:50.'\n- Rollback plan: attached 2026-08-12. Post-incident review: (empty). Change Manager sign-off: (empty).\n\n**Slack #incident-checkout (reconstructed)**\n- Jae R.: 'Checkout is failing at 30%. Director, go for the hotfix?'\n- Director of Eng: 'Go now. Rollback plan tomorrow, PIR within the week.'\n- Jae R. (2026-08-18): 'Stable since. I'll schedule the PIR soon.'\n- (no further entries; today is 2026-08-24)\n\nThe 5-business-day PIR deadline fell on 2026-08-18.",
+  "question": "What should the audit conclude about the authorization status of this change?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Jae Rhee",
+    "title": "SRE Change Management Lead",
+    "organization": "Rhyolite Software",
+    "years_experience": 10,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Valid and complete - the emergency hotfix was properly authorized at deploy time with logged Director approval and a rollback plan, so no further action is required.",
+    "Valid, but needs a documentation cleanup - the team can write up the post-incident review whenever convenient; the change's compliance is unaffected.",
+    "The deploy-time authorization was valid, but the mandatory post-incident review was due 2026-08-18 and is now overdue, so the change is currently out of compliance and must be escalated to complete and sign off the PIR with the Change Manager.",
+    "The change was never validly authorized because emergency changes require Change Manager approval in advance; it must be rolled back and resubmitted as a normal change."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Kydonia Telecom SLA claim: 'carrier fiber cut' versus our own config push",
+  "category": "cross_system_synthesis",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "scenario_text": "An enterprise customer of Kydonia Telecom experienced a 90-minute outage on a managed connectivity service with a 99.99% SLA and financial penalties for provider-caused downtime. The customer has filed for SLA credits. In the #noc Slack channel the duty manager writes: 'This one's on the upstream carrier - there was a fiber cut in the metro during the window. Not our fault, so no SLA credit is owed. I'm drafting the denial citing the carrier RFO.'\n\nOther systems complicate the attribution. In the network monitoring platform (SolarWinds), the customer's circuit went down at 13:22, but the carrier's fiber cut is timestamped at 13:41 - nineteen minutes after the outage began. In the change-management system, a routing-policy change was pushed to the customer's aggregation router at 13:20, two minutes before the drop, by Kydonia's own provisioning team. In the router syslogs, BGP sessions for the customer VRF dropped immediately after that change with a config-error signature, not a link-loss signature. And the carrier's own status portal shows the fiber cut affected a different metro ring that does not carry this customer's primary path.\n\nEach fact could support the carrier story in isolation: there was a real fiber cut, outages cluster, and changes are routine. But together - the outage starting 19 minutes before the fiber cut, a self-initiated routing change two minutes prior, BGP dropping with a config-error signature, and the cut being on an unrelated ring - they show the outage was provider-caused by Kydonia's own change, making the SLA credit owed. The duty manager's 'carrier fault' read ignores the timeline. You are the service-assurance lead reviewing the credit decision. What should you conclude?",
+  "question": "How should the SLA credit claim be resolved?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Yusuf Demir",
+    "title": "Service Assurance Lead",
+    "organization": "Zephyros Networks",
+    "years_experience": 11,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Deny the SLA credit and cite the carrier's fiber-cut RFO, since an upstream carrier fault falls outside Kydonia's SLA obligations.",
+    "Split the credit with the customer as a goodwill gesture without assigning root cause, to preserve the relationship.",
+    "Approve the SLA credit as provider-caused downtime: the outage began 19 minutes before the fiber cut, immediately followed Kydonia's own routing-policy change with a BGP config-error signature, and the cut was on an unrelated metro ring.",
+    "Defer the decision until the carrier issues a final reason-for-outage report, keeping the claim open past the SLA credit deadline."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Grantham Logistics sole-source: 'runs smoothly' versus a distressed vendor",
+  "category": "cross_system_synthesis",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "scenario_text": "Grantham Logistics is deciding whether to consolidate more of its transportation-management software onto a single incumbent vendor, Halewood TMS, and sign a three-year sole-source expansion worth $2.4M. In the #procurement Slack channel the category buyer writes: 'Halewood has run smoothly for years. Consolidating gets us the best volume discount, let's give them the bigger contract and retire the backup vendor.'\n\nNewer signals sit outside the buyer's view. In the vendor-performance scorecard tracked in ServiceNow, Halewood has missed its uptime SLA three months running, with two Sev-1 outages last quarter versus zero the year before. A third-party financial-health monitor (RapidRatings) downgraded Halewood to a 'high risk' rating last week and flagged deteriorating liquidity. A trade-press alert reported that Halewood laid off about 35% of staff, including much of its customer-support organization, and several of Grantham's named technical contacts updated LinkedIn to new employers in the past month. Halewood's product roadmap review, due last quarter, has been silently postponed twice.\n\nThe buyer's 'runs smoothly' impression reflects the multi-year relationship but predates the SLA misses, the layoffs, and the financial downgrade. Individually, one bad quarter, a reorg, or a rating change could be absorbed. Together - degrading service, a high-risk financial rating, deep support-org layoffs, contact attrition, and a stalled roadmap - they indicate a vendor whose ability to deliver is now in question, exactly when sole-sourcing would remove Grantham's fallback and concentrate all risk on one supplier.\n\nYou own third-party risk for this category. What should you recommend?",
+  "question": "What should you recommend regarding the Halewood sole-source expansion?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Hannah Broome",
+    "title": "Head of Third-Party Risk Management",
+    "organization": "Larkspur Group",
+    "years_experience": 10,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Proceed with the sole-source consolidation and retire the backup vendor; Halewood's long track record and the volume discount make it the low-risk, cost-optimal choice.",
+    "Focus on negotiating stronger SLA credits into the new contract, then sign the three-year expansion as planned so the discount is not lost.",
+    "Do not sole-source or retire the backup vendor now: pause the expansion, keep a second supplier active, and gate any increased commitment on financial-health remediation, an outage post-mortem, and roadmap assurances - the SLA misses, the high-risk downgrade, the layoffs, and contact attrition together mark a material continuity risk the buyer's track-record impression does not capture.",
+    "Request an outage post-mortem from Halewood but allow the consolidation to proceed on schedule to preserve service continuity."
+  ]
+}

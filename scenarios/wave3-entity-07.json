@@ -1,0 +1,25 @@
+{
+  "title": "Shared Email Domain, Two Real Companies",
+  "category": "entity_resolution",
+  "domain": "sales_deal_desk",
+  "difficulty": "hard",
+  "scenario_text": "Kvarken Cloud (a SaaS vendor) runs a lead-to-account matching job in Salesforce and its dedupe rule proposes merging two accounts at 0.91 confidence because both use email addresses at the domain grptech.io. Account A-1201 is \"Grimsby Robotics Inc.\" (EIN 27-5561120, D-U-N-S 08-114-9921, HQ desk in Austin, industry: industrial automation, ARR $180,000, contacts ada@grptech.io, sam@grptech.io). Account A-1330 is \"Grimsby Ventures LLC\" (EIN 46-8890457, DUNS 08-114-9945, HQ desk in Boston, industry: venture capital, ARR $54,000, contact partner@grptech.io). Both use grptech.io because a shared holding-group IT team provisions email for several unrelated portfolio companies under one vanity domain; the domain's WHOIS lists \"GRP Technology Services,\" a managed-IT provider, as registrant. The two companies have different EINs, different DUNS, different industries, different HQ states, and different billing contacts and contracts. There is no parent/subsidiary linkage in D&B between them; GRP Technology Services is only a shared IT vendor. A sales ops analyst is about to approve the merge on the strength of the matching domain and similar name stem \"Grimsby.\" The analyst also observes that a handful of other accounts in the same territory share grptech.io addresses, all provisioned by the same managed-IT team, which suggests the domain is a recurring source of false matches rather than a reliable identity key for any single customer.",
+  "question": "Should the two accounts be merged, and why?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Petter Nyberg",
+    "title": "Sales Operations Analyst",
+    "organization": "Kvarken Cloud",
+    "years_experience": 7,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Yes, merge them, because a shared email domain plus a common name stem reliably indicates one company operating two divisions.",
+    "No, keep them separate; the shared domain is a managed-IT vanity domain, and the distinct EINs, DUNS, industries, and contracts show two unrelated legal entities.",
+    "Yes, merge them under Grimsby Ventures LLC, since a venture firm is presumptively the parent of a similarly named operating company.",
+    "No, but only because their ARR figures differ; if the revenue matched they would be the same account."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "A Security-Review Waiver Granted Before the Waiver Rule Ended",
+  "category": "temporal_consistency",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "scenario_text": "A procurement analyst at Quorn Systems must decide whether a new SaaS vendor's security review can be waived, given how a comparable vendor was handled last year.\n\n**Decision A (2023-10)**\nVendor 'Blackwood Analytics' | SaaS tool handling customer PII | held a current SOC 2 Type II report. Procurement WAIVED the full internal security review. Note: 'Per policy at the time, vendors handling PII with a valid SOC 2 Type II may have the internal security review waived.'\n\n**Current request C (2024-06-05)**\nVendor 'Fenwick Data' | new SaaS tool that will process customer PII | holds a current SOC 2 Type II report. The requesting team wants onboarding completed this week.\n\n**Vendor Security Policy (current, effective 2024-02-15)**\nAll new SaaS vendors that will handle customer PII MUST complete a full internal security review before onboarding. SOC 2 Type II reports are accepted as supporting evidence within that review but no longer qualify a vendor for a waiver. The SOC 2-based waiver that existed previously was eliminated when this policy took effect.\n\n**Slack \u2014 #procurement**\nRequester: 'We waived the review for Blackwood last year because they had SOC 2. Fenwick has SOC 2 too, so waive it and let's move.'\nAnalyst: 'Blackwood was waived back in October \u2014 that was before the February security policy. Let me confirm whether waivers even exist anymore.'\n\nThe requester is under a deadline and is treating the Blackwood waiver as a repeatable shortcut. No full security review has been started for Fenwick.",
+  "question": "Can procurement waive the full internal security review for Fenwick Data based on its SOC 2 Type II report? Answer Yes or No.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Aisha Bello",
+    "title": "Procurement Analyst",
+    "organization": "Quorn Systems",
+    "years_experience": 9,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge"
+}

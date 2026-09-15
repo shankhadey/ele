@@ -1,0 +1,25 @@
+{
+  "title": "A Vendor Prepayment Exception Denied on Spend Size",
+  "category": "temporal_consistency",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "scenario_text": "A procurement analyst at Kingsley Logistics must decide whether an annual-prepayment exception can be approved at the team level, given how a similar request was handled earlier this year.\n\n**Decision A (2024-03)**\nVendor 'Aldworth Freight Systems' | annual contract $90K. Requested full annual prepayment instead of the standard quarterly billing. Procurement DECLINED at the team level. Note: 'Prepayment exceptions require Finance approval unless annual spend is at least $150K, in which case Procurement may approve prepayment directly. Aldworth was $90K \u2014 below the threshold \u2014 and no Finance approval was obtained. Declined.'\n\n**Current request C (2024-10-01)**\nVendor 'Brenton Fleet Services' | annual contract $185K. Requesting full annual prepayment in exchange for a 6% discount. The contract is otherwise standard.\n\n**Prepayment Authority Policy (current, unchanged since 2023-08)**\nStandard vendor billing is quarterly. Prepayment exceptions require Finance approval, EXCEPT that when a vendor's annual spend is at least $150K, Procurement may approve annual prepayment directly. This spend-based authority has been in place since August 2023.\n\n**Slack \u2014 #procurement**\nBuyer: 'We declined a prepayment ask back in March for a similar setup, so we should route Brenton to Finance too.'\nAnalyst: 'The March one was declined for a reason \u2014 let me check Brenton's annual spend against the threshold before we assume Finance has to approve it.'\n\nNo one has yet compared Brenton's $185K annual spend to the $150K threshold that changes who can approve.",
+  "question": "How should the analyst handle Brenton Fleet Services' prepayment request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Hana Petrov",
+    "title": "Procurement Analyst",
+    "organization": "Kingsley Logistics",
+    "years_experience": 7,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Route the prepayment request to Finance for approval, consistent with the March decision on a similar request.",
+    "Approve the annual prepayment directly at the Procurement level, because Brenton's $185K annual spend clears the $150K threshold that grants Procurement authority \u2014 a path the March vendor never qualified for.",
+    "Decline the prepayment request, since prepayment exceptions are not permitted without escalation.",
+    "Approve prepayment for only two quarters as a compromise, routing the rest to Finance."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Ceraunia Retail refunds: 'generous holiday returns' versus an organized refund ring",
+  "category": "cross_system_synthesis",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "Ceraunia Retail, an online electronics seller, sees a jump in refund and 'item not received' claims heading into the holiday peak. In the #cs-leads Slack channel the support lead writes: 'It's the holidays - people return more and delivery complaints spike. These look like our good repeat customers. I've been approving the refunds to keep CSAT up; it's just seasonal generosity, nothing to flag.'\n\nOther systems suggest coordination, not seasonality. In the fraud platform (Signifyd), 40 of the accounts filing claims share three device fingerprints and a small pool of reused payment cards. In the order-management system, the shipping addresses cluster at two freight-forwarder locations, and several 'good repeat customers' were all created in the last 30 days. In the returns/warehouse system, the items marked 'returned' for refunds were either never scanned back in or arrived as empty boxes. And the payment processor shows a wave of chargebacks filed on the same orders after refunds were already issued - customers being paid twice.\n\nEach signal is individually explainable: holiday returns rise, device sharing happens on family plans, freight forwarders serve legitimate buyers, and warehouse scans lag. But together - shared device fingerprints and reused cards across 40 accounts, freight-forwarder address clustering, brand-new 'loyal' accounts, empty-box or missing returns, and double-dipping via post-refund chargebacks - they describe an organized refund-fraud ring, not seasonal goodwill. The support lead's 'good customers' read predates the warehouse and chargeback findings. You own payments risk. What is the single most important action to take now?",
+  "question": "What single action should the payments-risk owner take now?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Bianca Rossi",
+    "title": "Head of Payments Risk",
+    "organization": "Pelagos Commerce",
+    "years_experience": 10,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

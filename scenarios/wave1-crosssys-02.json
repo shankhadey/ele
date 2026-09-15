@@ -1,0 +1,19 @@
+{
+  "title": "Brackenridge Cloud checkout latency: DB failover story versus a fresh deploy",
+  "category": "cross_system_synthesis",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "scenario_text": "At 14:07 UTC, PagerDuty pages the on-call for Brackenridge Cloud: p99 latency on the checkout API has crossed 2,000ms. In the #inc-checkout Slack bridge, the incident commander writes at 14:12: 'Looks like the primary Postgres node did a failover a few minutes ago. Replica has taken over and latency is already recovering. This is transient, I'm going to stand us down.'\n\nDatadog partly agrees: the overall checkout error rate is 0.3%, below the 1% paging threshold, and read latency on the new primary is normalizing. Statuspage is still green and no customer tickets have landed in Zendesk yet.\n\nBut the Datadog service map shows something the IC has not mentioned. Twelve minutes before the page, a deploy went out to the payment-gateway service - the dependency checkout calls to authorize cards. That service's 5xx rate has climbed from near zero to 6% and is still rising, and its p99 has tripled. The deploy included a feature flag that was ramped from 10% to 100% of traffic at 14:05, two minutes before the PagerDuty alert fired. The DB failover the IC cited actually occurred at 13:58, recovered by 14:02, and does not line up with the latency curve, which inflected at 14:05.\n\nTrace samples show checkout requests spending their time waiting on payment-gateway authorization calls that are timing out, not on database reads. Rollback of the payment-gateway deploy is a one-command Spinnaker operation and would take under three minutes.\n\nYou are the secondary on-call reviewing the bridge before the IC stands the incident down. Given the full picture across PagerDuty, Datadog, Spinnaker, and the Slack narrative, what is the single most important action to take first?",
+  "question": "What single action should be taken first before standing down the incident?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Marcus Feld",
+    "title": "Staff Site Reliability Engineer",
+    "organization": "Fairlead Systems",
+    "years_experience": 11,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge"
+}

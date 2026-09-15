@@ -1,0 +1,25 @@
+{
+  "title": "Recognizing a Term-License Renewal After the Rev Rec Method Changed",
+  "category": "policy_version",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "Lyra Analytics sells on-premise term licenses and accounts for license revenue under a documented Revenue Recognition Policy.\n\nPolicy v1 (in effect through 2023-12-31): \"Term-license fees are recognized in full at a point in time upon license delivery (contract start).\"\n\nPolicy v2 (effective 2024-01-01): \"Term-license fees are recognized ratably over the license term.\" v2 includes a transition clause: \"Contracts executed before January 1, 2024 retain point-in-time recognition for their original term. Any renewal executed on or after January 1, 2024 is recognized under v2 (ratable) over the renewal term, regardless of how the original contract was recognized. Amendments that only add seats to an unexpired original term follow the original contract's method.\"\n\nThe ERP shows two records for customer Redwood Utilities: (1) original contract C-1180, Executed 2022-10-01, Term 24 months, License Fee $360,000, recognized in full on 2022-10-01; (2) renewal contract C-1180-R, Executed 2024-09-15, Renewal Term 24 months (2024-10-01 through 2026-09-30), License Fee $480,000.\n\nA revenue accountant emails the controller on 2024-09-20: \"Booking the Redwood renewal C-1180-R, $480K for a fresh 24-month term starting Oct 1. The original was taken upfront back in 2022. Do we recognize the renewal upfront to match, or spread it, and over what period?\"\n\nUsing the policy history, the transition clause, and the ERP records, determine how the $480,000 renewal fee should be recognized.",
+  "question": "How should the $480,000 renewal fee on C-1180-R be recognized?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Aaron Whitfield",
+    "title": "Revenue Accounting Manager",
+    "organization": "Lyra Analytics",
+    "years_experience": 12,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Ratably over the 24-month renewal term ($20,000 per month beginning 2024-10-01), because the renewal was executed 2024-09-15 and v2 governs all renewals executed on or after January 1, 2024.",
+    "In full at a point in time on 2024-10-01, matching the original contract's point-in-time method under v1.",
+    "In full at a point in time on 2024-09-15 (execution date), because the renewal inherits the original contract's recognition method.",
+    "Ratably over the combined 48-month period spanning both the original and renewal terms."
+  ]
+}

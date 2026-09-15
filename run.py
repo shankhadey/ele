@@ -34,6 +34,7 @@ from dotenv import load_dotenv
 load_dotenv("linkedin_ai_manager/.env")
 load_dotenv(".env")
 
+from ele.core import paths
 from ele.core.cli import App, AppConfig
 from ele.core.models_integration import APIConfig, OpenAIAdapter, BedrockAdapter
 
@@ -386,8 +387,8 @@ def main():
                 tool_calls = f", tool_calls={len(r.tool_invocations)}" if r.tool_invocations else ""
                 print(f"    {status} {title}: score={score} {method}, latency={r.latency_ms}ms{tool_calls}")
 
-            # Write complete per-scenario transcripts
-            log_dir = _ROOT / "logs" / f"{model_id}_{eval_result['run_id'][:8]}"
+            # Write complete per-scenario transcripts (private data dir)
+            log_dir = paths.logs_dir() / f"{model_id}_{eval_result['run_id'][:8]}"
             write_transcripts(app, run, log_dir)
             print(f"  Transcripts saved: {log_dir}")
 
@@ -413,9 +414,9 @@ def main():
     # three conditions from the same place. With no --condition, the run is the
     # canonical results/ headline run.
     if args.condition:
-        results_dir = _ROOT / "results" / "conditions" / args.condition
+        results_dir = paths.results_dir() / "conditions" / args.condition
     else:
-        results_dir = _ROOT / "results"
+        results_dir = paths.results_dir()
     results_dir.mkdir(parents=True, exist_ok=True)
     for entry in lb:
         run_id = entry["run_id"]

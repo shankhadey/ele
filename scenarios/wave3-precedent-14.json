@@ -1,0 +1,25 @@
+{
+  "title": "License True-Up Handling With a True-Forward Clause",
+  "category": "precedent_exception",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "scenario_text": "You manage software asset management at Solara Platforms. An annual license true-up review found that the sales org exceeded its licensed seat count on a core SaaS subscription, and you must decide how the overage is settled with the vendor.\n\nActive policy: License True-Up Standard LTS-2, effective 2025-01-01. By default, seat overages are settled by paying the list-rate fees retroactively to the date the overage began, approvable by the SAM Manager. A prospective-only settlement exception - where the overage is trued forward and billed only from the true-up date, avoiding retroactive fees - is unlocked ONLY when the governing contract contains a written 'true-forward' clause AND the overage resulted from documented organic growth rather than misuse. The SAM Director approves the prospective-only exception.\n\nPrecedent (SAM log): 2024-08-14, subscription 'Vireo CRM,' seat overage settled with retroactive list-rate fees by the SAM Manager. Note: \"No true-forward clause in the Vireo contract; retroactive settlement applied.\"\n\nCurrent facts: The current subscription's master agreement contains an explicit true-forward clause, and the overage - roughly 40 extra seats - traces to documented headcount growth in the sales org over the past two quarters, corroborated by HR onboarding records, with no evidence of license sharing or other misuse. Settling retroactively would generate several months of back fees, whereas the true-forward clause was negotiated precisely to cap exposure at prospective billing. A colleague suggests: \"Just settle retroactively like we did with Vireo to avoid overthinking it - it's cleaner to pay the back fees and move on.\"",
+  "question": "How should the current seat overage be settled, and via which path?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Beatrix Holloway",
+    "title": "Software Asset Manager",
+    "organization": "Solara Platforms",
+    "years_experience": 8,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Settle retroactively at list rate via the SAM Manager, mirroring the Vireo CRM precedent.",
+    "Apply the prospective-only true-forward exception via the SAM Director, because the contract contains a true-forward clause and the overage arose from documented organic growth - both unlock conditions are met.",
+    "Refuse to pay for the overage at all, since the vendor failed to enforce seat limits in real time.",
+    "Escalate to the CFO, because any license overage automatically constitutes a contract breach requiring executive review."
+  ]
+}

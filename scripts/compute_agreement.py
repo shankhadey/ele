@@ -46,8 +46,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _agreement_stats import cohens_kappa, fleiss_kappa, krippendorff_alpha_nominal  # noqa: E402
 
 _ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(_ROOT.parent))  # make `ele` importable
+from ele.core import paths  # noqa: E402
+
 _SCENARIOS_DIR = _ROOT / "scenarios"
-_ANSWERS_DIR = _ROOT / "answers"
+_ANSWERS_DIR = paths.answers_dir()
 
 
 # ------------------------------------------------------------------ #
@@ -60,13 +63,18 @@ def _rater_id_from_filename(path: str) -> str:
 
 
 def load_responses(files: List[str]) -> Dict[str, Dict[str, Dict[str, str]]]:
-    """Return {scenario_key: {rater_id: row_dict}}."""
+    """Return {item_key: {rater_id: row_dict}}.
+
+    The item key is the blinded ``item_id`` when present (current forms), or
+    ``scenario_key`` for older forms. Gold lookups resolve item_id -> filename
+    via the --map sidecar.
+    """
     out: Dict[str, Dict[str, Dict[str, str]]] = defaultdict(dict)
     for f in files:
         rater = _rater_id_from_filename(f)
         with open(f, newline="") as fh:
             for row in csv.DictReader(fh):
-                key = row.get("scenario_key", "").strip()
+                key = (row.get("item_id") or row.get("scenario_key") or "").strip()
                 if key:
                     out[key][rater] = row
     return out
@@ -131,7 +139,8 @@ def _agreement_block(units: List[List[str]]) -> Dict[str, Any]:
 # Protocol aggregators
 # ------------------------------------------------------------------ #
 
-def aggregate_taxonomy(responses, manifest, with_gold: bool) -> Dict[str, Any]:
+def aggregate_taxonomy(responses, manifest, with_gold: bool, id_map=None) -> Dict[str, Any]:
+    id_map = id_map or {}
     units: List[List[str]] = []
     gold_agree_num = gold_agree_den = 0
     per_item = {}
@@ -142,7 +151,7 @@ def aggregate_taxonomy(responses, manifest, with_gold: bool) -> Dict[str, Any]:
             units.append(labels)
         per_item[key] = labels
         if with_gold and labels:
-            gold_cat = _norm(_scenario(key).get("category", ""))
+            gold_cat = _norm(_scenario(id_map.get(key, key)).get("category", ""))
             if gold_cat:
                 gold_agree_den += len(labels)
                 gold_agree_num += sum(1 for l in labels if l == gold_cat)
@@ -190,7 +199,8 @@ def aggregate_expert(responses, manifest) -> Dict[str, Any]:
     }
 
 
-def aggregate_baseline(responses, manifest) -> Dict[str, Any]:
+def aggregate_baseline(responses, manifest, id_map=None) -> Dict[str, Any]:
+    id_map = id_map or {}
     # Per-item human correctness (majority over raters when >1), by category.
     per_category_correct: Dict[str, List[float]] = defaultdict(list)
     all_correct: List[float] = []
@@ -205,8 +215,9 @@ def aggregate_baseline(responses, manifest) -> Dict[str, Any]:
         return "80-100"
 
     for key, byr in responses.items():
-        scenario = _scenario(key)
-        gold = _gold(key)
+        real_key = id_map.get(key, key)
+        scenario = _scenario(real_key)
+        gold = _gold(real_key)
         gold_answer = _norm(gold.get("correct_answer", ""))
         fmt = scenario.get("answer_format", "multiple_choice")
         cat = _norm(scenario.get("category", "unknown"))
@@ -264,6 +275,9 @@ def main() -> int:
     parser.add_argument("--protocol", required=True,
                         choices=["taxonomy", "expert", "baseline"])
     parser.add_argument("--manifest", type=Path, default=None)
+    parser.add_argument("--map", type=Path, default=None,
+                        help="item_id -> scenario_key map sidecar (form <name>.map.json), "
+                             "needed to resolve gold for --with-gold / baseline")
     parser.add_argument("--with-gold", action="store_true",
                         help="(taxonomy) also report agreement with the gold category")
     parser.add_argument("--name", default=None, help="Report name (default: derived)")
@@ -277,14 +291,15 @@ def main() -> int:
         return 1
 
     manifest = json.loads(args.manifest.read_text()) if args.manifest else {}
+    id_map = json.loads(args.map.read_text()) if args.map else {}
     responses = load_responses(files)
 
     if args.protocol == "taxonomy":
-        result = aggregate_taxonomy(responses, manifest, args.with_gold)
+        result = aggregate_taxonomy(responses, manifest, args.with_gold, id_map)
     elif args.protocol == "expert":
         result = aggregate_expert(responses, manifest)
     else:
-        result = aggregate_baseline(responses, manifest)
+        result = aggregate_baseline(responses, manifest, id_map)
 
     result["n_response_files"] = len(files)
     result["n_scenarios"] = len(responses)

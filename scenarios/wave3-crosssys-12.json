@@ -1,0 +1,25 @@
+{
+  "title": "Galenos Agency dashboard: 'reporting glitch' versus a real surveillance signal",
+  "category": "cross_system_synthesis",
+  "domain": "other",
+  "difficulty": "hard",
+  "scenario_text": "Galenos Public Health Agency runs a regional dashboard that flags unusual increases in emergency-department visits for respiratory illness. This week one county shows a sharp spike. In the #epi-surveillance Slack channel the duty epidemiologist writes: 'That county migrated to a new hospital EHR last week - this is almost certainly a data artifact from the feed changeover. I've seen ingestion double-counting before. Treating the spike as a reporting glitch, not a real event.'\n\nOther systems point to a genuine signal. In the syndromic-surveillance system, the increase is driven by distinct patient encounters with unique identifiers, not duplicated records, and chief-complaint text mentions the same symptom cluster. In the lab-reporting system, positive respiratory-pathogen tests for that county rose in the same window, an independent data source unaffected by the EHR migration. In the pharmacy-sales feed, over-the-counter antiviral and fever-reducer sales in the county jumped ahead of the ED spike. And a school-absenteeism feed shows elevated absences in the same area.\n\nEach signal alone is arguable: EHR migrations do cause artifacts, lab counts fluctuate, and OTC sales are noisy. But together - unique (not duplicated) encounters, a correlated rise in lab-confirmed positives from an independent system, leading indicators in pharmacy sales, and elevated school absences - they indicate a real emerging outbreak, not a feed glitch. The epidemiologist's 'data artifact' read explains only the EHR feed and predates cross-referencing the independent sources. You are the surveillance lead deciding whether to initiate an outbreak investigation. What should you do?",
+  "question": "How should the surveillance lead treat the county's spike?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Samuel Okonkwo",
+    "title": "Regional Surveillance Lead",
+    "organization": "Delphos Health Authority",
+    "years_experience": 13,
+    "domain_expertise": "other"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Dismiss the spike as a data artifact from the EHR migration and exclude the county from this week's report until the feed stabilizes.",
+    "Wait two more weeks for the EHR feed to settle and re-evaluate before taking any action, to avoid a false alarm.",
+    "Initiate an outbreak investigation and issue an alert to county clinicians: unique-patient encounters, an independent rise in lab-confirmed positives, leading pharmacy-sales and school-absenteeism indicators together confirm a real signal that the migration-artifact explanation does not cover.",
+    "Correct the dashboard's de-duplication logic for the migrated feed and consider the anomaly resolved."
+  ]
+}

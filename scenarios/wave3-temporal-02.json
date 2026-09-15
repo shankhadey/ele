@@ -1,0 +1,25 @@
+{
+  "title": "A Deep Discount Denied Until the Expansion Was Signed",
+  "category": "temporal_consistency",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "A deal desk analyst at Larchwood Media must decide whether to grant a 28% discount on a new deal, given how a comparable request was handled earlier this year.\n\n**Decision A (2024-03-19)**\nCustomer 'Piedmont Labs' requested a 28% discount. DENIED. Note: 'Discounts above 15% require a verified, countersigned multi-year expansion commitment. Piedmont provided only a verbal forecast of future growth \u2014 nothing signed. Capped at 15%.'\n\n**Current request C (2024-09-30)**\nCustomer 'Calder Group' requests the same 28% discount. Calder has attached a countersigned 3-year expansion order committing to additional seats worth $900K in incremental ARR. The order is executed by both parties and verified by Deal Desk.\n\n**Discount Authority Policy (current, unchanged this year)**\nDeal Desk may grant discounts up to 30% when the deal includes a verified, countersigned multi-year expansion commitment of at least $500K incremental ARR. Without such a commitment, the discount cap is 15%. The verified-commitment requirement and the 30% ceiling have not changed this year.\n\n**Slack \u2014 #deal-desk**\nAE: 'We denied a 28% ask for Piedmont back in March, so Calder should get capped at 15% too \u2014 let's be consistent.'\nAnalyst: 'Piedmont was denied because nothing was signed. Calder has a countersigned expansion order attached. That's new information \u2014 let me line it up against the policy.'\n\nThe Piedmont denial rested on the absence of a signed commitment. Calder's countersigned order clears the $500K incremental-ARR bar.",
+  "question": "How should the analyst handle Calder Group's 28% discount request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Devon Attah",
+    "title": "Deal Desk Analyst",
+    "organization": "Larchwood Media",
+    "years_experience": 9,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Cap Calder at 15%, consistent with the March denial of a similar 28% request for Piedmont.",
+    "Approve the 28% discount: Calder has a verified, countersigned expansion order worth $900K incremental ARR, which satisfies the exact condition Piedmont lacked, so the deeper discount is authorized under the unchanged policy.",
+    "Escalate the discount to VP Sales, since any discount above 15% is inherently outside Deal Desk authority.",
+    "Offer a 21% discount as a midpoint between the 15% cap and the requested 28%."
+  ]
+}

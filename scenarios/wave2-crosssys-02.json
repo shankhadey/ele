@@ -1,0 +1,19 @@
+{
+  "title": "Alderney Cloud auth outage: 'node pressure, fail over' versus an expired certificate",
+  "category": "cross_system_synthesis",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "At 09:03 UTC PagerDuty pages the on-call for Alderney Cloud: the authentication API is returning 5xx errors and login success rate has collapsed. In the #inc-auth Slack bridge the incident commander writes at 09:08: 'This looks like the us-east cluster degrading, probably the same node pressure we saw last month. I'm going to fail traffic over to us-west and we should be fine.'\n\nDatadog partially supports a panic: the auth service 5xx rate has jumped from near zero to 34%, and CPU on several us-east nodes is elevated. Statuspage is still green and the first customer tickets are only now arriving in Zendesk.\n\nBut the error logs show the failures are all TLS handshake errors, 'x509: certificate has expired,' on the mutual-TLS connection between the auth service and the internal token-signing service. The internal certificate-management dashboard confirms the intermediate certificate used for that mTLS link reached its expiry at exactly 09:00 UTC, three minutes before the page. The same certificate is deployed identically in every region, including us-west. Node CPU is elevated because the auth service is furiously retrying failed handshakes, not because of organic load. The 'node pressure last month' the IC referenced was an unrelated event that self-resolved after a scale-up.\n\nReissuing and deploying the certificate is a documented runbook step that takes about ten minutes. You are the secondary on-call reviewing the bridge before the IC commits to the regional failover. Given the signals across PagerDuty, Datadog, the certificate dashboard, and the error logs, what is the single most important action to take first?",
+  "question": "What single action should be taken first to resolve the auth outage?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Owen Castellano",
+    "title": "Principal Site Reliability Engineer",
+    "organization": "Redgrave Systems",
+    "years_experience": 13,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge"
+}

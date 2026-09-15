@@ -1,4 +1,6 @@
 {
+  "_comment_private_dir": "Root of the PRIVATE ELEAnswers repo holding answers/, logs/, results/. Relative paths resolve against the repo root. Override with env ELE_PRIVATE_DIR, or per-dir env ELE_ANSWERS_DIR / ELE_LOGS_DIR / ELE_RESULTS_DIR. Remove this key to fall back to local ./answers, ./logs, ./results.",
+  "ele_private_dir": "../ELEAnswers",
   "eval_timeout_seconds": 60,
   "eval_max_tokens": 4096,
   "eval_temperature": 0.0,

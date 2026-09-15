@@ -1,0 +1,19 @@
+{
+  "title": "Capitalize or Expense an Asset Placed in Service After the Threshold Rose",
+  "category": "policy_version",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "Volans Industries applies a capitalization threshold to fixed-asset purchases.\n\nVersion 1 (in effect through 2024-09-30): \"Tangible items with a unit cost of $2,500 or more are capitalized and depreciated; items below $2,500 are expensed as incurred.\"\n\nVersion 2 (effective 2024-10-01): \"The capitalization threshold is raised to $5,000; items with a unit cost of $5,000 or more are capitalized, and items below $5,000 are expensed.\" v2 includes a transition clause: \"The threshold applied to an asset is the one in force on the asset's in-service date, defined as the date the asset is placed in service. Assets placed in service on or before September 30, 2024 apply the v1 $2,500 threshold; assets placed in service on or after October 1, 2024 apply the v2 $5,000 threshold. The purchase-order and supplier-invoice dates do not control.\"\n\nThe fixed-asset register shows candidate asset FA-6120 (engineering workstation, unit cost $3,200) with PO Date 2024-09-05, Supplier Invoice Date 2024-09-20, and In-Service Date 2024-10-08.\n\nA staff accountant emails the fixed-assets manager on 2024-10-12: \"Setting up FA-6120, a $3,200 workstation. It was ordered and invoiced in September but wasn't actually deployed until October 8. Do we capitalize it or expense it, and under which threshold?\"\n\nUsing the policy history, the transition clause, and the register, determine the correct treatment of FA-6120.",
+  "question": "Should FA-6120 be capitalized or expensed, and under which threshold?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Harold Kim",
+    "title": "Fixed Assets Accounting Manager",
+    "organization": "Volans Industries",
+    "years_experience": 14,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

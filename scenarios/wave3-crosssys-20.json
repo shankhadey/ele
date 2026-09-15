@@ -1,0 +1,25 @@
+{
+  "title": "Cybele Devices sourcing: 'best unit price, consolidate' versus concentration-risk signals",
+  "category": "cross_system_synthesis",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "Cybele Devices, a medical-device manufacturer, is deciding whether to consolidate all purchases of a critical sensor component to a single supplier in exchange for a volume discount, dropping its second qualified source. In the #sourcing Slack channel the commodity manager writes: 'The single-source price is clearly the best and this supplier has never missed a delivery. Dual-sourcing is just extra cost and qualification overhead. Let's consolidate and take the discount.'\n\nOther systems flag concentration risk the price comparison ignores. In trade-compliance monitoring, the supplier's only production plant sits in a region newly subject to proposed export-control restrictions that could interrupt shipments. In the quality system, this exact component from this supplier had a field-corrective-action (recall) event nine months ago, and the design fix is still being validated. In the business-continuity register, the same plant has a documented flood-related force-majeure shutdown in its history, and no alternate plant is qualified. And an engineering note warns that re-qualifying a second source, if the primary fails, would take six months given medical-device validation requirements.\n\nEach item alone is manageable: prices favor consolidation, one recall can be fixed, export rules may not pass, and force-majeure events are rare. But together - a sole plant in an export-restricted region, an unresolved recall on the very component, a flood-shutdown history with no qualified backup, and a six-month re-qualification lead time - they show that single-sourcing this critical part concentrates catastrophic supply risk that the unit-price advantage does not offset. The manager's 'best price, never missed' read weighs cost and past delivery only. You own supply-chain risk. What should you recommend?",
+  "question": "What should you recommend about consolidating to the single supplier?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Farah Nasser",
+    "title": "Director of Supply Chain Risk",
+    "organization": "Delos Medical Manufacturing",
+    "years_experience": 13,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Consolidate to the single supplier to capture the volume discount; their price is best and they have never missed a delivery.",
+    "Consolidate now for the savings but add a contractual penalty clause for late deliveries to offset the risk.",
+    "Do not single-source; retain the qualified second source (or qualify one) and build safety stock: the export-control exposure, the unresolved recall, the plant's force-majeure history with no backup, and the six-month re-qualification lead time together make concentration risk outweigh the unit-price savings.",
+    "Drop the second source but rely on the supplier's own business-continuity assurances and revisit only if an export restriction is actually enacted."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Thespis Studios sole-source vendor: 'just a slow quarter' versus insolvency signals",
+  "category": "cross_system_synthesis",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "scenario_text": "Thespis Studios depends on a single specialist vendor, Larison Render, for the cloud rendering pipeline behind two unreleased titles. A three-year renewal with prepayment is on the table. In the #vendor-mgmt Slack channel the category manager writes: 'Larison's had a soft couple of quarters like everyone in the space. Their sales rep says they're fine and hiring again. I don't see a reason to hold up the renewal - let's prepay the year and lock the rate.'\n\nOther systems raise concerns the rep did not mention. In the AP system, Larison has requested that Thespis switch from Net 45 to prepayment or 50% deposits on the last three orders - a common cash-squeeze tell. In Dun & Bradstreet, Larison's paydex score dropped two bands in the last quarter and a new tax lien is recorded. On LinkedIn, Larison's CFO and two senior infrastructure leads all changed roles or listed 'former' in the past month, and a monitoring alert shows Larison's status page reporting lengthening render-queue outages. Finally, an email from a Larison account manager yesterday offered a steep discount for a full-year prepayment 'to help us close the quarter strongly.'\n\nEach item is individually explainable: sectors have slow quarters, vendors tighten terms, executives move on, and discounts for prepayment are normal. But together - deteriorating credit with a new lien, a push toward upfront cash, senior-finance and infrastructure departures, reliability degradation, and an unusually aggressive prepay discount - they point to a vendor in financial distress, exactly when prepaying a year concentrates your risk. The rep's 'we're fine' predates the lien filing and the CFO's departure. You own this vendor relationship. What should you recommend?",
+  "question": "What should you recommend regarding the Larison Render renewal and prepayment?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Priya Chandran",
+    "title": "Director of Strategic Sourcing",
+    "organization": "Corinth Entertainment",
+    "years_experience": 10,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Prepay the full year now to capture the discount and lock the rate; the vendor's rep confirmed they are stable and hiring.",
+    "Renew on the vendor's proposed prepayment terms but negotiate a slightly larger discount to compensate for the sector slowdown.",
+    "Do not prepay; renew only on short, milestone-based terms while activating a backup-vendor and data-escrow contingency: the credit downgrade and lien, the cash-forward push, the finance and infrastructure departures, and the reliability decline together indicate distress that the rep's reassurance does not reflect.",
+    "Delay any decision until the vendor publishes audited financials next quarter, continuing on the current contract in the meantime."
+  ]
+}

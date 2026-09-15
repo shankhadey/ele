@@ -1,0 +1,25 @@
+{
+  "title": "Brindley Analytics transfer: 'completely trusted' versus an open conflict case",
+  "category": "cross_system_synthesis",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "At Brindley Analytics, a manager has requested to fast-track an internal transfer promoting an engineer, referred to here as the candidate, into a privileged administrator role over the financial-reporting systems, effective next week. In Workday the candidate's performance history is strong, and in the #people-ops Slack channel the manager writes: 'Top performer, completely trusted, I've worked with them for years, let's approve the transfer and grant the admin access now so onboarding is smooth.'\n\nOther systems raise flags the manager has not seen. In the ethics case-management system (EthicsPoint), a report was opened five days ago alleging the candidate has an undisclosed financial interest in a small vendor that Brindley has begun paying, a potential conflict of interest; the case is open and unresolved. In Concur, three of the candidate's recent expense reports show round-dollar reimbursements routed to that same vendor, flagged by the automated anomaly rule. The access-governance tool (SailPoint) shows the candidate already requested elevated entitlements to the accounts-payable system last week, before the transfer was approved.\n\nThe manager's 'completely trusted' judgment reflects a long working relationship but predates the ethics report and does not reference it. Individually, an unproven allegation, an expense flag, or an access request could each be benign. Together - an open conflict-of-interest investigation, expense anomalies pointing at the same vendor, and a pre-emptive request for AP access - they describe a possible self-dealing risk that granting financial-systems admin rights would dramatically amplify.\n\nYou are the HR business partner supporting this transfer. What should you do?",
+  "question": "What should the HR business partner do about the transfer and access request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Rosa Lindqvist",
+    "title": "Director of People Operations",
+    "organization": "Kelvedon Analytics",
+    "years_experience": 12,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Approve the transfer and grant the admin access now; the candidate's strong performance history and the manager's long-standing trust are the most reliable indicators of integrity.",
+    "Approve the transfer but ask the manager to keep an informal eye on the candidate's expenses, since the Concur flags are likely just clerical rounding.",
+    "Deny the transfer permanently and begin termination proceedings, since the expense flags are sufficient proof of misconduct.",
+    "Pause the transfer and withhold the elevated access, and coordinate with Ethics, Legal, and Security to resolve the open investigation first: the active conflict-of-interest case, the expense anomalies pointing at the same vendor, and the pre-emptive AP-access request together indicate a self-dealing risk that financial-systems admin rights would amplify."
+  ]
+}

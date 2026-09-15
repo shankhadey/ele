@@ -1,0 +1,25 @@
+{
+  "title": "Cross-Border Analytics on Customer PII - All Required Controls Present",
+  "category": "approval_chain",
+  "domain": "compliance_legal",
+  "difficulty": "hard",
+  "scenario_text": "A privacy-compliance audit agent at Elphinstone Cloud is validating authorization to enable a new analytics use of customer personal data.\n\n**Personal-Data Processing Authority Matrix**\n- Analytics on fully anonymized data (no PII): Privacy Analyst approval.\n- Processing customer PII within an EXISTING transfer route already covered by executed Standard Contractual Clauses (SCCs): DPO approval AND Security review AND a completed Data Protection Impact Assessment (DPIA) on file.\n- Transfer of customer PII to a NEW country not covered by existing SCCs: DPO approval AND Security review AND General Counsel approval (to execute new SCCs).\n\n**Data Processing Request**\n- DPIA-118: Enable churn-analytics processing on customer contact records (PII).\n- Transfer route: US processing of EU-origin PII, on the existing US-EU route already covered by Elphinstone's executed SCCs (per the transfer register linked to the ticket).\n- Approved by (field): 'DPO - Marta L.'\n- Attachments: Security review report (status: Passed); DPIA (status: Complete).\n\n**Email / Slack trail (reconstructed)**\n- Security Engineer (2026-05-08): 'Reviewed the churn-analytics pipeline. No blocking findings. Security sign-off = Passed, attached to DPIA-118.'\n- Marta L., DPO (2026-05-11): 'Confirmed the US-EU route is on our SCC-covered register; no new country introduced. DPIA reviewed and complete. DPO approval granted.'\n- General Counsel is not in the thread; no new transfer destination is created.\n\nThe transfer register attached to DPIA-118 confirms the US-EU route is already SCC-covered, and both the Security sign-off and DPO approval carry timestamps and named approvers.",
+  "question": "What should the audit conclude about the authorization of this data-processing request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Marta Lindholm",
+    "title": "Data Protection Officer",
+    "organization": "Elphinstone Cloud",
+    "years_experience": 14,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Invalid - the request is missing General Counsel approval, which is required whenever customer PII is processed.",
+    "Valid and complete - the request processes customer PII on an existing SCC-covered transfer route, and all three required controls for that tier are satisfied: DPO approval is recorded, the Security review is Passed, and a completed DPIA is on file, so authorization is proper.",
+    "Valid, but a documentation cleanup is needed - the DPIA should be re-run and the Security report re-dated before the approval can be relied upon.",
+    "Invalid - any new analytics use of PII requires General Counsel approval plus Board privacy-committee ratification, so the request must be escalated before it stands."
+  ]
+}

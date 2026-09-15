@@ -1,0 +1,19 @@
+{
+  "title": "Customer Data Export Released Without the Required Security Sign-Off",
+  "category": "approval_chain",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "A support-operations audit agent at Girton Media is validating authorization on a bulk customer-data export raised to resolve an escalation.\n\n**Customer Data Export Authority Matrix**\n- Export of a customer's OWN non-personal configuration data back to that customer: Support Manager approval.\n- Any export of records containing personal data (PII) to an external destination MUST clear a Security review with the requesting customer's written authorization on file, in addition to the approval tier below. This Security sign-off is a hard gate at every volume.\n- Export up to 100,000 PII records: CS Director approval AND Security review.\n- Export above 100,000 PII records: VP Customer Success approval AND Security review AND DPO notification.\n\n**Support / Ticketing Record**\n- EXP-4471: Bulk export of 62,000 subscriber contact records (PII) for customer 'Halewood Media Group', delivered to the customer's SFTP endpoint.\n- Approved by (field): 'CS Director - Owen B.'\n- Security review: (empty). Customer written authorization: (not attached).\n\n**Slack #cs-escalations (reconstructed)**\n- Requester: 'Halewood needs their 62K contact export before their migration window closes tonight.'\n- Owen B. (CS Director): 'Volume's under 100K, so it's my approval. Security's queue is days out.'\n- Requester: 'Can we push the export now and do the security review after?'\n- Owen B.: 'Approving EXP-4471 now; we'll run the security check afterward.'\n\nThe export moves 62,000 PII records to an external SFTP endpoint and the security gate has not been cleared.",
+  "question": "The CS Director approval is at the correct volume tier, but the export is still unauthorized. Name the single required control that is missing.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Owen Blackwell",
+    "title": "Customer Success Operations Lead",
+    "organization": "Girton Media",
+    "years_experience": 8,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge"
+}

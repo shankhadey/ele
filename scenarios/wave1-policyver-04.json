@@ -1,0 +1,19 @@
+{
+  "title": "PTO Carryover for a Long-Tenured Employee After the Accrual Change",
+  "category": "policy_version",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "Ravensworth Foods changed its PTO policy at the start of 2024.\n\nVersion 1 (in effect through December 31, 2023) states: \"Full-time employees accrue 15 PTO days per year. Unused PTO carries over without limit.\"\n\nVersion 2 (effective January 1, 2024) states: \"Full-time employees accrue 18 PTO days per year. At year end, no more than 5 days of PTO may carry into the following year; any excess is forfeited.\" v2 includes a grandfather clause: \"Employees hired before January 1, 2024 retain unlimited carryover for the balance accrued through December 31, 2024 (the 'grandfathered balance'). This grandfathered balance is frozen and does not count toward the 5-day cap. All PTO accrued on or after January 1, 2024 accrues at the 18-day rate and is subject to the 5-day cap. Within any calendar year, PTO used is drawn first from that year's accrual; the grandfathered balance may be drawn only after the current year's accrual is exhausted.\"\n\nThe HRIS record for employee E-2087 (hired 2019-04-01) shows a grandfathered balance of 22.0 days as of December 31, 2024. During 2025 the record shows 18.0 days accrued and 10.0 days taken.\n\nAn HR generalist emails payroll on 2025-12-15: \"Closing out E-2087 for year end. They have the 22-day grandfathered bucket plus this year's accrual. How many days roll into 2026, and does anything get forfeited?\"\n\nUsing the policy history, the grandfather clause, and the HRIS balances, determine the carryover into 2026 and any forfeiture.",
+  "question": "How many PTO days carry into 2026 for E-2087, and how many days are forfeited?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Sofia Marchenko",
+    "title": "People Operations Lead",
+    "organization": "Ravensworth Foods",
+    "years_experience": 9,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge"
+}

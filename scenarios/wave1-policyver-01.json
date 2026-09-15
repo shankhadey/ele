@@ -1,0 +1,25 @@
+{
+  "title": "22% Discount on an In-Flight Enterprise Opportunity",
+  "category": "policy_version",
+  "domain": "sales_deal_desk",
+  "difficulty": "hard",
+  "scenario_text": "Ostrander Cloud maintains a Discount Approval Policy in its deal desk handbook.\n\nVersion 1.0 (effective January 1, 2023) states: \"Discounts up to and including 25% off list may be approved by the Regional VP (RVP). Discounts above 25% require CFO approval.\"\n\nVersion 2.0 (effective July 1, 2024) states: \"Discounts up to and including 15% off list may be approved by the RVP. Discounts above 15% require CFO approval.\" It adds a transition clause: \"Opportunities that have reached a CRM Stage of 'Proposal' or later as of June 30, 2024 remain governed by v1.0 through their current close. Any opportunity created or re-opened on or after July 1, 2024, and all renewal opportunities, are governed by v2.0.\"\n\nSalesforce shows opportunity OPP-4471 (customer: Beltline Freight) with Created Date 2024-03-11, Stage = 'Proposal' with a Stage-change timestamp of 2024-05-20, and an expected Close Date of 2024-08-29. The opportunity is new business (not a renewal) and has not been re-opened. The proposed order form applies a 22% discount off list.\n\nA deal desk analyst posts in the #deal-approvals Slack channel on 2024-08-05: \"Reviewing OPP-4471, 22% off. The new policy took effect July 1. Do we need to route this to the CFO, or can the RVP sign off? The rep says it's been in Proposal since May.\"\n\nUse the policy history, the transition clause, and the CRM record to determine the required approval level for the 22% discount on OPP-4471.",
+  "question": "Whose approval is required for the 22% discount on OPP-4471?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Danielle Okafor",
+    "title": "Deal Desk Manager",
+    "organization": "Ostrander Cloud",
+    "years_experience": 11,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "RVP approval is sufficient, because OPP-4471 reached Proposal stage on 2024-05-20 (before June 30, 2024), so v1.0's 25% RVP threshold governs the deal through close.",
+    "CFO approval is required, because the current policy v2.0 caps RVP authority at 15% and 22% exceeds that limit.",
+    "CFO approval is required, because all open opportunities automatically transitioned to v2.0 when it took effect on July 1, 2024.",
+    "RVP approval is sufficient, because v2.0 raised the RVP approval ceiling to 25% off list."
+  ]
+}

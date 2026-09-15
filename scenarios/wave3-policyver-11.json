@@ -1,0 +1,25 @@
+{
+  "title": "Breach Reporting Deadline for an Incident That Predated the Shorter Window",
+  "category": "policy_version",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "Cepheus Financial reports personal-data breaches under its Incident Notification Policy.\n\nVersion 1 (in effect through 2024-06-30): \"A reportable personal-data breach must be notified to the regulator within 72 hours of the organization's discovery of the breach.\"\n\nVersion 2 (effective 2024-07-01): \"A reportable personal-data breach must be notified to the regulator within 48 hours of discovery, and affected individuals must be notified within 30 days.\" v2 includes a transition clause: \"The notification obligations in force on the date the breach occurred (the incident date) govern that breach, regardless of when it is discovered. Breaches occurring on or before June 30, 2024 follow the v1 72-hour regulator window with no individual-notice requirement; breaches occurring on or after July 1, 2024 follow v2. In all cases the regulator-notice clock runs from the date of discovery.\"\n\nThe SIEM record for incident INC-7788 shows: Event (incident) Date 2024-06-25 (unauthorized access to a customer table), Detection/Discovery Date 2024-07-10, Data affected: personal data (reportable).\n\nThe privacy counsel writes to the incident commander on 2024-07-11: \"INC-7788, the intrusion itself was June 25 but we only detected it July 10. Do we owe the regulator notice in 48 or 72 hours, and is there a separate 30-day individual notice? And what's the actual deadline?\"\n\nUsing the policy history, the transition clause, and the SIEM record, determine the regulator-notice deadline and whether individual notice is required.",
+  "question": "What is the regulator-notice deadline for INC-7788, and is individual notice required?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Priya Nair",
+    "title": "Data Privacy Counsel",
+    "organization": "Cepheus Financial",
+    "years_experience": 12,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "The v1 72-hour window applies because the breach occurred 2024-06-25 (on or before June 30, 2024); the report is due within 72 hours of the 2024-07-10 discovery, i.e., by 2024-07-13, with no separate 30-day individual-notice requirement.",
+    "The v2 48-hour window applies because the breach was discovered 2024-07-10, after v2 took effect, so the report is due by 2024-07-12, plus a 30-day individual notice.",
+    "The v1 72-hour window runs from the 2024-06-25 incident date, so the deadline was 2024-06-28 and the report is already overdue.",
+    "The v2 window applies because the reporting occurs in July 2024, when v2 is the current policy."
+  ]
+}

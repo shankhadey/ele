@@ -1,0 +1,25 @@
+{
+  "title": "An Escalation Tier Set by Verified Impact Data",
+  "category": "temporal_consistency",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "A support operations lead at Hawthorn Freight must decide what escalation tier a customer's outage ticket should receive, given how a comparable ticket was handled earlier this year.\n\n**Decision A (2024-04-18)**\nCustomer 'Bexhill Couriers' reported a partial outage and requested Tier-1 (highest) escalation with a dedicated incident bridge. HELD AT TIER-2. Note: 'Tier-1 escalation requires verified evidence of a full production outage or documented revenue impact above $10K/hour. Bexhill reported only a partial degradation and provided no impact figures. Handled at Tier-2.'\n\n**Current request C (2024-10-22)**\nCustomer 'Calderwood Freight' reports an outage and requests Tier-1 escalation. Calderwood has attached monitoring exports showing a full production outage of its shipment-tracking integration and a finance memo documenting revenue impact of $14K/hour.\n\n**Escalation Policy (current, unchanged since 2023-12)**\nTier-1 escalation (dedicated incident bridge, executive notification) requires verified evidence of a full production outage OR documented revenue impact above $10K/hour. Tickets without such evidence are handled at Tier-2. These criteria have applied since December 2023.\n\n**Slack \u2014 #support-ops**\nAgent: 'We held a similar outage escalation at Tier-2 back in April, so let's keep Calderwood at Tier-2 too and stay consistent.'\nLead: 'April was held at Tier-2 because there was no verified impact. Calderwood has attached a full-outage export and a $14K/hour impact memo. That's new information \u2014 let me evaluate it.'\n\nCalderwood's evidence shows both a full outage and revenue impact above the $10K/hour threshold.",
+  "question": "How should the lead handle Calderwood Freight's escalation request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Lena Fitzgerald",
+    "title": "Support Operations Lead",
+    "organization": "Hawthorn Freight",
+    "years_experience": 7,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Hold the ticket at Tier-2, consistent with the April handling of a similar outage escalation.",
+    "Escalate to Tier-1: Calderwood provided verified evidence of a full outage and $14K/hour revenue impact, satisfying the exact criteria the April ticket lacked, so the difference in handling is justified under the unchanged policy.",
+    "Route the request to the VP of Support for a decision, since Tier-1 escalations are sensitive.",
+    "Assign an intermediate 'Tier-1.5' handling as a compromise between the two tiers."
+  ]
+}

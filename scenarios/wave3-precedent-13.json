@@ -1,0 +1,25 @@
+{
+  "title": "Severance Enhancement With a Bona Fide Legal Claim",
+  "category": "precedent_exception",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "You are a compensation partner at Nervia Telecom. An employee being separated in a workforce reduction, Gwen Halloran (6 years of service), is being processed for severance. During the process, HR learns she has raised a documented age-discrimination claim.\n\nActive policy: Separation & Severance Policy SS-5, effective 2024-06-01. Standard severance is a fixed formula: two weeks of base pay per year of service for reduction-in-force separations. An enhanced severance (formula plus additional weeks and extended benefits) is unlocked ONLY when the employee signs a full release resolving a bona fide legal claim, and it requires Compensation Committee approval. General fairness, tenure, or morale are non-qualifying for the enhancement.\n\nPrecedent (HR case file): 2024-09-08, employee 'Martin Vey' (5 years), RIF separation, received only the standard formula. Note: \"No legal claim raised; standard formula applied. Signed the standard separation agreement.\"\n\nCurrent facts: Halloran has raised a documented age-discrimination claim that Legal assesses as bona fide, and she is prepared to sign a full release resolving it. The HR generalist proposes \"just the standard formula to match the Vey precedent and keep it consistent.\" Legal confirms the claim is bona fide and that a full release is available; no request beyond the enhanced tier is contemplated.",
+  "question": "What severance should Halloran receive, and via which path?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Gordon Fairbanks",
+    "title": "Compensation Partner",
+    "organization": "Nervia Telecom",
+    "years_experience": 11,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "The standard formula only, mirroring the Martin Vey precedent to keep RIF separations consistent.",
+    "The enhanced severance - formula plus additional weeks and extended benefits - via Compensation Committee approval, because Halloran will sign a full release resolving a bona fide legal claim, which is the factor that unlocks the enhancement.",
+    "The standard formula plus a discretionary cash bonus approved by her manager, since a discrimination claim is a manager-level matter.",
+    "No severance until the discrimination claim is fully litigated, because paying severance during an open claim is improper."
+  ]
+}

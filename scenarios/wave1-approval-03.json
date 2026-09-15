@@ -1,0 +1,25 @@
+{
+  "title": "Emergency Schema Change Deployed - Retrospective CAB Review Now Overdue",
+  "category": "approval_chain",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "A change-management audit agent at Carrow Systems is reviewing a production emergency change on 2026-03-20.\n\n**Change Authority Matrix**\n- Standard change: peer reviewer approval + scheduled CAB (Change Advisory Board) slot.\n- Normal change: Change Manager approval before deploy.\n- Emergency change: the on-call incident commander MAY deploy immediately with a VP Engineering verbal authorization (logged), BUT the change is conditional and requires (a) auto-revoke of any temporary access within 24h and (b) a retrospective CAB review plus post-incident writeup completed within 5 business days of deploy. Absent the retrospective review by the deadline, the change is out of compliance.\n\n**Jira Change Record**\n- CHG-2290: 'Emergency schema migration on orders-db to stop cascading write failures.'\n- Deployed: 2026-03-02 (Monday). Type: Emergency.\n- Approved by (field): 'On-call IC - Marco V.; VP Eng verbal authorization logged 2026-03-02 21:14.'\n- Retrospective CAB review: (empty). Post-incident writeup: (empty).\n\n**Slack #incident-orders (reconstructed)**\n- Marco V.: 'Writes are failing site-wide. VP, do I have the go?'\n- VP Eng: 'Go now. Do the CAB retro and writeup next week.'\n- Marco V. (2026-03-09): 'Site's been stable, I'll get to the retro soon.'\n- (no further entries; today is 2026-03-20)\n\nThe 5-business-day retrospective deadline fell on 2026-03-09.",
+  "question": "What should the audit conclude about the authorization status of this change?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Marcus Vela",
+    "title": "SRE Change Management Lead",
+    "organization": "Carrow Systems",
+    "years_experience": 12,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Valid and complete - the emergency change was properly authorized at deploy time by the on-call IC with logged VP Engineering approval; no further action is required.",
+    "Valid, but needs a documentation cleanup - the team simply needs to file the retrospective writeup at their convenience; the change's compliance is not affected.",
+    "The deploy-time authorization was valid, but the mandatory retrospective CAB review and post-incident writeup were due 2026-03-09 and are now 11 days overdue, so the change is currently out of compliance and must be escalated for the retrospective review to be completed and signed off.",
+    "The change was never validly authorized because emergency changes require Change Manager sign-off in advance; it must be rolled back and reopened as a normal change."
+  ]
+}

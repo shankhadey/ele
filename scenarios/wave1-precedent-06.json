@@ -1,0 +1,25 @@
+{
+  "title": "Sole-Source Vendor Approval Under the Revised Procurement Threshold",
+  "category": "precedent_exception",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "scenario_text": "You are a procurement manager at Quillon Analytics. An engineering team wants to purchase a specialized GPU-profiling tool from a single vendor, 'Halbrook Tools,' for $145,000/year on a sole-source basis (no competitive bids).\n\nActive policy: Procurement Standard PS-7, effective 2024-08-01. Sole-source purchases require: under $50K, Department Head approval; $50K-$100K, Procurement Director + a written sole-source justification; over $100K, the Procurement Director AND the CFO, plus a competitive-market analysis demonstrating no viable alternative. PS-7 lowered the CFO-approval trigger from the prior $250K (under PS-6) down to $100K.\n\nPrecedent (procurement log): 2024-04-22, sole-source purchase from 'Vireo Compute' at $180,000/year, approved by Procurement Director Elena Cruz alone with a written justification but no CFO sign-off and no market analysis. Policy version at decision: PS-6. Log note: \"Under PS-6 threshold; Director approval sufficient below $250K.\"\n\nThe requesting engineer writes in the ticket: \"We bought Vireo last spring at $180K with just Elena's approval. Halbrook is cheaper at $145K, so the same Director-only approval should cover it. Please don't make us assemble a market analysis \u2014 there genuinely is no competitor, but the paperwork will delay us a month.\"\n\nThere is no emergency exception invoked, and the purchase is a routine annual tooling renewal.",
+  "question": "What approval is required to purchase Halbrook Tools on a sole-source basis?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Theo Nkemelu",
+    "title": "Procurement Manager",
+    "organization": "Quillon Analytics",
+    "years_experience": 8,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Procurement Director approval alone with a written sole-source justification, mirroring the $180K Vireo Compute purchase.",
+    "Procurement Director plus CFO approval with a competitive-market analysis, because PS-7 requires both for sole-source purchases over $100K.",
+    "Department Head approval, since the engineer confirms there is genuinely no competing product.",
+    "Procurement Director plus CFO approval, but the market analysis can be waived because the requester attests no competitor exists."
+  ]
+}

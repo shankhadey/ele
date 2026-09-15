@@ -1,0 +1,19 @@
+{
+  "title": "Contractor Today, Full-Time Tomorrow: One Person, Two Records",
+  "category": "entity_resolution",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "scenario_text": "Ostergaard Software's platform team is provisioning production access and needs to reconcile identities across systems for a backend engineer. Okta shows two active accounts: contractor account j.aune-ext@ostergaard.dev (created 2023-04-03, profile type External, tied to staffing vendor \"NordStaff AB,\" PO-2231) and employee account jaune@ostergaard.com (created 2024-02-01, profile type Employee). Workday has employee record E-55120 \"Johan Aune,\" hire date 2024-02-01, worker type Regular, personal email johan.aune@gmail.com, national ID ending 7788. The contractor identity in the vendor system (Beeline) is \"Johan Aune,\" contract 2023-04 through 2024-01, personal email johan.aune@gmail.com, same national ID ending 7788. GitHub Enterprise shows one login \"jaune-dev\" whose commit author email changed from j.aune-ext@ostergaard.dev to jaune@ostergaard.com on 2024-02-05, preserving the same commit history and SSH key fingerprint. The conversion note in Workday reads: \"Converted from contractor (NordStaff) to FTE effective 2024-02-01; same individual.\" The contractor Okta account was supposed to be deprovisioned on conversion but is still active, so the person now holds two live identities with overlapping entitlements. Security wants the canonical person record identified and the redundant access closed. Security also notes the contractor account still appears in a production access group whose membership is reviewed quarterly, so an incorrect classification would either strand or over-grant privileged deploy rights during the next recertification cycle. Provide the Okta login that should remain active as the person's canonical identity going forward.",
+  "question": "Which Okta account should remain active as Johan Aune's canonical identity after the contractor-to-FTE conversion?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Elin Haugen",
+    "title": "IAM Engineer",
+    "organization": "Ostergaard Software",
+    "years_experience": 8,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

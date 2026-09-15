@@ -1,0 +1,25 @@
+{
+  "title": "A Raise Denied Under the Old Salary Band",
+  "category": "temporal_consistency",
+  "domain": "hr_people_ops",
+  "difficulty": "standard",
+  "scenario_text": "A compensation partner at Redmayne Foods must decide how to handle an off-cycle raise request for a Senior Analyst, given how a similar request was handled earlier this year.\n\n**Decision A (2024-01)**\nManager requested an off-cycle raise for a Senior Analyst to $98,000. DENIED. Note: 'The Senior Analyst band maxes at $95,000. $98,000 exceeds the band, and raises above band max require VP approval, which was not obtained. Denied.'\n\n**Current request C (2024-08-20)**\nManager requests an off-cycle raise for a different Senior Analyst to $105,000, citing strong performance and a retention risk.\n\n**Compensation Policy (current; new bands effective 2024-07-01)**\nAs of July 1, 2024, the Senior Analyst band maxes at $110,000 (raised from the prior $95,000). Off-cycle raises WITHIN band may be approved by the compensation partner with manager justification. Only raises ABOVE the band max require VP approval.\n\n**Slack \u2014 #comp**\nManager: 'We tried an off-cycle bump to $98K in January and it got denied for being over band. This $105K ask will just get denied too, right?'\nPartner: 'The bands changed on July 1. Let me check where $105K sits against the current band before assuming it's a repeat.'\n\nThe manager is treating the January denial as proof that raises at this level are blocked. No one has yet compared $105,000 to the new band max.",
+  "question": "How should the compensation partner handle the $105,000 raise request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Grace Lindqvist",
+    "title": "Compensation Partner",
+    "organization": "Redmayne Foods",
+    "years_experience": 8,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Deny the raise, consistent with the January denial of an above-band raise for a Senior Analyst.",
+    "Approve the $105,000 raise with manager justification, because it falls within the new $110,000 Senior Analyst band effective July 1, 2024 \u2014 so the January denial, made under the old $95,000 max, no longer governs.",
+    "Escalate to the VP for approval, since the raise exceeds the $95,000 band max that applied in January.",
+    "Offer $95,000 as a compromise to match the prior band maximum."
+  ]
+}

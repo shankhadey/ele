@@ -1,0 +1,25 @@
+{
+  "title": "Business-Class Airfare Booked Before, Flown After the Travel Policy Change",
+  "category": "policy_version",
+  "domain": "other",
+  "difficulty": "standard",
+  "scenario_text": "Marchetti Consulting reimburses travel under a Travel & Expense Policy.\n\nVersion 4 (effective January 1, 2024) states: \"Economy class is required for domestic flights. Business class is reimbursable only on individual flight segments longer than 6 hours.\"\n\nVersion 5 (effective January 1, 2025) states: \"Economy class is required unless the individual flight segment is longer than 8 hours.\" v5 includes a transition clause: \"The policy version in effect on the trip's booking date governs reimbursement. Trips booked on or before December 31, 2024 follow v4; trips booked on or after January 1, 2025 follow v5, regardless of the travel date.\"\n\nThe Concur record for expense report EXP-8890 (consultant: R. Aldous) shows: Booking Date 2024-12-20, Travel Date 2025-01-15, Route London-to-Boston (single segment, scheduled duration 7 hours 10 minutes), Fare Class Business, Amount $3,850.\n\nThe consultant emails the T&E approver on 2025-01-20: \"Submitting EXP-8890. I booked the business-class ticket back on December 20 for a flight that runs a little over 7 hours; the trip itself happened in mid-January. I know the travel policy changed at the new year. Is the business fare reimbursable under the rules that were in place when I booked, or do the new January rules apply because that's when I actually flew?\"\n\nUsing the policy versions, the transition clause, and the Concur record, determine whether the business-class fare on EXP-8890 is reimbursable.",
+  "question": "Is the business-class fare on EXP-8890 reimbursable?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Nadia Farrow",
+    "title": "Travel & Expense Program Manager",
+    "organization": "Marchetti Consulting",
+    "years_experience": 7,
+    "domain_expertise": "corporate travel and expense administration"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Yes, business class is reimbursable, because the trip was booked 2024-12-20 under v4, which permits business class on segments longer than 6 hours (the flight was 7h10m).",
+    "No, business class is not reimbursable, because the 2025-01-15 travel date falls under v5, which requires segments longer than 8 hours.",
+    "No, business class is not reimbursable, because v5 took effect January 1, 2025, before the flight departed.",
+    "No, only economy is reimbursable, because both versions require economy on all international flights."
+  ]
+}

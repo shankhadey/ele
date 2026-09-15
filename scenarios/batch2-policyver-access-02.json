@@ -1,0 +1,25 @@
+{
+  "title": "Grandfathered Access Grant Meets a Tightened Security Policy at Recertification",
+  "category": "policy_version",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "scenario_text": "A security-governance agent at Verdant Health must decide whether an engineer's standing production-database access is compliant at quarterly recertification.\n\n**Access Policy history**\n- *Prod Access Policy v2.4 (effective through 2025-11-30):* Engineers may hold standing read/write access to production databases with manager approval, reviewed annually.\n- *Prod Access Policy v3.0 (effective 2025-12-01):* Standing read/write to production is prohibited. Write access must be just-in-time (JIT), granted per-task with a ticket, max 8-hour sessions. Transition clause: 'Existing standing grants remain valid until the grant-holder's next scheduled annual review, at which point access MUST be re-provisioned under v3.0. No standing write grant may persist past its annual review date.'\n\n**Okta / PAM (Access records)**\nEngineer: Amara Osei. Grant: standing read/write to prod-billing-db. Originally approved 2025-04-15 (manager approval on file, under v2.4). Annual review date: 2026-04-15.\n\n**ServiceNow**\nToday's date for this recertification: 2026-04-20. No JIT re-provisioning ticket exists for Amara. The standing grant is still active.\n\n**Slack — #secops**\nManager: 'Her grant was approved under the old policy and it's grandfathered, so it's fine to leave as-is.'\nAgent: 'It was grandfathered — but only until her annual review, which was five days ago.'",
+  "question": "Is Amara's standing read/write access compliant at this recertification, and what is the correct action?",
+  "answer_format": "multiple_choice",
+  "choices": [
+    "Compliant — the grant was approved under v2.4 and is permanently grandfathered as a pre-existing standing grant",
+    "Compliant for now — it remains valid until v3.0 is enforced organization-wide, regardless of individual review dates",
+    "Non-compliant — the transition clause grandfathered the standing grant only until her 2026-04-15 annual review; that date has passed with no JIT re-provisioning, so the standing write access must be revoked and re-provisioned as JIT under v3.0",
+    "Non-compliant — v3.0 applies retroactively from 2025-12-01, so the grant became invalid on that date"
+  ],
+  "contributor": {
+    "name": "Tomas Nyberg",
+    "title": "Security Governance Engineer",
+    "organization": "Verdant Health",
+    "years_experience": 9,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "batch2.json",
+  "split": "challenge"
+}

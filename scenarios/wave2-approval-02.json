@@ -1,0 +1,19 @@
+{
+  "title": "Segment-Impacting Asset Impairment Posted Without CFO Sign-Off",
+  "category": "approval_chain",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "A financial-controls audit agent at Bosworth Energy is reviewing authorization on a fixed-asset impairment write-off.\n\n**Asset Write-Off / Impairment Authority Matrix**\n- Up to $100,000: Controller.\n- $100,001-$500,000: Controller AND VP Finance.\n- Above $500,000: Controller AND VP Finance AND CFO sign-off.\n- Overriding rule: any impairment that changes an externally reported segment result requires CFO sign-off regardless of amount.\n\n**ERP Impairment Record**\n- IMP-4402: Write off idle turbine-monitoring assets, carrying value $615,000.\n- Segment: 'Upstream Services' (a separately reported segment).\n- Posted: 2026-07-18. Approved by (field): 'Controller - Helen M.; VP Finance - Raj S.'\n- CFO sign-off: (empty).\n\n**Email thread (reconstructed)**\n- Helen M. (Controller) -> VP Finance: 'The turbine-monitoring rig is stranded; impairment is $615K against Upstream Services. I'll approve - can you co-sign?'\n- Raj S. (VP Finance): 'Co-signed. CFO is travelling this week; we can brief her when she's back.'\n- Helen M.: 'Posted IMP-4402, approvers you and me.'\n- (no CFO approval appears in the ERP, email, or Slack)\n\nThe write-off both exceeds $500,000 and reduces the externally reported result of the Upstream Services segment. The Q2 close is imminent, the impairment will flow into segment reporting, and no CFO approval was recorded anywhere in the ERP, email, or Slack. The approval note references only the Controller's and VP Finance's authority levels and makes no mention of the segment-impact override.",
+  "question": "The Controller and VP Finance both approved this write-off. Name the single required approval that is still missing for it to be properly authorized.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Helen Marsden",
+    "title": "Corporate Controller",
+    "organization": "Bosworth Energy",
+    "years_experience": 13,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge"
+}

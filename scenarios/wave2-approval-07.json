@@ -1,0 +1,25 @@
+{
+  "title": "Uncapped Liability Clause Approved Below the Contract-Terms Tier",
+  "category": "approval_chain",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "A deal-desk audit agent at Islington Retail is validating authorization on the non-standard terms of a closed enterprise contract.\n\n**Non-Standard Contract Terms Authority Matrix**\n- Standard terms (net-30 payment; liability capped at 12 months of fees; standard IP indemnity): Account Executive, no additional approval.\n- Payment terms net-31 to net-90, OR liability cap raised to 2x annual fees: Deal Desk Manager approval + terms worksheet.\n- Uncapped liability, IP indemnity beyond the standard clause, OR payment terms beyond net-90: General Counsel AND VP Sales approval.\n\n**CRM Opportunity Record**\n- OPP-9902, 'Meridian Retail Group - 3-year platform agreement', ACV $940,000.\n- Non-standard terms accepted: UNCAPPED liability clause and net-120 payment terms.\n- Stage: Closed Won. Booked: 2026-09-30 (last day of Q3).\n- Approved by (field): 'Deal Desk Manager - Nina F.'\n\n**Slack #deal-desk (reconstructed)**\n- AE: 'Meridian will only sign today with uncapped liability and net-120. It's a $940K deal for the quarter. Bless the terms, Nina?'\n- Nina F. (Deal Desk Manager): 'It's quarter end and I don't want to lose it. Terms approved, book it.'\n- AE: 'Do we need Legal or the VP on the liability clause?'\n- Nina F.: 'I've got it covered, just close it.'\n\nNo General Counsel or VP Sales approval appears in the CRM, Slack, or email, and no terms worksheet is attached. The contract as signed carries an uncapped liability clause and net-120 payment terms.",
+  "question": "What should the audit conclude about the authorization of these non-standard contract terms?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Nina Farrow",
+    "title": "Deal Desk Manager",
+    "organization": "Islington Retail",
+    "years_experience": 10,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Valid - the Deal Desk Manager holds terms-approval authority and recorded her approval in the CRM before booking.",
+    "Valid, but the file needs a documentation cleanup - attach the terms worksheet retroactively; the approval itself stands.",
+    "Invalid - an uncapped liability clause and net-120 payment terms fall in the top tier, which requires General Counsel AND VP Sales approval; the Deal Desk Manager's authority caps at 2x-fee liability and net-90, so the terms were booked without sufficient authorization and must be re-approved by General Counsel and VP Sales.",
+    "Invalid - a contract with terms this unusual requires CEO and Board approval, so it must be escalated to the Board before it can stand."
+  ]
+}

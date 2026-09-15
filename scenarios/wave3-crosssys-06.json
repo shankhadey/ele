@@ -1,0 +1,25 @@
+{
+  "title": "Helios Grid feeder trips: 'weather nuisance' versus a failing transformer",
+  "category": "cross_system_synthesis",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "Helios Grid, a regional electric utility, sees repeated protective trips on a distribution feeder serving 9,000 customers during a mild-weather afternoon. In the #grid-ops Slack channel the shift dispatcher writes: 'These are nuisance trips from tree contact - windy day, we get these every spring on this feeder. Auto-reclose is restoring service each time. I'm logging it as vegetation and moving on.'\n\nOther systems point elsewhere. In the SCADA historian, the trips correlate not with wind gusts but with load pickup after each reclose, and fault current is rising with each event - inconsistent with intermittent tree contact. In the substation's dissolved-gas-analysis monitor, the transformer feeding this feeder shows a sharp overnight rise in combustible gases (acetylene and hydrogen), a classic internal-arcing signature. The AMI meter-data system shows a cluster of customers on one lateral reporting voltage sags seconds before each trip. And a maintenance record in the asset-management system notes this transformer was flagged for a cooling-fan repair that was deferred twice.\n\nEach signal alone is arguable: spring nuisance trips are real, DGA can drift, voltage sags have many causes, and deferred maintenance is common. But together - trips tied to load rather than wind, climbing fault current, a spike in acetylene indicating active internal arcing, localized voltage sags, and a deferred cooling repair - they indicate an incipient transformer failure, not vegetation. Reclosing repeatedly into a faulting transformer risks a catastrophic failure or fire. The dispatcher's 'vegetation' call predates the DGA spike alert. You are the operations engineer reviewing the event. What is the right action?",
+  "question": "What action should the operations engineer take?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Alan Petrakis",
+    "title": "Principal Distribution Operations Engineer",
+    "organization": "Meridian Power & Light",
+    "years_experience": 14,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Continue logging the events as vegetation-related nuisance trips and rely on auto-reclose to restore service, as is standard for this feeder in spring.",
+    "Dispatch a line crew to trim vegetation along the feeder and leave auto-reclose enabled while they work.",
+    "Isolate the suspect transformer and disable auto-reclose on the feeder now, switching load to an alternate source: the load-correlated trips, rising fault current, acetylene spike, and localized voltage sags together indicate an incipient internal transformer fault, not tree contact.",
+    "Wait for the next scheduled DGA sample in two weeks to confirm the gas trend before taking the transformer out of service."
+  ]
+}

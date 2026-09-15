@@ -1,0 +1,25 @@
+{
+  "title": "Large Wire to a New Payee Initiated and Approved by the Same Analyst",
+  "category": "approval_chain",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "A treasury-controls audit agent at Slate Energy is reviewing an outbound wire.\n\n**Outbound Wire Authority Matrix**\n- Up to $25,000: Treasury Analyst may initiate and release (single control).\n- $25,001-$250,000: dual control - one Treasury Analyst initiates, a different Treasury Manager or Controller independently approves the release.\n- Above $250,000: dual control PLUS CFO authorization.\n- New-payee rule: any first-time payee requires an independent callback to a phone number obtained from the vendor master (not from the payment-request email) before the wire is released, logged by a person other than the initiator.\n\n**Wire Request Record**\n- WR-4402: Payee 'Greywacke Drilling Services' (first payment to this vendor). Amount: $480,000.\n- Initiated by: Treasury Analyst (Robin T.), 2026-03-11 09:40.\n- Approved/released by: Treasury Analyst (Robin T.), 2026-03-11 09:41.\n- Payee added to vendor master by: Robin T., 2026-03-11 09:38. Callback log: (empty).\n\n**Slack #treasury (reconstructed)**\n- Robin T.: 'Got an urgent invoice from Greywacke, $480K, new vendor. Manager's out sick today.'\n- Peer: 'Want me to co-approve?'\n- Robin T.: 'It's fine, I set up the payee and released it myself to make the cutoff. We can note it later.'\n\nThe wire is $480,000 to a brand-new payee, and the same analyst added the payee, initiated, and released it, with no callback logged.",
+  "question": "What should the audit conclude about the authorization of this wire?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Robin Tavares",
+    "title": "Treasury Operations Manager",
+    "organization": "Slate Energy",
+    "years_experience": 10,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Valid - the Treasury Analyst is authorized to process wires and acted quickly to meet the payment cutoff.",
+    "Valid, but needs a documentation cleanup - log the payee callback after the fact and have a manager initial the record; the wire itself was properly released.",
+    "Invalid - a $480,000 wire requires dual control plus CFO authorization, and a first-time payee requires an independent callback; instead one analyst added the payee, initiated, and released the wire with no second approver, no CFO authorization, and no callback, so it was released without required authorization and must be treated as a control breach and investigated.",
+    "Invalid - all wire transfers must be approved by the full Treasury Committee and the external bank's fraud desk before release."
+  ]
+}

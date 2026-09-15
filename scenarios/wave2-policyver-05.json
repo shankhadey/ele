@@ -1,0 +1,25 @@
+{
+  "title": "TLS Upgrade Timing for a Service Live Before the Encryption Standard Tightened",
+  "category": "policy_version",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "scenario_text": "Elveden Systems governs data-in-transit protection through an Encryption Standard.\n\nVersion 2 (effective January 1, 2023) states: \"Production services handling customer data must use TLS 1.2 or higher for data in transit.\"\n\nVersion 3 (effective January 1, 2025) states: \"Production services handling customer data must use TLS 1.3 for data in transit and must be re-attested annually.\" v3 includes a transition clause: \"Services already in production as of December 31, 2024 remain compliant under v2 (TLS 1.2 or higher) until their next scheduled annual security attestation date, at which point they must be re-provisioned to meet v3 (TLS 1.3). Any service first deployed to production on or after January 1, 2025 must meet v3 from launch.\"\n\nThe CMDB record for service SVC-2210 (customer-facing API) shows: Production Go-Live Date 2023-09-01, Current TLS Configuration TLS 1.2, Next Annual Security Attestation Date 2025-09-01. The service has been continuously in production. Today is 2025-03-15.\n\nA platform engineer posts in #security-review on 2025-03-15: \"Auditing SVC-2210. It's on TLS 1.2 and predates the TLS 1.3 rule. Do we have to cut it over to TLS 1.3 right now, or does it ride under the old standard until its attestation?\"\n\nUsing the standard's history, the transition clause, and the CMDB record, determine the correct handling of SVC-2210 as of 2025-03-15.",
+  "question": "What is the correct handling of SVC-2210 as of 2025-03-15?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Theo Kraljic",
+    "title": "Staff Platform Engineer",
+    "organization": "Elveden Systems",
+    "years_experience": 14,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "SVC-2210 remains compliant under v2 (TLS 1.2) until its 2025-09-01 attestation, at which point it must be re-provisioned to meet v3 (TLS 1.3).",
+    "SVC-2210 must be upgraded to TLS 1.3 immediately, because v3 took effect January 1, 2025 and supersedes all prior services.",
+    "SVC-2210 became non-compliant on January 1, 2025 and must be taken out of production until it is upgraded to TLS 1.3.",
+    "SVC-2210 may remain on TLS 1.2 indefinitely, because it was deployed to production before January 1, 2025."
+  ]
+}

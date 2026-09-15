@@ -1,0 +1,19 @@
+{
+  "title": "Inglewood Foods vendor bank change: 'verified' invoice versus mismatched signals",
+  "category": "cross_system_synthesis",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "Inglewood Foods' accounts payable team receives an email from a long-standing supplier, Northwind Produce, attaching an $87,400 invoice marked 'PAST DUE - please remit today to avoid a shipment hold.' The email says the supplier has switched banks and provides new account and routing numbers.\n\nIn the #ap-processing Slack channel, the AP clerk writes: 'Checked it out - invoice matches an open PO in NetSuite, amounts line up, and the contact name is the same rep we always deal with. Looks legit, I'm queuing it for today's payment run.'\n\nSeveral other systems tell a more complicated story. The email arrived from northwind-produce.co; every prior email from this vendor, and the address on file in the vendor master, uses northwind-produce.com. The new routing number belongs to a bank in a different state than the vendor's headquarters and than their existing account of record. In Coupa, the vendor's self-service portal shows no bank-change request was ever submitted - Northwind's standard channel for updating remittance details, per the contract. And the invoice number on the PDF, INV-40912, matches an invoice NetSuite shows was already paid in full six weeks ago.\n\nThe clerk's 'matches the PO' check is real: the fraudster copied a genuine PO number and amount. But the PO match speaks only to whether the goods were ordered, not to whether the bank details or the sender are authentic. The payment run closes in two hours.\n\nYou are the AP supervisor reviewing the queue. Weighing the clerk's verification against the domain mismatch, the out-of-state routing change, the absent portal request, and the duplicate invoice number, what should you do with this $87,400 payment?",
+  "question": "What should AP do with the $87,400 payment before the payment run closes?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Elena Vasquez",
+    "title": "Accounts Payable Controls Manager",
+    "organization": "Ellsworth Retail",
+    "years_experience": 14,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge"
+}

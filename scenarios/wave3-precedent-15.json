@@ -1,0 +1,19 @@
+{
+  "title": "SLA Credit Multiplier for a GxP-Validated Environment",
+  "category": "precedent_exception",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "You are a customer success director at Galenia Biosciences, which provides a hosted lab-informatics platform to biotech and pharma customers. Customer 'Verendal Bio' suffered a 6-hour platform outage that breached their SLA, and you must size the service credit.\n\nActive policy: SLA Credit Standard SCS-3, effective 2025-02-01. The base outage credit is 3% of monthly fees per hour of qualifying downtime. An enhanced 2x credit multiplier is unlocked ONLY when the affected environment is a designated GxP-validated (regulated production) environment - flagged as such in the provisioning system - AND the outage disrupted a live production workflow. The Support Director approves base credits; the enhanced 2x multiplier is approved by the CS Director.\n\nPrecedent (incident log): 2024-12-09, customer 'Thorne Labs,' 5-hour outage, base credit applied (no multiplier) by the Support Director. Note: \"Environment was a non-validated sandbox tier; production not affected - base credit only.\"\n\nCurrent facts: Verendal's affected environment is flagged as GxP-validated in the provisioning system, and the outage halted a live sample-processing workflow during a validation run, documented in the incident ticket and confirmed by Verendal's QA lead. The account manager suggests \"just apply the base credit like Thorne to keep it clean.\" No request beyond the 2x multiplier is on the table.",
+  "question": "State the credit to apply and the single controlling reason as one short phrase.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Elena Vasquez",
+    "title": "Customer Success Director",
+    "organization": "Galenia Biosciences",
+    "years_experience": 12,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

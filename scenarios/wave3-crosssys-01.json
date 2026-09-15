@@ -1,0 +1,25 @@
+{
+  "title": "Meridia Health payer refund spike: 'batch glitch' versus a live overpayment loop",
+  "category": "cross_system_synthesis",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "Meridia Health's revenue-cycle team notices refund volume to a single commercial payer, Coventra, has jumped this week. In the #rev-cycle Slack channel the billing lead writes: 'I looked at this - it's the quarterly reconciliation batch clearing out old credits. Nothing new, it always spikes in the first week of the quarter. Closing my review.' The lead's note is dated Monday.\n\nOther systems disagree. In Epic's billing module, the spike is not old credits: 214 refund transactions posted since Wednesday all carry the same adjustment reason code, CO-45, and all trace to claims for a single new outpatient procedure code activated in the charge master eight days ago. In the ERP (Workday Financials), the offsetting entries show Meridia both billed and was paid, then refunded, then re-billed the same encounters - a loop, not a cleanup. A Tableau reconciliation dashboard shows net collections for that procedure are negative for the period. And a ServiceNow ticket from a coder, opened yesterday, reads: 'New procedure code is mapping to two charge lines - I think we're double-charging and the payer is clawing one back automatically.'\n\nIndividually each item is dismissible: quarter-start refunds are normal, one reason code proves little, a single coder ticket is anecdotal. But together - a brand-new charge-master code, a double-mapped charge line, an automated payer clawback, and negative net collections - they describe an active billing defect bleeding cash every day it runs, not a benign batch. The billing lead's 'batch glitch' read predates the coder's ticket and the dashboard turning negative. You lead revenue integrity and are reviewing the queue before the next claims run tonight. What should you do?",
+  "question": "What action should revenue integrity take before tonight's claims run?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Naomi Ellsworth",
+    "title": "Director of Revenue Integrity",
+    "organization": "Thalassa Care Systems",
+    "years_experience": 13,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Accept the billing lead's explanation and let the quarterly reconciliation batch finish clearing the old credits.",
+    "Suspend the new procedure code from the charge master and hold affected claims now: the double-mapped charge line, automated CO-45 clawbacks, and negative net collections together show an active double-billing defect, not a routine quarter-start refund spike.",
+    "Open a low-priority ticket to review the charge-master mapping next sprint, since no single refund exceeds the materiality threshold.",
+    "Write off the refunded balances to bad debt and reconcile the payer account at month-end close."
+  ]
+}

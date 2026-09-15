@@ -1,0 +1,19 @@
+{
+  "title": "Strategic-Logo Discount Tier Unlocked by a Multi-Year Signature",
+  "category": "precedent_exception",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "You are on Deal Desk at Prendergast Cloud. AE Jonah Klein is closing a new logo, Vantage Robotics, and needs a 48% list discount approved. The ACV is $1.1M on a one-year term, but with a twist described below.\n\nActive policy: Discount Authority Schedule DAS v2, effective 2024-11-01. Discount tiers: 0-30% AE self; 31-40% Regional Director; 41-50% VP Sales; above 50% CRO. A separate strategic-logo exception permits discounts up to 55% at the VP Sales level (not CRO) ONLY when the deal includes an executed multi-year (two-year or longer) commitment AND the account appears on the current board-approved strategic-logo target list. Absent both, discounts above 50% require the CRO.\n\nPrecedent (deal-desk log): 2024-12-05, new logo 'Halden Dynamics,' 47% discount, approved by VP Sales Aria Nomura. Note: \"On strategic-logo list, but one-year term only; standard VP band (41-50%) applied. No multi-year, so strategic-logo 55% tier not invoked.\"\n\nCurrent facts: Vantage Robotics is on the current board-approved strategic-logo target list. During negotiation Vantage agreed to and signed a three-year commitment; the executed multi-year order form is attached in CRM. Jonah is asking for 48%. He notes, \"Halden got 47% at VP level, so 48% should also just be VP Sales \u2014 same neighborhood.\"",
+  "question": "Which approval path applies to Vantage Robotics' 48% discount? Give the approver level and the reason in one short phrase.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Salvatore Rennick",
+    "title": "Deal Desk Manager",
+    "organization": "Prendergast Cloud",
+    "years_experience": 12,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge"
+}

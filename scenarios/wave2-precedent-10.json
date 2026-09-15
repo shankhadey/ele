@@ -1,0 +1,25 @@
+{
+  "title": "Subprocessor Fast-Track That No Longer Exists",
+  "category": "precedent_exception",
+  "domain": "compliance_legal",
+  "difficulty": "hard",
+  "scenario_text": "You are a compliance analyst at Jephson Software. The Analytics team wants to onboard a new AI-assist vendor, 'Corbin Intelligence,' that will process customer support-ticket content (which contains personal data) to auto-summarize tickets. They want the lightest possible approval.\n\nActive policy: Vendor Data-Processing Standard VDP-3, effective 2025-01-01. Any vendor processing customer personal data requires: a completed data-protection assessment, an executed data-processing agreement (DPA), and sign-off by the Chief Privacy Officer (CPO). VDP-3 removed the 'internal-tooling fast-track' from VDP-2, under which a vendor processing personal data solely for internal productivity tooling could be approved by a team Director without a DPA.\n\nPrecedent (approval record): 2024-07-16, vendor 'Selwyn AI,' processed support-ticket content for internal summarization, approved by Analytics Director Paul Honce via the internal-tooling fast-track with no DPA. Policy version at decision: VDP-2. Note: \"Internal tooling; fast-track applied.\"\n\nCurrent facts: Corbin will process personal data in support tickets. No data-protection assessment has been started; no DPA is drafted. There is no regulator deadline or emergency, and Corbin is not yet under contract. The Analytics team writes: \"This is internal tooling exactly like Selwyn \u2014 Paul signed off on Selwyn with just a Director approval, so please do the same for Corbin.\" You confirm with the team that support tickets routinely contain customer names, email addresses, and account details, so personal data is unavoidably in scope. The Analytics Director is willing to sign today if that is all that is needed, and is pushing to start the integration next sprint.",
+  "question": "What approval path applies to onboarding Corbin Intelligence?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Camille Osborne",
+    "title": "Data Compliance Analyst",
+    "organization": "Jephson Software",
+    "years_experience": 8,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "A team Director sign-off with no DPA, following the Selwyn AI internal-tooling precedent for equivalent support-ticket processing.",
+    "The full VDP-3 path: a completed data-protection assessment, an executed DPA, and CPO sign-off, because VDP-3 removed the internal-tooling fast-track the Selwyn approval relied on.",
+    "A team Director sign-off now, with the DPA and assessment completed after Corbin begins processing.",
+    "CPO sign-off with an executed DPA but no assessment, since internal-tooling vendors are exempt from the assessment step."
+  ]
+}

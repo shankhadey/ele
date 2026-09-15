@@ -1,0 +1,19 @@
+{
+  "title": "A Price Match Against a Now-Unlisted Competitor",
+  "category": "temporal_consistency",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "A support agent at Willowby Foods must decide whether to match a competitor's advertised price at their own discretion, given how a comparable match was handled last year.\n\n**Decision A (2023-09-22)**\nAn agent matched a competitor's price on a grocery item at their own discretion. Note: 'Under the price-match policy then in effect, agents could match any competitor's verifiable advertised price without supervisor approval.'\n\n**Current request C (2024-11-08)**\nA customer asks the agent to match a lower price advertised by 'DiscountBarn,' an online reseller. The customer references the store's past willingness to match, saying 'you did this for me before.' DiscountBarn is not on the company's authorized price-match competitor list.\n\n**Price-Match Policy (current, updated 2024-05-01, in force now)**\nAgents may match prices ONLY against competitors on the authorized price-match list, and matches above $25 require supervisor approval. Prices advertised by competitors not on the authorized list are not eligible for a match at any level. The prior 'match any verifiable competitor' rule was replaced in the May 2024 update; DiscountBarn is not on the current authorized list.\n\n**Slack \u2014 #store-support**\nAgent: 'I matched a competitor's price on my own last year and it was fine. The customer's asking again \u2014 should I just match DiscountBarn the same way?'\nSupervisor: 'Last year was under the old open price-match rule. That changed in May, and DiscountBarn isn't on the authorized list now.'\n\nThe customer's request is genuine, but the competitor is not on the current authorized list.",
+  "question": "Can the agent match DiscountBarn's price at their own discretion, as in the 2023 case? Answer with the go-forward decision.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Grethe Solvang",
+    "title": "Customer Support Supervisor",
+    "organization": "Willowby Foods",
+    "years_experience": 8,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

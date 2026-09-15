@@ -1,0 +1,25 @@
+{
+  "title": "Melas Steel supplier shipments: 'within tolerance' versus a spec-breach pattern",
+  "category": "cross_system_synthesis",
+  "domain": "compliance_legal",
+  "difficulty": "hard",
+  "scenario_text": "Melas Steel buys structural plate from a contracted mill under an agreement that requires certified mechanical properties and mill test reports (MTRs) matching each heat. The account is up for a volume-commitment extension. In the #supply-quality Slack channel the buyer writes: 'Minor variances happen with steel - the last few loads were basically within tolerance and the mill says their lab was just recalibrating. I don't think we need to make a thing of it before the extension. They've been a reliable partner.'\n\nOther systems say the variances are neither minor nor isolated. In the QMS, the last five heats show yield strength below the contractual minimum on the incoming test, not merely near tolerance. In the document system, the MTRs the mill supplied list heat numbers that do not match the tags on the delivered coils - a traceability breach that voids certification under the contract. In the ERP, two of those heats were already consumed into a bridge-component order with a safety-critical spec. And an email from the mill's quality manager, received yesterday, asks Melas to 'accept the current certs as-is for now and we'll reconcile paperwork later.'\n\nEach item alone might be waved through: steel properties vary, paperwork lags, and reconciliations happen. But together - out-of-spec yield strength on five consecutive heats, MTRs that do not trace to the delivered material, safety-critical parts already built from suspect heats, and a supplier asking you to accept non-conforming certs - they constitute a material contract and quality breach, not a rounding issue, and signing a volume extension now would reward and entrench it. The buyer's 'within tolerance' read predates the traceability finding. You own supplier quality and compliance. What should you do?",
+  "question": "What should you do about the shipments and the pending volume-commitment extension?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Gregor Halvorsen",
+    "title": "Supplier Quality & Compliance Manager",
+    "organization": "Theron Industrial",
+    "years_experience": 13,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Sign the volume-commitment extension to preserve the partnership and accept the current certifications, since the mill attributes the variance to lab recalibration.",
+    "Accept the shipments under a temporary deviation and reconcile the MTR paperwork with the mill after the extension is signed, as they requested.",
+    "Reject and quarantine the non-conforming heats, initiate containment on the safety-critical parts already built, and halt the extension pending a corrective-action plan: the out-of-spec strength, mismatched MTRs, and consumed suspect material together are a material quality and contract breach.",
+    "Continue accepting shipments while requesting recalibrated lab results on future heats only, treating the past loads as within acceptable variance."
+  ]
+}

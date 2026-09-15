@@ -1,0 +1,19 @@
+{
+  "title": "Volume Rebate Tier Unlocked by a Multi-Year Commitment",
+  "category": "precedent_exception",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "You run RevOps rebate governance at Ingersoll Group. Distributor 'Halloway Supply' is requesting its annual volume rebate. You must set the tier and approval path.\n\nActive policy: Channel Rebate Program RP-4, effective 2024-10-01. Standard rebate: 2% of annual eligible spend for distributors exceeding $1M in spend, approved by the RevOps Manager. Enhanced rebate: 4% of annual eligible spend, unlocked ONLY when the distributor both exceeds $1M in annual spend AND has a countersigned multi-year (three-year or longer) purchase-commitment amendment on file; enhanced rebates require VP Finance approval. Spend alone, however large, does not reach 4%.\n\nPrecedent (rebate log): 2024-11-12, distributor 'Brackenford Distribution,' annual spend $2.3M, granted a 2% rebate by RevOps Manager Elise Tran. Note: \"Exceeds $1M but no multi-year commitment on file; standard 2% tier.\"\n\nCurrent facts: Halloway Supply's annual eligible spend is $1.6M. On 2025-01-20 Halloway countersigned a three-year purchase-commitment amendment, now logged in the contracts system. Halloway's channel manager argues, \"Brackenford spent way more than us and only got 2%, so 2% is clearly the right tier for Halloway too \u2014 let's not overthink it.\" The contracts team has verified that Halloway's three-year commitment amendment is fully countersigned and stored in the system of record, and RevOps confirms Halloway's $1.6M in eligible spend clears the $1M floor. There is no dispute about the underlying spend figures; the only open question is which rebate tier and approver apply. No prior enhanced rebate has ever been granted to Halloway.",
+  "question": "What rebate tier and approval path apply to Halloway Supply? Give the tier percentage and the reason it qualifies in one short phrase.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Lorena Ashby",
+    "title": "Revenue Operations Manager",
+    "organization": "Ingersoll Group",
+    "years_experience": 11,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge"
+}

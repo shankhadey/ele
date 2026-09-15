@@ -1,0 +1,25 @@
+{
+  "title": "Which Precedent Governs a Multi-Year Prepay Discount",
+  "category": "precedent_exception",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "You are on Deal Desk at Saxby Logistics. AE Karim Fadel is structuring a new-logo deal for 'Trellis Freight': a 3-year term with full upfront prepayment, and he wants a 30% discount plus a 60-day payment terms extension. He cites two prior deals as precedent.\n\nActive policy: Pricing & Terms Policy PT-6, effective 2024-07-01. For multi-year prepaid deals: discounts up to 20% are AE/Manager approved; 21-30% requires VP Sales; any non-standard payment terms (beyond net-30) require the Finance Controller regardless of discount. Discount and payment-terms approvals are independent and BOTH must be obtained when both apply.\n\nPrecedent A (deal-desk log): 2024-08-11, 'Marlowe Shipping,' 3-year prepaid, 28% discount, net-30 terms. Approved by VP Sales only. Note: \"Standard net-30; no Controller needed. PT-6.\"\n\nPrecedent B (deal-desk log): 2024-09-02, 'Denby Cargo,' 3-year prepaid, 18% discount, net-60 terms. Approved by Manager (for discount) + Finance Controller (for terms). Note: \"Sub-20% discount, but net-60 triggers Controller. PT-6.\"\n\nKarim argues: \"Marlowe got 28% signed off by VP Sales alone with no Controller \u2014 Trellis is basically the same profile, so VP Sales should be enough here too.\"\n\nAll three deals are under PT-6. Trellis has no special strategic-logo flag.",
+  "question": "What approval path does the Trellis Freight deal require?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Alicia Momsen",
+    "title": "Deal Desk Lead",
+    "organization": "Saxby Logistics",
+    "years_experience": 9,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "VP Sales approval alone, following the Marlowe Shipping precedent, since both are ~30% multi-year prepaid deals.",
+    "VP Sales approval for the 30% discount AND Finance Controller approval for the net-60 terms, because both PT-6 triggers apply and each requires its own sign-off.",
+    "Manager approval for the discount plus Finance Controller for the terms, following the Denby Cargo precedent for a deal with extended payment terms.",
+    "Finance Controller approval alone, since the non-standard payment terms are the highest-authority requirement and subsume the discount approval."
+  ]
+}

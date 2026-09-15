@@ -1,0 +1,19 @@
+{
+  "title": "Capitalize or Expense an Asset Invoiced Before the Threshold Rose",
+  "category": "policy_version",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "Framlingham Foods governs fixed-asset accounting through a Capitalization Policy.\n\nVersion 1 (effective January 1, 2022) states: \"Tangible assets with a unit cost of $2,500 or more are capitalized and depreciated over their useful life. Items below $2,500 are expensed as incurred.\"\n\nVersion 2 (effective January 1, 2025) states: \"The capitalization threshold is raised to $5,000. Tangible assets with a unit cost of $5,000 or more are capitalized; items below $5,000 are expensed as incurred.\" v2 includes a transition clause: \"The threshold applied to an asset is the one in effect on the asset's acquisition date, defined as the supplier invoice date. Assets acquired before January 1, 2025 apply the v1 $2,500 threshold; assets acquired on or after January 1, 2025 apply the v2 $5,000 threshold. The threshold does not change retroactively based on the date the asset is placed in service.\"\n\nThe fixed-asset subledger record for asset FA-4402 (commercial dough mixer, supplier: Hartsop Equipment) shows: Supplier Invoice Date 2024-12-05, Unit Cost $3,800, Placed-in-Service Date 2025-01-20, Estimated Useful Life 7 years.\n\nA staff accountant emails the assistant controller on 2025-01-22: \"Recording FA-4402, the $3,800 mixer. The invoice is dated December 5, but we didn't switch it on until January 20. Under the new $5,000 threshold that started January 1, this would be an expense. Do I capitalize it or expense it?\"\n\nUsing the policy history, the transition clause, and the subledger record, determine the correct accounting treatment for FA-4402.",
+  "question": "Should FA-4402 be capitalized or expensed, and under which threshold?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Marcus Bell",
+    "title": "Assistant Controller",
+    "organization": "Framlingham Foods",
+    "years_experience": 12,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge"
+}

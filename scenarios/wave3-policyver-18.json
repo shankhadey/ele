@@ -1,0 +1,19 @@
+{
+  "title": "Next Compliance-Training Due Date After the Cadence Shortened",
+  "category": "policy_version",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "Andromeda Health mandates recurring compliance training under its Code of Conduct Training Policy.\n\nVersion 1 (in effect through 2024-12-31): \"Employees must complete compliance training every 24 months, measured from their most recent completion date.\"\n\nVersion 2 (effective 2025-01-01): \"Employees must complete compliance training every 12 months, measured from their most recent completion date.\" v2 includes a transition clause: \"An employee's next-due date is set by the cadence in force on their most recent completion date and runs from that completion date. Completions recorded before January 1, 2025 keep the v1 24-month interval for that cycle; the v2 12-month interval applies to completions recorded on or after January 1, 2025. The shortened cadence does not retroactively move up a due date already established under v1.\"\n\nThe learning management system (LMS) shows employee E-6612: most recent training completion recorded 2024-05-10; no completions since.\n\nE-6612 messages the compliance training team in Slack on 2025-01-09: \"I saw training is now annual. I last completed it in May 2024. Do I need to redo it within 12 months of that, so by May 2025, or does my old 24-month due date still stand? And when's the one after that?\"\n\nUsing the policy history, the transition clause, and the LMS record, determine E-6612's next training due date and the cadence applied to the following cycle.",
+  "question": "What is E-6612's next training due date, and what cadence applies to the cycle after that?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Laila Haddad",
+    "title": "Compliance Training Program Manager",
+    "organization": "Andromeda Health",
+    "years_experience": 9,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

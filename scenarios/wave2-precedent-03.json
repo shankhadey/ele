@@ -1,0 +1,25 @@
+{
+  "title": "Complimentary Professional-Services Hours After a Botched Migration",
+  "category": "precedent_exception",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "You are a Customer Success manager at Caldwell Foods (a B2B food-tech platform). Enterprise customer Sable Grocery suffered a failed data migration during onboarding and is asking for free professional-services (PS) hours to recover.\n\nActive policy: Goodwill Services Framework GSF-2, effective 2024-07-01. Standard remediation: up to 20 complimentary PS hours, approved by the CS Manager. Enhanced remediation: up to 60 complimentary PS hours plus a dedicated technical account manager, unlocked ONLY when the impacted customer is a designated strategic reference account \u2014 defined as a customer with a countersigned reference/case-study agreement on file \u2014 AND the incident materially disrupted their operations. Beyond 60 hours requires the VP of Customer Success.\n\nPrecedent (CS log): 2024-09-05, customer Pinehill Foods, comparable botched migration, granted 20 complimentary PS hours by CS Manager Ivy Lund. Note: \"Not a reference account; standard remediation applied.\"\n\nCurrent Sable facts: Sable countersigned a reference/case-study agreement with Caldwell on 2024-08-01, and it is active in the partnerships system. The failed migration halted Sable's inventory reconciliation for four days, a disruption documented in the incident ticket and confirmed by Sable's operations lead on a call logged in CRM. Sable's account owner proposes \"20 hours to match the Pinehill precedent and keep it clean,\" noting he wants to avoid what he calls \"an awkward escalation.\" The partnerships team confirms the reference agreement is active and unexpired, and the CS Manager agrees the incident materially affected Sable's daily operations. No request exceeding 60 hours is on the table.",
+  "question": "What remediation should Caldwell offer Sable Grocery, and via which approval path?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Theo Marchetti",
+    "title": "Enterprise Customer Success Manager",
+    "organization": "Caldwell Foods",
+    "years_experience": 9,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Up to 20 complimentary PS hours approved by the CS Manager, mirroring the Pinehill Foods precedent for a comparable botched migration.",
+    "Up to 60 complimentary PS hours plus a dedicated technical account manager under the enhanced tier, because Sable is a countersigned reference account and the incident materially disrupted operations.",
+    "A refund of onboarding fees instead of PS hours, since a failed migration is a service defect rather than a goodwill matter.",
+    "Escalation to the VP of Customer Success for more than 60 hours, because a four-day operational disruption is an aggravating factor beyond the enhanced tier."
+  ]
+}

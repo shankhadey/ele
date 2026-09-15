@@ -1,0 +1,25 @@
+{
+  "title": "Corsham Retail renewal: warm exec relationship versus a filed non-renewal notice",
+  "category": "cross_system_synthesis",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "Corsham Retail is a $720,000 ARR account with a renewal 74 days out. In Gainsight the account health score is green, refreshed three weeks ago, and the CSM's latest timeline note reads 'exec dinner went great, sponsor is a fan.' In the #cs-enterprise Slack channel this morning the CSM wrote: 'One admin left us a rough survey score but honestly that's just one grumpy user. The relationship at the top is rock solid, this renews.'\n\nOther systems tell a different story. In Pendo, monthly active users on the Corsham workspace have dropped 48% over five weeks, and the analytics module tied to their expansion clause now shows near-zero usage. Zendesk records six tickets in three weeks, four of which breached first-response SLA, and one from an operations lead reads: 'We need a full data export in a portable format before year end.'\n\nThe decisive signal sits in the contract system. Two days ago Corsham's procurement team uploaded a formal notice-of-non-renewal letter to the shared Ironclad workspace, citing intent to 'evaluate alternatives,' and a separate shared drive folder named 'Vendor RFP 2026' appeared with a competitor's name in a document title. The CSM's 'this renews' note predates the non-renewal letter by six days and does not mention it.\n\nYou are reviewing the enterprise book ahead of the renewals forecast. The green health score and the CSM's confidence are the loudest signals, but no one has reconciled them against the usage collapse, the export request, or the non-renewal letter. What should you recommend for Corsham Retail?",
+  "question": "What should you recommend for the Corsham Retail renewal?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Naomi Prasad",
+    "title": "VP of Customer Success",
+    "organization": "Marlowe Cloud",
+    "years_experience": 11,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Keep the account green and leave the renewal on track; the CSM's executive relationship and the refreshed health score are the most reliable indicators.",
+    "Open a support escalation to clear the six Zendesk tickets and the breached SLAs, since response-time friction is the core problem driving the account's frustration.",
+    "Escalate immediately and launch a save play with the account executive and leadership: the filed non-renewal letter, the 48% usage decline, the data-export request, and the competitive RFP together signal active churn that the green health score no longer reflects.",
+    "Wait for the scheduled renewal conversation in 74 days, since no single account metric has independently crossed its churn-alert threshold."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "The Reincorporation That Kept Everything But the EIN",
+  "category": "entity_resolution",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "Dallington Retail's customer success team is building the renewal package for an enterprise SaaS customer and needs the correct total ARR at risk in a single renewal. The customer shows up as two records. Salesforce Account A: \"Brightside Retail LLC\" (account BR-1002, created 2019, status set to Inactive on 2023-07-01, tax ID 83-2214477, subscription ARR $300,000). Salesforce Account B: \"Brightside Retail, Inc.\" (account BR-2210, created 2023-07, status Active, tax ID 88-9910022, subscription ARR $240,000 from add-on analytics and API modules). A CSM note on Account B reads: \"Customer completed a Delaware statutory conversion from an LLC to a C-corporation effective 2023-07-01 (an F-reorganization); a new EIN was issued on conversion, but it is the same business, same people, same subscription - not a new customer.\" Ironclad holds a single master subscription agreement, originally signed 2019, amended 2023-07 to update the counterparty legal name from \"Brightside Retail LLC\" to \"Brightside Retail, Inc.\" while preserving the same agreement number, the same order-form lineage, and one continuous, co-terminous subscription term ending 2025-03-31. Billing in Stripe moved to a new customer object on conversion but references the same subscription ID and the same purchase-order chain. Support tickets and usage telemetry continued without interruption across the conversion date. The renewal is a single co-terminous event covering the entire subscription.",
+  "question": "What total ARR should the single renewal package show as at risk for this customer?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Marcus Fenwick",
+    "title": "Enterprise Customer Success Manager",
+    "organization": "Dallington Retail",
+    "years_experience": 7,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge"
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Emergency Single-Source Purchase With Two Precedents in Tension",
+  "category": "precedent_exception",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "You are a procurement lead at Langmere Logistics. An operations manager wants to invoke the emergency single-source provision to buy replacement sortation-belt controllers from one vendor, 'Padgett Controls,' skipping the standard three-bid process.\n\nActive policy: Purchasing Policy PP-9, effective 2024-12-01. The emergency single-source exception (bypassing three competitive bids) may be invoked ONLY for a documented operational emergency \u2014 an active or imminent service disruption to operations \u2014 and requires VP of Operations approval, with ratification logged within 48 hours. PP-9 replaced PP-8, under which a Procurement Manager alone could invoke emergency single-source for any 'time-sensitive' need, without a service-disruption requirement.\n\nPrecedent A (procurement log): 2024-09-11, emergency single-source purchase of scanner units, invoked by Procurement Manager Nils Berg alone as 'time-sensitive' to hit a project date. Policy version at decision: PP-8. Note: \"Time-sensitive per PP-8 emergency clause.\"\n\nPrecedent B (procurement log): 2025-02-20, emergency single-source purchase of a conveyor motor after a depot line went down, approved by VP Ops Dahlia Reyes with 48-hour ratification. Policy version at decision: PP-9. Note: \"Active line-down disruption; VP Ops approved.\"\n\nCurrent facts: The sortation belts are running normally; the controllers are a proactive stock replenishment ahead of a planned upgrade next quarter. There is no active or imminent disruption. The ops manager writes: \"Nils invoked emergency single-source last year just for a time-sensitive need \u2014 let me do the same so we skip the bids.\"",
+  "question": "Can the Padgett Controls purchase use the emergency single-source exception, and how?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Bartholomew Nkemelu",
+    "title": "Senior Procurement Lead",
+    "organization": "Langmere Logistics",
+    "years_experience": 12,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Yes; the Procurement Manager may invoke it as a time-sensitive need, mirroring the 2024 scanner-unit precedent.",
+    "No; PP-9 permits emergency single-source only for a documented active or imminent service disruption, which does not exist here, so this proactive replenishment must go through the standard three-bid process.",
+    "Yes; because the controllers support a planned upgrade, the future project qualifies as an imminent disruption and the VP of Operations can approve it.",
+    "Yes; any single-source purchase under $150K may skip bids with Procurement Manager approval regardless of urgency."
+  ]
+}

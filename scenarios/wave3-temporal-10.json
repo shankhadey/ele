@@ -1,0 +1,19 @@
+{
+  "title": "A Pentest Waiver That the New Rule Eliminated",
+  "category": "temporal_consistency",
+  "domain": "compliance_legal",
+  "difficulty": "hard",
+  "scenario_text": "A security-compliance lead at Cedarholm Security must decide whether a penetration-test waiver can be granted before a product launch, given how a comparable waiver was handled last year.\n\n**Decision A (2023-11-14)**\nA pentest waiver was granted for an application ahead of launch. Note: 'Under the security policy then in effect, waivers were permitted for applications with limited exposure if a Director signed off. The app in question handled some customer data and the waiver was approved with Director sign-off.'\n\n**Current request C (2024-12-03)**\nA product team wants a pentest waiver to hit a launch date for an application that stores and processes customer personally identifiable information (PII). They ask for the waiver 'the same way it was granted last year,' with a Director's sign-off.\n\n**Security Policy (current, updated 2024-07-01, in force now)**\nAny application that stores or processes customer PII MUST pass a penetration test before launch. Waivers of the pre-launch pentest are no longer available for PII-handling applications at any approval level. The prior Director-sign-off waiver path was removed for PII-handling systems in the July 2024 update.\n\n**Slack \u2014 #appsec**\nPM: 'We got a pentest waiver last November with a Director's approval and launched on time. Let's do the same here so we don't slip the date.'\nLead: 'Last November was under the old policy. The waiver path for PII apps was removed in July \u2014 a Director's signature can't unlock it now.'\n\nThe application handles customer PII, and there is no incident or exception path that changes that.",
+  "question": "Under the current security policy, what must happen before this PII-handling application can launch? Provide the required step.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Dominic Ashworth",
+    "title": "Security Compliance Lead",
+    "organization": "Cedarholm Security",
+    "years_experience": 13,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

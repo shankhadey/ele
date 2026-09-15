@@ -1,0 +1,25 @@
+{
+  "title": "Auth-Token Deploy Shipped Without the Required Security Sign-Off",
+  "category": "approval_chain",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "A change-management audit agent at Gneiss Technologies is reviewing a production deploy.\n\n**Production Deploy Authority Matrix**\n- Standard change (no auth/PII/payment surface): peer code review + Release Manager approval.\n- Change touching authentication, session tokens, PII, or payment flows: peer review + Release Manager approval + AppSec (Application Security) sign-off recorded in the change ticket.\n- Data-migration change: add DBA approval.\n\n**Jira Change Record**\n- CHG-5540: 'Refactor session-token issuance and refresh logic in auth-service.'\n- Deployed: 2026-07-08. Type: Normal.\n- Peer review: approved (2 reviewers). Release Manager: approved (Sal K.). AppSec sign-off: (empty).\n- Files changed: 'auth/token_issuer.go, auth/refresh_handler.go, auth/session_store.go.'\n\n**Slack #eng-releases (reconstructed)**\n- Engineer: 'Token refactor is reviewed and green. Sal, can you release it? It clears a customer-reported login bug.'\n- Sal K. (Release Manager): 'Approved, ship it.'\n- Engineer: 'Do we need AppSec on this one? It's just a refactor.'\n- Sal K.: 'It's internal auth code, not a new feature. We're covered, go.'\n\nThe change modifies session-token issuance and refresh handling - core authentication logic - and no AppSec sign-off is recorded anywhere. Peer review and Release Manager approval are both present, but neither reviewer is a member of AppSec, and the change ticket's security-review field was left blank rather than marked as waived or completed. The Release Manager classified the change as 'Normal' rather than flagging it as auth-touching, which is why the AppSec gate was never routed for sign-off before the deploy shipped to production.",
+  "question": "What should the audit conclude about the authorization of this deploy?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Salvatore Kline",
+    "title": "Release Engineering Lead",
+    "organization": "Gneiss Technologies",
+    "years_experience": 11,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Valid - two peer reviewers and the Release Manager approved the change, which satisfies the deploy controls for a refactor.",
+    "Valid, but needs a documentation cleanup - have AppSec glance at the diff and note it in the ticket later; the deploy itself was properly approved.",
+    "Invalid - the change modifies authentication and session-token logic, which mandates an AppSec sign-off in addition to peer review and Release Manager approval; that required security approval is missing, so the deploy shipped without complete authorization and must be reviewed by AppSec.",
+    "Invalid - all authentication changes require CISO approval and a full external penetration test before they can be deployed to production."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Off-Cycle RSU Grant Approved Without Compensation Committee",
+  "category": "approval_chain",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "A people-ops controls agent at Fennimore Foods is auditing an off-cycle compensation change.\n\n**Compensation Change Authority Matrix**\n- Merit increase up to 10% (within band): Manager AND HRBP.\n- Increase 10.01%-20% or promotion within the same job level: Director AND HRBP AND Compensation team review.\n- Any equity/RSU grant: Compensation Committee approval is mandatory; additionally VP People and the CFO (budget) must sign off. No individual manager or VP may issue equity unilaterally.\n\n**Workday Change Record**\n- WD-991: Employee 'J. Okafor', Senior Engineer.\n- Change: base salary increase of 12% AND a one-time grant of 5,000 RSUs.\n- Approved by (field): 'Director of Engineering - Sam T.; HRBP - Dana L.'\n- Comp team review: (empty). Compensation Committee: (empty). VP People / CFO: (empty).\n\n**Slack #comp-changes (reconstructed)**\n- Sam T. (Director of Eng): 'Retaining Okafor - approving a 12% bump and 5,000 RSUs. Dana, sign as HRBP.'\n- Dana L. (HRBP): 'HRBP approval added.'\n- Sam T.: 'Great, the stock grant is locked in.'\n- (no Comp team, Compensation Committee, VP People, or CFO entries anywhere)\n\nThe 12% base increase moves Okafor within the same Senior Engineer job level, and the 5,000 RSUs are drawn from the annual equity pool. Workday shows the change as fully effective, with the raise flowing to the next payroll run and the grant queued for the cap table. No Compensation Committee minutes reference this grant, and neither VP People nor the CFO appear on the record.",
+  "question": "What should the audit conclude about the authorization of this compensation change?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Dana Lindqvist",
+    "title": "Senior HR Business Partner",
+    "organization": "Fennimore Foods",
+    "years_experience": 9,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Valid - the Director and HRBP both approved the change in Workday, which covers a retention adjustment for an individual contributor.",
+    "Valid, but a documentation cleanup is needed - record the RSUs in the cap table and note the grant in the file; the Director and HRBP approvals are sufficient.",
+    "Invalid - the 12% raise required Director, HRBP, and Comp team review (Comp team is missing), and the 5,000-RSU grant separately requires Compensation Committee approval plus VP People and CFO sign-off, none of which exist; the equity grant in particular was issued without authority and must be re-authorized through the Compensation Committee.",
+    "Invalid - all promotions and grants of this kind require full Board of Directors and CEO approval, so the change must be escalated to the Board before it can stand."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "An Out-of-Window Refund Denial That Turned on Lifetime Spend",
+  "category": "temporal_consistency",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "A support lead at Cypressa Retail must decide how to handle an out-of-window goodwill refund request, given how a similar request was handled last month.\n\n**Decision A (2024-06-09)**\nCustomer 'Petra Alden' requested a goodwill refund 44 days after delivery \u2014 outside the standard 30-day refund window. DENIED at the team level. Note: 'Support may issue out-of-window goodwill refunds without manager approval only for customers whose lifetime spend is at least $2,000. Petra's lifetime spend was $610, below the threshold, and no manager approval was obtained. Denied on that basis.'\n\n**Current request C (2024-07-18)**\nCustomer 'Rowan Beck' requests a goodwill refund 40 days after delivery \u2014 also outside the 30-day window. Rowan's lifetime spend is $3,450. The order and account are otherwise ordinary, and Rowan is not claiming a defect; this is a goodwill request.\n\n**Refund Policy (current, unchanged this year)**\nRefunds requested within 30 days of delivery are issued automatically once verified. Beyond 30 days, support may issue a one-time goodwill refund WITHOUT manager approval only when the customer's lifetime spend is at least $2,000; below that threshold, an out-of-window goodwill refund requires manager approval and is otherwise declined.\n\n**Slack \u2014 #cx-support**\nAgent: 'We denied an out-of-window refund just last month, so let's stay consistent and deny Rowan too.'\nLead: 'Hold on \u2014 why did we deny that one? Let me check Rowan's lifetime spend before we call it precedent.'\n\nThe agent is treating the June denial as a general rule against out-of-window refunds. Rowan's lifetime spend is well above $2,000.",
+  "question": "How should the lead handle Rowan Beck's out-of-window goodwill refund request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Nadia Foulkes",
+    "title": "Customer Support Team Lead",
+    "organization": "Cypressa Retail",
+    "years_experience": 7,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Deny the refund to stay consistent with the June denial of a comparable out-of-window request.",
+    "Approve the goodwill refund at the team level: Rowan's $3,450 lifetime spend clears the $2,000 threshold that the June denial fell below, so support can issue it without manager approval.",
+    "Route the request to a manager for approval, given the prior denial of a similar out-of-window request.",
+    "Offer store credit instead of a cash refund as a compromise between honoring the request and matching the prior denial."
+  ]
+}

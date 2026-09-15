@@ -1,0 +1,25 @@
+{
+  "title": "Paid Parental Leave Weeks for a Leave That Straddled the Policy Change",
+  "category": "policy_version",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "Brockworth Health revised its paid parental leave benefit in mid-2024.\n\nVersion 1 (in effect through June 30, 2024) states: \"Eligible employees receive 8 weeks of fully paid parental leave.\"\n\nVersion 2 (effective July 1, 2024) states: \"Eligible employees receive 14 weeks of fully paid parental leave.\" v2 includes a transition clause: \"The number of paid weeks is set by the policy version in effect on the leave commencement date, defined as the employee's first day of approved leave. Leaves commencing before July 1, 2024 receive v1 (8 weeks) for the entire leave, even if the leave extends past July 1, 2024. Leaves commencing on or after July 1, 2024 receive v2 (14 weeks). The child's birth or placement date does not set the entitlement; the leave commencement date does.\"\n\nThe HRIS record for employee E-3390 shows: Child Birth Date 2024-06-20, Leave Commencement Date 2024-06-24, Employee Status Full-time and benefits-eligible. The leave, if 8 weeks, would run into mid-August 2024; if 14 weeks, into late September 2024.\n\nThe employee emails HR on 2024-07-15: \"I started my parental leave June 24, and I know it runs well into July and beyond. My baby arrived June 20. Since the 14-week benefit kicked in July 1 while I'm still out, do I now get 14 weeks, or am I locked at 8?\"\n\nUsing the policy history, the transition clause, and the HRIS record, determine how many paid weeks E-3390 receives.",
+  "question": "How many paid parental leave weeks does E-3390 receive?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Sofia Marchenko",
+    "title": "People Operations Lead",
+    "organization": "Brockworth Health",
+    "years_experience": 9,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "8 weeks, because the leave commenced 2024-06-24, before the July 1, 2024 cutover, so v1 governs the entire leave even though it extends past July 1.",
+    "14 weeks, because the leave was still active when v2 took effect on July 1, 2024.",
+    "14 weeks, because the leave extends beyond July 1, 2024 and therefore falls under the current policy.",
+    "11 weeks, prorated between v1 and v2 based on the portions of the leave falling before and after July 1, 2024."
+  ]
+}

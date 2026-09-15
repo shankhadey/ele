@@ -1,0 +1,25 @@
+{
+  "title": "Commission Rate on a Deal Booked Days Before the New Comp Plan",
+  "category": "policy_version",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "Carmarthen Cloud pays its account executives under a written Sales Compensation Plan that is versioned annually.\n\nPlan v1 (effective January 1, 2024) states: \"New-business ARR bookings earn a flat 10% commission rate. Commission is earned on the booking date, defined as the order form execution date, and paid in the payroll cycle following customer invoice payment.\"\n\nPlan v2 (effective January 1, 2025) states: \"New-business ARR bookings earn an 8% base commission rate, with a 12% accelerator applied only to booked ARR above the rep's annual quota.\" v2 adds a transition clause: \"Commission on any deal is calculated under the plan version in effect on that deal's booking (order form execution) date. Deals booked on or before December 31, 2024 are paid under v1; deals booked on or after January 1, 2025 are paid under v2. The date the customer pays the invoice, and the payroll cycle in which commission is disbursed, do not change which plan version governs the deal.\"\n\nThe CRM record for opportunity OPP-7731 (customer: Nettleton Freight, AE: J. Halloran) shows: Order Form Executed Date 2024-12-18, New-Business ARR $500,000, Invoice Paid Date 2025-02-10. J. Halloran was tracking below annual quota at the time of booking.\n\nThe AE messages the comp analyst in #comp-questions on 2025-02-12: \"OPP-7731 closed at $500K ARR. The order form was signed December 18, but the customer only paid the invoice February 10, so it's landing in my 2025 statement. Am I paid at the old 10% or the new 8%?\"\n\nUsing the plan history, the transition clause, and the CRM record, determine the commission owed on OPP-7731.",
+  "question": "What commission is owed on OPP-7731?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Elena Vasquez",
+    "title": "Sales Compensation Manager",
+    "organization": "Carmarthen Cloud",
+    "years_experience": 11,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "$50,000, applying v1's 10% rate, because OPP-7731 was booked 2024-12-18, before the January 1, 2025 cutover, so v1 governs regardless of the 2025 invoice-payment date.",
+    "$40,000, applying v2's 8% base rate, because the invoice was paid 2025-02-10 and the commission lands in the 2025 payroll cycle.",
+    "$60,000, applying v2's 12% accelerator to the full $500,000 of booked ARR.",
+    "$40,000, applying v2's 8% rate, because all commission disbursed on or after January 1, 2025 falls under the current plan."
+  ]
+}

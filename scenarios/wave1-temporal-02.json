@@ -1,0 +1,25 @@
+{
+  "title": "A 30% Discount Denial That Turned on an ARR Threshold",
+  "category": "temporal_consistency",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "A revenue operations analyst at Merrick Analytics must decide whether a discount request should be approved, given how a similar request was handled earlier this year.\n\n**Decision A (2024-02)**\nCustomer 'Brightwater' | ARR $180K. Requested a 30% discount. Deal Desk DENIED. Note: 'Discounts above 25% require VP Finance approval unless deal ARR is at least $500K, in which case Deal Desk may approve up to 40%. Brightwater is $180K \u2014 below the threshold \u2014 and no VP approval was obtained. Denied.'\n\n**Current request C (2024-06-11)**\nCustomer 'Calderwood Group' | ARR $620K | 3-year deal. Requesting a 30% discount to match a competitor. Deal is otherwise clean; no other approvals outstanding.\n\n**Discount Authority Policy (current, unchanged since 2023-11)**\nStandard discounts up to 25% are approved by Deal Desk. Discounts above 25% require VP Finance approval, EXCEPT that when a deal's ARR is at least $500K, Deal Desk may approve discounts up to 40% without VP involvement. This threshold-based Deal Desk authority has been in place since November 2023.\n\n**Slack \u2014 #revops**\nAE: 'We already denied a 30% ask back in February for basically the same discount level. Consistency says we deny Calderwood too.'\nAnalyst: 'The February deal was tiny \u2014 let me look at why it was actually denied before we assume it's precedent.'\n\nThe AE wants a quick decision and is treating the February outcome as a blanket rule that 30% is not allowed. No one has yet checked whether Calderwood clears the ARR threshold that changes who can approve.",
+  "question": "How should the analyst handle Calderwood Group's 30% discount request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Daniel Osei",
+    "title": "Revenue Operations Lead",
+    "organization": "Merrick Analytics",
+    "years_experience": 10,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Deny the 30% discount, consistent with the February denial of a similar 30% request.",
+    "Approve the 30% discount at Deal Desk, because Calderwood's $620K ARR clears the $500K threshold that lets Deal Desk approve up to 40% \u2014 a path the February deal never qualified for.",
+    "Escalate to VP Finance for approval, since any discount above 25% requires VP sign-off.",
+    "Offer a 25% discount as a compromise to keep the deal within Deal Desk's standard authority."
+  ]
+}

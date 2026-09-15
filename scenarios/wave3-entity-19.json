@@ -1,0 +1,19 @@
+{
+  "title": "The Redomestication That Kept Its EIN",
+  "category": "entity_resolution",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "Malmberg Industrial is reviewing a vendor that suddenly shows conflicting registration data and must decide whether a new legal entity exists. Vendor V-2299 \"Havbryn Instruments\" appears in SAP with two conflicting state-registration records: an older record showing incorporation in California (California entity number C1180992, formed 2015) and a newer filing showing incorporation in Texas (Texas SOS file number 0804471123, effective 2024-02). Treasury flagged a possible new entity because the state of incorporation, the charter number, and the registered-agent address all changed. However, the vendor's EIN remains 47-2210983 across both records, the D-U-N-S remains 09-441-8820, the legal name remains \"Havbryn Instruments, Inc.,\" the bank account (routing 121000248, account ending 3390) is unchanged, and the W-9 still lists EIN 47-2210983. The vendor's controller emailed: \"We completed a redomestication (conversion of domicile) from California to Texas effective 2024-02. Same corporation, same EIN, same bank; we changed our state of incorporation only. No asset transfer, no new entity.\" A treasury analyst wants to onboard a brand-new vendor for the Texas registration and put the California record on hold, treating them as two entities. A payment run is scheduled this week, and treasury must settle whether one vendor or two exist before releasing funds against the open invoices. Provide the EIN that identifies the single continuing vendor.",
+  "question": "What EIN identifies the single continuing legal entity across the California and Texas registrations?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Thea Grimstad",
+    "title": "Treasury Operations Analyst",
+    "organization": "Malmberg Industrial",
+    "years_experience": 10,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

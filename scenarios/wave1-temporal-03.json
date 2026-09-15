@@ -1,0 +1,19 @@
+{
+  "title": "Six Weeks of Unpaid Leave Under the New Approval Rule",
+  "category": "temporal_consistency",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "An HR operations specialist at Nethercott Health must confirm the required approvals for an unpaid personal leave request, given how a similar request was handled last year.\n\n**Decision A (2023-11)**\nEmployee 'Dana Fowler' requested 6 weeks of unpaid personal leave. Her direct manager approved it alone. Note at the time: 'Managers may approve unpaid personal leave up to 8 weeks at their discretion.'\n\n**Current request C (2024-05-14)**\nEmployee 'Rhea Colton' has requested 6 weeks of unpaid personal leave for a family matter. Her manager wants to approve it the same way he approved Dana's.\n\n**Leave Approval Policy (current, effective 2024-04-01)**\nUnpaid personal leave up to 4 weeks may be approved by the direct manager alone. Any unpaid personal leave exceeding 4 weeks now requires BOTH the HR Business Partner (HRBP) and the department head to approve, in addition to the manager's recommendation. The prior manager-discretion limit of 8 weeks was replaced when this policy took effect.\n\n**Slack \u2014 #people-ops**\nManager: 'I approved 6 weeks for Dana last year on my own, no problem. I'll just approve Rhea's the same way.'\nSpecialist: 'Dana's leave was last November \u2014 that was under the old rule. The approval requirements changed on April 1. Let me confirm who has to sign off now.'\n\nThe manager is treating his prior solo approval as evidence he can act alone again. The request has not yet been routed to anyone beyond the manager.",
+  "question": "Under Nethercott Health's current policy, which two additional approvers (beyond the manager's recommendation) must sign off on Rhea Colton's 6-week unpaid leave request?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Marisol Vega",
+    "title": "HR Operations Specialist",
+    "organization": "Nethercott Health",
+    "years_experience": 8,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge"
+}

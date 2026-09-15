@@ -1,0 +1,25 @@
+{
+  "title": "Closed-Period Credit Memo Approved Without Required CFO Sign-Off",
+  "category": "approval_chain",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "A revenue-controls audit agent at Denholm Freight is reviewing a customer credit memo.\n\n**Credit Memo / Revenue Reversal Authority Matrix**\n- Up to $10,000: Billing Manager.\n- $10,001-$50,000: Controller.\n- Above $50,000: Controller AND CFO sign-off (SOX control C-14).\n- Overriding rule: ANY credit memo that reverses revenue already recognized in a CLOSED accounting period requires CFO sign-off regardless of dollar amount.\n\n**ERP Credit Memo Record**\n- CM-7781: Customer 'Northline Retail', amount $62,000.\n- Reverses invoice INV-5540, originally recognized in Q4 2025 (period closed 2026-01-15).\n- Posted: 2026-02-20. Approved by (field): 'Controller - Alan D.'\n\n**Email thread (reconstructed)**\n- Billing analyst -> Controller: 'Northline disputes the Q4 freight surcharge. They want a $62K credit. CFO is out on PTO this week.'\n- Alan D. (Controller): 'It's a clean dispute. I'll approve it so we hit the customer's deadline; we can loop the CFO in when he's back.'\n- Billing analyst: 'Posted as CM-7781, approver = you.'\n- (no later CFO approval appears in the ERP, email, or Slack)\n\nThe credit both exceeds $50,000 and reverses revenue recognized in a now-closed quarter. The Q4 2025 books were reported externally after the period closed on 2026-01-15, and no CFO approval was ever recorded in the ERP, the email thread, or Slack. The Controller's own approval note references only his authority level and makes no mention of the closed-period override under control C-14.",
+  "question": "What should the audit conclude about the authorization of this credit memo?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Alan Deverell",
+    "title": "Assistant Controller",
+    "organization": "Denholm Freight",
+    "years_experience": 10,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Valid - the Controller holds credit-memo approval authority and approved CM-7781 in the ERP.",
+    "Valid, but a documentation cleanup is needed - send the CFO an informational email after the fact; the Controller's approval already satisfies the control.",
+    "Invalid - the $62,000 credit exceeds the Controller's $50,000 ceiling AND reverses revenue recognized in a closed period, and both conditions independently require CFO sign-off under control C-14; the CFO never approved, so the memo lacks required authorization and must be re-authorized with the CFO before it stands.",
+    "Invalid - reversing recognized revenue of this size requires Audit Committee approval, so the memo must be escalated to the Audit Committee."
+  ]
+}

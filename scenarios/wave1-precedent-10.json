@@ -1,0 +1,19 @@
+{
+  "title": "Revenue-Recognition Exception for a Deal With a Signed Side Letter",
+  "category": "precedent_exception",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "You are a revenue accountant at Underhill Networks closing the quarter. Sales wants to recognize $420,000 of upfront license revenue on the 'Castleton Bank' deal in the current quarter. The contract closed on the last day of the quarter.\n\nActive policy: Revenue Recognition Standard RR-4, effective 2024-01-01. Upfront license revenue may be recognized in-period only when (a) the contract is fully executed with no unfulfilled contingencies, and (b) there is no side letter or verbal side agreement altering delivery, acceptance, or payment obligations. Any deal with a side letter must be routed to the Revenue Controller for a contingency assessment before recognition; if the side letter contains an acceptance or cancellation right, revenue is deferred until that right lapses.\n\nPrecedent (close log): 2024-06-30, 'Wexmoor Trust' deal, $300,000, recognized in-period. Note: \"Fully executed, no side letter, no contingencies. Recognized per RR-4.\" Approver: Revenue Controller signed off after confirming no side agreement existed.\n\nCurrent facts: The Castleton Bank deal file contains a side letter, signed by both parties, granting Castleton a 30-day 'evaluation acceptance right' to cancel the license for a full refund if their security team rejects the product. That 30-day window extends into next quarter. Sales argues: \"Wexmoor was recognized in-period last quarter at the same wire \u2014 treat Castleton the same and book the $420K now.\"",
+  "question": "Can the $420,000 be recognized this quarter? Answer with the recognition decision and the controlling reason in one short phrase.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Gregory Halloran",
+    "title": "Senior Revenue Accountant",
+    "organization": "Underhill Networks",
+    "years_experience": 10,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge"
+}

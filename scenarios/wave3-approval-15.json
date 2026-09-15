@@ -1,0 +1,19 @@
+{
+  "title": "Engineer Grants Themselves Production Admin Through the Self-Service Access Tool",
+  "category": "approval_chain",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "scenario_text": "An access-governance audit agent at Magnetite Robotics is reviewing a privileged-access grant.\n\n**Privileged Access Authority Matrix**\n- Read-only prod access: self-service request, auto-approved, time-boxed 24 hours.\n- Standing privileged prod access (admin/write): requester and approver MUST be different people; requires the resource owner (manager) AND Security team approval; requester may not approve their own request.\n- Emergency access: only under an active incident via the break-glass workflow.\n\n**Access Tool Record**\n- ACC-8891: Requester 'Sean D.' (Platform Engineer). Requested: 'prod-cluster admin (standing).'\n- Approved by (field): 'Sean D.' Manager approval: (empty). Security approval: (empty).\n- Audit log: 'Requester and approver identical; grant activated 2026-05-30. No active incident linked.'\n\n**Slack #platform (reconstructed)**\n- Sean D.: 'I need standing prod-cluster admin for the migration work. The access tool lets me approve my own low-risk requests, so I approved it.'\n- Peer: 'Doesn't standing admin need your manager and Security?'\n- Sean D.: 'Probably, but I didn't want to wait. I'll get them to bless it later.'\n\nStanding admin access was granted with the requester and approver being the same person, with no manager or Security approval and no active incident. The access is standing, not time-boxed, so it persists indefinitely until revoked, and the audit log explicitly flags that the requester and approver are identical. Sean conflated the tool's auto-approval of low-risk read-only requests with authority over standing write access, which the matrix treats as an entirely separate and far stricter category requiring independent approvers.",
+  "question": "Name the governance principle that was violated when this standing admin access was granted.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Sean Doyle",
+    "title": "Identity and Access Governance Lead",
+    "organization": "Magnetite Robotics",
+    "years_experience": 11,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

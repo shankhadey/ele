@@ -1,0 +1,19 @@
+{
+  "title": "PTO Accrued Across a Mid-Year Accrual-Rate Change",
+  "category": "policy_version",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "Draco Foods revised its PTO accrual schedule mid-2024.\n\nVersion 1 (in effect through 2024-06-30): \"Full-time employees accrue PTO at 1.25 days per completed month of service (15 days per year).\"\n\nVersion 2 (effective 2024-07-01): \"Full-time employees accrue PTO at a rate of 20 days per year, credited monthly.\" v2 includes a transition clause: \"The accrual rate in effect on the last day of each completed month of service governs the PTO accrued for that month. Months completed on or before June 30, 2024 accrue at the v1 rate; months completed on or after July 1, 2024 accrue at the v2 rate. This change is not retroactive: no adjustment is made to PTO already accrued for months completed under v1.\"\n\nThe HRIS record for employee E-4410 (full-time, hired 2020-02-01, no PTO taken during 2024) shows PTO accruing on the last calendar day of each month. The reconciliation concerns PTO accrued during calendar year 2024 (January through December, 12 completed months).\n\nAn HR analyst emails payroll on 2025-01-06: \"Reconciling E-4410's 2024 accrual. The rate changed July 1. How many PTO days did they accrue across the full 2024 year, counting the old rate for the first half and the new rate for the second half?\"\n\nUsing the policy history, the transition clause, and the HRIS accrual method, determine the total PTO days E-4410 accrued during calendar year 2024.",
+  "question": "How many PTO days did employee E-4410 accrue during calendar year 2024?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Grace Okonkwo",
+    "title": "People Operations Lead",
+    "organization": "Draco Foods",
+    "years_experience": 9,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

@@ -1,0 +1,19 @@
+{
+  "title": "An Early-Deletion Exception Granted Under the Old Regulation",
+  "category": "temporal_consistency",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "A compliance analyst at Voss Group must decide how to handle a customer's data-deletion request, given how a comparable request was handled last year.\n\n**Decision A (2023-05)**\nCustomer 'Hollis & Co' requested early deletion of its transaction records. Legal GRANTED the early deletion. Note: 'Under the retention rules then in effect, transaction records could be deleted early on verified customer request.'\n\n**Current request C (2024-08-09)**\nCustomer 'Redgate Partners' has submitted a deletion-on-request that covers BOTH its old marketing-contact data AND its transaction records. The account manager wants to honor the whole request to keep the customer happy.\n\n**Data Retention Policy (current, effective 2024-01-01 to align with an updated regulation)**\nCustomer transaction records must be retained for 7 years and may NOT be deleted early on customer request; the prior early-deletion exception for transaction records was eliminated. Marketing-contact data is not subject to the 7-year rule and may still be deleted on verified request. The retention clock for Redgate's transaction records has not yet reached 7 years.\n\n**Slack \u2014 #compliance**\nAccount mgr: 'We deleted Hollis's transaction records early last year when they asked. Redgate is asking for the same \u2014 let's just do it.'\nAnalyst: 'Hollis was May 2023, before the January retention change. Let me separate what we can still delete from what we now have to keep.'\n\nDeleting transaction records inside the mandatory 7-year window would breach the current regulation-aligned policy.",
+  "question": "How should the analyst handle Redgate Partners' combined deletion request?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Eleanor Whitfield",
+    "title": "Compliance Counsel",
+    "organization": "Voss Group",
+    "years_experience": 13,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge"
+}

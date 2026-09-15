@@ -1,0 +1,19 @@
+{
+  "title": "A Capital Expenditure Straddling a New Approval Threshold",
+  "category": "temporal_consistency",
+  "domain": "other",
+  "difficulty": "expert",
+  "scenario_text": "A facilities operations manager at Juniperwell Logistics must decide who must approve a capital equipment purchase, given two prior decisions that straddle a threshold change.\n\n**Decision A (2024-01-30)**\nA $60K forklift purchase was approved by the site director alone. Note: 'Under the capex policy then in effect, site directors could approve capital purchases up to $75K without CFO sign-off. Within limit \u2014 approved by the director.'\n\n**Decision B (2024-09-10)**\nA $58K conveyor upgrade was routed for CFO approval. Note: 'Under the revised capex policy effective 2024-08-01, the site-director approval ceiling was lowered to $50K; anything above $50K now requires CFO sign-off. The $58K purchase was sent to the CFO.'\n\n**Current request C (2024-12-12)**\nA $62K pallet-racking system purchase is ready. The site director wants to approve it directly, pointing to the January forklift approval as the model.\n\n**Capital Expenditure Policy (current, effective 2024-08-01)**\nSite directors may approve capital purchases up to $50K. Capital purchases above $50K require CFO approval. The $50K site-director ceiling has been in force since August 1, 2024, replacing the prior $75K ceiling.\n\n**Slack \u2014 #facilities-ops**\nDirector: 'I approved a $60K forklift on my own back in January, so I can approve this $62K racking the same way.'\nManager: 'January was under the old $75K ceiling. That dropped to $50K in August, and we already sent a $58K purchase to the CFO in September. Let me confirm the current path.'\n\nThe $62K purchase is above the current $50K site-director ceiling.",
+  "question": "Under the current capex policy, whose approval is required for the $62K pallet-racking purchase? Provide the required approver.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Gerald Ohms",
+    "title": "Facilities Operations Manager",
+    "organization": "Juniperwell Logistics",
+    "years_experience": 13,
+    "domain_expertise": "other"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

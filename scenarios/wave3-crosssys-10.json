@@ -1,0 +1,19 @@
+{
+  "title": "Aegis Assurance onboarding: 'known broker, low risk' versus sanctions and structuring flags",
+  "category": "cross_system_synthesis",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "Aegis Assurance is onboarding a new corporate policyholder that will fund a large single-premium annuity. In the #kyc-review Slack channel the onboarding analyst writes: 'This came through a broker we've worked with for years and the company checks out on the surface. Marking it standard risk and clearing it for funding - I don't want to hold up a broker relationship over routine paperwork.'\n\nOther systems flag serious problems. In the KYC/screening platform (LexisNexis/WorldCheck), a beneficial owner disclosed on the application returns a probable match to a sanctions list, and the analyst waved it off as a false positive without documenting a resolution. In the corporate registry data, the applicant was incorporated three weeks ago yet proposes to fund a premium far exceeding any plausible activity for a new entity. In the payments system, the funding is structured as several transfers just under the reporting threshold, from accounts in two jurisdictions unrelated to the stated business. And an email from the broker urges Aegis to 'expedite before month-end' and offers to 'handle any documentation gaps on our side.'\n\nEach item has an innocent reading: screening throws false positives, new entities exist, transfers get split for banking reasons, and brokers push timelines. But together - an unresolved sanctions hit, a brand-new shell funding an outsized premium, threshold-avoiding transfers from unrelated jurisdictions, and pressure to skip documentation - they form a textbook money-laundering / sanctions-risk pattern that mandates escalation, not standard clearance. The analyst's 'known broker' read predates the payment-structuring detail. You are the compliance officer reviewing the file. What must you do?",
+  "question": "What is the required action before any funding is accepted?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Lena Fairbourne",
+    "title": "Chief Compliance Officer",
+    "organization": "Delos Assurance Group",
+    "years_experience": 14,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

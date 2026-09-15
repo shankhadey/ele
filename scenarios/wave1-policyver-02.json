@@ -1,0 +1,19 @@
+{
+  "title": "Setup Fee Recognition on a Contract Signed Before the Rev Rec Change",
+  "category": "policy_version",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "Stapleton Media accounts for subscription contracts that bundle a multi-year SaaS license with a one-time implementation (setup) fee.\n\nRevenue Recognition Policy v1 (in effect through December 31, 2023) states: \"Implementation/setup fees represent a distinct performance obligation and are recognized at a point in time upon platform go-live.\"\n\nRevenue Recognition Policy v2 (effective January 1, 2024) states: \"Implementation/setup fees are not distinct from the SaaS subscription and are recognized ratably over the remaining contract term beginning at go-live.\" v2 includes a transition clause: \"Contracts whose order form is executed prior to January 1, 2024 continue to apply the recognition method in effect at signing for the original contract term. Renewals or amendments executed on or after January 1, 2024 adopt v2 for all fees, including any setup fee amounts not yet recognized as of the amendment date.\"\n\nThe ERP contract record for order O-90312 (customer: Halstead Publishing) shows: Order Form Executed Date 2023-11-15, Term 36 months, Setup Fee $60,000, SaaS ARR $240,000, Go-Live Date 2024-02-01. No renewal or amendment has been executed; the original term runs through January 2027.\n\nA revenue accountant emails the controller on 2024-02-05: \"Booking O-90312. Go-live was Feb 1. The $60,000 setup fee, do we take it upfront or spread it over the 36 months now that the new policy is live? The order form was signed back in November.\"\n\nDetermine how the $60,000 setup fee on O-90312 should be recognized.",
+  "question": "How should the $60,000 setup fee on order O-90312 be recognized?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Marcus Bell",
+    "title": "Revenue Accounting Manager",
+    "organization": "Stapleton Media",
+    "years_experience": 13,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge"
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Who Holds the BAA After the Divestiture",
+  "category": "entity_resolution",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "Ilminster Care, a healthcare provider, is responding to a suspected data incident and must identify the business associate now legally responsible for protected health information (PHI) in its claims data set. The original vendor was \"Cardinal Ledger Analytics, Inc.\" (EIN 51-2290871), engaged under a single Business Associate Agreement (BAA-2021-14, signed 2021) covering two service lines: (1) claims adjudication and processing, and (2) provider-directory data hygiene. Effective 2024-03-01, Cardinal sold its Claims Processing business unit to \"Ridgeline Data Partners LLC\" (EIN 84-7710233) in an asset purchase; Cardinal retained the provider-directory hygiene line and continues to operate. An assignment-and-assumption agreement filed in Ironclad on 2024-03-04 states that the buyer assumes \"all customer service agreements and data-processing obligations primarily related to the Claims Processing Business,\" with Schedule A listing the claims adjudication services agreement and its associated PHI flows by name. A transition email from privacy@ridgelinedata.com confirms that as of 2024-03-01 all claims PHI is stored and processed on Ridgeline systems, and asks Ilminster to execute an updated BAA with Ridgeline; it adds that \"provider-directory work remains with Cardinal.\" The suspected incident involves the claims adjudication data set specifically. Ilminster's privacy officer must decide which entity is the responsible business associate for breach-notification purposes and with whom an updated BAA must be executed for the claims PHI.",
+  "question": "Which entity is now the responsible business associate for the claims PHI, and what BAA action is required?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Helena Ashcombe",
+    "title": "Privacy and Compliance Counsel",
+    "organization": "Ilminster Care",
+    "years_experience": 13,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Cardinal Ledger Analytics, Inc. remains solely responsible for all PHI under BAA-2021-14, because the original BAA covered both service lines and cannot be split.",
+    "Ridgeline Data Partners LLC is the responsible business associate for the claims PHI; execute an updated BAA with Ridgeline, while Cardinal retains BAA obligations for the provider-directory line.",
+    "No BAA action is needed, because an asset purchase automatically transfers the existing BAA-2021-14 in full to Ridgeline for all service lines.",
+    "Both Cardinal and Ridgeline are jointly responsible for the claims PHI, so the existing BAA-2021-14 should simply be countersigned by Ridgeline without other changes."
+  ]
+}

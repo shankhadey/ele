@@ -1,0 +1,25 @@
+{
+  "title": "Two Vendor Records, One EIN",
+  "category": "entity_resolution",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "scenario_text": "Wolfram Freight's procurement team is deduplicating its Coupa vendor master before quarterly 1099 filing. Two active supplier records surface for freight brokerage. Record V-40218 is \"Coastline Brokerage LLC,\" remit-to address 88 Harbor Way, Tacoma WA, banking on file with routing 125008547 / account ending 6641, tax classification W-9 EIN 47-3391002, first PO dated 2021-03. Record V-51907 is \"Coastline Freight Partners, LLC,\" remit-to address 88 Harbor Way Suite 210, Tacoma WA, banking routing 125008547 / account ending 6641, W-9 on file EIN 47-3391002, first PO dated 2023-08. A buyer insists these are different companies: the names differ, and V-51907 was created two years later by a different requester after \"Coastline rebranded its brokerage arm.\" NetSuite AP shows year-to-date payments of $214,000 against V-40218 and $128,500 against V-51907. The vendor's own W-9 uploaded to both records lists the legal name \"Coastline Brokerage LLC\" with \"Coastline Freight Partners\" written on the DBA line, and the same EIN. A remittance email from ap@coastlinebrokerage.com (received on both records' contacts) confirms all payments route to the account ending 6641. Dun & Bradstreet returns a single DUNS for the Tacoma address. Procurement must decide whether to keep both records or consolidate for accurate 1099 reporting, where a single payee must receive one combined 1099-NEC.",
+  "question": "How should Wolfram Freight treat these two vendor records for 1099 reporting, and what combined amount should the single 1099-NEC reflect?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Priya Nadella",
+    "title": "Senior Procurement Operations Analyst",
+    "organization": "Wolfram Freight",
+    "years_experience": 9,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Keep both records separate and issue two 1099-NEC forms ($214,000 and $128,500), because the differing legal names indicate two distinct LLCs.",
+    "Consolidate the records as one payee and issue a single 1099-NEC for $342,500, because the shared EIN, bank account, and W-9 show one legal entity operating under a DBA.",
+    "Consolidate but issue the 1099-NEC only for $214,000 on the original record V-40218, since the newer record V-51907 is a duplicate that should be voided with its payments discarded.",
+    "Keep both records but issue a single 1099-NEC for $214,000, treating V-51907's payments as intercompany transfers that are not reportable."
+  ]
+}

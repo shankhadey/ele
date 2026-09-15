@@ -1,0 +1,25 @@
+{
+  "title": "An SLA Uplift Justified by New Traffic Data",
+  "category": "temporal_consistency",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "scenario_text": "A platform SRE lead at Hollyoak Energy must decide whether to grant a tenant an uplifted API rate limit, given how a comparable request was handled earlier this year.\n\n**Decision A (2024-03-27)**\nTenant 'GridPoint Analytics' requested an uplift of its API rate limit from 1,000 to 5,000 requests/minute. DENIED. Note: 'Uplifts above the 1,000 rpm default require a capacity-impact assessment showing the tenant's sustained peak from real traffic data. GridPoint provided only a projected estimate with no measured traffic. Without measured data, the uplift could not be sized safely \u2014 denied.'\n\n**Current request C (2024-10-11)**\nTenant 'Meridian Grid' requests the same uplift from 1,000 to 5,000 rpm. Meridian has attached 30 days of measured production traffic showing a sustained peak of 4,200 rpm, plus a completed capacity-impact assessment from the platform team confirming headroom.\n\n**Rate-Limit Uplift Policy (current, unchanged since 2023-10)**\nUplifts above the 1,000 rpm default require a completed capacity-impact assessment backed by measured production traffic. When measured data and a passing assessment are provided, the SRE lead may approve the uplift. Projections alone are insufficient. These requirements have applied since October 2023.\n\n**Slack \u2014 #platform-sre**\nAccount eng: 'We denied a 5,000 rpm uplift for GridPoint in March, so Meridian's ask should be denied too \u2014 same numbers.'\nSRE lead: 'GridPoint was denied for having no measured data. Meridian has 30 days of real traffic and a passing assessment. That's new information \u2014 let me evaluate it.'\n\nMeridian's measured peak and completed assessment are exactly what the earlier request lacked.",
+  "question": "How should the SRE lead handle Meridian Grid's rate-limit uplift request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Aditi Ranganathan",
+    "title": "Platform SRE Lead",
+    "organization": "Hollyoak Energy",
+    "years_experience": 11,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Deny the uplift, consistent with the March denial of an identical 5,000 rpm request for GridPoint.",
+    "Approve the uplift to 5,000 rpm: Meridian provided measured production traffic and a passing capacity-impact assessment, which satisfy the exact requirement GridPoint failed, so the difference in outcome is justified under the unchanged policy.",
+    "Escalate the uplift to the VP of Engineering, since any rate-limit change above the default exceeds the SRE lead's authority.",
+    "Grant an interim uplift to 2,500 rpm as a compromise while more data is gathered."
+  ]
+}

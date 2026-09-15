@@ -1,0 +1,19 @@
+{
+  "title": "SaaS Vendor Onboarded Without the Required Security Review",
+  "category": "approval_chain",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "scenario_text": "A vendor-onboarding audit agent at Garrick Media is validating authorization for a new SaaS subscription.\n\n**SaaS Onboarding Authority Matrix**\n- Any SaaS application that will handle company or customer data MUST pass an IT Security review with the vendor's SOC 2 report on file, in addition to procurement approval. This security review is a hard gate at every spend level.\n- Annual spend up to $50,000: Procurement Manager approval AND IT Security review.\n- Annual spend above $50,000: Procurement Director approval AND IT Security review AND CISO approval.\n\n**Coupa Record**\n- PO-6620: SaaS analytics tool 'PulseGraph', $38,000/year.\n- Data handled: ingests customer product-usage events (company data).\n- Approved by (field): 'Procurement Manager - Tom H.'\n- IT Security review: (empty). SOC 2 report: (not attached).\n\n**Slack #vendor-onboarding (reconstructed)**\n- Requester: 'Marketing needs PulseGraph live before the campaign launch Monday.'\n- Tom H. (Procurement Manager): 'Spend's under $50K, I can approve. Security's backlog is weeks long.'\n- Requester: 'Can we skip the security review to make the date?'\n- Tom H.: 'Approving the PO now; we'll get the security review done after go-live.'\n- (no IT Security sign-off appears in Coupa, Slack, or email)\n\nPulseGraph is being provisioned with company data and the security gate has not been cleared.",
+  "question": "The procurement approval is at the correct spend tier, but the onboarding is still unauthorized. Name the single required control that is missing.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Thomas Hargreave",
+    "title": "IT Procurement Manager",
+    "organization": "Garrick Media",
+    "years_experience": 8,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge"
+}

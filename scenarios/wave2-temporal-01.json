@@ -1,0 +1,25 @@
+{
+  "title": "A Price-Adjustment Denial That Turned on a Promo Purchase",
+  "category": "temporal_consistency",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "A support lead at Ackroyd Retail must decide how to handle a post-purchase price-adjustment request, given how a similar request was handled last month.\n\n**Decision A (2024-04-08)**\nCustomer 'Petra Vance' asked for a price adjustment 6 days after purchase when the item dropped in price. DENIED. Note: 'Original purchase was made with a 20%-off promotional coupon. Promotional-price purchases are excluded from post-purchase price adjustments. Denied on that basis.'\n\n**Current request C (2024-05-19)**\nCustomer 'Leo Karsten' requests a price adjustment 9 days after purchase for a full-price item (no coupon, no promotion applied) that has since dropped in price. The item and account are otherwise ordinary.\n\n**Price-Adjustment Policy (current, unchanged this year)**\nCustomers may request a one-time price adjustment within 14 days of purchase if the item's price drops. Items purchased using a promotional code or during a sitewide sale are NOT eligible for a price adjustment. Full-price purchases within the 14-day window are adjusted automatically once verified.\n\n**Slack \u2014 #cx-support**\nAgent: 'We denied a price-adjustment ask just last month, so let's stay consistent and deny Leo too.'\nLead: 'Hold on \u2014 why did we deny that one? Let me check whether Leo's purchase is even in the same bucket before we call it precedent.'\n\nThe agent is treating the April denial as a general rule against price adjustments. Leo's purchase was full price and falls within the 14-day window.",
+  "question": "How should the lead handle Leo Karsten's price-adjustment request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Tessa Moreau",
+    "title": "Customer Support Team Lead",
+    "organization": "Ackroyd Retail",
+    "years_experience": 7,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Deny the price adjustment to stay consistent with the April denial of a similar request.",
+    "Approve the price adjustment: Leo's purchase was full price and within the 14-day window, so the April denial \u2014 which turned entirely on a promotional-code purchase \u2014 does not apply here.",
+    "Require manager approval before issuing the adjustment, given the prior denial of a comparable request.",
+    "Offer a partial adjustment as a compromise between honoring the request and matching the prior denial."
+  ]
+}

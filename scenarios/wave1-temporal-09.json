@@ -1,0 +1,25 @@
+{
+  "title": "Discount Stacking: A Denial and an Approval Across a Rule Change",
+  "category": "temporal_consistency",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "A deal desk analyst at Selwyn Media must decide whether two discounts can be stacked on a renewal, given two prior decisions and a mid-year rule change.\n\n**Decision A (2024-01)**\nCustomer 'Ashford Media' | 2-year renewal | total contract value (TCV) $600K. Requested to stack the 15% loyalty discount with the 10% volume discount. Deal Desk DENIED. Note: 'Stacking requires TCV of at least $1M; Ashford is $600K. Only one discount may apply.'\n\n**Decision B (2024-04)**\nCustomer 'Brindley Group' | 3-year renewal | TCV $700K. Requested the same stacking. Deal Desk APPROVED. Note: 'Under the new rule effective 2024-03-01, renewals of 3 years or longer auto-qualify for stacking regardless of TCV.'\n\n**Current request C (2024-09-16)**\nCustomer 'Caldicott Press' | 3-year renewal | TCV $650K. Requesting to stack the 15% loyalty and 10% volume discounts.\n\n**Discount Stacking Policy (current, effective 2024-03-01)**\nThe 15% loyalty discount may stack with the 10% volume discount only when TCV is at least $1M, EXCEPT that renewals with a term of 3 years or longer auto-qualify for stacking regardless of TCV.\n\n**Slack \u2014 #deal-desk**\nAE: 'We denied stacking on a sub-$1M renewal back in January \u2014 Ashford at $600K. Caldicott is $650K, also under $1M, so we deny, right?'\nAnalyst: 'January was a 2-year deal, and it was before the March stacking rule. Caldicott is a 3-year renewal \u2014 let me check which precedent actually fits.'",
+  "question": "How should the analyst handle Caldicott Press's stacking request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Callum Ridley",
+    "title": "Senior Deal Desk Analyst",
+    "organization": "Selwyn Media",
+    "years_experience": 10,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Deny stacking, consistent with the January denial of stacking on a similar sub-$1M renewal.",
+    "Approve stacking: as a 3-year renewal, Caldicott auto-qualifies under the March 1, 2024 rule regardless of TCV \u2014 matching the April approval \u2014 and the January 2-year denial predates that rule, so it does not govern.",
+    "Approve stacking only if Caldicott raises its TCV above $1M; otherwise apply just one discount.",
+    "Escalate to the VP of Sales because the January denial and the April approval appear to conflict."
+  ]
+}

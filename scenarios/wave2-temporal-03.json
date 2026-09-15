@@ -1,0 +1,25 @@
+{
+  "title": "A Write-Off Denial Below the Deal Desk Threshold",
+  "category": "temporal_consistency",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "A revenue operations analyst at Coleridge Foods must decide whether a bad-debt write-off can be approved at the team level, given how a similar write-off was handled earlier this year.\n\n**Decision A (2024-03)**\nAccount 'Denby Provisions' | uncollectible balance $14,200. RevOps DECLINED to approve at the team level. Note: 'Write-offs above $10,000 require Controller approval unless the account has been in collections for at least 180 days, in which case RevOps may approve up to $25,000. Denby had been in collections only 60 days \u2014 below the aging threshold \u2014 and no Controller approval was obtained. Declined.'\n\n**Current request C (2024-09-10)**\nAccount 'Errington Wholesale' | uncollectible balance $18,500 | has been in active collections for 210 days with documented non-response. RevOps is asked to write it off.\n\n**Write-Off Authority Policy (current, unchanged since 2023-09)**\nWrite-offs up to $10,000 are approved by RevOps. Write-offs above $10,000 require Controller approval, EXCEPT that when an account has been in collections for at least 180 days, RevOps may approve write-offs up to $25,000 without the Controller. This aging-based authority has been in place since September 2023.\n\n**Slack \u2014 #revops**\nAnalyst 1: 'We declined a write-off over $10K back in March for basically the same amount range, so we should route Errington to the Controller too.'\nAnalyst 2: 'The March one was declined for a reason \u2014 let me check the aging on Errington before we assume the Controller has to touch it.'\n\nNo one has yet confirmed how long Errington has been in collections relative to the 180-day threshold.",
+  "question": "How should RevOps handle the Errington Wholesale write-off?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Dana Okafor",
+    "title": "Revenue Operations Lead",
+    "organization": "Coleridge Foods",
+    "years_experience": 10,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Route the write-off to the Controller for approval, consistent with the March decision on a similar-sized balance.",
+    "Approve the $18,500 write-off at the RevOps level, because Errington's 210 days in collections clears the 180-day threshold that lets RevOps approve up to $25,000 \u2014 a path the March account never qualified for.",
+    "Decline the write-off, since balances above $10,000 cannot be written off without escalation.",
+    "Write off $10,000 now at the RevOps level and route the remaining $8,500 to the Controller as a compromise."
+  ]
+}

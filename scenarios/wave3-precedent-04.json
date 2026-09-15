@@ -1,0 +1,19 @@
+{
+  "title": "Credit-Limit Increase Under the Revised Credit Risk Policy",
+  "category": "precedent_exception",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "You are a credit risk manager at Ferrum Capital, a commercial-financing fintech. A wholesale borrower, Talbot Metals, has requested a 70% increase to its revolving credit limit to fund a seasonal inventory build. The relationship manager wants a decision this week.\n\nActive policy: Credit Risk Policy CRP v6, effective 2025-02-01. Credit-limit increases are tiered: up to 25% may be approved by a Credit Analyst; 26-50% requires a Credit Manager plus updated financial statements; anything beyond 50% requires the Credit Committee. CRP v6 lowered the Credit Committee trigger to 'beyond 50%' from the prior 'beyond 100%' under CRP v5, under which a Credit Manager could approve increases up to 100%.\n\nThe relationship manager forwards a precedent from the credit log: 2024-09-12, borrower 'Ridgeway Alloys,' 80% limit increase approved directly by Credit Manager Dana Roe with updated financials. Policy version at decision: CRP v5. Note: \"Within Credit Manager authority under v5 (<= 100%).\"\n\nCurrent facts: Talbot's updated financials are on file and clean, but no Credit Committee review has been convened. The relationship manager writes: \"Dana approved 80% for Ridgeway last fall with just her sign-off. Talbot's ask is smaller at 70%, so this is well within your authority - please approve.\"",
+  "question": "State the decision and the single controlling reason as one short phrase.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Malcolm Reyes",
+    "title": "Credit Risk Manager",
+    "organization": "Ferrum Capital",
+    "years_experience": 9,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

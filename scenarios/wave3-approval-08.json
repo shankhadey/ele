@@ -1,0 +1,25 @@
+{
+  "title": "Discount Approved by a Director Whose Delegated Authority Had Already Lapsed",
+  "category": "approval_chain",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "A deal-desk audit agent at Cinnabar Logistics is validating a discount approval.\n\n**Discount Approval Authority Matrix**\n- Up to 20% off list: Sales Director.\n- 20.01%-35% off list: VP Sales, with a margin worksheet.\n- Above 35%: VP Sales AND CFO.\n- Delegation rule: 'A delegate exercises the delegator's authority ONLY within the written delegation window recorded in the approvals system. Approvals granted after the window closes revert to the delegate's own base authority.'\n\n**Delegation Record**\n- DEL-118: 'VP Sales (Ana G.) delegates her discount-approval authority to Sales Director (Owen F.) during medical leave, effective 2026-01-05 through 2026-02-15.'\n- Ana G. returned early; delegation formally revoked in the approvals system on 2026-02-10.\n\n**CRM Opportunity Record**\n- OPP-7788, 'Slatebelt Foods 2-year renewal'. List: $500,000. Contracted: $325,000 (a 35% discount off list).\n- Booked: 2026-03-03. Approved by (field): 'Sales Director - Owen F. (acting for VP under DEL-118)'. Margin worksheet: attached.\n\n**Slack #deal-desk (reconstructed)**\n- Rep: 'Slatebelt signs today at 35% off. Owen, you still cover VP approvals under Ana's delegation, right?'\n- Owen F.: 'I had the VP delegation, I'll approve it - book it.'\n- Rep: 'Booked, approver = Owen under DEL-118.'\n\nThe 35% discount is in the VP tier. Owen approved it on 2026-03-03, after DEL-118 was revoked on 2026-02-10 and after its 2026-02-15 end date. Owen's own base authority as Sales Director caps at 20%.",
+  "question": "What should the audit conclude about the authorization of this discount?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Owen Fischer",
+    "title": "Deal Desk Manager",
+    "organization": "Cinnabar Logistics",
+    "years_experience": 11,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Valid - Owen approved under the VP delegation DEL-118, which granted him VP-level discount authority for this deal.",
+    "Valid, but needs a documentation cleanup - just update the delegation record's end date to cover the booking; the approval was made in good faith and stands.",
+    "Invalid - DEL-118 was revoked on 2026-02-10 and had expired by 2026-02-15, so on the 2026-03-03 booking date Owen held only his base 20% authority; a 35% discount needs VP Sales approval, which never validly occurred, and the deal must be re-approved by the VP.",
+    "Invalid - a 35% discount always requires both VP Sales and the CFO, so the deal must be escalated to the CFO before it can stand."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Consulting Engagement Divided Into Two SOWs Under One Master Agreement",
+  "category": "approval_chain",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "A procurement-audit agent at Pyrite Health is reviewing authorization on a consulting engagement.\n\n**Services / Consulting Authority Matrix**\n- Up to $100,000 per engagement: Department Head.\n- $100,001-$500,000: VP, with a competitive-bid waiver or three bids.\n- Above $500,000: VP AND CFO.\n- Anti-splitting rule: 'Statements of work under a single master agreement, for one initiative or continuous scope, must be aggregated; the combined value sets the approval tier. An engagement may not be divided across SOWs to remain under a threshold.'\n\n**Coupa / Contract Records**\n- MSA-2201 with 'Slatevein Advisory' governs both SOWs below.\n- SOW-1: 'ERP selection - phase 1 (assessment)', $95,000. Approved by Department Head (Nadia F.), 2026-09-01.\n- SOW-2: 'ERP selection - phase 2 (vendor evaluation)', $90,000. Approved by Department Head (Nadia F.), 2026-09-01.\n- Both are consecutive phases of one continuous ERP-selection initiative under MSA-2201.\n\n**Slack #procurement (reconstructed)**\n- Buyer: 'Slatevein quoted $185K for the full ERP-selection engagement. One SOW?'\n- Nadia F. (Department Head): 'Break it into two phase SOWs under $100K each so they stay with me - a $185K engagement goes to the VP and needs bids.'\n- Buyer: 'Done - SOW-1 and SOW-2 under MSA-2201, both approved by you.'\n\nBoth SOWs fund one continuous ERP-selection initiative under the same master agreement; the combined value is $185,000. No VP approval and no competitive bids exist.",
+  "question": "What is the governing aggregate value that determines the required approval tier for this engagement? (answer with a dollar amount)",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Nadia Falk",
+    "title": "Procurement Category Manager",
+    "organization": "Pyrite Health",
+    "years_experience": 11,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

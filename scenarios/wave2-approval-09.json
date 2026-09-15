@@ -1,0 +1,19 @@
+{
+  "title": "First-Payee Wire Released Without the Required Dual Control",
+  "category": "approval_chain",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "A treasury-controls audit agent at Jarrow Logistics is reviewing authorization on an outbound wire payment.\n\n**Outbound Payment Authority Matrix**\n- Up to $25,000: single AP Manager release.\n- $25,001-$250,000: dual control - AP Manager AND Treasury Analyst release.\n- Above $250,000: dual control AND Treasurer sign-off, with a documented callback verification of bank details.\n- New-payee override: any first-time payee not previously validated in the vendor master requires Treasury Analyst validation regardless of amount.\n\n**Payment System Record**\n- WIRE-5581: $180,000 to 'Meridian Haulage', a new payee (first payment, not yet validated in the vendor master).\n- Released: 2026-11-04. Released by (field): 'AP Manager - Carl D.'\n- Treasury Analyst release: (empty). Payee validation: (empty).\n\n**Email thread (reconstructed)**\n- AP clerk -> AP Manager: 'Meridian Haulage carrier invoice, $180K, first time we've paid them. Treasury Analyst is out today.'\n- Carl D. (AP Manager): 'Carrier's chasing us and I don't want a late-payment penalty. I'll release it; we can validate the payee later.'\n- AP clerk: 'Released as WIRE-5581, releaser = you.'\n- (no Treasury Analyst release or payee validation appears in the payment system, email, or Slack)\n\nThe wire is $180,000 to a first-time payee, and only the AP Manager released it.",
+  "question": "The AP Manager released this wire, but a required second control is absent for both the amount and the payee. Name the single required approver/control that is missing.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Carl Denton",
+    "title": "Treasury Operations Manager",
+    "organization": "Jarrow Logistics",
+    "years_experience": 11,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge"
+}

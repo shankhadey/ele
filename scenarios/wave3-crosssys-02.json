@@ -1,0 +1,19 @@
+{
+  "title": "Argos Freight cold-chain shipment: 'sensor bug' versus a real temperature excursion",
+  "category": "cross_system_synthesis",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "scenario_text": "Argos Freight is moving a $1.4M pharmaceutical shipment that must stay between 2 and 8 degrees Celsius. Twenty hours from delivery, in the #logistics-ops Slack channel the dispatch supervisor writes: 'The reefer telemetry is showing a temp spike but the driver just eyeballed the trailer gauge and it reads 5C. This is the flaky sensor on unit 7 again - it throws bad readings every few weeks. Ignoring it, shipment is fine.'\n\nOther systems tell a harder story. In the Sensitech cold-chain platform, the trailer's ambient probe has read above 8C for the last three hours, climbing steadily, not the momentary spike the supervisor described. In the telematics system (Samsara), the reefer unit logged a compressor fault code and a fuel-level drop consistent with the refrigeration engine having stopped, timestamped at the start of the temperature rise. A second, independent door-sensor log shows the trailer doors have stayed closed, ruling out a loading anomaly. And the manufacturer's stability spec in the TMS states this biologic tolerates excursions above 8C for a maximum of two hours before the lot must be quarantined.\n\nEach signal alone is arguable: sensors do fail, compressor codes can be transient, and drivers' gauge checks are usually reliable. But together - a three-hour sustained rise across the independent ambient probe, a compressor fault plus fuel drop showing the unit actually stopped, closed doors excluding a false trigger, and an excursion window already exceeded - they indicate a genuine refrigeration failure, not a sensor glitch. The 'flaky sensor' explanation predates the compressor fault correlation. You are the on-call cold-chain controller. What is the single most important action to take first?",
+  "question": "What single action should the cold-chain controller take first?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Declan Voss",
+    "title": "Cold Chain Operations Lead",
+    "organization": "Argos Freight",
+    "years_experience": 10,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

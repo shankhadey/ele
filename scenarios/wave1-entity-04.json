@@ -1,0 +1,19 @@
+{
+  "title": "One Customer, Four Support Fragments",
+  "category": "entity_resolution",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "Castellan Retail's customer success team is preparing a health-score rollup for its enterprise account \"Meridian Outfitters\" ahead of a renewal QBR. Support volume looks impossibly low, and the CSM suspects tickets are scattered. In Zendesk, organizations are auto-created from the requester's email domain. Investigation finds four Zendesk organizations tied to the same customer: (1) \"Meridian Outfitters\" mapped to domain meridian-outfitters.com (312 tickets), (2) \"Meridian Outfitters HQ\" mapped to meridianhq.com (47 tickets), (3) \"Meridian Retail\" mapped to meridian-retail.com (128 tickets), and (4) an org with no name mapped to meridian.zendesk-partner.com (19 tickets) used by an outsourced IT helpdesk that files tickets on the customer's behalf. Salesforce shows a single Account \"Meridian Outfitters, Inc.\" (one AVID/account ID, one MSA in Ironclad) with three verified email domains listed in the account's \"Associated Domains\" field: meridian-outfitters.com, meridianhq.com, and meridian-retail.com. The Okta tenant for the customer federates users from all three of those domains under one org. The fourth Zendesk org (zendesk-partner.com) belongs to a third-party managed-services provider, Brightpath IT, that is contractually authorized in the MSA appendix to submit tickets for Meridian; its tickets reference Meridian asset tags and the Meridian account ID in the subject line.",
+  "question": "How many Zendesk tickets should be attributed to the Meridian Outfitters account for the health-score rollup?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Dana Whitfield",
+    "title": "Enterprise Customer Success Manager",
+    "organization": "Castellan Retail",
+    "years_experience": 7,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge"
+}

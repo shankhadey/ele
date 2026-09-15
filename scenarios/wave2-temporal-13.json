@@ -1,0 +1,25 @@
+{
+  "title": "A Competitor Price-Match Beyond the Retired Discount Cap",
+  "category": "temporal_consistency",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "A deal desk analyst at Mowbray Retail must decide how to handle a competitor price-match request, given how a comparable request was handled last year.\n\n**Decision A (2023-11)**\nCustomer 'Harlow Group' | new business | requested a 35% competitor price-match discount. The regional Sales Director approved it directly. Note at the time: 'Directors may approve competitor price-matches up to 40% at their discretion.'\n\n**Current request C (2024-08-15)**\nCustomer 'Padstow Group' | new business | requesting a 35% competitor price-match discount, with a competitor quote attached. The AE has cited the Harlow approval as supporting evidence.\n\n**Discount Authority Policy (current, effective 2024-04-01)**\nCompetitor price-matches up to 20% may be approved by a Sales Director. Price-matches above 20% now require VP Sales approval, and price-matches above 30% additionally require a verified competitor quote on file. The prior director-discretion authority for price-matches up to 40% was retired when this policy took effect. VP exceptions remain available up to 40% with the required documentation.\n\n**Slack \u2014 #deal-desk**\nAE: 'Harlow got a 35% match last year on the Director's sign-off, so Padstow should just get the same. Let's not overcomplicate it.'\nAnalyst: 'Harlow closed in November \u2014 before the April discount policy. Let me confirm who can actually approve a 35% match now.'\n\nThe AE wants to close this week and is asking the analyst to grant the 35% match under the Director's authority. A verified competitor quote is attached to Padstow's deal.",
+  "question": "How should the analyst handle Padstow Group's 35% competitor price-match request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Lena Ashford",
+    "title": "Deal Desk Manager",
+    "organization": "Mowbray Retail",
+    "years_experience": 12,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Grant the 35% price-match under the Sales Director's authority, citing the Harlow Group approval as established precedent.",
+    "Route the 35% price-match to VP Sales for approval with the verified competitor quote on file, because the Harlow approval predates the April 1, 2024 policy that retired director discretion above 20%.",
+    "Offer a 20% price-match instead, so the discount stays within the Sales Director's current authority and avoids VP escalation.",
+    "Deny the price-match, since competitor matches above 30% are no longer permitted at Mowbray Retail."
+  ]
+}

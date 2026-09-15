@@ -1,0 +1,19 @@
+{
+  "title": "Break-Glass Production Access - Mandatory Security Review Past Due",
+  "category": "approval_chain",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "scenario_text": "An access-governance audit agent at Jamesport Logistics is reviewing a break-glass privileged-access event on 2026-06-20.\n\n**Break-Glass Access Authority Matrix**\n- Routine privileged production access: requested in advance, approved by the resource owner before use.\n- Break-glass (emergency) production access: the on-call engineer MAY self-activate elevated root access during a Sev-1 incident with automatic manager notification. This emergency path is conditional and requires, after the fact: (a) automatic credential revocation within 24 hours, and (b) a Security team review of the full privileged session completed within 5 calendar days of activation. Without the completed security review by the deadline, the access event is non-compliant.\n\n**PAM (Privileged Access Management) Log**\n- BG-455: Engineer 'K. Osei' self-activated break-glass root on host fleet 'wms-prod', 2026-06-01, during Sev-1 warehouse-management outage.\n- Manager auto-notified: yes. Credential auto-revoked: yes, 2026-06-01 (within 24h).\n- Approved by (field): 'Self-activated (break-glass), Sev-1 INC-9007.'\n- Security session review: (empty).\n\n**Slack #security-review (reconstructed)**\n- K. Osei (2026-06-01): 'Break-glass used on wms-prod to restart the stuck picker service. Access already revoked. Flagging for your session review.'\n- Security on-call: 'Ack, we'll review when we clear the queue.'\n- (no review completed; today is 2026-06-20. The 5-calendar-day review deadline was 2026-06-06.)\n\nThe PAM log confirms the credential was revoked the same day, so the 24-hour revocation obligation was met. The only outstanding conditional requirement is the Security team's review of the full privileged session, which remains empty. No entry in the security queue shows the session was ever examined, and the audit date is fixed at 2026-06-20 for this review.",
+  "question": "As of 2026-06-20, how many calendar days past its due date is the required Security session review of this break-glass event? Provide the number of days.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Kwame Osei",
+    "title": "Security Access Governance Lead",
+    "organization": "Jamesport Logistics",
+    "years_experience": 11,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge"
+}

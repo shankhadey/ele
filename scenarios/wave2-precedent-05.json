@@ -1,0 +1,19 @@
+{
+  "title": "Severance Top-Up Request Citing a Prior Exception",
+  "category": "precedent_exception",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "You are an HR Business Partner at Ettrick Media. A departing employee, Renata Voss (4 years of service, position eliminated in a reorg), is requesting a severance top-up of four extra weeks beyond the policy formula. She is citing a colleague's package.\n\nActive policy: Separation & Severance Policy SS-4, effective 2024-04-01. Severance is a fixed formula: two weeks of base pay per year of service for role-elimination separations, capped at the formula amount. Top-ups above the formula require a Compensation Committee exception with a documented qualifying reason: (a) a signed release resolving a bona fide legal claim, or (b) a retention-critical transition period requested in writing by leadership. General fairness or morale is explicitly non-qualifying.\n\nHer manager forwards a precedent: on 2024-02-11, employee Dominic Reyes received four extra weeks beyond formula. The HR case note reads verbatim: \"One-time goodwill top-up approved by VP HR because Reyes agreed to stay eight extra weeks to complete a client handoff at leadership's written request. Non-binding, non-precedential; not to be cited as a general severance enhancement.\"\n\nCurrent facts: Voss's role is being eliminated with a clean two-week transition; leadership has not requested any extended stay in writing, and there is no legal claim or signed release beyond the standard separation agreement. Voss's manager argues, \"Dominic got four extra weeks, so denying Renata the same is unfair and will look bad to the team.\"",
+  "question": "Is Renata Voss eligible for the four-week severance top-up, and why? Give the decision plus the controlling reason in one short phrase.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Gordon Selby",
+    "title": "Senior HR Business Partner",
+    "organization": "Ettrick Media",
+    "years_experience": 12,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge"
+}

@@ -1,0 +1,19 @@
+{
+  "title": "A Deletion Request With No Legal Hold Attached",
+  "category": "temporal_consistency",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "A privacy-operations analyst at Birchall Telecom must decide how to fulfill a verified customer data-deletion request, given how a comparable request was handled earlier this year.\n\n**Decision A (2024-05-20)**\nA verified deletion request for customer 'account 88213' was only PARTIALLY fulfilled: billing and support records were retained rather than deleted. Note: 'The account was subject to an active litigation hold. Records under legal hold must be preserved until the hold is lifted, so those records were retained and the rest was deleted.'\n\n**Current request C (2024-10-30)**\nA verified deletion request arrives for customer 'account 91544.' The identity is confirmed and the request is valid. A check of the legal-hold register shows NO active hold on this account, and there is no open litigation, investigation, or regulatory matter involving it.\n\n**Data-Deletion Policy (current, unchanged since 2023-08)**\nVerified deletion requests must be fulfilled in full within 30 days, EXCEPT that records subject to an active legal hold must be preserved until the hold is lifted. Absent a legal hold or other statutory retention obligation, all in-scope records must be deleted within the 30-day window. This exception has applied unchanged since August 2023.\n\n**Slack \u2014 #privacy-ops**\nAnalyst 1: 'We retained records on a deletion request back in May, so let's retain the billing and support data here too and stay consistent.'\nAnalyst 2: 'May was retained because of an active litigation hold. Let me confirm whether 91544 has any hold before we hold anything back.'\n\nThe legal-hold register shows no active hold and no other retention obligation on account 91544.",
+  "question": "How should the analyst fulfill the deletion request for account 91544? Provide the go-forward action.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Renata Kovac",
+    "title": "Privacy Operations Analyst",
+    "organization": "Birchall Telecom",
+    "years_experience": 8,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Fairlead Systems forecast: 'signature away' versus a champion who left",
+  "category": "cross_system_synthesis",
+  "domain": "sales_deal_desk",
+  "difficulty": "hard",
+  "scenario_text": "A $650,000 new-business deal at Fairlead Systems is forecast as Commit to close this quarter, with nine days left. In the #forecast Slack channel the AE writes: 'Verbal yes from the VP who sponsored us, contract is already in DocuSign, we're one signature away. Keep it in Commit.' In Salesforce the opportunity stage is 'Negotiation,' and the AE's most recent activity note, dated 12 days ago, reads 'strong exec support.'\n\nThree newer signals cut against that. Gong captured a call two days ago with the customer's economic buyer - the finance leader who controls budget - who said plainly: 'We've paused all new vendor spend pending a budget review; nothing new gets approved until next quarter.' That call is more recent than the AE's 'verbal yes.' Separately, the champion VP the AE is counting on updated their LinkedIn three days ago to a new employer, and their corporate email to the AE now bounces. And the DocuSign envelope the AE cites as proof was sent nine days ago and has never been opened by anyone on the customer side.\n\nEach fact has an innocent reading in isolation: envelopes sit unopened over busy weeks, LinkedIn updates lag reality, and spend freezes sometimes carve out in-flight deals. But together - the sponsor gone, the budget owner declaring a freeze after the verbal yes, and an untouched contract - they indicate the deal has lost its buyer and its authority to purchase this quarter. You run deal desk and are scrubbing the Commit category. What should you recommend for this opportunity?",
+  "question": "What should deal desk recommend for this $650,000 opportunity?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Theo Marchetti",
+    "title": "Senior Deal Desk Manager",
+    "organization": "Cobalt Harbor",
+    "years_experience": 9,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Keep the deal in Commit for this quarter; a verbal yes from the sponsor plus a contract already in DocuSign means it is effectively closed.",
+    "Escalate to legal and sales ops to expedite the DocuSign signature and get the contract executed before quarter end.",
+    "Move the deal out of Commit and re-qualify it: the sponsor's departure, the economic buyer's stated spend freeze recorded after the verbal yes, and the never-opened envelope together show the deal has stalled and lacks authority to close this quarter.",
+    "Authorize an end-of-quarter discount to incentivize the customer to sign the existing DocuSign envelope before the deadline."
+  ]
+}

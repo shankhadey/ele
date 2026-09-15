@@ -1,0 +1,25 @@
+{
+  "title": "Renewal Concession With an Executive-Sponsor Qualifier",
+  "category": "precedent_exception",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "You are an enterprise CSM at Lucentia Software, a B2B SaaS company. Customer 'Hollingsworth Bank' is up for renewal and, after a rocky year, is asking for relief on the standard 7% renewal uplift.\n\nActive policy: Renewal Concession Framework RCF-3, effective 2025-01-01. Concessions are tiered. Standard concession: a price hold (waive the uplift), approvable by the CS Director when the customer has documented service incidents in the term. Enhanced concession: price hold PLUS one complimentary premium module for the renewal term, unlocked ONLY when the customer is a designated executive-sponsor account - defined as an account with a countersigned executive-sponsorship agreement on file - AND has documented service incidents. Beyond the enhanced tier requires the VP of Customer Success.\n\nPrecedent (renewal log): 2024-11-02, customer 'Farrow Mutual,' comparable rocky year with documented incidents, granted a price hold by CS Director Elise Vaughn. Note: \"Not an executive-sponsor account; standard concession applied.\"\n\nCurrent facts: Hollingsworth countersigned an executive-sponsorship agreement on 2024-09-15, active in the partnerships system, and its term included two documented Sev-2 incidents confirmed in the incident tracker. The account owner proposes \"a price hold to match the Farrow precedent and keep it simple,\" wanting to avoid an escalation. The VP of Customer Success confirms enhanced-tier concessions up to a complimentary module are within the framework and no beyond-enhanced request is on the table.",
+  "question": "What concession should Lucentia offer Hollingsworth, and via which path?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Theodore Alcott",
+    "title": "Enterprise Customer Success Manager",
+    "organization": "Lucentia Software",
+    "years_experience": 10,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "A price hold approved by the CS Director, mirroring the Farrow Mutual precedent for a comparable rocky year.",
+    "The enhanced concession - a price hold plus one complimentary premium module - because Hollingsworth is a countersigned executive-sponsor account with documented service incidents, satisfying both unlock conditions.",
+    "A cash rebate on the prior term's fees instead of a concession, since a rocky year is a service failure rather than a renewal matter.",
+    "Escalation to the VP of Customer Success for a beyond-enhanced concession, because two Sev-2 incidents are an aggravating factor above the enhanced tier."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "An SLA Credit Denied for a Scheduled-Maintenance Window",
+  "category": "temporal_consistency",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "A customer success manager at Lanyon Software must decide whether a customer qualifies for an SLA breach credit, given how a similar claim was handled last quarter.\n\n**Decision A (2024-05-14)**\nCustomer 'Radnor Retail' filed an SLA credit claim for 40 minutes of downtime. DENIED. Note: 'The outage fell entirely within a pre-announced scheduled-maintenance window. Scheduled-maintenance downtime is excluded from SLA uptime calculations, so no breach occurred. Denied on that basis.'\n\n**Current request C (2024-08-27)**\nCustomer 'Selby Retail' files an SLA credit claim for 55 minutes of UNPLANNED downtime caused by an unannounced production incident. There was no maintenance window at the time. The claim is filed within the 30-day claim window.\n\n**SLA Credit Policy (current, unchanged this year)**\nCustomers on the Standard SLA are entitled to a service credit when monthly unplanned downtime exceeds 30 minutes, provided the claim is filed within 30 days. Downtime occurring inside a pre-announced scheduled-maintenance window is excluded from the uptime calculation and does not count toward a breach.\n\n**Slack \u2014 #cs-team**\nCSM 1: 'We denied an SLA credit claim back in May for downtime around this length \u2014 let's stay consistent and deny Selby too.'\nCSM 2: 'Why did we deny that one, though? Let me check whether Selby's downtime was scheduled or unplanned before we call it precedent.'\n\nSelby's downtime was unplanned, exceeded 30 minutes, and the claim is timely.",
+  "question": "Should Lanyon Software approve or deny Selby Retail's SLA credit claim? Answer with one word: Approve or Deny.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Oscar Lindgren",
+    "title": "Customer Success Manager",
+    "organization": "Lanyon Software",
+    "years_experience": 8,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge"
+}

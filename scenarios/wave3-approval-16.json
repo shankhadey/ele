@@ -1,0 +1,19 @@
+{
+  "title": "Purchase Order Signed by an Acting CFO After the Delegation Had Ended",
+  "category": "approval_chain",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "A financial-controls audit agent at Serpentine Capital is validating authority on a large purchase order.\n\n**Purchase / Capex Authority Matrix**\n- Up to $250,000: Department VP.\n- $250,001-$1,000,000: CFO (or a formally delegated acting CFO within the delegation window).\n- Above $1,000,000: CFO AND CEO.\n- Delegation rule: 'An acting officer holds the office's authority ONLY for the dates specified in the recorded delegation of authority (DoA). Any approval dated outside that window is not an exercise of the office's authority.'\n\n**Delegation Record**\n- DOA-55: 'VP Finance (Priya S.) is appointed acting CFO while the CFO is on medical leave, effective 2026-05-01 through 2026-05-31.'\n- CFO returned early; DOA-55 formally revoked in the finance system on 2026-05-20.\n\n**Coupa Purchase Order**\n- PO-7010: Vendor 'Basanite Systems', $750,000 (data-center refresh). Posted: 2026-05-26.\n- Approved by (field): 'Acting CFO - Priya S. (per DOA-55).'\n\n**Email trail (reconstructed)**\n- Buyer -> Priya S.: 'Data-center refresh PO is $750K. You're still acting CFO under DOA-55, right? Vendor needs sign-off today.'\n- Priya S.: 'I was appointed acting CFO, I'll approve it - post it.'\n- Buyer: 'Posted, approver = Priya as acting CFO.'\n\nThe $750,000 PO sits in the CFO tier. Priya approved it on 2026-05-26, after DOA-55 was formally revoked on 2026-05-20 when the CFO returned early. Her base authority as VP Finance caps at $250,000.",
+  "question": "On the approval date, did the approver hold valid authority for this purchase order? Answer yes or no.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Priya Sundaram",
+    "title": "Director of Financial Controls",
+    "organization": "Serpentine Capital",
+    "years_experience": 13,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

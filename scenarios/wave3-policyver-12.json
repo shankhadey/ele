@@ -1,0 +1,25 @@
+{
+  "title": "When a Pre-Existing TLS Certificate Must Meet the New Key Standard",
+  "category": "policy_version",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "scenario_text": "Lynx Networks maintains an Encryption Standard for externally-facing TLS certificates.\n\nVersion 1 (effective 2022-01-01): \"Externally-facing TLS certificates issued with RSA-2048 keys are acceptable.\"\n\nVersion 2 (effective 2025-01-01): \"Externally-facing TLS certificates must use ECDSA P-256 keys or RSA-3072 or stronger; RSA-2048 certificates are no longer issued.\" v2 includes a transition clause: \"A certificate is governed by the standard in force on its issuance date and remains valid through its natural expiry; the new standard is not applied retroactively to already-issued certificates. At renewal (reissuance), a certificate must comply with the standard in force on the renewal date. Certificates issued on or after January 1, 2025 must meet v2 at issuance.\"\n\nThe certificate inventory shows cert CERT-4407 for endpoint gateway.lynx.example: Issued 2024-07-01, Key: RSA-2048, Expiry 2025-07-01 (one-year certificate), Auto-renewal: disabled, Status: active and serving production traffic. A related change ticket notes the endpoint has been continuously in production since 2023 and has had no security exceptions filed against it.\n\nA platform engineer posts in #tls-standards on 2025-03-05: \"Quarterly audit flagged gateway.lynx.example, it's still on an RSA-2048 cert issued last July. The new key standard went live January 1, so compliance is asking whether this is a finding. Do we have to rotate it to ECDSA right now, or does it ride until it expires in July? And when it does renew, what key type do we cut the new cert with?\" The security lead replies asking the engineer to confirm which standard version governs the existing certificate before opening any emergency rotation.\n\nUsing the policy history, the transition clause, and the certificate inventory, determine how CERT-4407 must be handled as of 2025-03-05 and what standard applies at its renewal.",
+  "question": "How must certificate CERT-4407 be handled as of 2025-03-05?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Marcus Feld",
+    "title": "Principal Infrastructure Engineer",
+    "organization": "Lynx Networks",
+    "years_experience": 13,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "The certificate remains valid through its 2025-07-01 expiry because it was issued 2024-07-01 under v1 and v2 is not applied retroactively; at renewal on or after 2025-07-01 it must be reissued to meet v2 (ECDSA P-256 or RSA-3072+).",
+    "The certificate must be reissued immediately with an ECDSA P-256 key, because v2 took effect January 1, 2025 and prohibits RSA-2048 certificates in production.",
+    "The certificate is valid indefinitely because it was issued before January 1, 2025 and is therefore permanently grandfathered.",
+    "The certificate had to be reissued by January 1, 2025, the v2 effective date, regardless of its expiry."
+  ]
+}

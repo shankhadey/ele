@@ -1,0 +1,19 @@
+{
+  "title": "Prepaid-Contract Refund Approved One Tier Below the Required Authority",
+  "category": "approval_chain",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "A support-controls audit agent at Calcite Cloud is reviewing a customer refund.\n\n**Refund / Credit Authority Matrix**\n- Up to $2,000: CS Representative.\n- $2,001-$10,000: CS Manager.\n- Above $10,000: Director of Customer Success.\n- Override: ANY refund against an annual prepaid contract (versus month-to-month) requires Director of Customer Success approval regardless of amount, because it affects recognized revenue.\n\n**Billing/Refund Record**\n- RF-2210: Customer 'Tuffstone Media', refund $18,000.\n- Against: annual prepaid subscription INV-9902 (paid in full at signing).\n- Approved by (field): 'CS Manager - Dev A.' Director approval: (empty).\n\n**Slack #cs-refunds (reconstructed)**\n- Rep: 'Tuffstone is furious about the migration delays and wants $18K back on their annual prepay. Dev, can you approve?'\n- Dev A. (CS Manager): 'They're a good logo and I don't want them churning. Approved, process it.'\n- Rep: 'Do we need the Director since it's a prepaid annual?'\n- Dev A.: 'I'll own it, just get it done today.'\n\nThe refund is $18,000 - above the $10,000 line - and it is against an annual prepaid contract, so it hits the Director override on two independent grounds. No Director approval appears anywhere in the billing system, Slack, or email, and the CS Manager's approval note cites only his own authority level, with no reference to the prepaid-contract override that routes such reversals to the Director regardless of amount. The refund was processed the same day the customer complained, ahead of any Director review.",
+  "question": "Name the minimum role required to authorize this refund.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Devika Anand",
+    "title": "Customer Success Operations Lead",
+    "organization": "Calcite Cloud",
+    "years_experience": 9,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}
