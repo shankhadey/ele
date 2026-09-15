@@ -1,0 +1,25 @@
+{
+  "title": "Negative PTO Balance Request Citing a Colleague's Grant",
+  "category": "precedent_exception",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "You are a senior HR business partner at Marius Logistics, a freight-brokerage company. A dispatcher, Tom Ferris, wants to take a two-week vacation but has only three PTO days accrued. He is asking to borrow against future accrual (go negative) and is citing a coworker who was allowed to do so.\n\nActive policy: Leave Policy LP-5, effective 2024-09-01. Employees may not carry a negative PTO balance except for (a) a documented medical or FMLA-qualifying absence, or (b) bereavement leave, either of which may be approved by an HRBP. Negative balances for discretionary vacation, personal travel, or convenience are explicitly non-qualifying.\n\nHis supervisor forwards a prior record: on 2024-10-22, coworker 'Dana Pell' was allowed a negative PTO balance. The HR note reads verbatim: \"One-time goodwill negative-balance approval to cover a gap during a documented family medical emergency. Non-binding and non-precedential; does not create an entitlement for discretionary future negative balances. Logged.\"\n\nCurrent facts: Tom's request is for a discretionary two-week vacation with no medical, FMLA, or bereavement basis; he has confirmed the time off is purely personal travel. He has three accrued PTO days, meaning the trip would drive him roughly seven days negative against future accrual. No medical documentation or leave-of-absence request has been submitted, and his supervisor has not identified any qualifying circumstance. His supervisor argues: \"Dana got to go negative last October, so telling Tom no is inconsistent and it looks like we play favorites. Just approve it and we'll square the balance as he accrues over the next couple of months.\"",
+  "question": "Should Tom's negative PTO balance request be approved, and on what basis?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Ramona Vance",
+    "title": "Senior HR Business Partner",
+    "organization": "Marius Logistics",
+    "years_experience": 9,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Approve the negative balance, mirroring Dana Pell's grant, to avoid the appearance of favoritism.",
+    "Deny the request because a discretionary vacation is non-qualifying under LP-5, and Dana Pell's grant was a documented non-binding, non-precedential one-time goodwill approval tied to a family medical emergency.",
+    "Approve up to the equivalent of one negative week as a compromise, since half the trip is within reasonable discretion.",
+    "Convert the request to unpaid leave automatically without any HRBP review, since no PTO is available."
+  ]
+}

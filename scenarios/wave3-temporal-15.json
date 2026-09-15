@@ -1,0 +1,25 @@
+{
+  "title": "A Chargeback Dispute Across a Revised Evidence Rule",
+  "category": "temporal_consistency",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "A payments-operations analyst at Eldercombe Insurance must decide whether to represent (contest) a chargeback, given two prior decisions that straddle a rule change.\n\n**Decision A (2024-02-08)**\nA $340 'services not received' chargeback was ACCEPTED (not contested). Note: 'Under the chargeback policy then in effect, disputes were represented only when signed proof of delivery was on file. This case had a delivery confirmation but no customer signature, so we accepted the chargeback.'\n\n**Decision B (2024-07-16)**\nA similar $410 'services not received' chargeback WAS represented and won. Note: 'Under the revised chargeback policy effective 2024-06-01, timestamped electronic access logs showing the customer used the service now qualify as sufficient evidence to represent, even without a signature. Access logs were on file, so we contested.'\n\n**Current request C (2024-11-19)**\nA $375 'services not received' chargeback arrives. There is no signed proof of delivery, but there ARE timestamped electronic access logs showing the customer logged in and used the policy portal after purchase.\n\n**Chargeback Policy (current, effective 2024-06-01)**\nA 'services not received' chargeback may be represented when the merchant holds EITHER signed proof of delivery OR timestamped electronic access logs evidencing customer use of the service. Access-log evidence has been accepted since June 1, 2024.\n\n**Slack \u2014 #payments-ops**\nAgent: 'We just accepted a no-signature chargeback back in February, so let's accept this one too and not waste effort contesting.'\nAnalyst: 'February was under the old signature-only rule. We won a similar one in July using access logs. Let me line this up against the current policy.'\n\nThe current case has access logs but no signature, exactly like the July case.",
+  "question": "How should the analyst handle the current $375 chargeback?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Yusuf Demir",
+    "title": "Payments Operations Analyst",
+    "organization": "Eldercombe Insurance",
+    "years_experience": 10,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Accept the chargeback without contesting, consistent with the February decision to accept a no-signature dispute.",
+    "Represent (contest) the chargeback, because the current policy accepts timestamped access logs as sufficient evidence and the July decision \u2014 not the pre-June February one \u2014 is the governing precedent.",
+    "Escalate the dispute to the fraud team, since contesting without a signature exceeds payments-ops authority.",
+    "Contest only half the disputed amount as a compromise given the absence of a signature."
+  ]
+}

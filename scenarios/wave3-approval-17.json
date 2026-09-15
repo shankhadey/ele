@@ -1,0 +1,19 @@
+{
+  "title": "Discount Correctly Escalated to VP With CFO Notification on File",
+  "category": "approval_chain",
+  "domain": "sales_deal_desk",
+  "difficulty": "hard",
+  "scenario_text": "A deal-desk audit agent at Travertine Media is validating authorization on a closed deal.\n\n**Discount Approval Authority Matrix**\n- Up to 10% off list: Account Executive.\n- 10.01%-20%: Sales Director, with a CRM approval note.\n- 20.01%-30%: VP Sales, with a written justification in the CRM AND a CFO notification email (informational; not an approval, but required to exist).\n- Above 30%: VP Sales AND CFO co-approval.\n\n**CRM Opportunity Record**\n- OPP-9955, 'Marlpit Broadcasting 2-year deal'. List: $800,000. Contracted: $576,000 (a 28% discount off list).\n- Booked: 2026-06-15. Approved by (field): 'VP Sales - Rhea C.' Written justification: attached ('competitive displacement, multiyear commit'). CFO notification: 'email sent to CFO 2026-06-14, logged in CRM.'\n\n**Slack #deal-desk (reconstructed)**\n- Rep: 'Marlpit signs at 28% off. That's the VP tier, right?'\n- Rhea C. (VP Sales): 'Yes - 28% is in my band. I've approved it, attached the justification, and sent the CFO the required notification.'\n- Rep: 'Booked, approver = Rhea, CFO notified.'\n\nThe 28% discount is within the 20.01%-30% tier. VP Sales approved it, the written justification is attached, and the CFO notification email is on file, sent the day before booking and logged in the CRM. No CFO co-approval is required at this tier, because the 28% figure does not cross the above-30% line that would trigger CFO co-approval; the CFO's role here is purely to be notified, and that notification requirement is satisfied. Every element the tier calls for is present and correctly recorded.",
+  "question": "Is the authorization for this discount valid and complete as recorded? Answer yes or no.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Rhea Castellano",
+    "title": "Deal Desk Director",
+    "organization": "Travertine Media",
+    "years_experience": 12,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

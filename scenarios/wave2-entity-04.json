@@ -1,0 +1,25 @@
+{
+  "title": "Same Address, Same Name Stem, Different Companies",
+  "category": "entity_resolution",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "scenario_text": "Garsdale Logistics is deduplicating its Coupa vendor master and a match-scoring job flags two suppliers as probable duplicates at 0.88 confidence. Vendor V-2201 is \"Summit Fleet Services LLC,\" remit-to 1209 N Orange St, Wilmington DE 19801, EIN 27-1180934, banking routing 031100209 / account ending 5521, category \"tire and wheel maintenance,\" first PO 2020-06, YTD spend $88,000. Vendor V-3390 is \"Summit Fleet Solutions Inc,\" remit-to 1209 N Orange St, Wilmington DE 19801, EIN 45-6620188, banking routing 021000021 / account ending 7742, category \"fuel card program,\" first PO 2022-11, YTD spend $61,000. The match job fired on the near-identical names (\"Services LLC\" vs \"Solutions Inc\") and the identical street address. Research shows 1209 N Orange St, Wilmington is the address of the registered-agent service (a corporate agent that provides a registered office for many thousands of Delaware entities); it is not either vendor's place of business. The two vendors have different EINs, different bank accounts, different W-9s (one an LLC, one a C-corp), different service categories, and different day-to-day contacts (ops@summitfleetservices.com vs accounts@summitfuelcard.com). Dun & Bradstreet returns two distinct DUNS numbers. A buyer notes the two firms happen to share a similar brand stem but were onboarded by different departments for unrelated services.",
+  "question": "How should the two flagged vendor records be treated?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Priyanka Vaduva",
+    "title": "Procurement Operations Lead",
+    "organization": "Garsdale Logistics",
+    "years_experience": 8,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Merge them into one vendor, because the identical Wilmington address and near-identical names show they are the same supplier onboarded twice.",
+    "Keep them as two separate vendors; the shared address is only a registered-agent office, and the distinct EINs, bank accounts, W-9s, and DUNS confirm two different legal entities.",
+    "Merge them but retain both EINs on the single record so that 1099 reporting can still be split by service category.",
+    "Deactivate V-3390 as the newer duplicate and reroute its fuel-card POs to V-2201's tire-maintenance bank account."
+  ]
+}

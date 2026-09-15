@@ -1,0 +1,25 @@
+{
+  "title": "License True-Up Charge on an ELA Renewed Under the New Terms",
+  "category": "policy_version",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "Hydra Software licenses its platform through Enterprise License Agreements (ELAs) and reconciles over-deployment through an annual true-up governed by its Licensing Policy.\n\nVersion 1 (ELAs signed through 2023-12-31): \"Annual true-up for deployments exceeding entitlement is billed at 100% of list price per additional unit, with no surcharge.\"\n\nVersion 2 (effective 2024-01-01): \"Annual true-up is billed at 100% of list price per additional unit plus a 20% retroactive-use surcharge on units deployed beyond entitlement.\" v2 includes a transition clause: \"An ELA signed before January 1, 2024 applies v1 true-up terms for its original term. Upon renewal of the ELA on or after January 1, 2024, all true-ups during the renewal term are governed by v2, including the 20% surcharge, regardless of the terms of the expiring agreement. Mid-term true-ups within the original term remain under v1.\"\n\nThe licensing operations record for customer Brightmoor Bank shows: original ELA O-772, Signed 2022-06-01, 2-year term; renewal ELA O-772-R, Signed 2024-06-01, 2-year renewal term (2024-06-01 through 2026-05-31). The 2025 annual true-up finds 40 units deployed beyond entitlement.\n\nA licensing operations manager emails the account team on 2025-06-10: \"Brightmoor's 2025 true-up is 40 units over. Their original ELA had no surcharge. Do we bill this renewal-term true-up with the 20% surcharge or under the old no-surcharge terms?\"\n\nUsing the policy history, the transition clause, and the licensing record, determine how the 2025 true-up should be billed.",
+  "question": "How should the 2025 true-up for Brightmoor Bank be billed?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Sofia Kaminski",
+    "title": "Licensing Operations Manager",
+    "organization": "Hydra Software",
+    "years_experience": 11,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Under v2: 100% of list price per over-deployed unit plus the 20% retroactive-use surcharge, because the ELA was renewed 2024-06-01 and all true-ups during the renewal term are governed by v2.",
+    "Under v1: 100% of list price with no surcharge, because the original ELA was signed 2022-06-01 under v1 and its terms carry through renewals.",
+    "No true-up is owed, because over-deployment true-ups applied only to the original term, not to renewal terms.",
+    "Under v2's surcharge only (the 20%), without the 100%-of-list base charge, because the base charge was grandfathered from v1."
+  ]
+}

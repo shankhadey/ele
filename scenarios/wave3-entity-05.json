@@ -1,0 +1,19 @@
+{
+  "title": "Two Records, One EIN in the Provider Directory",
+  "category": "entity_resolution",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "Ulriken Health Networks is reconciling its provider payment master before a quarterly 1099 run. Two payee records exist in its ERP for a physician group. Payee P-3301 is \"Lakeside Internal Medicine Associates\" (EIN 74-2219008, NPI 1548xxxx01, remit lockbox in Bergen office, YTD payments $412,000). Payee P-3400 is \"Lakeside IM Associates PLLC\" (EIN 74-2219008, NPI 1548xxxx01, remit ACH routing 071000013 account ending 6690, YTD payments $268,000). Both records carry the identical EIN 74-2219008 and the identical group NPI. The two were created three years apart by different AP staff: one set up for paper lockbox checks, the other for ACH. The group's W-9 on file lists the legal name \"Lakeside IM Associates PLLC\" and EIN 74-2219008. A billing coordinator argues the two payees are different because \"the names and remit methods differ, and they have different payment histories.\" If the two records are not consolidated, the ERP will generate two separate 1099 forms for the same tax entity, each understating total payments, which risks IRS mismatch penalties. The correct behavior is to report a single 1099 for the legal entity reflecting the combined YTD payments. The AP team also notes a third, inactive shell record with a mistyped EIN was created and voided last year, but it carries zero payments and is not part of this reconciliation.",
+  "question": "What total payment amount should appear on the single consolidated 1099 for this tax entity?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Anders Vik",
+    "title": "Accounts Payable Controller",
+    "organization": "Ulriken Health Networks",
+    "years_experience": 10,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

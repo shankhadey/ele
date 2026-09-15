@@ -1,0 +1,25 @@
+{
+  "title": "Promotion Salary Increase Approved One Authority Tier Too Low",
+  "category": "approval_chain",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "A people-operations audit agent at Bauxite Mobility is reviewing an approved promotion and pay increase.\n\n**Promotion / Salary-Increase Authority Matrix**\n- Increase up to 10%: line Manager.\n- 10.01%-20%: Department Director AND HR Business Partner.\n- Above 20%: Function VP AND the Compensation Committee, with a market-data justification (large increases signal a possible level/band mismatch and carry pay-equity risk).\n\n**HRIS Promotion Record**\n- PRO-2255: Employee 'Dana W.', promotion from Analyst to Senior Analyst.\n- Current base: $82,000. New base: $100,000 (a 21.95% increase).\n- Approved by (field): 'Department Director - Cyrus L.' HRBP: 'confirmed'. VP: (empty). Compensation Committee: (empty). Market-data justification: (empty).\n\n**Slack #people-ops (reconstructed)**\n- Manager: 'Dana's a flight risk and a competing offer put them at $100K. That's a jump from $82K. Cyrus, can you approve the promo?'\n- Cyrus L. (Director): 'Approved - Dana's worth it. HRBP's on board.'\n- Manager: 'Do we need the VP and Comp Committee since it's over 20%?'\n- Cyrus L.: 'I'll take responsibility, let's just get the offer out before Dana accepts elsewhere.'\n\nThe increase from $82,000 to $100,000 is 21.95%, above the 20% line. Only the Director and HRBP approved; no VP or Compensation Committee approval and no market-data justification exist.",
+  "question": "What should the audit conclude about the authorization of this promotion increase?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Cyrus Lambert",
+    "title": "HR Compliance and Total Rewards Lead",
+    "organization": "Bauxite Mobility",
+    "years_experience": 10,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Valid - the Department Director and HRBP approved the promotion, which is the standard approval path for a pay increase.",
+    "Valid, but needs a documentation cleanup - attach a market-data justification after the fact; the Director and HRBP approvals cover the decision.",
+    "Invalid - a 21.95% increase exceeds the 20% line and requires Function VP and Compensation Committee approval plus a market-data justification; the Director-plus-HRBP approval tops out at 20%, so the promotion was approved without sufficient authority and must be re-approved at the VP and Committee tier.",
+    "Invalid - all promotions must be approved by the CEO and reviewed by external compensation consultants before an offer is made."
+  ]
+}

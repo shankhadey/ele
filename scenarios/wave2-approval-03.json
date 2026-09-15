@@ -1,0 +1,25 @@
+{
+  "title": "Break-Glass Production Access - Retrospective Security Review Now Overdue",
+  "category": "approval_chain",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "A change-management audit agent at Cranfield Systems is reviewing an emergency production access grant on 2026-08-17.\n\n**Privileged Access Authority Matrix**\n- Read-only production access: team lead approval via access ticket.\n- Standing elevated (write) production access: Security Engineering approval BEFORE grant, time-boxed to 30 days.\n- Emergency break-glass access: the on-call SRE MAY self-grant write access during an active Sev-1 with a VP Engineering verbal authorization (logged), BUT the grant is conditional and requires (a) automatic revoke of the elevated access within 12 hours and (b) a retrospective Security review plus access-justification writeup completed within 3 business days of the grant. Absent the retrospective review by the deadline, the grant is out of compliance.\n\n**Access / Change Record**\n- ACC-7712: 'Break-glass write access to payments-db during Sev-1 settlement outage.'\n- Granted: 2026-08-03 (Monday). Type: Emergency break-glass.\n- Approved by (field): 'On-call SRE - Lena K.; VP Eng verbal authorization logged 2026-08-03 02:41.'\n- Auto-revoke: confirmed at 2026-08-03 13:50 (within 12h). Retrospective Security review: (empty). Access-justification writeup: (empty).\n\n**Slack #incident-payments (reconstructed)**\n- Lena K.: 'Settlement writes are wedged. VP, break-glass go?'\n- VP Eng: 'Granted. Do the security retro and writeup this week.'\n- Lena K. (2026-08-10): 'Stable now, I'll get the retro done shortly.'\n- (no further entries; today is 2026-08-17)\n\nThe 3-business-day retrospective deadline fell on 2026-08-06.",
+  "question": "What should the audit conclude about the authorization status of this access grant?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Lena Kova\u010d",
+    "title": "Staff Site Reliability Engineer",
+    "organization": "Cranfield Systems",
+    "years_experience": 12,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Valid and complete - the break-glass access was properly authorized at grant time by the on-call SRE with logged VP Engineering approval and the access auto-revoked on schedule; no further action is required.",
+    "Valid, but needs a documentation cleanup - the team can file the security retrospective whenever convenient; compliance of the grant is unaffected.",
+    "The grant-time authorization was valid and the 12-hour auto-revoke fired correctly, but the mandatory retrospective Security review and access-justification writeup were due 2026-08-06 and are now overdue, so the grant is currently out of compliance and must be escalated to complete and sign off the retrospective review.",
+    "The access was never validly authorized because elevated production access always requires Security Engineering approval in advance; the grant must be voided and reopened as a standing-access request."
+  ]
+}

@@ -1,0 +1,76 @@
+name: scenario-answer-parity
+
+# Guards against drift between the public scenarios (this repo) and the
+# private answer keys (ELEAnswers). Every scenario must have a matching
+# answer key and vice versa. Also runs the canary leakage scan.
+#
+# REQUIRED SECRET: ELE_ANSWERS_TOKEN
+#   A GitHub token (fine-grained PAT or deploy key) with READ access to the
+#   private ahujahaymang/ELEAnswers repo. Without it the job cannot see the
+#   answer keys; it will skip rather than fail (so forks/PRs without the
+#   secret are not blocked).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scenarios/**"
+      - "scripts/check_scenario_answer_parity.py"
+      - "core/paths.py"
+  pull_request:
+    paths:
+      - "scenarios/**"
+      - "scripts/check_scenario_answer_parity.py"
+      - "core/paths.py"
+  workflow_dispatch:
+
+jobs:
+  parity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out public repo (scenarios + framework)
+        uses: actions/checkout@v4
+        with:
+          path: ELETest
+
+      - name: Detect answers-repo access
+        id: gate
+        run: |
+          if [ -n "${{ secrets.ELE_ANSWERS_TOKEN }}" ]; then
+            echo "have_token=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "have_token=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::ELE_ANSWERS_TOKEN not set — skipping parity check."
+          fi
+
+      - name: Check out private answer keys
+        if: steps.gate.outputs.have_token == 'true'
+        uses: actions/checkout@v4
+        with:
+          repository: ahujahaymang/ELEAnswers
+          token: ${{ secrets.ELE_ANSWERS_TOKEN }}
+          path: ELEAnswers
+
+      - name: Set up Python
+        if: steps.gate.outputs.have_token == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run parity check
+        if: steps.gate.outputs.have_token == 'true'
+        working-directory: ELETest
+        env:
+          # Sibling checkout: ELEAnswers is one level up from ELETest.
+          ELE_PRIVATE_DIR: ${{ github.workspace }}/ELEAnswers
+        run: |
+          python scripts/check_scenario_answer_parity.py
+
+      - name: Run canary leakage scan
+        if: steps.gate.outputs.have_token == 'true'
+        working-directory: ELETest
+        env:
+          ELE_PRIVATE_DIR: ${{ github.workspace }}/ELEAnswers
+        run: |
+          # Fail if any answer-key canary token appears in scenarios/ or code.
+          python scripts/check_answer_leakage.py scenarios core

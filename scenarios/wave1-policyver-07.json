@@ -1,0 +1,19 @@
+{
+  "title": "Service Credit Owed Under an SLA Signed Before the Uptime Change",
+  "category": "policy_version",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "Ulverston Networks publishes an SLA and service-credit schedule referenced by its order forms.\n\nVersion 1 (incorporated into order forms executed before July 1, 2024) states: \"Uptime commitment: 99.9% monthly. Service credit: 10% of the monthly service fee for each 0.1% by which measured monthly uptime falls below 99.9%, capped at 30% of the monthly fee.\"\n\nVersion 2 (effective July 1, 2024) states: \"Uptime commitment: 99.95% monthly. Service credit: 5% of the monthly service fee for each 0.1% below 99.95%, capped at 50% of the monthly fee.\" v2 includes a transition clause: \"SLA terms are fixed at the version incorporated in the customer's active order form. Order forms executed before July 1, 2024 retain v1 SLA terms for the remainder of the current term. Renewals executed on or after July 1, 2024 adopt v2.\"\n\nThe CRM record for customer Calder Freight (order O-6650) shows: Order Form Executed Date 2024-03-01, Term 12 months (through 2025-02-28), Monthly Service Fee $20,000. No renewal has been executed. The status dashboard reports October 2024 measured uptime of 99.7%.\n\nA CSM writes in the support ticket on 2024-11-04: \"Calder is asking for their October credit. We were at 99.7% uptime. Their order was signed in March. What credit do they get for October?\"\n\nUsing the SLA versions, the transition clause, and the CRM record, compute the service credit owed for October 2024.",
+  "question": "What service credit is owed to Calder Freight for October 2024?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Grace Lindqvist",
+    "title": "Senior Customer Success Manager",
+    "organization": "Ulverston Networks",
+    "years_experience": 8,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge"
+}

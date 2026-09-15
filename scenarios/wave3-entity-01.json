@@ -1,0 +1,25 @@
+{
+  "title": "Parent, Subsidiary, and the Rolled-Up Renewal",
+  "category": "entity_resolution",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "Fjordhaven Telecom's deal desk is preparing a master renewal and must decide how three Salesforce accounts relate. Account A-2001 is \"Nordlys Communications Holdings, Inc.\" (EIN 81-3320045, D-U-N-S 15-220-8890, HQ Oslo desk in Chicago), a holding company with no operating contracts of its own. Account A-2002 is \"Nordlys Wireless LLC\" (EIN 47-8890123, DUNS 15-220-8901), and A-2003 is \"Nordlys Fiber LLC\" (EIN 47-8890456, DUNS 15-220-8912). D&B's linkage returns Nordlys Communications Holdings as the domestic ultimate parent of both LLCs, each a wholly owned subsidiary. Three active MSAs exist: the Wireless and Fiber LLCs each hold their own signed MSA (separate EINs, separate order forms, separate NetSuite billing profiles C-5502 and C-5503), while the Holdings company signed only a corporate framework agreement setting volume-tier pricing that both subsidiaries inherit. Two renewals are open: OPP-7010 ($420,000, Wireless) and OPP-7011 ($310,000, Fiber). The AE proposes collapsing everything under the Holdings account A-2001 and issuing one combined order form and one invoice \"because it's all Nordlys.\" Procurement at the customer confirmed by email that each subsidiary issues its own POs against its own MSA and pays from its own AP, and that Holdings is not a contracting party for operating services. Finance notes the volume tier must aggregate across both subsidiaries for pricing, but invoicing must remain per subsidiary.",
+  "question": "How should the renewals and billing be structured across the three accounts?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Ingrid Solheim",
+    "title": "Deal Desk Lead",
+    "organization": "Fjordhaven Telecom",
+    "years_experience": 11,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Collapse both renewals and billing under Nordlys Communications Holdings (A-2001, EIN 81-3320045) and issue one combined order form and invoice, since Holdings is the ultimate parent of the family.",
+    "Keep OPP-7010 on Nordlys Wireless (C-5502) and OPP-7011 on Nordlys Fiber (C-5503), invoicing each subsidiary under its own MSA and EIN, while aggregating volume across both under the Holdings framework for tier pricing only.",
+    "Merge the two subsidiary accounts into one because they share the DUNS family and the near-identical name stem, then invoice the merged record.",
+    "Move both renewals to whichever subsidiary has the larger deal (Wireless) and bill everything to EIN 47-8890123 to simplify collections."
+  ]
+}

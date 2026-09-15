@@ -1,0 +1,25 @@
+{
+  "title": "Dunmore Analytics 'cannot reproduce' versus a shard-wide latency regression",
+  "category": "cross_system_synthesis",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "A strategic customer of Dunmore Analytics worth $2M ARR files a series of escalating Zendesk tickets: their dashboards have become 'unusably slow' over the past week. In the #support Slack channel the support engineer writes: 'We reproduced their workflow internally and it's fast for us. This is almost certainly their network or VPN. Reproduced fine on our side - recommending we close as not-a-bug.' The CSM replies, 'Agreed, sounds like their end.'\n\nSeveral systems tell a different story. In Datadog, p95 query latency for this customer's dedicated database shard has risen about 4x, and the inflection lines up with a database index change deployed by the platform team eight days ago; the internal reproduction ran against a different, unaffected shard. In Amplitude, this customer's daily active usage has dropped by half over the same week as sessions time out. A second, unrelated customer housed on the same shard opened a Zendesk ticket yesterday with similar slowness complaints. And in Salesforce, an email from the customer's VP - attached to the account - references 'ongoing reliability concerns' and notes their renewal is 45 days out.\n\nThe internal 'cannot reproduce' result is genuine, but it was run against the wrong shard and does not represent the customer's environment. Individually, one slow customer, a usage dip, or a worried email might not justify an engineering escalation. Together - a 4x shard-level latency regression tied to a specific deploy, a second affected tenant on the same shard, halved usage, and renewal-linked executive concern - they point to a platform-side performance incident, not a client network problem. You are the escalations lead reviewing the ticket before it is closed. What should you do?",
+  "question": "What is the correct disposition of this escalation?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Aiko Tanaka",
+    "title": "Technical Escalations Lead",
+    "organization": "Kirkwall Logistics",
+    "years_experience": 11,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Close the tickets as not-a-bug and network-related, since the workflow was successfully reproduced as fast internally.",
+    "Ask the customer to switch off their VPN and retest from a different network, then monitor for further complaints before taking any other action.",
+    "Escalate to engineering as a shard-level performance incident tied to the recent index change, and loop in the account team on renewal risk: the 4x tenant latency regression, a second affected customer on the same shard, and the renewal-linked exec concern outweigh the internal 'cannot reproduce.'",
+    "Issue the customer a service credit for the disruption and keep the ticket open pending their confirmation that performance has improved."
+  ]
+}

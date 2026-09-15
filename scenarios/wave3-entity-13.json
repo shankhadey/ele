@@ -1,0 +1,19 @@
+{
+  "title": "Three Names on the Invoice: Billing, Legal, and Trading",
+  "category": "entity_resolution",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "Rosendal Media Group is closing its books and must determine the authoritative legal entity for a customer that appears under three names. In Salesforce the account is \"StreamNorth\" (a trading/brand name). In NetSuite the billing profile shows \"SN Media Billing Services\" as the bill-to (a shared-services entity that processes AP for a media group). The signed insertion order and MSA name the legal contracting party as \"Aurvang Broadcasting AS\" (organisation number 918-334-221, VAT NO918334221MVA). Payments arrive from an account in the name of \"SN Media Billing Services\" (a centralized payment entity), and the PO references \"StreamNorth.\" The revenue team must record the customer of record for the contract and for revenue recognition. The MSA explicitly states: \"Aurvang Broadcasting AS is the contracting party; SN Media Billing Services acts solely as billing and payment agent; StreamNorth is a trading name of Aurvang Broadcasting AS.\" For tax and statutory reporting, invoices must carry the legal entity name and organisation number. An analyst is unsure whether to book the customer as StreamNorth (the brand everyone uses), SN Media Billing Services (whose name is on the payment), or the legal entity. Provide the legal entity name that should be recorded as the authoritative customer of record.",
+  "question": "Which name should be recorded as the authoritative legal customer of record for the contract and revenue recognition?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Camilla Ruud",
+    "title": "Revenue Accounting Manager",
+    "organization": "Rosendal Media Group",
+    "years_experience": 10,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

@@ -1,0 +1,19 @@
+{
+  "title": "A Hiring-Bar Exception the New Rule Reclaimed",
+  "category": "temporal_consistency",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "A recruiting operations lead at Fernwick Studios must decide who must approve a below-bar hiring exception, given how a comparable exception was handled last year.\n\n**Decision A (2023-08-30)**\nA candidate who scored below the coding-assessment bar was hired via an exception approved by the hiring manager alone. Note: 'Under the hiring policy then in effect, a hiring manager could approve a below-bar exception at their own discretion when a strong reference and portfolio offset the score.'\n\n**Current request C (2024-12-09)**\nA hiring manager wants to extend an offer to a candidate who scored below the coding-assessment bar, citing a strong portfolio, and asks recruiting to process it 'the same way as last year' on the manager's approval alone.\n\n**Hiring Exception Policy (current, updated 2024-09-01, in force now)**\nBelow-bar hiring exceptions require approval from BOTH the skip-level leader and the Talent Review Board, regardless of references or portfolio strength. The prior hiring-manager-discretion path for below-bar exceptions was removed in the September 2024 update. Above-bar candidates continue to be hired through the standard process without an exception.\n\n**Slack \u2014 #recruiting-ops**\nManager: 'I approved a below-bar exception on my own last August and it worked out. Let's do the same here so we don't lose the candidate.'\nLead: 'Last August was under the old policy. The manager-discretion path was removed in September \u2014 below-bar exceptions now need the skip-level and the Talent Review Board.'\n\nThe candidate is below the bar, and the only justification offered is the portfolio.",
+  "question": "Under the current policy, whose approval is required for this below-bar hiring exception? Provide the required approvers.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Camille Beaulieu",
+    "title": "Recruiting Operations Lead",
+    "organization": "Fernwick Studios",
+    "years_experience": 9,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

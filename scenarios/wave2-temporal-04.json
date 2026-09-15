@@ -1,0 +1,19 @@
+{
+  "title": "A Change-Freeze Exception That the New Rule Removed",
+  "category": "temporal_consistency",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "scenario_text": "A release manager at Danbury Systems must decide whether a low-risk configuration change can ship during the holiday change freeze, given how a comparable change was handled during the previous freeze.\n\n**Decision A (2023-12, holiday freeze)**\nA low-risk feature-flag toggle (no schema change, no customer-facing impact) was deployed during the freeze after the on-call engineering manager approved it. Note: 'Freeze policy at the time allowed low-risk changes to deploy with on-call manager approval.'\n\n**Current request C (2024-12-23, holiday freeze)**\nA low-risk config change (adjusting a cache TTL, no schema change, no customer-facing impact) is ready. The team wants to deploy before the freeze lifts and has asked the on-call manager to approve it 'like last December.'\n\n**Change Freeze Policy (current, updated 2024-09, in force for this freeze)**\nDuring a change freeze, only changes that remediate an active Sev-1 or Sev-2 incident may deploy, and each requires Director approval. All other changes \u2014 including low-risk and config-only changes \u2014 are BLOCKED until the freeze lifts, at any approval level. The prior 'low-risk with on-call manager approval' exception was removed in the September update.\n\n**Slack \u2014 #releases**\nEng: 'We shipped a low-risk toggle in last December's freeze on the on-call manager's OK. Let's get the same approval and push this cache change.'\nRelease mgr: 'Last December was under the old freeze policy. That low-risk exception got removed in September \u2014 an on-call manager sign-off won't unlock it now.'\n\nThere is no active Sev-1 or Sev-2 incident tied to this change; it is a routine tuning improvement.",
+  "question": "Under the current change-freeze policy, what is the earliest point at which this low-risk cache-TTL change may be deployed?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Priyanka Sethi",
+    "title": "Release Engineering Manager",
+    "organization": "Danbury Systems",
+    "years_experience": 11,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge"
+}

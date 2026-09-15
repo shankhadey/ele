@@ -1,0 +1,19 @@
+{
+  "title": "The Employee Who Changed Her Name",
+  "category": "entity_resolution",
+  "domain": "hr_people_ops",
+  "difficulty": "standard",
+  "scenario_text": "Ivywell Care is reconciling its year-end payroll and benefits records and hits an apparent duplicate person. Workday shows one active employee record, E-71140, \"Emily Rowan Fitzgerald,\" SSN ending 3096, hire date 2019-04-08, department Nursing Operations, current email emily.fitzgerald@ivywellcare.com. The benefits carrier's enrollment file, however, lists a covered member \"Emily R. Nakamura,\" SSN ending 3096, same date of birth 1990-07-22, enrolled since 2019-04, with dependents matching Workday's beneficiary records. The payroll analyst worries these are two employees enrolled under overlapping IDs. Additional evidence: an Okta profile shows the single user emily.fitzgerald@ivywellcare.com was previously emily.nakamura@ivywellcare.com, with an alias/rename event logged 2023-06-12. A Workday \"legal name change\" transaction is recorded on 2023-06-10 with a note \"marriage; surname Nakamura -> Fitzgerald,\" and the payroll history shows continuous, uninterrupted pay to the same direct-deposit account across the rename. The benefits carrier file was simply not updated with the new surname during the last sync. Employee IDs, SSN, date of birth, hire date, and direct-deposit account are all identical across the two names.",
+  "question": "Are \"Emily R. Nakamura\" and \"Emily Rowan Fitzgerald\" the same employee, and what is the underlying cause of the discrepancy?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Trevor Lindqvist",
+    "title": "Payroll & Benefits Analyst",
+    "organization": "Ivywell Care",
+    "years_experience": 5,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge"
+}

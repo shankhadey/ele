@@ -1,0 +1,25 @@
+{
+  "title": "Merger by Absorption: Which Predecessor Survives",
+  "category": "entity_resolution",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "Kristiansund Bio (a contract research organization) must update its clinical-supply contracts after a customer merger. Two former clients: \"Helvik Therapeutics, Inc.\" (EIN 45-7781200, the surviving entity) and \"Osland Biosciences, Inc.\" (EIN 82-3390147, the non-surviving entity). On 2024-04-01 the companies completed a statutory merger by absorption in Delaware: Osland Biosciences merged with and into Helvik Therapeutics, with Helvik as the surviving corporation retaining its own name and EIN 45-7781200; Osland ceased to exist by operation of law, and all of Osland's assets, liabilities, and contracts vested in Helvik automatically. Kristiansund holds two master supply agreements: MSA-A with Helvik and MSA-B with Osland. Ironclad still lists MSA-B's counterparty as Osland Biosciences, Inc. The certificate of merger confirms Helvik is the survivor and that no new entity or new EIN was created (this is absorption, not a merger of equals forming a new company). A contracts analyst is unsure whether MSA-B needs a novation or whether the merger itself carried it over, and which EIN is now authoritative for both agreements. The analyst has a renewal for MSA-B due next month and cannot issue it until the counterparty and EIN are settled, and the customer's procurement team has asked that all future purchase orders reference a single consolidated supplier record on their side.",
+  "question": "How should the two agreements and identifiers be resolved after the absorption merger?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Nils Ostergaard",
+    "title": "Contracts Counsel",
+    "organization": "Kristiansund Bio",
+    "years_experience": 13,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Both MSA-A and MSA-B are now with Helvik Therapeutics, Inc. (EIN 45-7781200) by operation of the merger; update MSA-B's counterparty to Helvik, since a statutory merger by absorption vests the non-survivor's contracts in the survivor automatically.",
+    "MSA-B remains with Osland Biosciences, Inc. (EIN 82-3390147) until a separate novation agreement is signed, because contracts never transfer without an explicit assignment.",
+    "A new EIN must be issued for the combined company before either agreement can continue, as with any merger.",
+    "MSA-A should be canceled and re-signed under Osland's EIN 82-3390147, since Osland was the entity that initiated the merger."
+  ]
+}

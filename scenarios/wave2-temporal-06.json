@@ -1,0 +1,25 @@
+{
+  "title": "An MDF Claim the New Pre-Approval Rule No Longer Pays",
+  "category": "temporal_consistency",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "A deal desk analyst at Tamarind Systems must decide whether a channel partner's market development funds (MDF) reimbursement claim can be paid, given how a comparable claim was handled earlier this year.\n\n**Decision A (2024-03-12)**\nPartner 'Aster Distribution' submitted an MDF reimbursement claim for $18,000 covering a co-marketing webinar it had already run, with no prior approval on file. Deal Desk APPROVED and reimbursed the claim. Note: 'Under the MDF rules then in effect, claims up to $25,000 could be reimbursed after the fact without documented pre-approval.'\n\n**Current claim C (2024-10-21)**\nPartner 'Basil Partners' submits a $16,500 MDF reimbursement claim for a regional trade-show booth it has already paid for and staffed. There is no pre-approval request on file. The partner wants the claim paid this quarter.\n\n**MDF Claim Policy (current, effective 2024-06-01)**\nAll MDF-funded marketing activities must receive documented pre-approval from Deal Desk BEFORE the activity takes place. Claims submitted without a matching pre-approval are not reimbursable, regardless of dollar amount. The previous post-hoc reimbursement allowance for claims up to $25,000 was eliminated when this policy took effect.\n\n**Slack \u2014 #deal-desk**\nPartner AE: 'We paid Aster's claim back in March even though they never pre-registered the activity. Basil's claim is the same size and situation \u2014 let's just reimburse it too.'\nAnalyst: 'Aster was March, before the June MDF change. Let me confirm whether a post-hoc claim with no pre-approval is even payable anymore before I sign off.'\n\nNo pre-approval was ever filed for Basil's trade-show activity, and the claim was submitted only after the spend occurred.",
+  "question": "How should the analyst handle Basil Partners' MDF reimbursement claim?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Marco Devlin",
+    "title": "Deal Desk Analyst",
+    "organization": "Tamarind Systems",
+    "years_experience": 11,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Reimburse the claim to stay consistent with the March approval of Aster's comparable post-hoc MDF claim.",
+    "Deny the reimbursement: the March approval predates the June MDF policy change, and under the current rule a claim with no documented pre-approval is not payable regardless of amount.",
+    "Reimburse half of the claim as a compromise, since the trade-show activity genuinely occurred even though pre-approval was missing.",
+    "Escalate the claim to the VP of Channel for a one-time exception, treating the March payment as informal precedent."
+  ]
+}

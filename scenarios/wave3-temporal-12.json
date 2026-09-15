@@ -1,0 +1,19 @@
+{
+  "title": "A Write-Off Within the RevOps Threshold",
+  "category": "temporal_consistency",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "A revenue-operations analyst at Hazelmere Health must decide whether a bad-debt write-off can be approved at the team level, given how a comparable write-off was handled earlier this year.\n\n**Decision A (2024-04-09)**\nAccount 'Fenwick Clinic' | uncollectible balance $6,000. APPROVED at the RevOps level. Note: 'Write-offs up to $10,000 are approved by RevOps without escalation. Within authority \u2014 approved.'\n\n**Current request C (2024-09-25)**\nAccount 'Braemar Practice' | uncollectible balance $7,500 | documented as uncollectible after 120 days of non-payment and multiple collection attempts. RevOps is asked to write it off.\n\n**Write-Off Authority Policy (current, unchanged since 2023-02)**\nWrite-offs up to $10,000 are approved by RevOps without escalation. Write-offs above $10,000 require Controller approval. The $10,000 team-level threshold has been unchanged since February 2023.\n\n**Slack \u2014 #revops**\nAnalyst 1: 'We wrote off a similar bad debt at the team level back in April. Braemar looks like the same kind of thing \u2014 can we just do the same and not bother the Controller?'\nAnalyst 2: 'Before we assume that, let me confirm Braemar's balance is under the $10K threshold and that the collection attempts are documented. If both hold, this is a clean repeat of April and we can approve it ourselves.'\n\nBraemar's $7,500 balance is below the $10,000 team-level threshold, the account has 120 days of documented non-payment, and multiple collection attempts are on file. No other exceptions are outstanding on the account.",
+  "question": "How should RevOps handle the Braemar Practice write-off? Provide the go-forward action.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Cormac Bailey",
+    "title": "Revenue Operations Analyst",
+    "organization": "Hazelmere Health",
+    "years_experience": 6,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

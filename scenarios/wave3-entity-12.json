@@ -1,0 +1,25 @@
+{
+  "title": "Reseller of Record vs the End Customer",
+  "category": "entity_resolution",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "Saltfjord Analytics sells B2B software and must attribute a renewal correctly. The deal originated through a channel reseller, \"Blafjell Distribution AS\" (EIN 30-9981145, D-U-N-S 44-201-9980), which purchased licenses under a reseller agreement (RA-88) and holds the paper: the order form, the invoice, and payment come from Blafjell (NetSuite customer C-2001, remit from Blafjell's account ending 7710). The end user of the software is \"Storhavet Maritime Ltd\" (EIN 55-1122008, D-U-N-S 62-880-4471), which consumes all 400 seats, receives support, and is named as the \"End Customer\" on the reseller order form's end-user schedule. Salesforce currently shows two objects: an Account for Blafjell Distribution (the paying party) and a separate Account for Storhavet Maritime (the usage/support contact). The renewal opportunity OPP-3300 ($520,000) is up. A new AE wants to merge the two accounts into one and bill the end customer directly, arguing \"Storhavet is who actually uses it, so they're the real customer.\" But the reseller agreement RA-88 is still in force: Saltfjord's contractual counterparty and payer is Blafjell, which resells to Storhavet under its own downstream terms. Support and product telemetry legitimately map to Storhavet as the end user, while revenue, invoicing, and the contracting relationship map to Blafjell. The AE must resolve the account structure before the renewal is booked, since the quota-credit path and the invoicing path diverge depending on how the two records are treated.",
+  "question": "How should the accounts and the renewal be handled given the reseller structure?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Astrid Moen",
+    "title": "Channel Deal Desk Manager",
+    "organization": "Saltfjord Analytics",
+    "years_experience": 12,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Merge the two accounts into Storhavet Maritime Ltd and invoice the end customer directly, since it uses all the seats and receives support.",
+    "Keep Blafjell Distribution AS as the contracting and billing party for OPP-3300 under RA-88, and keep Storhavet Maritime Ltd as the linked end-customer for support and telemetry, without merging the two.",
+    "Merge the two accounts into Blafjell Distribution AS and delete the Storhavet record, since only the payer matters.",
+    "Bill both parties for the renewal so revenue is captured from the payer and usage is captured from the end customer."
+  ]
+}

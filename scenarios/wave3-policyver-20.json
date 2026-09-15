@@ -1,0 +1,25 @@
+{
+  "title": "Renewal Discount Cap on a Contract Signed Under the Old Ceiling",
+  "category": "policy_version",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "Aquila Systems governs renewal pricing in its Renewal Discount Policy.\n\nVersion 1 (effective 2023-01-01): \"Renewal discounts of up to 25% off list are permitted.\"\n\nVersion 2 (effective 2025-01-01): \"Renewal discounts are capped at 12% off list.\" v2 includes a transition clause: \"A contract signed under v1 retains its negotiated discount for the remainder of its original term. Any renewal executed on or after January 1, 2025 is subject to the v2 12% renewal-discount cap, regardless of the discount on the expiring contract. Mid-term amendments that do not extend the term retain the original discount.\"\n\nThe CRM shows customer Meadowlark Insurance: original contract C-4120, Signed 2023-02-01, 2-year term (through 2025-01-31), Negotiated discount 22% off list. A renewal quote is being prepared, with the renewal order form scheduled for execution on 2025-01-20; the customer is insisting on keeping 22% off list.\n\nA deal desk analyst posts in #renewals on 2025-01-13: \"Meadowlark's renewal is set to sign January 20. They had 22% on the original and want to keep it. What's the maximum renewal discount I can put on the order form without an out-of-policy exception?\"\n\nUsing the policy history, the transition clause, and the CRM record, determine the maximum renewal discount permitted on Meadowlark's renewal without an exception.",
+  "question": "What is the maximum renewal discount permitted on Meadowlark's renewal without an out-of-policy exception?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Camille Dubois",
+    "title": "Deal Desk Lead",
+    "organization": "Aquila Systems",
+    "years_experience": 12,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "12% off list under v2, because the renewal is being executed 2025-01-20 (on or after January 1, 2025); the expiring contract's 22% does not carry into the renewal.",
+    "22% off list, because the original contract was signed 2023-02-01 under v1's 25% cap and that discount carries into the renewal.",
+    "25% off list, because v1 governs the customer relationship established in 2023.",
+    "Up to 25% off list, because v2's 12% cap applies only to brand-new logos, not to renewals."
+  ]
+}

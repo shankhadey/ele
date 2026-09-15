@@ -1,0 +1,25 @@
+{
+  "title": "A Credit-Terms Denial and an Upgraded Rating",
+  "category": "temporal_consistency",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "A revenue operations analyst at Jedburgh Analytics must decide whether to extend Net-60 payment terms to a customer, given how the same customer was handled earlier this year.\n\n**Decision A (2024-02)**\nCustomer 'Wexford Trading' requested Net-60 terms. DENIED. Note: 'Net-60 requires a third-party credit rating of tier B or better. Wexford's rating at the time was tier D. Denied for insufficient credit rating.'\n\n**Current request C (2024-09-08)**\nWexford Trading requests Net-60 again for a renewing contract. Since February, Wexford has posted two consecutive audited profitable quarters, and its third-party credit rating has been UPGRADED to tier B. The updated rating report is attached to the request.\n\n**Credit Terms Policy (current, unchanged since 2023-06)**\nStandard terms are Net-30. Net-60 may be extended to any customer holding a current third-party credit rating of tier B or better, verified at the time of the request. There is no other gate on Net-60. This rating requirement has been in place since June 2023.\n\n**Slack \u2014 #revops**\nAE: 'We already denied Wexford Net-60 back in February \u2014 same customer, same ask. Consistency says we deny it again.'\nAnalyst: 'The February denial was about their credit rating at that time. Let me check their current rating before we assume it's a repeat.'\n\nThe AE is treating the February denial as a standing decision about this customer. No one has yet re-checked Wexford's current, upgraded rating against the tier-B gate.",
+  "question": "How should the analyst handle Wexford Trading's renewed Net-60 request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Marcus Feld",
+    "title": "Revenue Operations Analyst",
+    "organization": "Jedburgh Analytics",
+    "years_experience": 9,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Deny Net-60 again, consistent with the February denial for the same customer and the same request.",
+    "Approve Net-60, because the policy is unchanged and Wexford now holds a current tier-B rating verified at request time \u2014 the February denial reflected an outdated rating that has since been upgraded.",
+    "Escalate the request to the CFO, since the customer was previously denied and the situation is sensitive.",
+    "Offer Net-45 as a compromise, given that Wexford was denied Net-60 earlier in the year."
+  ]
+}

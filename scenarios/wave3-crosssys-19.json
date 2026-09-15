@@ -1,0 +1,19 @@
+{
+  "title": "Selene treasury wire: 'the CEO said it's urgent' versus executive-impersonation signals",
+  "category": "cross_system_synthesis",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "Selene, a fintech, has a treasury analyst who received an email appearing to be from the CEO: a $240,000 wire is needed today to close a 'confidential acquisition,' with instructions to keep it off the normal approval thread and wire to a provided account. In the #treasury Slack channel the analyst writes: 'The CEO says it's confidential and time-sensitive, so I shouldn't loop in the usual approvers. I'm going to process it now to avoid holding up the deal.'\n\nOther systems contradict the request. The email came from selene-corp.com; the CEO's real address and every prior message use selene.co. In the ERP, there is no purchase order, no vendor record, and no acquisition entry tied to this payment. In the beneficiary-banking detail, the account is at an institution flagged as high-risk and was added today with no prior payment history. And the CEO's calendar shows them in an all-day board offsite with a 'do not disturb' block - inconsistent with someone firing off urgent wire instructions and demanding secrecy.\n\nEach element has an innocent reading in isolation: executives do run confidential deals, urgent wires happen, and new beneficiaries get added. But together - a look-alike sender domain, no supporting PO or vendor or deal record, a brand-new high-risk beneficiary account, secrecy instructions that bypass approvals, and the CEO demonstrably unavailable - they form a textbook business-email-compromise executive-impersonation fraud. The pressure to skip approvers is itself the attack. The analyst's 'the CEO said so' read is based entirely on the fraudulent email. You are the treasury controls manager. What is the single most important action to take before any funds move?",
+  "question": "What single action should the treasury controls manager take before any funds move?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Claudia Renner",
+    "title": "Treasury Controls Manager",
+    "organization": "Halcyon Financial",
+    "years_experience": 14,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

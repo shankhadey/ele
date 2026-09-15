@@ -1,0 +1,19 @@
+{
+  "title": "The Retired Trade Name on the Support Queue",
+  "category": "entity_resolution",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "Nordvik Retail Systems runs a support desk in Zendesk and is reconciling entitlements. A high-priority ticket arrives from buyer@brightaisle.com under organization \"BrightAisle Markets\" (Zendesk org O-4471), claiming a Premium support SLA. The CRM (HubSpot) has a company record \"BrightAisle Markets\" with no active subscription and a note: \"d/b/a retired 2023-09; see parent.\" A second HubSpot record, \"Kelvinside Grocers, Inc.\" (EIN 63-2210778), holds the active Premium contract (subscription SUB-9920, effective through 2025-12-31) and lists \"BrightAisle Markets\" as a registered assumed name (DBA) filed in 2019 and formally abandoned in 2023-09 when the chain rebranded all stores to \"Kelvinside Fresh.\" Billing in Stripe shows all invoices for SUB-9920 issued to Kelvinside Grocers, Inc., paid from a corporate card ending 8830. The support agent sees the ticket's org name does not match any active-subscription org and is about to reject the SLA claim as \"no entitlement found.\" The customer's email domain brightaisle.com still resolves and forwards to the same mail system as kelvinside.com. No separate legal entity named BrightAisle Markets ever existed; it was only a trade name of Kelvinside Grocers, Inc. The agent must decide whether the requester is entitled to Premium support. The agent also notes that a prior ticket from the same domain last quarter was closed as \"no entitlement\" in error and then reopened after escalation, so the desk has flagged BrightAisle-addressed tickets for careful identity checks before any SLA decision is made.",
+  "question": "Which entity holds the entitlement, and what is the correct Zendesk organization the ticket should be associated with (give the legal entity name)?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Marta Lindqvist",
+    "title": "Support Operations Manager",
+    "organization": "Nordvik Retail Systems",
+    "years_experience": 8,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

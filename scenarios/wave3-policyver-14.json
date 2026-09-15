@@ -1,0 +1,25 @@
+{
+  "title": "Warranty Claim on a Unit Bought Before the Term Was Extended",
+  "category": "policy_version",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "Auriga Devices sells hardware with a standard warranty defined in its Warranty Policy.\n\nVersion 1 (applies to units purchased through 2024-04-30): \"The standard warranty is 12 months from the purchase (invoice) date, covering parts and labor.\"\n\nVersion 2 (effective 2024-05-01): \"The standard warranty is 24 months from the purchase (invoice) date, covering parts and labor.\" v2 includes a transition clause: \"The warranty term is fixed at the unit's purchase (invoice) date and runs from that date. Units purchased on or before April 30, 2024 carry the v1 12-month term; units purchased on or after May 1, 2024 carry the v2 24-month term. The extended term does not apply retroactively to units purchased before May 1, 2024.\"\n\nThe order/warranty system shows unit SN-91002 (customer: Trellis Design Studio): Invoice Date 2024-03-18, Product: workstation dock, Warranty Claim opened 2025-06-05 for a failed power module.\n\nA warranty operations agent posts in #warranty-claims on 2025-06-06: \"SN-91002 claim came in June 5 for a dead power module. Invoice was March 2024. The customer says everything now ships with a 2-year warranty, so they're covered. Are they in warranty or not?\"\n\nUsing the policy history, the transition clause, and the warranty record, determine whether the claim on SN-91002 is within warranty.",
+  "question": "Is the warranty claim on SN-91002 within warranty?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Rebecca Stanton",
+    "title": "Warranty & Support Operations Manager",
+    "organization": "Auriga Devices",
+    "years_experience": 9,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "The claim is out of warranty. The unit was purchased 2024-03-18, before May 1, 2024, so the v1 12-month term applies and expired 2025-03-18; the claim filed 2025-06-05 falls outside it, and v2's 24-month term does not apply retroactively.",
+    "The claim is covered, because v2's 24-month warranty (effective May 1, 2024) applies to all units and does not expire until 2026-03-18.",
+    "The claim is covered, because the 24-month term runs from the v2 effective date of 2024-05-01, expiring 2026-05-01.",
+    "The claim is covered, because warranty coverage is determined by the claim date, and v2 is the policy in force on 2025-06-05."
+  ]
+}

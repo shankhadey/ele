@@ -1,0 +1,19 @@
+{
+  "title": "Lab Automation Capex Split Across Three Requisitions in 40 Days",
+  "category": "approval_chain",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "A capital-controls audit agent at Hartwell Labs is reviewing spend on a single lab-automation project.\n\n**Capital Expenditure Authority Matrix**\n- Up to $100,000: Department Head.\n- $100,001-$500,000: VP Finance AND CFO.\n- Above $500,000: CFO AND CEO AND Board capital committee.\n- Aggregation rule: capital purchases supporting one project or asset within a rolling 90-day window are aggregated, and the combined value sets the required approval tier. Requisitions may not be sized to keep each below a threshold.\n\n**ERP Requisition Records (project code PRJ-LAB7, 'Automated liquid-handling line')**\n- REQ-201: robotic arm module, $96,000, approved by Department Head (Dr. Lin), 2026-07-02.\n- REQ-207: plate-handling module, $92,000, approved by Department Head (Dr. Lin), 2026-07-21.\n- REQ-215: integration + controller cabinet, $88,000, approved by Department Head (Dr. Lin), 2026-08-11.\n- All three cite PRJ-LAB7 and describe components of the same automation line.\n\n**Email trail (reconstructed)**\n- Lab manager: 'Vendor quoted the full line at ~$276K. If we buy it as one requisition it goes to VP Finance and the CFO.'\n- Dr. Lin (Department Head): 'Break it into the three modules by phase so each stays under my $100K sign-off; I'll approve each as it comes.'\n- Procurement: 'Understood - three requisitions raised under PRJ-LAB7.'\n\nNo VP Finance or CFO approval exists on any of the three requisitions.",
+  "question": "Considering the aggregation rule, at what tier should this expenditure have been authorized? Name the required approver(s).",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Grace Whitfield",
+    "title": "Capital Accounting Manager",
+    "organization": "Hartwell Labs",
+    "years_experience": 12,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge"
+}

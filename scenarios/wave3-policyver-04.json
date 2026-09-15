@@ -1,0 +1,25 @@
+{
+  "title": "Renewing a Privileged Access Grant After PAM Rules Tightened",
+  "category": "policy_version",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "Altair Systems controls privileged production access through its Privileged Access Management (PAM) Standard.\n\nVersion 1 (effective 2022-05-01): \"A production database administrator (prod-DBA) grant may be issued for a term of up to 12 months. Grants may be renewed (extended) for successive 12-month terms upon manager approval. Password-based authentication is permitted.\"\n\nVersion 2 (effective 2025-01-01): \"A prod-DBA grant may be issued for a maximum term of 90 days, requires a registered hardware security key, and must use just-in-time (JIT) elevation.\" v2 includes a transition clause: \"A grant active as of December 31, 2024 remains valid under its original v1 term until that term's scheduled expiry. However, any renewal or extension of a grant executed on or after January 1, 2025 must be re-provisioned under v2 (90-day term, hardware key, JIT). Grants first issued on or after January 1, 2025 follow v2 from issuance.\"\n\nThe CyberArk record for grant G-6621 (engineer: P. Osei, scope: prod-DBA) shows: Original Issue Date 2024-08-10, Term 12 months, Scheduled Expiry 2025-08-10, Authentication: password. A renewal request R-6621-2 was submitted 2025-06-30 to extend the grant for another 12 months.\n\nA security engineer posts in #access-review on 2025-07-01: \"G-6621 is still riding its 2024 grant, expires Aug 10. There's a renewal request in now for another year. Can we just extend the 12-month password grant, or does the renewal force the hardware-key/90-day setup?\"\n\nUsing the policy history, the transition clause, and the CyberArk record, determine how renewal request R-6621-2 must be handled.",
+  "question": "How must renewal request R-6621-2 be handled?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Devin Cho",
+    "title": "Staff Security Engineer",
+    "organization": "Altair Systems",
+    "years_experience": 11,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "The renewal must be re-provisioned under v2 (90-day term, hardware key, JIT), because it was submitted 2025-06-30 and v2 governs any renewal or extension executed on or after January 1, 2025.",
+    "The renewal may extend the grant for another 12 months under v1 password terms, because the original grant was issued 2024-08-10 and is grandfathered.",
+    "The grant expired on January 1, 2025 when v2 took effect, so access must be requested anew under v2 immediately.",
+    "The renewal may proceed under v1 until the 2025-08-10 expiry, after which any further access follows v2."
+  ]
+}

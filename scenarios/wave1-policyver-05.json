@@ -1,0 +1,25 @@
+{
+  "title": "Grandfathered Privileged Access Under the Tightened PAM Policy",
+  "category": "policy_version",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "Quenby Systems tightened its Privileged Access Management (PAM) policy in late 2024.\n\nVersion 2 (effective January 1, 2023) states: \"Privileged (production admin) access may be granted for a term of up to 12 months and must be recertified annually.\"\n\nVersion 3 (effective October 1, 2024) states: \"Privileged access may be granted for a maximum term of 90 days, requires a registered hardware security key for authentication, and must be recertified quarterly.\" v3 includes a transition clause: \"Grants that are active as of September 30, 2024 remain valid under their original 12-month expiry (v2 terms) until their next scheduled recertification date. At that recertification, the grant must be re-provisioned under v3 (90-day term, hardware key). Any grant issued on or after October 1, 2024 is governed by v3 from issuance.\"\n\nThe CyberArk record for grant G-3345 (engineer: L. Duarte, scope: prod-admin) shows: Grant Date 2024-05-15, Expiry Date 2025-05-15, Next Recertification Date 2025-05-15 (annual). The grant has been continuously active. It is currently 2025-02-10.\n\nA security engineer posts in #access-review on 2025-02-10: \"Auditing prod-admin grants. G-3345 predates the 90-day rule. Do we have to convert it to a 90-day hardware-key grant right now, or does it ride until its recert?\"\n\nUsing the policy history, the transition clause, and the PAM record, determine G-3345's current status and when it must move to v3.",
+  "question": "What is the correct handling of grant G-3345 as of 2025-02-10?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Theo Kraljic",
+    "title": "Staff Security Engineer",
+    "organization": "Quenby Systems",
+    "years_experience": 14,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "G-3345 remains valid under v2 until its 2025-05-15 recertification, at which point it must be re-provisioned under v3 (90-day term, hardware key).",
+    "G-3345 must be converted to a 90-day hardware-key grant immediately, because v3 took effect October 1, 2024 and supersedes all prior grants.",
+    "G-3345 expired on October 1, 2024 when v3's 90-day maximum took effect, and access must be re-requested from scratch.",
+    "G-3345 remains under v2 terms indefinitely, because it was issued before October 1, 2024 and is continuously active."
+  ]
+}

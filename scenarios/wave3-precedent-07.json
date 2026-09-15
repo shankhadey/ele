@@ -1,0 +1,19 @@
+{
+  "title": "Late-Enrollment Fee Waiver Citing a One-Time Accommodation",
+  "category": "precedent_exception",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "You lead bursar operations at Octavia Learning, an online higher-education provider. A returning student, Priya Sunder, enrolled 11 days after the deadline and was assessed a $250 late-enrollment fee. She is requesting a waiver and citing a waiver she received in a prior term.\n\nActive policy: Late Fee Policy LFP-3, effective 2024-08-01. The late-enrollment fee is waived only for (a) a documented institutional system error that prevented on-time enrollment, or (b) a documented financial-hardship determination approved by the Bursar. Waivers for reasons of personal scheduling, travel, or 'I forgot the date' are explicitly non-qualifying.\n\nThe advising office forwards a prior record: on 2024-01-14, Priya's late fee was waived. The bursar note reads verbatim: \"One-time goodwill waiver granted after a student complaint about the enrollment reminder email cadence. Non-binding and non-precedential; does not entitle the student to waivers for future late enrollments. Logged.\"\n\nCurrent facts: The enrollment portal and reminder emails functioned normally this term (confirmed in the system audit log), Priya has filed no financial-hardship documentation, and her stated reason is that she was traveling and missed the deadline. The advisor argues: \"We waived it for her last January, so charging her now is inconsistent and she'll escalate to the dean.\"",
+  "question": "State the decision and the single controlling reason as one short phrase.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Harold Nkemelu",
+    "title": "Bursar Operations Lead",
+    "organization": "Octavia Learning",
+    "years_experience": 13,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

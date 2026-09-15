@@ -23,6 +23,7 @@ import argparse
 import glob
 import json
 import os
+import re
 import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional
@@ -33,8 +34,9 @@ from dotenv import load_dotenv
 load_dotenv("linkedin_ai_manager/.env")
 load_dotenv(".env")
 
+from ele.core import paths
 from ele.core.cli import App, AppConfig
-from ele.core.models_integration import APIConfig, OpenAIAdapter
+from ele.core.models_integration import APIConfig, OpenAIAdapter, BedrockAdapter
 
 
 # ── Defaults ──────────────────────────────────────────────────────
@@ -48,8 +50,13 @@ DEFAULT_EVAL_CONFIG = _ROOT / "config" / "eval_config.json"
 # ── Helpers ───────────────────────────────────────────────────────
 
 def load_scenarios(directory: Path) -> List[Dict[str, Any]]:
-    """Load all .json scenario files from a directory (skips TEMPLATE)."""
-    files = sorted(glob.glob(str(directory / "*.json")))
+    """Load all .json scenario files from a directory tree (skips TEMPLATE).
+
+    Recursive: picks up scenarios under subdirectories such as
+    ``scenarios/counterfactuals/`` so paired-counterfactual files can live
+    in their own folder without polluting the top-level scenario listing.
+    """
+    files = sorted(glob.glob(str(directory / "**" / "*.json"), recursive=True))
     scenarios = []
     for f in files:
         if Path(f).stem.upper() == "TEMPLATE":
@@ -75,6 +82,11 @@ def create_adapter(model_cfg: Dict[str, Any]):
     provider = model_cfg.get("provider", "openai")
     model_name = model_cfg.get("model_name", "gpt-4o-mini")
 
+    # Bedrock uses AWS credentials (not an API key) — no key check needed
+    if provider == "bedrock":
+        region = model_cfg.get("region", "us-west-2")
+        return BedrockAdapter(model_id=model_name, region=region), None
+
     # Resolve API key from env var name
     api_key_env = model_cfg.get("api_key_env", "OPENAI_API_KEY")
     api_key = model_cfg.get("api_key", "") or os.environ.get(api_key_env, "")
@@ -91,6 +103,94 @@ def create_adapter(model_cfg: Dict[str, Any]):
         return None, f"Unsupported provider: {provider}"
 
 
+# ── Transcript logging ────────────────────────────────────────────
+
+def write_transcripts(app, run, log_dir: Path) -> None:
+    """Write a complete, human-readable transcript per scenario.
+
+    Each transcript captures the full prompt sent to the model, every tool
+    call (query + full results), each intermediate model turn, the final
+    answer, and the complete scoring trace including the judge prompt and
+    raw judge response.
+    """
+    log_dir.mkdir(parents=True, exist_ok=True)
+
+    for i, r in enumerate(run.results, 1):
+        scenario = app.repository.get_scenario(r.scenario_id)
+        sr = r.scored_result
+        title = scenario.title if scenario else r.scenario_id[:8]
+        slug = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")[:50]
+        fname = f"{i:03d}_{slug}.txt"
+
+        lines: List[str] = []
+        lines.append("=" * 70)
+        lines.append(f"SCENARIO: {title}")
+        lines.append(f"ID: {r.scenario_id}")
+        if scenario:
+            lines.append(f"Category: {scenario.category.value} | "
+                         f"Domain: {scenario.domain.value} | "
+                         f"Difficulty: {scenario.difficulty.value}")
+            lines.append(f"Answer format: {scenario.answer_format.value}")
+            if scenario.tools_available:
+                lines.append(f"Tools available: {', '.join(scenario.tools_available)}")
+        lines.append("=" * 70)
+        lines.append("")
+
+        # Prompt
+        lines.append("--- PROMPT SENT TO MODEL ---")
+        lines.append(r.prompt or "(prompt not captured)")
+        lines.append("")
+
+        # Tool call rounds
+        if r.tool_invocations:
+            lines.append("--- TOOL CALL TRACE ---")
+            for inv in r.tool_invocations:
+                lines.append(f"[Round {inv.get('round')}] model reasoning before tool call:")
+                lines.append(f"  {inv.get('assistant_text', '')}")
+                lines.append(f"[Round {inv.get('round')}] TOOL_CALL: "
+                             f"{inv.get('tool_id')}({json.dumps(inv.get('parameters', {}))})")
+                res = inv.get("result")
+                if inv.get("success", True):
+                    count = len(res) if isinstance(res, list) else "n/a"
+                    lines.append(f"  -> returned {count} result(s):")
+                    lines.append("  " + json.dumps(res, indent=2).replace("\n", "\n  "))
+                else:
+                    lines.append(f"  -> ERROR: {inv.get('error')}")
+                lines.append("")
+
+        # Final model response
+        lines.append("--- MODEL FINAL RESPONSE ---")
+        lines.append(r.model_response or "(no response)")
+        lines.append("")
+
+        # Scoring
+        lines.append("--- SCORING ---")
+        lines.append(f"Status: {r.status.value}")
+        if r.error_message:
+            lines.append(f"Error: {r.error_message}")
+        if sr:
+            lines.append(f"Scoring method: {sr.scoring_method.value}")
+            lines.append(f"Extracted answer: {sr.extracted_answer}")
+            lines.append(f"Correct answer:   {sr.correct_answer}")
+            lines.append(f"Exact match: {sr.exact_match}")
+            lines.append(f"Similarity score: {sr.similarity_score:.3f}")
+            if sr.judge_score is not None:
+                lines.append(f"Judge score: {sr.judge_score}")
+                lines.append(f"Judge reasoning: {sr.judge_reasoning}")
+                lines.append("")
+                lines.append("--- JUDGE PROMPT ---")
+                lines.append(sr.judge_prompt or "(not captured)")
+                lines.append("")
+                lines.append("--- JUDGE RAW RESPONSE ---")
+                lines.append(sr.judge_raw_response or "(not captured)")
+            lines.append("")
+            lines.append(f"FINAL SCORE: {sr.final_score}")
+        lines.append(f"Latency: {r.latency_ms}ms | Tokens: {r.tokens_used}")
+        lines.append("")
+
+        (log_dir / fname).write_text("\n".join(lines))
+
+
 # ── Main ──────────────────────────────────────────────────────────
 
 def main():
@@ -103,6 +203,18 @@ def main():
     parser.add_argument("--category", help="Filter scenarios by category")
     parser.add_argument("--domain", help="Filter scenarios by domain")
     parser.add_argument("--difficulty", help="Filter scenarios by difficulty")
+    parser.add_argument("--split",
+                        choices=["dev", "core_test", "challenge", "counterfactual", "holdout"],
+                        help="Filter scenarios by evaluation split")
+    parser.add_argument("--condition", choices=["direct", "deliberate", "scaffold"],
+                        default=None,
+                        help="Prompting condition (§5.2). When explicitly passed (incl. "
+                             "'direct'), results are written to results/conditions/"
+                             "<condition>/ so the three conditions are colocated and "
+                             "comparable. Omit it entirely for the canonical results/ run.")
+    parser.add_argument("--manifest", default=None,
+                        help="Run only scenarios listed in a validation manifest "
+                             "(validation/manifests/*.json).")
     parser.add_argument("--scenario", action="append", default=None,
                         help="Run specific scenario file(s). Can be repeated: --scenario 005_*.json --scenario 001_*.json")
     parser.add_argument("--scenarios-dir", default=str(DEFAULT_SCENARIOS_DIR),
@@ -124,12 +236,27 @@ def main():
     else:
         app_config = AppConfig.from_env()
 
+    # CLI --condition overrides the configured prompting condition (§5.2).
+    if args.condition:
+        app_config.eval_prompt_condition = args.condition
+
     app = App(app_config)
 
     # ── Load scenarios ────────────────────────────────────────────
     scenarios_dir = Path(args.scenarios_dir)
 
-    if args.scenario:
+    if args.manifest:
+        # Load only the scenarios listed in a validation manifest (by filename).
+        manifest = json.loads(Path(args.manifest).read_text())
+        wanted = {item["scenario_key"] for item in manifest.get("items", [])}
+        all_scenarios = load_scenarios(scenarios_dir)
+        raw_scenarios = [s for s in all_scenarios if s.get("_source_file") in wanted]
+        missing = wanted - {s.get("_source_file") for s in raw_scenarios}
+        if missing:
+            print(f"  ⚠ {len(missing)} manifest scenario(s) not found on disk")
+        print(f"Loaded {len(raw_scenarios)}/{len(wanted)} manifest scenario(s) "
+              f"from {args.manifest}\n")
+    elif args.scenario:
         # Load specific scenario files (supports glob patterns)
         raw_scenarios = []
         for pattern in args.scenario:
@@ -160,7 +287,7 @@ def main():
     if args.list_scenarios:
         for i, s in enumerate(raw_scenarios, 1):
             print(f"  {i}. {s.get('title', 'Untitled')}")
-            print(f"     Category: {s.get('category')}  Domain: {s.get('domain')}  Difficulty: {s.get('difficulty')}")
+            print(f"     Category: {s.get('category')}  Domain: {s.get('domain')}  Difficulty: {s.get('difficulty')}  Split: {s.get('split', 'challenge')}")
             print(f"     Format: {s.get('answer_format')}  Contributor: {s.get('contributor', {}).get('name', 'Unknown')}")
             print()
         return 0
@@ -237,6 +364,7 @@ def main():
             category=args.category,
             domain=args.domain,
             difficulty=args.difficulty,
+            split=args.split,
         )
 
         if not eval_result.get("success"):
@@ -253,11 +381,16 @@ def main():
                 sr = r.scored_result
                 scenario = app.repository.get_scenario(r.scenario_id)
                 title = scenario.title if scenario else r.scenario_id[:8]
-                status = "✓" if (sr and sr.final_score >= 0.5) else "✗"
+                status = "✓" if (sr and sr.is_correct) else "✗"
                 score = f"{sr.final_score:.1f}" if sr else "?"
                 method = f"[{sr.scoring_method.value}]" if sr else ""
                 tool_calls = f", tool_calls={len(r.tool_invocations)}" if r.tool_invocations else ""
                 print(f"    {status} {title}: score={score} {method}, latency={r.latency_ms}ms{tool_calls}")
+
+            # Write complete per-scenario transcripts (private data dir)
+            log_dir = paths.logs_dir() / f"{model_id}_{eval_result['run_id'][:8]}"
+            write_transcripts(app, run, log_dir)
+            print(f"  Transcripts saved: {log_dir}")
 
     # ── Leaderboard ───────────────────────────────────────────────
     print("\n" + "=" * 60)
@@ -273,8 +406,18 @@ def main():
         print("  No results yet.")
 
     # ── Export results ────────────────────────────────────────────
-    results_dir = _ROOT / "results"
-    results_dir.mkdir(exist_ok=True)
+    # Direct-condition runs go to results/; non-direct conditions go to
+    # results/conditions/<condition>/ so they never collide with the
+    # direct-condition leaderboard (build_results_table globs results/*.json).
+    # When --condition is explicitly passed (including 'direct'), colocate the
+    # run under results/conditions/<condition>/ so the RQ3 comparison reads all
+    # three conditions from the same place. With no --condition, the run is the
+    # canonical results/ headline run.
+    if args.condition:
+        results_dir = paths.results_dir() / "conditions" / args.condition
+    else:
+        results_dir = paths.results_dir()
+    results_dir.mkdir(parents=True, exist_ok=True)
     for entry in lb:
         run_id = entry["run_id"]
         export = app.export_results(run_id, "json")

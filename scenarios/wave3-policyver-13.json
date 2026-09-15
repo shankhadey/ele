@@ -1,0 +1,19 @@
+{
+  "title": "Remote-Work Stipend Refresh That Straddles the Policy Change",
+  "category": "policy_version",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "Corvus Media provides a remote-work equipment stipend under its Remote Work Policy.\n\nVersion 1 (in effect through 2024-12-31): \"Eligible employees receive a $1,000 equipment stipend, refreshable once every 24 months measured from the employee's enrollment (grant) date.\"\n\nVersion 2 (effective 2025-01-01): \"The equipment stipend is $1,500, refreshable every 36 months measured from the enrollment (grant) date.\" v2 includes a transition clause: \"A stipend's amount and refresh eligibility run from the employee's enrollment (grant) date under the version in force on that date. Enrollments dated before January 1, 2025 keep the v1 $1,000 amount and 24-month cycle for that enrollment period; the v2 $1,500 amount and 36-month cycle apply only to grants (including refresh grants) dated on or after January 1, 2025. The new policy does not retroactively extend or increase an in-progress enrollment.\"\n\nThe HR benefits system shows employee E-2255: initial stipend enrollment (grant) dated 2023-08-15, amount $1,000 paid; no refresh yet.\n\nE-2255 messages HR benefits in Slack on 2025-01-08: \"Now that the stipend is $1,500 on a 36-month cycle, does my clock reset to 36 months, and when can I get my next refresh, and will it be $1,000 or $1,500?\"\n\nUsing the policy history, the transition clause, and the benefits record, determine E-2255's next refresh eligibility date and the amount of that next grant.",
+  "question": "When is E-2255 next eligible for a stipend refresh, and what amount will that next grant be?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Janelle Owusu",
+    "title": "Benefits Program Manager",
+    "organization": "Corvus Media",
+    "years_experience": 8,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

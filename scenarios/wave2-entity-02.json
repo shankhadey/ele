@@ -1,0 +1,19 @@
+{
+  "title": "The Rehire Under a New Surname",
+  "category": "entity_resolution",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "Edenbridge Health's People Ops team is validating benefits seniority dates during an annual audit and hits a discrepancy for a clinical data analyst. Workday shows employee record E-77140, \"Rebecca Osei,\" hire date 2024-02-01, worker type Regular (FTE), national ID (SSN) ending 3321, date of birth 1989-06-12, home email rlin.analyst@gmail.com. A prior, terminated Workday record E-10022 exists for \"Rebecca Lin,\" original hire 2016-05-01, termination 2019-08-15 (reason: voluntary resignation), SSN ending 3321, date of birth 1989-06-12, home email rlin.analyst@gmail.com. The two records share the same SSN, date of birth, and personal email. A note in the new record from the recruiter reads: \"Boomerang hire - previously with us 2016-2019 on the analytics team; legally changed surname from Lin to Osei after marriage in 2021.\" Okta shows the old account rlin@edenbridgehealth.com was deprovisioned in 2019; a brand-new account rosei@edenbridgehealth.com was created 2024-01-30. Edenbridge's written benefits policy states that prior service is bridged for rehires only when the break in service is 12 months or less; for longer breaks, benefits seniority (the adjusted service date used for PTO accrual tier and 401(k) vesting) resets to the most recent hire date. The break here runs from 2019-08-15 to 2024-02-01. The prior-service field on the new record is currently blank, and the auditor must populate the correct adjusted service date.",
+  "question": "What date should be recorded as Rebecca Osei's benefits seniority (adjusted service) date?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Grace Osei-Bonsu",
+    "title": "Senior HRIS Analyst",
+    "organization": "Edenbridge Health",
+    "years_experience": 9,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge"
+}

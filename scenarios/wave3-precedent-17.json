@@ -1,0 +1,25 @@
+{
+  "title": "Sole-Source Award With Conflicting Procurement Precedents",
+  "category": "precedent_exception",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "You are a procurement manager at Rostra Transit Authority, a public-sector transit agency. A department wants to award a $180,000 annual fare-collection maintenance contract to a single incumbent vendor, 'Marnell Systems,' without competitive bidding. They cite a prior sole-source award.\n\nActive policy: Public Procurement Standard PPS-4, effective 2024-07-01 (unchanged since). Sole-source awards are permitted in two situations: (1) a declared emergency threatening service continuity, approved by the Procurement Director with an emergency memo; or (2) a documented sole-source justification approved by the Procurement Board when only one vendor can demonstrably meet the requirement. Routine renewals where competitive alternatives exist must go through a full competitive bid regardless of incumbency.\n\nPrecedent A (procurement log): 2024-09-20, sole-source award to 'Kessworth Rail' for signal repair, approved by the Procurement Director under an emergency memo. Note: \"Active signal failure threatening service; emergency sole-source.\"\n\nPrecedent B (procurement log): 2025-01-15, a proposed sole-source renewal for fare-gate servicing was denied and sent to competitive bid. Note: \"Routine renewal; multiple qualified vendors exist - full competitive bid required.\"\n\nCurrent facts: The Marnell contract is a routine annual maintenance renewal with no service emergency, and market research shows at least three qualified maintenance vendors. The department writes: \"We did a sole-source with Kessworth last fall, so award Marnell the same way.\"",
+  "question": "How should the Marnell Systems maintenance contract be awarded?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Yusuf Adeyemi",
+    "title": "Procurement Manager",
+    "organization": "Rostra Transit Authority",
+    "years_experience": 10,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Award sole-source via the Procurement Director's emergency memo, mirroring the Kessworth Rail precedent.",
+    "Route the award through a full competitive bid, because it is a routine renewal with qualified alternatives and no emergency - matching the governing fare-gate precedent that required competitive bidding.",
+    "Award sole-source via the Procurement Board, since incumbency alone justifies a single-source award for maintenance work.",
+    "Split the contract into sub-$50,000 task orders so each falls below the competitive-bid threshold."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "An Off-Cycle Raise That the New Approval Rule Reclaimed",
+  "category": "temporal_consistency",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "A people-ops partner at Ashgrove Robotics must decide whether a manager can approve a 12% off-cycle raise, given how a comparable raise was handled last year.\n\n**Decision A (2023-10-04)**\nA manager approved a 12% off-cycle raise for an engineer to counter an outside offer. Note: 'Under the compensation policy then in effect, managers could approve off-cycle raises up to 15% at their own discretion.'\n\n**Current request C (2024-11-06)**\nThe same manager wants to approve a 12% off-cycle raise for a different engineer, again citing retention risk. The manager has asked People Ops to process it 'the same way as last year.'\n\n**Compensation Policy (current, updated 2024-07-01, in force now)**\nOff-cycle raises up to 8% may be approved by the direct manager. Off-cycle raises above 8% require BOTH VP approval and Compensation Committee review, regardless of the retention justification. The prior manager-discretion ceiling of 15% was removed in the July 2024 update.\n\n**Slack \u2014 #people-ops**\nManager: 'I approved a 12% off-cycle raise myself last October and it went through fine. Let's run this one the same way \u2014 same size, same reason.'\nPartner: 'Last October was under the old comp policy. The manager-discretion ceiling changed in July \u2014 a 12% raise isn't something you can sign off alone anymore.'\n\nThere is no dispute that the retention risk is genuine; the question is who may approve a raise of this size now.",
+  "question": "How should the People Ops partner handle the manager's 12% off-cycle raise request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Bianca Tothough",
+    "title": "People Operations Partner",
+    "organization": "Ashgrove Robotics",
+    "years_experience": 7,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Let the manager approve the 12% raise at their own discretion, consistent with the October 2023 raise of the same size.",
+    "Route the 12% raise for VP approval and Compensation Committee review, because the July 2024 policy removed the manager-discretion ceiling and now requires both for any raise above 8%.",
+    "Approve the raise at 8% under manager discretion and treat the remaining 4% as denied.",
+    "Deny the raise outright, since off-cycle raises above 8% are no longer permitted."
+  ]
+}

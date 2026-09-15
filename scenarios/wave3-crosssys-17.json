@@ -1,0 +1,25 @@
+{
+  "title": "Hestia Health Plans ticket: 'routine P3 config' versus a regulated-deadline outage",
+  "category": "cross_system_synthesis",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "Hestia Health Plans, a strategic $1.5M ARR customer on your benefits-administration platform, opened a ticket flagged P3 - 'eligibility file not updating for some members.' In the #support Slack channel the agent writes: 'Looks like a routine eligibility config issue, customer set a mapping wrong. Tagged P3, we'll get to it in the normal queue. Nothing urgent here.'\n\nOther systems reframe the severity. In Datadog, the eligibility API for this tenant is returning errors on 22% of member records, not 'some,' and the rate is rising as nightly files process. In the compliance calendar shared in the account workspace, this customer is in the middle of open enrollment, and a CMS submission deadline for accurate enrollment data falls in three days - errors now cascade into a regulatory filing. In Salesforce the account is marked strategic with a renewal in 60 days and an executive sponsor. And an email attached to the account from the customer's VP of Operations reads: 'If members can't enroll this week, we have a compliance and member-access problem, not a support ticket.'\n\nEach signal alone might justify a low priority: config errors are common, API errors fluctuate, and enrollment periods are busy. But together - a 22%-and-climbing eligibility failure, an open-enrollment window, a hard CMS deadline in three days, a strategic account at renewal, and the customer's own VP framing it as a compliance and member-access issue - they show this is a high-severity, time-boxed regulatory risk, not a routine P3. The agent's 'routine config' triage predates the error-rate and deadline context. You are the support escalation lead. What should you do?",
+  "question": "How should the support escalation lead handle this ticket?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Aisha Bello",
+    "title": "Support Escalation Manager",
+    "organization": "Corcyra Benefits Systems",
+    "years_experience": 12,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Leave it as P3 in the normal queue; the agent identified it as a customer-side eligibility configuration error.",
+    "Bump it to P2 and ask the customer to correct their mapping, revisiting if the error rate keeps climbing.",
+    "Escalate to a high-severity incident with engineering and account-executive involvement now: the 22%-and-rising eligibility failure, the open-enrollment CMS deadline in three days, and the strategic account's own compliance framing together make this urgent regulatory-impact work, not a routine P3.",
+    "Route it to customer success to schedule a training session on eligibility mapping after open enrollment ends."
+  ]
+}

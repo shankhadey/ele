@@ -1,0 +1,25 @@
+{
+  "title": "Home Office Stipend Refresh for an Employee Grandfathered on the Old Cycle",
+  "category": "policy_version",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "Pinehaven Retail revised its remote-work equipment stipend in mid-2024.\n\nVersion 1 (effective January 1, 2022) states: \"Eligible remote employees receive a one-time home office stipend of $1,500, with refresh eligibility every 3 years from the last stipend date.\"\n\nVersion 2 (effective June 1, 2024) states: \"Eligible remote employees receive a $1,000 stipend, with refresh eligibility every 4 years, subject to manager approval.\" v2 includes a transition clause: \"Employees who received a stipend under v1 retain their v1 refresh cycle (3 years) for their next refresh only; the refresh amount and all subsequent cycles follow v2. Employees receiving their first stipend on or after June 1, 2024 are fully governed by v2.\"\n\nThe HRIS record for employee E-4410 shows: Last Stipend Date 2022-08-01, Last Stipend Amount $1,500 (issued under v1), Employment Status Active/Remote. It is currently July 2025.\n\nAn HR partner emails the benefits team on 2025-07-10: \"E-4410 is asking about a home office equipment refresh. Their last stipend was issued August 2022 at $1,500 under the old policy. The stipend rules changed in mid-2024, so I want to get this right: when exactly are they next eligible for a refresh, and what dollar amount should we plan to issue given that the policy has since been revised?\"\n\nUsing the policy history, the transition clause, and the HRIS record, determine E-4410's next refresh date and amount.",
+  "question": "When is E-4410 next eligible for a stipend refresh, and for how much?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Colin Rutherford",
+    "title": "HR Business Partner",
+    "organization": "Pinehaven Retail",
+    "years_experience": 9,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Eligible on August 1, 2025 (v1's 3-year cycle applies to the next refresh) for $1,000 (the v2 amount).",
+    "Eligible on August 1, 2025 for $1,500, because both the v1 refresh cycle and the v1 stipend amount carry forward to the next refresh.",
+    "Eligible on August 1, 2026 for $1,000, because v2's 4-year refresh cycle applies to the next refresh.",
+    "Not eligible on any fixed date; the next refresh is available only once a manager approves it under v2, with no set timing."
+  ]
+}

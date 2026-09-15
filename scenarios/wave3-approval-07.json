@@ -1,0 +1,25 @@
+{
+  "title": "Director Approves Their Own Expense Report Through Delegated Admin Access",
+  "category": "approval_chain",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "An expense-controls audit agent at Andesite Financial is reviewing a submitted expense report.\n\n**Expense Approval Authority Matrix**\n- Any expense report: approved by the submitter's direct manager.\n- Reports totaling over $5,000: also require Finance review.\n- Segregation-of-duties rule: 'No employee may approve their own expense report. When the submitter is the approving manager, the report routes to the submitter's skip-level (the manager's manager). Delegated approver access must never be used to self-approve.'\n\n**Expense System Record**\n- EXP-6620: Submitter 'Marcus D.' (Director, Client Services). Total: $12,400 (offsite venue deposit, client dinners, travel).\n- Approved by (field): 'Marcus D. (acting approver)'. Finance review: attached. Skip-level (VP) approval: (empty).\n- Audit log: 'EXP-6620 approved via delegated-approver role held by Marcus D.'\n\n**Slack #expenses (reconstructed)**\n- Marcus D.: 'My offsite reimbursements are sitting in the queue and I have the delegated approver role while my VP is out. I'll just approve my own so I get paid this cycle.'\n- Analyst: 'Isn't that supposed to go to the VP?'\n- Marcus D.: 'The VP's swamped. I've got the access, I'll push it through and mention it to her later.'\n\nMarcus used a delegated approver role to approve his own $12,400 report; no skip-level VP approval exists. Finance review is attached.",
+  "question": "What should the audit conclude about the authorization of this expense report?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Marcus Delgado",
+    "title": "Financial Controls Manager",
+    "organization": "Andesite Financial",
+    "years_experience": 8,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Valid - Marcus held the delegated approver role at the time, so his approval is authorized and the Finance review completes the requirement.",
+    "Valid, but needs a documentation cleanup - have the VP add a confirming note when she returns; the approval already went through a legitimate delegated role.",
+    "Invalid - approving one's own expense report is a segregation-of-duties violation regardless of what role the submitter holds; the report had to route to the skip-level VP, whose approval is missing, so it was self-approved without valid authorization and must be re-approved by the VP.",
+    "Invalid - all director-level expense reports must be approved by the CFO and audited by external accountants before reimbursement."
+  ]
+}

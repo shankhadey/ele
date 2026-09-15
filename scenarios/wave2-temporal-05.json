@@ -1,0 +1,25 @@
+{
+  "title": "Discount Stacking Across a Mid-Year Rule Change",
+  "category": "temporal_consistency",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "A deal desk analyst at Elmswood Media must decide whether two discounts may be stacked on a renewal, given two prior decisions that straddle a rule change.\n\n**Decision A (2024-02)**\nCustomer 'Ravenscar Press' | 2-year renewal | total contract value (TCV) $520K. Requested to stack the 12% loyalty discount with the 8% multi-year discount. Deal Desk DENIED. Note: 'Stacking then required TCV of at least $1M; Ravenscar was $520K. Only one discount could apply.'\n\n**Decision B (2024-06)**\nCustomer 'Saltby Media' | 3-year renewal | TCV $640K. Requested the same stacking. Deal Desk APPROVED. Note: 'Under the new stacking rule effective 2024-05-01, renewals with a term of 3 years or longer qualify for stacking regardless of TCV.'\n\n**Current request C (2024-11-12)**\nCustomer 'Tewkes Media' | 3-year renewal | TCV $580K. Requesting to stack the 12% loyalty discount with the 8% multi-year discount.\n\n**Discount Stacking Policy (current, effective 2024-05-01)**\nThe 12% loyalty discount may stack with the 8% multi-year discount when EITHER the TCV is at least $1M OR the renewal term is 3 years or longer. Term-based qualification has been available since May 1, 2024.\n\n**Slack \u2014 #deal-desk**\nAE: 'We denied stacking for Ravenscar last February at around this TCV, so Tewkes should be denied too, right?'\nAnalyst: 'Ravenscar was denied under the old TCV-only rule. Saltby got stacking approved in June under the new term-based rule. Let me line Tewkes up against the current policy.'\n\nTewkes is a 3-year renewal below $1M TCV, just like Saltby was.",
+  "question": "How should the analyst handle Tewkes Media's discount-stacking request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Colin Marsh",
+    "title": "Deal Desk Analyst",
+    "organization": "Elmswood Media",
+    "years_experience": 9,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Deny stacking, consistent with the February denial of a similar-TCV stacking request for Ravenscar.",
+    "Approve stacking, because under the current rule a 3-year renewal qualifies regardless of TCV \u2014 so the June Saltby approval, not the pre-May Ravenscar denial, is the governing precedent.",
+    "Escalate to VP Sales, since stacking two discounts below $1M TCV exceeds Deal Desk authority.",
+    "Apply only the 12% loyalty discount as a compromise between the February denial and the June approval."
+  ]
+}

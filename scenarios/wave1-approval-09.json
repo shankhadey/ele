@@ -1,0 +1,19 @@
+{
+  "title": "Goodwill Shipping Credit Within the Support Agent Limit",
+  "category": "approval_chain",
+  "domain": "customer_success_support",
+  "difficulty": "standard",
+  "scenario_text": "A support-operations audit agent at Ilkeston Retail is spot-checking authorization on a goodwill credit.\n\n**Goodwill Credit / Service-Recovery Authority Matrix**\n- Up to $500 per customer per incident: Support Agent (reason code required).\n- $501-$5,000: Support Manager approval.\n- Above $5,000: Director of Customer Success approval AND Finance notification.\n\n**Helpdesk Credit Record**\n- CR-1180: Customer 'M. Adeyemi', goodwill credit $450.\n- Reason code: SHIP_DELAY (carrier missed the guaranteed delivery window).\n- Approved by (field): 'Support Agent - Jvia M.'\n- This is the customer's only credit on this incident; no other credits are linked.\n\n**Slack #support-credits (reconstructed)**\n- Jvia M. (Support Agent): 'Customer's order arrived four days late past the guaranteed date. Issuing a $450 goodwill credit under SHIP_DELAY.'\n- Team lead: 'That's within your limit, go ahead.'\n- Jvia M.: 'Credit CR-1180 issued, reason code attached.'\n\nThe credit is a single $450 issuance with the required reason code, and no split or related credits exist for this incident.\n\nThe helpdesk record shows no prior or subsequent credits linked to customer M. Adeyemi on this order, so there is no aggregate that would climb into the $501-$5,000 Support Manager band. The reason code SHIP_DELAY maps to an approved service-recovery category, and the four-day miss against a guaranteed delivery date is documented in the ticket history. The team lead's Slack acknowledgment is informational and not a required approval at this tier.",
+  "question": "Was this goodwill credit properly authorized as recorded? Answer Yes or No.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Jvia Marsh",
+    "title": "Customer Support Operations Analyst",
+    "organization": "Ilkeston Retail",
+    "years_experience": 6,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge"
+}

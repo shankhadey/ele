@@ -1,0 +1,25 @@
+{
+  "title": "Two Conflicting Precedents on Third-Party Subprocessor Approval",
+  "category": "precedent_exception",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "You are a privacy counsel at Oakhurst Cloud. The Platform team wants to add a new subprocessor, 'Kestrel Analytics,' that will process EU customer personal data for product telemetry. They need your approval path.\n\nActive policy: Subprocessor Onboarding Standard SOS-2.0, effective 2024-09-01. Any subprocessor touching EU personal data requires: (1) a completed DPIA, (2) Standard Contractual Clauses executed, and (3) approval by the Data Protection Officer (DPO). SOS-2.0 removed the prior 'low-risk telemetry' fast-track that had existed under SOS-1.4, under which telemetry-only vendors could be approved by an Engineering Director without a DPIA.\n\nPrecedent A (approval record): 2024-06-20, vendor 'Larkspur Metrics,' EU telemetry data, approved by Engineering Director Sam Ortiz via the low-risk telemetry fast-track, no DPIA. Policy version at decision: SOS-1.4.\n\nPrecedent B (approval record): 2024-10-15, vendor 'Fenwick Insights,' EU telemetry data, approved by DPO Anita Rao after a DPIA and executed SCCs. Policy version at decision: SOS-2.0. Notes: \"Fast-track no longer available under 2.0; full path required.\"\n\nThe Platform team writes: \"Kestrel is telemetry-only, exactly like Larkspur. Sam Ortiz approved Larkspur without a DPIA, so an Engineering Director sign-off should be fine here too \u2014 let's not over-engineer this.\"\n\nKestrel will begin processing next month. No DPIA has been started. There is no emergency or regulator deadline in play.",
+  "question": "Which approval path applies to onboarding Kestrel Analytics?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Helena Vasquez",
+    "title": "Senior Privacy Counsel",
+    "organization": "Oakhurst Cloud",
+    "years_experience": 12,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Engineering Director sign-off without a DPIA, following the Larkspur Metrics precedent for equivalent telemetry-only data.",
+    "The full SOS-2.0 path: completed DPIA, executed SCCs, and DPO approval, following the Fenwick Insights precedent decided under the current policy.",
+    "Engineering Director sign-off now, with a DPIA to be completed retroactively once Kestrel begins processing.",
+    "DPO approval with executed SCCs but no DPIA, since telemetry-only vendors are exempt from the DPIA requirement."
+  ]
+}

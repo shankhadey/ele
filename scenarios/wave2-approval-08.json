@@ -1,0 +1,19 @@
+{
+  "title": "Cleanroom HVAC Capex Split Across Three Requisitions",
+  "category": "approval_chain",
+  "domain": "other",
+  "difficulty": "expert",
+  "scenario_text": "A capital-controls audit agent at Haldane Labs is reviewing authorization on a facilities upgrade project.\n\n**Capital Expenditure Authority Matrix**\n- Up to $50,000: Site Director.\n- $50,001-$150,000: VP Operations AND Finance review (business case attached).\n- Above $150,000: CFO approval AND Audit Committee notification.\n- Anti-splitting rule: 'Purchase orders that fund a single project or asset may not be divided to remain under an approval limit. The aggregate value of POs sharing a project code or serving one asset determines the governing tier.'\n\n**Coupa Purchase Orders**\n- PO-5510: Vendor 'CleanAir Systems', $48,000, approved by Site Director (Devi N.), 2026-10-05.\n- PO-5511: Vendor 'CleanAir Systems', $47,500, approved by Site Director (Devi N.), 2026-10-06.\n- PO-5512: Vendor 'CleanAir Systems', $44,500, approved by Site Director (Devi N.), 2026-10-06.\n- All three cite project code PRJ-77 and the scope 'Cleanroom C HVAC recirculation upgrade (single commissioned system)'.\n\n**Slack #facilities-capex (reconstructed)**\n- Buyer: 'CleanAir bid the Cleanroom C HVAC upgrade at $140,000 total.'\n- Devi N. (Site Director): 'Break it into three POs under $50K each so I can approve. One PO and it goes to VP Ops and Finance with the business case.'\n- Buyer: 'Cut PO-5510, PO-5511, PO-5512 - all approved by you.'\n\nNo VP Operations approval, Finance review, or business case appears in Coupa, Slack, or email. The three POs fund one commissioned HVAC recirculation system for Cleanroom C under a single project code.",
+  "question": "Applying the anti-splitting rule, what is the governing aggregate value that determines the required approval tier for this project?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Devi Nair",
+    "title": "Facilities Capital Program Manager",
+    "organization": "Haldane Labs",
+    "years_experience": 12,
+    "domain_expertise": "other"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge"
+}

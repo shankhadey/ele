@@ -1,0 +1,25 @@
+{
+  "title": "Custom Payment Terms Under the Revised Deal Approval Matrix",
+  "category": "precedent_exception",
+  "domain": "sales_deal_desk",
+  "difficulty": "hard",
+  "scenario_text": "You are on Deal Desk at Aldous Systems. AE Marcus Feld is closing a new logo, Verdant Retail, at $520K ACV and has agreed to Net 75 payment terms to win the deal. He wants terms approved before month-end, in three days.\n\nActive policy: Deal Approval Matrix DAM v6.0, effective 2025-01-01. Non-standard payment terms are tiered: Net 0-30 AE self-approve; Net 31-60 VP Finance; anything beyond Net 60 requires CFO approval plus a written cash-flow impact note. DAM v6.0 lowered the CFO trigger to 'beyond Net 60' from the prior 'beyond Net 90' under DAM v5.0, which had let VP Finance approve anything up to Net 90.\n\nMarcus's note in the CRM opportunity: \"Deal Desk \u2014 precedent is clear. In Q3 last year I closed Thornbury Outfitters at Net 75 and VP Finance Dana Reyes approved it directly, no CFO needed. Same terms, smaller deal even. Just mirror Dana's approval so we can sign.\"\n\nDeal-desk log for the cited precedent: Thornbury Outfitters, closed 2024-08-14, Net 75 terms, approver Dana Reyes (VP Finance), policy version at decision: DAM v5.0. Note: \"Within VP Finance authority under v5.0 (<= Net 90).\"\n\nCurrent Verdant deal: no strategic-account flag, no CFO pre-authorization, standard product, no unusual clauses beyond the payment terms. Finance confirms nothing else is atypical.",
+  "question": "What approval is required for Verdant Retail's Net 75 payment terms?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Nadia Coburn",
+    "title": "Senior Deal Desk Analyst",
+    "organization": "Aldous Systems",
+    "years_experience": 8,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "VP Finance approval alone, mirroring the Thornbury Outfitters precedent for identical Net 75 terms on a comparable deal.",
+    "CFO approval plus a written cash-flow impact note, because DAM v6.0 requires CFO sign-off for any terms beyond Net 60; the Thornbury precedent was decided under the superseded v5.0.",
+    "AE self-approval, since Net 75 is a routine concession that does not materially change the contract value.",
+    "Regional Sales Director approval, because payment terms are a sales concession rather than a finance decision."
+  ]
+}

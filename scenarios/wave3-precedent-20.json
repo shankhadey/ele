@@ -1,0 +1,19 @@
+{
+  "title": "Renewal Fee Credit Turning on How the Dispute Resolved",
+  "category": "precedent_exception",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "You are the revenue operations director at Ignis Power, an energy-services provider. A commercial customer, 'Wexler Industrial,' is renewing and asking for a one-time fee credit tied to a billing dispute from the prior term. You must decide whether the credit applies, and the account team cites a prior credit.\n\nActive policy: Billing Concession Standard BCS-2, effective 2024-09-01 (unchanged since). A renewal fee credit for a prior-term billing dispute is granted ONLY when the dispute was formally resolved in the customer's favor - meaning Ignis was found to have billed in error - approved by the RevOps Director. When a disputed charge is investigated and resolved in Ignis's favor (the billing was correct), no concession is due, and the account is simply renewed at standard terms.\n\nPrecedent A (billing log): 2024-12-10, 'Draymoor Freight,' renewal fee credit granted. Note: \"Dispute resolved in customer's favor - metering error confirmed on Ignis's side; credit approved by RevOps Director.\"\n\nPrecedent B (billing log): 2025-03-22, 'Halbrook Mills,' renewal fee credit denied. Note: \"Dispute investigated and resolved in Ignis's favor - charges were correct; no concession, renewed at standard terms.\"\n\nCurrent facts: Wexler's prior-term dispute was investigated and closed with a finding that Ignis's charges were correct (resolved in Ignis's favor). The account manager writes: \"Draymoor got a credit after their dispute last year, so give Wexler the same at renewal to keep them happy.\"",
+  "question": "State the correct decision and the single controlling reason as one short phrase.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Priya Anand",
+    "title": "Revenue Operations Director",
+    "organization": "Ignis Power",
+    "years_experience": 12,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

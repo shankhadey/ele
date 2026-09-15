@@ -1,0 +1,25 @@
+{
+  "title": "Orpheus Capital deal: 'signature imminent' versus the buyer being acquired",
+  "category": "cross_system_synthesis",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "A $900K expansion deal at Orpheus Capital, a B2B fintech, is forecast Commit to close this quarter with seven days left. In the #forecast Slack channel the AE writes: 'Champion says signature is imminent, procurement told us the paperwork is basically done. This is a lock - keep it in Commit.' Salesforce shows the opportunity at 'Contracting' and the AE's last note, 14 days old, reads 'exec sponsor fully bought in.'\n\nThree newer signals cut against the call. A market-intelligence alert (PitchBook) fired two days ago: the customer was acquired by a larger competitor of Orpheus's, deal announced publicly, with the acquirer's procurement to standardize vendor contracts post-close. In Gong, a call yesterday captured the customer's finance lead saying: 'Anything not already signed is on hold until the new owners set the vendor strategy - I can't commit new spend.' That call post-dates the AE's 'imminent' note. In the customer's procurement portal, the requisition tied to this deal was moved from 'Approved' to 'On Hold - M&A review' this morning. The DocuSign envelope the AE cites remains unopened after eight days.\n\nEach fact has an innocent reading in isolation: acquisitions sometimes honor in-flight deals, finance leaders hedge, portals lag, and envelopes sit over busy weeks. But together - a just-announced acquisition by a competitor, the finance lead freezing unsigned spend after the verbal optimism, the requisition flipped to M&A-hold, and an untouched contract - they show purchasing authority has shifted to an acquirer with no reason to sign this quarter. The AE's 'lock' read predates the acquisition alert. You run deal desk and are scrubbing Commit. What should you recommend?",
+  "question": "What should deal desk recommend for the Orpheus Capital expansion deal?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Tomas Vidal",
+    "title": "Senior Manager, Deal Desk",
+    "organization": "Lydian Markets",
+    "years_experience": 11,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Keep the deal in Commit for this quarter; the champion says signature is imminent and procurement said the paperwork is nearly done.",
+    "Escalate internally to expedite signature and push the customer to execute the DocuSign envelope before quarter-end.",
+    "Move the deal out of Commit and re-baseline it: the competitor acquisition, the finance lead's freeze on unsigned spend recorded after the optimism, the requisition flipped to M&A-hold, and the unopened contract together show purchasing authority has moved to the acquirer and the deal cannot reliably close this quarter.",
+    "Offer an end-of-quarter incentive to the existing champion to accelerate the signature before the acquisition closes."
+  ]
+}

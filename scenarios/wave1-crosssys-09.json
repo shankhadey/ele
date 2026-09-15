@@ -1,0 +1,19 @@
+{
+  "title": "Ashcombe Freight pipeline SLA breach: blame the ETL versus broker disk exhaustion",
+  "category": "cross_system_synthesis",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "scenario_text": "Ashcombe Freight's nightly shipment-analytics pipeline has missed its 06:00 SLA; downstream dashboards are stale. PagerDuty paged the data on-call at 05:20. In the #data-oncall Slack channel the on-call writes: 'The ETL transform job is running way over its usual time - I think the Spark job is just slow tonight, maybe needs more executors. I'll bump the cluster size and rerun it.'\n\nThe broader telemetry points elsewhere. Datadog shows that the Kafka broker feeding the pipeline has a disk at 98% utilization and climbing; consumer lag on the ingestion topic has grown from near zero to several million messages over the last three hours and is still rising. The Spark ETL job is not slow because of CPU - its tasks are blocked waiting on input that is not arriving, because the broker has begun rejecting or throttling writes as it runs out of disk. CloudWatch shows that a change two days ago migrated the broker to a new instance type with a smaller attached EBS volume, and the volume was never resized to match the previous capacity; retention settings still assume the old, larger disk. Producer error rates in Datadog spiked at the same time disk crossed 90%.\n\nThe on-call's 'slow Spark job' reading fits the visible symptom - the ETL running long - but treats a downstream effect as the cause. Individually, high consumer lag, a full disk, or a recent instance migration might each look like separate noise. Together they form a clear chain: undersized broker disk after a migration, disk filling, writes throttled, ingestion backing up, ETL starved of input. You are the incident commander joining the bridge. What is the root cause the team should address?",
+  "question": "What is the root cause the on-call should address?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Samuel Ortega",
+    "title": "Data Platform Engineering Manager",
+    "organization": "Ashcombe Freight",
+    "years_experience": 13,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge"
+}

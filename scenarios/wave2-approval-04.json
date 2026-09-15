@@ -1,0 +1,25 @@
+{
+  "title": "High-Severance Involuntary Exit Approved Below the Required Tier",
+  "category": "approval_chain",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "A people-ops controls agent at Farnham Foods is auditing authorization on an involuntary termination with severance.\n\n**Termination / Severance Authority Matrix**\n- Voluntary resignation processing: Manager AND HRBP.\n- Involuntary termination, severance up to $50,000: Director AND HRBP AND Employee Relations (ER) review.\n- Involuntary termination with severance above $50,000, OR any exit at Director level or above: VP People AND Legal sign-off, IN ADDITION to Director, HRBP, and ER review.\n\n**Workday Change Record**\n- WD-2255: Employee 'M. Alvarez', Senior Manager (individual contributor track, non-executive).\n- Change: involuntary termination with a $72,000 severance package.\n- Approved by (field): 'Director - Paul R.; HRBP - Ines V.; ER review - complete.'\n- VP People: (empty). Legal: (empty).\n\n**Slack #people-changes (reconstructed)**\n- Paul R. (Director): 'Alvarez exit is confirmed, severance lands at $72K. I've approved, Ines has HRBP, ER has reviewed.'\n- Ines V. (HRBP): 'HRBP approval added; ER signed off on the package.'\n- Paul R.: 'That's Director, HRBP and ER - that's our sign-off, let's process it.'\n- (no VP People or Legal entries appear anywhere)\n\nWorkday shows the termination as effective with the severance queued for the next payroll cycle. The $72,000 package exceeds the $50,000 line, and no VP People or Legal sign-off appears in Workday, Slack, or email.",
+  "question": "What should the audit conclude about the authorization of this termination and severance?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Ines Vestergaard",
+    "title": "Senior HR Business Partner",
+    "organization": "Farnham Foods",
+    "years_experience": 9,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Valid - the Director, HRBP, and ER all approved in Workday, which is the standard chain for an involuntary exit.",
+    "Valid, but a documentation cleanup is needed - note the severance amount in the file and send VP People an informational copy; the existing approvals stand.",
+    "Invalid - a $72,000 severance exceeds the $50,000 line, which requires VP People AND Legal sign-off in addition to the Director, HRBP, and ER approvals on file; those two required approvals are missing, so the exit was processed without sufficient authority and must be re-authorized at the VP People and Legal tier.",
+    "Invalid - any involuntary termination requires full Board of Directors and CEO approval, so the exit must be escalated to the Board before it can stand."
+  ]
+}

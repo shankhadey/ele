@@ -1,0 +1,25 @@
+{
+  "title": "Vendor Consolidation Across Procurement, AP, and Contracts After a Carve-Out",
+  "category": "entity_resolution",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "scenario_text": "A procurement analyst at Halcyon Data is running an annual vendor spend consolidation to negotiate a single master agreement. The following records surface for what may be one supplier.\n\n**Coupa (Procurement) — Supplier Records**\n- Supplier: 'Verradyne Logistics LLC' | Status: Active | Category: Freight & Fulfillment | YTD PO spend: $612,000 | Tax ID (EIN): 47-3320119\n- Supplier: 'Verradyne Freight' | Status: Active | Category: Freight & Fulfillment | YTD PO spend: $88,400 | Tax ID: (blank)\n\n**NetSuite (Accounts Payable) — Vendor Ledger**\n- Vendor: 'Verradyne Logistics' | Payments YTD: $541,000 | Remit-to bank: First Meridian Bank acct ending 8842 | EIN: 47-3320119\n- Vendor: 'VRD Fulfillment Services Inc.' | Payments YTD: $147,000 | Remit-to bank: First Meridian Bank acct ending 8842 | EIN: 47-3320119\n\n**Contract Management (Ironclad) — Agreements**\n- MSA with 'Verradyne Logistics LLC' signed 26 months ago. Assignment clause permits transfer to affiliates with written notice.\n- Amendment filed 4 months ago: 'Effective at close of the carve-out, the Freight & Fulfillment book of business, including this MSA, is assigned to VRD Fulfillment Services Inc., a wholly-owned entity of Verradyne Holdings. Verradyne Freight is a discontinued DBA of Verradyne Logistics LLC and is being retired.'\n\n**Email (AP inbox, 3 months ago)**\nFrom Verradyne AR: 'Please note all new invoices will be issued under VRD Fulfillment Services Inc. going forward. Banking details are unchanged. The Verradyne Freight trade name should no longer be used.'\n\nThe analyst must produce a single consolidated supplier view for the negotiation, deciding how many real-world supplier entities exist today and which name should anchor the consolidated record.",
+  "question": "How many distinct active supplier entities should the consolidated view contain, and which entity should anchor it for the go-forward master agreement?",
+  "answer_format": "multiple_choice",
+  "choices": [
+    "Four entities — each distinct record (Verradyne Logistics LLC, Verradyne Freight, Verradyne Logistics, VRD Fulfillment Services Inc.) is tracked separately until each is manually merged",
+    "Two entities — 'Verradyne Logistics LLC' and 'VRD Fulfillment Services Inc.' are separate companies with separate agreements and must not be consolidated",
+    "One entity — all four records are the same supplier; 'VRD Fulfillment Services Inc.' is the correct go-forward anchor because the MSA was assigned to it at the carve-out and all new invoicing is under that name",
+    "One entity — all four records are the same supplier; 'Verradyne Logistics LLC' should remain the anchor because it holds the original signed MSA and the highest spend"
+  ],
+  "contributor": {
+    "name": "Priya Raman",
+    "title": "Senior Procurement Analyst",
+    "organization": "Halcyon Data",
+    "years_experience": 9,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "batch2.json",
+  "split": "challenge"
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Auditing a Split Purchase Order Against Procurement Approval Authority",
+  "category": "approval_chain",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "A procurement-audit agent at Ridgeline Energy is reviewing a capital purchase for authorization validity.\n\n**Coupa (Procurement) — Purchase Orders**\n- PO-3001: Vendor 'Apex Turbine Parts', $48,000, approved by Cost Center Manager (Dana Cole). Date: 2026-05-04.\n- PO-3002: Vendor 'Apex Turbine Parts', $47,500, approved by Cost Center Manager (Dana Cole). Date: 2026-05-04.\nBoth POs reference the same requisition REQ-780 and the same line item description ('Turbine blade set, unit 4 overhaul').\n\n**Procurement Authority Matrix (current)**\n- Up to $50,000: Cost Center Manager.\n- $50,001-$250,000: Director of Procurement, with a competitive-bid waiver or 3 quotes attached.\n- Above $250,000: VP of Operations + Finance review.\n- Anti-splitting rule: 'Requisitions must not be divided into multiple POs to remain under an approval threshold. Aggregate value of POs sharing a requisition or covering one deliverable determines the required approval level.'\n\n**Slack — #procurement**\nRequester: 'Vendor split it into two POs so it would clear faster under Dana.'\nDana Cole: 'Each PO is under my $50K limit, so I approved both.'\n\n**Email**\nNo Director of Procurement approval and no competitive quotes are attached to REQ-780.",
+  "question": "What should the audit agent conclude about the authorization of this purchase?",
+  "answer_format": "multiple_choice",
+  "choices": [
+    "Valid — each PO is under the $50,000 Cost Center Manager limit and was approved by the correct role",
+    "Valid but needs a documentation cleanup — attach quotes retroactively and note the two POs in the file; the approvals themselves stand",
+    "Invalid as authorized — the two POs share REQ-780 and cover one deliverable, so the anti-splitting rule sets the aggregate value at $95,500, which requires Director of Procurement approval plus a bid waiver or 3 quotes; flag for re-authorization at the correct level",
+    "Invalid — the purchase exceeds $250,000 in aggregate and requires VP of Operations and Finance review"
+  ],
+  "contributor": {
+    "name": "Owen Brandt",
+    "title": "Procurement Audit Lead",
+    "organization": "Ridgeline Energy",
+    "years_experience": 13,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "batch2.json",
+  "split": "challenge"
+}

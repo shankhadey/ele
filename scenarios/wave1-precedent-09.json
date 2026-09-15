@@ -1,0 +1,25 @@
+{
+  "title": "Refund Window Exception on a Downgraded Support Plan",
+  "category": "precedent_exception",
+  "domain": "customer_success_support",
+  "difficulty": "standard",
+  "scenario_text": "You are a support operations specialist at Thistlewood Care. A customer, 'Bramble Clinic,' is asking for a full refund on an annual Premium Support add-on they purchased 40 days ago and now say they no longer need.\n\nActive policy: Refund Policy RP-3, effective 2024-03-01. Support add-ons are refundable in full only within 30 days of purchase (self-service via the CS Manager). Between 31 and 90 days, only a prorated refund is available, and it requires CS Director approval. After 90 days, no refund.\n\nPrecedent (support log): 2023-12-08, customer 'Halgrove Dental' received a full refund on a Premium add-on purchased 45 days earlier. Approver: CS Manager Wei Chen. Policy version at decision: RP-2, under which the full-refund window was 60 days.\n\nBramble's account rep writes: \"Halgrove got a full refund at 45 days \u2014 Bramble is at 40 days, well inside that. Let's just give the full refund and move on.\"\n\nThere are no service-failure claims, no billing errors, and no retention-save escalation on the Bramble account. It is a straightforward change-of-mind cancellation.",
+  "question": "What refund is Bramble Clinic entitled to, and via which approval?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Nadia Fenwick",
+    "title": "Support Operations Specialist",
+    "organization": "Thistlewood Care",
+    "years_experience": 6,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "A full refund approved by the CS Manager, matching the Halgrove Dental precedent at 45 days.",
+    "A prorated refund approved by the CS Director, because at 40 days Bramble is in the 31-90 day window under the current RP-3 policy.",
+    "No refund, because the 30-day full-refund window under RP-3 has already passed.",
+    "A full refund, since change-of-mind cancellations are always fully refundable regardless of the window."
+  ]
+}

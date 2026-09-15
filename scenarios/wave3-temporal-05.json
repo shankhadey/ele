@@ -1,0 +1,25 @@
+{
+  "title": "A Sole-Source Exception Denied for an Unapproved Vendor",
+  "category": "temporal_consistency",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "A category manager at Alderwood Manufacturing must decide whether to grant a sole-source purchase exception for a specialized machining vendor, given how a comparable exception was handled earlier this year.\n\n**Decision A (2024-02-15)**\nA sole-source purchase exception for $72K was DENIED. Note: 'Sole-source purchases above $50K require a valid sole-source justification AND the vendor must be on the approved-supplier list. The requested vendor had not completed supplier onboarding and was not approved-listed. Denied on that basis.'\n\n**Current request C (2024-10-09)**\nA sole-source exception is requested for a $68K purchase of specialized machining. The proposed vendor, 'Kestrel Toolworks,' is on the approved-supplier list, has passed the required quality and security review, and the requesting engineer has documented a valid sole-source justification (the part is proprietary and single-sourced).\n\n**Sole-Source Policy (current, unchanged since 2023-01)**\nSole-source purchases above $50K require (1) a documented sole-source justification and (2) the vendor to be on the approved-supplier list. When both conditions are met, the category manager may approve. Purchases from vendors not on the approved-supplier list are ineligible for a sole-source exception regardless of justification. Both requirements have been in place since January 2023.\n\n**Slack \u2014 #procurement**\nBuyer: 'We denied a sole-source exception back in February for about this amount, so we should deny Kestrel too and keep it consistent.'\nManager: 'February was denied because that vendor wasn't approved-listed. Let me check Kestrel's status before we treat that as a precedent.'\n\nKestrel is approved-listed and review-cleared, and the sole-source justification is documented.",
+  "question": "How should the category manager handle the Kestrel Toolworks sole-source exception?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Towanda Blackwell",
+    "title": "Category Manager, Direct Materials",
+    "organization": "Alderwood Manufacturing",
+    "years_experience": 11,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Deny the exception, consistent with the February denial of a similar-sized sole-source request.",
+    "Approve the sole-source exception: Kestrel is on the approved-supplier list and has a documented justification, so both conditions are met \u2014 the February denial turned on an unapproved vendor, which is not the case here.",
+    "Escalate the exception to the VP of Operations, since sole-source purchases above $50K exceed the category manager's authority.",
+    "Split the purchase into two orders under $50K each to avoid the sole-source review entirely."
+  ]
+}

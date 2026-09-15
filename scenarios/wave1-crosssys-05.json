@@ -1,0 +1,25 @@
+{
+  "title": "Kirkwall Logistics vendor renewal: stale A rating versus a fresh breach",
+  "category": "cross_system_synthesis",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "scenario_text": "Kirkwall Logistics is 10 days from the auto-renewal of a $1.2M/year SaaS contract with a critical data-processing vendor. In the #procurement Slack channel, the buyer writes: 'This vendor has been great for three years. If we commit to a 3-year term now we lock in the loyalty discount. I say we let it auto-renew and countersign the extension.' The vendor's SecurityScorecard grade on file is still A, refreshed at last year's due-diligence cycle.\n\nThree newer signals sit outside that view. First, a security-news monitor flagged, three days ago, that the vendor publicly disclosed a data breach affecting customer records; the disclosure is on their own trust page and in trade press. Second, in the GRC system the vendor's SOC 2 Type II report expired last month and the replacement is 'in progress, not yet available' - so the current attestation of controls has lapsed. Third, an email from the vendor's legal team, received yesterday, proposes redline edits to the renewal that would remove the data-breach notification-and-liability clause and cap their liability at one month of fees.\n\nIndividually, procurement could rationalize each: breaches happen, SOC 2 renewals slip, and vendors always push liability language. The A grade is real but was set before any of this. Taken together - a live breach, a lapsed controls attestation, and the vendor trying to strip breach liability precisely at renewal - the risk posture has shifted materially, and the auto-renewal clock removes the leverage to address it once it fires. You own vendor risk for this contract. What should you recommend?",
+  "question": "What should you recommend regarding the vendor renewal?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Hannah Brecht",
+    "title": "Head of Third-Party Risk Management",
+    "organization": "Lindqvist Group",
+    "years_experience": 10,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Let the contract auto-renew and countersign the 3-year term now to capture the loyalty discount; the A security rating shows the vendor remains low-risk.",
+    "Focus on renegotiating the price down before signing, since $1.2M per year is a significant spend to lock in for three years.",
+    "Pause the auto-renewal and make signing conditional on an updated SOC 2 report, a breach post-mortem, and retention of the breach-notification and liability clauses: the recent breach, the lapsed attestation, and the attempt to strip liability together mark a material risk change the stale A rating does not capture.",
+    "Request a breach post-mortem from the vendor but allow the renewal to proceed on schedule to avoid any interruption to the data-processing service."
+  ]
+}

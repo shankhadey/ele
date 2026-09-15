@@ -1,0 +1,19 @@
+{
+  "title": "Merged Companies, Shared Bank Account",
+  "category": "entity_resolution",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "Grimsby Industrial's cash-application team is matching an incoming wire to open invoices. On 2024-05-02 a wire of $612,400 arrives from originating account routing 026009593 / account ending 7788, remitter name \"Atlas Cutting Tools.\" The remittance advice references three invoice numbers. In NetSuite, Grimsby has two customer records: \"Atlas Cutting Tools, Inc.\" (customer C-2201, EIN 04-3320119, open A/R $410,000) and \"Redline Machining Co.\" (customer C-2890, EIN 26-1188742, open A/R $202,400). The three referenced invoices split across both records: two invoices totaling $410,000 belong to Atlas (C-2201) and one invoice of $202,400 belongs to Redline (C-2890). The cash-app clerk is confused because the wire came from an \"Atlas\" account but references a Redline invoice. Research reveals: on 2024-01-15, Atlas Cutting Tools, Inc. acquired Redline Machining Co. in an asset+entity acquisition; Redline became a wholly-owned subsidiary but retains its own EIN and continues to be invoiced as a separate customer under its existing contract. A treasury consolidation memo (emailed from treasury@atlasct.com) states that post-acquisition, \"all group disbursements, including Redline's payables, now run through the Atlas master operating account ending 7788.\" Both customers' contracts remain separate in Ironclad; only the paying bank account was consolidated.",
+  "question": "How much of the $612,400 wire should be applied to the Redline Machining (C-2890) customer record?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Beatriz Salcedo",
+    "title": "Senior Cash Application Specialist",
+    "organization": "Grimsby Industrial",
+    "years_experience": 12,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge"
+}

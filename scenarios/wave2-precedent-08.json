@@ -1,0 +1,25 @@
+{
+  "title": "Pilot Extension Length With Two Governing Precedents",
+  "category": "precedent_exception",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "You are on Deal Desk at Harlow Networks. AE Bianca Roth is running a paid pilot with prospect Kessler Freight and wants to extend it to a total of 80 days because an integration blocker delayed evaluation.\n\nActive policy: Pilot Governance PG-2, effective 2025-01-01. Pilots run 30 days by default. Extensions to a total of up to 60 days require Regional Director approval. Any extension beyond 60 days requires VP Sales approval PLUS a documented technical-validation blocker recorded in the pilot tracker (e.g., an unresolved integration or environment issue attributable to the vendor or a third party). PG-2 replaced PG-1, under which an AE could self-extend a pilot to a total of 90 days with no additional sign-off.\n\nPrecedent A (deal-desk log): 2024-10-08, AE self-extended the 'Waypoint Cargo' pilot to 88 days with no other approval. Policy version at decision: PG-1. Note: \"AE self-extension per PG-1.\"\n\nPrecedent B (deal-desk log): 2025-03-14, the 'Ironvale Shipping' pilot extended to 78 days total, approved by VP Sales with a documented API-integration blocker logged in the tracker. Policy version at decision: PG-2. Note: \"Beyond 60 days; VP approval + logged blocker.\"\n\nCurrent facts: The Kessler pilot tracker documents an unresolved SSO integration blocker on Harlow's connector, dated and attributed. Bianca writes: \"I extended Waypoint to 88 days myself last fall, so I'll just self-extend Kessler to 80 and we're good.\"",
+  "question": "How should the Kessler Freight pilot extension to 80 days be approved?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Yusuf Amara",
+    "title": "Deal Desk Lead",
+    "organization": "Harlow Networks",
+    "years_experience": 10,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "The AE may self-extend to 80 days, mirroring the Waypoint Cargo self-extension for a comparable length.",
+    "It requires VP Sales approval plus the documented technical-validation blocker (already logged), following the Ironvale Shipping precedent under PG-2, because the extension exceeds 60 days.",
+    "It requires only Regional Director approval, since the extension is under the 90-day maximum permitted for pilots.",
+    "It cannot be extended at all, because pilots are hard-capped at 60 days under PG-2 with no exception."
+  ]
+}

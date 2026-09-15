@@ -1,0 +1,19 @@
+{
+  "title": "A Freeze Denial Overtaken by an Active Sev-2 Incident",
+  "category": "temporal_consistency",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "A release manager at Marigold Freight must decide whether a change can ship during the active change freeze, given how a comparable request was handled earlier in the same freeze.\n\n**Decision A (2024-12-20)**\nThe routing team asked to deploy a change to the dispatch service during the freeze. DENIED. Note: 'The change was a routine latency optimization with no active incident behind it. Under the freeze policy, only changes remediating an active Sev-1 or Sev-2 incident may deploy, and none was open. Denied.'\n\n**Current request C (2024-12-27)**\nThe same routing team asks to deploy essentially the same dispatch-service change. Since Decision A, NEW INFORMATION has emerged: at 06:14 today an active Sev-2 incident (INC-4471) was opened for elevated dispatch-assignment errors in production, and the on-call investigation identifies this exact change as the remediation. Monitoring shows customer-facing shipment delays.\n\n**Change Freeze Policy (current, in force for this freeze)**\nDuring the freeze, only changes that remediate an active Sev-1 or Sev-2 incident may deploy, and each such change must be signed off by a Director before it ships. All other changes \u2014 including routine optimizations \u2014 are blocked until the freeze lifts.\n\n**Slack \u2014 #releases**\nEng: 'We already got told no on this dispatch change a week ago, so it's blocked \u2014 no point asking again.'\nRelease mgr: 'A week ago there was no incident. There's an active Sev-2 now and this change is the fix, so the situation isn't the same. Let me confirm the approval path.'\n\nINC-4471 is confirmed active and tied to this change; the change is no longer a discretionary optimization.",
+  "question": "Now that an active Sev-2 incident requires this change as its remediation, whose approval is required for it to deploy during the freeze?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Priya Anand",
+    "title": "Release Engineering Manager",
+    "organization": "Marigold Freight",
+    "years_experience": 12,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge"
+}

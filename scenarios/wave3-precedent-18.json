@@ -1,0 +1,19 @@
+{
+  "title": "Erasure Timing Governed by the Retention Window, Not Incumbency",
+  "category": "precedent_exception",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "You are the privacy operations lead at Sabina Health Network. A former patient, 'J. Merrow,' has submitted a request to delete their account and associated records, and the health-information team must decide how to respond. They cite a prior deletion.\n\nActive policy: Health Records Erasure Standard HRE-3, effective 2024-08-01 (unchanged since). Patient erasure requests are handled by the health-information officer within 30 days, BUT medical treatment records must be retained for the minimum legal period of six years from the date of last service; while a record is inside that six-year window, erasure of the clinical record is suspended, the requester is informed of the retention basis, and the officer documents the suspension. Records past the six-year window are eligible for full erasure.\n\nPrecedent A (erasure log): 2025-03-02, patient 'L. Castell,' full erasure processed. Note: \"Last service in 2017; six-year retention window expired - full erasure applied.\"\n\nPrecedent B (erasure log): 2025-04-18, patient 'D. Ospina,' erasure suspended. Note: \"Last service in 2021; within six-year retention window - erasure suspended, requester notified, suspension documented.\"\n\nCurrent facts: Merrow's date of last service was 2023-02-10, placing the clinical record inside the six-year window (through 2029). The intake coordinator writes: \"We fully erased Castell not long ago with no problem, so let's just process Merrow the same way and close the ticket.\"",
+  "question": "State the correct handling and the single controlling reason as one short phrase.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Nora Finchley",
+    "title": "Privacy Operations Lead",
+    "organization": "Sabina Health Network",
+    "years_experience": 11,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

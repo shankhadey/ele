@@ -1,0 +1,25 @@
+{
+  "title": "The Retired DBA on the Invoice",
+  "category": "entity_resolution",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "Aldergrove Foods runs a wholesale distribution business and is reconciling accounts receivable in NetSuite against its Salesforce CRM. A collections analyst finds an aged $46,300 invoice (INV-88214, dated 2024-02-11) billed to \"Green Valley Grocers\" at 1200 Willow Rd, Fresno. The customer disputes it, saying they never traded under that name in 2024. Salesforce shows two accounts: Account A \"Green Valley Grocers\" (created 2019, status Inactive, billing 1200 Willow Rd Fresno, tax ID 94-2210087) and Account B \"Sierra Fresh Markets, Inc.\" (created 2023-06, status Active, billing 1200 Willow Rd Fresno, tax ID 94-2210087). A note on Account B from the AE reads: \"Customer filed a name change / rebrand effective 2023-05; 'Green Valley Grocers' is a retired trade name. All new orders under Sierra Fresh Markets.\" Ironclad shows one master supply agreement, signed 2020, amended 2023-05 to update the counterparty legal name to \"Sierra Fresh Markets, Inc.\" while preserving the same contract number and pricing. NetSuite order history shows shipments to 1200 Willow Rd continued uninterrupted through 2024. The invoice INV-88214 was auto-generated against the inactive Account A because a stale ship-to template still pointed there. The customer's payment history shows all remittances since mid-2023 came from a Sierra Fresh Markets bank account.",
+  "question": "What is the correct resolution for invoice INV-88214 and the customer's identity?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Marcus DeLeon",
+    "title": "Revenue Operations Manager",
+    "organization": "Aldergrove Foods",
+    "years_experience": 11,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "The invoice is invalid and should be written off, because \"Green Valley Grocers\" no longer exists as a customer and cannot be billed.",
+    "Green Valley Grocers and Sierra Fresh Markets are separate customers; the invoice is correctly billed to Account A and collections should proceed against it.",
+    "They are the same customer post name-change; re-issue INV-88214 against the active Sierra Fresh Markets account (Account B) and collect the $46,300, since the debt is valid.",
+    "The two accounts should be merged under the retired name \"Green Valley Grocers\" because it is the older, originating record with the longest history."
+  ]
+}

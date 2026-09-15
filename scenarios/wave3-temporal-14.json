@@ -1,0 +1,25 @@
+{
+  "title": "A Warranty Claim Denied for Accidental Damage",
+  "category": "temporal_consistency",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "A warranty-support specialist at Mulberry Apparel must decide whether to approve a warranty replacement for a returned item, given how a comparable claim was handled last month.\n\n**Decision A (2024-06-14)**\nCustomer 'Nadia Frost' submitted a warranty claim for a jacket 5 months after purchase. DENIED. Note: 'Inspection found the zipper failure was caused by accidental damage (a tear from external force), not a manufacturing defect. The warranty covers manufacturing defects only, so accidental damage is excluded. Denied.'\n\n**Current request C (2024-07-21)**\nCustomer 'Theo Blackwood' submits a warranty claim for a jacket 7 months after purchase. Inspection by the returns team confirms a seam separation consistent with a manufacturing defect (faulty stitching), with no sign of accidental damage or misuse.\n\n**Warranty Policy (current, unchanged this year)**\nProducts carry a 12-month limited warranty covering manufacturing defects. Accidental damage, misuse, and normal wear are excluded. Confirmed manufacturing-defect claims within the 12-month period are approved for repair or replacement at the specialist's discretion. The 12-month term and defect-only coverage have not changed this year.\n\n**Slack \u2014 #warranty-support**\nAgent: 'We denied a jacket warranty claim just last month, so let's deny Theo's too and keep it consistent.'\nSpecialist: 'Last month's was denied for accidental damage. Theo's inspection points to a stitching defect. Let me check the inspection finding before we call that a precedent.'\n\nTheo's claim is within the 12-month window and the inspection attributes the failure to a manufacturing defect.",
+  "question": "How should the specialist handle Theo Blackwood's warranty claim?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Sofia Marchetti",
+    "title": "Warranty Support Specialist",
+    "organization": "Mulberry Apparel",
+    "years_experience": 7,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Deny the claim, consistent with the June denial of a similar jacket warranty claim.",
+    "Approve the warranty claim: Theo's failure is a confirmed manufacturing defect within the 12-month window, whereas the June denial turned on accidental damage \u2014 a factor absent here \u2014 so that denial does not govern.",
+    "Escalate the claim to a supervisor, given that a comparable claim was recently denied.",
+    "Offer a partial refund or a discount on a replacement as a compromise between approval and denial."
+  ]
+}

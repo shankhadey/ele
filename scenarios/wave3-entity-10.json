@@ -1,0 +1,25 @@
+{
+  "title": "Is the Deploy Bot a Person?",
+  "category": "entity_resolution",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "Haugesund Fintech is running an access recertification and its identity-governance tool (SailPoint) flagged an account for manager review as if it were an employee who never logs in interactively. The account is svc-deploy-prod@haugesund.io in Okta, marked profile type \"Service,\" owner attribute \"platform-team,\" created 2021-08-10, MFA disabled, used only by CI/CD from fixed pipeline IP ranges. SailPoint correlated it to a Workday-like HR feed because a stale integration mapped the display name \"Deploy Prod\" into the worker table with a fabricated employee-style ID W-00000. There is no national ID, no personal email, no benefits enrollment, no hire requisition, and no manager 1:1 history; the \"manager\" field was auto-filled with the platform team lead. The account holds broad production deploy entitlements. Meanwhile a real engineer, \"David Roos\" (Workday E-41220, national ID ending 6612, Okta droos@haugesund.io), is the registered technical owner of the service account. Security must classify svc-deploy-prod correctly: is it a human identity requiring access recertification and offboarding-on-termination, or a non-human (machine) identity requiring an accountable owner, secret rotation, and workload governance? Misclassifying it as a person would route it into leaver processes; misclassifying David's human account as a bot would exempt it from recertification. The recertification deadline is in ten days, and the classification chosen will decide which governance workflow, human-leaver or machine-credential rotation, the account is routed into.",
+  "question": "How should the svc-deploy-prod@haugesund.io account be classified and governed?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Tobias Lund",
+    "title": "Identity Governance Architect",
+    "organization": "Haugesund Fintech",
+    "years_experience": 13,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Treat svc-deploy-prod as an employee identity, recertify it like a person, and disable it whenever any platform-team member is terminated.",
+    "Classify svc-deploy-prod as a non-human service identity governed by an accountable human owner (David Roos), with secret rotation and workload access review, and remove the erroneous W-00000 worker mapping.",
+    "Merge svc-deploy-prod into David Roos's account droos@haugesund.io, since he owns it and that consolidates the identity.",
+    "Delete the service account immediately because service accounts should never hold production entitlements."
+  ]
+}

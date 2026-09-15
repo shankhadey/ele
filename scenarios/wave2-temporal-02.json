@@ -1,0 +1,25 @@
+{
+  "title": "An Uplift Waiver the Policy Still Permits",
+  "category": "temporal_consistency",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "A deal desk analyst at Bexley Cloud must decide whether to waive the annual price uplift on a renewal, given how a comparable renewal was handled earlier this year.\n\n**Decision A (2024-05)**\nCustomer 'Hartwell Freight' | 2-year renewal | ARR $410K. Requested a waiver of the standard 5% annual uplift. Deal Desk APPROVED the waiver directly. Note: 'Under the renewal policy effective 2024-01-01, Deal Desk may waive the annual uplift for renewals with ARR of at least $300K.'\n\n**Current request C (2024-10-14)**\nCustomer 'Prowse Logistics' | 2-year renewal | ARR $455K. Requesting a waiver of the 5% annual uplift to secure the renewal. The deal is otherwise standard and no other exceptions are outstanding.\n\n**Renewal Uplift Policy (current, effective 2024-01-01, unchanged since)**\nRenewals carry a standard 5% annual uplift. Deal Desk may waive the uplift for renewals with ARR of at least $300K. Waivers on renewals below $300K ARR require VP Sales approval. The $300K threshold and Deal Desk authority have been in force since January 1, 2024.\n\n**Slack \u2014 #deal-desk**\nAE: 'We waived the uplift for Hartwell back in May, and Prowse is basically the same deal. Can we just do the same?'\nAnalyst: 'Let me confirm the policy is still the same and that Prowse clears the ARR threshold before I sign off \u2014 but if it does, this is a clean repeat.'\n\nThe analyst is double-checking rather than assuming, but nothing about the governing rule has changed since Hartwell, and Prowse's ARR is well above the threshold.",
+  "question": "How should the analyst handle Prowse Logistics' uplift-waiver request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Ravi Chandran",
+    "title": "Deal Desk Manager",
+    "organization": "Bexley Cloud",
+    "years_experience": 12,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Escalate the waiver to VP Sales for approval, since uplift waivers are sensitive and warrant senior sign-off.",
+    "Approve the uplift waiver at Deal Desk: the policy is unchanged since Hartwell and Prowse's $455K ARR clears the $300K threshold, so the prior decision is valid precedent that governs here.",
+    "Deny the waiver, since granting it would set an unsustainable pattern of uplift concessions.",
+    "Offer to waive only half of the 5% uplift as a compromise to limit the margin impact."
+  ]
+}

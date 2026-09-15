@@ -1,0 +1,25 @@
+{
+  "title": "Kallisto Media renewal: 'they always contract in January' versus a competitor go-live",
+  "category": "cross_system_synthesis",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "Kallisto Media is a $610K ARR streaming-analytics account renewing in 47 days. In Salesforce the health score is yellow-green and the opportunity sits at 'Renewal - Likely.' In the #cs-media Slack channel the CSM writes: 'Kallisto trims seats every January when their contractor budgets reset, then adds them back by March. This is the normal winter dip, not churn. Leaving it as Likely.'\n\nOther systems complicate that read. In the admin console, the customer's IT admin deprovisioned 38% of licensed seats last week - but the accounts removed are the daily power users on the core reporting product, not the seasonal contractor logins the CSM described. In Gong, a call recorded three days ago captures the customer's analytics director saying: 'We're standing up Rivetua in parallel and moving the exec dashboards over first.' In Zendesk, a ticket opened yesterday requests a full historical data export in a competitor-compatible schema. And in the shared Slack Connect channel, the customer's project manager posted a go-live checklist titled 'Rivetua cutover - Phase 1' with dates inside the renewal window.\n\nEach signal has an innocent reading: seat counts dip seasonally, teams evaluate alternatives without switching, and data exports happen for audits. But the specifics cut against the seasonal story - the deprovisioned accounts are the core power users, not contractors; the competitor is named and already being stood up; the export is in a rival schema; and there is a dated cutover checklist. Together they describe an active migration, not a winter dip. The CSM's 'normal dip' note predates the Gong call and the cutover checklist. You run the renewals desk and are scrubbing the forecast. What should you recommend for Kallisto?",
+  "question": "What should the renewals desk recommend for the Kallisto Media account?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Ingrid Sollberg",
+    "title": "VP of Customer Success",
+    "organization": "Halcyon Streaming Group",
+    "years_experience": 11,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Keep the renewal at 'Likely' and wait for the usual March seat rebound; the January contraction is a known seasonal pattern for this account.",
+    "Prioritize resolving the data-export ticket quickly so the customer stays satisfied through the renewal window.",
+    "Escalate to a save play with the account exec now: the power-user deprovisioning, the named competitor go-live, the rival-schema export request, and the dated cutover checklist together show an in-progress migration that the seasonal-dip explanation no longer fits.",
+    "Offer a standard loyalty discount at renewal time to counter the seat reduction, treating it as a routine budget squeeze."
+  ]
+}

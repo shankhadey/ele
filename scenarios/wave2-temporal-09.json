@@ -1,0 +1,25 @@
+{
+  "title": "An Off-Cycle Promotion Under the New Leveling Rule",
+  "category": "temporal_consistency",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "A talent partner at Instow Group must decide how to handle an off-cycle promotion request from Senior Engineer (L4) to Staff Engineer (L5), given how a similar request was handled earlier this year.\n\n**Decision A (2024-01)**\nManager requested an off-cycle L4-to-L5 promotion for an engineer. DENIED. Note: 'Off-cycle promotions to L5 then required both the Director and the VP of Engineering to approve, plus a calibration packet. Only the Director had signed off; the VP had not. Denied for missing the VP approval.'\n\n**Current request C (2024-09-04)**\nManager requests an off-cycle L4-to-L5 promotion for a different engineer, citing sustained scope and a retention risk. The Director has signed off and a complete calibration packet is attached.\n\n**Promotion Policy (current; new leveling rules effective 2024-06-01)**\nAs of June 1, 2024, off-cycle promotions to L5 require Director approval plus a complete calibration packet. VP of Engineering approval is NO LONGER required for L5 (it is now required only for L6 and above). The prior dual Director-plus-VP requirement for L5 was removed under the new leveling rules.\n\n**Slack \u2014 #people-ops**\nManager: 'We tried an off-cycle L5 promo in January and it got denied. This one will just get denied too, right?'\nPartner: 'The leveling rules changed on June 1. Let me check what L5 actually requires now before assuming it's a repeat.'\n\nThe manager is treating the January denial as proof that off-cycle L5 promotions are blocked. No one has checked the current approval requirements against what is on file.",
+  "question": "How should the talent partner handle the off-cycle L4-to-L5 promotion request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Beatrice Nwosu",
+    "title": "Talent Partner",
+    "organization": "Instow Group",
+    "years_experience": 11,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Deny the promotion, consistent with the January denial of an off-cycle L5 promotion.",
+    "Approve the promotion, because under the current rules L5 requires only Director approval plus a calibration packet \u2014 both of which are on file \u2014 and the January denial's missing-VP-approval basis no longer applies.",
+    "Route the request to the VP of Engineering for approval, since the January denial hinged on missing VP sign-off.",
+    "Hold the promotion until the next promotion cycle as a compromise, rather than approving it off-cycle."
+  ]
+}

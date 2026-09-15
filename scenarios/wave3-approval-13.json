@@ -1,0 +1,19 @@
+{
+  "title": "Vendor Bank-Detail Change Made and Approved by One Clerk From an Email Request",
+  "category": "approval_chain",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "An accounts-payable audit agent at Graphite Networks is reviewing a change to a vendor's banking details in the vendor master.\n\n**Vendor Master Change Authority Matrix**\n- Non-financial edits (address, contact name): AP Clerk.\n- Bank-account or payment-detail changes: dual control - one person enters the change, a different authorized approver releases it, AND an independent callback to the vendor using a phone number already on file (not from the request) must be logged before the change is activated.\n- New vendor setup: add Procurement approval.\n\n**Vendor Master Change Record**\n- VMC-3302: Vendor 'Feldsparite Supply Co.' Change: bank account updated to a new IBAN.\n- Entered by: AP Clerk (Pam O.), 2026-04-22 11:02. Released by: AP Clerk (Pam O.), 2026-04-22 11:03.\n- Callback log: (empty). Source of new details: 'email from accounts@feldsparite-supply-invoices.com'.\n\n**Slack #ap (reconstructed)**\n- Pam O.: 'Feldsparite emailed new bank details for their next payment. Slightly different domain but looks like them.'\n- Peer: 'Want me to co-approve and call them?'\n- Pam O.: 'It's routine, I entered it and released it myself. We can call to confirm later if needed.'\n\nThe same clerk entered and released a bank-detail change sourced from an emailed request on a look-alike domain, with no independent approver and no callback logged.",
+  "question": "Name the control that was bypassed, whose absence exposes Graphite Networks to business-email-compromise fraud on the next payment.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Pam Ostrowski",
+    "title": "Accounts Payable Manager",
+    "organization": "Graphite Networks",
+    "years_experience": 8,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

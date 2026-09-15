@@ -1,0 +1,19 @@
+{
+  "title": "Above-Cap Relocation Reimbursement Citing an Older Approval",
+  "category": "precedent_exception",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "You are an HR business partner at Tiberia Works, an industrial manufacturer. A newly promoted plant engineer, Owen Marsh, is relocating for the role and has submitted $22,000 in relocation expenses, above the standard cap. He is citing a coworker's package.\n\nActive policy: Relocation Policy RP v4, effective 2025-01-01. Standard relocation reimbursement is capped at $15,000, approvable by the hiring manager. Any amount above the cap requires VP of HR approval plus a written business case documenting the exceptional need. RP v4 removed the prior 'director discretion' provision in RP v3, which had let a department director approve relocation packages up to $25,000 without VP involvement.\n\nThe hiring manager forwards a precedent from the HR case file: 2024-06-20, employee 'Cara Denholm' relocated with a $25,000 package approved directly by Director Paul Estes. Policy version at decision: RP v3. Note: \"Within director discretion under v3 (<= $25K).\"\n\nCurrent facts: Owen's move is a standard interstate relocation with no documented exceptional circumstances - no hard-to-fill critical-skills designation, no dual-household or hardship factor, and no leadership request that would support an above-cap package. His itemized expenses total $22,000, and no VP of HR approval or written business case exists on file. Finance has confirmed the $22,000 figure is accurate and that the overage above the $15,000 cap is $7,000. The hiring manager writes: \"Paul approved $25K for Cara last summer on his own authority. Owen's ask is lower at $22K, so a director sign-off should be plenty here - let's not turn a routine move into a committee exercise.\"",
+  "question": "State the decision and the single controlling reason as one short phrase.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Ingrid Halvorsen",
+    "title": "HR Business Partner",
+    "organization": "Tiberia Works",
+    "years_experience": 10,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

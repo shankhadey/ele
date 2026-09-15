@@ -1,0 +1,25 @@
+{
+  "title": "Reconstructing Whether an Emergency Production Deploy Was Properly Authorized",
+  "category": "approval_chain",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "scenario_text": "A change-management auditor at Copperfield Payments is reviewing an emergency production deployment to determine if it was properly authorized.\n\n**Change record (Jira Change CR-6620)**\nChange: 'Hotfix payment-router timeout config' | Environment: Production | Risk: High (touches payment routing) | Deployed: 2026-06-02 02:14 UTC | Change type field: 'Emergency' | Approved-by field: [blank] | Linked incident: INC-4471 (SEV-1, payment failures).\n\n**Change Management Policy v2.0**\n- Standard prod change: CAB approval (change advisory board) required in advance.\n- Emergency change: may bypass advance CAB IF (a) tied to an active SEV-1/SEV-2 incident, AND (b) verbally or electronically approved at deploy time by the on-call Engineering Manager or higher, AND (c) a retrospective CAB review is completed within 3 business days with the approver recorded.\n- High-risk payment changes additionally require Security sign-off, which may be obtained in the retrospective review for emergency changes.\n\n**Slack — #incident-4471 (2026-06-02, 02:05-02:12 UTC)**\nSRE: 'Router timeout is dropping payments. I have a config hotfix ready. Need emergency approval to push to prod.'\nOn-call EM (02:10): 'Approved — push it. Log it as emergency against INC-4471.'\n\n**ServiceNow / CAB records**\nToday is 2026-06-09 (5 business days later). No retrospective CAB review has been logged for CR-6620. No Security sign-off recorded.",
+  "question": "How should the auditor assess the authorization of CR-6620?",
+  "answer_format": "multiple_choice",
+  "choices": [
+    "Fully valid — the on-call EM approved it in Slack against an active SEV-1, which satisfies the emergency-change policy",
+    "Invalid — Slack approval is never an acceptable channel for a high-risk production change, so the deploy was unauthorized",
+    "Partially valid — the deploy-time emergency approval was proper (active SEV-1 + on-call EM in Slack), but the change is now non-compliant because the required retrospective CAB review is overdue (past 3 business days) and Security sign-off is still missing; flag those gaps for remediation",
+    "Invalid — emergency changes are not permitted for payment systems under any circumstances"
+  ],
+  "contributor": {
+    "name": "Nadia Farouk",
+    "title": "Change Management & Compliance Auditor",
+    "organization": "Copperfield Payments",
+    "years_experience": 10,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "batch2.json",
+  "split": "challenge"
+}

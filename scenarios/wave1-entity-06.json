@@ -1,0 +1,19 @@
+{
+  "title": "The Contractor Who Became an Employee",
+  "category": "entity_resolution",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "Everly Health's People Ops team is auditing headcount and tenure for a benefits-eligibility report. A discrepancy surfaces for a data engineer. Workday shows employee record E-55820, \"Jonathan A. Pruitt,\" hire date 2023-09-05, worker type Regular (FTE), home email jon.pruitt@gmail.com, national ID (SSN) ending 4471. The prior contractor system (a Beeline VMS export) shows a contingent worker \"John Pruitt\" via staffing agency TalentBridge, assignment start 2022-02-14, assignment end 2023-09-01, worker type Contingent, personal email jon.pruitt@gmail.com, no SSN captured (agency-employed). Okta shows a single active user jpruitt@everlyhealth.com created 2022-02-16, with a profile attribute \"employmentStatus\" that flipped from \"Contractor\" to \"Employee\" on 2023-09-05. The Workday record's \"prior service\" field is blank. A Slack message from the hiring manager reads: \"Jon's been with us on the data platform team since Feb 2022 as a contractor through TalentBridge; we converted him to FTE the day after his contract ended.\" Everly's benefits policy vests certain benefits based on continuous service, but contingent-worker time through a staffing agency does not count toward FTE benefits tenure; benefits tenure begins at the FTE conversion date. The audit question is strictly about benefits-eligibility tenure, not total time associated with the company.",
+  "question": "What date should be used as the start of Jonathan Pruitt's benefits-eligibility tenure?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Renata Cho",
+    "title": "HR Operations Analyst",
+    "organization": "Everly Health",
+    "years_experience": 6,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge"
+}

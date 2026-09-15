@@ -1,0 +1,19 @@
+{
+  "title": "Break-Glass Database Access Whose Retrospective Review Is Now Overdue",
+  "category": "approval_chain",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "An access-governance audit agent at Quartzite Labs is reviewing an emergency privileged-access grant, with an audit date of 2026-04-16.\n\n**Break-Glass Access Authority Matrix**\n- Standard privileged prod access: request in the access tool, approved by the resource owner AND Security, time-boxed to 12 hours.\n- Break-glass (active SEV-1 only): the on-call engineer MAY self-grant emergency admin access to the affected datastore to restore service, with immediate manager notification, BUT the grant is conditional: (a) access MUST auto-expire within 8 hours, and (b) a break-glass retrospective review plus an access recertification MUST be completed within 3 business days of the grant. Absent the retrospective review by the deadline, the grant is out of compliance.\n\n**Access Tool Record**\n- BG-771: Engineer 'Nadia P.' self-granted 'orders-db admin' under break-glass during SEV-1 'orders-db replica failover storm'.\n- Granted: 2026-04-06 (Monday) 22:05. Auto-expired: 2026-04-07 06:05 (8h, confirmed). Manager notified: yes (2026-04-06 22:07).\n- Break-glass retrospective review: (empty). Access recertification: (empty).\n\n**Slack #incident-orders (reconstructed)**\n- Nadia P.: 'Failover is thrashing, I'm self-granting orders-db admin to force a clean promotion. @manager heads up.'\n- Manager: 'Ack, do the break-glass retro this week.'\n- Nadia P. (2026-04-09): 'Service is stable, I'll write up the retro shortly.'\n- (no further entries; today is 2026-04-16)\n\nThe 3-business-day retrospective deadline fell on 2026-04-09.",
+  "question": "As of the audit date, how many business days overdue is the required break-glass retrospective review? (answer with a number)",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Nadia Porter",
+    "title": "Site Reliability Engineering Manager",
+    "organization": "Quartzite Labs",
+    "years_experience": 9,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

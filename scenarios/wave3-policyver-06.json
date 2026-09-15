@@ -1,0 +1,25 @@
+{
+  "title": "Deletion Eligibility for a File Created Before Retention Was Extended",
+  "category": "policy_version",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "Carina BioLabs sets recordkeeping periods in its Data Retention Policy.\n\nVersion 2 (effective 2021-01-01): \"Clinical assay raw-data files are retained for 5 years from the file creation date, after which they are eligible for secure deletion.\"\n\nVersion 3 (effective 2024-01-01): \"Clinical assay raw-data files are retained for 8 years from the file creation date.\" v3 includes a transition clause: \"The retention period is fixed at file creation and runs from the file's creation date. Files created before January 1, 2024 retain the 5-year period set under v2; the new 8-year period applies only to files created on or after January 1, 2024. This policy does not retroactively extend the retention period of previously created files.\"\n\nThe document management system (DMS) shows file DS-33017 (assay batch AB-7742) with Creation Date 2020-11-20, Retention Class \"clinical-raw,\" and a system-calculated Deletion-Eligible Date. A separate file DS-41220 shows Creation Date 2024-02-15.\n\nA records manager posts in #compliance-ops on 2025-05-02: \"Purge review. DS-33017 was created November 2020. Under the old rule it would age out in 2025, but we moved to 8-year retention in January 2024. Is DS-33017 eligible for deletion this year, or does the 8-year clock now apply to it?\"\n\nUsing the policy history, the transition clause, and the DMS record, determine when file DS-33017 becomes eligible for secure deletion.",
+  "question": "When does file DS-33017 become eligible for secure deletion?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Elena Vasquez",
+    "title": "Records & Compliance Manager",
+    "organization": "Carina BioLabs",
+    "years_experience": 13,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "On 2025-11-20, five years after its 2020-11-20 creation date, because files created before January 1, 2024 retain the v2 5-year period and v3 does not retroactively extend it.",
+    "On 2028-11-20, eight years after creation, because v3's 8-year retention took effect January 1, 2024 and applies to all clinical raw-data files.",
+    "On 2029-01-01, eight years after the v3 effective date, because the new retention clock starts when the policy took effect.",
+    "Immediately, because as of the 2025-05-02 review the file is already more than five years past its 2020 creation date."
+  ]
+}

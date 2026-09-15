@@ -1,0 +1,25 @@
+{
+  "title": "Which Vendor Inherits the Carve-Out Contract?",
+  "category": "entity_resolution",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "Drayton Logistics sources telematics hardware from a supplier that just underwent a corporate carve-out. The original vendor, \"Tenpoint Systems, Inc.\" (vendor V-3301, EIN 82-1140556), sold its Fleet Sensors division to a private-equity buyer effective 2024-01-01; the division was spun into a new legal entity, \"Fleet Sensors Holdings LLC\" (new EIN 88-4402219). Tenpoint Systems retained its unrelated Payments division and continues to exist. Drayton has two active agreements in Ironclad: (A) a hardware supply agreement for telematics sensors, and (B) a software licensing agreement for a payments-reconciliation tool. A carve-out assignment-and-assumption agreement, filed in Ironclad on 2024-01-05, states: \"Seller assigns to Buyer all contracts primarily related to the Fleet Sensors Business,\" with Schedule 2 listing the telematics hardware supply agreement by its contract number. A vendor onboarding email from ar@fleetsensors.com asks Drayton to update remit-to for \"all sensor hardware invoices\" to a new bank account (routing 021000021, account ending 3387) under Fleet Sensors Holdings LLC, and confirms \"payments division billing is unchanged.\" Drayton's AP clerk, seeing one supplier name change, proposes retitling vendor V-3301 to \"Fleet Sensors Holdings LLC\" and routing all invoices to the new account. Open POs: PO-9912 (telematics sensors, $340,000) and PO-9945 (payments-reconciliation license renewal, $72,000).",
+  "question": "How should Drayton set up vendors and route the two open POs after the carve-out?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Owen Castellanos",
+    "title": "Procurement Category Manager",
+    "organization": "Drayton Logistics",
+    "years_experience": 13,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Rename vendor V-3301 to Fleet Sensors Holdings LLC and route both PO-9912 and PO-9945 to the new account ending 3387, since the supplier changed hands.",
+    "Create a new vendor for Fleet Sensors Holdings LLC (EIN 88-4402219) and route only the telematics PO-9912 to it; keep PO-9945 on Tenpoint Systems (V-3301, EIN 82-1140556) with its existing remit-to.",
+    "Keep everything on V-3301 and ignore the assignment, because the assignment-and-assumption agreement only transfers the contract, not the payment obligation.",
+    "Create a new vendor for Fleet Sensors Holdings LLC and move both POs to it, but keep the old EIN 82-1140556 on the new vendor record for tax continuity."
+  ]
+}

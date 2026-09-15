@@ -1,0 +1,25 @@
+{
+  "title": "Deep Discount Approved by an SVP With Authority but No CFO Notification",
+  "category": "approval_chain",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "A deal-desk audit agent at Jadeite Manufacturing is validating authorization on a closed-won deal.\n\n**Discount Approval Authority Matrix**\n- Up to 15% off list: Sales Director.\n- 15.01%-30%: VP Sales, with a margin worksheet.\n- 30.01%-45%: SVP Sales, with a margin worksheet AND a mandatory CFO notification email recorded before booking (so Finance can model the margin impact for the forecast).\n- Above 45%: SVP Sales AND CFO co-approval.\n\n**CRM Opportunity Record**\n- OPP-4820, 'Quartzledge Industrial 3-year renewal'. List: $1,000,000. Contracted: $600,000 (a 40% discount off list).\n- Booked: 2026-07-30 (last day of the quarter). Approved by (field): 'SVP Sales - Grant K.' Margin worksheet: attached. CFO notification: (empty).\n\n**Slack #deal-desk (reconstructed)**\n- Rep: 'Quartzledge only signs today at 40% off. Grant, can you approve? Quarter closes tonight.'\n- Grant K. (SVP Sales): 'Approved - 40% is in my band and the worksheet's attached. Book it before cutoff.'\n- Rep: 'Should Finance get the heads-up email first?'\n- Grant K.: 'Book it now, I'll have someone ping the CFO later.'\n\nThe 40% discount is in the 30.01%-45% tier, where the SVP holds approval authority. The margin worksheet is attached, but no CFO notification email was recorded before (or after) booking.",
+  "question": "What should the audit conclude about the authorization of this discount?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Grant Kowalski",
+    "title": "Senior Deal Desk Manager",
+    "organization": "Jadeite Manufacturing",
+    "years_experience": 14,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Valid and complete - the SVP holds approval authority for a 40% discount and attached the margin worksheet, so nothing further is required.",
+    "Valid, but just clean up the docs - the CFO notification is a courtesy email that can be skipped or backfilled quietly; the approval itself is complete.",
+    "The SVP's approval authority for the 40% tier is sufficient, but the mandatory CFO notification required before booking is missing, so the approval is incomplete and non-compliant until the CFO notification is made and the timing gap is flagged.",
+    "Invalid - a 40% discount requires SVP and CFO co-approval, so the deal must be escalated to the CFO for co-signature before it can stand."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "The Franchisee Is Not the Franchisor",
+  "category": "entity_resolution",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "Grimstad POS Systems supports point-of-sale software used by a quick-service restaurant brand and must route a contract dispute correctly. The end customer on ticket T-7788 is \"Nordbite #214\" operated by \"Fjellheim Restaurant Group LLC\" (EIN 84-2210993), which runs 12 franchised Nordbite locations under a franchise agreement with the brand owner. The brand owner is \"Nordbite Brands, Inc.\" (EIN 26-5590118), the franchisor, which signed the master software agreement (MSA-500) that sets standard pricing and feature entitlements for all franchisees but does NOT pay the per-location subscription fees. Each franchisee signs a location addendum and pays its own subscription: Fjellheim's Stripe account (customer cus_FJ12, card ending 4471) pays for stores #210-#221. The dispute concerns an overcharge on store #214's monthly bill. A support agent sees MSA-500 is held by Nordbite Brands, Inc. and is about to escalate the billing dispute to the franchisor's account team and issue any credit to Nordbite Brands, Inc. Salesforce shows the franchisor as the \"parent\" account with all franchisees as child accounts, which reinforces the agent's instinct. However, billing responsibility, the paying Stripe customer, and the location addendum for #214 all belong to Fjellheim Restaurant Group LLC. The agent must pick the counterparty before issuing any credit memo, since a credit posted to the wrong entity cannot be clawed back without a manual finance adjustment.",
+  "question": "Which entity is the correct counterparty for the store #214 billing dispute and any resulting credit?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Rune Berg",
+    "title": "Customer Success Operations Lead",
+    "organization": "Grimstad POS Systems",
+    "years_experience": 9,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Nordbite Brands, Inc. (EIN 26-5590118), because it holds the master software agreement and is the parent account for all franchisees.",
+    "Fjellheim Restaurant Group LLC (EIN 84-2210993), because it signed the location addendum for store #214 and is the paying Stripe customer responsible for that subscription.",
+    "Both entities jointly, splitting any credit 50/50 between the franchisor and the franchisee.",
+    "Whichever entity's name appears first on the Salesforce parent-child hierarchy, which is Nordbite Brands, Inc."
+  ]
+}

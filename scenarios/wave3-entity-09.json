@@ -1,0 +1,25 @@
+{
+  "title": "The Name Reverted After the Divorce",
+  "category": "entity_resolution",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "Lindholm Insurance's People Ops team is investigating a duplicate-payee alert raised by payroll. Workday shows one active employee record E-32001 \"Petra Halvorsen-Ruud,\" and payroll flagged an apparent second beneficiary \"Petra Halvorsen\" appearing on a garnishment court order. HR's concern is whether a second employee exists or whether records were mistakenly split. Evidence: E-32001 has national ID ending 5140, DOB 1985-03-22, direct-deposit account ending 3092, and a name-change event logged 2024-03-15 with note \"legal name change following divorce decree; surname reverts from Halvorsen-Ruud to Halvorsen.\" The court garnishment order names \"Petra Halvorsen,\" cites the same national ID ending 5140 and the same DOB 1985-03-22, and post-dates the decree. Okta still shows the login phalvorsenruud@lindholm.com (not yet updated). The prior married surname \"Halvorsen-Ruud\" appears on benefits enrollment records from 2019-2024; the maiden/current surname \"Halvorsen\" appears on the pre-2019 record and the new post-decree documents. There is exactly one national ID, one DOB, and one direct-deposit account across every record. Payroll must decide whether to create a new employee record for \"Petra Halvorsen\" or update the existing one, and how to apply the garnishment. Benefits enrollment, tax withholding, and PTO accrual are all keyed to a single employee ID today, so any decision to spawn a second record would immediately ripple into those downstream systems and the pending court-ordered deduction.",
+  "question": "How should payroll resolve the \"Petra Halvorsen\" garnishment against the existing record?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Mette Sorensen",
+    "title": "Payroll Compliance Specialist",
+    "organization": "Lindholm Insurance",
+    "years_experience": 11,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Create a new employee record for Petra Halvorsen and apply the garnishment there, since the surname on the court order does not match the current Workday display name.",
+    "Recognize \"Petra Halvorsen\" and \"Petra Halvorsen-Ruud\" as the same employee (E-32001) after a post-divorce legal name change, update the record and Okta to the reverted surname, and apply the garnishment to E-32001.",
+    "Reject the garnishment as unmatched because the payee name differs from the name on file, and return it to the court.",
+    "Split payroll across two records so each surname variant receives part of the pay and the garnishment applies to only one."
+  ]
+}

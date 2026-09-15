@@ -1,0 +1,25 @@
+{
+  "title": "Vendor Security Review Elevated by Regulated Data",
+  "category": "precedent_exception",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "You are a third-party risk analyst at Rawlinson Media. A team wants to onboard a payments-analytics vendor, 'Tolliver Insights,' that will receive and process cardholder data (primary account numbers) to produce fraud dashboards. They want the standard review to keep things moving.\n\nActive policy: Third-Party Risk Standard TPR-2, effective 2024-11-01. Vendors receive a standard security review by a Security Analyst by default. However, any vendor that will process regulated payment cardholder data must undergo the elevated review: a full security assessment, an executed PCI attestation/agreement, AND CISO sign-off. The elevated path is mandatory whenever cardholder data is in scope, regardless of vendor size or contract value.\n\nPrecedent (risk log): 2024-12-14, vendor 'Marden Analytics,' onboarded via standard Security Analyst review. Note: \"Processes only aggregated, non-regulated marketing metrics; no cardholder or regulated data in scope. Standard review appropriate.\"\n\nCurrent facts: Tolliver will receive raw cardholder primary account numbers, which are regulated payment data. The requesting team argues, \"Marden went through a standard analyst review and it was fine \u2014 Tolliver is another analytics vendor, so let's use the same standard review and skip the CISO step to save time.\" The data-flow diagram they submitted confirms that unmasked primary account numbers will be transmitted to and processed by Tolliver's environment. No PCI attestation has been requested from Tolliver, and the CISO has not been looped in. The team wants to finalize the vendor contract by the end of the month and is asking you to confirm the required review path.",
+  "question": "Which security review path applies to onboarding Tolliver Insights?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Anselm Drayton",
+    "title": "Third-Party Risk Analyst",
+    "organization": "Rawlinson Media",
+    "years_experience": 9,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "The standard Security Analyst review, mirroring the Marden Analytics precedent for a comparable analytics vendor.",
+    "The elevated review \u2014 full security assessment, executed PCI attestation/agreement, and CISO sign-off \u2014 because Tolliver will process regulated cardholder data, which mandates the elevated path.",
+    "The standard review now, with the PCI attestation collected after Tolliver begins processing cardholder data.",
+    "No security review is needed because the vendor only produces dashboards and does not store the data long-term."
+  ]
+}

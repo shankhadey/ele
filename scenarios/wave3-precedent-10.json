@@ -1,0 +1,25 @@
+{
+  "title": "Deep Discount Request Citing a One-Time Goodwill Concession",
+  "category": "precedent_exception",
+  "domain": "sales_deal_desk",
+  "difficulty": "hard",
+  "scenario_text": "You are a deal-desk analyst at Cassia Media, a digital advertising platform. AE Rick Salter is renewing 'Beacon Publishing' and wants to apply a 20% discount to close fast. He is citing a 20% discount the same customer received before.\n\nActive policy: Discount Policy DP v3, effective 2024-11-01. Standard discount is up to 12%, which an AE may self-approve. Discounts of 13-20% require Director approval plus a written justification tied to a qualifying factor: documented service incidents, a documented competitive displacement, or a multi-year commitment. Discounts above 20% require VP Sales. 'Customer expects it' or 'we did it before' are explicitly non-qualifying justifications.\n\nThe CRM shows a prior record: on 2024-05-18, Beacon received a 20% discount. The deal-desk note reads verbatim: \"One-time goodwill 20% to smooth over a campaign-reporting outage that quarter. Non-binding and non-precedential; does not entitle Beacon to 20% on future renewals absent a qualifying factor. Logged.\"\n\nCurrent facts: This renewal is a flat one-year term with no service incidents this cycle (the incident tracker shows zero campaign-reporting outages for Beacon in the current period), no competitive displacement on record, and no multi-year commitment on the table. Beacon has not raised any competing-vendor evaluation, and the account is renewing at the same scope as last year. Rick writes: \"Beacon got 20% last spring, so just apply 20% again and I'll close it today - they're expecting it, and I don't want to reopen pricing this close to signature.\"",
+  "question": "What discount and approval path are appropriate for the Beacon Publishing renewal?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Nadia Brandt",
+    "title": "Deal Desk Analyst",
+    "organization": "Cassia Media",
+    "years_experience": 6,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Apply 20% again on the AE's authority, mirroring Beacon's prior 20% concession to close quickly.",
+    "Do not auto-apply 20%; the prior 20% was a documented non-binding, non-precedential one-time goodwill concession, and with no qualifying factor this cycle the renewal is limited to the standard tier (up to 12% self-approved), with 13-20% requiring Director approval only if a qualifying factor is documented.",
+    "Apply 20% via Director approval, since any repeat of a prior discount automatically qualifies for the Director tier.",
+    "Escalate to VP Sales for the 20% because prior-customer discounts always require the highest approval level."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "A Conference Expense Within the Standing Limit",
+  "category": "temporal_consistency",
+  "domain": "other",
+  "difficulty": "hard",
+  "scenario_text": "An operations manager at Chestnutt Pharma must decide whether to approve an employee's conference-travel expense at the team level, given how a comparable expense was handled earlier this year.\n\n**Decision A (2024-02-27)**\nAn employee's $1,800 conference-travel expense (registration, flight, two hotel nights) was APPROVED at the manager level. Note: 'Conference expenses up to $2,500 may be approved by the direct manager without finance review. Within limit \u2014 approved.'\n\n**Current request C (2024-09-16)**\nAn employee submits a $2,100 conference-travel expense (registration, flight, three hotel nights) for an approved industry conference. The expense is properly itemized with receipts and falls within the annual training budget.\n\n**Travel & Expense Policy (current, unchanged since 2023-01)**\nConference-travel expenses up to $2,500 may be approved by the direct manager without finance review. Expenses above $2,500 require Finance approval. The $2,500 manager-approval threshold has been in place since January 2023.\n\n**Slack \u2014 #ops**\nCoordinator: 'We approved a conference expense at the team level back in February, so this one should be fine to approve the same way, right?'\nManager: 'Let me confirm this one is under the $2,500 threshold and properly documented. If it is, it's a clean repeat of February.'\n\nThe $2,100 expense is under the $2,500 threshold, itemized with receipts, and within the training budget.",
+  "question": "How should the manager handle the $2,100 conference-travel expense?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Harriet Whitlock",
+    "title": "Operations Manager",
+    "organization": "Chestnutt Pharma",
+    "years_experience": 8,
+    "domain_expertise": "other"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Route the expense to Finance for review before approving, given the amount involved.",
+    "Approve the $2,100 expense at the manager level: it is under the $2,500 threshold, itemized, and within budget, so the February approval is valid precedent under the unchanged policy.",
+    "Deny the expense, since discretionary conference travel should be minimized this year.",
+    "Approve only $1,800 to match the amount approved in February and ask the employee to absorb the rest."
+  ]
+}

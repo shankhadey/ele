@@ -1,0 +1,25 @@
+{
+  "title": "Re-Tiering a Grandfathered Vendor at Its Next Risk Reassessment",
+  "category": "policy_version",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "Perseus Sourcing classifies suppliers under its Third-Party Risk Management Policy.\n\nVersion 1 (in effect through 2024-08-31): \"Vendors that handle personal data (PII) are classified Tier 2 and must complete an annual security questionnaire.\"\n\nVersion 2 (effective 2024-09-01): \"Vendors that handle personal data (PII) are classified Tier 1 (High) and must provide a SOC 2 Type II report and an annual penetration test.\" v2 includes a transition clause: \"A vendor's existing tier assignment remains in force until the vendor's next scheduled annual risk reassessment date, at which point the vendor is re-tiered under v2 criteria. Vendors onboarded on or after September 1, 2024 are tiered under v2 at onboarding.\"\n\nThe vendor risk register shows supplier Kestrel Payroll Services: Onboarded 2023-10-15, Handles PII: Yes, Current tier: Tier 2, Last reassessment 2024-03-15, Next scheduled annual reassessment 2025-03-15.\n\nA third-party risk analyst posts in #vendor-risk on 2024-11-04: \"Kestrel handles PII and is still marked Tier 2. Under the new policy PII vendors are Tier 1 and need SOC 2 Type II plus a pen test. Do we have to collect those from Kestrel now, or does that wait until their reassessment?\"\n\nUsing the policy history, the transition clause, and the risk register, determine when Kestrel must meet the v2 (Tier 1) requirements.",
+  "question": "When must Kestrel Payroll Services meet the v2 Tier 1 requirements?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Wesley Tan",
+    "title": "Third-Party Risk Manager",
+    "organization": "Perseus Sourcing",
+    "years_experience": 10,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Kestrel remains Tier 2 (v1) until its next scheduled annual reassessment on 2025-03-15, at which point it is re-tiered to Tier 1 under v2 and must provide a SOC 2 Type II report and an annual penetration test.",
+    "Kestrel must provide a SOC 2 Type II report and penetration test immediately, because v2 took effect September 1, 2024 and reclassifies all PII-handling vendors as Tier 1.",
+    "Kestrel remains Tier 2 permanently, because it was onboarded before September 1, 2024 and is grandfathered.",
+    "Kestrel must be re-tiered under v2 as of its onboarding anniversary on 2024-10-15, which has already passed."
+  ]
+}

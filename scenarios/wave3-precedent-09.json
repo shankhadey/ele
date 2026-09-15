@@ -1,0 +1,19 @@
+{
+  "title": "Expedited Vendor Onboarding Citing a Prior Waiver",
+  "category": "precedent_exception",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "You are the procurement director at Fortis Energy, a regional utility. An operations team wants to skip full due diligence to issue a purchase order to a new turbine-parts supplier, 'Corveth Components,' for a routine scheduled maintenance window. They are citing a prior expedited onboarding.\n\nActive policy: Vendor Onboarding Standard VOS-4, effective 2025-01-01. New vendors must complete full due diligence - financial screening, insurance verification, and safety certification - before any PO is issued. The only expedite path is a declared-emergency waiver, available when an active or imminent outage requires immediate response, approved by the Procurement Director. Convenience, schedule pressure, or 'we know them already' are explicitly non-qualifying.\n\nThe operations lead forwards a prior record: on 2024-07-30, vendor 'Halloway Turbines' was onboarded on an expedited basis. The procurement note reads verbatim: \"One-time goodwill expedite approved to help a team hit a planned outage window; NOT an emergency. Non-binding and non-precedential; does not establish that planned maintenance qualifies for expedited onboarding. Logged.\"\n\nCurrent facts: The Corveth PO supports a routine, scheduled maintenance window with no active or imminent outage. Full due diligence has not been completed. The operations lead writes: \"You expedited Halloway last summer for basically the same kind of planned window, so expedite Corveth the same way.\"",
+  "question": "State the decision and the single controlling reason as one short phrase.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Cyrus Delacroix",
+    "title": "Procurement Director",
+    "organization": "Fortis Energy",
+    "years_experience": 14,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Which Travel-Reimbursement Policy Governs an Expense Incurred Before a Policy Change",
+  "category": "policy_version",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "A finance analyst at Marlowe Consulting is adjudicating a disputed expense report and must apply the correct policy version.\n\n**Policy history (Travel & Expense)**\n- *T&E Policy v3.1 (effective through 2026-02-28):* Airfare reimbursed at actual cost including economy-plus seat upgrades for flights over 4 hours. Reimbursement requests must be filed within 60 days of the transaction date.\n- *T&E Policy v4.0 (effective 2026-03-01):* Economy-plus upgrades are NO longer reimbursable. Filing window shortened to 30 days. Transition clause: 'Expenses INCURRED before the effective date are adjudicated under the policy in force on the transaction date, provided the claim is filed within the filing window that was in force on the transaction date.'\n\n**Concur (Expense system)**\nEmployee: David Reyes. Report R-4471 contains:\n- Line 1: Round-trip airfare, 6-hour flight, economy-plus upgrade $180. Transaction date: 2026-02-20.\n- Report submitted: 2026-04-10.\n\n**Slack — #finance-ops**\nManager: 'The upgrade was fine under the old policy, so approve the $180.'\nAnalyst: 'The expense date is before March 1, so v3.1 governs the upgrade eligibility. But look at when he filed it.'\n\n**Calendar of record**\n2026-02-20 transaction date. 60-day window under v3.1 would expire 2026-04-21. The report was submitted 2026-04-10.",
+  "question": "Should the $180 economy-plus upgrade on line 1 be reimbursed?",
+  "answer_format": "multiple_choice",
+  "choices": [
+    "No — v4.0 is the current policy and it disallows economy-plus upgrades, so the $180 is not reimbursable",
+    "No — although v3.1 allowed the upgrade, the claim was filed after the 30-day window in the current v4.0 policy, so it is time-barred",
+    "Yes — the expense was incurred 2026-02-20 under v3.1, which allowed the upgrade, and it was filed on 2026-04-10, within the 60-day window that was in force on the transaction date (expiring 2026-04-21)",
+    "Yes — but only $90, because the upgrade should be prorated between the two policy regimes"
+  ],
+  "contributor": {
+    "name": "Elena Vasquez",
+    "title": "Finance Operations Analyst",
+    "organization": "Marlowe Consulting",
+    "years_experience": 6,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "batch2.json",
+  "split": "challenge"
+}

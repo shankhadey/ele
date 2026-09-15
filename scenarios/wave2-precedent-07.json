@@ -1,0 +1,25 @@
+{
+  "title": "Production Deploy During Code Freeze With Conflicting Precedents",
+  "category": "precedent_exception",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "You are the release manager at Gadsby Analytics. It is the middle of the annual end-of-year code freeze. A product team wants to ship a customer-committed reporting feature to production now, arguing a contract deadline.\n\nActive policy: Change Management Standard CMS v3, effective 2025-02-01. During a declared freeze, only emergency changes may deploy: a fix for an active Sev1 or Sev2 production incident, requiring approval from BOTH the Director of Engineering and the on-call Incident Commander. Non-emergency deploys (including customer feature commitments) are prohibited until the freeze lifts; the only path to deploy a non-emergency change during a freeze is a freeze-exception waiver from the VP of Engineering with a documented, dated business justification. CMS v3 replaced CMS v2, which had permitted a single Engineering Manager to approve 'expedited' non-emergency deploys during a freeze for customer commitments.\n\nPrecedent A (change log): 2024-12-19, an 'expedited' feature deploy during that year's freeze, approved by Engineering Manager Cole Barrett alone for a customer commitment. Policy version at decision: CMS v2. Note: \"Expedited per v2 customer-commitment clause.\"\n\nPrecedent B (change log): 2025-05-02, a Sev2 hotfix deployed during a mini-freeze, approved by the Director of Engineering and the on-call Incident Commander. Policy version at decision: CMS v3.\n\nCurrent facts: There is no active Sev1/Sev2 incident; the feature is a planned enhancement. No VP of Engineering freeze-exception waiver has been requested. The team writes: \"Cole pushed a feature during last year's freeze with just an EM approval \u2014 let's do the same.\"",
+  "question": "What is the correct handling of the customer-committed feature deploy during the freeze?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Desmond Ferrell",
+    "title": "Release Engineering Manager",
+    "organization": "Gadsby Analytics",
+    "years_experience": 13,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Approve it with a single Engineering Manager sign-off, mirroring the 2024 expedited-deploy precedent for a customer commitment.",
+    "Do not deploy under the emergency path (no Sev1/Sev2 exists); the only route is a VP of Engineering freeze-exception waiver with a documented business justification, otherwise it waits until the freeze lifts.",
+    "Approve it with the Director of Engineering and on-call Incident Commander, following the Sev2 hotfix precedent, since both approvers are senior enough.",
+    "Approve it because a signed customer contract deadline automatically qualifies as a Sev2 incident under CMS v3."
+  ]
+}

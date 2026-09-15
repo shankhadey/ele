@@ -1,0 +1,19 @@
+{
+  "title": "Nestor Agency record access: 'cross-training' versus unauthorized record snooping",
+  "category": "cross_system_synthesis",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "Nestor, a state benefits agency, runs access monitoring over its citizen case-management system. A caseworker's access pattern triggered a review. In the #people-ops Slack channel the unit manager writes: 'They're cross-training onto a new caseload and covering for a colleague on leave, so of course they're looking at more files than usual. This is just them ramping up - no concern, please don't disrupt their onboarding.'\n\nOther systems raise flags the manager did not mention. In the case-management audit log, the caseworker opened records that are not assigned to them or to the colleague they are covering, including several high-profile individuals recently in local news. In the identity system, a batch of these lookups occurred at 22:40 from a personal device outside normal shift hours. In the DLP tool, screenshots of two of those records were saved to a personal cloud folder. And an HR case note shows a prior informal warning to this employee last year for viewing a relative's file without a business reason.\n\nEach item has an innocent reading: cross-training widens access, staff sometimes work late, and screenshots can be for legitimate documentation. But together - access to unassigned records including newsworthy individuals, off-hours lookups from a personal device, screenshots exfiltrated to personal cloud storage, and a documented prior snooping warning - they describe unauthorized access to protected records, not onboarding. The manager's 'cross-training' explanation covers only assigned-caseload growth and predates the DLP and after-hours findings. You are the privacy and people-ops partner. What is the single most important action to take now?",
+  "question": "What single action should the privacy and people-ops partner take now?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Owen Fletcher",
+    "title": "Privacy & People Operations Partner",
+    "organization": "Attalos Public Services",
+    "years_experience": 9,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

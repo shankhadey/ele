@@ -1,0 +1,25 @@
+{
+  "title": "Legacy Commission Accelerator and the Next Plan Attestation",
+  "category": "policy_version",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "Tucana Software runs annual sales compensation plans and revised its accelerator terms for 2025.\n\nVersion 1 (Plan Year 2023 terms, effective 2023-01-01): \"Tenured reps enrolled in the legacy accelerator receive a 1.5x multiplier on all ACV booked above quota.\"\n\nVersion 2 (effective 2025-01-01): \"The accelerator is reduced to a 1.2x multiplier and applies only to ACV booked above 120% of quota.\" v2 includes a transition clause: \"Reps enrolled under the v1 legacy accelerator remain on v1 terms until they sign their next annual comp-plan acceptance (attestation); upon signing the new plan-year acceptance they move to v2. Reps who first accept a plan on or after January 1, 2025 are on v2 from the start.\"\n\nThe compensation system shows rep K. Alvarez: Legacy accelerator = Yes; most recent plan acceptance signed 2024-02-01 (for Plan Year 2024); next annual plan acceptance scheduled 2025-02-01 (not yet signed). Deal OPP-5501 (above quota) closed and was booked 2025-01-20.\n\nAlvarez messages the comp team in Slack on 2025-01-22: \"OPP-5501 booked Monday, it's above quota. Do I get my usual 1.5x on it, or does the new 1.2x-above-120% rule already apply? I haven't signed the 2025 plan yet.\"\n\nUsing the policy history, the transition clause, and the compensation record, determine which accelerator applies to OPP-5501.",
+  "question": "Which accelerator applies to deal OPP-5501?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Bianca Lindqvist",
+    "title": "Sales Compensation Manager",
+    "organization": "Tucana Software",
+    "years_experience": 11,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "The 1.5x legacy accelerator (v1) applies to OPP-5501, because Alvarez has not yet signed the 2025 plan-year acceptance (scheduled 2025-02-01), and the legacy accelerator persists until that attestation.",
+    "The 1.2x accelerator on ACV above 120% of quota (v2) applies, because v2 took effect January 1, 2025 and supersedes the legacy accelerator for all deals booked in 2025.",
+    "No accelerator applies, because the legacy accelerator expired when v2 took effect on January 1, 2025.",
+    "The 1.5x legacy accelerator applies to this deal and to all of Alvarez's deals for the rest of plan year 2025, because tenured reps are permanently grandfathered."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Late-Payment Fee Waiver Citing a Documented Goodwill Exception",
+  "category": "precedent_exception",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "You run collections at Mossbridge Retail. Wholesale customer Brightline Grocers paid an $88,000 invoice 22 days late and is asking you to waive the $4,400 late-payment fee (5% of invoice).\n\nActive policy: Accounts Receivable Policy AR-2.1, effective 2023-11-01. Late fees of 5% apply to any payment more than 15 days past due. Waivers require Controller approval and are granted only for (a) a documented Mossbridge billing error, or (b) a force-majeure event affecting the customer's region. Relationship goodwill is explicitly NOT a qualifying reason under AR-2.1.\n\nBrightline's account manager forwards a prior record: on 2024-02-09, Controller Renee Adler waived a $3,900 late fee for Brightline. The approval memo reads verbatim: \"One-time goodwill waiver to preserve the relationship during their ERP migration. This is a non-binding, non-precedential accommodation and does not entitle Brightline to future waivers. Logged for audit only.\"\n\nCurrent facts: There was no Mossbridge billing error on this invoice (billing confirmed the invoice was correct and delivered on time). There is no force-majeure event in Brightline's region. Brightline's stated reason for lateness is \"cash-flow timing.\" The account manager argues, \"We already waived once, so we've effectively set the standard \u2014 denying now looks inconsistent.\"",
+  "question": "Should the $4,400 late fee be waived, and on what basis? Answer with the decision and the governing reason in one short phrase.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Sofia Granger",
+    "title": "Director of Revenue Operations",
+    "organization": "Mossbridge Retail",
+    "years_experience": 9,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge"
+}

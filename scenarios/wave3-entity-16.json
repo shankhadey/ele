@@ -1,0 +1,19 @@
+{
+  "title": "The Joint Venture Is Its Own Entity",
+  "category": "entity_resolution",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "Storfjell Energy is invoicing for engineering services and must identify the correct billing entity for a wind-farm project jointly developed by two sponsors. The project is run through a joint venture: \"Nordhav Wind JV\" was incorporated as a special-purpose vehicle, \"Nordhav Wind Partners AS\" (organisation number 921-556-330, own bank account, own board), owned 60% by \"Skarv Renewables AS\" (org 918-220-114) and 40% by \"Tindved Power AS\" (org 915-889-207). Storfjell's master services agreement for this project (MSA-JV-12) was signed by Nordhav Wind Partners AS as the client, and the project PO (PO-77120) was issued by Nordhav Wind Partners AS from its own AP. Storfjell's CRM, however, has three related records: Skarv Renewables, Tindved Power, and Nordhav Wind Partners. An accounts-receivable clerk, seeing that Skarv owns 60%, proposes invoicing Skarv Renewables AS for 60% of the fees and Tindved Power AS for 40%, matching the ownership split. But the JV is a distinct legal entity that contracts and pays in its own name; the sponsors' ownership percentages govern their internal economics, not who Storfjell bills. The signed MSA and the PO both name Nordhav Wind Partners AS, which has its own organisation number and bank account. Provide the organisation number of the entity Storfjell should invoice.",
+  "question": "Which entity's organisation number should Storfjell invoice for the project services?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Lars Kvarken",
+    "title": "Project Billing Controller",
+    "organization": "Storfjell Energy",
+    "years_experience": 11,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

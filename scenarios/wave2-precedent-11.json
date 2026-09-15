@@ -1,0 +1,19 @@
+{
+  "title": "Onboarding-Fee Waiver Resting on a One-Time Courtesy",
+  "category": "precedent_exception",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "You lead onboarding at Ketteridge Care (a healthcare SaaS provider). New mid-market customer 'Brightpath Clinics' is asking you to waive the standard $18,000 implementation fee. They are pointing to another customer's deal.\n\nActive policy: Implementation Fee Policy IFP-2, effective 2024-08-01. The implementation fee is standard and non-waivable except by CS Director approval, and only for two documented reasons: (a) the customer purchased the Premier onboarding tier, which bundles implementation at no separate charge, or (b) a documented Ketteridge onboarding failure on the same account that requires re-implementation. Discretionary or relationship-based waivers are not permitted.\n\nThe account executive forwards a precedent: on 2024-06-04, customer 'Larkfield Medical' had its $15,000 implementation fee waived by CS Director Mara Quill. The approval note reads verbatim: \"One-time goodwill waiver because Larkfield was our first customer in the new region and we wanted a marquee reference. Non-binding courtesy, not a precedent; standard fee applies to all future customers.\"\n\nCurrent facts: Brightpath purchased the Standard onboarding tier (not Premier), and there has been no onboarding failure \u2014 implementation has not begun. Brightpath's stated reason is \"budget is tight this quarter.\" The AE argues, \"We waived Larkfield's fee, so waiving Brightpath's keeps us consistent and helps me close.\"",
+  "question": "Should the $18,000 implementation fee be waived, and on what basis? Give the decision and the controlling reason in one short phrase.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Reuben Castellano",
+    "title": "Head of Customer Onboarding",
+    "organization": "Ketteridge Care",
+    "years_experience": 9,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge"
+}

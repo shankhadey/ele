@@ -1,0 +1,25 @@
+{
+  "title": "Two Accounts, One Credit Exposure",
+  "category": "entity_resolution",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "Baverstock Foods' credit team must decide whether to release a new $150,000 order sitting on credit hold. The customer appears as two records in NetSuite: \"Meadowlark Grocery Group\" (customer C-7112, EIN 36-4471290, current A/R balance $180,000) and \"Meadowlark Fresh Distribution\" (customer C-8455, EIN 36-4471290, current A/R balance $120,000). Salesforce lists them as two separate accounts with different primary contacts and two billing addresses corresponding to two distribution centers. The sales rep argues each account carries its own credit limit with its own headroom, so the new order should be booked against C-8455. Investigation shows both records carry the identical EIN 36-4471290; Dun & Bradstreet returns a single DUNS (05-772-1130) for the customer; and all remittances on both records arrive from the same bank account (routing 121000248, account ending 4409). The credit policy states that credit limits are assigned per legal entity, not per system record, and that the bureau-derived limit for this entity is a single consolidated $300,000. There is no separate contractual limit documented for either record; the two NetSuite records were created independently by two sales reps who each set an ad hoc internal limit. The combined outstanding A/R across both records is $300,000, and the requested order is $150,000.",
+  "question": "Should the $150,000 order be released from credit hold?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Tomas Errington",
+    "title": "Credit and Collections Manager",
+    "organization": "Baverstock Foods",
+    "years_experience": 14,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Yes, release it against Meadowlark Fresh Distribution (C-8455), because that record's own balance leaves room under its separately assigned limit.",
+    "No, hold it; the two records are one legal entity (shared EIN, DUNS, and bank account) whose consolidated $300,000 limit is already fully used by the combined $300,000 A/R.",
+    "Yes, release it, because splitting exposure across two customer records inherently doubles the available credit for the relationship.",
+    "No, hold it, but only because the two records must first be physically merged in NetSuite before any order can ever be booked."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Sole-Source Renewal Against a Lowered Competitive-Bid Threshold",
+  "category": "precedent_exception",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "scenario_text": "You are a procurement manager at Falkirk Labs. A research team wants to renew a specialized lab-instrument calibration contract with a single incumbent vendor, 'Merriden Instruments,' at $128,000/year without competitive bids.\n\nActive policy: Sourcing Policy SP-5, effective 2025-02-01. Competitive bidding rules for renewals: under $75K, Department Head may renew sole-source; $75K-$150K requires a Procurement Director plus a written sole-source justification AND at least a documented market scan of alternatives; over $150K requires a full three-bid competitive process or a CPO-approved waiver. SP-5 lowered the market-scan trigger to $75K from the prior $200K under SP-4, under which a Procurement Director could renew sole-source below $200K with only a written justification.\n\nPrecedent (procurement log): 2024-06-30, sole-source renewal with 'Corliss Optics' at $140,000/year, approved by Procurement Director Blythe Anand with a written justification and no market scan. Policy version at decision: SP-4. Note: \"Under $200K; Director justification sufficient per SP-4.\"\n\nThe requesting scientist writes: \"We renewed Corliss last summer at $140K with just Blythe's justification and no market scan. Merriden is cheaper, so the same treatment should apply. A market scan will delay calibration by weeks.\" There is no emergency exception invoked; this is a routine annual renewal with the current instruments already in service. The finance system confirms the $128,000 annual figure is firm, and no competing vendor has been contacted or evaluated in the past two years. The Procurement Director has asked you to confirm the correct requirements before she reviews the request.",
+  "question": "What is required to renew the Merriden Instruments contract on a sole-source basis?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Imani Rutherford",
+    "title": "Procurement Manager",
+    "organization": "Falkirk Labs",
+    "years_experience": 9,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Procurement Director approval with a written justification alone, mirroring the Corliss Optics renewal for a comparable amount.",
+    "Procurement Director approval plus a written sole-source justification AND a documented market scan of alternatives, because SP-5 requires a market scan for renewals in the $75K-$150K band.",
+    "Department Head approval, since a renewal of an existing incumbent contract does not require Procurement involvement.",
+    "A full three-bid competitive process, because sole-source renewals above $100K are prohibited under SP-5."
+  ]
+}

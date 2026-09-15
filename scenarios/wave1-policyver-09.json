@@ -1,0 +1,19 @@
+{
+  "title": "Breach Notification Deadline for an Incident Confirmed Before the Window Shortened",
+  "category": "policy_version",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "Torrance Labs maintains a Security Incident Notification SOP mirroring its regulatory commitments.\n\nVersion 2 (effective January 1, 2023) states: \"Security incidents affecting customer data must be reported to the regulator within 72 hours of confirmation.\"\n\nVersion 3 (effective March 1, 2025) states: \"Such incidents must be reported within 24 hours of confirmation.\" v3 includes a transition clause: \"The notification window applicable to an incident is the window in effect on the incident's confirmation date, defined as the date and time the Incident Commander sets the incident status to 'Confirmed' in the incident tool. Incidents confirmed before March 1, 2025 follow the 72-hour window; incidents confirmed on or after March 1, 2025 follow the 24-hour window.\"\n\nThe incident tool record for INC-2291 shows: Detected 2025-02-26 09:00, Status set to 'Confirmed' by the Incident Commander at 2025-02-28 14:00, Category: customer-data exposure. (2025 is not a leap year; February has 28 days.)\n\nThe Incident Commander messages the on-call compliance officer on 2025-02-28 at 15:00: \"INC-2291 confirmed at 14:00 today. The 24-hour rule kicks in tomorrow, March 1. Which clock are we on, and what's our hard deadline to notify the regulator?\"\n\nUsing the SOP versions, the transition clause, and the incident record, determine the regulator notification deadline for INC-2291.",
+  "question": "What is the regulator notification deadline for INC-2291?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Elliot Vance",
+    "title": "Director of Compliance",
+    "organization": "Torrance Labs",
+    "years_experience": 15,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge"
+}

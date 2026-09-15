@@ -1,0 +1,25 @@
+{
+  "title": "Quarter-End Discount Approved One Authority Tier Too Low",
+  "category": "approval_chain",
+  "domain": "sales_deal_desk",
+  "difficulty": "hard",
+  "scenario_text": "A deal-desk audit agent at Ashby Energy is validating authorization on a closed-won renewal.\n\n**Discount Approval Authority Matrix**\n- Up to 15% off list: Regional Sales Manager (approval note in CRM).\n- 15.01%-30% off list: Sales Director (CRM approval + margin worksheet).\n- 30.01%-45% off list: VP Sales (CRM approval + margin worksheet + deal-desk memo).\n- Above 45% off list: VP Sales AND CFO (all of the above + CFO email).\n\n**CRM Opportunity Record**\n- OPP-4471, 'GridCore 3-year renewal'.\n- List price: $600,000. Contracted ACV: $372,000.\n- Stage: Closed Won. Booked: 2026-03-31 (last day of Q1).\n- Approved by (field): 'Regional Sales Manager - Priya N.'\n\n**Slack #deal-desk (reconstructed)**\n- Rep: 'Customer will only sign today at $372K. That's the number to hit quota. Can you bless it Priya?'\n- Priya N. (Regional Sales Manager): 'It's quarter end and I don't want to lose it. Approved, book it.'\n- Rep: 'Do we need the Director or VP on this?'\n- Priya N.: 'I've got you covered, just close it.'\n\nNo Sales Director, VP Sales, or CFO approval appears anywhere in the CRM, Slack, or email. The margin worksheet and deal-desk memo are not attached. The list-to-contract delta is $228,000, a 38% discount off list.",
+  "question": "What should the audit conclude about the authorization of this discount?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Priya Nandakumar",
+    "title": "Deal Desk Manager",
+    "organization": "Ashby Energy",
+    "years_experience": 11,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Valid - the Regional Sales Manager holds discount-approval authority and recorded her approval in the CRM before booking.",
+    "Valid, but the file needs a documentation cleanup - attach the margin worksheet and deal-desk memo retroactively; the approval itself stands.",
+    "Invalid - a 38% discount falls in the 30.01%-45% tier, which requires VP Sales approval plus a margin worksheet and deal-desk memo; the Regional Sales Manager's authority caps at 15%, so the deal was booked without sufficient authorization and must be re-approved at the VP tier.",
+    "Invalid - a discount this large requires both VP Sales and the CFO, so the deal must be escalated to the CFO for co-approval before it can stand."
+  ]
+}

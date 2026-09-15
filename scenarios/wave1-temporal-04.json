@@ -1,0 +1,25 @@
+{
+  "title": "A Refund Denial That Hinged on Final-Sale Status",
+  "category": "temporal_consistency",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "A support lead at Ormsby Retail must decide how to handle a refund request, given how a similar request was handled last month.\n\n**Decision A (2024-01-22)**\nCustomer 'Iris Penhale' requested a refund 12 days after purchase. DENIED. Note: 'Item was a clearance final-sale item. Final-sale items are non-refundable regardless of the return window. Denied on that basis.'\n\n**Current request C (2024-02-18)**\nCustomer 'Owen Marsh' requests a refund 20 days after purchase for a regularly priced item that was NOT marked final-sale. The item is unused and eligible under standard terms.\n\n**Refund Policy (current, unchanged this year)**\nRefunds requested within 30 days of purchase for regularly priced items are auto-approved when the item qualifies. Refunds requested after 30 days require manager approval. Items marked 'final sale' (typically clearance) are non-refundable at any time, independent of the 30-day window.\n\n**Slack \u2014 #cx-support**\nAgent: 'We denied a refund last month for basically the same thing \u2014 let's stay consistent and deny Owen's too.'\nLead: 'Wait, why did we deny that one? Let me check whether Owen's item is even in the same bucket before we assume it's precedent.'\n\nThe agent is treating the January denial as a general rule against refunds, without checking the reason it was denied. Owen's request is within the standard 30-day window, and the item is not final-sale.",
+  "question": "How should the lead handle Owen Marsh's refund request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Tomas Reyes",
+    "title": "Customer Support Team Lead",
+    "organization": "Ormsby Retail",
+    "years_experience": 7,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Deny the refund to stay consistent with the January refund denial for a similar request.",
+    "Approve the refund: it is within the 30-day window and the item is not final-sale, so the January denial \u2014 which turned entirely on final-sale status \u2014 does not apply here.",
+    "Require manager approval before issuing the refund, given the prior denial of a comparable request.",
+    "Offer store credit instead of a cash refund as a compromise between approval and denial."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Same Bank Account, Different Names on the Remittance",
+  "category": "entity_resolution",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "Bergstrom Logistics runs a vendor-risk review in SAP Ariba and flags a possible duplicate-payment and fraud concern. Vendor V-8801 \"Polar Freight Brokers LLC\" (EIN 30-2210567, remit ACH routing 021000021 / account ending 9912) has $540,000 YTD spend across freight-brokerage invoices. A newly onboarded vendor V-9002 \"Ostkant Transport Services Inc.\" (EIN 59-8843102) submitted banking that resolves to the identical ACH routing 021000021 / account ending 9912 as V-8801. The two vendors have different legal names, different EINs, different W-9s, different remit-to addresses (Malmo vs Gothenburg office desks), and different service categories (brokerage vs drayage). D&B returns two distinct DUNS numbers. The shared bank account is the only overlapping attribute. Investigation with the treasury team reveals a legitimate explanation on file: Ostkant Transport recently entered a receivables-factoring arrangement in which Polar Freight Brokers acts as its factor, so Ostkant's approved remittance instructions direct payment to the factor's account; a signed notice-of-assignment and factoring agreement are attached to V-9002's vendor file. An analyst wants to auto-merge the two vendors because \"same bank account means same company.\" Treasury adds that the factoring notice is dated within the current fiscal year and instructs that any change to Ostkant's assignment status must trigger a re-review, since a lapsed factoring arrangement would require redirecting Ostkant's remittances back to its own account.",
+  "question": "How should the two vendor records be treated given the shared bank account?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Karin Dahl",
+    "title": "Procurement Risk Manager",
+    "organization": "Bergstrom Logistics",
+    "years_experience": 12,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Merge V-8801 and V-9002 into one vendor, because a shared ACH account is conclusive evidence they are the same legal entity.",
+    "Keep V-8801 and V-9002 as two separate legal entities; the shared account reflects a documented receivables-factoring assignment, not common ownership, as confirmed by distinct EINs, W-9s, DUNS, and the factoring agreement.",
+    "Block and deactivate both vendors as suspected fraud, since two payees never legitimately share one bank account.",
+    "Delete V-9002 and route all of Ostkant's invoices to V-8801, since payments are already going to that account anyway."
+  ]
+}

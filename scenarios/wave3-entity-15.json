@@ -1,0 +1,25 @@
+{
+  "title": "Acquired, Then Divested: Whose Data Governance Applies Now",
+  "category": "entity_resolution",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "Aurland Learning (an education-technology provider) must determine which entity owns a district's student records after a chain of transactions. \"Skjold Learning Labs, Inc.\" (EIN 27-8890034) was acquired by \"Aurland Learning Holdings\" in 2022-06, becoming a wholly owned subsidiary and integrating into Aurland's identity and data-processing systems (records migrated into Aurland's tenant T-AUR-9). In 2024-03, Aurland divested Skjold in a stock sale to \"Framnes Education Group\" (EIN 61-2204871); Skjold Learning Labs, Inc. retained its own EIN 27-8890034 and its customer contracts, and the stock-purchase agreement transferred 100% of Skjold's shares to Framnes along with a data-transition plan requiring Skjold's student data to move to Framnes's tenant by 2024-09. A support ticket now asks Aurland to export and delete a school district's student records held under Skjold's contracts. Aurland's systems still contain the migrated data in tenant T-AUR-9, but as of the 2024-03 divestiture Skjold is no longer an Aurland subsidiary. The district's data-processing agreement (DPA) names \"Skjold Learning Labs, Inc.\" as the processor. The stock sale did not dissolve Skjold; it changed Skjold's owner from Aurland to Framnes. An analyst assumes Aurland remains the data controller because the bytes still sit in Aurland's tenant. The district expects a response within its DPA's 30-day window, so Aurland must correctly identify the responsible processor before it acts on the export-and-delete request.",
+  "question": "Which entity is now the responsible data processor for the district's student records, and what should Aurland do?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Ida Fjeldstad",
+    "title": "Data Protection Officer",
+    "organization": "Aurland Learning",
+    "years_experience": 14,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Aurland Learning Holdings remains the responsible processor because the records physically reside in Aurland's tenant T-AUR-9.",
+    "Skjold Learning Labs, Inc. (EIN 27-8890034), now owned by Framnes Education Group, is the responsible processor under the district DPA; Aurland must transition the data out per the transition plan and cease processing as a former parent.",
+    "Framnes Education Group (EIN 61-2204871) is directly named in the district DPA and is therefore the processor of record.",
+    "No entity is responsible because the divestiture voided the original data-processing agreement."
+  ]
+}

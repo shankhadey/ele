@@ -1,0 +1,19 @@
+{
+  "title": "Early-Payment Discount Reinstatement Citing a Prior Courtesy",
+  "category": "precedent_exception",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "You manage accounts receivable at Bramwell Retail. Wholesale customer Hollow Oak Markets short-paid a $210,000 invoice by taking the 2% early-payment discount ($4,200), but their payment arrived 12 days after the discount window closed. They are asking you to honor the discount they already deducted.\n\nActive policy: Cash Application & Discounts Policy CAD-3, effective 2024-06-01. The 2% early-payment discount applies only if the full payment is received within the 10-day discount window. If a customer takes the discount but pays outside the window, the deducted amount is rebilled. Reinstating an improperly taken discount requires a documented Bramwell invoicing or remittance-processing error; customer relationship or retention concerns are explicitly listed as non-qualifying reasons.\n\nThe account manager forwards a prior record: on 2024-03-22, AR Manager Owen Frost reinstated a $3,600 discount for Hollow Oak that had been taken 8 days late. The approval memo reads verbatim: \"One-time goodwill reinstatement to smooth over a billing-portal complaint. This accommodation is non-binding and non-precedential; it does not entitle Hollow Oak to keep discounts taken outside the window in the future. Logged for audit.\"\n\nCurrent facts: AR confirms the invoice was issued correctly and the customer's remittance was received and applied on time internally; there was no Bramwell error. Hollow Oak's stated reason is \"we always take the 2%.\" The account manager argues, \"We let it slide last spring, so rebilling now is inconsistent and will annoy them.\"",
+  "question": "Should the improperly taken early-payment discount be honored, and on what basis? Give the decision and the controlling reason in one short phrase.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Priscilla Vane",
+    "title": "Director of Revenue Operations",
+    "organization": "Bramwell Retail",
+    "years_experience": 10,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge"
+}

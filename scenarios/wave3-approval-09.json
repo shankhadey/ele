@@ -1,0 +1,25 @@
+{
+  "title": "Offer Letter Within Band Correctly Approved by Hiring Manager and HRBP",
+  "category": "approval_chain",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "A people-operations audit agent at Dolomite Retail is validating authorization on an approved offer.\n\n**Compensation Offer Authority Matrix**\n- Offer within the posted salary band and no more than 10% above the band midpoint, sign-on bonus up to $20,000: Hiring Manager AND HR Business Partner (HRBP).\n- Offer above midpoint+10% (still within band), OR sign-on bonus $20,001-$50,000: add VP of the function.\n- Offer above the band ceiling, OR sign-on bonus above $50,000, OR any equity grant: VP AND the Compensation Committee.\n\n**HRIS Offer Record**\n- OFR-3345: Role 'Senior Category Manager', Grade M4. Band: $118,000-$162,000; midpoint $140,000.\n- Offered base: $151,000 (midpoint + 7.9%). Sign-on bonus: $15,000. Equity: none.\n- Approved by (field): 'Hiring Manager (Lena V.) + HRBP (Cory P.)'. Comp Committee: (empty). VP: (empty).\n\n**Email trail (reconstructed)**\n- Recruiter -> Lena V., Cory P.: 'Candidate wants $151K base and a $15K sign-on. That's inside band and under midpoint+10%. Approvals?'\n- Lena V. (Hiring Manager): 'Approved from my side.'\n- Cory P. (HRBP): 'Confirmed - $151K is midpoint+7.9%, band ceiling is $162K, sign-on is under $20K. Both approvals recorded, no VP or Comp Committee needed.'\n- Recruiter: 'Offer sent, approvers = Lena and Cory.'\n\nThe base is within band and below midpoint+10%, the sign-on is under $20,000, and there is no equity.",
+  "question": "What should the audit conclude about the authorization of this offer?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Cory Pruitt",
+    "title": "Senior HR Business Partner",
+    "organization": "Dolomite Retail",
+    "years_experience": 10,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Valid - the base sits within band below midpoint+10%, the sign-on is under $20,000, and there is no equity, so Hiring Manager plus HRBP approval fully satisfies the authority matrix and the offer is properly authorized.",
+    "Invalid - any offer above the band midpoint requires VP approval, which is missing here.",
+    "Invalid - all senior manager (M4) offers require Compensation Committee review before they can be extended, regardless of where they fall in the band.",
+    "Valid, but needs a documentation cleanup - the VP should add a confirming note retroactively even though the offer terms did not require VP approval."
+  ]
+}

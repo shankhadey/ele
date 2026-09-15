@@ -1,0 +1,19 @@
+{
+  "title": "Capital Purchase Above the CFO Threshold Approved by VP Operations Only",
+  "category": "approval_chain",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "A capital-controls audit agent at Obsidian Freight is reviewing authorization on a fleet-telematics capital purchase.\n\n**Capital Expenditure Authority Matrix**\n- Up to $100,000: Department Director.\n- $100,001-$500,000: VP Operations, with a business case attached.\n- Above $500,000: VP Operations AND CFO sign-off (finance control F-9), with a business case and a depreciation schedule.\n\n**ERP Capex Record**\n- CAPX-2077: 'Fleet telematics hardware + install, 400 trucks.'\n- Amount: $640,000. Posted: 2026-05-18.\n- Approved by (field): 'VP Operations - Terry M.' Business case: attached. Depreciation schedule: attached. CFO sign-off: (empty).\n\n**Email trail (reconstructed)**\n- Fleet director -> Terry M.: 'Telematics project is $640K all-in. Vendor wants a signed PO to lock Q2 pricing. Do you approve?'\n- Terry M. (VP Operations): 'Approved - the business case is solid and the savings are real. Let's lock the pricing.'\n- Fleet director: 'Booked as CAPX-2077, approver = you.'\n- Analyst -> Terry M. (later): 'Do we need Finance to co-sign anything above $500K?'\n- Terry M.: 'I've signed off, that's enough to keep this moving.'\n\nThe amount exceeds $500,000, and no CFO sign-off appears anywhere in the ERP, email, or Slack. All other artifacts (business case, depreciation schedule) are present, and the VP's approval note references only his own signing limit, with no mention of control F-9 or the CFO co-sign requirement that applies above $500,000. Finance was never looped in on the commitment, and the PO to lock Q2 pricing was issued on the strength of the VP's approval alone.",
+  "question": "Identify the single required approval that is missing for this capital purchase to be validly authorized (name the role).",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Teresa Manns",
+    "title": "Controller",
+    "organization": "Obsidian Freight",
+    "years_experience": 12,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

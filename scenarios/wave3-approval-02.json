@@ -1,0 +1,25 @@
+{
+  "title": "SaaS Rollout Divided Across Two Purchase Orders to Stay Under the Manager Limit",
+  "category": "approval_chain",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "scenario_text": "A procurement-audit agent at Feldspar Systems is checking authorization on a software purchase.\n\n**Procurement Authority Matrix**\n- Up to $50,000: Department Manager.\n- $50,001-$250,000: VP of the department, PLUS an IT Security review for any software that processes company data.\n- Above $250,000: CFO approval.\n- Anti-splitting rule: 'Purchase orders that fund one project, tool, or deliverable must be aggregated; the combined value sets the approval tier. A requisition may not be divided to remain under a threshold.'\n\n**Coupa Purchase Orders**\n- PO-9120: Vendor 'Lodestone Analytics SaaS', $48,000, approved by Department Manager (Kev L.), 2026-04-14.\n- PO-9121: Vendor 'Lodestone Analytics SaaS', $46,000, approved by Department Manager (Kev L.), 2026-04-14.\n- Both cite project 'CX-Insights rollout' and the same annual subscription for the analytics platform (seats + data connectors).\n\n**Slack #procurement (reconstructed)**\n- Buyer: 'Lodestone quoted $94K/yr all-in for the rollout. One PO?'\n- Kev L. (Department Manager): 'Cut it as two POs under $50K each so it stays with me - a $94K PO goes to the VP and triggers a security review, and that'll take weeks.'\n- Buyer: 'Done, PO-9120 and PO-9121, both approved by you.'\n\nNo VP approval exists in Coupa, Slack, or email, and no IT Security review was performed. Both POs fund the same subscription for the same project and the platform ingests customer data.",
+  "question": "What should the audit conclude about the authorization of this purchase?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Kevin Loeb",
+    "title": "Procurement Operations Manager",
+    "organization": "Feldspar Systems",
+    "years_experience": 9,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Valid - each PO is below the $50,000 Department Manager limit and was approved by the correct role.",
+    "Valid, but a documentation cleanup is needed - run the IT Security review after the fact and note both POs in the file; the manager approvals stand.",
+    "Invalid - both POs fund one subscription for one project, so the anti-splitting rule aggregates them to $94,000, which requires VP approval plus an IT Security review; the purchase must be re-authorized at the VP tier with the security review completed.",
+    "Invalid - the aggregate spend requires CFO approval because enterprise software commitments are capital purchases regardless of amount."
+  ]
+}

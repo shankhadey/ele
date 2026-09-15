@@ -1,0 +1,19 @@
+{
+  "title": "SLA Credit Claim for an Outage Before the Claim Window Shortened",
+  "category": "policy_version",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "Columba Systems lets customers claim SLA service credits under its Service Credit Claim Policy.\n\nVersion 1 (in effect through 2025-03-31): \"Customers may claim SLA service credits within 60 days of the incident (outage) date.\"\n\nVersion 2 (effective 2025-04-01): \"Customers may claim SLA service credits within 30 days of the incident (outage) date.\" v2 includes a transition clause: \"The credit-claim window applicable to an outage is the one in force on the incident (outage) date, and it runs from that incident date. Incidents on or before March 31, 2025 have the v1 60-day window; incidents on or after April 1, 2025 have the v2 30-day window. The date a claim is submitted does not change which window applies.\"\n\nThe incident and billing records for customer Ardent Robotics show: outage INC-2031, Incident Date 2025-03-25 (4-hour regional outage, SLA breach confirmed); SLA credit claim CLM-8890 submitted 2025-05-15.\n\nAn SLA analyst posts in #service-credits on 2025-05-16: \"Ardent submitted a credit claim May 15 for the March 25 outage. We shortened the claim window to 30 days on April 1. Is this claim still timely under the old 60-day window, or is it too late under the new 30-day rule?\"\n\nUsing the policy history, the transition clause, and the records, determine whether claim CLM-8890 is timely.",
+  "question": "Is SLA credit claim CLM-8890 timely?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Owen Bradley",
+    "title": "SLA & Service Credit Analyst",
+    "organization": "Columba Systems",
+    "years_experience": 6,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

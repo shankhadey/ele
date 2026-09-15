@@ -1,0 +1,19 @@
+{
+  "title": "Revenue Recognition Timing Across a Policy Update",
+  "category": "precedent_exception",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "You are a senior revenue analyst at Quimby Foods. A wholesale contract with distributor 'Ainsworth Markets,' signed 2025-03-10, includes a broad right-of-return clause. A junior analyst wants to recognize the full $640,000 shipment revenue immediately upon delivery. You must decide the correct treatment.\n\nActive policy: Revenue Recognition Policy RRP-2025, effective 2025-01-01. For wholesale contracts that grant a right of return, revenue must be recognized net of estimated returns, with the estimated-returns portion deferred and released as the return window lapses. RRP-2025 replaced RRP-2023, which had permitted immediate full recognition of wholesale shipment revenue on delivery, treating returns as period expenses when they occurred.\n\nPrecedent A (accounting log): 2024-04-18, wholesale shipment to 'Bexley Grocers,' $580,000, recognized in full on delivery under RRP-2023. Note: \"Full recognition on delivery per RRP-2023; returns expensed as incurred.\"\n\nPrecedent B (accounting log): 2025-02-27, wholesale shipment to 'Corriden Foods' with a right-of-return clause, recognized net of a 6% estimated-returns reserve, with the reserve deferred. Policy version at decision: RRP-2025. Note: \"Net-of-returns recognition per RRP-2025.\"\n\nCurrent facts: The Ainsworth contract's right-of-return window is 90 days. The junior analyst argues, \"We booked the full Bexley shipment on delivery last year, so let's just recognize all of Ainsworth now \u2014 same wholesale setup.\" The shipment has been delivered and invoiced, and historical data supports a reliable estimate of expected returns for this distributor channel. There is no contractual amendment removing or narrowing the right-of-return clause, and no auditor exception has been granted. You need to state the correct recognition treatment before the month-end close.",
+  "question": "How should the Ainsworth Markets shipment revenue be recognized? Give the treatment and the governing reason in one short phrase.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Miriam Faulkner",
+    "title": "Senior Revenue Analyst",
+    "organization": "Quimby Foods",
+    "years_experience": 13,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge"
+}

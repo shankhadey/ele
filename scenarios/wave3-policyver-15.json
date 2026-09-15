@@ -1,0 +1,19 @@
+{
+  "title": "Refund Window for an Order Placed Before the Window Shortened",
+  "category": "policy_version",
+  "domain": "other",
+  "difficulty": "hard",
+  "scenario_text": "Serpens Retail sets return terms in its Refund Policy.\n\nVersion 1 (applies to purchases through 2024-11-30): \"Items may be returned for a full refund within 60 days of the purchase date.\"\n\nVersion 2 (effective 2024-12-01): \"Items may be returned for a full refund within 30 days of the purchase date.\" v2 includes a transition clause: \"The return window applicable to an order is the one in force on the order's purchase (transaction) date, and the window runs from that purchase date. Orders placed on or before November 30, 2024 have the v1 60-day window; orders placed on or after December 1, 2024 have the v2 30-day window. The date the return is requested does not change which window applies.\"\n\nThe order management system shows order OM-55210 (customer: R. Palmer): Purchase Date 2024-11-20, Item: standing desk, Amount $540, Refund Request opened 2025-01-10.\n\nA returns operations associate messages the support lead on 2025-01-11: \"OM-55210 wants a full refund on a $540 desk. They bought it November 20, but only asked to return it January 10. We moved to a 30-day window December 1, so does the 30-day rule apply and put them out of window, or are they still good?\"\n\nUsing the policy history, the transition clause, and the order record, determine whether OM-55210 is eligible for a full refund.",
+  "question": "Is order OM-55210 eligible for a full refund?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Diego Fuentes",
+    "title": "Returns & Refunds Operations Lead",
+    "organization": "Serpens Retail",
+    "years_experience": 7,
+    "domain_expertise": "retail_operations"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Bereavement Leave Across a Redefined Eligibility Rule",
+  "category": "temporal_consistency",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "A people-ops partner at Lindenford Software must decide whether to grant paid bereavement leave for the loss of an employee's aunt, given two prior decisions that straddle a policy change.\n\n**Decision A (2024-01-18)**\nAn employee was granted 3 days of paid bereavement leave for the death of an aunt. Note: 'Under the bereavement policy then in effect, paid leave covered any close relation at manager discretion.'\n\n**Decision B (2024-08-05)**\nAn employee's request for paid bereavement leave for the death of an uncle was DENIED as paid bereavement. Note: 'Under the revised bereavement policy effective 2024-06-01, paid bereavement is limited to immediate family; the employee was offered PTO or unpaid leave instead.'\n\n**Current request C (2024-11-22)**\nAn employee requests paid bereavement leave for the death of an aunt. The relation (aunt) is not on the immediate-family list.\n\n**Bereavement Policy (current, effective 2024-06-01)**\nPaid bereavement leave (up to 3 days) is available only for immediate family: spouse or domestic partner, child, parent, sibling, or legal guardian. Losses outside this list are not covered by paid bereavement; employees may use PTO or request unpaid leave. The immediate-family definition has applied since June 1, 2024.\n\n**Slack \u2014 #people-ops**\nManager: 'We gave 3 paid days for an aunt back in January, so let's do the same here \u2014 same relation.'\nPartner: 'January was under the old any-close-relation rule. The definition changed in June, and we already applied the new rule in August. Let me line this up against the current policy.'\n\nAn aunt is not on the current immediate-family list.",
+  "question": "How should the partner handle the current request for paid bereavement leave for the loss of an aunt?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Oskar Lindqvist",
+    "title": "People Operations Partner",
+    "organization": "Lindenford Software",
+    "years_experience": 9,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Grant 3 days of paid bereavement leave, consistent with the January decision for the same relation.",
+    "Decline paid bereavement leave and offer PTO or unpaid leave, because the current policy limits paid bereavement to immediate family and the August decision already applied that rule \u2014 an aunt is not covered.",
+    "Escalate the request to the VP of HR for a discretionary exception before responding to the employee.",
+    "Grant 1 or 2 days of paid leave as a compromise between the January grant and the August denial."
+  ]
+}

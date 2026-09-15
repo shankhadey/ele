@@ -1,0 +1,25 @@
+{
+  "title": "LLC to Inc: A New EIN for the Same Business",
+  "category": "entity_resolution",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "scenario_text": "Halden Payments onboards merchants and must reconcile a customer that appears twice in NetSuite. Record C-6001 is \"Tindra Analytics LLC\" (EIN 45-1120987, formed Delaware 2019), with A/R history and a signed order form from 2022. Record C-6100 is \"Tindra Analytics, Inc.\" (EIN 82-9987120, incorporated Delaware 2024-01-10), created when the customer submitted a new W-9. The customer's controller emailed: \"We completed a statutory conversion from an LLC to a C-corporation effective 2024-01-10 to prepare for a funding round. Same business, same team, same bank, new corporate form and new EIN.\" Both records share the identical domain tindra.io, the same primary contact (cfo@tindra.io), the same remit bank account (routing 121000358, account ending 2244), and the same D-U-N-S 22-551-7788, which D&B updated to reflect the new legal form while keeping the number. The order form and subscription were signed under the LLC; the post-conversion invoices must be issued under the Inc. with the new EIN for tax reporting. A revenue analyst wants to keep billing under the old LLC record \"to preserve the contract linkage\" and treat the Inc. record as a duplicate to be deleted. Meanwhile, an open invoice for the January subscription period is queued and cannot be released until the team confirms which EIN and which record should carry the charge for tax reporting.",
+  "question": "How should the two records be resolved for ongoing billing and tax reporting?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Sofie Bergman",
+    "title": "Revenue Operations Manager",
+    "organization": "Halden Payments",
+    "years_experience": 9,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Delete the Tindra Analytics, Inc. record as a duplicate and keep billing under Tindra Analytics LLC (EIN 45-1120987) to preserve the original contract linkage.",
+    "Treat them as two unrelated customers because the EINs differ, and require a brand-new order form before any invoice can be issued to either.",
+    "Recognize both as the same continuing business after a statutory conversion; make Tindra Analytics, Inc. (EIN 82-9987120) the authoritative billing/tax entity going forward while carrying over the LLC's contract and history as predecessor.",
+    "Keep both records active and alternate invoices between them so the customer's A/R stays balanced across the LLC and the Inc."
+  ]
+}

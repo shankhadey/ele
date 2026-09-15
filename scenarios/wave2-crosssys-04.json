@@ -1,0 +1,25 @@
+{
+  "title": "Hartcliffe Labs leaked key: 'old rotated key' versus live use in CloudTrail",
+  "category": "cross_system_synthesis",
+  "domain": "compliance_legal",
+  "difficulty": "hard",
+  "scenario_text": "GitHub secret scanning fires an alert for Hartcliffe Labs: a long-lived AWS access key appears in a commit pushed to a public repository. In the #security-triage Slack channel an engineer responds: 'I recognize that key, it's an old one we rotated ages ago. This is a false positive from an archived repo. Closing it out.'\n\nOther systems undercut that call. AWS CloudTrail shows the flagged key was used 25 minutes ago, from an IP that geolocates to a region where Hartcliffe has no presence, to run a burst of ListBuckets and GetObject calls against an S3 bucket holding research data. GuardDuty raised two findings on the same key in the last half hour: 'UnauthorizedAccess:IAMUser/InstanceCredentialExfiltration' and anomalous API activity. The AWS cost-anomaly monitor flags a sudden spin-up of several large GPU EC2 instances in a region the team never uses, beginning shortly after the key's appearance. IAM shows the key is active, not deactivated, and was last rotated far more recently than 'ages ago.'\n\nThe engineer's 'old rotated key' belief predates the CloudTrail activity and is contradicted by IAM's own records. Individually, a scanner alert could be noise, a single GuardDuty finding could be benign, and a cost spike could be a legitimate workload. Together - a live key confirmed active in IAM, used minutes ago from an unexpected geography to read research data, with exfiltration-typed GuardDuty findings and unexplained GPU instances - they indicate an active credential compromise.\n\nYou are the on-call security lead. What should you do?",
+  "question": "What is the appropriate response given the combined signals?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Devon Iyer",
+    "title": "Principal Incident Response Lead",
+    "organization": "Penhallow Security",
+    "years_experience": 12,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Close the alert as a false positive; the engineer confirmed the key is old and was rotated long ago, so the scanner is flagging an archived repository.",
+    "Open a low-priority ticket to rotate the key on the next maintenance window and monitor GuardDuty for any escalation in the meantime.",
+    "Add a firewall rule to block the foreign IP and close the CloudTrail case, since that stops the observed API calls at their source.",
+    "Declare a security incident now: deactivate the key immediately, terminate the unrecognized GPU instances, and review CloudTrail for scope - the active key, its live use from an unexpected region against research data, the exfiltration-typed GuardDuty findings, and the unexplained compute together indicate an ongoing compromise that overrides the 'old key' assumption."
+  ]
+}

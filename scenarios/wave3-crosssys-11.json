@@ -1,0 +1,19 @@
+{
+  "title": "Sirena Bio researcher: 'star scientist, leave them alone' versus IP-theft indicators",
+  "category": "cross_system_synthesis",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "A senior research scientist at Sirena Bio - not resigning, no notice given - has triggered a cluster of alerts. In the #people-security Slack channel the department head writes: 'This is our most productive scientist, mid-project on our lead program. Whatever the tools are flagging, it's just how they work - heavy downloads, odd hours, that's research. Please don't disrupt them; we can't afford friction right now.'\n\nOther systems raise pointed concerns. The DLP tool (Forcepoint) shows this scientist copied the complete assay datasets and formulation notebooks for the lead program to a personal USB device and a personal email account over the past week. In the badge-access system, they entered the lab at 03:10 on a non-experiment day when no runs were scheduled. In the legal/IP system, a competitor filed a provisional patent last month whose claims overlap unusually closely with Sirena's unpublished program. And in an expense system, a reimbursement request reveals travel to meet an executive at that same competitor, logged as a 'conference.'\n\nEach signal has an innocent reading: scientists do download large datasets, work late, and attend conferences, and patent overlaps happen by coincidence. But together - a full copy of the crown-jewel dataset to personal storage, off-hours lab access with no experiment, a competitor's suspiciously close patent, and undisclosed travel to that competitor - they describe a probable trade-secret exfiltration in progress, not normal research behavior. The department head's 'that's just how they work' read predates the expense-system discovery and the patent overlap. You are the insider-risk partner. What is the single most important action to take now?",
+  "question": "What single action should the insider-risk partner take now?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Marta Kowalczyk",
+    "title": "Director of Insider Risk & People Security",
+    "organization": "Cyrene Biosciences",
+    "years_experience": 12,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

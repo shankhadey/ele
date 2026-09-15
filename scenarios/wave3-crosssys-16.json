@@ -1,0 +1,25 @@
+{
+  "title": "Kyros Systems discount: 'within guardrails' versus a margin-negative workload",
+  "category": "cross_system_synthesis",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "A $1.1M deal at Kyros Systems, a usage-based infrastructure-software vendor, is at deal desk for approval. In the #deal-desk Slack channel the AE writes: 'The discount is 18%, comfortably inside our 20% guardrail, and the list price is standard. This is a clean approve - please sign off so we can close this week.'\n\nOther systems complicate the picture. In the CPQ tool, the quote is indeed within the discount policy on list price. But the solutions-engineering sizing document, attached in Salesforce, shows the customer's projected workload is roughly five times the compute and storage baked into this pricing tier's cost assumptions. In the cost model (the finance data warehouse), delivering that workload at the quoted price yields a negative gross margin - the cost of serving the usage exceeds the contract price. In the product-usage telemetry from the customer's paid pilot, actual consumption already tracks at that five-times level, not the tier assumption. And a note from a solutions architect warns: 'At their real volume, our unit cost is above what we're charging; this only works if we reprice per-unit or cap usage.'\n\nEach signal alone looks benign: the discount is compliant, sizing docs are estimates, and pilots run hot. But together - an in-policy discount layered on a tier whose cost assumptions are exceeded fivefold, a cost model showing negative gross margin, pilot telemetry confirming the real volume, and an architect flagging unit economics - they show that approving on the discount guardrail alone would book a loss-making contract. The AE's 'within guardrails' read looks only at list-price discount, not at cost-to-serve. You run deal desk. What should you recommend?",
+  "question": "What should deal desk recommend for the Kyros Systems deal?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Harold Nkosi",
+    "title": "Head of Deal Desk",
+    "organization": "Naxos Software",
+    "years_experience": 13,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge",
+  "choices": [
+    "Approve the deal as quoted; the 18% discount is within the 20% guardrail and the list price is standard.",
+    "Approve it but add a small services fee to improve optics, leaving the pricing structure unchanged.",
+    "Do not approve as structured; restructure to consumption-based pricing or a usage cap and escalate for margin review: the fivefold-underestimated workload, the negative gross margin in the cost model, and the pilot telemetry together show the in-policy discount masks a loss-making contract.",
+    "Increase the discount to 20% to win the deal faster, since it is still within the approval guardrail."
+  ]
+}

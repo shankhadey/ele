@@ -1,0 +1,19 @@
+{
+  "title": "Break-Glass Access Grant Mistaken for a Standing Precedent",
+  "category": "precedent_exception",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "scenario_text": "You are the access-governance owner at Netherfield Retail. A backend engineer, Sam Ortiz, is requesting standing (permanent) write access to the production payments database to make debugging faster. He is citing a prior grant.\n\nActive policy: Production Access Standard PAS-4, effective 2024-10-01. Standing write access to production payment systems is restricted to the on-call Payments SRE rotation. All other engineers may request time-boxed break-glass access: a maximum 4-hour window, tied to a specific active incident, approved by the on-call SRE lead and auto-revoked at expiry. Standing exceptions require a documented business case and Security Director plus data-owner approval; convenience or debugging speed is explicitly non-qualifying.\n\nThe engineer forwards a precedent: on 2024-12-02, Sam himself was granted write access to the production payments database. The access record note reads verbatim: \"Break-glass grant during Sev1 payment-processing incident INC-4471; 4-hour window, approved by on-call SRE lead, auto-revoked at 02:14. One-time incident access, not a standing entitlement.\"\n\nCurrent facts: There is no active incident. Sam is not on the Payments SRE rotation. His stated reason is \"debugging is slow when I have to request access each time.\" No business case, Security Director approval, or data-owner approval has been submitted. Sam argues, \"I already had prod write access in December, so granting it permanently is just formalizing what I've had.\"",
+  "question": "Should Sam be granted standing write access to the production payments database, and why? Give the decision and the controlling reason in one short phrase.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Katarina Ives",
+    "title": "Production Access Governance Lead",
+    "organization": "Netherfield Retail",
+    "years_experience": 10,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge"
+}

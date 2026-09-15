@@ -1,0 +1,25 @@
+{
+  "title": "The Okta Merge That Shouldn't Happen",
+  "category": "entity_resolution",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "Foxglove Labs is cleaning up its Okta directory after acquiring a smaller startup. An identity engineer runs a dedupe script that flags two accounts for merge because they share a display name and a personal recovery email. Account 1: login sam.torres@foxglovelabs.com, employeeNumber 20114, department Platform Engineering, manager Lena Ruiz, recovery email storres.dev@gmail.com, MFA enrolled 2021, group memberships include prod-db-admins and aws-prod-poweruser. Account 2: login sam.torres@foxglove-labs.io (the acquired company's domain, retained during integration), employeeNumber A-3382, department Growth Marketing, manager Dev Patel, recovery email storres.dev@gmail.com, MFA enrolled 2024, group memberships include marketing-analytics only. HR's Workday export lists TWO distinct workers: \"Samuel Torres\" (employeeNumber 20114, SSN ending 9012, Platform Engineering) and \"Samantha Torres\" (employeeNumber A-3382, SSN ending 5567, Growth Marketing), who are siblings \u2014 a known referral hire. The shared recovery email is a family address both used before separate work accounts existed. The dedupe script's confidence score is 0.91, driven by identical displayName normalization (\"S. Torres\") and the shared recovery email. Merging would collapse both into one Okta identity, which would grant the Growth Marketing user the Platform Engineering account's prod-db-admins and aws-prod-poweruser entitlements.",
+  "question": "Should the two Okta accounts be merged, and what is the key reason?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Aditya Menon",
+    "title": "Staff Identity & Access Engineer",
+    "organization": "Foxglove Labs",
+    "years_experience": 10,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Yes, merge them; the shared recovery email and identical normalized display name give a 0.91 confidence score, which exceeds the auto-merge threshold.",
+    "No, do not merge; the two accounts map to two distinct workers with different employee numbers and different SSNs in Workday, so this is a false-positive match.",
+    "Yes, merge them but strip the prod-db-admins and aws-prod-poweruser groups first, so the combined identity is not over-privileged.",
+    "No, do not merge, but disable Account 2 since the acquired-company domain should not persist after integration."
+  ]
+}

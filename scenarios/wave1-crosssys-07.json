@@ -1,0 +1,19 @@
+{
+  "title": "Glenmorra Health departing employee: 'trusted, keep access' versus exfiltration signals",
+  "category": "cross_system_synthesis",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "scenario_text": "An engineer at Glenmorra Health resigned; Workday shows the resignation effective in 14 days, with a standard two-week transition. In the #people-ops Slack channel the hiring manager writes: 'Great employee, leaving on excellent terms, no concerns at all. Let's keep all their access live through the last day so they can finish the handoff.' The ServiceNow offboarding workflow has not been started.\n\nOther systems raise flags the manager has not seen. In Okta, this user logged in at 02:40 local time from an IP geolocating to a country where Glenmorra has no offices and where the employee has never previously authenticated. The company DLP tool (Microsoft Purview) fired an alert yesterday: roughly 4 GB was copied from an internal code and document repository to a personal cloud-storage account over the span of an hour - well outside this person's normal activity profile. And in a separate Slack channel the employee mentioned, in passing, that their next role is at a direct competitor.\n\nEach item has a benign explanation on its own: engineers travel, large downloads sometimes accompany legitimate handoffs, and moving to a competitor is not itself misconduct. But combined - a bulk transfer of proprietary material to personal storage, an anomalous overseas off-hours login, and a confirmed move to a competitor, all during an unmanaged notice period - they describe a live data-exfiltration risk. The manager's 'no concerns' judgment predates and does not account for the DLP alert or the login anomaly. You are the security partner for this offboarding. What should you do now?",
+  "question": "What should the security team do now, before the last day arrives?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Rosa Klein",
+    "title": "Director of People Operations & Insider Risk",
+    "organization": "Glenmorra Health",
+    "years_experience": 12,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge"
+}

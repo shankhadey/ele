@@ -1,0 +1,19 @@
+{
+  "title": "Offboarding the Engineer, Not the Robot",
+  "category": "entity_resolution",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "Fairfax Labs' security team is offboarding a departing platform engineer and must disable every identity that belongs to the person while avoiding collateral damage to shared infrastructure. Workday lists one worker: \"Samira Kaur,\" employeeNumber 30112, termination date 2024-06-14. The identity inventory surfaces six accounts that mention \"kaur\" or link to Samira: (1) Okta user samira.kaur@fairfaxlabs.com, tied to employeeNumber 30112; (2) a GitHub Enterprise org account \"skaur-fairfax,\" SSO-linked to Okta 30112; (3) an AWS IAM user \"samira.kaur\" in the engineering account, access keys last used 2024-06-13; (4) a PagerDuty user samira.kaur@fairfaxlabs.com on the platform on-call schedule; (5) a service account \"deploy-bot@fairfaxlabs.com\" that Samira created in 2022, whose Okta owner field is Samira and whose recovery email is samira's, but which is a non-human automation identity used by the production CI/CD pipeline and shared by the whole platform team; and (6) a GitHub account \"skaur-personal\" with no corporate email, not a member of the Fairfax org, linked to Samira only via a matching display name. Security policy requires disabling all human corporate identities of a departing worker on the termination date, reassigning ownership of shared service accounts rather than disabling them, and taking no action on personal accounts outside the company's control. The security engineer must count how many accounts to disable as Samira's human corporate identities.",
+  "question": "How many of the six accounts should be disabled as Samira Kaur's human corporate identities?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Diego Whitmore",
+    "title": "Staff Security Engineer",
+    "organization": "Fairfax Labs",
+    "years_experience": 11,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge"
+}

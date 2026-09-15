@@ -1,0 +1,19 @@
+{
+  "title": "Nemea Bank login alerts: 'noisy geo-velocity rule' versus a coordinated takeover wave",
+  "category": "cross_system_synthesis",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "Nemea Bank's fraud operations sees a rise in customer-account login alerts on Saturday. In the #fraud-ops Slack channel the on-shift analyst writes: 'This is the geo-velocity rule being noisy again after the mobile app update - it mis-tags customers on VPNs as impossible-travel. I've been auto-closing these all morning. No real fraud, it's the same false-positive pattern as last month.'\n\nOther systems tell a different story. In the SIEM (Splunk), the successful logins cluster on a single hosting-provider ASN and share a small set of device fingerprints across hundreds of distinct customer accounts - a signature of credential-stuffing from a bot pool, not scattered VPN users. In the auth platform (ForgeRock), successful logins are being followed within minutes by new-payee additions and mobile-number changes on the same accounts. In the card-processing system, a burst of small 'test' transfers began an hour ago on accounts that logged in from that ASN. And a threat-intel feed flagged this morning that a credential list matching Nemea's customer email pattern was posted to a fraud forum overnight.\n\nEach signal is individually explainable: geo-velocity rules are genuinely noisy, shared device fingerprints can reflect a common SDK, and small transfers happen constantly. But together - a fresh leaked credential list, logins from a hosting ASN with reused fingerprints, immediate payee and phone changes, and test transfers - they describe an active account-takeover campaign, not rule noise. The analyst's 'noisy rule' explanation predates the threat-intel post and the payee-change correlation. You are the fraud duty manager reviewing the queue. What should you do?",
+  "question": "What is the appropriate response given the combined signals?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Marcus Iyer",
+    "title": "Head of Fraud Operations",
+    "organization": "Pharos Financial",
+    "years_experience": 12,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "wave3.json",
+  "split": "challenge"
+}

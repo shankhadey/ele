@@ -1,0 +1,25 @@
+{
+  "title": "Service-Credit Tier When a Competitive Displacement Is on the Table",
+  "category": "precedent_exception",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "scenario_text": "You are a Customer Success escalation lead at Nettleton Systems. Enterprise customer Ardent Health had a 9-hour API outage last week, breaching their 99.9% uptime SLA. They are demanding compensation.\n\nActive policy: SLA Remediation Framework SRF-3, effective 2024-05-01. Standard breach: up to 10% monthly-fee service credit, approved by CS Manager. Enhanced tier (up to 25% credit + a formal RCA and a named executive sponsor) is unlocked ONLY when a breach coincides with a documented, active competitive-displacement risk \u2014 defined as a logged competitor evaluation or a written churn threat tied to the incident. Anything above 25% requires the VP of Customer Success.\n\nPrecedent A (deal-desk/CS log): 2024-06-12, customer Veranda Bank, similar 8-hour outage, granted a 10% standard credit by CS Manager Lee Nguyen. Notes: \"No churn signal; routine remediation.\"\n\nPrecedent B (CS log): 2024-08-03, customer Cortland Media, 6-hour outage, granted 22% enhanced credit + RCA, approved by VP CS. Notes: \"Active bake-off vs. competitor 'Halcyon'; churn threat emailed by CIO. Enhanced tier justified.\"\n\nCurrent Ardent facts: Their CIO emailed on the day of the outage: \"This is the third incident this year. We have already begun a formal evaluation of Halcyon as a replacement and this outage accelerates that decision.\" The account team logged the Halcyon evaluation in CRM the same day. Ardent's account owner is proposing a flat 10% credit \"to match the Veranda precedent and keep it simple.\"",
+  "question": "Which remediation should Nettleton offer Ardent Health, and via which approval path?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Marcus Bellamy",
+    "title": "Head of Enterprise Customer Success",
+    "organization": "Nettleton Systems",
+    "years_experience": 13,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "A 10% standard service credit approved by the CS Manager, mirroring the Veranda Bank precedent for a comparable outage.",
+    "An enhanced-tier credit of up to 25% plus a formal RCA and a named executive sponsor, following the Cortland Media precedent, because a documented active competitive-displacement risk is present.",
+    "A 10% credit now, with a promise to revisit the tier only if Ardent formally signs with Halcyon.",
+    "A credit above 25% escalated to the VP of Customer Success, since three incidents in one year is an aggravating factor that exceeds the enhanced tier."
+  ]
+}

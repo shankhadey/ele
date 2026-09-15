@@ -1,0 +1,25 @@
+{
+  "title": "Synthesizing Signals to Decide Whether to Release a Held Vendor Payment",
+  "category": "cross_system_synthesis",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "An accounts-payable controls agent at Thornton Manufacturing must decide whether to release a $268,000 payment that the fraud-screening rule flagged for review.\n\n**NetSuite (AP) — Invoice INV-55120**\nVendor: 'Delmarva Industrial Supply' | Amount: $268,000 | Matches PO-9982 (3-way match passed: PO, receipt, invoice) | Payment method: ACH.\n\n**Bank change log (Treasury system)**\nVendor remit-to bank was updated 4 days ago from 'Keystone Bank acct ...3320' to 'Sunbelt Trust acct ...7741'. Change requested via inbound email; no callback verification recorded.\n\n**Email trail (AP inbox)**\n- 4 days ago, from 'accounts@delmarva-supply.com': 'Please update our banking for all future payments; new details attached. Urgent — remit the open invoice to the new account.' Sender domain is delmarva-supply.com. The vendor's verified domain on file is delmarvaindustrial.com.\n\n**Vendor master (verified contacts)**\nAP contact of record: Karen Doyle, phone on file. Verified email domain: delmarvaindustrial.com.\n\n**Slack — #ap-controls**\nAP clerk: 'Invoice is legit — the 3-way match is clean and the PO is real. The only new thing is the bank update. Can I release it to the new account?'\n\nThe agent must weigh a legitimate underlying invoice against the payment-integrity signals.",
+  "question": "What should the agent do with the $268,000 payment?",
+  "answer_format": "multiple_choice",
+  "choices": [
+    "Release the payment to the new Sunbelt Trust account — the 3-way match passed and the invoice is legitimate, so the payment is valid",
+    "Hold the payment and reject only the invoice — the clean 3-way match is irrelevant once any anomaly appears",
+    "Release the payment but to the old Keystone Bank account on file, ignoring the bank-change request",
+    "Hold the payment, do not remit to the new account, and verify the bank-change request out-of-band by calling Karen Doyle at the phone number on file — the mismatched sender domain and unverified bank change are classic business-email-compromise indicators independent of the invoice's validity"
+  ],
+  "contributor": {
+    "name": "Grace Lin",
+    "title": "Accounts Payable Controls Manager",
+    "organization": "Thornton Manufacturing",
+    "years_experience": 10,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "batch2.json",
+  "split": "challenge"
+}

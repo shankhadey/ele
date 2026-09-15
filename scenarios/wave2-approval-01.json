@@ -1,0 +1,25 @@
+{
+  "title": "Reach-Truck Pair Split Across Two POs to Stay Under the Depot Limit",
+  "category": "approval_chain",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "scenario_text": "A procurement-audit agent at Dunstan Freight is reviewing authorization on a warehouse equipment purchase.\n\n**Procurement Authority Matrix**\n- Up to $20,000: Depot Manager (Coupa approval note).\n- $20,001-$75,000: Regional Procurement Lead (approval + 3 competitive quotes).\n- Above $75,000: Director of Procurement AND Finance review.\n- Anti-splitting rule: 'A single asset or requisition may not be divided across multiple purchase orders to stay beneath an approval limit. Where POs share a requisition or cover one asset, their aggregate value sets the required tier.'\n\n**Coupa Purchase Orders**\n- PO-3310: Vendor 'ForkPro Handling', $18,400, approved by Depot Manager (Greg P.), 2026-06-02.\n- PO-3311: Vendor 'ForkPro Handling', $19,300, approved by Depot Manager (Greg P.), 2026-06-02.\n- Both cite requisition REQ-207 and the line 'Reach-truck fleet, Bay 4 replacement (2-unit set, commissioned together)'.\n\n**Slack #depot-procurement (reconstructed)**\n- Buyer: 'ForkPro quoted $37,700 for the two reach-trucks as one order.'\n- Greg P. (Depot Manager): 'Put them on two POs so each lands under my $20K. One PO and it's the Regional Lead plus the quote pack.'\n- Buyer: 'Cut PO-3310 and PO-3311, both approved by you.'\n\nNo Regional Procurement Lead approval and no competitive quotes appear in Coupa, Slack, or email. The two reach-trucks are commissioned as a single fleet replacement for Bay 4 and are delivered on one work order.",
+  "question": "What should the audit conclude about the authorization of this purchase?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Gregory Paulsen",
+    "title": "Procurement Operations Manager",
+    "organization": "Dunstan Freight",
+    "years_experience": 11,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave2.json",
+  "split": "challenge",
+  "choices": [
+    "Valid - each purchase order sits below the $20,000 Depot Manager limit and was approved by the correct role.",
+    "Valid, but a documentation cleanup is needed - obtain three quotes retroactively and cross-reference the two POs in the file; the approvals themselves stand.",
+    "Invalid - the two POs share requisition REQ-207 and cover one 2-unit reach-truck set commissioned together, so the anti-splitting rule sets the governing value at $37,700, which requires Regional Procurement Lead approval plus three competitive quotes; the purchase must be re-authorized at that tier.",
+    "Invalid - the combined value crosses into capital spend and requires Director of Procurement approval plus Finance review before any PO can be issued."
+  ]
+}

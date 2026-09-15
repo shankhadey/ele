@@ -1,0 +1,19 @@
+{
+  "title": "Emergency Production Change With a Security-Incident Qualifier",
+  "category": "precedent_exception",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "scenario_text": "You are the on-call release manager at Rutherford Media. A senior engineer wants to push a change to the production payment service right now, outside the normal change window, to patch an actively exploited authentication-bypass vulnerability. It is 2:00 AM Saturday.\n\nActive policy: Change Management Policy CM-4, effective 2024-06-01. Standard production changes require a Change Advisory Board (CAB) ticket approved 24 hours in advance. Two expedited paths exist: (1) Expedited change \u2014 a Director may approve a same-day change with reduced review for routine urgent fixes; (2) Emergency Security change \u2014 when a change remediates an active security incident (a confirmed, exploited vulnerability logged in the incident tracker), it may be deployed immediately with a single on-call Security Officer approval, and the CAB is reviewed retrospectively within 48 hours.\n\nPrecedent (change log): 2024-07-19, off-window hotfix to the checkout service, approved by Engineering Director Omar Reyes via the Expedited path. Note: \"Latency regression causing cart abandonment \u2014 urgent but not a security incident. Director-approved expedited change.\"\n\nCurrent facts: Security has logged incident INC-4471, confirming the auth-bypass is being actively exploited against the payment service. A Security Officer, Dana Kohl, is on call and reachable. The engineer says, \"Last time we did an off-window fix, Omar just approved it as an expedited change \u2014 let's get a Director to do the same and move fast.\"",
+  "question": "Which approval path should authorize this off-window production change? Give the path name and the single approver role required to deploy immediately.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Priyanka Rao",
+    "title": "Staff Site Reliability Engineer",
+    "organization": "Rutherford Media",
+    "years_experience": 11,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge"
+}

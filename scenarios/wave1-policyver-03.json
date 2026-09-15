@@ -1,0 +1,25 @@
+{
+  "title": "Racking Purchase With a PR Opened Days Before the Threshold Change",
+  "category": "policy_version",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "scenario_text": "Westbrook Logistics governs spend through a Procurement Approval Policy.\n\nVersion 3 (effective January 1, 2022) states: \"Purchases exceeding $10,000 require three competitive quotes. Purchases exceeding $50,000 additionally require VP of Operations approval.\"\n\nVersion 4 (effective April 1, 2025) states: \"Purchases exceeding $5,000 require three competitive quotes. Purchases exceeding $25,000 additionally require VP of Operations approval.\" v4 includes a transition clause: \"The threshold set in effect on a requisition's Purchase Requisition (PR) created date governs that purchase. PRs created on or before March 31, 2025 follow v3; PRs created on or after April 1, 2025 follow v4. The PR created date controls regardless of when the corresponding Purchase Order is issued.\"\n\nThe Coupa record for PR-55820 (warehouse pallet racking, supplier: Girard Steel) shows: PR Created Date 2025-03-28, Amount $30,000, PO Issued Date 2025-04-10, PO Number PO-77201.\n\nA procurement analyst messages the category manager in Slack on 2025-04-11: \"PR-55820 for the racking, $30k. The requisition was opened March 28, but the PO only went out April 10, after the new rules kicked in. Do we need VP of Ops sign-off, and do we still need the three competitive quotes on this one?\" The category manager replies asking the analyst to confirm which policy version applies before routing anything.\n\nUsing the policy versions, the transition clause, and the Coupa record, determine what approval steps PR-55820 requires.",
+  "question": "What approval steps are required for PR-55820?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Priya Venkataraman",
+    "title": "Senior Procurement Manager",
+    "organization": "Westbrook Logistics",
+    "years_experience": 12,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "wave1.json",
+  "split": "challenge",
+  "choices": [
+    "Three competitive quotes are required, but VP of Operations approval is not, because the PR was created 2025-03-28 under v3, whose VP threshold is $50,000.",
+    "Three competitive quotes and VP of Operations approval are both required, because $30,000 exceeds v4's $25,000 VP threshold.",
+    "Neither competitive quotes nor VP approval are required, because $30,000 is below v3's $50,000 VP threshold.",
+    "VP of Operations approval is required, because the PO was issued 2025-04-10, after v4 took effect."
+  ]
+}
