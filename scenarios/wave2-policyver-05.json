@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "SVC-2210 remains compliant under v2 (TLS 1.2) until its 2025-09-01 attestation, at which point it must be re-provisioned to meet v3 (TLS 1.3).",
     "SVC-2210 must be upgraded to TLS 1.3 immediately, because v3 took effect January 1, 2025 and supersedes all prior services.",

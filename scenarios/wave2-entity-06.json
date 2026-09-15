@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Cardinal Ledger Analytics, Inc. remains solely responsible for all PHI under BAA-2021-14, because the original BAA covered both service lines and cannot be split.",
     "Ridgeline Data Partners LLC is the responsible business associate for the claims PHI; execute an updated BAA with Ridgeline, while Cardinal retains BAA obligations for the provider-directory line.",

@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "An Engineering Director may approve it as a dynamically linked GPL component, mirroring the Marrowgate precedent for a shipped product.",
     "It is not approvable for the distributed product under OSS-3; the team must redesign to a permissive-licensed alternative, or escalate to OSPO and Legal, who could approve copyleft only for internal-only use, following the OSS-3 precedent.",

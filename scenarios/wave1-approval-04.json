@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Valid - the Controller holds credit-memo approval authority and approved CM-7781 in the ERP.",
     "Valid, but a documentation cleanup is needed - send the CFO an informational email after the fact; the Controller's approval already satisfies the control.",

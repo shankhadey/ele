@@ -21,5 +21,5 @@
     "No \u2014 the enforcement committee meeting had no notes, the VP Loss Prevention declined attendance, and legal did not respond; without documented approval from the committee and required stakeholders, the category-specific 12-month window in Section 3.4 applies.",
     "Yes \u2014 the enforcement committee decided on May 8 that Section 6.1(a)'s 6-month clause overrides category-specific windows for sellers suspended under prior policies; this constitutes an approved exception even without written notes."
   ],
-  "split": "challenge"
+  "split": "core_test"
 }

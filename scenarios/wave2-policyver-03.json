@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "8 weeks, because the leave commenced 2024-06-24, before the July 1, 2024 cutover, so v1 governs the entire leave even though it extends past July 1.",
     "14 weeks, because the leave was still active when v2 took effect on July 1, 2024.",

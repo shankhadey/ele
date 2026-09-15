@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "VP Sales approval alone, following the Marlowe Shipping precedent, since both are ~30% multi-year prepaid deals.",
     "VP Sales approval for the 30% discount AND Finance Controller approval for the net-60 terms, because both PT-6 triggers apply and each requires its own sign-off.",

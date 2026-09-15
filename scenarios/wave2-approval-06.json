@@ -15,5 +15,5 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge"
+  "split": "core_test"
 }

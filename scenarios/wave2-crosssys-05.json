@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Proceed with the sole-source consolidation and retire the backup vendor; Halewood's long track record and the volume discount make it the low-risk, cost-optimal choice.",
     "Focus on negotiating stronger SLA credits into the new contract, then sign the three-year expansion as planned so the discount is not lost.",

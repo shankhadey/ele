@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Ratably over the 24-month renewal term ($20,000 per month beginning 2024-10-01), because the renewal was executed 2024-09-15 and v2 governs all renewals executed on or after January 1, 2024.",
     "In full at a point in time on 2024-10-01, matching the original contract's point-in-time method under v1.",

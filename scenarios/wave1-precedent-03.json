@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "A 10% standard service credit approved by the CS Manager, mirroring the Veranda Bank precedent for a comparable outage.",
     "An enhanced-tier credit of up to 25% plus a formal RCA and a named executive sponsor, following the Cortland Media precedent, because a documented active competitive-displacement risk is present.",

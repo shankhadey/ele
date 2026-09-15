@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Deny the SLA credit and cite the carrier's fiber-cut RFO, since an upstream carrier fault falls outside Kydonia's SLA obligations.",
     "Split the credit with the customer as a goodwill gesture without assigning root cause, to preserve the relationship.",

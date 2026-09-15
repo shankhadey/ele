@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Keep the renewal at 'Likely' and wait for the usual March seat rebound; the January contraction is a known seasonal pattern for this account.",
     "Prioritize resolving the data-export ticket quickly so the customer stays satisfied through the renewal window.",

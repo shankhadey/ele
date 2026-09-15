@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Deny the promotion, consistent with the January denial of an off-cycle L5 promotion.",
     "Approve the promotion, because under the current rules L5 requires only Director approval plus a calibration packet \u2014 both of which are on file \u2014 and the January denial's missing-VP-approval basis no longer applies.",

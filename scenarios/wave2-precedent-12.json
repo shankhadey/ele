@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Yes; the Procurement Manager may invoke it as a time-sensitive need, mirroring the 2024 scanner-unit precedent.",
     "No; PP-9 permits emergency single-source only for a documented active or imminent service disruption, which does not exist here, so this proactive replenishment must go through the standard three-bid process.",

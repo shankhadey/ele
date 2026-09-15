@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Engineering Director sign-off without a DPIA, following the Larkspur Metrics precedent for equivalent telemetry-only data.",
     "The full SOS-2.0 path: completed DPIA, executed SCCs, and DPO approval, following the Fenwick Insights precedent decided under the current policy.",

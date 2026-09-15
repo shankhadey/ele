@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Eligible on August 1, 2025 (v1's 3-year cycle applies to the next refresh) for $1,000 (the v2 amount).",
     "Eligible on August 1, 2025 for $1,500, because both the v1 refresh cycle and the v1 stipend amount carry forward to the next refresh.",

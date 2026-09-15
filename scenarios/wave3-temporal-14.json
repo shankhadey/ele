@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Deny the claim, consistent with the June denial of a similar jacket warranty claim.",
     "Approve the warranty claim: Theo's failure is a confirmed manufacturing defect within the 12-month window, whereas the June denial turned on accidental damage \u2014 a factor absent here \u2014 so that denial does not govern.",

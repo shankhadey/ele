@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Link them as one global vendor and attach the watchlist hit to the combined record, since the identical name indicates a single multinational firm.",
     "Keep them as two separate, unrelated entities; attach the watchlist hit only to the Singapore entity (UEN 201844772K), and do not let it taint the Louisiana LLC.",

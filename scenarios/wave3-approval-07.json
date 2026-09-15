@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Valid - Marcus held the delegated approver role at the time, so his approval is authorized and the Finance review completes the requirement.",
     "Valid, but needs a documentation cleanup - have the VP add a confirming note when she returns; the approval already went through a legitimate delegated role.",

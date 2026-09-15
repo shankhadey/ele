@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Reassign both SA-100 and SA-200 to Aurora Grid Retail LLC (EIN 88-4432019), since the divestiture transferred the counterparty relationship to the buyer.",
     "Leave both SA-100 and SA-200 with Meridian Power Group, Inc., since Skagen was not a party to the purchase agreement and asset sales never move third-party contracts.",

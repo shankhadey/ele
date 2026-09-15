@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Valid - each PO is below the $50,000 Department Manager limit and was approved by the correct role.",
     "Valid, but a documentation cleanup is needed - run the IT Security review after the fact and note both POs in the file; the manager approvals stand.",

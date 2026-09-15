@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Valid and complete - the break-glass access was properly authorized at grant time by the on-call SRE with logged VP Engineering approval and the access auto-revoked on schedule; no further action is required.",
     "Valid, but needs a documentation cleanup - the team can file the security retrospective whenever convenient; compliance of the grant is unaffected.",

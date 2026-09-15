@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Apply 20% again on the AE's authority, mirroring Beacon's prior 20% concession to close quickly.",
     "Do not auto-apply 20%; the prior 20% was a documented non-binding, non-precedential one-time goodwill concession, and with no qualifying factor this cycle the renewal is limited to the standard tier (up to 12% self-approved), with 13-20% requiring Director approval only if a qualifying factor is documented.",

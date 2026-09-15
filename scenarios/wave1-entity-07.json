@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Yes, merge them; the shared recovery email and identical normalized display name give a 0.91 confidence score, which exceeds the auto-merge threshold.",
     "No, do not merge; the two accounts map to two distinct workers with different employee numbers and different SSNs in Workday, so this is a false-positive match.",

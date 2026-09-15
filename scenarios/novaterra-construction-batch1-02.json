@@ -21,5 +21,5 @@
     "Require an assignment and assumption agreement (with owner consent per Section 12.1) formally transferring the subcontract from Advanced Mechanical Systems Inc. to AMS Holdings LLC, then accept a waiver from AMS Holdings \u2014 and simultaneously obtain the articles of dissolution to confirm Advanced Mechanical no longer exists as a viable entity to sign.",
     "Accept the AMS Holdings LLC waiver as-is because Tony Mirovic signed both the original contract and the waiver, establishing continuity of the principal regardless of entity name."
   ],
-  "split": "challenge"
+  "split": "core_test"
 }

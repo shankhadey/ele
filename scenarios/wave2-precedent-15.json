@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Yes; a 6-hour flight qualifies for business class with manager approval, mirroring the Renata Cho precedent.",
     "No; under TE-4 a 6-hour flight is business-class-eligible only with advance written VP approval, which Tomas does not have, so as booked it is reimbursable only at economy fare.",
