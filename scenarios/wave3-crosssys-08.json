@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Sign the volume-commitment extension to preserve the partnership and accept the current certifications, since the mill attributes the variance to lab recalibration.",
     "Accept the shipments under a temporary deviation and reconcile the MTR paperwork with the mill after the extension is signed, as they requested.",

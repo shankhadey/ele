@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Yes, release it against Meadowlark Fresh Distribution (C-8455), because that record's own balance leaves room under its separately assigned limit.",
     "No, hold it; the two records are one legal entity (shared EIN, DUNS, and bank account) whose consolidated $300,000 limit is already fully used by the combined $300,000 A/R.",

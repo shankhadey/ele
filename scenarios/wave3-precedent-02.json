@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Grant the full 40% MRC credit at the Network Operations Manager level, mirroring the Marrow Freight precedent for a comparable outage.",
     "Grant up to 25% MRC at the Network Operations Manager level; the portion above 25% requires VP of Operations approval plus an executive RCA, because SRS v5 caps NOM-level credits at 25% and the Marrow precedent was decided under the superseded v4.",

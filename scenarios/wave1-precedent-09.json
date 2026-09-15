@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "A full refund approved by the CS Manager, matching the Halgrove Dental precedent at 45 days.",
     "A prorated refund approved by the CS Director, because at 40 days Bramble is in the 31-90 day window under the current RP-3 policy.",

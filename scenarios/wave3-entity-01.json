@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Collapse both renewals and billing under Nordlys Communications Holdings (A-2001, EIN 81-3320045) and issue one combined order form and invoice, since Holdings is the ultimate parent of the family.",
     "Keep OPP-7010 on Nordlys Wireless (C-5502) and OPP-7011 on Nordlys Fiber (C-5503), invoicing each subsidiary under its own MSA and EIN, while aggregating volume across both under the Holdings framework for tier pricing only.",

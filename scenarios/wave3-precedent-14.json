@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Settle retroactively at list rate via the SAM Manager, mirroring the Vireo CRM precedent.",
     "Apply the prospective-only true-forward exception via the SAM Director, because the contract contains a true-forward clause and the overage arose from documented organic growth - both unlock conditions are met.",

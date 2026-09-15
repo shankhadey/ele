@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Merge both opportunities onto the parent account, because the shared CFO email and mailing address prove it is one buying entity, so pipeline is $480,000 not $745,000.",
     "Keep both opportunities separate; they are distinct legal entities (different EINs and separate MSAs) in a parent/subsidiary relationship, so total pipeline of $745,000 is correct.",

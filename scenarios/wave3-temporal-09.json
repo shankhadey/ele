@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Grant 3 days of paid bereavement leave, consistent with the January decision for the same relation.",
     "Decline paid bereavement leave and offer PTO or unpaid leave, because the current policy limits paid bereavement to immediate family and the August decision already applied that rule \u2014 an aunt is not covered.",

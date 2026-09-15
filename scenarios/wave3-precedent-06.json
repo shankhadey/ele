@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Grant the full refund, mirroring the prior 30-day refund to stay consistent and protect the relationship.",
     "Deny the refund because the request is outside the 14-day window with no documented service defect, and the prior refund was an explicitly non-binding, non-precedential one-time goodwill courtesy that creates no entitlement.",

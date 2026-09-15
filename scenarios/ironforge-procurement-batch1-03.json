@@ -21,5 +21,5 @@
     "Reject the requisition \u2014 Triton is suspended from the AVL and the MasterControl deviation was never filed within 48 hours, making the emergency deviation invalid per procedure",
     "Approve the requisition \u2014 Tom has Plant Manager authority under Section 6.4, his email to Henrik constitutes documented intent, and the 48-hour MasterControl filing is an administrative requirement that doesn't void the deviation authority itself"
   ],
-  "split": "challenge"
+  "split": "core_test"
 }

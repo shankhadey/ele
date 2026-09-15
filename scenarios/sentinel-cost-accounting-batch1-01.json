@@ -21,5 +21,5 @@
     "The $218K should be excluded from both FY25 and FY26 until the PM provides retroactive approval; without project authorization the cost is suspended and potentially unallowable.",
     "The $218K belongs in FY25 under TCI but should be excluded from the G&A allocation base entirely because material costs over $100K are excluded under the new VACI methodology."
   ],
-  "split": "challenge"
+  "split": "core_test"
 }

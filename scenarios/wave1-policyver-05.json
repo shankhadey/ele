@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "G-3345 remains valid under v2 until its 2025-05-15 recertification, at which point it must be re-provisioned under v3 (90-day term, hardware key).",
     "G-3345 must be converted to a 90-day hardware-key grant immediately, because v3 took effect October 1, 2024 and supersedes all prior grants.",

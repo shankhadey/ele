@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Valid - Procurement approved the vendor, and because Slaterock de-identifies the data the PHI controls do not apply.",
     "Valid, but needs a documentation cleanup - execute the BAA and DPA retroactively while the feed keeps running; the onboarding decision itself was sound.",

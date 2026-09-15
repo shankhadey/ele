@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Dismiss the spike as a data artifact from the EHR migration and exclude the county from this week's report until the feed stabilizes.",
     "Wait two more weeks for the EHR feed to settle and re-evaluate before taking any action, to avoid a false alarm.",

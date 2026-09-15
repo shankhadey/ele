@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Approve it under Regional Sales Director sign-off alone, mirroring the GlobalMart EU precedent, since it is the same customer family in the same discount band.",
     "Route it for both VP Sales and Deal Desk sign-off as required by DGP v4.0 for the 36-45% band; the GlobalMart EU precedent was decided under the superseded v3.2 tiers and does not apply.",

@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Deny Net-60 again, consistent with the February denial for the same customer and the same request.",
     "Approve Net-60, because the policy is unchanged and Wexford now holds a current tier-B rating verified at request time \u2014 the February denial reflected an outdated rating that has since been upgraded.",

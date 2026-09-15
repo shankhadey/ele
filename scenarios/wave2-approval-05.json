@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Invalid - the request is missing General Counsel approval, which is required whenever customer PII is processed.",
     "Valid and complete - the request processes customer PII on an existing SCC-covered transfer route, and all three required controls for that tier are satisfied: DPO approval is recorded, the Security review is Passed, and a completed DPIA is on file, so authorization is proper.",

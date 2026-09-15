@@ -21,5 +21,5 @@
     "Reject - the precedent doesn't apply because DataCore's ramp was tied to a contractual deployment milestone (SOW with phased rollout), while Apex's ramp is for customer cash flow management, which Finance explicitly flagged as problematic",
     "Approve with condition that Jennifer adds a phased deployment SOW matching the revenue ramp before DocuSign execution, bringing it in line with DataCore precedent"
   ],
-  "split": "challenge"
+  "split": "core_test"
 }
