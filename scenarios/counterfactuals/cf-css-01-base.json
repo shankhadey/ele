@@ -1,0 +1,26 @@
+{
+  "title": "Falcon Freight remittance update: verified domain and a matching portal request",
+  "category": "cross_system_synthesis",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-css-01",
+  "counterfactual_role": "base",
+  "scenario_text": "Falcon Freight's accounts payable team receives an email from a long-standing supplier, Cormorant Packaging, attaching a $92,300 invoice marked 'PAST DUE - please remit today to avoid a shipment hold.' The email says the supplier has switched banks and provides new account and routing numbers. The payment run closes in two hours.\n\nIn the #ap-processing Slack channel the AP clerk writes: 'Checked it out - invoice matches an open PO in NetSuite, amounts line up, and the contact name is the same rep we always deal with. Looks legit, I'm queuing it for today's payment run.'\n\nSeveral other systems are worth reconciling before releasing funds. The email arrived from cormorant-packaging.com, the exact domain on file in the vendor master and the address every prior email from this vendor has used. In Coupa, the vendor's self-service portal shows a bank-change request that Cormorant submitted through its own authenticated login four days ago - Coupa is the contractually required channel for updating remittance details, and the new account and routing numbers on that portal request match the numbers in the email. The routing number belongs to a bank in the same state as the vendor's headquarters. The invoice number on the PDF, INV-55018, matches an invoice NetSuite shows as open and unpaid.\n\nThe clerk's 'matches the PO' check is real, and here it is corroborated rather than contradicted: the sender domain is authentic, the bank change came through the verified portal, the routing geography is consistent, and the invoice is genuinely open. You are the AP supervisor reviewing the queue. Weighing the clerk's verification against the domain match, the authenticated portal request, and the consistent routing details, what should you do with this $92,300 payment before the run closes?",
+  "question": "What should AP do with the $92,300 payment before the payment run closes?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "choices": [
+    "Pay the invoice to the new account immediately because of its urgency; the PO match in NetSuite alone confirms the request is legitimate.",
+    "Process the payment to the new bank account: the change was submitted through the vendor's verified Coupa portal and the sender domain matches the vendor's domain of record, so the remittance update is authenticated.",
+    "Hold the payment and verify the bank-account change out-of-band using a known vendor contact before releasing any funds.",
+    "Split the payment - send half now to meet the deadline and half after later verification - to preserve the vendor relationship."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "title": "Sabbatical Eligibility When Continuous Service Clears Five Years",
+  "category": "temporal_consistency",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-tmp-04",
+  "counterfactual_role": "base",
+  "scenario_text": "You are an HR operations specialist at Cyprus Health. Employee Elena Voss has applied for the standard four-week paid sabbatical and her manager wants to know whether she qualifies and who signs off.\n\nActive policy: Sabbatical Policy SAB-1, effective 2023-01-01 and unchanged since. An employee with at least five years of CONTINUOUS service is eligible for a one-time four-week paid sabbatical, which the HR Business Partner (HRBP) approves on confirmation of eligibility. Employees with fewer than five years of continuous service are ineligible, and there is no discretionary early grant. Per SAB-1, an approved unpaid leave of absence of up to six months pauses but does NOT reset continuous service.\n\nPrior decision A (2024-03-11): employee 'Dana Reyes,' 4 years 6 months of continuous service, applied for the sabbatical. DENIED. Note: 'Under five years of continuous service; ineligible.'\n\nPrior decision B (2024-07-02): employee 'Marcus Hale,' 6 years of continuous service, was GRANTED the four-week paid sabbatical, approved by the HRBP.\n\nBase facts: Elena joined 2020-05 and has 5 years 2 months of continuous service as of today. She took a three-month approved unpaid leave in 2022, which under SAB-1 paused but did not reset her continuous service. No other flags are on her record.\n\nThe manager writes: 'We turned Dana down last year for the sabbatical. Is Elena in the same boat, or does she qualify? And if she does, who approves it?'",
+  "question": "Is Elena eligible for the four-week paid sabbatical? Answer 'Eligible' or 'Ineligible', and if eligible name the approver.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": []
+}

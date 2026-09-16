@@ -1,0 +1,27 @@
+{
+  "title": "Does the Joint Venture Inherit the Parent's Enterprise Deal?",
+  "category": "entity_resolution",
+  "domain": "sales_deal_desk",
+  "difficulty": "hard",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-ent-02",
+  "counterfactual_role": "variant",
+  "scenario_text": "Onyx Systems' deal desk is reviewing an order before quarter close. The parent customer, \"Kestrel Manufacturing Holdings,\" signed a negotiated enterprise MSA last year with a 32% volume discount and a defined affiliate clause: \"Customer's wholly-owned subsidiaries may place orders under this Agreement at the pricing set forth herein by referencing the master agreement number.\" A new $420,000 order arrives from \"Kestrel Precision Tooling,\" a separate legal entity with its own EIN, requesting the enterprise 32% discount and citing the parent's MSA number. The account executive wants to book it under the parent MSA to hit the quarter. Deal desk pulls the corporate structure documentation: Kestrel Precision Tooling is a 55%-owned joint venture of Kestrel Manufacturing Holdings, with the remaining 45% held by an outside industrial partner, per the parent's org chart and a legal-entity attestation in Ironclad. Kestrel Precision Tooling has never signed its own MSA with Onyx. Onyx's revenue policy requires that any order booked under an existing MSA be placed by an entity the agreement's affiliate clause actually covers, and deal desk must document the ownership basis for that coverage in the approval notes. The order references the parent's master agreement number and ships to a facility owned by the joint venture. Deal desk must decide whether the entity's order is covered by the parent's affiliate clause at enterprise pricing, or whether it requires its own separately negotiated contract at standard list pricing.",
+  "question": "Can the subsidiary's $420,000 order be booked under the parent's enterprise MSA at the negotiated 32% discount?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "changed_fact": "The subsidiary placing the order changes from a 100% wholly-owned subsidiary of the parent to a 55%-owned joint venture. The parent MSA's affiliate clause extends negotiated pricing only to 'wholly-owned subsidiaries,' so the majority-but-not-wholly-owned JV falls outside it.",
+  "choices": [
+    "Yes; the subsidiary is a wholly-owned subsidiary, so it falls within the MSA's affiliate clause and may order at the negotiated enterprise pricing by referencing the master agreement number.",
+    "No; because the subsidiary has its own EIN and has never signed an MSA, it must negotiate a separate contract at standard list pricing before any order can be booked.",
+    "Yes, but only at standard list pricing, because affiliate clauses never extend negotiated discounts to any entity other than the signing entity.",
+    "No; the order must be rebilled to the parent entity directly, since a subsidiary can never be the contracting party on any order."
+  ]
+}

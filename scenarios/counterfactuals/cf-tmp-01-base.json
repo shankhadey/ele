@@ -1,0 +1,26 @@
+{
+  "title": "Renewing a Sole-Source Waiver Issued Before the Policy Change",
+  "category": "temporal_consistency",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-tmp-01",
+  "counterfactual_role": "base",
+  "scenario_text": "You are a procurement analyst at Rhodes Freight. Vendor 'Kestrel Fuel Systems' supplies a proprietary telematics service under a sole-source arrangement worth $380K/year, and the contract is up for its annual renewal in three weeks. The category manager wants to renew it on the existing sole-source waiver and asks whether that is allowed.\n\nActive policy: Sole-Source Procurement Policy SSP-3, effective 2024-07-01, which superseded SSP-2. Sole-source contracts above $250K/year require an active competitive-bid waiver from VP Procurement. Under SSP-3, waivers ISSUED BEFORE 2024-07-01 (under SSP-2) are grandfathered and remain valid for renewals through their original three-year term with no re-approval; waivers ISSUED ON OR AFTER 2024-07-01 are subject to annual VP Procurement re-approval before each renewal.\n\nPrior decision A (2024-05-20): vendor 'Orion Logistics' was renewed on its existing sole-source waiver with no re-approval. Note: 'Waiver issued 2023 under SSP-2; grandfathered, renewal processed by category manager.'\n\nPrior decision B (2024-09-15): vendor 'Delta Marine' renewal was routed to VP Procurement for re-approval before it could proceed. Note: 'Waiver issued 2024-08 under SSP-3; annual re-approval required.'\n\nBase facts: Kestrel's sole-source waiver was issued 2024-04, under SSP-2, and its original three-year term runs through 2027. The renewal is otherwise clean; no scope change, no price increase beyond CPI.\n\nThe category manager writes in Slack: 'Kestrel's waiver is already on file and it's a straight renewal. Can I just process it like we did for Orion, or does this have to go to the VP first?'",
+  "question": "How should procurement handle the Kestrel Fuel Systems sole-source renewal?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "choices": [
+    "Proceed with the renewal on the existing waiver without VP re-approval, because the waiver was issued before SSP-3 took effect and is grandfathered for its original term.",
+    "Route the renewal to VP Procurement for annual re-approval before it can proceed, because the waiver is subject to SSP-3's annual re-approval requirement.",
+    "Cancel the sole-source arrangement and run a full competitive bid, because sole-source contracts above $250K are no longer permitted at renewal.",
+    "Approve at category-manager discretion regardless of waiver status, because renewals of existing vendors are exempt from waiver rules."
+  ]
+}

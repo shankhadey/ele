@@ -1,0 +1,27 @@
+{
+  "title": "Did the Contract Stay Behind?",
+  "category": "entity_resolution",
+  "domain": "compliance_legal",
+  "difficulty": "hard",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-ent-04",
+  "counterfactual_role": "variant",
+  "scenario_text": "Opal Health's legal ops team must determine who its counterparty is under a data-processing MSA after a corporate transaction. The original counterparty, \"Trellis Clinical Data, Inc.,\" signed a three-year MSA with Opal Health for de-identified analytics services, $1.2M annually. The MSA's assignment clause reads: \"Neither party may assign this Agreement without the other's prior written consent, except that either party may assign to a successor in connection with a merger or sale of all or substantially all of its assets, and this Agreement binds permitted successors and assigns.\" On 2024-04-01, \"Marrow Analytics Corp.\" purchased only Trellis's analytics product line in an asset purchase, expressly excluding the Opal Health MSA from the acquired-contracts schedule; Trellis Clinical Data, Inc. continues to exist as a legal entity. Opal Health never gave prior written consent to assign the MSA to Marrow, and no successor-by-merger occurred. Marrow now sends invoices and service reports under its own name, referencing the same MSA number, and has begun performing the analytics. Opal Health's compliance officer asks whether the MSA is still in force and enforceable against Marrow, or whether a new contract must be negotiated before continuing to send protected data. Because the analytics involve protected health data under a business-associate arrangement, Opal Health cannot keep transmitting records to a party it is not under contract with.",
+  "question": "Is Marrow Analytics Corp. now Opal Health's counterparty under the existing MSA, and is the MSA enforceable against it?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "changed_fact": "The counterparty's acquisition changes from a statutory merger (in which the MSA transfers to the surviving entity by operation of law, as the assignment clause permits) to an asset purchase where the MSA's anti-assignment clause requires prior written consent that was never obtained. In the base the contract transfers to the acquirer; in the variant it does not.",
+  "choices": [
+    "Yes; the MSA transferred to Marrow as the surviving entity and remains in force, because the assignment clause permits assignment to a successor in a merger and binds permitted successors.",
+    "No; the MSA did not transfer to Marrow; it remains with the original Trellis entity, so Opal Health must execute a new contract (or a consented assignment) with Marrow before sending protected data.",
+    "Yes, but only if Marrow signs a fresh MSA, because a contract can never bind an entity that was not the original signatory under any circumstances.",
+    "The MSA automatically terminated on the transaction date regardless of structure, so neither Trellis nor Marrow has any continuing obligation."
+  ]
+}

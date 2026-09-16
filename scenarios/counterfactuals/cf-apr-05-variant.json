@@ -1,0 +1,21 @@
+{
+  "title": "Off-Cycle RSU Grant to a Section 16 Executive Officer",
+  "category": "approval_chain",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-apr-05",
+  "counterfactual_role": "variant",
+  "scenario_text": "A people-ops controls agent at Wolframite Energy is auditing an off-cycle equity grant.\n\n**Equity Grant Authority Matrix**\n- Any RSU grant to a non-officer employee: Compensation Committee approval (mandatory), plus VP People and CFO (budget) sign-off. No individual manager or VP may issue equity unilaterally.\n- Any RSU grant to a Section 16 executive officer (SVP and above / named executive officers): Board of Directors approval is additionally required, on the recommendation of the Compensation Committee.\n\n**Workday Change Record**\n- WD-6620: Employee 'R. Alvarez', title SVP Operations (a Section 16 named executive officer).\n- Change: one-time grant of 6,000 RSUs from the annual equity pool.\n- Approved by (field): (in progress).\n\n**Slack #comp-changes (reconstructed)**\n- Director of Eng: 'Retention grant for Alvarez - 6,000 RSUs. What approvals do we need?'\n- Comp Analyst: 'Alvarez is an SVP and a Section 16 executive officer, so beyond the Compensation Committee this additionally requires Board of Directors approval.'\n- Director of Eng: 'Understood, routing to the Comp Committee for recommendation to the Board.'\n\nAlvarez is an SVP Operations and a Section 16 named executive officer. The grant is drawn from the previously budgeted annual equity pool, and the routing question before the audit is which body must ultimately authorize the grant.",
+  "question": "What is the highest-level approval body required to authorize this RSU grant? Answer with the body's name.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "changed_fact": "In the base the RSU grant recipient is a non-officer individual contributor, so the Compensation Committee is the top required approver. In the variant the recipient is a Section 16 executive officer, which additionally requires Board of Directors approval on the Compensation Committee's recommendation."
+}

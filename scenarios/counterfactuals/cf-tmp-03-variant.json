@@ -1,0 +1,27 @@
+{
+  "title": "Using a Production-Access Grant Issued After the Access Policy Changed",
+  "category": "temporal_consistency",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-tmp-03",
+  "counterfactual_role": "variant",
+  "scenario_text": "You are the on-call release manager at Corsica Systems. Engineer Priya needs to run a production deploy in the next hour to ship a customer-impacting fix. She has a standing production-access grant on file and wants to use it rather than wait on a new request.\n\nActive policy: Production Access Policy PAP-4, effective 2024-09-01. Standing production-access grants ISSUED BEFORE 2024-09-01 remain valid until their scheduled 2025 recertification. Grants ISSUED ON OR AFTER 2024-09-01 require quarterly re-attestation by the service owner and automatically expire 90 days after issuance (or last attestation) if not re-attested; an expired grant cannot be used and the engineer must obtain a fresh, re-attested grant before deploying.\n\nPrior decision A (2024-09-30): engineer 'Marcus' used his existing grant for a deploy with no re-attestation. Note: 'Grant issued 2024-06 under the prior policy; valid until 2025 recert.'\n\nPrior decision B (2024-12-05): engineer 'Sana' was blocked from deploying on her grant and told to obtain a fresh one. Note: 'Grant issued 2024-10, over 90 days old, never re-attested; expired under PAP-4.'\n\nVariant facts: Priya's standing grant was issued 2024-10, after PAP-4 took effect, and has never been re-attested; it is now more than 90 days old. There is a genuine customer-impacting fix ready to ship.\n\nPriya writes in Slack: 'My access is already provisioned. Can I just deploy on my existing grant like Marcus did, or do I have to get something re-approved first? The fix is time-sensitive.'",
+  "question": "Can Priya deploy using her standing production-access grant, or must she obtain a fresh grant first?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "changed_fact": "In the base, Priya's standing production-access grant was issued 2024-07, before PAP-4 took effect, so it is grandfathered and valid for the deploy. In the variant the grant was issued 2024-10, after PAP-4 took effect, so it is subject to the 90-day re-attestation rule and has lapsed, requiring a fresh grant before she can deploy.",
+  "choices": [
+    "Deploy using the existing grant, because it was issued before PAP-4 took effect and remains valid until its 2025 recertification.",
+    "Obtain a fresh, re-attested grant before deploying, because the grant is subject to PAP-4's 90-day re-attestation rule and has lapsed.",
+    "Deploy using the shared break-glass account to bypass the access check, given the time pressure.",
+    "Escalate to the CISO to permanently exempt Priya from re-attestation before the deploy."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "title": "The Unverified Remit-To Change",
+  "category": "entity_resolution",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-ent-03",
+  "counterfactual_role": "variant",
+  "scenario_text": "Jasper Freight's accounts payable team receives an emailed request to update banking details for an established vendor, \"Coastal Diesel Supply,\" ahead of paying invoice INV-77120 for $258,000 (fuel and lubricants delivered and confirmed received). The email arrives from ap@coastaldieselsupply.com, the domain of record, and asks that payment go to a new account: routing 026009593 / account ending 4602 at a different bank. Jasper's vendor master shows the prior remit-to as routing 121000358 / account ending 1195. Per Jasper's banking-change control, AP initiates an out-of-band callback to the vendor's controller using the phone number stored in the vendor master (not any number from the email). Jasper's control also requires that the account-holder name on any supporting bank letter be matched against the vendor's W-9 legal name before any funds are released. The controller answers and states that Coastal Diesel Supply has NOT requested any banking change, has no account at the new institution, and that its email tenant recently flagged a phishing compromise. The account-holder name on the attached \"verification\" letter reads \"CDS Holdings LLC,\" which does not match the vendor's W-9 name, and the letter's domain differs by one character from the vendor's real domain. The invoice itself is undisputed and approved for payment, but the requested destination account does not belong to the vendor. AP must decide how much to release to the newly requested account ending 4602.",
+  "question": "How much should Jasper Freight release to the account ending 4602 specified in the change request?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "changed_fact": "The bank account on the remit-to change request changes from one that an out-of-band callback confirms is the vendor's genuine new account to one that differs from the vendor's verified banking, and the callback reveals the vendor never requested any change (a business-email-compromise attempt). In the base the account resolves to the real vendor; in the variant it resolves to an impostor."
+}

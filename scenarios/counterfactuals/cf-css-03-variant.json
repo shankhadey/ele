@@ -1,0 +1,27 @@
+{
+  "title": "Osprey Cloud renewal: green health, stable usage, but auto-renew toggled off",
+  "category": "cross_system_synthesis",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-css-03",
+  "counterfactual_role": "variant",
+  "scenario_text": "Osprey Cloud is reviewing a $520,000 ARR account, Sandpiper Media, with a renewal 55 days out. In Salesforce, the account health score is green, and the CSM logged last month's QBR as 'positive - strong executive alignment.' In the #cs-renewals Slack channel this morning, the CSM wrote: 'Not worried about Sandpiper. Champion loves us, exec sponsor is engaged, this renewal is basically a formality.' The named opportunity sits at 'Renewal - Commit.'\n\nThe behavioral systems back that up. In Amplitude, weekly active users for the Sandpiper workspace have been flat-to-slightly-up over the past six weeks, and the two power users who drive roughly 70% of API calls are logging in daily as usual. Adoption of the modules tied to their expansion clause is steady.\n\nZendesk shows two tickets opened in the last two weeks, both routine 'how-to' questions about a reporting feature, each resolved within a day with positive CSAT. Nothing references re-evaluation, data export, or competitors.\n\nThe billing system, Zuora, shows the account current on payments, but four days ago a Sandpiper billing administrator toggled the auto-renew flag from ON to OFF. No one on the account team has referenced this in Salesforce or Slack; the CSM's 'formality' note predates the opt-out by nine days.\n\nYou are reviewing the book of business ahead of the weekly renewals forecast. The green health score and the CSM's confidence are the loudest voices, but the account team has not reconciled them against the deliberate auto-renew opt-out sitting in the billing system. What should you recommend for the Sandpiper Media renewal?",
+  "question": "What action should you recommend for this renewal?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "changed_fact": "In the base, the customer's auto-renew flag in the billing system is still ON; in the variant, a customer admin deliberately toggled that auto-renew flag from ON to OFF four days ago. All other signals (green health score, positive QBR, stable usage) are identical.",
+  "choices": [
+    "Treat the renewal as low-risk and leave it in Commit; the green health score, positive QBR, steady usage, and an unchanged auto-renew flag are consistent, and no system contradicts them.",
+    "Launch a retention/save play now and escalate to the account exec; the deliberate auto-renew opt-out is a customer action signaling churn intent that the green health score does not reflect.",
+    "Open a support-priority escalation focused on the open Zendesk tickets, since technical friction is the primary risk to the account.",
+    "Downgrade the account to churn-risk and pause any expansion outreach until the customer re-confirms intent to renew in writing."
+  ]
+}

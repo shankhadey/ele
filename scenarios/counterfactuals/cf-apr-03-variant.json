@@ -1,0 +1,21 @@
+{
+  "title": "Emergency Schema Change With Retrospective Now Overdue",
+  "category": "approval_chain",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-apr-03",
+  "counterfactual_role": "variant",
+  "scenario_text": "A change-management audit agent at Chromium Cloud is reviewing a production emergency change. Today is 2026-03-20 (Friday).\n\n**Change Authority Matrix**\n- Standard change: peer reviewer approval + scheduled CAB slot.\n- Normal change: Change Manager approval before deploy.\n- Emergency change: the on-call incident commander MAY deploy immediately with a VP Engineering verbal authorization (logged), BUT the change is conditional and requires (a) auto-revoke of any temporary access within 24h and (b) a retrospective CAB review plus post-incident writeup completed within 5 business days of deploy. Absent the retrospective review by the deadline, the change is out of compliance.\n\n**Jira Change Record**\n- CHG-5510: 'Emergency schema migration on orders-db to stop cascading write failures.'\n- Deployed: 2026-03-02 (Monday). Type: Emergency.\n- Approved by (field): 'On-call IC - Priya M.; VP Eng verbal authorization logged 2026-03-02 21:14.'\n- Temporary access auto-revoked: confirmed 2026-03-03 (within 24h).\n- Retrospective CAB review: (empty). Post-incident writeup: (empty).\n\n**Slack #incident-orders (reconstructed)**\n- Priya M.: 'Writes failing site-wide. VP, do I have the go?'\n- VP Eng: 'Go now. Book the CAB retro and writeup this week.'\n- Priya M. (2026-03-09): 'Site's been stable, I'll get to the retro soon.'\n- (no further entries; today is 2026-03-20)\n\nCounting business days from the 2026-03-02 deploy, the 5-business-day retrospective deadline fell on 2026-03-09. As of today, 2026-03-20, that deadline is 11 days past.",
+  "question": "As of the 2026-03-20 audit date, is this emergency change in compliance with the emergency-change policy? Answer exactly 'Compliant' or 'Out of compliance'.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "changed_fact": "In the base the emergency change was deployed on 2026-03-18, so as of the 2026-03-20 audit the 5-business-day retrospective deadline (2026-03-25) has not yet arrived. In the variant it was deployed on 2026-03-02, so the deadline (2026-03-09) is now 11 days in the past with the retrospective still unfilled."
+}

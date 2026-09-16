@@ -1,0 +1,20 @@
+{
+  "title": "Retention Discount When a Competitive Threat Is Documented",
+  "category": "precedent_exception",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-pre-02",
+  "counterfactual_role": "base",
+  "scenario_text": "You are a Customer Success escalation lead at Rhine Analytics. Enterprise customer 'Cypress Retail' ($520K ARR) is up for renewal and is pushing for a steep discount after a rocky year.\n\nActive policy: Renewal Retention Framework RRF-2, effective 2024-04-01. A standard renewal discount of up to 8% may be approved by the Customer Success Manager (CSM). A retention exception of up to 20% requires VP of Customer Success approval and is unlocked ONLY when the account carries a documented, active competitive-displacement risk \u2014 defined as a logged competitor evaluation in CRM or a written churn threat tied to the renewal. Anything above 20% requires the CRO.\n\nPrecedent (CS log): 2024-10-02, customer 'Bramble Media' ($480K ARR), granted an 18% retention discount approved by the VP of Customer Success. Note: 'Active bake-off vs. competitor Halcyon logged in CRM; CIO emailed a written churn threat. Retention tier justified.'\n\nBase facts: The Cypress account team logged a formal evaluation of competitor 'Halcyon' in CRM three weeks ago, and Cypress's VP of Engineering emailed last week: 'If renewal pricing does not improve materially, we will move to Halcyon at contract end.' The CSM is proposing to match Bramble's 18%. The renewal closes in ten days and the account carries no other exception flag.",
+  "question": "What is the maximum discount Rhine can offer Cypress, and through which approval path?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": []
+}

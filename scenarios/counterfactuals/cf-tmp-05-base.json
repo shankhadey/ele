@@ -1,0 +1,20 @@
+{
+  "title": "Launching an SMS Campaign When Explicit SMS Consent Exists",
+  "category": "temporal_consistency",
+  "domain": "compliance_legal",
+  "difficulty": "hard",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-tmp-05",
+  "counterfactual_role": "base",
+  "scenario_text": "You are a compliance analyst at Crete Retail. The marketing team wants to launch an SMS promotional campaign to a customer segment and needs sign-off that the segment can lawfully be messaged.\n\nActive policy: Marketing Consent Policy MCP-3, effective 2024-01-01 and unchanged since. Customer personal data may be used for a given marketing channel ONLY where the customer has provided explicit, unexpired, channel-specific opt-in consent for that exact channel. A general email opt-in does NOT authorize SMS; SMS requires a separate explicit SMS opt-in. Consent expires 24 months after it is captured and must be refreshed before reuse.\n\nPrior decision A (2024-04-18): segment 'Spring Buyers' was APPROVED for an SMS campaign. Note: 'Explicit SMS opt-in captured at checkout, within 24 months; channel-specific consent satisfied.'\n\nPrior decision B (2024-06-27): segment 'Newsletter List' was BLOCKED from an SMS campaign. Note: 'Only a general email opt-in on file; no SMS-specific consent. SMS not authorized.'\n\nBase facts: The target segment for this campaign captured an explicit SMS opt-in at checkout 11 months ago, well within the 24-month window. The marketing team confirms the consent records are attached and channel-tagged for SMS.\n\nThe marketer writes: 'Same idea as the Spring Buyers blast. Can we send to this segment, or is this going to get blocked like the Newsletter List did?'",
+  "question": "Can Crete Retail include this segment in the SMS campaign? Answer Yes or No.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": []
+}

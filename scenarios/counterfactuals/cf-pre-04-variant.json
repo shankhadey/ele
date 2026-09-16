@@ -1,0 +1,27 @@
+{
+  "title": "Relying on an Improperly Authorized PHI-Access Precedent",
+  "category": "precedent_exception",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-pre-04",
+  "counterfactual_role": "variant",
+  "scenario_text": "You are a vendor-risk analyst in Compliance at Severn Health. The analytics team wants to give vendor 'Maple Insights' access to the restricted PHI dataset 'Longitudinal Outcomes' to build a readmission model, and they want it turned on this week. They argue: 'Just do what we did for Larch Analytics last quarter \u2014 someone signed off and it was fine, so don't slow us down with a heavier process.'\n\nActive policy: Data Governance Policy DGP-2, effective 2024-02-01. Access to a restricted-PHI dataset by a third-party vendor requires approval by the Chief Privacy Officer (CPO) and an executed Business Associate Agreement (BAA). A Data Governance Manager (DGM) is authorized to approve access to de-identified datasets only, never restricted PHI. Prior approvals may be relied on as precedent only if they were themselves validly authorized.\n\nPrecedent (access log): 2024-11-05, vendor 'Larch Analytics' was granted access to the same 'Longitudinal Outcomes' restricted-PHI dataset for a comparable modeling engagement. The analytics team treats the Larch case as the template for how vendor access should be handled.\n\nVariant facts: The Larch Analytics grant was approved by a Data Governance Manager, and no BAA is on file \u2014 the access log shows the DGM sign-off and a blank BAA field. Maple Insights currently has no BAA and no CPO approval. There is no emergency or regulator deadline in play, and nothing about Maple's engagement differs materially from Larch's in data scope or purpose.",
+  "question": "How should the analyst handle the Maple Insights access request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "changed_fact": "In the base, the cited Larch precedent was approved by the CPO with an executed BAA (valid authority). In the variant it was approved by a Data Governance Manager with no BAA, which exceeds that role's authority and makes the prior grant invalid rather than citable precedent.",
+  "choices": [
+    "Approve Maple's access at the Data Governance Manager level, mirroring the Larch Analytics approval.",
+    "Route Maple to the CPO for approval with an executed BAA; the Larch grant was validly made at the CPO level and does not authorize a lower-level approval for Maple.",
+    "Route Maple to the CPO for approval with an executed BAA, and separately flag the Larch grant for retroactive review because it was approved without the required authority.",
+    "Deny Maple outright, because restricted-PHI datasets may never be shared with third-party vendors."
+  ]
+}

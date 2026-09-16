@@ -1,0 +1,26 @@
+{
+  "title": "Wren Health forecast: economic buyer confirms budget is approved",
+  "category": "cross_system_synthesis",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-css-05",
+  "counterfactual_role": "base",
+  "scenario_text": "A $640,000 new-business deal at Wren Health is forecast as Commit to close this quarter, with nine days left. In the #forecast Slack channel the AE writes: 'Verbal yes from the VP who sponsored us, contract is already in DocuSign, we're one signature away. Keep it in Commit.' In Salesforce the opportunity stage is 'Negotiation,' and the AE's most recent activity note reads 'strong exec support.'\n\nThe supporting systems line up with that call. Gong captured a call two days ago with the customer's economic buyer - the finance leader who controls budget - who said plainly: 'Budget is approved on our side. We're ready to sign this quarter; just send the final paper.' That call is the most recent buyer touchpoint on record. The champion VP the AE is counting on is still in role: their corporate email is active and they replied to a thread yesterday. And the DocuSign envelope, sent six days ago, shows the customer's signatory opened and reviewed it twice, with the routing order intact.\n\nEach fact reinforces the others: a current, budget-holding buyer confirming approval, an engaged champion, and a contract the customer is actively reviewing. You run deal desk and are scrubbing the Commit category. Weighing the AE's confidence against what Gong, the collaboration tools, and DocuSign actually show, what should you recommend for this $640,000 opportunity?",
+  "question": "What should deal desk recommend for this opportunity?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "choices": [
+    "Keep the deal in Commit for this quarter; the economic buyer confirmed budget is approved, the champion is engaged, and the customer is actively reviewing the contract in DocuSign.",
+    "Move the deal out of Commit and re-qualify it; the deal lacks purchasing authority to close this quarter regardless of the champion's verbal yes.",
+    "Escalate to legal and sales ops to expedite the DocuSign signature before quarter end, since the deal is stalled.",
+    "Authorize an end-of-quarter discount to incentivize the customer to sign the existing DocuSign envelope before the deadline."
+  ]
+}
