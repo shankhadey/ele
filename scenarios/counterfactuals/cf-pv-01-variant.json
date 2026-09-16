@@ -1,0 +1,27 @@
+{
+  "title": "22% Discount Signed Just After the Approval-Threshold Change",
+  "category": "policy_version",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-pv-01",
+  "counterfactual_role": "variant",
+  "scenario_text": "Monsoon Systems governs enterprise pricing through a Discount Approval Policy in its deal desk handbook.\n\nVersion 1.0 (effective January 1, 2023) states: \"Discounts up to and including 25% off list may be approved by the Regional VP (RVP). Discounts above 25% require CFO approval.\"\n\nVersion 2.0 (effective July 1, 2024) states: \"Discounts up to and including 15% off list may be approved by the RVP. Discounts above 15% require CFO approval.\" It adds a transition clause: \"The policy version in effect on an order form's execution date governs the approval authority for that order. Order forms executed on or before June 30, 2024 are governed by v1.0 for the duration of the resulting contract. Order forms executed on or after July 1, 2024, and all renewals, are governed by v2.0.\"\n\nThe CPQ record for opportunity OPP-3310 (customer: Beltline Freight) shows: Order Form Executed Date 2024-07-10, Term 24 months, List Price $600,000, applied discount 22% off list, opportunity type New Business (not a renewal). It is currently July 2024 and the deal desk is closing out approvals for the quarter.\n\nA deal desk analyst posts in the #deal-approvals Slack channel: \"Reviewing OPP-3310, 22% off list. The new discount policy took effect July 1 and tightened RVP authority. The order form was signed on July 10, though. Do we need to route this to the CFO, or can the RVP sign off? Want to confirm which policy version controls before I route anything.\"\n\nUsing the policy history, the transition clause, and the CPQ record, determine the required approval level for the 22% discount on OPP-3310.",
+  "question": "Whose approval is required for the 22% discount on OPP-3310?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "changed_fact": "The order form execution date for OPP-3310 differs: in the base it is executed 2024-06-20 (on or before the June 30, 2024 cutover, so v1.0 governs), while in the variant it is executed 2024-07-10 (on or after the July 1, 2024 effective date, so v2.0 governs).",
+  "choices": [
+    "RVP approval is sufficient, because the order form was executed under v1.0, whose RVP threshold is 25% off list, and 22% falls within it.",
+    "CFO approval is required, because the order form was executed under v2.0, whose RVP threshold is 15% off list, and 22% exceeds it.",
+    "RVP approval is sufficient, because v2.0 raised the RVP ceiling to 25% off list.",
+    "CFO approval is required, because all discounts at or above 20% require CFO sign-off under both versions."
+  ]
+}

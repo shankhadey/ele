@@ -1,0 +1,20 @@
+{
+  "title": "Raven Retail offboarding: bulk copy to the sanctioned corporate repository",
+  "category": "cross_system_synthesis",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-css-04",
+  "counterfactual_role": "base",
+  "scenario_text": "An engineer at Raven Retail resigned; Workday shows the resignation effective in 14 days, with a standard two-week transition. In the #people-ops Slack channel the hiring manager writes: 'Great employee, leaving on excellent terms. Let's keep their access live through the last day so they can finish the handoff.' The ServiceNow offboarding workflow is queued for the last day per the standard template.\n\nThe security systems are worth checking during any notice period. In Okta, this user's logins over the past two weeks are all from their usual corporate IP during normal working hours; there are no anomalous or off-hours authentications. In a separate Slack channel, the employee mentioned in passing that their next role is at a company in an unrelated industry that is not a competitor.\n\nThe company DLP tool, Microsoft Purview, fired an alert yesterday: roughly 4 GB was copied from an internal code and document repository. Purview identifies the destination as the company's own sanctioned corporate backup repository - an approved, access-controlled internal system used for exactly this kind of handoff archiving - and the copy occurred during working hours. The volume is larger than this person's daily norm but consistent with packaging up project artifacts for a successor.\n\nEach data point has a benign reading, and here they are mutually consistent: normal logins, a non-competitor destination employer, and a bulk copy that stayed inside sanctioned corporate systems. The manager's 'no concerns' judgment is supported by what the systems show. You are the security partner for this offboarding. What should you do now, before the last day arrives?",
+  "question": "What should the security team do now, before the last day arrives?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": []
+}

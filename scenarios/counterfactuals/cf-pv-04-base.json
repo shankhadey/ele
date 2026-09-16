@@ -1,0 +1,20 @@
+{
+  "title": "Service Credit Under an SLA Signed Before the Uptime Change",
+  "category": "policy_version",
+  "domain": "customer_success_support",
+  "difficulty": "hard",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-pv-04",
+  "counterfactual_role": "base",
+  "scenario_text": "Tempest Analytics publishes an SLA and service-credit schedule referenced by its order forms.\n\nVersion 1 (incorporated into order forms executed before July 1, 2024) states: \"Uptime commitment: 99.9% monthly. Service credit: 10% of the monthly service fee for each full 0.1% by which measured monthly uptime falls below 99.9%, capped at 30% of the monthly fee.\"\n\nVersion 2 (effective July 1, 2024) states: \"Uptime commitment: 99.95% monthly. Service credit: 5% of the monthly service fee for each full 0.1% by which measured monthly uptime falls below 99.95%, capped at 50% of the monthly fee.\" v2 includes a transition clause: \"SLA terms are fixed at the version incorporated in the customer's active order form. Order forms executed before July 1, 2024 retain v1 SLA terms for the remainder of the current term. Renewals executed on or after July 1, 2024 adopt v2.\"\n\nThe CRM record for customer Calder Freight (order O-5540) shows: Order Form Executed Date 2024-03-01, Term 12 months, Monthly Service Fee $20,000. No renewal has been executed. The status dashboard reports October 2024 measured uptime of 99.70%.\n\nA CSM writes in the support ticket on 2024-11-04: \"Calder is asking for their October service credit. We measured 99.70% uptime. Their order form was executed in March 2024. What credit do they get for October?\"\n\nUsing the SLA versions, the transition clause, and the CRM record, compute the service credit owed for October 2024.",
+  "question": "What service credit is owed to Calder Freight for October 2024?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": []
+}

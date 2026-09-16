@@ -1,0 +1,26 @@
+{
+  "title": "Bad-Debt Write-Off Approved by the SVP at the Required Tier",
+  "category": "approval_chain",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-apr-04",
+  "counterfactual_role": "base",
+  "scenario_text": "A revenue-controls audit agent at Titan Freight is reviewing a bad-debt write-off.\n\n**Bad-Debt Write-Off Authority Matrix**\n- Up to $25,000: Controller.\n- $25,001-$250,000: VP Finance (write-off memo in the ERP).\n- Above $250,000: SVP Finance (write-off memo + Audit Committee notification).\n\n**ERP Write-Off Record**\n- WO-4407: Customer 'Harbor Logistics', amount $300,000.\n- Reason: customer insolvency; receivable deemed uncollectible after 180 days.\n- Posted: 2026-02-18. Approved by (field): 'SVP Finance - Gerald T.'\n- Write-off memo: attached. Audit Committee notification: sent 2026-02-18.\n\n**Email thread (reconstructed)**\n- Collections lead -> SVP Finance: 'Harbor filed Chapter 7. $300K is uncollectible. Requesting write-off approval.'\n- Gerald T. (SVP Finance): 'Reviewed. Approved at the SVP tier; I have notified the Audit Committee per policy.'\n- Collections lead: 'Posted as WO-4407, memo attached.'\n\nThe write-off is $300,000, which sits above the $250,000 threshold. It was approved by the SVP Finance, and the required Audit Committee notification was sent the same day. The write-off memo is attached in the ERP and cites the Chapter 7 filing, the 180-day aging, and the collections history supporting the uncollectibility determination. Harbor Logistics is a single customer account with no related receivables split across other entities, so the $300,000 is the full governing amount rather than one slice of a larger exposure. No other approvals appear in the record, and the audit must decide whether the SVP-tier authorization as recorded is complete or whether a higher body must still sign off.",
+  "question": "What should the audit conclude about the authorization of this write-off?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "choices": [
+    "Valid - the SVP Finance approved the $300,000 write-off at the required tier and the Audit Committee notification was sent, so authorization is complete.",
+    "Invalid - a $300,000 write-off falls in the above-$250,000 tier requiring SVP Finance approval plus Audit Committee notification; the VP Finance's authority caps at $250,000, so the write-off lacks sufficient authorization and must be re-approved at the SVP tier.",
+    "Valid, but a documentation cleanup is needed - send the Audit Committee an informational note after the fact; the approval already stands.",
+    "Invalid - a write-off of this size requires full Board of Directors approval before it can be posted."
+  ]
+}

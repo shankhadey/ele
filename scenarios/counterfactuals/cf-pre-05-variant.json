@@ -1,0 +1,21 @@
+{
+  "title": "Auto-Renewal on a Renegotiated Vendor Contract",
+  "category": "precedent_exception",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-pre-05",
+  "counterfactual_role": "variant",
+  "scenario_text": "You are a procurement manager at Volga Logistics reviewing the 'Alder Freight Systems' warehousing contract, which was executed in 2024 under the old contracting standard and contains a 3-year auto-renewal clause. The renewal window is approaching and the operations team wants clarity before it lapses, because Alder runs a regional distribution hub that Volga cannot easily re-source on short notice.\n\nActive policy: Vendor Contracting Standard VCS-3, effective 2025-01-01, which replaced VCS-2. Under VCS-2, auto-renewal clauses of up to 3 years were permitted and renewed without additional sign-off. VCS-3 caps auto-renewal at 1 year and requires Procurement Director sign-off for any renewal. Transition clause: 'Contracts executed under VCS-2 retain their original auto-renewal terms for the duration of the current contract term. Any new contract, or any renegotiation of an existing contract, is governed by VCS-3.'\n\nVariant facts: At this renewal point Volga is renegotiating the Alder contract \u2014 updating pricing and adding a new scope of warehousing services beyond the original agreement. The business wants to carry a multi-year auto-renewal forward onto the renegotiated agreement to lock in continuity. A coordinator asks whether a 3-year auto-renewal can proceed and whether Procurement Director sign-off is needed. There is no emergency or expedited-review flag on the file, and no other vendor is being evaluated.",
+  "question": "Does the 3-year auto-renewal remain valid, and is Procurement Director sign-off required?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "changed_fact": "In the base, Volga is simply continuing the existing contract for its current term with no changes, which the transition clause grandfathers under VCS-2. In the variant, Volga is renegotiating the contract (new pricing and added scope), which the transition clause routes to VCS-3."
+}

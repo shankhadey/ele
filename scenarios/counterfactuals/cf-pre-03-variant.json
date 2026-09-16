@@ -1,0 +1,27 @@
+{
+  "title": "Applying a 3% Rebate That Was a One-Time Goodwill Accommodation",
+  "category": "precedent_exception",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-pre-03",
+  "counterfactual_role": "variant",
+  "scenario_text": "You run revenue operations at Ganges Foods. Wholesale customer 'Harbor Provisions' is requesting a 3% volume rebate on this quarter's $2.1M in purchases. Standard terms cap volume rebates lower, and the quarter closes in five business days, so the rebate accrual must be booked correctly before the ledger locks.\n\nActive policy: Vendor Rebate Policy VRP-4, effective 2023-09-01. Volume rebates are capped at 2% of quarterly purchases. A rebate above 2% is permitted only where a signed rebate addendum specifies the higher rate for a defined term; absent such an addendum, the 2% cap controls and any past higher rebate is treated as a discretionary accommodation, not an entitlement. Rebate accruals booked above the applicable rate must later be clawed back, which finance flags as an audit exception.\n\nPrecedent (AR records): Last quarter Harbor Provisions received a 3% rebate on $1.9M in purchases, and Harbor is one of the top five accounts by wholesale volume.\n\nVariant facts: There is no rebate addendum on file, and the contract system shows only the standard master terms with the 2% cap. Last quarter's 3% was documented in the AR notes as a 'one-time, non-binding goodwill accommodation granted to offset a delivery dispute; not a standing rate and not to be treated as precedent for future quarters.' Harbor's account manager asks you to apply 'the usual 3%' and notes the customer expects consistency with prior quarters.",
+  "question": "What rebate rate should Ganges apply to Harbor this quarter, and on what basis?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "changed_fact": "In the base, the prior 3% rebate is fixed by a signed multi-year rebate addendum still in force. In the variant there is no addendum and the prior 3% was documented as a one-time, non-binding goodwill accommodation.",
+  "choices": [
+    "3%, because last quarter's 3% rebate establishes a precedent that Harbor is entitled to continue receiving.",
+    "3%, because a signed multi-year rebate addendum fixes the 3% rate for a defined term that is still in force.",
+    "2%, because VRP-4 caps rebates at 2% and last quarter's 3% was a discretionary, non-binding accommodation that creates no entitlement.",
+    "2.5%, as a goodwill compromise between the policy cap and the prior rate."
+  ]
+}

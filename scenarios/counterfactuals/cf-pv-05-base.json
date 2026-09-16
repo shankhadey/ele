@@ -1,0 +1,26 @@
+{
+  "title": "Breach Notification Window for an Incident Confirmed Before the Shortening",
+  "category": "policy_version",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-pv-05",
+  "counterfactual_role": "base",
+  "scenario_text": "Aurora Health maintains a Security Incident Notification SOP mirroring its regulatory commitments.\n\nVersion 2 (effective January 1, 2023) states: \"Security incidents affecting customer data must be reported to the regulator within 72 hours of confirmation.\"\n\nVersion 3 (effective March 1, 2025) states: \"Such incidents must be reported to the regulator within 24 hours of confirmation.\" v3 includes a transition clause: \"The notification window applicable to an incident is the window in effect on the incident's confirmation date, defined as the date and time the Incident Commander sets the incident status to 'Confirmed' in the incident tool. Incidents confirmed before March 1, 2025 follow the 72-hour window; incidents confirmed on or after March 1, 2025 follow the 24-hour window. Detection alone does not start the clock.\"\n\nThe incident tool record for INC-4402 shows: Detected 2025-02-24 08:00, Status set to 'Confirmed' by the Incident Commander at 2025-02-26 10:00, Category: customer-data exposure. There is no legal hold or regulator-granted extension on file.\n\nThe Incident Commander messages the on-call compliance officer: \"INC-4402 is confirmed customer-data exposure. I flipped it to Confirmed on Feb 26. The regulator's shortened window is coming, and I want to be sure which deadline governs before we notify. Which window applies to this one?\"\n\nUsing the SOP history, the transition clause, and the incident record, determine which notification window governs INC-4402.",
+  "question": "Which regulator-notification window governs INC-4402?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "choices": [
+    "The 72-hour window (v2) applies, because the incident was confirmed before March 1, 2025; the report is due within 72 hours of confirmation.",
+    "The 24-hour window (v3) applies, because the incident was confirmed on or after March 1, 2025; the report is due within 24 hours of confirmation.",
+    "The 24-hour window (v3) applies, because v3 took effect March 1, 2025 and governs every report filed on or after that date.",
+    "The 72-hour window (v2) applies, because the window is set by the incident's detection date, not its confirmation date."
+  ]
+}

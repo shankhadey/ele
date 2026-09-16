@@ -1,0 +1,20 @@
+{
+  "title": "Auto-Renewal on a Grandfathered Vendor Contract",
+  "category": "precedent_exception",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-pre-05",
+  "counterfactual_role": "base",
+  "scenario_text": "You are a procurement manager at Volga Logistics reviewing the 'Alder Freight Systems' warehousing contract, which was executed in 2024 under the old contracting standard and contains a 3-year auto-renewal clause. The renewal window is approaching and the operations team wants clarity before it lapses, because Alder runs a regional distribution hub that Volga cannot easily re-source on short notice.\n\nActive policy: Vendor Contracting Standard VCS-3, effective 2025-01-01, which replaced VCS-2. Under VCS-2, auto-renewal clauses of up to 3 years were permitted and renewed without additional sign-off. VCS-3 caps auto-renewal at 1 year and requires Procurement Director sign-off for any renewal. Transition clause: 'Contracts executed under VCS-2 retain their original auto-renewal terms for the duration of the current contract term. Any new contract, or any renegotiation of an existing contract, is governed by VCS-3.'\n\nBase facts: The Alder contract's 3-year auto-renewal is about to trigger for its current term. Volga is not changing any terms \u2014 no price change, no scope change, no renegotiation. The business simply wants continuity of the existing warehousing service under the terms already agreed, and legal confirms the contract document is untouched since execution. A coordinator asks whether the 3-year auto-renewal can proceed and whether Procurement Director sign-off is needed. There is no emergency or expedited-review flag on the file, and no other vendor is being evaluated.",
+  "question": "Does the 3-year auto-renewal remain valid, and is Procurement Director sign-off required?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": []
+}

@@ -1,0 +1,26 @@
+{
+  "title": "Enterprise Discount Approved at Exactly the VP Ceiling",
+  "category": "approval_chain",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-apr-01",
+  "counterfactual_role": "base",
+  "scenario_text": "A deal-desk audit agent at Zinc Retail is validating authorization on a closed-won enterprise expansion.\n\n**Discount Approval Authority Matrix**\n- 0-10% off list: Account Executive (CRM note).\n- 10.01-20% off list: VP Sales (CRM approval + written justification).\n- 20.01% and above: SVP Sales (CRM approval + written justification + CFO notification).\n\n**CRM Opportunity Record**\n- OPP-9012, 'Meridian Grocers POS expansion'.\n- List price: $1,000,000. Contracted ACV: $800,000.\n- Stage: Closed Won. Booked: 2026-06-30 (last day of Q2).\n- Discount reason: 'Strategic - competitive displacement'.\n- Approved by (field): 'VP Sales - Dominic R.'\n\n**Slack #deal-desk (reconstructed)**\n- Rep: 'Meridian will sign at $800K, a 20% discount off the $1M list. Dominic, can you bless it?'\n- Dominic R. (VP Sales): 'Reviewed the margin justification. 20% is within my authority. Approved, book it.'\n- Rep: 'Written justification attached to OPP-9012.'\n\nThe written justification is attached in the CRM and the approval is recorded against Dominic R., VP Sales. The list-to-contract delta is $200,000, which is exactly a 20% discount off list. The margin worksheet in the opportunity confirms the deal clears the minimum-margin floor, and the competitive-displacement narrative is documented in the justification field. No SVP approval or CFO notification appears anywhere in the CRM, Slack, or email, and the audit must decide whether either is required at this level or whether the recorded VP approval is sufficient on its own.",
+  "question": "What should the audit conclude about the authorization of this discount?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "choices": [
+    "Valid - the discount falls within the 10.01-20% band, which the VP Sales is authorized to approve, and the written justification is documented in the CRM.",
+    "Invalid - the discount falls in the 20.01%-and-above tier, which requires SVP Sales approval plus CFO notification; the VP's authority caps at 20%, so the deal was booked without sufficient authorization and must be re-approved at the SVP tier.",
+    "Valid, but the file needs a documentation cleanup - attach the CFO notification retroactively; the VP's approval itself stands.",
+    "Invalid - any discount above 10% requires CFO co-approval before booking, so the deal must be escalated to the CFO."
+  ]
+}

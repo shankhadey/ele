@@ -1,0 +1,27 @@
+{
+  "title": "Mirroring a 37% Discount Precedent After the Policy Was Re-Tiered",
+  "category": "precedent_exception",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-pre-01",
+  "counterfactual_role": "variant",
+  "scenario_text": "You are on Deal Desk at Danforth Systems. AE Rosa Iqbal is closing a new-logo deal for 'Kestrel Freight' at a 37% list discount and wants it approved before quarter-end, two days away. New ACV is $640K.\n\nActive policy: Discount Policy DP v5.0, effective 2025-01-01, which superseded DP v4.2. Under v4.2, discounts from 21% to 40% sat in a single Regional Sales Director band. v5.0 split that band: 0-20% AE self-approve; 21-30% Regional Sales Director; 31-40% VP Sales AND Deal Desk (both required); above 40% CRO.\n\nPrecedent (deal-desk log): 2024-09-10, new-logo customer 'Aster Freight,' 37% discount, ACV $590K, approved by Regional Sales Director Tom Alvarez solo. Note: 'Standard new-logo concession; approved per DP v4.2 tier table.'\n\nVariant facts: DP v5.0 is the version in force today; it superseded v4.2 on 2025-01-01. The Aster Freight approval predates v5.0 and was decided under the now-superseded v4.2. Kestrel Freight has no strategic-logo flag, no competitive-threat documentation, and no CRO pre-authorization. Finance confirms the deal carries standard terms with no unusual structure.\n\nRosa argues in Slack: 'This is the same profile as Aster \u2014 same segment, same 37% band, same new-logo motion. Tom signed Aster on his own. Please just mirror that approval so we can close before the quarter closes.' She adds that re-routing to any higher approver would blow the two-day timeline.",
+  "question": "What approval path should Deal Desk require for the 37% Kestrel Freight discount?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "changed_fact": "In the base, no policy update has occurred and DP v4.2 (under which the cited precedent was approved) remains in force. In the variant, DP v5.0 has superseded v4.2 and re-tiered the 31-40% band to require joint VP Sales and Deal Desk sign-off, so the precedent was decided under a now-superseded version.",
+  "choices": [
+    "Regional Sales Director approval alone, mirroring the Aster Freight precedent.",
+    "Joint VP Sales and Deal Desk approval, because the discount policy currently in force requires both for the 31-40% band and the Aster Freight approval was decided under a superseded version.",
+    "CRO approval, because quarter-end deals in the same segment aggregate past the 40% ceiling.",
+    "AE self-approval, since new-logo discounts are exempt from tier review during quarter-end."
+  ]
+}

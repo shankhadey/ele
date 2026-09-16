@@ -1,0 +1,26 @@
+{
+  "title": "Prepay Discount When ACV Clears the Threshold",
+  "category": "temporal_consistency",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-tmp-02",
+  "counterfactual_role": "base",
+  "scenario_text": "You run revenue operations at Malta Analytics. Customer 'Talos Group' intends to prepay a full annual term and is asking for the standard 6% prepay discount. The renewal closes in a week and the account manager wants a decision today.\n\nActive policy: Prepay Discount Policy PDP-2, effective 2024-02-01 and unchanged since. A customer that prepays a full annual term qualifies for a 6% prepay discount ONLY if its annual contract value (ACV) is at least $150K. Below $150K, no prepay discount applies and the customer is billed at standard terms. RevOps applies the discount directly when the threshold is met; there is no discretionary override below the threshold.\n\nPrior decision A (2024-05-09): customer 'Lyra Media,' ACV $120K, requested the 6% prepay discount. DENIED. Note: 'ACV below the $150K threshold; standard terms applied.'\n\nPrior decision B (2024-08-22): customer 'Nova Retail,' ACV $210K, prepaid annually and was GRANTED the 6% prepay discount. Note: 'ACV clears $150K; discount applied by RevOps.'\n\nBase facts: Talos Group's ACV on this renewal is $165K. The prepayment is for a single annual term with no unusual structure, and no other exception flags are on the account.\n\nThe account manager writes in Slack: 'Talos wants the 6% prepay deal. We turned down Lyra for basically the same ask a few months back, so I assume this is a no too, right? Let me know how to bill it.'",
+  "question": "How should RevOps handle Talos Group's 6% prepay discount request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "choices": [
+    "Grant the 6% prepay discount, because Talos's ACV clears the $150K threshold that the policy requires.",
+    "Deny the prepay discount and bill at standard terms, because Talos's ACV falls below the $150K threshold.",
+    "Escalate to the CFO for a discretionary prepay discount, since prepay pricing always requires finance leadership sign-off.",
+    "Offer a reduced 3% prepay discount as a compromise between the full discount and standard terms."
+  ]
+}

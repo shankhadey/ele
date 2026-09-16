@@ -1,0 +1,20 @@
+{
+  "title": "Off-Cycle RSU Grant to a Non-Officer Engineer",
+  "category": "approval_chain",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-apr-05",
+  "counterfactual_role": "base",
+  "scenario_text": "A people-ops controls agent at Wolframite Energy is auditing an off-cycle equity grant.\n\n**Equity Grant Authority Matrix**\n- Any RSU grant to a non-officer employee: Compensation Committee approval (mandatory), plus VP People and CFO (budget) sign-off. No individual manager or VP may issue equity unilaterally.\n- Any RSU grant to a Section 16 executive officer (SVP and above / named executive officers): Board of Directors approval is additionally required, on the recommendation of the Compensation Committee.\n\n**Workday Change Record**\n- WD-6620: Employee 'R. Alvarez', title Staff Engineer (individual contributor, non-officer).\n- Change: one-time grant of 6,000 RSUs from the annual equity pool.\n- Approved by (field): (in progress).\n\n**Slack #comp-changes (reconstructed)**\n- Director of Eng: 'Retention grant for Alvarez - 6,000 RSUs. What approvals do we need?'\n- Comp Analyst: 'Alvarez is a non-officer IC, so this goes to the Compensation Committee, with VP People and CFO budget sign-off. No Board needed at that level.'\n- Director of Eng: 'Understood, routing to the Comp Committee.'\n\nAlvarez is a Staff Engineer with no officer status and is not a Section 16 named executive officer. The grant is drawn from the previously budgeted annual equity pool, and the routing question before the audit is which body must ultimately authorize the grant.",
+  "question": "What is the highest-level approval body required to authorize this RSU grant? Answer with the body's name.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": []
+}

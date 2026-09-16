@@ -1,0 +1,21 @@
+{
+  "title": "Heron Analytics checkout latency: a deploy ramp and a climbing dependency",
+  "category": "cross_system_synthesis",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-css-02",
+  "counterfactual_role": "variant",
+  "scenario_text": "At 14:07 UTC, PagerDuty pages the on-call for Heron Analytics: p99 latency on the checkout API has crossed 2,000ms. In the #inc-checkout Slack bridge, the incident commander writes at 14:12: 'Looks like the primary Postgres node did a failover a few minutes ago. Replica has taken over and latency is already recovering. This is transient, I'm going to stand us down.'\n\nDatadog partly agrees: the overall checkout error rate is 0.3%, below the 1% paging threshold, and read latency on the new primary is normalizing. Statuspage is still green and no customer tickets have landed in Zendesk.\n\nThe on-call also checks the recent-change picture. Twelve minutes before the page, a deploy went out to the payment-gateway service - the dependency checkout calls to authorize cards - and its feature flag was ramped to 100% at 14:05. Datadog shows that dependency's 5xx rate has climbed from near zero to 6% and is still rising, and its p99 has tripled. The Postgres failover the IC cited actually occurred at 13:58 and recovered by 14:02, and does not line up with the latency curve, which inflected at 14:05 - exactly when the flag ramped. Trace samples show checkout requests spending their time waiting on payment-gateway authorization calls that are timing out, not on database reads.\n\nRollback of the payment-gateway deploy is a one-command Spinnaker operation and would take under three minutes. You are the secondary on-call reviewing the bridge before the IC stands the incident down. Given the full picture across PagerDuty, Datadog, Spinnaker, and the Slack narrative, what is the single most important action to take first?",
+  "question": "What single action should be taken first regarding the incident?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "changed_fact": "In the base, the latency inflection aligns with a database failover that has already recovered and the freshly deployed dependency's error rate is flat; in the variant, the inflection aligns with a deploy's feature-flag ramp and that dependency's 5xx rate is climbing."
+}

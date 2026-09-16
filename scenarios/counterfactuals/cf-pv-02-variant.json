@@ -1,0 +1,21 @@
+{
+  "title": "Setup Fee on a Contract Signed After the Rev Rec Change",
+  "category": "policy_version",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-pv-02",
+  "counterfactual_role": "variant",
+  "scenario_text": "Zephyr Retail accounts for subscription contracts that bundle a multi-year SaaS license with a one-time implementation (setup) fee.\n\nRevenue Recognition Policy v1 (in effect through December 31, 2023) states: \"Implementation/setup fees represent a distinct performance obligation and are recognized at a point in time upon platform go-live.\"\n\nRevenue Recognition Policy v2 (effective January 1, 2024) states: \"Implementation/setup fees are not distinct from the SaaS subscription and are recognized ratably over the remaining contract term beginning at go-live.\" v2 includes a transition clause: \"Contracts whose order form is executed prior to January 1, 2024 continue to apply the recognition method in effect at signing for the original contract term. Renewals or amendments executed on or after January 1, 2024 adopt v2 for all fees, including any setup fee amounts not yet recognized as of the amendment date.\"\n\nThe ERP contract record for order O-77120 (customer: Halstead Publishing) shows: Order Form Executed Date 2024-01-08, Term 36 months, Setup Fee $72,000, SaaS ARR $288,000, Go-Live Date 2024-03-01. No renewal or amendment has been executed; the original term runs through February 2027.\n\nA revenue accountant emails the controller on 2024-03-05: \"Booking O-77120. Go-live was March 1. The $72,000 setup fee, do we take it upfront at go-live or spread it over the 36 months now that the new policy is live? The order form was signed on January 8.\"\n\nUsing the policy history, the transition clause, and the ERP record, determine how the $72,000 setup fee on O-77120 should be recognized.",
+  "question": "How should the $72,000 setup fee on order O-77120 be recognized?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "changed_fact": "The order form execution date for order O-77120 differs: in the base it is executed 2023-12-10 (before the January 1, 2024 effective date, so v1 point-in-time recognition governs), while in the variant it is executed 2024-01-08 (on or after January 1, 2024, so v2 ratable recognition governs)."
+}

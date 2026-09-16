@@ -1,0 +1,20 @@
+{
+  "title": "Heron Analytics checkout latency: a recovered failover and a quiet deploy",
+  "category": "cross_system_synthesis",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-css-02",
+  "counterfactual_role": "base",
+  "scenario_text": "At 14:07 UTC, PagerDuty pages the on-call for Heron Analytics: p99 latency on the checkout API has crossed 2,000ms. In the #inc-checkout Slack bridge, the incident commander writes at 14:12: 'Looks like the primary Postgres node did a failover a few minutes ago. Replica has taken over and latency is already recovering. This is transient, I'm going to stand us down.'\n\nDatadog largely agrees: the overall checkout error rate is 0.3% and falling, below the 1% paging threshold, and read latency on the new primary is normalizing. Statuspage is still green and no customer tickets have landed in Zendesk.\n\nThe on-call also checks the recent-change picture. Twelve minutes before the page, a deploy went out to the payment-gateway service - the dependency checkout calls to authorize cards - and its feature flag was ramped to 100% at 14:05. But Datadog shows that dependency's 5xx rate is flat at near zero and its p99 is unchanged since the deploy; nothing about the gateway's own metrics moved. The Postgres failover occurred at 14:04 and the replica finished promotion at 14:06, and the checkout latency curve inflected at 14:04 and has been descending since 14:06 - the curve tracks the failover-and-recovery, not the deploy. Trace samples show the residual latency sitting in database connection re-establishment that is clearing as connections warm up, not in payment-gateway authorization calls.\n\nRollback of the payment-gateway deploy is a one-command Spinnaker operation, but it touches a service whose metrics are healthy. You are the secondary on-call reviewing the bridge before the IC stands the incident down. Given the full picture across PagerDuty, Datadog, Spinnaker, and the Slack narrative, what is the single most important action to take first?",
+  "question": "What single action should be taken first regarding the incident?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": []
+}

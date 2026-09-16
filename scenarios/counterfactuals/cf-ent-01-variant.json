@@ -1,0 +1,27 @@
+{
+  "title": "Two Billing Records, Different Tax IDs",
+  "category": "entity_resolution",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf-ent-01",
+  "counterfactual_role": "variant",
+  "scenario_text": "Amberline's revenue operations team is closing the quarter and reconciling its NetSuite billing records against the Salesforce CRM master before running a consolidated credit-exposure report. Two active billing records surface under the customer name \"Vertex Analytics.\" Record BR-2210 is \"Vertex Analytics, Inc.,\" bill-to 400 Marquette Ave, Minneapolis, contact ap@vertexanalytics.com, EIN 47-3320119, open balance $310,000, credit limit $350,000. Record BR-3187 is \"Vertex Analytics LLC,\" bill-to 400 Marquette Ave Suite 900, Minneapolis, contact billing@vertexanalytics.com, EIN 51-8842203, open balance $190,000, credit limit $250,000. The Salesforce CRM master account \"Vertex Analytics\" lists the authoritative federal tax ID as 47-3320119 and a single D-U-N-S for the Minneapolis address. An analyst notes the two records were created two years apart by different order-entry clerks, have slightly different legal-name suffixes (Inc. vs LLC), and carry separate credit limits. The analyst also confirms both records were onboarded from the same original signup submission and share the primary email domain vertexanalytics.com, though a shared domain alone does not settle legal identity. Finance must decide whether these are one customer or two before applying the company's policy that a single legal entity is governed by ONE consolidated credit limit against its total open balance. If they are one customer, the combined $500,000 exposure must be measured against a single limit and would breach it; if they are two, each stays within its own limit.",
+  "question": "Are the two billing records the same customer, and how should the combined credit exposure be treated?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "changed_fact": "On the second billing record, the federal EIN changes from 47-3320119 (matching the CRM master account for Vertex Analytics) to 51-8842203 (a different registered entity). In the base the EINs match; in the variant they differ.",
+  "choices": [
+    "They are the same customer; consolidate BR-2210 and BR-3187 into one account and measure the combined $500,000 open balance against a single consolidated credit limit.",
+    "They are distinct customers; keep the records separate, each governed by its own credit limit, because the differing legal-name suffixes indicate two different legal entities.",
+    "They are the same customer, but keep both credit limits and simply sum them to $600,000, so no consolidation of exposure is required.",
+    "Void the newer record BR-3187 as a duplicate and discard its $190,000 balance, keeping only BR-2210."
+  ]
+}
