@@ -1,0 +1,19 @@
+{
+  "title": "The Adverse-Event Report on a Shortened Clock",
+  "category": "temporal_consistency",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "A pharmacovigilance compliance analyst at Danburite Pharma must determine the reporting deadline for a serious adverse event, given how a comparable event was handled earlier this year.\n\n**Adverse-Event Reporting Policy \u2014 version history**\n- Old rule (in force through 2024-05-31): serious adverse events must be reported to the regulator within 15 calendar days of the company becoming aware of them.\n- New rule (effective 2024-06-01, in force now): serious adverse events that are also 'unexpected' (not listed in the product's reference safety information) must be reported within 7 calendar days of awareness. Serious-but-expected events remain on the 15-day clock. The applicable deadline is set by the awareness date.\n\n**Prior decision A (2024-04-10)**\nAn unexpected serious event became known on 2024-04-08 and was reported on 2024-04-22, 14 days later. Note: 'Within the 15-day window then in effect.'\n\n**Current case C**\nAn unexpected serious adverse event for the same product became known to the company on 2024-08-05. The event is not listed in the product's reference safety information, so it is unexpected.\n\n**Slack \u2014 #pharmacovigilance**\nAnalyst: 'We had a similar unexpected event in April and used the full 15 days with no problem. So we've got until August 20 on this one.'\nLead: 'The clock for unexpected serious events changed in June. Let me compute the deadline under the rule that applies now.'\n\nThe event became known on 2024-08-05 and is an unexpected serious event. The safety team has confirmed the event is not listed in the product's reference safety information, which fixes its classification as unexpected. No prior submission has been made, and the analyst must set the filing deadline before the intake window closes.",
+  "question": "What is the reporting deadline for the current adverse event? Give the date.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Amara Nwosu",
+    "title": "Pharmacovigilance Compliance Analyst",
+    "organization": "Danburite Pharma",
+    "years_experience": 11,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

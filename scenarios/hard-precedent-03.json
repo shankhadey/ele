@@ -1,0 +1,26 @@
+{
+  "title": "Purging Aged Records That Are Under an Active Legal Hold",
+  "category": "precedent_exception",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "You are the records governance lead at Baldr Health, a healthcare analytics company. The infrastructure team wants to purge an eight-year-old patient-record cohort to reclaim storage and cites a prior purge as precedent.\n\nActive policy: Records Retention Policy RRP v4, effective 2025-02-01. Patient records are retained for seven years, after which they become eligible for purge, approvable by the Records Manager. Mandatory exception: any record subject to an active legal hold must not be purged - regardless of age or retention eligibility - until Legal formally releases the hold in writing. RRP v4 introduced the mandatory legal-hold check at purge time. Under the prior RRP v3, the Records Manager could approve purge of any record past the seven-year window without a hold check, because holds were tracked in a separate manual process.\n\nThe precedent cited: 2024-06-11, a batch of eight-year-old records was purged by Records Manager Cara Voss; log note 'past seven-year window, purge approved,' policy version at decision RRP v3, no hold check recorded.\n\nCurrent facts: the target cohort belongs to patients named in an active litigation matter, Case Vanaheim, and Legal has confirmed the litigation hold is still open and has not been released. The records are indeed past the seven-year retention window. Legal has not issued any written release for the Case Vanaheim hold, and the litigation remains in active discovery. The infrastructure lead writes: 'We purged an eight-year-old batch last June with just the Records Manager's sign-off. This cohort is even older and storage costs are climbing - let's mirror that and clear it out this sprint.' The Records Manager is available to approve, and the purge job is already staged in the retention tooling awaiting a go-ahead.",
+  "question": "How should the Case Vanaheim record cohort be handled?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Priya Nadkarni",
+    "title": "Records Governance Lead",
+    "organization": "Baldr Health",
+    "years_experience": 12,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Purge the cohort, mirroring the June 2024 batch purge, since the records exceed the seven-year retention window.",
+    "Retain the cohort and do not purge, because the records are under an active legal hold that RRP v4 requires be honored regardless of age; the 2024 purge predated the mandatory hold check under RRP v3.",
+    "Purge the records but retain a cryptographic hash manifest, treating the preserved index as satisfying the legal hold.",
+    "Refer the request to the Records Manager to approve the purge, since purge authority for aged records sits at that level.",
+    "Purge all records except a 10% sample, preserving the sample as evidence for the litigation."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Stacked Discount at the Cap With a Cap-Exempt Term Incentive",
+  "category": "precedent_exception",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "You are on Deal Desk at Vidar Freight, a logistics software provider, and must compute the final approved discount for a renewal with Bifrost Cargo.\n\nActive policy: Pricing Guardrail PG v5, effective 2025-05-01. Discounts come from three sources. Volume discount by ACV band: deals in the $500K-$1M band receive 18%. Loyalty discount: customers with three or more years of tenure receive an additional 10%. Total stacked discount from volume plus loyalty is capped at 25% combined. Separately, a term incentive of 2% applies to any customer committing to a three-year term, and PG v5 states this term incentive is applied as a separate line that is exempt from the 25% stacking cap. Under the prior PG v4, all discounts stacked with no combined cap.\n\nThe AE cites a precedent: 2025-01-20, Draupnir Haulage, ACV $720K, three-year customer, received 18% volume plus 10% loyalty for 28% total; log note 'stacked per PG v4, no cap,' policy version at decision PG v4.\n\nCurrent Bifrost facts: ACV is $700,000 (within the $500K-$1M band, so 18% volume applies), Bifrost is a four-year customer (so 10% loyalty applies), and Bifrost is committing to a three-year term (so the 2% term incentive applies). Bifrost has signed renewals in each of the prior four years, and the three-year term commitment is documented in the current order form. There are no other discount sources in play - no promotional credits, no partner-sourced rebate - so the only inputs are volume, loyalty, and the term incentive. The AE writes: 'Draupnir got 28% last January on the same math - $700K band and long-tenured. Let's give Bifrost the same 28% and add the term sweetener on top so we win the renewal.' The renewal quote must show a single final discount percentage for the customer's signature.",
+  "question": "State the total final discount percentage Bifrost Cargo should receive.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Marissa Fenn",
+    "title": "Deal Desk Analyst",
+    "organization": "Vidar Freight",
+    "years_experience": 7,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

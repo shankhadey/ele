@@ -1,0 +1,25 @@
+{
+  "title": "Homonym Vendors Across Two Jurisdictions",
+  "category": "entity_resolution",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "Cupronickel Manufacturing is paying an invoice and must resolve which of two same-named vendors is the real counterparty on a signed contract. Two SAP vendor records read \"Duralumin Components Ltd.\" Vendor V-330 is \"Duralumin Components Ltd.\" incorporated in England & Wales (Companies House number 07781234, VAT GB218pending, remit GBP to a Barclays account, registered office Manchester). Vendor V-331 is \"Duralumin Components Ltd.\" incorporated in Hong Kong (CR number 2210987, remit USD to an HSBC Hong Kong account). The purchase contract on file (PO-55210, for precision fasteners, $410,000) names the counterparty as \"Duralumin Components Ltd., a company incorporated under the laws of Hong Kong, CR No. 2210987, with registered office in Kowloon,\" and is signed by a director whose title references the Hong Kong Companies Ordinance. The invoice that just arrived is on letterhead reading \"Duralumin Components Ltd.\" with a Manchester address and requests payment in GBP to the Barclays account. An AP clerk, matching only on the legal name \"Duralumin Components Ltd.,\" is about to pay the GBP invoice against PO-55210. The two entities are genuinely different companies that happen to share a name across jurisdictions; there is no parent/subsidiary link between them in D&B, and each has its own distinct company registration number and tax registration. The payment run closes tonight, and AP's three-way match passed on name and amount alone, so the GBP invoice is already queued for release. Meanwhile treasury has received a dunning notice from the Hong Kong entity asking why its USD invoice against PO-55210 remains unpaid, which surfaces the mismatch just hours before funds are due to move. The clerk must determine which same-named company is actually the contracting party before authorizing the wire.",
+  "question": "Which vendor is the correct counterparty for PO-55210, and what should AP do with the GBP invoice from the Manchester address?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Tomas Halloran",
+    "title": "Global AP Manager",
+    "organization": "Cupronickel Manufacturing",
+    "years_experience": 9,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Pay the GBP invoice to the England & Wales entity (V-330), since the invoice name matches the contract name exactly.",
+    "The counterparty is the Hong Kong entity (V-331, CR 2210987); reject the Manchester GBP invoice as issued by a different same-named company and request a correct invoice from the Hong Kong entity.",
+    "Pay whichever entity submitted the invoice first, because same-named vendors are interchangeable for a matching PO.",
+    "Merge V-330 and V-331 into one vendor because they share an identical legal name, then pay the combined record."
+  ]
+}

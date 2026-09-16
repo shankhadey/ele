@@ -1,0 +1,19 @@
+{
+  "title": "Counting Contracts That Survive a Novation",
+  "category": "entity_resolution",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "Cupronickel Energy is updating its contract register after a supplier reorganized, and must count how many of its agreements now name a new counterparty. Cupronickel holds five contracts originally with \"Nitinol Field Services Inc.\" (EIN 52-6612100): C-1 (drilling services), C-2 (equipment lease), C-3 (data licensing), C-4 (maintenance), and C-5 (consulting retainer). Nitinol Field Services underwent a partial reorganization. A novation agreement dated 2024-04-01, signed by all three parties (Cupronickel, Nitinol, and the new entity \"Waspaloy Oilfield LLC\" EIN 88-2201990), novated C-1, C-2, and C-4 to Waspaloy Oilfield LLC, substituting it as the counterparty. C-3 (data licensing) was NOT novated because it contained a non-assignment clause and the parties agreed to leave it with Nitinol. C-5 (consulting retainer) was separately TERMINATED effective 2024-03-15 (before the novation) and no longer exists. Additionally, a proposed novation of C-3 was drafted but never signed by Cupronickel, so it did not take effect. The register currently still lists all five under Nitinol. The analyst must report how many contracts now have Waspaloy Oilfield LLC as the counterparty, counting only agreements where a fully executed novation substituted the new entity and the contract is still active. The contract register feeds AP's payee-routing table, so any agreement left pointing at the wrong entity will misdirect payments or invoices next cycle. An analyst pre-filled the register update by moving all five agreements to Waspaloy \"because the supplier reorganized,\" ignoring that one contract was excluded for a non-assignment clause, one had only an unsigned draft novation, and one was terminated before the novation date. The administration lead must correct the count before the register is republished.",
+  "question": "How many contracts now name Waspaloy Oilfield LLC as the counterparty?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Tobias Reink",
+    "title": "Contracts Administration Lead",
+    "organization": "Cupronickel Energy",
+    "years_experience": 11,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

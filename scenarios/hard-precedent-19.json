@@ -1,0 +1,26 @@
+{
+  "title": "Advance Write-Off for an Artist on an Active Multi-Album Deal",
+  "category": "precedent_exception",
+  "domain": "other",
+  "difficulty": "expert",
+  "scenario_text": "You are the finance lead at Bragi Studios, a recorded-music label. An A&R team wants to write off an unrecouped advance at the Finance Director level and cites a prior write-off.\n\nActive policy: Advance Recoupment Policy ARP v3, effective 2025-02-01. Unrecouped artist advances may be written off as follows: up to $25,000 by the A&R Manager; $25,000 to $100,000 by the Finance Director plus a committee memo; above $100,000 by the CFO. Override: if the artist is on an active multi-album deal, any write-off requires CFO approval regardless of amount, to protect the label's ability to recoup against future releases. ARP v3 added the multi-album override; under the prior ARP v2, the Finance Director could write off up to $100,000 regardless of the artist's deal structure.\n\nThe precedent cited: 2024-09-12, an $80,000 unrecouped advance for artist Vor Lindqvist written off by the Finance Director; ledger note 'within FD authority (<= $100K),' policy version at decision ARP v2.\n\nCurrent facts: artist Kvasir Holt has an $80,000 unrecouped advance and is on an active three-album deal, confirmed by the contracts team, with one album delivered and two still to be recorded and released. The deal has not been terminated, and future royalties from the remaining albums could recoup part of the balance. The A&R lead writes: 'We wrote off $80K for Vor at the Finance Director level in September, and Kvasir's number is identical. Let's have the Finance Director clear the $80K so we can close the quarter's books cleanly.' The quarter-end close is at the end of the week, and the CFO has not yet been consulted on this write-off.",
+  "question": "How should the $80,000 write-off for Kvasir Holt be handled?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Delphine Rourke",
+    "title": "Label Finance Lead",
+    "organization": "Bragi Studios",
+    "years_experience": 10,
+    "domain_expertise": "other"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Write off the $80,000 at the Finance Director level, mirroring the September 2024 write-off of the same amount.",
+    "Write off the $80,000 at the Finance Director level with a committee memo, since $80,000 sits squarely in the $25,000-$100,000 band.",
+    "Route the write-off to the CFO, because Kvasir is on an active multi-album deal and ARP v3 requires CFO approval regardless of amount; the 2024 Finance-Director write-off was under superseded ARP v2.",
+    "Defer any write-off until the multi-album deal concludes, since unrecouped advances cannot be written off while a deal is active.",
+    "Write off $25,000 at the A&R Manager level now and revisit the remaining $55,000 next quarter."
+  ]
+}

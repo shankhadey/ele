@@ -1,0 +1,19 @@
+{
+  "title": "The Two-Level Promotion That Outgrew a Manager's Signature",
+  "category": "temporal_consistency",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "A people-operations partner at Moonstone Health must determine who must approve a promotion, given how a comparable promotion was approved earlier this year.\n\n**Promotion Approval Policy \u2014 version history**\n- Old policy (in force through 2024-08-31): a Director may approve promotions of up to two levels at their own discretion.\n- New policy (effective 2024-09-01, in force now): a Director may approve a promotion of at most one level alone. Any promotion of more than one level requires both VP approval and Compensation Committee review, regardless of the business justification or the size of the pay increase.\n\n**Prior decision A (2024-06-10)**\nA Director approved a two-level promotion (from L3 to L5) for a clinical data engineer. Note: 'Two-level promotion within Director discretion under the compensation policy then in effect.'\n\n**Current request C (2024-09-15)**\nThe same Director wants to approve a two-level promotion (L3 to L5) for a different engineer, citing strong performance and retention risk. The Director has asked People Ops to 'process it the same way as June.'\n\n**Slack \u2014 #people-ops**\nDirector: 'I approved a clean two-level promotion myself in June and it went through fine. This one is the same jump, same rationale \u2014 let's run it the same way.'\nPartner: 'June was under the old promotion policy. The discretion rule changed on September 1. Let me confirm how many levels this is before I route it.'\n\nThe promotion is a two-level jump, decided on 2024-09-15. There is no dispute that the performance case and the retention risk are genuine.",
+  "question": "Who must approve the current two-level promotion? Give the required approval(s).",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Grace Adeyemi",
+    "title": "People Operations Partner",
+    "organization": "Moonstone Health",
+    "years_experience": 8,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

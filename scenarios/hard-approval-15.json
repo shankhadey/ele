@@ -1,0 +1,26 @@
+{
+  "title": "Write-Off Notification Delivered to the Wrong Governing Body",
+  "category": "approval_chain",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "A financial-controls audit agent at Caraway Logistics is validating authorization on a large bad-debt write-off.\n\n**Bad-Debt Write-Off Authority Matrix**\n- Up to $200,000: Controller.\n- $200,001 and above: SVP Finance approval AND a written notification delivered to the Audit Committee of the Board (SOX control F-22). The notification must go specifically to the Audit Committee; notice to any other committee does not satisfy F-22.\n\n**ERP Write-Off Record**\n- WO-9330: Write off receivable from 'Harbor Retail', $350,000.\n- Posted: 2026-09-15. Approved by (field): 'SVP Finance - Elena V.'\n- F-22 notification: 'Sent to the Board Finance Subcommittee, 2026-09-14.'\n\n**Email (reconstructed)**\n- Elena V. (SVP Finance): 'Harbor is uncollectible; approving the $350K write-off. Send the F-22 notice up to the board.'\n- Analyst: 'Sent the write-off notice to the Board Finance Subcommittee.'\n- Elena V.: 'Good, that covers the board notification.'\n- Audit Committee Chair (later): 'We have no record of a write-off notification on WO-9330.'\n\nThe SVP Finance approval is present, and a notification was sent - but to the Board Finance Subcommittee, not the Audit Committee that control F-22 names. The Audit Committee received nothing.",
+  "question": "What should the audit conclude about the authorization of this write-off?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Elena Vasquez",
+    "title": "Director of Financial Controls",
+    "organization": "Caraway Logistics",
+    "years_experience": 13,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Valid and complete - the SVP Finance approved the write-off and a written notification was sent to a board-level committee, satisfying the F-22 notification requirement.",
+    "Valid, but a documentation cleanup is needed - forward the same notice to the Audit Committee as a courtesy copy; the control was already met by the subcommittee notice.",
+    "Invalid/incomplete - control F-22 requires the notification to go specifically to the Audit Committee, and the notice went only to the Board Finance Subcommittee, so the required Audit Committee notification was never delivered and must be sent to complete the control.",
+    "Invalid - a write-off of this size requires full Board of Directors approval, not merely SVP Finance approval, so it must be re-approved by the Board.",
+    "Invalid - the SVP Finance lacked authority; write-offs above $200,000 require the CFO to approve."
+  ]
+}

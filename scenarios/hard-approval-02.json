@@ -1,0 +1,19 @@
+{
+  "title": "Three Purchase Orders for One Requisition Aggregated Across Two Tiers",
+  "category": "approval_chain",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "A procurement-audit agent at Cardamom Robotics is reconstructing the governing value of a tooling purchase to determine the required approval tier.\n\n**Procurement Authority Matrix**\n- Up to $30,000: Site Manager (Coupa note).\n- $30,001-$75,000: Procurement Lead + 3 competitive quotes.\n- $75,001-$250,000: Procurement Director + Finance review.\n- Above $250,000: VP Operations.\n- Anti-splitting rule: 'A single requisition or deliverable must not be divided across multiple purchase orders to remain under an approval threshold. The aggregate value of POs sharing a requisition or covering one deliverable determines the required tier.'\n\n**Coupa Purchase Orders**\n- PO-6101: Vendor 'ArcWeld Tooling', $29,500, approved by Site Manager (Nils P.), 2026-06-09.\n- PO-6102: Vendor 'ArcWeld Tooling', $28,900, approved by Site Manager (Nils P.), 2026-06-09.\n- PO-6103: Vendor 'ArcWeld Tooling', $29,200, approved by Site Manager (Nils P.), 2026-06-09.\n- All three cite requisition REQ-4410 and the line 'Cell 7 weld-fixture set (single commissioned deliverable)'.\n\n**Slack #site-procurement (reconstructed)**\n- Buyer: 'ArcWeld quoted the Cell 7 fixture set at $87,600 as one order.'\n- Nils P. (Site Manager): 'Break it into three POs under $30K each so they all stay with me. One PO and it goes to the Director with Finance review.'\n- Buyer: 'Cut PO-6101, PO-6102, PO-6103, all approved by you.'\n\nThe three POs share one requisition and cover one commissioned deliverable. No Procurement Lead approval, no Procurement Director approval, no Finance review, and no competitive quotes appear anywhere.",
+  "question": "Applying the anti-splitting rule, what is the governing aggregate value that determines the required approval tier?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Nils Petersen",
+    "title": "Procurement Compliance Manager",
+    "organization": "Cardamom Robotics",
+    "years_experience": 13,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

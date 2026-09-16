@@ -1,0 +1,25 @@
+{
+  "title": "Onega Software subprocessor 'brief outage' versus an undisclosed security incident and DPA breach",
+  "category": "cross_system_synthesis",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "Onega Software is auto-renewing a critical SaaS vendor, Kesterline, that processes customer PII. In the #vendor-mgmt Slack channel the procurement lead writes: 'Kesterline had a short outage last week but they issued SLA credits and availability is back to normal. Nothing that blocks renewal - the credits cover it. Recommending we let the auto-renewal go through Friday.' Posted Wednesday.\n\nOther systems complicate the renewal. On Kesterline's status page, the incident wording was quietly updated from 'service disruption' to 'unauthorized access to a subset of systems, investigation ongoing.' In the vendor-risk system, Kesterline's SOC 2 Type II report expired two months ago and the bridge letter has not been provided. In the DPA and its subprocessor exhibit, Kesterline is required to notify Onega of new subprocessors 30 days in advance; a threat-intel feed and Kesterline's own trust page now list a new data-hosting subprocessor in a new jurisdiction, added with no notice. The contract grants Onega a right to terminate on a material security event or unremediated compliance lapse. And a Kesterline security bulletin references a CVE in a component they use, patched only after the incident window.\n\nEach signal is individually explainable: outages happen, SOC 2 renewals lag, subprocessor lists change, and CVEs are routine. But together - an incident relabeled as unauthorized access, a lapsed SOC 2 with no bridge letter, an undisclosed new subprocessor in breach of the DPA notice term, and a CVE patched post-incident - they describe a security incident and compliance breach, not an availability blip covered by credits. The procurement lead's read predates the status-page relabel. You own vendor risk and renewal is Friday. What should you do?",
+  "question": "What should the vendor-risk owner do before Friday's auto-renewal?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Marcus Feld",
+    "title": "Director of Vendor Risk Management",
+    "organization": "Onega Software",
+    "years_experience": 11,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Let the auto-renewal proceed; SLA credits were issued and availability has recovered, so the outage is resolved.",
+    "Renew but negotiate additional SLA credits and a stronger uptime commitment to compensate for the disruption.",
+    "Pause the auto-renewal and invoke security and DPA review: the incident relabeled as unauthorized access, the lapsed SOC 2 with no bridge letter, the undisclosed new subprocessor breaching the notice term, and the post-incident CVE patch constitute a security and compliance breach, triggering audit and breach-notification obligations before any renewal.",
+    "Extend the current term month-to-month and revisit the vendor at the next quarterly business review."
+  ]
+}

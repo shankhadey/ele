@@ -1,0 +1,19 @@
+{
+  "title": "Reconciling True Headcount Across Three Systems",
+  "category": "entity_resolution",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "Permalloy Software's People Ops must report true unique active-employee headcount to the board, reconciling three systems that disagree. Workday (system of record for employees) lists 120 active worker records. But this includes: 8 records that are CONTINGENT contractors mis-classified as workers (they have no employee subtype and are paid via AP, not payroll); and 4 records that are DUPLICATES of employees who transferred between two legal entities (Permalloy Software Inc. and Permalloy Software Canada Ltd.) during an internal reorg, where a new Workday record was created at transfer but the old one was never terminated. ADP payroll (US) shows 95 paid employees. Ceridian (Canada payroll) shows 22 paid employees. Cross-checking by national ID / SIN confirms: the 4 duplicate Workday records correspond to 4 people already counted once in the correct payroll; and 2 employees are on unpaid leave (present in Workday as active, absent from both payrolls this cycle but still employed). No person appears in both ADP and Ceridian. The board wants the count of unique, currently-employed people (including those on unpaid leave, excluding contractors and excluding duplicate records). The board deck is due tomorrow and reports headcount as a single number that drives the per-employee cost metric investors track. Finance pulled Workday's raw 120, HR pulled the combined payroll sum, and the two figures do not tie, differing by contractors, cross-entity transfer duplicates, and employees who are unpaid this cycle. People Ops must produce the reconciled unique count, cross-checked by national ID and SIN across Workday, ADP, and Ceridian, and be ready to explain each adjustment before the metric is published.",
+  "question": "What is the true unique active-employee headcount?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Grace Abara",
+    "title": "People Analytics Manager",
+    "organization": "Permalloy Software",
+    "years_experience": 8,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

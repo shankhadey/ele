@@ -1,0 +1,25 @@
+{
+  "title": "The Liability Cap That Now Needs Legal's Signature",
+  "category": "temporal_consistency",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "A deal desk analyst at Apatite Software must decide who must approve a non-standard liability cap in a customer contract, given how a comparable clause was approved earlier this year.\n\n**Non-Standard Terms Authority \u2014 version history**\n- Old policy (in force through 2024-07-31): Deal Desk may approve non-standard liability terms, including elevated liability caps, on its own authority.\n- New policy (effective 2024-08-01, in force now): Deal Desk may approve a liability cap up to 1x annual fees alone; any cap above 1x annual fees requires Legal approval in addition to Deal Desk. The change followed a risk review.\n\n**Prior decision A (2024-06-18)**\nDeal Desk approved a 2x annual-fees liability cap for 'Sterling Freight' on its own authority. Note: 'Non-standard cap approved by Deal Desk per the policy then in effect.'\n\n**Current request C (2024-09-20)**\nCustomer 'Halden Group' is negotiating a contract and requests a liability cap of 2x annual fees. The commercial terms are otherwise standard, and the account is in good standing.\n\n**Slack \u2014 #deal-desk**\nAE: 'Deal Desk signed off on a 2x cap for Sterling back in June without Legal. Halden wants the same 2x cap, so Deal Desk can just approve it again.'\nAnalyst: 'June was before the terms-authority change. Let me check what a 2x cap needs under the current policy.'\n\nHalden's requested cap is 2x annual fees, and the request falls under the current policy. Halden's negotiating team has signaled the 2x cap is a firm requirement to sign, and the AE wants to know whether Deal Desk can approve it without looping in another function. No Legal review has yet been requested on the clause.",
+  "question": "How should the 2x annual-fees liability cap for Halden be approved?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Sofia Marchetti",
+    "title": "Deal Desk Analyst",
+    "organization": "Apatite Software",
+    "years_experience": 9,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Deal Desk may approve it alone, consistent with the 2x cap approved for Sterling in June.",
+    "Deal Desk approval plus Legal approval are required, because a 2x cap exceeds the current 1x threshold for solo Deal Desk authority.",
+    "The 2x cap must be rejected, because caps above 1x annual fees are no longer permitted.",
+    "Offer a 1x cap instead, since that is the most Deal Desk can approve without escalation."
+  ]
+}

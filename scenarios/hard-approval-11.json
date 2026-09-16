@@ -1,0 +1,26 @@
+{
+  "title": "A Manager's Own-Report Raise Approved Under a Delegation That Excludes Comp Actions",
+  "category": "approval_chain",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "An HR-governance audit agent at Cumin Retail is reviewing an off-cycle pay change.\n\n**Compensation-Change Authority Matrix**\n- Merit increase up to 8.00%, no band change: direct Manager.\n- Increase of 8.01%-15.00%, OR any pay-band change: skip-level Director AND HRBP.\n- Increase above 15.00%, OR a promotion crossing job families: VP AND HRBP AND Compensation review.\n- Delegation rule: when a Director is on leave, a Manager may be granted the Director's authority for 'routine operational approvals only.' This delegation EXPRESSLY EXCLUDES compensation and promotion actions, and no one may approve a compensation action for their own direct report.\n\n**HRIS Record**\n- PAY-6640: Off-cycle change for employee 'R. Blythe' (a direct report of the approving manager).\n- Change: +12.0% increase and a move from Band 4 to Band 5.\n- Approved by (field): 'Acting Director (delegated) - Manager Kofi A.'\n\n**Slack #people-ops (reconstructed)**\n- Kofi A.: 'Director Lin is on leave and delegated her authority to me. Blythe is my report and overdue for a bump - approving +12% and Band 5 under the delegation.'\n- HRBP: 'Was HRBP sign-off obtained? And does Lin's delegation cover comp?'\n- Kofi A.: 'It's a routine people decision, I'm covered. Done.'\n- (no skip-level Director approval independent of Kofi, and no HRBP sign-off, appears on PAY-6640)\n\nThe change is +12.0% with a band change, approved solely by the employee's own manager acting under a delegation limited to routine operational approvals.",
+  "question": "What should the audit conclude about the authorization of this pay change?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Kofi Adjei",
+    "title": "HR Business Partner Lead",
+    "organization": "Cumin Retail",
+    "years_experience": 10,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Valid - the manager held the Director's authority by delegation while the Director was on leave, so the acting-Director approval satisfies the skip-level requirement.",
+    "Valid, but a documentation cleanup is needed - obtain the HRBP's signature after the fact; the manager's acting-Director approval already covers the Director requirement.",
+    "Invalid - a 12.0% increase with a band change requires a skip-level Director AND HRBP sign-off; the delegation expressly excludes compensation actions and bars approving a comp action for one's own report, so the manager had no authority, and the HRBP sign-off is also missing.",
+    "Invalid - this change requires VP approval plus a Compensation review, so it must be escalated to the VP.",
+    "Invalid - the increase exceeds the 8.00% manager limit, so it should have been approved by the manager after trimming it to 8.00%."
+  ]
+}

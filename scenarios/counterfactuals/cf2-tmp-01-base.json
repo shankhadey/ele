@@ -1,0 +1,26 @@
+{
+  "title": "Does the Deal Land in H1 for President's Club?",
+  "category": "temporal_consistency",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf2-tmp-01",
+  "counterfactual_role": "base",
+  "scenario_text": "Ionian Cloud's sales-compensation team is finalizing first-half President's Club qualification and must decide which half a large deal belongs to. The rep, Priya S., needs $1,200,000 in closed bookings across H1 (ending 2026-06-30) to qualify, and her other H1 deals total $900,000. The deal in question, OPP-4477 with customer 'Delacroix Retail,' is worth $350,000 in bookings, which alone would push her over the threshold. Ionian's booking policy is explicit: 'A deal is booked in the period in which the signed order form reaches fully-executed status, defined as the DocuSign completion timestamp when the last required signature is applied. Verbal commitments, redlined drafts, and internal approvals do not book a deal; only the fully-executed timestamp controls the period.' The audit trail shows: the customer gave verbal commitment on a call dated 2026-06-24; the redlined order form was approved by deal desk on 2026-06-27; the customer's authorized signer applied the final DocuSign signature, moving the envelope to Completed, at 2026-06-29 16:42. The rep's manager, eager to credit H1, argues the deal was 'effectively done' at the verbal commit on 2026-06-24. The compensation analyst must apply the booking policy strictly and decide whether OPP-4477 books in H1 (on or before 2026-06-30) and therefore whether Priya S. reaches the $1,200,000 H1 President's Club threshold.",
+  "question": "Does OPP-4477 book in H1, and does Priya S. reach the H1 President's Club threshold?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "choices": [
+    "Yes; OPP-4477 books in H1 because the DocuSign envelope reached Completed on 2026-06-29, so her H1 bookings total $1,250,000 and she qualifies.",
+    "No; OPP-4477 books in H2 because the envelope did not reach Completed until after 2026-06-30, so her H1 bookings stay at $900,000 and she does not qualify.",
+    "Yes; OPP-4477 books in H1 because the verbal commitment occurred on 2026-06-24, regardless of when the envelope was signed.",
+    "No; because the redline was still being negotiated in late June, the deal cannot be booked in either half until the next fiscal year."
+  ]
+}

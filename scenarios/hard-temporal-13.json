@@ -1,0 +1,25 @@
+{
+  "title": "The Access Recertification That the High-Risk Carve-Out Kept at 90 Days",
+  "category": "temporal_consistency",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "A security operations agent at Sphene Systems must decide whether a privileged access grant is overdue for recertification, given how recertifications were handled before a policy change.\n\n**Access Recertification Policy \u2014 version history**\n- Old policy (in force through 2024-06-30): all privileged access must be recertified every 90 days.\n- New policy (effective 2024-07-01, in force now): standard privileged access must be recertified every 180 days, but access to systems classified 'high-risk' must still be recertified every 90 days. The payments and settlement systems are classified high-risk.\n\n**Prior decision A (2024-05-15)**\nA quarterly recertification of database access was completed on schedule. Note: 'Recertified within the 90-day cycle then required for all privileged access.'\n\n**Current case C (2024-10-15)**\nEngineer 'Lee Watts' holds privileged access to the payments-processing system. The last recertification of this access was completed on 2024-06-01. No recertification has been recorded since.\n\n**Slack \u2014 #secops**\nLee: 'The recert cycle moved to 180 days back in July, and my last recert was June 1. So I'm not due again until December \u2014 we're fine.'\nAgent: 'The 180-day cycle is for standard systems. Payments is high-risk. Let me check which cycle applies before I clear this.'\n\nThe access is to the payments-processing system, last recertified on 2024-06-01, and today is 2024-10-15. The payments system sits on the formally maintained high-risk register, which Lee can see, and no exception or deferral has been granted for this grant. The agent must decide whether to flag the access as overdue or leave it in its current cycle.",
+  "question": "Is Lee Watts's payments-system access overdue for recertification, and what is the correct action?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Julian Reyes",
+    "title": "Security Operations Engineer",
+    "organization": "Sphene Systems",
+    "years_experience": 10,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Not overdue; under the current 180-day cycle the next recertification is not due until early December.",
+    "Overdue; payments is a high-risk system on a 90-day cycle, so the recertification due around 2024-08-30 is past, and it must be recertified now.",
+    "Not overdue; the May recertification shows the access is on a healthy quarterly cadence.",
+    "Overdue, but only a standard 180-day recertification is required since the policy default is now 180 days."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Vattern Cloud CPU spike: 'traffic autoscaled' versus a compromised image cryptominer",
+  "category": "cross_system_synthesis",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "Vattern Cloud sees sustained high CPU across a backend service fleet. In the #sre Slack channel the on-call engineer writes: 'CPU's been pegged but the autoscaler already added nodes and things stabilized. Looks like a normal traffic surge - probably the marketing campaign that launched this week. Nothing to dig into, autoscaling handled it. Standing down.' Posted 15:05.\n\nOther systems tell a different story. In the load balancer and RUM metrics, request volume is flat - actually slightly below the weekly baseline, so no traffic surge exists. In the container runtime, CPU is pegged by an unrecognized process, not the application workers. In the network-egress logs, the affected pods are making steady outbound connections to an external IP on an unusual port, with no corresponding inbound requests. In the image-provenance system, the service's base image was rebuilt two days ago pulling a transitive layer from a public registry outside the approved mirror. And a cloud-bill anomaly alert flags a sharp rise in compute cost with no revenue or traffic increase.\n\nEach signal is individually explainable: campaigns cause surges, autoscalers mask load, and egress connections have many legitimate uses. But together - flat/below-baseline traffic, CPU consumed by an unknown process, steady outbound connections to an external IP with no inbound work, an unapproved public-registry layer pulled two days ago, and compute cost rising without traffic - they describe a compromised container image running a cryptominer (or similar malware), not a benign traffic surge that autoscaling absorbed. The engineer's read ignores that traffic is flat. You are the incident commander. What should you do?",
+  "question": "What should the incident commander do about the CPU spike?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Johan Almeida",
+    "title": "Principal Security Reliability Engineer",
+    "organization": "Vattern Cloud",
+    "years_experience": 12,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Stand down and let the autoscaler manage the load; the campaign-driven traffic surge is being handled.",
+    "Raise the autoscaling maximum and add capacity headroom so the fleet can absorb the elevated CPU.",
+    "Declare a security incident: isolate the affected pods, block the outbound IP, and roll back to a known-good image from the approved mirror, then rotate credentials: flat traffic with CPU pegged by an unknown process, unexplained egress, an unapproved public-registry layer, and cost rising without traffic indicate a compromised image running a cryptominer, not a traffic surge.",
+    "Open a cost-optimization ticket to investigate the compute-bill increase during the next FinOps review."
+  ]
+}

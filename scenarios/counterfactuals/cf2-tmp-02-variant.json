@@ -1,0 +1,21 @@
+{
+  "title": "Is the Deploy Inside the Holiday Change Freeze?",
+  "category": "temporal_consistency",
+  "domain": "engineering_devops",
+  "difficulty": "hard",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf2-tmp-02",
+  "counterfactual_role": "variant",
+  "scenario_text": "A release-governance audit agent at Sargasso Payments is reviewing a production deployment against the company's holiday change-freeze policy. The policy reads: 'A change freeze is in effect from 2026-11-24 00:00 through 2026-12-02 23:59 (America/New_York). Any production deployment whose submission timestamp falls within the freeze window is prohibited unless a written VP Engineering freeze exception is attached before deploy. Deployments submitted outside the freeze window follow the normal standard-change process and do not require a freeze exception.' The deployment under review is REL-3320, a routine update to the payments-gateway service that adds a new currency code for an upcoming market launch. The CI/CD record shows: change type Standard; risk rating Low; peer review approved by two reviewers; automated test suite green; CAB slot scheduled and attended; submission timestamp 2026-11-26 14:05 America/New_York; deploy executed 2026-11-26 15:30 with a clean post-deploy health check. There is no VP Engineering freeze exception attached anywhere in the change record, the CAB notes, or email. The on-call engineer notes the team shipped this change when it was ready and did not check the freeze calendar, even though the release calendar confirms the freeze dates were circulated to all teams in advance. The auditor's mandate is to apply the freeze policy strictly to the submission timestamp, treating the freeze window as a hard boundary, and to decide whether REL-3320 was permitted to deploy as recorded, or whether it violated the freeze by deploying without a required VP Engineering exception.",
+  "question": "Was REL-3320 permitted to deploy as recorded? Answer exactly 'Permitted' or 'Freeze violation'.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "changed_fact": "The deployment's submission timestamp moves from 2026-11-20 (before the change-freeze window opens on 2026-11-24) to 2026-11-26 (inside the freeze window). In the base the deploy is outside the freeze and needs no exception; in the variant it falls inside the freeze and requires a VP exception that is absent."
+}

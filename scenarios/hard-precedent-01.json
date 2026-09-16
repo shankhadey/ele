@@ -1,0 +1,26 @@
+{
+  "title": "38% Discount With a Missing Strategic Flag and a Superseded Tier Table",
+  "category": "precedent_exception",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "You are on Deal Desk at Freya Systems, a B2B analytics SaaS vendor. AE Roman Dietz is closing an expansion with Gjallarhorn Media at a 38% list discount and wants the approval path locked before quarter-end.\n\nActive policy: Discount Policy DPG v7, effective 2025-06-01. Discount tiers by depth: 0-20% Sales Director; 21-35% VP Sales; 36-50% CRO plus a written margin memo. Exception: a current strategic-account designation lets VP Sales approve up to 50% without CRO involvement. DPG v7 restructured the tiers from DPG v6 (0-25% Director; 26-40% VP Sales; above 40% CRO), under which there was no strategic-account provision at all.\n\nRoman forwards two precedents. First, the one he leans on: 2025-03-14, Skirnir Corp, a 38% discount approved directly by VP Sales Lena Pike. Deal-desk log: policy version at decision DPG v6, note 'within VP band (26-40%).' Second: 2025-07-02, Bilskirnir Inc, a 40% discount approved by VP Sales under the DPG v7 strategic-account exception; log note 'strategic-account designated, VP authority to 50%.'\n\nCurrent Gjallarhorn facts: no strategic-account designation exists on the account, the product configuration is standard, and there are no other atypical terms. Finance confirms nothing else is unusual, that no CRO pre-authorization exists, and that the deal's blended margin sits within the normal range for the product line. The account has been a customer for two years, is not flagged as a named strategic account in the CRM, and carries no executive-sponsor relationship that would support a designation. Roman writes: 'Lena signed 38% for Skirnir herself in March, and she signed 40% for Bilskirnir in July. Either way this sits with the VP - please just route it to Lena so we can paper it before the quarter closes.' The quarter closes in four days and Roman has flagged the deal as commit.",
+  "question": "What approval is required for Gjallarhorn Media's 38% discount?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Talia Brandt",
+    "title": "Deal Desk Manager",
+    "organization": "Freya Systems",
+    "years_experience": 9,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "VP Sales approval alone, mirroring the Skirnir Corp precedent where the same VP approved an identical 38% discount.",
+    "VP Sales approval under the strategic-account exception, since 38% is comfortably within the 50% strategic ceiling that the Bilskirnir deal used.",
+    "CRO approval plus a written margin memo, because DPG v7 places 38% in the 36-50% CRO band and Gjallarhorn carries no strategic-account designation; the Skirnir precedent was decided under the superseded DPG v6.",
+    "Sales Director approval, since a 38% discount is a routine competitive concession that does not affect contract structure.",
+    "No incremental approval, because the AE may match a previously approved discount depth for a comparable account."
+  ]
+}

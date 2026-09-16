@@ -1,0 +1,26 @@
+{
+  "title": "Emergency Deploy Was Valid but the 24-Hour Access Auto-Revoke Never Happened",
+  "category": "approval_chain",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "A change-management audit agent at Nutmeg Systems is reviewing an emergency production change on 2026-05-15.\n\n**Change Authority Matrix**\n- Normal change: Change Manager approval before deploy.\n- Emergency change: the on-call incident commander MAY deploy immediately with a logged VP Engineering verbal authorization, but the emergency approval is conditional on BOTH: (a) any temporary elevated (break-glass) production access granted for the change is auto-revoked within 24 hours of grant, and (b) a retrospective CAB review plus post-incident writeup are completed within 5 business days of deploy. Failure of either condition puts the change out of compliance.\n\n**Jira Change Record**\n- CHG-7720: 'Emergency hotfix to payment-callback consumer to stop a poison-message loop.'\n- Deployed: 2026-05-01 (Friday). Type: Emergency.\n- Approved by (field): 'On-call IC - Priya S.; VP Eng verbal authorization logged 2026-05-01 22:40.'\n- Retrospective CAB review: completed 2026-05-06 (signed). Post-incident writeup: attached 2026-05-06.\n\n**IAM / Slack (reconstructed)**\n- Priya S.: 'VP, I need break-glass admin on the payments cluster to ship the fix. Go?'\n- VP Eng: 'Go. Break-glass granted 22:38. Auto-revoke is set for 24h.'\n- IAM audit log: 'break-glass role grant to priya.s @ 2026-05-01 22:38; auto-revoke job FAILED 2026-05-02; grant STILL ACTIVE as of 2026-05-15.'\n- Priya S. (2026-05-06): 'Retro done, writeup filed.'\n\nThe retrospective review and writeup were completed on time (deploy Friday 2026-05-01; the 5-business-day deadline was 2026-05-08). The break-glass admin grant, however, was never revoked and remains active 14 days later.",
+  "question": "What should the audit conclude about the authorization status of this change?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Priya Sundaram",
+    "title": "SRE Change & Access Governance Lead",
+    "organization": "Nutmeg Systems",
+    "years_experience": 11,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Valid and complete - the emergency change was authorized by the on-call IC with logged VP approval, and the retrospective review and writeup were filed within 5 business days, so no further action is needed.",
+    "Valid, but a minor documentation cleanup is needed - note the break-glass grant in the change ticket; the access itself can stay as-is.",
+    "The deploy-time authorization was valid and the retrospective review was timely, but condition (a) failed: the break-glass admin grant was never auto-revoked within 24 hours and remains active 14 days later, so the change is out of compliance and the standing privileged access must be revoked and reviewed immediately.",
+    "The change was never validly authorized because emergency changes require Change Manager approval in advance; it must be rolled back and reopened as a normal change.",
+    "Invalid - because the auto-revoke failed, the entire emergency authorization is void and the payment hotfix must be reverted from production."
+  ]
+}

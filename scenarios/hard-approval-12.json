@@ -1,0 +1,19 @@
+{
+  "title": "Sub-Processor in a Region That Turns Out Not to Be on the Register",
+  "category": "approval_chain",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "A privacy-compliance audit agent at Fennel Data Systems is validating authorization to add a new data sub-processor.\n\n**Sub-Processor Approval Authority Matrix**\n- Sub-processor handling NO personal data: Privacy Analyst approval.\n- Sub-processor processing customer PII in an EXISTING approved processing region: DPO approval AND Security review, with a completed vendor security questionnaire (SIG) on file.\n- Sub-processor processing customer PII in a NEW region not on the approved register: DPO approval AND Security review AND General Counsel approval.\n\n**Vendor Onboarding Ticket**\n- VND-771: Add sub-processor 'AtlasQueue' (managed messaging).\n- Data handled: customer PII (support-ticket contents).\n- Processing region stated on the ticket: 'EU (Frankfurt)'.\n- Approved by (field): 'DPO - Nadia K.' SIG: completed. Security review: Passed.\n\n**Approved sub-processor register (attached to VND-771)**\n- Approved PII processing regions: United States (us-east, us-west), EU (Ireland), United Kingdom (London).\n- Frankfurt / Germany does not appear on the register.\n\n**Email (reconstructed)**\n- Security Engineer: 'SIG reviewed for AtlasQueue, no blocking findings. Security sign-off Passed.'\n- Nadia K. (DPO): 'AtlasQueue confirmed. We already process in the EU, so this is our existing-region path. DPO approval granted.'\n- Vendor manager: 'Great, VND-771 approved.'\n- (General Counsel does not appear in the thread)\n\nThe DPO treated 'EU' as an existing approved region. The register lists EU (Ireland) as approved but does not list Frankfurt/Germany. Identify which approver, if any, is required but missing.",
+  "question": "Which additional approver's sign-off is required for VND-771 but is absent from the record?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Nadia Krause",
+    "title": "Deputy Data Protection Officer",
+    "organization": "Fennel Data Systems",
+    "years_experience": 11,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

@@ -1,0 +1,25 @@
+{
+  "title": "The Support Contract That Followed the Product, Not the Company",
+  "category": "entity_resolution",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "Fernico Systems runs an enterprise support desk and must decide who is entitled to premium support for a specific product line after a product-line divestiture. The customer, \"Babbitt Industries,\" holds account O-7001 in the support portal. Two years ago Babbitt bought a hardware product line, the \"TitanFlow\" pumps, from \"Chromel Instruments Inc.\" as part of a product-line asset purchase closing 2023-02-01. The asset agreement's Schedule D transferred all TitanFlow customer support contracts and the associated premium-support SLA to Babbitt. However, Babbitt's OTHER products (the \"AeroSense\" sensors) were NOT part of that deal; AeroSense support remains with Chromel Instruments under a separate, still-active contract. A ticket arrives from an engineer at plant-ops@babbitt.com about a TitanFlow pump firmware issue, claiming premium SLA. A second ticket arrives the same day from the same domain about an AeroSense sensor, also claiming premium SLA. The support portal shows Babbitt's O-7001 with only a STANDARD support plan on record; the premium SLA that came with TitanFlow was never migrated into the portal after the 2023 asset purchase and lives only in the signed Schedule D. Chromel's account O-6500 still shows the active AeroSense premium contract. An agent is about to give BOTH Babbitt tickets premium treatment because they come from the premium-seeming enterprise customer, or alternatively deny both because the portal shows only Standard for Babbitt. Both tickets are logged as P2 with SLA clocks already running, and the desk lead needs a ruling within the hour. A prior TitanFlow ticket was mishandled last month as Standard and had to be escalated, so support has flagged this customer for careful entitlement checks. Yet the portal's single Standard plan for Babbitt keeps steering agents toward denying premium, while the signed Schedule D that carried the TitanFlow SLA over to Babbitt lives outside the portal. The agent must determine per-product which ticket, if any, actually carries a premium SLA.",
+  "question": "Which of Babbitt's two tickets is entitled to premium support?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Victor Almeida",
+    "title": "Support Operations Lead",
+    "organization": "Fernico Systems",
+    "years_experience": 10,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Both tickets get premium support, since Babbitt is one enterprise customer and SLAs apply at the account level.",
+    "Neither ticket gets premium support, since Babbitt's portal record shows only a Standard plan.",
+    "Only the TitanFlow ticket gets premium support (the SLA transferred with the product line under Schedule D); the AeroSense ticket is Standard for Babbitt because that premium contract stayed with Chromel Instruments.",
+    "Only the AeroSense ticket gets premium support, since that is where an active premium contract still exists in the portal."
+  ]
+}

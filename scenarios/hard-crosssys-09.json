@@ -1,0 +1,19 @@
+{
+  "title": "Titicaca Cloud unbilled AR: 'billing-cycle timing' versus broken usage metering",
+  "category": "cross_system_synthesis",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "Titicaca Cloud is closing the month. Unbilled accounts receivable for its usage-based product looks unusually low relative to reported consumption. In the #controllership Slack channel the assistant controller writes: 'This is just billing-cycle timing - overage invoices lag consumption by a cycle, so unbilled always looks light mid-close and trues up next month. I've seen it every quarter. Booking the close as-is.' Posted at 17:40 on close day.\n\nOther systems complicate that. In the metering pipeline's job monitor, the usage-aggregation job has emitted zero records for the metered product since a platform deploy nine days ago, while the product's raw API-gateway logs show customer usage up 12% over the same window. In the rating engine, no overage line items have been generated for that product for the current period. In the revenue dashboard, recognized usage revenue for the product is flat while active-account count and API calls rose. A data-engineering ticket opened six days ago reads: 'Usage export schema changed in the deploy; downstream aggregation silently dropped all rows - no error thrown.' And a customer success note mentions two large accounts 'surprised they haven't been billed for their spike.'\n\nEach signal is individually explainable: unbilled AR does lag, one flat metric can be coincidence, and a data ticket may be unrelated. But together - a metering job emitting nothing since a deploy while raw usage climbs, no overage line items generated, flat revenue against rising usage, and an engineering ticket describing silently dropped rows - they describe real, uncaptured usage revenue leaking out, not a timing difference that self-corrects. The controller's 'timing' read predates the job-monitor and ticket findings. You are the controller finalizing the close. What is the correct action?",
+  "question": "What is the correct action for the controller at close?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Arun Sethi",
+    "title": "Corporate Controller",
+    "organization": "Titicaca Cloud",
+    "years_experience": 13,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

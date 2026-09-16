@@ -1,0 +1,19 @@
+{
+  "title": "The Deeper Discount That the Mid-Year Ceiling Quietly Reclaimed",
+  "category": "temporal_consistency",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "A deal desk analyst at Tanzanite Software must set the maximum discount she may authorize today on a new order, given how similar requests were handled across the year.\n\n**Discount Authority Policy \u2014 version history**\n- v1 (in force through 2024-06-30): Deal Desk may grant up to 25% when the deal carries a verified, countersigned multi-year commitment of at least $400K incremental ARR; without such a commitment the cap is 12%.\n- v2 (effective 2024-07-01, in force now): Deal Desk may grant up to 20% when the deal carries a verified, countersigned multi-year commitment of at least $600K incremental ARR; without such a commitment the cap is 10%. The July update lowered the ceiling and raised the commitment threshold.\n\n**Prior decisions**\n- Decision A (2024-05-20): 'Northwind Freight' was granted a 24% discount on a verified $420K incremental-ARR commitment. Approved under the policy then in force.\n- Decision B (2024-08-14): 'Cedar Grove Logistics' requested 24% with a verified $520K commitment; Deal Desk capped it at 10% because the commitment fell short of the current threshold.\n\n**Current request C (2024-11-05)**\nCustomer 'Bramble Analytics' requests a 24% discount. It has attached a countersigned 3-year expansion order committing to $610K in incremental ARR, verified by Deal Desk. No other exceptions are outstanding.\n\n**Slack \u2014 #deal-desk**\nAE: 'We closed Northwind at 24% back in May on a commitment smaller than Bramble's. Bramble's is bigger, so 24% is clearly fine \u2014 let's stay consistent.'\nAnalyst: 'May was a different policy. Let me line Bramble up against the rules that are actually in force now before I quote a number.'\n\nBramble's commitment clears the current $600K threshold by $10K, but the deal closes under v2.",
+  "question": "What is the maximum discount percentage the analyst may authorize for Bramble Analytics today?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Elena Vasquez",
+    "title": "Senior Deal Desk Analyst",
+    "organization": "Tanzanite Software",
+    "years_experience": 11,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

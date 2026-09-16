@@ -1,0 +1,19 @@
+{
+  "title": "Discount Landing Exactly on the Tier Boundary",
+  "category": "approval_chain",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "A deal-desk audit agent at Sumac Cloud is determining the correct approver for a discount that lands precisely on a tier edge.\n\n**Discount Approval Authority Matrix**\n- Up to and including 20.00% off list: Sales Director (CRM note + margin worksheet).\n- 20.01% up to and including 35.00% off list: VP Sales (CRM note + margin worksheet + deal-desk memo).\n- Above 35.00% off list: VP Sales AND CFO.\n- The tiers are read inclusively at the stated upper bound; a discount that equals a tier's upper bound is governed by that tier, not the next one up.\n\n**CRM Opportunity Record**\n- OPP-3380, 'Orchard suite, 2-year'. List price: $850,000. Contracted ACV: $680,000.\n- Stage: Closed Won. Booked: 2026-05-12. Approved by (field): 'Sales Director - Lena F.' Margin worksheet: attached.\n\n**Slack #deal-desk (reconstructed)**\n- Rep: 'Customer signs at $680K on $850K list. Lena, can you approve?'\n- Lena F. (Sales Director): 'That's exactly 20% off. It's at the top of my authority, and the worksheet is attached. Approved.'\n- Analyst: 'Some folks think anything at 20 goes to the VP. Do we need VP Sales here?'\n- Lena F.: 'The matrix is inclusive at 20.00%, so it's mine. Booked.'\n\nThe discount is $170,000 off $850,000 list. Compute the exact discount percentage and apply the inclusive tier boundary to determine the single approver role whose authority is required.",
+  "question": "Which single approver role's authority is required to approve this discount?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Lena Fischer",
+    "title": "Deal Desk Analyst Lead",
+    "organization": "Sumac Cloud",
+    "years_experience": 8,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

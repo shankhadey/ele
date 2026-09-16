@@ -1,0 +1,19 @@
+{
+  "title": "Balaton Pharma OOS result: 'lab error, invalidate and retest' versus a real batch deviation",
+  "category": "cross_system_synthesis",
+  "domain": "other",
+  "difficulty": "expert",
+  "scenario_text": "Balaton Pharma's QC lab returns an out-of-specification (OOS) assay result on a finished drug batch scheduled to release tomorrow. In the #qa-batch-release Slack channel the QA associate writes: 'This is almost certainly a lab error - the analyst is new and probably mis-pipetted. Let's invalidate the result, retest with a senior analyst, and release on the passing retest. We've seen new-analyst OOS results before. Timeline's tight.' Posted afternoon.\n\nOther systems complicate an invalidation. In the LIMS, the HPLC system-suitability checks for the run passed, and a second, independent aliquot from the same batch also read OOS - two failing results, not one. In the manufacturing execution system, a deviation was logged on the blending step for this batch (a mixing-time excursion), timestamped during production. In the environmental-monitoring system, a temperature excursion was recorded in the granulation suite the same shift. In the stability-trend database, the prior three batches trended toward the lower assay limit, and this batch continues that drift. And the analyst's training record shows they were qualified on this method two months ago, not untrained.\n\nEach signal is individually explainable: new analysts do err, single aliquots can be anomalous, and minor deviations happen. But together - passing system suitability (so the instrument was fine), a confirming second OOS aliquot, a logged blending deviation, an environmental excursion, a downward stability trend, and a qualified analyst - they indicate the OOS reflects a real product/process problem, not analyst error. Invalidating without a root-cause basis would violate OOS-investigation rules (the Barr precedent). The QA associate's 'lab error' read predates the second-aliquot and deviation findings. You are the QA lead. State the correct decision.",
+  "question": "What is the correct QA decision on the OOS batch?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Ildiko Varga",
+    "title": "Head of Quality Assurance",
+    "organization": "Balaton Pharma",
+    "years_experience": 14,
+    "domain_expertise": "other"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

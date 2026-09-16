@@ -1,0 +1,19 @@
+{
+  "title": "Severance Weeks Under a Reduced Rate and a Tenure-Gated Tier",
+  "category": "precedent_exception",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "You are a senior HR business partner at Magni Industrial, a heavy-equipment manufacturer, computing a severance offer for a role elimination.\n\nActive policy: Severance Policy SVP v5, effective 2025-01-01. Base severance is two weeks of pay per year of service, with a minimum of four weeks and a maximum of twenty-six weeks, approvable by the HRBP. Enhanced tier: employees with ten or more years of service accrue three weeks per year (subject to the same twenty-six-week cap), and the enhanced tier requires VP-of-HR approval. SVP v5 reduced the base accrual from three weeks per year under the prior SVP v4 to the current two weeks per year, and moved the three-weeks-per-year rate into the ten-plus-year enhanced tier.\n\nThe precedent cited: 2024-08-19, employee Draupnir Hale, eight years of service, received twenty-four weeks of severance (three weeks per year); case note 'three weeks/year base per SVP v4,' policy version at decision SVP v4.\n\nCurrent facts: the affected employee, Gungnir Sato, has exactly eight years of continuous service, confirmed in the HRIS, and is being separated in a role elimination with no other special circumstances, no prior break in service, and no individually negotiated severance term in the offer letter. The separation is part of a small reduction, and legal has asked that the offer align strictly with the current policy formula. The manager writes: 'Draupnir had eight years and got twenty-four weeks. Gungnir has eight years too - let's offer the same twenty-four weeks so we are consistent and fair across the team.' You need to put a single week figure on the severance agreement.",
+  "question": "State the number of severance weeks Gungnir Sato should be offered.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Lorne Vasquez",
+    "title": "Senior HR Business Partner",
+    "organization": "Magni Industrial",
+    "years_experience": 13,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

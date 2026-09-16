@@ -1,0 +1,26 @@
+{
+  "title": "PII Migration Missing the New Privacy-Officer Gate",
+  "category": "precedent_exception",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "You are the release manager at Fulla Software, a fintech platform, reviewing approvals on a production data migration.\n\nActive policy: Deploy Authority Policy DAP v4, effective 2025-02-01. Standard deploys require peer review plus Release Manager approval. Data-migration deploys additionally require DBA approval, and if the migration accesses or reshapes customer personally identifiable information (PII), they also require Privacy Officer sign-off recorded in the change ticket. DAP v4 added the Privacy Officer requirement for PII-touching migrations; under the prior DAP v3, a data migration - including one touching PII - required only DBA approval on top of the standard controls.\n\nThe precedent cited: 2024-10-16, a migration that restructured a customer table shipped with peer review, Release Manager approval, and DBA approval; change note 'data migration, DBA approved,' policy version at decision DAP v3, no Privacy Officer field present.\n\nCurrent facts: the pending migration reshapes a table that stores customer PII (names, email addresses, and partial payment identifiers), confirmed by the data catalog. Peer review, Release Manager approval, and DBA approval are all in place; the Privacy Officer field in the change ticket is present but left blank rather than marked waived or completed. The migration is scheduled in a maintenance window tonight, and the team considers it low-risk because the schema change is additive. The engineer writes: 'We did the exact same kind of customer-table migration last October with peer review, Release Manager, and DBA sign-off - no privacy step. This is identical, so let's ship it with the same approvals.' No exemption or waiver from the Privacy Officer has been requested for this change.",
+  "question": "How should this PII-touching migration be handled?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Petra Almeida",
+    "title": "Release Manager",
+    "organization": "Fulla Software",
+    "years_experience": 11,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Ship with peer review, Release Manager, and DBA approval, mirroring the October 2024 migration.",
+    "Ship with Release Manager approval alone, since a schema reshape is not a feature change.",
+    "Require DBA approval and Privacy Officer sign-off in addition to peer review and Release Manager approval, because the migration touches customer PII and DAP v4 mandates Privacy Officer sign-off; the 2024 migration was under superseded DAP v3.",
+    "Require DBA approval only, treating PII handling as already covered by the DBA's review of the migration.",
+    "Ship now and obtain the Privacy Officer sign-off retroactively within the next sprint."
+  ]
+}

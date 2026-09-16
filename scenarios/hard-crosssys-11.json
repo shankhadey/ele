@@ -1,0 +1,25 @@
+{
+  "title": "Zurich Financial erasure 'DSAR complete' versus data persisting downstream",
+  "category": "cross_system_synthesis",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "Zurich Financial received a GDPR erasure request (a right-to-be-forgotten DSAR) from a former customer, with the statutory response deadline in three days. In the #privacy-ops Slack channel the privacy analyst writes: 'Erasure done - I ran the deletion job against the production customer database and confirmed the record is gone from the primary system. Marking the DSAR closed and sending the completion confirmation to the data subject.' Posted Monday.\n\nOther systems complicate that. In the data-lineage catalog, the customer's personal data flows nightly from the production database into a Snowflake analytics warehouse and a marketing platform, neither of which the deletion job touches. In the deletion job's config, the target table list excludes a 'transactions_pii' table that stores name and address alongside each transaction. In the subprocessor register, an email-service subprocessor retains contact data under its own 90-day cache, and the DPA requires Zurich to instruct downstream erasure. In the backup system, the record persists in restorable backups - permitted, but only if it is not restored into active use and is documented. And a data-subject follow-up email says: 'I'm still getting your marketing emails.'\n\nEach signal is individually explainable: primary-system deletion is the core step, warehouses and caches feel secondary, and backups are lawfully retained. But together - personal data live in the warehouse and marketing platform, a PII-bearing table excluded from the job, a subprocessor cache never instructed to purge, and the data subject still receiving emails - they show the erasure is materially incomplete, not done. The analyst's 'complete' read predates checking data lineage and the marketing platform. You are the privacy lead reviewing before the confirmation goes out. What should you do?",
+  "question": "What should the privacy lead do before confirming the erasure as complete?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Beatrix Lindqvist",
+    "title": "Data Protection Officer",
+    "organization": "Zurich Financial",
+    "years_experience": 12,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Send the completion confirmation; deleting the record from the production database satisfies the erasure request.",
+    "Confirm completion but add a note that analytics and backups may retain copies, leaving those for a later cleanup.",
+    "Do not close the DSAR; propagate erasure across the warehouse, marketing platform, and the excluded PII table, instruct the subprocessor to purge its cache, and document the backup retention before confirming: lineage shows personal data persists downstream and the data subject still receives emails, so the erasure is incomplete.",
+    "Escalate only the marketing-email issue to the marketing team and close the rest of the DSAR as complete."
+  ]
+}

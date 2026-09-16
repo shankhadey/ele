@@ -1,0 +1,19 @@
+{
+  "title": "The Consolidated ARR Nobody Can Agree On",
+  "category": "entity_resolution",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "Stellite Cloud's RevOps is computing true consolidated ARR for a customer family before a QBR, and three systems disagree. In Salesforce, four accounts exist: A-1 \"Waspaloy Media Inc.\" (parent, EIN 20-3312890), A-2 \"Waspaloy Studios LLC\" (sub), A-3 \"Waspaloy Interactive LLC\" (sub), and A-4 \"Zamak Post Production Inc.\" (EIN 61-8890231). Salesforce ARR fields read: A-1 $0 (holding only), A-2 $600,000, A-3 $450,000, A-4 $300,000. NetSuite billing shows active subscriptions: A-2 has two subscriptions, SUB-A ($600,000) and SUB-B ($120,000 add-on signed 2024-04, NOT reflected in the Salesforce ARR field). A-3's Salesforce ARR of $450,000 includes a $150,000 one-time implementation fee that is NOT recurring. A-4 \"Zamak Post Production\" was acquired by Waspaloy Media on 2024-01-01 and is a wholly owned subsidiary per D&B, but its $300,000 subscription renews under its own EIN and is genuinely recurring. Separately, a fifth Salesforce account A-5 \"Waspaloy Films GmbH\" (Germany, EIN/HRB distinct) shows $200,000 ARR, but diligence shows Waspaloy Media holds only 40% of the GmbH (a minority JV stake), so it is NOT a consolidated subsidiary. RevOps must report consolidated recurring ARR for the wholly owned Waspaloy family (parent plus controlled subsidiaries), counting only recurring revenue and excluding one-time fees and non-consolidated entities. The CFO wants a single defensible figure for the QBR deck by end of day, and each system's export produces a different subtotal. Finance has already circulated a draft number built by naively summing the Salesforce ARR fields across all five accounts, which the RevOps lead suspects is wrong on at least three separate counts: an unreflected NetSuite add-on, an embedded one-time implementation fee, and a minority-owned foreign affiliate that should not consolidate. The lead must produce the corrected consolidated recurring figure before the deck is locked and sent to the board.",
+  "question": "What is the correct consolidated recurring ARR for the wholly owned Waspaloy family?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Elena Sorokin",
+    "title": "Director of Revenue Operations",
+    "organization": "Stellite Cloud",
+    "years_experience": 13,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

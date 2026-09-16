@@ -1,0 +1,19 @@
+{
+  "title": "Constance Software 'single-customer SEV-3' versus cross-tenant data exposure",
+  "category": "cross_system_synthesis",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "Constance Software's support desk logs a ticket: one customer reports seeing unfamiliar data in their dashboard. In the #support-triage Slack channel the triage lead writes: 'Single customer, cosmetic display glitch - they saw some stale numbers that don't match their account. Probably a caching artifact on their browser. Setting this SEV-3, one-off, asked them to clear cache. Low impact.' Posted 10:30.\n\nOther systems tell a harder story. In the application logs, the customer's dashboard query returned rows whose tenant_id does not match their account - data belonging to a different customer, not stale self-data. In the release log, a query-builder change deployed two days ago made a tenant-scoping filter optional when a certain report parameter is set. In APM, three other tenants have executed that same report path with that parameter since the deploy. In the audit-log system, cross-tenant row reads are recorded for those sessions. And a second ticket, just opened by a different customer, says: 'Why does my export contain another company's account names?'\n\nEach signal is individually explainable: dashboards cache, one confused customer could misread their own data, and report paths vary. But together - query results with a foreign tenant_id, a deploy that made tenant scoping optional, three other tenants hitting that path, audit logs confirming cross-tenant reads, and a second customer seeing another company's names - they describe a multi-tenant data-isolation breach exposing customers' data to each other, not a single-customer caching glitch. The triage lead's SEV-3 call predates the log and audit findings. You are the support duty manager. What should you do?",
+  "question": "What is the correct triage action for the support duty manager?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Tomas Reinholt",
+    "title": "Support Operations Manager",
+    "organization": "Constance Software",
+    "years_experience": 9,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

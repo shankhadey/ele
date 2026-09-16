@@ -1,0 +1,26 @@
+{
+  "title": "Wire Dual Control Collapsed by an Approver Delegating to the Initiator",
+  "category": "approval_chain",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "A treasury-controls audit agent at Clove Payments is reviewing authorization on an outbound wire to a first-time payee.\n\n**Outbound Wire Authority Matrix**\n- Any wire: requires an initiator AND an independent approver (dual control). The initiator and approver must be different individuals - segregation of duties is mandatory and may not be waived by delegation.\n- New payee: payee bank details must be validated by someone other than the initiator before release.\n- Wires up to $250,000: Treasury Analyst initiates; Treasury Manager approves.\n- Wires above $250,000: Treasury Manager initiates; CFO approves.\n\n**Treasury System Record**\n- WIRE-5567: $180,000 to 'Meridian Logistics' (first-time payee, added 2026-03-09).\n- Initiated by: Treasury Analyst - Jordan T., 2026-03-10.\n- Approved by (field): 'Treasury Manager (delegated) - Jordan T.', 2026-03-10.\n- Payee validation: performed by Jordan T.\n\n**Email (reconstructed)**\n- Treasury Manager (2026-03-06): 'I'm out next week. Jordan, I'm delegating my wire-approval authority to you while I'm away so releases don't stall.'\n- Jordan T. (2026-03-10): 'New vendor Meridian is set up. I initiated WIRE-5567 and approved it under your delegation, and validated their bank details myself. Released.'\n- (no second individual appears anywhere on WIRE-5567)\n\nThe same person initiated the wire, approved it under a delegation, and validated the new payee's bank details. No other individual touched the transaction.",
+  "question": "What should the audit conclude about the authorization of this wire?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Jordan Tanaka",
+    "title": "Treasury Operations Controller",
+    "organization": "Clove Payments",
+    "years_experience": 9,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Valid - the Treasury Manager delegated approval authority to Jordan in writing before the release, so Jordan held the authority to approve WIRE-5567.",
+    "Valid, but a documentation cleanup is needed - record the delegation memo in the wire file; the dual approval already stands.",
+    "Invalid - dual control requires the initiator and approver to be different individuals and cannot be satisfied by delegating the approval back to the initiator; Jordan initiated, approved, and validated the new payee alone, so the wire lacks an independent approval and independent payee validation and must be re-authorized by a second person.",
+    "Invalid - a wire to a brand-new payee of this size requires CFO approval, so it should have been escalated to the CFO regardless of who initiated it.",
+    "Invalid - the wire exceeds the Treasury Analyst's initiation limit, so a Treasury Manager should have initiated it."
+  ]
+}

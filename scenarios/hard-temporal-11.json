@@ -1,0 +1,19 @@
+{
+  "title": "The Severance That the New Formula Recomputed",
+  "category": "temporal_consistency",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "A people-operations analyst at Larimar Biotech must compute the severance owed to a laid-off employee, given how a comparable severance was calculated earlier this year.\n\n**Severance Policy \u2014 version history**\n- Old formula (in force through 2024-03-31): severance equals 2 weeks of pay per completed year of service.\n- New formula (effective 2024-04-01, in force now): severance equals 1 week of pay per completed year of service, plus a flat 4-week base. Severance is calculated using the formula in force on the separation date.\n\n**Prior decision A (2024-02-15)**\nAn employee with 5 completed years received 10 weeks of severance. Note: '2 weeks per year x 5 years = 10 weeks under the formula then in effect.'\n\n**Current case C**\nEmployee 'Jordan Pierce' is being laid off with a separation date of 2024-10-31. Jordan was hired on 2018-09-01, giving 6 completed years of service as of the separation date.\n\n**Slack \u2014 #people-ops**\nManager: 'We paid 2 weeks per year in February. Jordan has 6 years, so that's 12 weeks \u2014 let's put 12 weeks on the letter.'\nAnalyst: 'February used the old formula. Let me recompute Jordan's severance under the formula that applies on the separation date.'\n\nJordan has 6 completed years of service, and the separation date is 2024-10-31. Jordan's hire date of 2018-09-01 gives exactly six completed years by the separation date, with no partial year to round. The layoff is part of a routine reduction, so no enhanced or individually negotiated package applies and the standard formula controls.",
+  "question": "How many weeks of severance is Jordan Pierce owed? Give the number of weeks.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Colin Mbeki",
+    "title": "People Operations Analyst",
+    "organization": "Larimar Biotech",
+    "years_experience": 6,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

@@ -1,0 +1,25 @@
+{
+  "title": "The Software Build That Straddled a Capitalization Threshold Change",
+  "category": "temporal_consistency",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "A revenue-operations accountant at Tourmaline Industries must decide whether costs for an internal software build should be capitalized or expensed, given how a comparable project was treated last year.\n\n**Capitalization Policy \u2014 version history**\n- Old policy (in force through fiscal year FY2023, which ended 2024-01-31): internal-use software projects are capitalized only if total project cost is at least $250,000; otherwise costs are expensed as incurred.\n- New policy (effective FY2024, beginning 2024-02-01): the capitalization threshold is lowered to $100,000. The policy states explicitly that costs incurred on or after the effective date follow the threshold in force when the cost is incurred, regardless of when the project was budgeted or approved.\n\n**Prior decision A (2023-11-14)**\nA $180,000 internal tooling project was expensed in full. Note: 'Total cost $180K is below the $250K capitalization threshold. Expensed as incurred.'\n\n**Current project C**\nProject 'Atlas' is an internal-use analytics build with a total cost of $180,000. The project was budgeted and approved on 2024-01-22. All development costs were incurred between 2024-03-01 and 2024-06-30.\n\n**Slack \u2014 #controllership**\nStaff accountant: 'We expensed the $180K tooling build last November. Atlas is the same size, so let's expense it too and keep the treatment consistent.'\nAnother: 'And Atlas was actually approved in January, before the new fiscal year even started \u2014 so the old threshold should apply, right?'\nAccountant: 'Let me check when the costs were incurred, not when it was approved.'\n\nAtlas's costs were all incurred inside FY2024, after the threshold dropped to $100,000, even though the project itself was approved in the prior fiscal year.",
+  "question": "How should the accountant treat the $180,000 of Atlas development costs?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Daniel Okonkwo",
+    "title": "Revenue Operations Accountant",
+    "organization": "Tourmaline Industries",
+    "years_experience": 9,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Expense the $180,000 in full, consistent with the November treatment of the similarly sized $180K tooling project.",
+    "Capitalize the $180,000, because the costs were incurred in FY2024 when the $100,000 threshold was in force, and $180K exceeds it.",
+    "Expense the $180,000, because Atlas was budgeted and approved on 2024-01-22 under the old $250K threshold.",
+    "Capitalize $90,000 and expense $90,000, splitting the project to reflect the mid-year policy change."
+  ]
+}

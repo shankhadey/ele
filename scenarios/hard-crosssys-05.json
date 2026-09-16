@@ -1,0 +1,25 @@
+{
+  "title": "Como Robotics resignation cluster: 'hot market churn' versus post-complaint retaliation risk",
+  "category": "cross_system_synthesis",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "Como Robotics sees five resignations in eight weeks from one 22-person hardware team. In the #people-ops Slack channel the HR business partner writes: 'This is the hot robotics talent market - everyone's poaching senior mechanical engineers right now. It's voluntary churn, comp-driven. I'd recommend a market pay adjustment for the team to stem it. Nothing unusual here.' Posted Monday.\n\nOther systems raise a different pattern. In the HRIS, all five departures report to the same engineering manager, hired six months ago; no other team under that director shows elevated attrition. In the ethics-hotline case system, an anonymous complaint alleging that manager falsified safety-test sign-offs was filed nine weeks ago - one week before the first resignation. In the exit-interview records, three of the five cite 'concerns about how issues get raised' and 'retaliation' in free-text, though the coded reason is 'compensation.' In the access-log system, two departing employees had recently downloaded internal safety-test datasets. And in email, a retained team member wrote to the HRBP last week: 'People are leaving because they flagged the test problem and got sidelined.'\n\nEach signal is individually explainable: senior engineers are in demand, one manager can have bad luck, exit free-text is venting, and data downloads happen before departures. But together - departures concentrated under one newly hired manager, a safety-falsification complaint filed just before the exodus began, exit text naming retaliation despite a 'compensation' code, and a retained employee corroborating - they describe possible retaliation tied to a protected safety complaint, not a market-comp problem. The HRBP's 'hot market' read predates reading the exit free-text and the hotline timeline. You lead People Ops. What should you do?",
+  "question": "What should the People Ops lead do about the resignation cluster?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Daniel Ostrowski",
+    "title": "Senior Director, People Operations",
+    "organization": "Como Robotics",
+    "years_experience": 13,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Approve a market pay adjustment for the team to stem comp-driven attrition, as the HRBP recommended.",
+    "Run stay interviews and a broader engagement survey for the team before taking any other action.",
+    "Open a formal investigation with employment counsel into the manager and possible retaliation, and preserve the safety complaint and related records: the timing after the safety complaint, the single-manager concentration, exit text naming retaliation, and corroboration point to a protected-activity issue, not market churn.",
+    "Coach the new manager on retention best practices and monitor attrition for another quarter."
+  ]
+}

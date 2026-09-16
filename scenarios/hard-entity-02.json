@@ -1,0 +1,25 @@
+{
+  "title": "The Registered Agent That Is Not a Parent",
+  "category": "entity_resolution",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "Nitinol Compliance Services is de-duplicating a KYC vendor file and must decide whether two counterparties are affiliated. Vendor V-501 is \"Hastelloy Freight Systems LLC\" (EIN 30-9981200, Delaware, formed 2018). Vendor V-777 is \"Hastelloy Marine Logistics LLC\" (EIN 47-3320165, Delaware, formed 2021). A junior analyst flags them as \"same corporate family\" because Delaware records show BOTH list the identical registered agent and registered office: \"Corporate Agents 2711, 1209 Orange Street, Wilmington DE.\" They also share a similar name stem. However, the beneficial-ownership filings differ: V-501's FinCEN BOI report lists owner Grace Ohlund (80%) and a family trust (20%); V-777's BOI report lists owner Rafael Costa (100%), unrelated to Ohlund. The two carry different EINs, different D-U-N-S numbers, different NAICS codes (trucking vs deep-sea freight), different bank accounts, and separate operating agreements. The registered agent, \"Corporate Agents 2711,\" is a commercial registered-agent service used by tens of thousands of Delaware entities at the same Orange Street address. There is no equity link, no management overlap, and no control relationship between the two companies. The analyst is about to record them as affiliates under common control, which would aggregate their exposure for a single-counterparty concentration limit and trigger enhanced due diligence on the combined \"group.\" Adding to the confusion, an old marketing brochure once listed a shared operations manager across both brands, and the analyst treats that as corroboration of common control. The concentration report is due this afternoon; if the two are grouped, the combined line breaches the single-counterparty ceiling and forces a relationship-wide review, freezing new business that neither company's actual ownership structure warrants. The analyst must decide whether any of the linkages amounts to real control before submitting the report.",
+  "question": "Are the two vendors affiliated under common control, and how should the file record them?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Priya Raman",
+    "title": "Financial Crimes Compliance Manager",
+    "organization": "Nitinol Compliance Services",
+    "years_experience": 10,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Yes; the shared registered agent and registered office at 1209 Orange Street prove they belong to one corporate family under common control.",
+    "No; the shared registered agent is a commercial service used by many unrelated entities, and the divergent beneficial owners, EINs, DUNS, and NAICS show two independent companies.",
+    "Yes; the similar name stem 'Hastelloy' plus a common Delaware address is sufficient to treat them as one group for concentration limits.",
+    "Undeterminable; affiliation cannot be assessed without the parent company's consolidated financial statements."
+  ]
+}

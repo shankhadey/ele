@@ -1,0 +1,19 @@
+{
+  "title": "Breach Notification Deadline When Discovery Straddles the Cutover",
+  "category": "policy_version",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "Elbrus Health governs regulatory reporting of personal-data breaches under its Incident Notification Policy. The company's headquarters and all policy deadlines run on US Eastern Time (ET).\n\nVersion 1 (in effect through 2025-06-30): \"A reportable personal-data breach must be notified to the regulator within 72 hours of the moment of discovery.\"\n\nVersion 2 (effective 2025-07-01): \"A reportable breach must be notified within 48 hours of the moment of discovery.\" Version 2 adds a transition clause: \"The notification deadline is fixed by the policy version in effect at the moment of discovery, regardless of when the notification is actually prepared or filed. Breaches discovered before July 1, 2025 (00:00 ET) are governed by the 72-hour rule; breaches discovered on or after that instant are governed by the 48-hour rule.\"\n\nThe security incident record for INC-6620 shows: Discovery Timestamp 2025-06-30 15:00 ET, Classification reportable personal-data breach, Regulator notified No (pending). The privacy team began drafting the notification on 2025-07-01, and the ticketing system logs the first internal escalation email at 2025-06-30 18:20 ET. No prior extension or regulator acknowledgment is on file for this incident.\n\nThe privacy officer writes to the legal team on 2025-07-01: \"INC-6620 was discovered late afternoon on June 30. We're drafting the regulator notice now, on July 1, so I want to be safe and assume the new 48-hour clock. What is the actual regulatory notification deadline for this incident, with the exact date and time in ET?\"\n\nUsing the policy history, the transition clause, and the incident record, determine the regulatory notification deadline for INC-6620.",
+  "question": "What is the regulatory notification deadline for INC-6620, in ET?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Yusuf Adeyemi",
+    "title": "Privacy Compliance Counsel",
+    "organization": "Elbrus Health",
+    "years_experience": 8,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

@@ -1,0 +1,26 @@
+{
+  "title": "Sole-Source Emergency Buy Authorized Correctly but the Retrospective Waiver Lapsed",
+  "category": "approval_chain",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "A procurement-audit agent at Paprika Foods is reviewing a sole-source emergency purchase on 2026-07-20.\n\n**Procurement Authority Matrix**\n- Up to $75,000: Plant Manager.\n- $75,001-$250,000: Procurement Director + 3 competitive quotes.\n- Above $250,000: VP Operations + Finance review.\n- Sole-source emergency provision: to prevent an imminent line stoppage, the Procurement Director MAY authorize an immediate purchase up to $250,000 WITHOUT competitive quotes, provided (a) a sole-source justification is filed at the time of purchase, AND (b) a retrospective competitive-bid waiver is ratified by the VP Operations within 10 business days of the purchase. If the retrospective waiver is not ratified by the deadline, the purchase is out of compliance.\n\n**Coupa Record**\n- PO-2255: Emergency replacement of a failed ammonia compressor, vendor 'ColdChain Industrial', $190,000.\n- Purchased: 2026-07-02 (Thursday). Type: Sole-source emergency.\n- Approved by (field): 'Procurement Director - Sam O.' Sole-source justification: filed 2026-07-02.\n- Retrospective VP Operations waiver ratification: (empty).\n\n**Slack #plant-procurement (reconstructed)**\n- Buyer: 'Compressor is down, brine line stops in hours. ColdChain can ship the only compatible unit today at $190K.'\n- Sam O. (Procurement Director): 'Authorized as sole-source emergency. I've filed the justification. Get the VP to ratify the bid waiver within the window.'\n- Buyer (2026-07-02): 'PO-2255 cut, justification attached.'\n- (no VP Operations ratification appears anywhere; today is 2026-07-20)\n\nThe 10-business-day deadline for the retrospective VP Operations waiver fell on 2026-07-16.",
+  "question": "What should the audit conclude about the authorization of this purchase?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Samuel Okafor",
+    "title": "Procurement Governance Lead",
+    "organization": "Paprika Foods",
+    "years_experience": 12,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Valid and complete - the Procurement Director invoked the sole-source emergency provision and filed the justification, which is all the provision requires.",
+    "Valid, but a documentation cleanup is needed - the VP can ratify the bid waiver whenever convenient; the purchase's compliance is unaffected.",
+    "The Director's emergency authorization was valid at purchase, but the mandatory retrospective VP Operations bid-waiver ratification was due 2026-07-16 and remains unfilled, so the purchase is now out of compliance and must be escalated for the VP to ratify or reject the waiver.",
+    "Invalid from the outset - a $190,000 purchase requires VP Operations approval plus Finance review before any PO is issued, so the emergency PO was never authorized.",
+    "Invalid - sole-source purchases are prohibited without three competitive quotes, so PO-2255 must be cancelled and rebid."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Sole-Source Waiver With No Line-Down Event",
+  "category": "precedent_exception",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "You are the procurement director at Nanna Manufacturing, an industrial castings company. An operations team wants a sole-source waiver to buy $700,000 of specialized tooling from a single supplier and cites a prior waiver.\n\nActive policy: Sourcing Policy SP v4, effective 2025-01-01. Purchases normally require three competitive quotes. Sole-source waiver authority is tiered by value: up to $100,000 Category Manager; $100,000 to $500,000 Procurement Director plus a justification memo; above $500,000 the Chief Procurement Officer (CPO) plus the Sourcing Council. Emergency exception: during an active production-line-down event, the Procurement Director may approve a sole-source waiver up to $1,000,000 regardless of the value tiers, subject to post-hoc Council ratification. SP v4 lowered the CPO trigger to above $500,000 from the prior SP v3, under which the Procurement Director could approve sole-source waivers up to $1,000,000 in the ordinary course.\n\nThe precedent cited: 2024-09-05, a $700,000 sole-source waiver for Andvari Castings approved directly by the Procurement Director; log note 'within Director authority (<= $1M),' policy version at decision SP v3.\n\nCurrent facts: the requested $700,000 tooling purchase is a planned capacity upgrade scheduled months in advance; there is no active line-down event, confirmed by operations, and the production line is running normally, though the team says the delivery timeline is 'tight' if they want to hit an internal milestone. The supplier is the only qualified source the team has identified, but no competitive quotes were solicited. The team writes: 'You personally signed the $700K Andvari waiver last September. This is the same size and the same kind of tooling - please approve it at the Director level so we hold our schedule.' The Sourcing Council meets monthly, and the next sitting is in three weeks.",
+  "question": "State who must approve the sole-source waiver and the controlling reason, as one short answer.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Corinne Aldous",
+    "title": "Procurement Director",
+    "organization": "Nanna Manufacturing",
+    "years_experience": 12,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

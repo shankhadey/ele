@@ -1,0 +1,26 @@
+{
+  "title": "Which Account's SLA Governs the Second Ticket?",
+  "category": "entity_resolution",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf2-ent-01",
+  "counterfactual_role": "base",
+  "scenario_text": "Adriatic Software's support operations team is triaging a Sev-1 outage ticket and must apply the correct response-time SLA. Two incidents landed within an hour of each other, both from people using the email domain northwind-retail.com. Ticket SUP-6120 was opened by Dana Choi (dana.choi@northwind-retail.com), whose Zendesk user record links to account ACC-4471, 'Northwind Retail Group,' which holds an active Premium support contract with a 1-hour response SLA for Sev-1. Ticket SUP-6144 was opened by Marcus Reed (m.reed@northwind-retail.com); the agent must determine which SLA applies to SUP-6144. The CRM shows Northwind operates through multiple purchasing entities that all share the corporate email domain, and entitlement is defined at the account level, not the domain level. Support policy states that SLA entitlement is determined solely by the account GUID linked to the reporting user's contact record, because a single email domain can span several distinct customer accounts with different contracts. Marcus Reed's Zendesk user record links to account ACC-4471, 'Northwind Retail Group,' the same account that carries the Premium 1-hour SLA. The shared domain, matching company branding, and similar signatures are present on both tickets. The on-call lead notes that missing a Premium 1-hour clock triggers a service credit, while a Standard 8-hour clock does not, so the classification has real financial and staffing consequences. The agent must decide which SLA governs SUP-6144 and how quickly the Sev-1 must be acknowledged.",
+  "question": "Which SLA governs ticket SUP-6144, and what is the required Sev-1 response time?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "choices": [
+    "The Premium 1-hour SLA governs, because SUP-6144's reporter resolves to account ACC-4471, the entity that holds the Premium contract.",
+    "The Standard 8-hour SLA governs, because SUP-6144's reporter resolves to a different account that holds only a Standard contract.",
+    "Neither SLA applies; because the reporter differs from the first ticket's reporter, SUP-6144 must be treated as an unentitled best-effort request.",
+    "The Premium 1-hour SLA governs for every ticket sharing the northwind-retail.com domain, so both tickets inherit Premium automatically."
+  ]
+}

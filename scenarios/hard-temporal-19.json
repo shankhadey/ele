@@ -1,0 +1,25 @@
+{
+  "title": "The Backfill That the Hiring Freeze Reclassified",
+  "category": "temporal_consistency",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "A talent-operations partner at Citrine Robotics must decide who must approve a backfill requisition, given how a comparable backfill was approved earlier this year.\n\n**Hiring Approval Policy**\n- Standard operation (in force through 2024-08-31): a hiring manager may approve a backfill for a departed employee at their own discretion.\n- Hiring freeze (effective 2024-09-01, in force now): during the freeze, all new and backfill hires require both VP approval and Finance exception approval, except for roles formally designated 'revenue-critical,' which the hiring manager may still approve directly. The freeze was declared to control headcount cost.\n\n**Prior decision A (2024-07-16)**\nA hiring manager approved a backfill for a departed mechanical technician on their own authority. Note: 'Backfill within manager discretion under standard hiring rules.'\n\n**Current request C (2024-10-08)**\nThe same hiring manager wants to approve a backfill for a departed internal-tools developer. This role is not on the formally designated revenue-critical list. The manager has asked Talent Ops to process it 'like the July backfill.'\n\n**Slack \u2014 #talent-ops**\nManager: 'I approved a backfill myself in July with no issue. This is another straight backfill \u2014 let me just approve it the same way.'\nManager 2: 'And every engineering role is basically revenue-critical if you think about it.'\nPartner: 'We're in a hiring freeze now, and \"basically revenue-critical\" isn't the formal designation. Let me confirm the approval path.'\n\nThe backfill is for a role that is not on the revenue-critical list, decided on 2024-10-08. The departing developer has already left and the team has a genuine coverage gap, but the role has never been placed on the formally maintained revenue-critical list. No VP or Finance sign-off has yet been sought for the requisition.",
+  "question": "How should the backfill requisition be approved?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Yusuf Demir",
+    "title": "Talent Operations Partner",
+    "organization": "Citrine Robotics",
+    "years_experience": 8,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "The hiring manager may approve it directly, consistent with the July backfill of the mechanical technician.",
+    "VP approval and Finance exception approval are required, because the freeze is in effect and the role is not formally revenue-critical.",
+    "The hiring manager may approve it directly, because engineering roles are effectively revenue-critical.",
+    "The backfill must be denied, because no hiring is permitted during a freeze."
+  ]
+}

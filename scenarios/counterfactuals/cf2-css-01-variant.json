@@ -1,0 +1,21 @@
+{
+  "title": "Reconciling the Access Signals Across Systems",
+  "category": "cross_system_synthesis",
+  "domain": "other",
+  "difficulty": "expert",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf2-css-01",
+  "counterfactual_role": "variant",
+  "scenario_text": "An identity-governance agent at Timor Robotics must decide whether to revoke a user's production access based on signals scattered across four systems of record. The subject is engineer Lena Ford. The governance policy states: 'Employment status in the HRIS (Workday) is the authoritative signal for whether a person remains an employee entitled to any access. IAM entitlements, ticketing state, and badge activity are operational signals that may lag and must be reconciled to the HRIS; where they conflict, the HRIS employment status decides whether access continues at all.' The four systems show: (1) Workday HRIS: employment status 'Terminated - effective today,' voluntary resignation, termination recorded and finalized. (2) IAM (Okta): still lists Lena's full Platform-team production entitlements, unchanged. (3) Ticketing (Jira): an open access-review ticket still assigned to her, not yet closed. (4) Badge system: last badge-in this morning at the Platform-team floor. The security reviewer notes the IAM, ticketing, and badge signals all still reflect her as an active worker and have not caught up to the termination. The question is whether Lena should have all production access revoked today, or whether her access should be retained and adjusted to reflect her role. The agent must synthesize the four systems, giving the HRIS its designated authority, and decide the correct action.",
+  "question": "Should all of Lena Ford's production access be revoked today? Answer exactly 'Yes - revoke all access' or 'No - retain and adjust access'.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "changed_fact": "The HRIS employment status for the account holder flips from 'Active - internal transfer' to 'Terminated - effective today,' while every other system (IAM, ticketing, badge) shows unchanged legacy state. In the base access should be retained and adjusted; in the variant the HRIS termination is the decisive signal that requires full revocation."
+}

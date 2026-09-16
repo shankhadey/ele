@@ -1,0 +1,25 @@
+{
+  "title": "The Deploy That Landed on the Last Day of the Freeze",
+  "category": "temporal_consistency",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "A release-management agent at Spinel Payments must decide what approvals a production deploy requires, given how a recent deploy was approved.\n\n**Deployment Approval Policy**\n- Standard operation: a production deploy requires one peer approver.\n- During a declared change-freeze window: a production deploy requires both Change Advisory Board (CAB) sign-off and a VP Engineering freeze-exception approval. Both are mandatory; neither substitutes for the other.\n\n**Change-freeze calendar (announced 2024-11-08)**\nA holiday change freeze is declared for 2024-11-25 through 2024-12-02, inclusive. Deploys scheduled on any date within that window, including the first and last days, are subject to freeze rules.\n\n**Prior decision A (2024-10-18)**\nA production deploy to the settlement service was approved by a single peer reviewer. Note: 'Non-freeze period; one approver per standard policy.'\n\n**Current deploy C**\nEngineer 'Dana Cole' has scheduled a production deploy of a settlement fix for 2024-12-02.\n\n**Slack \u2014 #release-eng**\nDana: 'We shipped a settlement deploy with a single approver back in October, so one approval should be fine for this one too.'\nAnother: 'And the freeze basically ends December 2, so we're clear anyway, right?'\nLead: 'December 2 is the last day of the freeze window, and the calendar says the last day is included. Let me confirm what freeze deploys need.'\n\nThe deploy is scheduled for 2024-12-02. The settlement fix is important but is not tied to an active incident, so it does not qualify as an emergency hotfix that would bypass the freeze. Dana has lined up a single peer approver and is waiting on confirmation before shipping the change to production.",
+  "question": "What approvals does the 2024-12-02 deploy require?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Ravi Chandran",
+    "title": "Staff Release Engineer",
+    "organization": "Spinel Payments",
+    "years_experience": 10,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "One peer approver, consistent with the single-approver deploy in October.",
+    "CAB sign-off and VP Engineering freeze-exception approval, because 2024-12-02 falls within the declared freeze window.",
+    "No special approval, because the freeze window ends on 2024-12-02 and the deploy is therefore outside it.",
+    "CAB sign-off only, since the change board is the controlling authority during a freeze."
+  ]
+}

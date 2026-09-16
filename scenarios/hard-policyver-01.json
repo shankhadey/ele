@@ -1,0 +1,26 @@
+{
+  "title": "Discount Authority When the Quote Predates the Cap but the Signature Doesn't",
+  "category": "policy_version",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "Denali Instruments governs pricing through its Discount Approval Policy, which also fixes how long a quote stays valid.\n\nVersion 1.0 (effective 2022-01-01, in force through 2024-08-31): \"Discounts up to and including 25% off list may be approved by the Regional Sales Manager (RSM); above 25% requires VP of Sales approval. A quote is valid for 60 days from its issue date.\"\n\nVersion 2.0 (effective 2024-09-01): \"Discounts up to and including 15% off list may be approved by the RSM; above 15% requires VP of Sales approval. A quote is valid for 30 days from its issue date.\" Transition clause: \"The discount authority and the quote-validity window applicable to an order are those of the policy version in effect on the quote's issue date, provided the order form is signed within that quote's validity window. If the quote expires before signature, a new quote must be issued and the order is governed by the version in effect on the new quote's issue date.\"\n\nThe CPQ system shows quote Q-5501 (customer: Cascade Grid Co.): Issue Date 2024-08-20, Discount 22% off list, Status open. The signed order form for Q-5501 is dated 2024-10-15. The booking was entered into the CRM on 2024-10-22, and the approver field is blank.\n\nA deal desk analyst writes in #deal-approvals on 2024-10-23: \"Closing out Q-5501. The quote was cut August 20 but the customer didn't sign until October 15, and we booked it October 22. The discount is 22%. Under the new 15% rule this looks like it needs the VP, but the quote is old. Who has to approve this, and is the quote even still good?\"\n\nUsing the policy history, the transition clause, and the CPQ and CRM records, determine who must approve the 22% discount and whether Q-5501 was signed within a valid window.",
+  "question": "Who must approve the 22% discount on Q-5501, and was the order signed within a valid quote window?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Priya Nandakumar",
+    "title": "Deal Desk Lead",
+    "organization": "Denali Instruments",
+    "years_experience": 11,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "RSM approval is sufficient: Q-5501 was issued 2024-08-20 under v1.0, whose 60-day window runs through 2024-10-19, so the 2024-10-15 signature is valid, and 22% is within the RSM's 25% authority.",
+    "VP of Sales approval is required, because 22% exceeds v2.0's 15% RSM ceiling that is in force on the 2024-10-15 signature date.",
+    "A new quote is required and then VP approval, because under v2.0's 30-day window Q-5501 expired on 2024-09-19 and the reissue would fall under v2.0.",
+    "VP of Sales approval is required, because the booking was entered 2024-10-22, after v2.0 took effect, and the booking date controls discount authority.",
+    "RSM approval is sufficient, because v2.0 raised the RSM ceiling to 25% off list."
+  ]
+}

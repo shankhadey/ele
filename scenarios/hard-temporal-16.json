@@ -1,0 +1,25 @@
+{
+  "title": "The Renewal That Tripped a New Competitive-Rebid Threshold",
+  "category": "temporal_consistency",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "A procurement analyst at Benitoite Foods must decide how to handle a vendor contract renewal, given how a comparable renewal was handled earlier this year.\n\n**Contract Renewal Policy \u2014 version history**\n- Old policy (in force through 2024-05-31): renewals with an annual value under $100,000 may be approved by the Category Manager alone.\n- New policy (effective 2024-06-01, in force now): renewals with an annual value of $75,000 or more require a competitive re-bid before renewal, unless the vendor is formally designated 'strategic-tier,' in which case the Category Manager may renew directly. The re-bid requirement was added to increase competition on mid-size spend.\n\n**Prior decision A (2024-04-22)**\nAn $80,000-per-year contract with 'Copperfield Distribution' was renewed by the Category Manager alone. Note: 'Under $100K; Category Manager authority per the policy then in effect.'\n\n**Current request C (2024-10-14)**\nA renewal of an $80,000-per-year contract with 'Marlow Ingredients' is up for decision. Marlow is a solid, reliable supplier but has not been formally designated strategic-tier. No re-bid has been run.\n\n**Slack \u2014 #procurement**\nBuyer: 'We renewed an $80K contract with Copperfield in April with just the Category Manager. Marlow is the same size \u2014 let's just renew it directly.'\nBuyer 2: 'Marlow is basically strategic to us anyway, everyone relies on them.'\nAnalyst: 'April was under the old rule, and \"basically strategic\" isn't a formal designation. Let me check the current threshold.'\n\nMarlow's renewal is $80,000 per year and Marlow is not formally strategic-tier. The strategic-tier list is maintained by category leadership and reviewed annually, and Marlow has never been added to it despite the team's reliance on the supplier. No competitive re-bid has been initiated for this renewal cycle, and the current term lapses soon.",
+  "question": "How should the analyst handle the Marlow Ingredients renewal?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "David Chen",
+    "title": "Procurement Analyst",
+    "organization": "Benitoite Foods",
+    "years_experience": 7,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Renew directly with Category Manager approval, consistent with the April renewal of the $80K Copperfield contract.",
+    "Renew directly, because at $80,000 the contract is under the $100,000 Category Manager threshold.",
+    "Run a competitive re-bid before renewing, because at $80,000 the renewal meets the current $75,000 re-bid threshold and Marlow is not formally strategic-tier.",
+    "Renew directly, treating Marlow as strategic-tier given how widely the business relies on it."
+  ]
+}

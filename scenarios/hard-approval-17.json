@@ -1,0 +1,19 @@
+{
+  "title": "Equity Grant to a Newly Promoted Section 16 Officer",
+  "category": "approval_chain",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "A compensation-governance audit agent at Tarragon Therapeutics is validating approval on an equity award.\n\n**Equity Grant Authority Matrix**\n- RSU grant to a non-officer employee: Compensation Committee of the Board approves.\n- RSU grant to a Section 16 executive officer: the full Board of Directors approves, acting on the recommendation of the Compensation Committee. The Compensation Committee's recommendation alone does not constitute grant approval for a Section 16 officer.\n- Section 16 officers include the CEO, CFO, principal accounting officer, and any officer designated by the Board as subject to Section 16.\n\n**HRIS / Equity Record**\n- EQ-5510: RSU grant, 40,000 units, recipient 'J. Okonkwo'.\n- Recipient status: promoted to Chief Financial Officer effective 2026-06-01; the Board designated the CFO role as a Section 16 officer on the same date.\n- Grant date: 2026-06-18. Approved by (field): 'Compensation Committee - minute ref CC-2026-06 (recommendation to grant).'\n\n**Board minutes (reconstructed)**\n- Comp Committee minute CC-2026-06: 'The Committee recommends a 40,000-unit RSU grant to the incoming CFO and refers it to the Board.'\n- CHRO email: 'Committee has approved the CFO grant; equity team, process EQ-5510.'\n- (no full Board resolution granting EQ-5510 appears in the minutes)\n\nThe recipient became a Section 16 officer on 2026-06-01, before the 2026-06-18 grant date. The Compensation Committee issued a recommendation and referred the grant to the Board; identify the body whose approval is required to grant the award.",
+  "question": "Which approving body must grant final approval for this equity award?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Ruth Delacroix",
+    "title": "Executive Compensation Governance Manager",
+    "organization": "Tarragon Therapeutics",
+    "years_experience": 14,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

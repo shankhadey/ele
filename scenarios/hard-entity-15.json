@@ -1,0 +1,19 @@
+{
+  "title": "Net-New ARR After a Churn, an Upsell, and a Migration",
+  "category": "entity_resolution",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "Constantan Cloud must report net-new ARR for a customer family over FY24, and the number depends on correctly resolving which contracts belong to one continuing entity. The customer entered FY24 with two Salesforce accounts: A-1 \"Zamak Media LLC\" (EIN 45-1120900) with SUB-1 at $500,000 ARR, and A-2 \"Zamak Studios Inc.\" (EIN 88-3320145) with SUB-2 at $300,000 ARR. During FY24: (a) On 2024-02-01, Zamak Media LLC completed a statutory conversion to \"Zamak Media Inc.\" (new EIN 61-7788092), same business continuing; SUB-1 was novated to the new EIN with NO change in price ($500,000). (b) On 2024-05-01, that same continuing entity signed an upsell add-on SUB-3 for +$200,000 ARR. (c) On 2024-07-01, Zamak Studios Inc. (A-2) churned entirely; SUB-2 ($300,000) was terminated for non-renewal. (d) A data sync created a THIRD Salesforce account A-3 \"Zamak Media Inc.\" for the post-conversion entity, so its ARR ($500,000 + $200,000) appears there while the old A-1 still shows $500,000, double-counting $500,000 if summed naively. Net-new ARR for the year is defined as (upsell/new ARR) minus (churned ARR), excluding pure entity-continuation moves that carry the same revenue (the conversion/novation is not new business). The net-new figure anchors the sales team's quota-retirement and the board's growth narrative, so a double-counted duplicate account or a mistreated statutory conversion would overstate growth materially. The draft dashboard sums all Salesforce accounts naively and shows a large positive number, which the analytics lead suspects hides both an offsetting churn on a separately-EIN'd entity and a phantom continuation entry created by the conversion. The lead must resolve which records represent one continuing entity and which represent genuine new or lost business before reporting the year's net-new ARR.",
+  "question": "What is the net-new ARR for this customer family in FY24?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Miguel Santos",
+    "title": "RevOps Analytics Lead",
+    "organization": "Constantan Cloud",
+    "years_experience": 10,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

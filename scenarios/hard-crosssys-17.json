@@ -1,0 +1,25 @@
+{
+  "title": "Saimaa Instruments margin dip: 'FX translation' versus an uncaptured supplier cost increase",
+  "category": "cross_system_synthesis",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "Saimaa Instruments' gross margin on one product line dropped 4 points this quarter. In the #fp-and-a Slack channel the finance analyst writes: 'This is FX - the euro weakened against the dollar this quarter and it compresses our reported margin on translation. It's a currency artifact, not an operational problem. Noting it as FX in the variance commentary and moving on.' Posted at quarter-end.\n\nOther systems complicate that. In the ERP margin cube, the 4-point drop is concentrated in the North America region, which sells and sources in USD - so FX translation cannot be the driver there. In the standard-cost vs actual-cost report, actual material cost per unit rose 9% versus standard for one key component. In the procurement system, the supplier issued a price increase effective the first of the quarter that was never loaded into the item master, so standard cost is stale. In the BOM-change log, no engineering change was made - the physical product is unchanged. And a pricing note shows the product's sell price has not been adjusted for the higher input cost.\n\nEach signal is individually explainable: FX genuinely moves reported margin, cost variances fluctuate, and item-master updates lag. But together - the margin drop concentrated in a USD-only region, a 9% actual-over-standard material variance, a supplier price increase never loaded into standard cost, an unchanged BOM, and a sell price not repriced - they describe a real, uncaptured input-cost increase eroding margin, not an FX translation artifact. The analyst's 'FX' read ignores that the affected region has no FX exposure. You are the FP&A lead reviewing the commentary. What is the correct conclusion and action?",
+  "question": "What should the FP&A lead conclude and do about the margin dip?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Petra Nyman",
+    "title": "Director of FP&A",
+    "organization": "Saimaa Instruments",
+    "years_experience": 12,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Record the margin dip as an FX translation artifact and take no operational action, per the analyst's commentary.",
+    "Initiate an FX hedging program to protect reported margin against further euro weakness.",
+    "Treat it as a real input-cost increase: update standard cost to the new supplier price, quantify the purchase-price variance, and reprice the product - the USD-only regional concentration, the 9% actual-over-standard material variance, an unloaded supplier price increase, and an unchanged BOM show a genuine cost erosion, not FX.",
+    "Reclassify the variance to a one-time charge and defer investigation until the annual standard-cost roll."
+  ]
+}

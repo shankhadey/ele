@@ -1,0 +1,19 @@
+{
+  "title": "Property Claim Filing Deadline for a Loss Just Before the Window Shrank",
+  "category": "policy_version",
+  "domain": "other",
+  "difficulty": "expert",
+  "scenario_text": "Toubkal Assurance administers commercial property claims under its Claims Handling Policy, which sets how long a policyholder has to file after a loss.\n\nVersion 1 (in effect through 2025-03-31): \"A property claim must be filed within 180 days of the date of loss.\"\n\nVersion 2 (effective 2025-04-01): \"A property claim must be filed within 90 days of the date of loss.\" Version 2 adds a transition clause: \"The filing window is governed by the policy version in effect on the date of loss, not the date the claim is reported or opened. Losses occurring before April 1, 2025 retain the 180-day window; losses occurring on or after April 1, 2025 are subject to the 90-day window.\"\n\nThe claims system shows claim intake for policyholder Sierra Cold Storage: Date of Loss 2025-03-20 (a warehouse roof failure), Claim Reported 2025-04-08, Claim Status intake pending, Line commercial property. No claim has been formally filed yet, and the intake note confirms the date of loss as 2025-03-20 based on the incident report. The policy in force at the time of loss was active and paid current, and no tolling agreement or filing extension has been granted on this matter.\n\nA claims examiner writes to the claims supervisor on 2025-04-09: \"Sierra Cold Storage had a loss on March 20, but they didn't report it to us until April 8, which is after our new 90-day rule kicked in. I want to give them an accurate filing deadline. Working from the 90-day window and the loss date, what is the last date they can file this property claim?\"\n\nUsing the policy history, the transition clause, and the claims record, determine the last date Sierra Cold Storage can file the property claim.",
+  "question": "What is the last date Sierra Cold Storage can file the property claim?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Farah Benali",
+    "title": "Claims Operations Supervisor",
+    "organization": "Toubkal Assurance",
+    "years_experience": 12,
+    "domain_expertise": "other"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

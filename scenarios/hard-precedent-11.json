@@ -1,0 +1,26 @@
+{
+  "title": "Standing 3% Early-Pay Discount for a Non-Strategic Supplier",
+  "category": "precedent_exception",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "You lead supplier management at Aegir Marine, a maritime shipping operator. A buyer wants to grant a standing early-payment discount to a supplier and cites a prior 3% approval.\n\nActive policy: Supplier Terms Policy STP v4, effective 2025-02-01. Standard payment terms are Net 45. Early-payment discount arrangements (for example, 2/10 Net 30) are approvable by the Procurement Manager, but any early-pay discount rate beyond 2% requires the Finance Director. Exception: suppliers carrying a current strategic-supplier designation may receive an early-pay discount of up to 3% at the Procurement Manager level, without Finance Director involvement.\n\nThe precedent cited: 2024-11-18, supplier Ormr Shipping received a 3% early-pay discount approved by the Procurement Manager; the approval note reads verbatim 'one-time goodwill 3% early-pay concession to settle a late-delivery dispute; non-binding and non-precedential, not a standing arrangement.'\n\nCurrent facts: supplier Fenrir Freight has requested a standing 3% early-pay discount going forward, applied to every invoice rather than a single settlement. Fenrir does not hold a strategic-supplier designation, confirmed in the vendor master, and no application for that designation is pending. There is no open dispute with Fenrir; this is a routine terms-improvement request. The buyer notes that the cash-flow impact of the extra one percentage point is modest and that competitors offer similar early-pay terms. The buyer writes: 'We already gave Ormr 3% at the Procurement Manager level, so the precedent is set - let's give Fenrir the same standing 3% at your level and skip the Finance Director step. It keeps our payment run simple.' The Finance Director is available this week to review terms changes, and no strategic-supplier review of Fenrir is scheduled.",
+  "question": "How should Fenrir Freight's standing 3% early-pay discount request be handled?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Dario Kellerman",
+    "title": "Supplier Management Lead",
+    "organization": "Aegir Marine",
+    "years_experience": 10,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Approve the standing 3% at the Procurement Manager level, mirroring the Ormr Shipping 3% approval.",
+    "Approve the standing 3% at the Procurement Manager level under the strategic-supplier exception, since 3% is exactly the exception ceiling.",
+    "Route the request to the Finance Director, because a standing early-pay discount above 2% exceeds Procurement-Manager authority and Fenrir is not strategic-supplier designated; the Ormr 3% was a non-binding one-time goodwill concession.",
+    "Deny any early-pay discount, since Fenrir is on standard Net 45 terms and no exception applies.",
+    "Approve a standing 2% discount automatically and refer only the extra 1% to the Finance Director."
+  ]
+}

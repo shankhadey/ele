@@ -1,0 +1,19 @@
+{
+  "title": "Late-Delivery Credit for a Non-Premium Customer",
+  "category": "precedent_exception",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "You manage service recovery at Ran Logistics, a freight company. A CSM must compute how large a late-delivery credit they can grant to a customer at their own level, and cites a prior credit.\n\nActive policy: Service Credit Policy SCP v3, effective 2025-03-01. Late-delivery credits accrue at 2% of shipment value per day late. At the CSM level, the credit is capped at 10% of shipment value; anything above 10% requires Regional Director approval. Exception: premium-tier customers have their CSM-level cap raised to 20% of shipment value. SCP v3 lowered the standard CSM cap to 10% from the prior SCP v2, under which the CSM could grant up to 20% of shipment value for any customer.\n\nThe precedent cited: 2024-11-27, customer Gleipnir Distribution received a 16% credit granted directly by a CSM; log note 'within CSM cap (<= 20%),' policy version at decision SCP v2.\n\nCurrent facts: customer Thrud Retail had a shipment valued at $50,000 arrive seven days late, so the raw accrual is 14% of shipment value ($7,000). Thrud is not a premium-tier customer, confirmed in the account record. The delay is confirmed by the carrier scan record, and there is no dispute about the seven-day lateness or the $50,000 shipment value. Thrud has not requested premium-tier enrollment and is billed on a standard service plan. The CSM writes: 'Gleipnir got 16% straight from a CSM, and Thrud's raw number is only 14% ($7,000). Let's grant the full $7,000 at my level so we settle it quickly without looping in the Regional Director.' The Regional Director is available to review any escalated amount the same week.",
+  "question": "State the maximum credit the CSM may grant at their own level.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Callum Reyes",
+    "title": "Service Recovery Manager",
+    "organization": "Ran Logistics",
+    "years_experience": 7,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

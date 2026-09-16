@@ -1,0 +1,26 @@
+{
+  "title": "Export Authorization Determined by the Date the Goods Actually Leave",
+  "category": "policy_version",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "Blanc Aerospace governs export authorizations for its controlled products under its Export Control Policy, which tracks the classification of each product for shipments to specific destinations.\n\nVersion 1 (in effect through 2025-04-30): \"Product X shipments to Country A qualify under a license exception; no individual validated license is required.\"\n\nVersion 2 (effective 2025-05-01): \"Product X is reclassified. Shipments to Country A now require an individual validated license issued before departure; the license exception no longer applies to Country A.\" Version 2 adds a transition clause: \"Export authorization is governed by the classification in effect on the date of export, defined as the date the goods physically depart the port of origin, not the contract date, the order-acceptance date, or the invoice date. Shipments departing before May 1, 2025 may rely on the v1 license exception.\"\n\nThe contract and logistics systems show shipment SH-4501 (product: Product X, destination: Country A): Contract Signed 2025-03-10, Order Accepted 2025-03-12, Goods Departed Port 2025-05-04, No individual validated license on file. The logistics record confirms a single departure event on 2025-05-04 with no partial pre-May shipment, and the compliance system shows no license application was ever submitted for this destination. The reclassification bulletin was distributed internally on 2025-04-15 ahead of its May 1 effective date.\n\nThe trade compliance analyst writes to legal on 2025-05-05: \"SH-4501 to Country A left the port May 4. The whole deal was signed and accepted back in March under the license exception, so I read this as authorized without an individual license. Are we good, or was an individual validated license required for this shipment?\"\n\nUsing the policy history, the transition clause, and the contract and logistics records, determine whether an individual validated license was required for SH-4501.",
+  "question": "Was an individual validated license required for shipment SH-4501?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Gregory Bianchi",
+    "title": "Trade Compliance Manager",
+    "organization": "Blanc Aerospace",
+    "years_experience": 14,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Yes. An individual validated license was required, because v2 governs by the 2025-05-04 departure date, when Product X shipments to Country A no longer qualified for the license exception.",
+    "No. The license exception applies, because the contract was signed 2025-03-10 under v1.",
+    "No. The license exception applies, because the order was accepted 2025-03-12, before the May 1 change.",
+    "Yes, but only a license exception notice was required, not an individual validated license, since the deal originated under v1.",
+    "No. Product X was decontrolled for Country A, so no authorization of any kind was required."
+  ]
+}

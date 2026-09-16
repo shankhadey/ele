@@ -1,0 +1,26 @@
+{
+  "title": "Can the Team Still Rely on the Storage Exception?",
+  "category": "precedent_exception",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf2-pre-01",
+  "counterfactual_role": "base",
+  "scenario_text": "Tasman Health's privacy office must decide whether an analytics team may store a category of pseudonymized patient telemetry in the company's EU-West region. The team points to a documented precedent: exception memo EX-2023-14, approved by the Chief Privacy Officer on 2023-06-01, which granted this specific data category a standing exception to the default 'store patient data only in the region of collection' rule, on the basis that the telemetry is pseudonymized and low-risk. The privacy office pulls the current governance set. The controlling document is the Global Data Residency Standard v2 (effective 2023-01-01), which contains a clause: 'Documented CPO exceptions granted under this Standard remain in force until expressly rescinded or until the Standard is superseded.' A review of the exception register shows EX-2023-14 is listed as Active, has never been rescinded, and the Global Data Residency Standard v2 remains the current, in-force version with no superseding standard issued. The analytics lead needs a decision before provisioning storage: may the team rely on EX-2023-14 to store the pseudonymized telemetry in EU-West, or must it default to region-of-collection storage because the precedent no longer applies? The privacy officer must determine whether the cited exception is current governing authority or a superseded precedent that can no longer be relied upon.",
+  "question": "May the team rely on exception memo EX-2023-14 to store the pseudonymized telemetry in EU-West?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "choices": [
+    "Yes; EX-2023-14 is an active, un-rescinded exception under the current in-force Standard, so it remains valid governing authority and the team may store the telemetry in EU-West.",
+    "No; the exception has been superseded by a newer standard, so the team must default to region-of-collection storage and cannot rely on EX-2023-14.",
+    "Yes; any CPO exception, once granted, is permanent and can never be rescinded or superseded under any circumstances.",
+    "No; pseudonymized data may never be stored outside its region of collection regardless of any exception."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "title": "Which Expense Policy Version Governs the Meal Claim?",
+  "category": "policy_version",
+  "domain": "finance_revops",
+  "difficulty": "hard",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf2-pv-01",
+  "counterfactual_role": "base",
+  "scenario_text": "Andaman Media's finance team is adjudicating an expense reimbursement and must apply the correct policy version. The company maintains two versions of its travel-and-expense policy. Version 3.0 was in effect through 2026-01-31 and set a per-meal reimbursement cap of $75, requiring an itemized receipt only above $75. Version 4.0 became effective 2026-02-01 and lowered the per-meal cap to $50, requiring an itemized receipt for any amount. The policy's governing-version clause states: 'The applicable policy version is determined by the transaction date on which the expense was incurred, not the date the expense report was submitted or approved.' The claim under review is a single business dinner by employee Raj P. during a client trip. The receipt shows the meal was incurred (transaction date) on 2026-01-28 for $70, with a fully itemized receipt attached showing each line and the tip. The expense report itself was submitted on 2026-02-10 and reached the approver's queue on 2026-02-12, a routine lag between the trip and the monthly report cycle. The claim is otherwise valid: legitimate business purpose documented, attendee list attached, no alcohol flagged, and the amount sits within the daily trip allowance. An analyst notes that the report happens to straddle the version boundary because it was filed in February for a January trip, and warns the team not to let the submission date drive the decision. The approver must identify which policy version governs under the governing-version clause, and therefore how much of the $70 meal is reimbursable.",
+  "question": "Which policy version governs the claim, and how much of the $70 meal is reimbursable?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "choices": [
+    "Version 3.0 (in effect through 2026-01-31) governs because the expense was incurred on 2026-01-28; the $70 meal is within the $75 cap and fully reimbursable at $70.",
+    "Version 4.0 (effective 2026-02-01) governs because the expense was incurred on or after that date; the $70 meal exceeds the $50 cap, so only $50 is reimbursable.",
+    "Version 4.0 governs because the expense report was submitted on 2026-02-10, so only $50 is reimbursable.",
+    "Neither version applies because the submission and transaction dates fall in different policy periods, so the claim must be denied in full."
+  ]
+}

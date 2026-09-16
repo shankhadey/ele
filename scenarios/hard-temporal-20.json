@@ -1,0 +1,19 @@
+{
+  "title": "The Early-Termination Fee Capped Under the New Schedule",
+  "category": "temporal_consistency",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "A billing operations specialist at Topaz Telecom must compute the early-termination fee (ETF) on a canceled contract, given how a comparable cancellation was billed earlier this year.\n\n**Early-Termination Fee Policy \u2014 version history**\n- Old schedule (in force through 2024-04-30): ETF equals $50 per month remaining on the contract, with no cap.\n- New schedule (effective 2024-05-01, in force now): ETF equals $30 per month remaining, capped at $300 total. The policy states that the ETF is calculated using the schedule in effect on the cancellation date.\n\n**Prior decision A (2024-03)**\nA customer who canceled in March 2024 with 10 months remaining was charged $500 (10 x $50). Note: 'Per-month rate under the schedule then in effect; no cap applied.'\n\n**Current case C**\nCustomer 'Halloran Freight' signed a 24-month contract on 2024-02-01. The customer cancels on 2024-10-01, with 16 months remaining on the contract term.\n\n**Slack \u2014 #billing-ops**\nSpecialist A: 'In March we charged $50 per month remaining. Halloran has 16 months left, so that's 16 x $50 = $800.'\nSpecialist B: 'The ETF schedule changed in May. Let me compute it under the schedule that applies on the cancellation date.'\n\nHalloran cancels on 2024-10-01 with 16 months remaining on a contract signed 2024-02-01. The remaining term is confirmed at 16 months, and there is no promotional waiver or retention credit on the account that would reduce or eliminate the fee. The specialist must compute the exact charge for the final invoice, since the customer has already disputed an initial estimate that assumed the old per-month rate and expects a defensible number tied to the schedule that actually applies.",
+  "question": "What early-termination fee should Halloran Freight be charged? Give the dollar amount.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Bianca Rossi",
+    "title": "Billing Operations Specialist",
+    "organization": "Topaz Telecom",
+    "years_experience": 6,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

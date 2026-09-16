@@ -1,0 +1,19 @@
+{
+  "title": "Early-Termination Credit Where a Prepay Tier and a Rate Change Interact",
+  "category": "precedent_exception",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "You handle contract remediation at Odin Dynamics, an enterprise software company. Customer Sleipnir Freight is terminating early and RevOps must compute the service credit and identify the approver.\n\nActive policy: Contract Credit Standard CCS v4, effective 2025-03-01. The base early-termination credit is 10% of remaining committed contract value (RCCV), approvable by a Finance Manager up to a $50,000 cap. For customers on a multi-year prepaid plan, an enhanced prepay-loyalty credit of 20% of RCCV applies instead of the base, and the Finance-Manager cap for the enhanced credit is $75,000. Any credit above the applicable cap requires VP Finance. CCS v4 raised the base rate from 5% under CCS v3 and introduced the prepay-loyalty enhanced tier, which did not exist under v3.\n\nThe account manager forwards two records. First, the one cited: 2024-12-10, Gjoll Corp, RCCV $400,000, credit of $20,000 granted by Finance Manager; log note 'standard 5% base credit,' policy version at decision CCS v3. Second: 2025-04-15, Vigrid LLC, a $30,000 credit whose approval note reads verbatim 'one-time goodwill credit to preserve the relationship; non-binding and non-precedential.'\n\nCurrent Sleipnir facts: RCCV is $300,000, verified against the signed order form and the remaining term; Sleipnir is on a three-year prepaid plan, confirmed by billing, with the full three years paid up front at contract start. There is no service defect, no disputed usage, and no other atypical factor on the account. The account manager wants the credit posted before the month-end close and writes: 'Gjoll got 5% and Vigrid got a flat $30K - just apply whichever is cleaner and keep it at the Finance-Manager level so we don't wait on the VP.' Finance has asked you to state both the amount and the correct approver on the credit memo.",
+  "question": "State the credit amount Sleipnir Freight should receive and the approver, as one short answer.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Devon Achterberg",
+    "title": "Revenue Operations Manager",
+    "organization": "Odin Dynamics",
+    "years_experience": 11,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

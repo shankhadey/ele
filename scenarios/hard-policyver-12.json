@@ -1,0 +1,26 @@
+{
+  "title": "Records Destruction Blocked by a Hold on a Pre-Change Record",
+  "category": "policy_version",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "Adams Insurance governs recordkeeping under its Records Retention Policy.\n\nVersion 1 (in effect through 2024-12-31): \"Client transaction records are retained for 7 years from the record's creation date, after which they are eligible for destruction.\"\n\nVersion 2 (effective 2025-01-01): \"Client transaction records are retained for 10 years from creation. Any record subject to an active litigation hold must be retained until the hold is released, regardless of any retention schedule.\" Version 2 adds a transition clause: \"The retention period is set by the policy version in effect on the record's creation date. Records created before January 1, 2025 follow the 7-year schedule, unless a litigation hold applies, in which case destruction is suspended until the hold is released.\"\n\nThe records system shows document CR-9001: Creation Date 2019-03-15, Type client transaction record, Retention Schedule 7 years (eligible 2026-03-15 under v1). The legal matter tracker shows a litigation hold placed on CR-9001 on 2025-02-01, Status active (not released), Matter reference LIT-2025-044. The legal-matter tracker shows the hold notice was acknowledged by the records team on 2025-02-03 and has had no release entry since. The destruction queue flags CR-9001 as \"schedule met,\" but the hold indicator on the record is set to active.\n\nA records administrator writes to legal on 2026-03-16: \"CR-9001 was created March 2019, so its 7-year clock ran out yesterday and it's showing as eligible for destruction. I'm about to purge it. It has a litigation hold from last year, but that was placed under the newer policy, and the record itself is on the old 7-year schedule. Can I destroy CR-9001 now?\"\n\nUsing the policy history, the transition clause, and the records and legal-matter systems, determine whether CR-9001 may be destroyed.",
+  "question": "May CR-9001 be destroyed now?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Delphine Aubert",
+    "title": "Records and Information Governance Lead",
+    "organization": "Adams Insurance",
+    "years_experience": 13,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "No. The 7-year schedule is met, but the active litigation hold suspends destruction; CR-9001 may be destroyed only after the hold is released.",
+    "Yes. CR-9001 was created 2019-03-15 under v1's 7-year schedule, which expired 2026-03-15, so it is eligible for destruction.",
+    "No. As a client transaction record it must now be retained 10 years under v2, until 2029-03-15.",
+    "Yes. The litigation hold was placed under v2 and does not attach to a record governed by the v1 7-year schedule.",
+    "Yes, but only after notifying the regulator, since the record has passed its scheduled retention date."
+  ]
+}

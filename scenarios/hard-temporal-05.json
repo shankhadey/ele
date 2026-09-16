@@ -1,0 +1,25 @@
+{
+  "title": "The Outage Credit Governed by the Schedule in Force When It Happened",
+  "category": "temporal_consistency",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "A customer success manager at Alexandrite Telecom must decide the service credit owed for an outage, given how a comparable outage was credited earlier this year.\n\n**Service Credit Schedule \u2014 version history**\n- Old schedule (in force through 2024-05-31): any outage exceeding 4 hours earns a 10% monthly service credit.\n- New schedule (effective 2024-06-01, in force now): outages exceeding 4 hours earn a 5% credit; outages exceeding 12 hours earn a 15% credit. The contract states that service credits are governed by the credit schedule in effect on the date of the incident, not the schedule at contract signing.\n\n**Prior decision A (2024-04-18)**\nA 6-hour outage earned 'Harbor Freight Systems' a 10% credit. Note: 'Outage exceeded 4 hours; 10% credit applied per the current schedule.'\n\n**Current request C (2024-08-22)**\nCustomer 'Ridgeline Manufacturing' experienced a 6-hour outage on 2024-08-20. Ridgeline is on a multi-year contract signed in 2023, when the 10% schedule was in effect.\n\n**Slack \u2014 #cx**\nAgent: 'We gave Harbor a 10% credit for a 6-hour outage back in April. Ridgeline had a 6-hour outage too \u2014 let's apply 10% and stay consistent.'\nAnother: 'Ridgeline's contract was signed in 2023 under the 10% schedule, so they're locked into 10%, right?'\nManager: 'Let me check the incident date and what the schedule says about which version applies.'\n\nRidgeline's outage was 6 hours and occurred on 2024-08-20. Ridgeline's account manager has escalated, noting the customer is threatening non-renewal and expects the same 10% credit a peer received earlier in the year. No manual goodwill adjustment has been pre-approved by the retention team, so the manager must decide the credit strictly on the applicable schedule.",
+  "question": "What service credit should Ridgeline Manufacturing receive for the 6-hour outage?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Marcus Feld",
+    "title": "Customer Success Manager",
+    "organization": "Alexandrite Telecom",
+    "years_experience": 7,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "A 10% credit, consistent with the April credit for Harbor's 6-hour outage.",
+    "A 5% credit, because the incident occurred on 2024-08-20 under the current schedule, and a 6-hour outage exceeds 4 hours but not 12.",
+    "A 10% credit, because Ridgeline's contract was signed in 2023 when the 10% schedule was in effect.",
+    "A 15% credit, because the outage qualifies for the higher tier under the new schedule."
+  ]
+}

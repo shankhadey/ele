@@ -1,0 +1,26 @@
+{
+  "title": "Office Lease Approved on Rent Alone While Build-Out Capex Pushed It Up a Tier",
+  "category": "approval_chain",
+  "domain": "other",
+  "difficulty": "expert",
+  "scenario_text": "A corporate-real-estate audit agent at Galangal Ventures is validating authorization on a new office lease commitment.\n\n**Real-Estate Commitment Authority Matrix**\n- Up to $2,000,000 total commitment: Facilities VP.\n- $2,000,001-$5,000,000 total commitment: CFO approval AND Real Estate Committee approval.\n- Above $5,000,000 total commitment: full Board of Directors.\n- 'Total commitment' aggregates the lease total contract value (base rent over the committed term) AND any landlord-required or company-funded build-out (tenant improvement) capital expenditure associated with the lease.\n\n**Contract / ERP Record**\n- RE-3344: New office lease, 'Pier 9' premises. Lease TCV (base rent, 5-year term): $1,800,000. Company-funded build-out capex: $900,000.\n- Approved by (field): 'Facilities VP - Marco T.'\n- CFO approval: (empty). Real Estate Committee approval: (empty).\n\n**Email (reconstructed)**\n- Facilities lead -> Marco T.: 'Pier 9 lease is $1.8M over 5 years - inside your $2M authority. Build-out to fit us out is $900K.'\n- Marco T. (Facilities VP): 'The lease is under my limit, so I'll approve it. Build-out's a separate capital line.'\n- Analyst: 'Doesn't the policy add the build-out to the lease for the approval tier?'\n- Marco T.: 'I've signed the lease; the fit-out can run on its own.'\n\nThe lease TCV is $1,800,000 and the associated company-funded build-out is $900,000. The Facilities VP approved on the lease figure alone; no CFO or Real Estate Committee approval exists.",
+  "question": "What should the audit conclude about the authorization of this lease commitment?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Marco Testa",
+    "title": "Head of Corporate Real Estate",
+    "organization": "Galangal Ventures",
+    "years_experience": 13,
+    "domain_expertise": "other"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Valid - the lease TCV of $1,800,000 is within the Facilities VP's $2,000,000 authority, and build-out capital is a separate line the VP need not aggregate.",
+    "Valid, but a documentation cleanup is needed - note the build-out capex in the lease file; the VP's approval of the lease stands.",
+    "Invalid - 'total commitment' aggregates the $1,800,000 lease TCV and the $900,000 build-out to $2,700,000, which falls in the $2,000,001-$5,000,000 tier requiring CFO approval AND Real Estate Committee approval; both are missing, so the commitment exceeds the Facilities VP's authority.",
+    "Invalid - a real-estate commitment associated with build-out of this scale requires full Board of Directors approval, so it must be escalated to the Board.",
+    "Invalid - the lease should have been split so the build-out is approved separately by the Facilities VP under a second commitment."
+  ]
+}

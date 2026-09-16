@@ -1,0 +1,19 @@
+{
+  "title": "The Payroll Ghost After an Acqui-Hire",
+  "category": "entity_resolution",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "Vitallium Labs' People Ops is reconciling headcount and an employee appears to exist twice with conflicting service dates. Workday shows worker W-2201 \"Jordan A. Mensah\" (hire date 2022-06-01, employee ID E-4471, department Platform Eng, ties to legal entity \"Vitallium Labs, Inc.\" EIN 45-6612300). ADP payroll shows a separate record for \"Jordan Mensah\" (payroll ID P-9930, original hire 2020-02-01, legal entity \"Constantan AI LLC\" EIN 88-2201765). The story: Constantan AI LLC was acqui-hired by Vitallium Labs on 2022-06-01; the LLC's employees were terminated from Constantan's payroll and rehired onto Vitallium's payroll the same day. For most staff, service dates reset to 2022-06-01. But Jordan's offer letter and the acquisition agreement's Schedule 4 (\"Continued-Service Employees\") explicitly grant bridged/continuous service from the original 2020-02-01 date for benefits vesting and PTO accrual. The two payroll records share the same SSN (last four 4412), same personal email, and same home address. A benefits analyst, seeing the Workday hire date of 2022-06-01, is about to calculate Jordan's 401(k) vesting and PTO tier from 2022-06-01, which would strip two years of credited service. The question is which service date governs benefits, given the acquisition schedule overrides the default rehire date for this specific employee. Open enrollment closes Friday, and the benefits platform will lock vesting schedules and PTO tiers based on whatever credited-service date People Ops confirms. Jordan has separately emailed asking why the self-service portal shows a zero vested 401(k) balance despite roughly four years across the two companies, which prompts the analyst to re-examine the conflicting Workday and ADP dates. The analyst must reconcile the system-of-record hire date against the acquisition agreement's schedule before the vesting lock takes effect.",
+  "question": "What credited service date should govern Jordan Mensah's benefits vesting and PTO accrual?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Naomi Trent",
+    "title": "Total Rewards Manager",
+    "organization": "Vitallium Labs",
+    "years_experience": 8,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

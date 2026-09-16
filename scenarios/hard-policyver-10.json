@@ -1,0 +1,19 @@
+{
+  "title": "Renewal Uplift Governed by the Order Form's Signing-Era Cap",
+  "category": "policy_version",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "Whitney Cloud limits annual renewal price increases under its Renewal Uplift Policy, but customer order forms can pin the cap by reference.\n\nVersion 1 (effective 2022-01-01, in effect through 2025-01-31): \"The annual renewal price increase is capped at 7% of the prior-year fee.\"\n\nVersion 2 (effective 2025-02-01): \"The annual renewal price increase is capped at 12% of the prior-year fee.\" Version 2 adds a transition clause: \"Renewal uplift is governed by the contractual cap stated in the customer's active order form. Where the order form pins the cap to a policy version, that pinned cap applies for the committed term. Where the order form is silent, the uplift cap is the policy version in effect on the renewal's effective date.\"\n\nThe contract system shows customer Beacon Retail: Order Form signed 2023-03-01, Term 3 years (through 2026-02-28), Prior-Year Fee (year 2) $200,000. The order form states: \"Annual uplift shall not exceed the Company's standard renewal cap in effect at signing.\" The upcoming renewal (year 3) has an effective date of 2025-03-01. The contract system confirms no amendment has changed the uplift language since signing, and the year-2 fee of $200,000 already reflects a prior uplift applied within the pinned cap. No side letter overrides the order-form clause.\n\nA renewal manager messages the pricing desk on 2025-02-10: \"Prepping Beacon Retail's year-3 renewal, effective March 1. The current standard cap is 12% now, and the renewal date is after the February 1 change, so I want to push a 12% uplift on their $200K. What's the maximum renewal fee I can actually quote?\"\n\nUsing the policy history, the transition clause, the order-form language, and the contract record, determine the maximum year-3 renewal fee for Beacon Retail.",
+  "question": "What is the maximum year-3 renewal fee Whitney Cloud can quote Beacon Retail?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Owen Castellano",
+    "title": "Renewals Team Lead",
+    "organization": "Whitney Cloud",
+    "years_experience": 7,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Ontario Cloud latency alerts: 'noisy synthetic probe' versus a regional DB failover storm",
+  "category": "cross_system_synthesis",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "Ontario Cloud's checkout service starts throwing p99 latency alerts on a Tuesday afternoon. In the #sre-checkout Slack channel the on-call SRE writes: 'This is the synthetic probe from the new eu-west monitoring canary being flaky again - it fires false p99 alerts whenever the canary VM gets noisy-neighbor CPU. Real user traffic looks fine on the RUM dashboard. Silencing the probe alerts for the afternoon.' Posted 14:22.\n\nOther systems disagree. In Datadog APM, p99 on the checkout write path is genuinely elevated, but only for requests that hit the primary write replica - read traffic is normal, which is why the RUM average looks calm. In the RDS event log, the primary database instance recorded two failover events at 14:05 and 14:18, each promoting a standby. In the connection-pool metrics, the application is holding stale connections to the demoted primary and retrying, spiking write latency. A recent change record shows a parameter-group change to reduce the failover DNS TTL was deployed yesterday but not applied (pending reboot). And a customer-facing status ticket notes a trickle of 'payment confirmation timed out' reports starting 14:10.\n\nEach signal is individually explainable: canary probes are flaky, RUM averages smooth over tails, failovers self-heal, and a few timeout reports are noise. But together - write-path-only latency, two real DB failovers, stale connections retrying against a demoted node, an unapplied DNS-TTL fix, and rising payment-timeout reports - they describe a real connection-handling failure after failover that is dropping paid checkouts, not a noisy synthetic probe. The SRE's read predates the RDS failover correlation. You are the incident commander on shift. What is the right first action?",
+  "question": "What is the correct first action for the incident commander?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Theo Marchetti",
+    "title": "Principal Site Reliability Engineer",
+    "organization": "Ontario Cloud",
+    "years_experience": 11,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

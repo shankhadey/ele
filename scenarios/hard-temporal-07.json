@@ -1,0 +1,25 @@
+{
+  "title": "The Deletion Request Judged by When the Record Was Collected",
+  "category": "temporal_consistency",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "A privacy compliance analyst at Kunzite Financial must decide whether a customer record may be deleted on request, given how comparable requests were handled this year.\n\n**Records Retention Policy \u2014 version history**\n- Records collected before 2024-01-01: minimum retention of 5 years from collection.\n- Records collected on or after 2024-01-01: minimum retention of 7 years from collection, following a regulatory change. The policy states that a record's retention period is fixed by its collection date and does not change if the policy later changes. Deletion is permitted only after the applicable retention period has elapsed and only if no legal hold is in place.\n\n**Prior decisions**\n- Decision A (2024-03-11): a deletion request was APPROVED for a record collected in 2018 (5-year retention elapsed).\n- Decision B (2024-05-02): a deletion request was DENIED for a record collected in 2024-02 (7-year retention, nowhere near elapsed).\n\n**Current request C (2024-10-09)**\nCustomer 'T. Okafor' requests deletion of an account record that was collected on 2019-06-15. No legal hold is recorded against the account.\n\n**Slack \u2014 #privacy-ops**\nAnalyst A: 'Retention is 7 years now, and 2019 plus 7 is 2026, so we can't delete this until 2026.'\nAnalyst B: 'We denied a deletion back in May for exactly that reason. Let's deny this one too and be consistent.'\nLead: 'Check the collection date against the cutoff before you apply seven years to it.'\n\nThe record was collected on 2019-06-15, and today is 2024-10-09. The account has no open disputes, no chargebacks, and no regulatory inquiry attached, and there is no legal hold recorded against it. The customer has submitted a formal deletion request under the applicable privacy right, and the ticket is queued for the analyst's decision.",
+  "question": "How should the analyst handle T. Okafor's deletion request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Hannah Weiss",
+    "title": "Privacy Compliance Analyst",
+    "organization": "Kunzite Financial",
+    "years_experience": 9,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Deny the request, because the current 7-year retention means a 2019 record cannot be deleted until 2026.",
+    "Deny the request, consistent with the May denial of a comparable deletion request.",
+    "Approve the deletion, because the record was collected before 2024-01-01, so its 5-year retention applies and elapsed in 2024, and no legal hold exists.",
+    "Deny the request until Legal confirms that no litigation hold could later attach to the account."
+  ]
+}
