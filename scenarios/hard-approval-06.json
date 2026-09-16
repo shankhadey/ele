@@ -1,0 +1,26 @@
+{
+  "title": "Master Agreement Signed by a Delegate Three Days After the Delegation Lapsed",
+  "category": "approval_chain",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "A contracts-audit agent at Fenugreek Software is validating signature authority on an executed master services agreement.\n\n**Contract Signature Authority Matrix**\n- Total contract value (TCV) up to $500,000: Director of Legal Operations may sign.\n- $500,001-$2,000,000: General Counsel may sign, with a risk memo in the CLM.\n- Above $2,000,000: General Counsel AND CEO must both sign.\n- Delegation rule: the General Counsel may delegate signing authority to the Deputy General Counsel only via a written delegation that states an explicit effective window; a signature executed outside that window carries no authority.\n\n**CLM Record**\n- MSA-4488, counterparty 'Basalt Retail Group'. TCV: $1,250,000 over 3 years.\n- Signed by (field): 'Deputy General Counsel - Owen L.' Executed: 2026-04-03. Risk memo: attached.\n\n**Written delegation on file**\n- 'The General Counsel delegates contract signing authority to the Deputy General Counsel, Owen L., effective 2026-01-01 through 2026-03-31, inclusive, during the GC's medical leave.'\n\n**Email (reconstructed)**\n- Sales lead -> Owen L. (2026-04-02): 'Basalt wants to execute this week. TCV $1.25M. Can you sign under your delegation?'\n- Owen L. (2026-04-03): 'The GC is still out. I'll sign under the delegation so we don't lose the quarter.'\n- Sales lead: 'Executed 2026-04-03, signer Owen L.'\n- (the GC returned 2026-04-06; no GC or CEO signature appears on MSA-4488)\n\nThe delegation window closed 2026-03-31. The agreement was signed 2026-04-03, three days later. The TCV places the contract in the tier that the General Counsel may sign.",
+  "question": "What should the audit conclude about the signature authority on MSA-4488?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Owen Lindqvist",
+    "title": "Senior Contracts Counsel",
+    "organization": "Fenugreek Software",
+    "years_experience": 10,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Valid - the Deputy General Counsel held delegated signing authority and executed the agreement with a risk memo attached, which is what the $500,001-$2,000,000 tier requires.",
+    "Valid, but a documentation cleanup is needed - amend the delegation to cover the signing date; the executed agreement stands.",
+    "Invalid - the written delegation lapsed on 2026-03-31 and the agreement was signed 2026-04-03, so the Deputy General Counsel signed with no authority; the agreement must be re-executed by the General Counsel (the authorized signer for this TCV tier) or under a valid delegation.",
+    "Invalid - a contract of this value requires both the General Counsel and the CEO to sign, so it must be escalated for CEO co-signature.",
+    "Invalid - the Director of Legal Operations should have signed this agreement because the Deputy General Counsel is not a named role in the matrix."
+  ]
+}

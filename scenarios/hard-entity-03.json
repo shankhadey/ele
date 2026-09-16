@@ -1,0 +1,25 @@
+{
+  "title": "Two Acquisitions, One Renewal, and the Effective-Date Window",
+  "category": "entity_resolution",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "Invar Software's deal desk must attribute a renewal to the correct owning entity after a chain of M&A events. The customer, \"Monel Retail Group,\" appears in Salesforce as account A-9100 with subscription SUB-3300 (annual, auto-renews each June 1). Three dated events sit in the CRM notes and a Grant Thornton diligence memo: (1) On 2023-08-15, Monel Retail Group was acquired by \"Elgiloy Commerce Holdings\" in a stock purchase; Monel kept its EIN 52-1180773 and continued as a wholly owned subsidiary. (2) On 2024-03-01, Elgiloy Commerce Holdings sold the Monel subsidiary's SOFTWARE-OPERATIONS division (which owns SUB-3300's usage) to \"Permalloy Digital LLC\" (EIN 88-7761204) in an ASSET carve-out; Exhibit B assigned SUB-3300 to Permalloy Digital effective 2024-03-01. (3) On 2024-05-10, the remaining Monel Retail Group entity (still under Elgiloy) was legally renamed \"Monel Stores, Inc.\" but kept EIN 52-1180773. The renewal SUB-3300 comes up 2024-06-01. An AE proposes renewing under \"Monel Stores, Inc.\" (EIN 52-1180773) because that is the surviving named entity in the CRM and D&B still links it to the original Monel record. Deal desk must determine who actually owns the subscription being renewed, given that a mid-year asset assignment moved the specific subscription out of the Monel entity before the rename occurred. The NetSuite billing profile for SUB-3300 still shows the original Monel bill-to, and a stale D&B family tree reinforces the AE's instinct to renew under the surviving named entity. The renewal auto-generates in three days; if it issues to the wrong party, the invoice will be disputed, revenue recognition will slip a quarter, and the assignment paperwork will have to be untangled under audit. Deal desk must trace the effective dates in the diligence memo before approving the renewal target.",
+  "question": "Which entity should the June 1, 2024 renewal of SUB-3300 be issued to?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Marcus Feld",
+    "title": "Deal Desk Manager",
+    "organization": "Invar Software",
+    "years_experience": 11,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Monel Stores, Inc. (EIN 52-1180773), the renamed surviving entity that D&B still links to the original customer record.",
+    "Elgiloy Commerce Holdings, the parent that acquired Monel in 2023 and therefore controls all of Monel's subscriptions.",
+    "Permalloy Digital LLC (EIN 88-7761204), which acquired the software-operations division and was assigned SUB-3300 effective 2024-03-01, before the renewal date.",
+    "Monel Retail Group under its original name, since the subscription predates all of the corporate changes and should stay with the signing name."
+  ]
+}

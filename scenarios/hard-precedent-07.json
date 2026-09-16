@@ -1,0 +1,19 @@
+{
+  "title": "Covenant Waiver Where Collateral Coverage Fails to Extend Authority",
+  "category": "precedent_exception",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "You are a portfolio credit officer at Skadi Capital, a commercial lender. A relationship manager wants a financial-covenant breach waived at the Portfolio Manager level and cites a prior waiver.\n\nActive policy: Covenant Waiver Policy CWP v3, effective 2025-02-01. Authority to waive a covenant breach is tiered by the borrower's exposure. Up to $2M exposure: Portfolio Manager. $2M to $10M: Credit Committee. Above $10M: Credit Committee plus Board Risk. Exception: if the borrower's collateral coverage ratio is at least 1.5x, the Portfolio-Manager band is extended to cover exposure up to $5M. CWP v3 lowered the base Portfolio-Manager band from $5M (under the prior CWP v2, where a Portfolio Manager could waive up to $5M regardless of collateral) to the current $2M base.\n\nThe relationship manager forwards two records. First, the one cited: 2024-10-08, Nidhogg Mining, exposure $4M, breach waived directly by Portfolio Manager; log note 'within PM authority (<= $5M),' policy version at decision CWP v2. Second: 2025-03-22, Muspell Refining, exposure $4.5M with collateral coverage 1.7x, waived by Portfolio Manager under the CWP v3 collateral extension.\n\nCurrent facts: borrower Ratatosk Timber has $4M exposure and a collateral coverage ratio of 1.3x, confirmed by the latest borrowing-base certificate, which was refreshed this month. The breach is a fixed-charge-coverage shortfall the borrower attributes to a seasonal dip, and no other borrower-specific waiver conditions are triggered. The relationship manager writes: 'Nidhogg was the same $4M and the PM signed it off, and Muspell was even bigger at the PM level. Ratatosk is a $4M waiver - please just approve it at your desk this week.' The Credit Committee's next scheduled sitting is in five business days.",
+  "question": "State who must approve the Ratatosk Timber covenant waiver and the controlling reason, as one short answer.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Hollis Bergeron",
+    "title": "Portfolio Credit Officer",
+    "organization": "Skadi Capital",
+    "years_experience": 13,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

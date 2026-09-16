@@ -1,0 +1,25 @@
+{
+  "title": "The Warranty Claim Fixed by the Terms at Purchase",
+  "category": "temporal_consistency",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "A support supervisor at Ametrine Appliances must decide whether to honor a warranty claim, given how a comparable claim was handled earlier this year.\n\n**Warranty Policy \u2014 version history**\n- Old terms (for units purchased through 2024-02-29): 12-month limited warranty from the purchase date.\n- New terms (for units purchased on or after 2024-03-01): 24-month limited warranty, but the warranty excludes units used in a commercial setting. The policy states that a unit's warranty terms are set by its purchase date and do not change when the policy changes.\n\n**Prior decision A (2024-01-20)**\nA claim on a unit that was 14 months old was DENIED. Note: 'Unit purchased under the 12-month terms; claim is past the warranty period.'\n\n**Current request C (2024-09-05)**\nCustomer 'Whitfield Cafe' files a warranty claim on a countertop unit purchased on 2023-05-10. The unit is 16 months old at the time of the claim. The unit is used in the cafe (a commercial setting).\n\n**Slack \u2014 #cx-support**\nAgent: 'Our warranty is 24 months now, and this unit is only 16 months old, so it's clearly still covered \u2014 let's approve.'\nSupervisor: 'The 24-month terms only apply to units bought on or after March 2024. Let me check when this unit was actually purchased.'\n\nThe unit was purchased on 2023-05-10 and is 16 months old at the time of the claim. The defect appears to be a genuine component failure rather than misuse, and the customer has the original receipt showing the purchase date. The agent wants to give a clear coverage decision rather than route the case for a discretionary goodwill review.",
+  "question": "How should the supervisor handle Whitfield Cafe's warranty claim?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Rebecca Stahl",
+    "title": "Customer Support Supervisor",
+    "organization": "Ametrine Appliances",
+    "years_experience": 8,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Approve the claim, because the unit is 16 months old and the current 24-month warranty covers it.",
+    "Deny the claim, because the unit was purchased on 2023-05-10 under the 12-month terms and is now 16 months old, past its warranty period.",
+    "Deny the claim, because the unit is used in a commercial setting and is therefore excluded from warranty coverage.",
+    "Approve a partial goodwill repair as a compromise, given the unit is well within 24 months."
+  ]
+}

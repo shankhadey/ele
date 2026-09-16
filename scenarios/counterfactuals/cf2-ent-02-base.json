@@ -1,0 +1,20 @@
+{
+  "title": "Does Prior Service Bridge for Severance?",
+  "category": "entity_resolution",
+  "domain": "hr_people_ops",
+  "difficulty": "hard",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf2-ent-02",
+  "counterfactual_role": "base",
+  "scenario_text": "Baltic Robotics' people-operations team is calculating a severance payout during a reduction in force and must determine the correct years of continuous service. The affected employee appears in Workday under the name 'David Okonkwo.' The severance policy pays one week of base salary per completed year of service and states: 'Prior service bridges to current service only when the same individual, verified by matching Social Security Number, was rehired within twelve months of the prior separation date; service for a different individual, or a gap exceeding twelve months, does not bridge.' Two employment records surface. Record R1: 'David Okonkwo,' SSN ***-**-4023, hired 2012-03-01, separated 2019-05-31 (7 completed years), role Field Technician. Record R2: 'David Okonkwo,' SSN ***-**-4023, hired 2019-09-15 (rehired within four months of R1's separation), still active as of the 2026-01-31 RIF date, role Senior Field Technician, giving roughly 6 completed years on its own. The HR analyst notes the two records were created under different employee IDs by different regional HR staff and have slightly different home addresses and emergency contacts, which is common for a rehire processed years apart. The payroll system currently shows only R2's tenure. The analyst must decide whether R1's service bridges to R2 for the severance calculation, and therefore how many total completed years of service to credit and how many weeks of severance to pay.",
+  "question": "How many weeks of severance should be paid, based on the correctly credited years of service?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": []
+}

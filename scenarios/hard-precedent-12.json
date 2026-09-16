@@ -1,0 +1,26 @@
+{
+  "title": "$35K Signing Bonus Without a Critical-Skills Designation",
+  "category": "precedent_exception",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "You are an HR business partner at Vali Media, a digital media company. A hiring manager wants to approve a $35,000 signing bonus at the Director level and cites a prior approval.\n\nActive policy: Hiring Incentive Policy HIP v5, effective 2025-03-01. Signing-bonus authority is tiered: up to $10,000 the hiring manager; $10,000 to $25,000 a Director plus a budget check; above $25,000 the VP of HR. Exception: roles on the current critical-skills list allow a Director to approve a signing bonus up to $40,000. HIP v5 lowered the VP-of-HR trigger to above $25,000 from the prior HIP v4, under which a Director could approve signing bonuses up to $50,000 in the ordinary course.\n\nThe precedent cited: 2024-07-22, a $35,000 signing bonus for a senior producer role approved directly by a Director; case note 'within Director authority (<= $50K),' policy version at decision HIP v4.\n\nCurrent facts: the candidate is being hired into a general-management role that is not on the current critical-skills list, confirmed by the talent team, and the proposed signing bonus is $35,000. There is budget available in the department's approved hiring plan, and no other atypical terms accompany the offer. The hiring manager writes: 'We approved $35K for the producer role last summer at the Director level, and this candidate is just as important to land. Let's have the Director sign the $35K so we can extend the offer today before the candidate accepts elsewhere.' The candidate has a competing offer and a decision deadline in two days.",
+  "question": "What approval is required for the $35,000 signing bonus?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Simone Kettridge",
+    "title": "HR Business Partner",
+    "organization": "Vali Media",
+    "years_experience": 8,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Director approval, mirroring the 2024 $35,000 Director-approved signing bonus.",
+    "Director approval under the critical-skills exception, since $35,000 is within the $40,000 critical-skills ceiling.",
+    "VP of HR approval, because $35,000 exceeds the $25,000 threshold under HIP v5 and the role is not on the critical-skills list; the 2024 Director approval was under superseded HIP v4.",
+    "Hiring-manager approval with a budget check, since signing bonuses are a hiring-manager retention tool.",
+    "Director approval capped at $25,000, with the remaining $10,000 paid as a first-year retention bonus instead."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "title": "Deploying a Change Approved Before the CAB Rule Took Over",
+  "category": "policy_version",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "Logan Robotics governs production changes under its Change Management Policy.\n\nVersion 1 (in effect through 2025-05-31): \"A production change requires approval from one senior engineer and may be deployed on any business day.\"\n\nVersion 2 (effective 2025-06-01): \"A production change requires Change Advisory Board (CAB) approval. Any approved change not deployed within 14 days of its approval expires and must be re-approved.\" Version 2 adds a transition clause: \"Change requests approved before June 1, 2025 retain their original single-approver authorization and may be deployed under v1, provided deployment occurs before the change's next scheduled CAB review. Change requests approved on or after June 1, 2025 follow v2 in full.\"\n\nThe CAB meets monthly on the first Monday of each month. In 2025 the first Monday of June is 2025-06-02. The change tracker shows CR-7788: Approved by senior engineer J. Ito on 2025-05-28, Type production change, Deployment attempted 2025-06-05, Status pending. The change tracker also notes that CR-7788 was not placed on the 2025-06-02 CAB agenda, and no CAB record references it. The originating senior engineer, J. Ito, is out on leave through 2025-06-12 and is not available to re-confirm the change.\n\nThe release manager posts in #prod-changes on 2025-06-05: \"CR-7788 was approved May 28 by a senior engineer, so it's grandfathered under the old single-approver rule. That's still inside the 14-day post-approval window too. I'm clearing it to deploy today. Anyone object?\"\n\nUsing the policy history, the transition clause, the CAB schedule, and the change tracker, determine whether CR-7788 may be deployed on 2025-06-05 or what is required first.",
+  "question": "Can CR-7788 be deployed on 2025-06-05 under its original authorization, or what is required first?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Marcus Feld",
+    "title": "Release Engineering Manager",
+    "organization": "Logan Robotics",
+    "years_experience": 12,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "CR-7788 must be re-approved by the CAB before deployment, because the v1 grandfather permitted deployment only up to the next scheduled CAB review (2025-06-02), which has already passed.",
+    "CR-7788 may be deployed under v1's single-approver authorization, because it was approved 2025-05-28, before v2's June 1 effective date.",
+    "CR-7788 may be deployed through 2025-06-11, because v2's 14-day post-approval window runs from the 2025-05-28 approval and the June 5 deploy falls inside it.",
+    "CR-7788 is permanently barred and must be resubmitted as a new request, because all production changes now require CAB approval and no grandfather applies to pre-June changes.",
+    "CR-7788 may be deployed after a single senior-engineer re-confirmation, because v1 authorization only needs to be refreshed once per month."
+  ]
+}

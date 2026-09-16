@@ -1,0 +1,25 @@
+{
+  "title": "The DUNS That Was Recycled",
+  "category": "entity_resolution",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "Nimonic Aerospace is validating a supplier before releasing a large PO and hits a data-quality trap. Two internal records reference D-U-N-S 09-882-3341. The older record, created 2016, is \"Chromel Fabrication Inc.\" (EIN 36-2211908, Ohio, machining), marked inactive since 2021 with a note \"ceased operations, bankruptcy 2021.\" The newer record, created 2023, is \"Brightray Precision LLC\" (EIN 84-9902130, Nevada, additive manufacturing), which a data-enrichment sync auto-populated with the SAME DUNS 09-882-3341. D&B's current record for 09-882-3341 now resolves to Brightray Precision LLC; D&B confirms by phone that the number was previously assigned to Chromel Fabrication, and after Chromel's dissolution the identifier was, through a data-broker error, later associated with Brightray, an unrelated startup that reused office space at the same industrial park address. The two companies have different EINs, different states of formation, different owners, and different capabilities. A supplier-onboarding analyst sees a single DUNS and a shared physical address and is about to treat Brightray as a \"continuation\" of Chromel, inheriting Chromel's prior qualification approvals and quality certifications to fast-track the PO. Chromel's AS9100 certificate and prior-performance history are attached to the old record. Procurement is under deadline to release a $2.1M PO and wants to avoid a six-week re-qualification cycle. The overnight enrichment sync auto-linked the two records on the matching DUNS, so the supplier portal now displays Brightray with a green \"qualified\" status and Chromel's AS9100 flag carried forward. The quality lead must decide before PO release whether that inherited status is legitimate or whether the shared DUNS and shared industrial-park address are misleading the system into treating an unvetted startup as a proven supplier.",
+  "question": "How should the analyst treat Brightray Precision LLC relative to Chromel Fabrication Inc.?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Rebecca Lund",
+    "title": "Supplier Quality Manager",
+    "organization": "Nimonic Aerospace",
+    "years_experience": 12,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Treat Brightray as a continuation of Chromel and inherit Chromel's AS9100 qualification and performance history, since they share DUNS 09-882-3341 and the same address.",
+    "Treat Brightray Precision LLC as a distinct, unrelated new supplier requiring its own qualification; the shared DUNS is a recycled-identifier data error and the shared address is coincidental co-location.",
+    "Reactivate the Chromel record and pay under EIN 36-2211908, since the DUNS authoritatively points to that qualified supplier.",
+    "Merge the two records under DUNS 09-882-3341 and carry forward the AS9100 certificate to avoid re-qualification cost."
+  ]
+}

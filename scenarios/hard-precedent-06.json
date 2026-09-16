@@ -1,0 +1,26 @@
+{
+  "title": "20% Retention Offer Below the Loyalty-Tenure Threshold",
+  "category": "precedent_exception",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "You manage customer success at Frigg Retail, a subscription retail-analytics service. A CSM wants to extend a 20% retention discount to an at-risk renewal and cites a prior customer who received the same.\n\nActive policy: Retention Offer Policy ROP v5, effective 2025-04-01. At-risk renewals may receive a standard retention discount of 10%, approvable by the CSM. A loyalty tier offers 20%, but it is available only to customers with five or more years of continuous tenure, and it too is CSM-approvable. Any retention discount above 20% requires Director approval.\n\nThe CSM forwards two records. First, the one cited: 2024-09-30, Andlang Boutiques received a 20% retention credit; the approval note reads verbatim 'one-time goodwill retention credit after a billing dispute; non-binding and non-precedential, does not establish an entitlement to future 20% offers.' Second: 2025-05-12, a six-year customer received 20% under the loyalty tier; log note 'tenure 6 years, loyalty tier applies.'\n\nCurrent facts: the at-risk account, Vanaheim Boutique, has three years of continuous tenure, confirmed in billing, and is not claiming any service defect or billing error. Its usage has been steady and its renewal is due in three weeks, with the customer signaling price sensitivity after a competitor's outreach. The CSM writes: 'Andlang got 20% and so did the six-year account - Vanaheim is just as valuable and just as likely to churn. Let's match 20% to keep them and stay consistent with what we've done before.' No Director has been looped in, and the CSM wants to send the offer today to keep the renewal on track.",
+  "question": "What retention offer can the CSM extend to Vanaheim Boutique?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Bianca Ostrowski",
+    "title": "Customer Success Manager",
+    "organization": "Frigg Retail",
+    "years_experience": 8,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "A 20% offer, mirroring the Andlang retention credit, to stay consistent with prior treatment of at-risk accounts.",
+    "A 20% offer under the loyalty tier, since Vanaheim is a long-standing at-risk account worth retaining.",
+    "The standard 10% retention discount at the CSM level, because Vanaheim's three-year tenure is below the five-year loyalty threshold and the Andlang 20% was a non-binding one-time goodwill credit.",
+    "A 20% offer escalated to a Director, since retention risk justifies an exception to the tenure requirement.",
+    "A 15% offer as a midpoint between the standard and loyalty tiers, reflecting Vanaheim's moderate tenure."
+  ]
+}

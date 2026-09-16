@@ -1,0 +1,25 @@
+{
+  "title": "Vanern Electronics component buy: 'market price hike' versus an EOL part from an unauthorized broker",
+  "category": "cross_system_synthesis",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "Vanern Electronics needs a critical microcontroller for its flagship product. In the #procurement Slack channel the commodity buyer writes: 'Prices are up and lead times are out - it's the usual silicon market tightness. A distributor has 50,000 units in stock at a premium. I say we place a large buy now to secure supply before it gets worse. It's just market conditions.' Posted Thursday.\n\nOther systems complicate the buy. In the manufacturer's product-change-notification feed, this exact part received an end-of-life notice four months ago with a last-time-buy date already passed. In the approved-vendor list, the 'distributor' offering the 50,000 units is not a franchised/authorized distributor - it is an independent broker. In the quality system, an incoming-inspection ticket from a prior broker lot flagged mismatched date codes and re-marked packages (counterfeit indicators). In the authorized distributor's portal, the part shows 'discontinued - no stock,' making a fresh 50,000-unit availability from a broker implausible for genuine parts. And an engineering note says a pin-compatible successor part is already qualified for the next board revision.\n\nEach signal is individually explainable: silicon markets are tight, brokers do hold legitimate stock, and date-code questions can be benign. But together - a passed EOL last-time-buy, an unauthorized broker as the only source of a large 'in-stock' quantity, prior counterfeit indicators on broker lots, the authorized channel showing discontinued/no-stock, and a qualified successor part available - they point to counterfeit/EOL risk, not a normal market buy. The buyer's 'market conditions' read ignores the PCN and the broker's unauthorized status. You own this commodity. What should you recommend?",
+  "question": "What should the procurement owner recommend regarding the microcontroller buy?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Erik Sandholm",
+    "title": "Global Commodity Manager",
+    "organization": "Vanern Electronics",
+    "years_experience": 13,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Place the 50,000-unit buy now from the distributor to secure supply ahead of further market tightening.",
+    "Negotiate a lower price with the distributor and place a slightly smaller buy to reduce cost exposure.",
+    "Do not place the broker buy; transition to the qualified pin-compatible successor part and, if bridge stock is truly needed, source only through authorized channels with full traceability and counterfeit testing: the passed EOL last-time-buy, unauthorized broker, prior counterfeit indicators, and discontinued authorized stock indicate counterfeit/EOL risk, not market tightness.",
+    "Place the buy but route the incoming lot through standard receiving to catch any defects during production."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Low-Value MSA With an Uncapped-Liability Clause",
+  "category": "precedent_exception",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "You are contracts counsel at Forseti Legal, a legaltech company, validating signature authority on a master services agreement before execution.\n\nActive policy: Contract Approval Playbook CAP v6, effective 2025-04-01. Signature authority for MSAs is set by total contract value (TCV): up to $500,000 the General Counsel (GC) may sign; above $500,000 the GC and the CFO must both sign. Override: any MSA containing an uncapped-liability clause or a non-standard indemnity provision requires the GC and the CEO to co-sign, regardless of TCV, plus a Legal risk memo. CAP v6 added this CEO override for uncapped-liability clauses; under the prior CAP v5, the GC alone could sign an uncapped-liability deal as long as TCV was under $1,000,000.\n\nThe precedent cited: 2025-02-03, Yggdrasil Data, TCV $600,000 with an uncapped-liability clause, signed by the GC alone; CLM note 'uncapped liability accepted, GC signature sufficient,' policy version at decision CAP v5.\n\nCurrent facts: the pending MSA with Mimir Analytics has a TCV of $300,000 - below the $500,000 line - but the counterparty has insisted on an uncapped-liability clause for data-loss events, which Legal has flagged. A risk memo has been drafted and attached to the CLM record, and the counterparty has confirmed it will not accept a liability cap on the data-loss provision. The GC has reviewed the clause and is comfortable with the residual exposure. The business lead writes: 'Yggdrasil had uncapped liability at $600K and the GC signed it solo. Mimir is only $300K, well under any co-sign threshold - the GC can just sign this and we move on.' The counterparty wants the MSA executed this week, and no CEO review has been initiated.",
+  "question": "State the required signatures for the Mimir Analytics MSA, as one short answer.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Anders Whitlock",
+    "title": "Contracts Counsel",
+    "organization": "Forseti Legal",
+    "years_experience": 9,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

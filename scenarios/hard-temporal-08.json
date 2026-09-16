@@ -1,0 +1,19 @@
+{
+  "title": "The Laptop Refresh That the New Cadence Pushed Back",
+  "category": "temporal_consistency",
+  "domain": "other",
+  "difficulty": "expert",
+  "scenario_text": "An IT asset manager at Iolite Logistics must tell an employee the earliest date they are eligible for a laptop refresh, given how a colleague's refresh was handled earlier this year.\n\n**Hardware Refresh Policy \u2014 version history**\n- Old policy (in force through 2024-03-31): employees are eligible for a laptop refresh every 3 years from the issue date of their current machine.\n- New policy (effective 2024-04-01, in force now): the refresh interval is extended to 4 years from the issue date, as a cost-control measure. Eligibility is determined by the interval in force at the time the refresh request is evaluated.\n\n**Prior decision A (2024-02-20)**\nA colleague whose laptop was issued on 2021-02-01 received a refresh. Note: 'Three years elapsed since issue; eligible under the current 3-year interval.'\n\n**Current request C (2024-09-12)**\nEmployee 'Sam Ortiz' requests a laptop refresh. Sam's current laptop was issued on 2021-06-15. The device is functioning normally; this is a routine refresh request, not a repair.\n\n**Slack \u2014 #it-support**\nSam: 'A teammate got refreshed at the three-year mark back in February, and my laptop is already more than three years old. So I'm eligible now, right?'\nAsset manager: 'February was under the old three-year rule. Let me work out your eligibility date under the interval that applies now.'\n\nSam's laptop was issued on 2021-06-15, and the request is evaluated on 2024-09-12. Sam has not reported any hardware fault that might qualify for an out-of-cycle replacement, so eligibility is governed purely by the standard refresh interval. The asset manager wants to give Sam a firm eligibility date rather than an approval or a flat denial.",
+  "question": "What is the earliest date Sam Ortiz is eligible for a laptop refresh? Give the date.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Teresa Lindqvist",
+    "title": "IT Asset Manager",
+    "organization": "Iolite Logistics",
+    "years_experience": 6,
+    "domain_expertise": "other"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Last Date to Stop Auto-Renewal After the Notice Window Grew",
+  "category": "policy_version",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "Rosa Telecom manages vendor contract renewals under its Contract Renewal Policy, which sets how much advance notice is needed to prevent automatic renewal.\n\nVersion 1 (in effect through 2024-10-31): \"To prevent automatic renewal, written non-renewal notice must be delivered at least 60 days before the contract's renewal date.\"\n\nVersion 2 (effective 2024-11-01): \"To prevent automatic renewal, written non-renewal notice must be delivered at least 90 days before the renewal date.\" Version 2 adds a transition clause: \"The non-renewal notice window applicable to a contract is determined by its renewal date. Contracts whose renewal date falls on or after January 1, 2025 are subject to the 90-day window. Contracts whose renewal date falls before January 1, 2025 retain the 60-day window.\"\n\nThe contract repository shows vendor agreement VA-1174 (vendor: Summit Fiber): Renewal Date 2025-02-15, Auto-Renewal enabled, Term 12 months. Procurement wants to exit this agreement and not renew. The repository shows no notice has yet been delivered, no amendment altering the notice clause, and a delivery method of written notice to the vendor's contract address on file. The renewal date of 2025-02-15 is confirmed against the executed agreement.\n\nA procurement specialist writes in #vendor-contracts on 2024-11-05: \"We're not renewing VA-1174; its renewal date is February 15, 2025. The old policy needed 60 days, so I had December 17 in my head as the deadline to send notice. But the window changed. What's the actual last date we can deliver the non-renewal notice to stop the auto-renewal?\"\n\nUsing the policy history, the transition clause, and the contract record, determine the last date Rosa Telecom can deliver the non-renewal notice for VA-1174.",
+  "question": "What is the last date Rosa Telecom can deliver the non-renewal notice for VA-1174?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Nadia Popescu",
+    "title": "Vendor Contracts Manager",
+    "organization": "Rosa Telecom",
+    "years_experience": 8,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

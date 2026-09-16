@@ -1,0 +1,26 @@
+{
+  "title": "Purchase Authorization When the PO Postdates the Requisition Approval",
+  "category": "policy_version",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "Aconcagua Foods governs purchasing under its Procurement Authority Policy, which sets both spend-approval thresholds and when competitive bidding is required.\n\nVersion 1 (in effect through 2025-02-28): \"A Category Manager may approve purchases up to and including $250,000. A competitive bid (three quotes) is required only for purchases above $500,000.\"\n\nVersion 2 (effective 2025-03-01): \"A Category Manager may approve purchases up to and including $100,000; above that requires Director approval. A competitive bid is required for purchases above $250,000.\" Version 2 adds a transition clause: \"The approval thresholds and competitive-bid requirement applicable to a purchase are those in effect on the date the purchase requisition is approved in the procurement system. A purchase order issued against a requisition inherits the requisition's governing version. Requisitions approved before March 1, 2025 follow v1.\"\n\nThe procurement system shows requisition PR-3320 (category: packaging film, vendor: Ridgeline Poly): Requisition Approved by Category Manager on 2025-02-25, Amount $200,000. The purchase order PO-3320 against it was issued 2025-03-06 with no change to scope, price, or vendor from the approved requisition. The vendor master lists Ridgeline Poly as an existing approved supplier, and no competitive-bid waiver is attached to either record.\n\nA procurement analyst messages the controls team on 2025-03-07: \"Reviewing PR-3320 / PO-3320. The requisition was approved February 25 for $200,000, but the PO didn't issue until March 6, after the new thresholds. Under the new rule $200K blows past the $100K Category Manager limit, so I think this needs Director sign-off and maybe a competitive bid. Is any additional approval or bid required?\"\n\nUsing the policy history, the transition clause, and the procurement records, determine whether any additional approval or competitive bid is required for PR-3320 / PO-3320.",
+  "question": "Is any additional approval or competitive bid required for PR-3320 / PO-3320?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Renata Kohl",
+    "title": "Procurement Controls Manager",
+    "organization": "Aconcagua Foods",
+    "years_experience": 14,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "No additional approval or competitive bid is required: PR-3320 was approved 2025-02-25 under v1, where Category Manager authority reaches $250,000 and bids are required only above $500,000, and the PO inherits that version.",
+    "Director approval is required, because PO-3320 issued 2025-03-06 under v2, where Category Manager authority caps at $100,000 and the PO date controls.",
+    "Both Director approval and a three-quote competitive bid are required, because v2 governs the 2025-03-06 PO and $200,000 exceeds v2's limits.",
+    "A three-quote competitive bid is required, because $200,000 exceeds v2's $100,000 Category Manager limit.",
+    "The requisition is invalid and must be reissued under v2, because the PO postdates the March 1 cutover."
+  ]
+}

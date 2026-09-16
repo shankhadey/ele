@@ -1,0 +1,25 @@
+{
+  "title": "Malawi Retail Q4 shrink: 'seasonal loss' versus a register-level refund-fraud scheme",
+  "category": "cross_system_synthesis",
+  "domain": "other",
+  "difficulty": "expert",
+  "scenario_text": "Malawi Retail, a specialty chain, sees inventory shrink spike across stores in Q4. In the #loss-prevention Slack channel the regional ops manager writes: 'Q4 shrink always runs hot - more foot traffic, more shoplifting, more damaged returns during the holidays. This is seasonal, it happens every year. I'd suggest we add door greeters and more security tags and move on. Nothing systemic.' Posted Friday.\n\nOther systems point elsewhere. In the POS analytics, the shrink is not spread across the floor: 78% concentrates in one high-margin category and correlates with 'no-receipt refund' transactions, not missing stock counts. In the transaction logs, those refunds cluster on a small set of cashier IDs during the closing shift, each using a manager-override code that shouldn't be available to cashiers. In the CCTV index, several of those refund timestamps have no customer present at the register. In the loyalty system, 60% of the fraudulent-looking refunds credit store-value cards later drained at two specific locations. And a whistle-blower note to the ethics line last week alleged 'refund skimming on nights.'\n\nEach signal is individually explainable: Q4 shrink is genuinely seasonal, override codes get shared, cameras miss angles, and gift-card refunds are normal. But together - shrink concentrated in one category via no-receipt refunds, tied to specific cashier IDs and an improper override, refunds with no customer present, proceeds funneled to store-value cards drained at two sites, and a whistle-blower tip - they describe an internal refund-fraud ring, not holiday shoplifting. The ops manager's 'seasonal' read predates the transaction-log and CCTV correlation. You lead loss prevention. What should you do?",
+  "question": "What should the loss-prevention lead do about the Q4 shrink spike?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Yolanda Prieto",
+    "title": "Director of Loss Prevention",
+    "organization": "Malawi Retail",
+    "years_experience": 12,
+    "domain_expertise": "other"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Add door greeters and more security tags to address seasonal shoplifting, as the ops manager suggested.",
+    "Write the shrink off to seasonal loss in the Q4 accruals and revisit inventory controls after the holidays.",
+    "Open an internal-fraud investigation with LP and finance, freeze the implicated override codes, and preserve POS, CCTV, and loyalty-card records: no-receipt refunds concentrated on specific cashiers using an improper override, refunds with no customer present, and proceeds drained from store-value cards indicate an internal refund-fraud ring, not seasonal shrink.",
+    "Retrain all cashiers on the returns policy chain-wide and tighten the no-receipt refund limit for the season."
+  ]
+}

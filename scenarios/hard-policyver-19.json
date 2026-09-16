@@ -1,0 +1,26 @@
+{
+  "title": "Warranty Coverage on a Unit Bought Before the Warranty Was Shortened",
+  "category": "policy_version",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "Kenya Mobility warrants its hardware under its Product Warranty Policy.\n\nVersion 1 (in effect through 2024-08-31): \"The standard warranty is 24 months from the purchase date and covers both parts and labor.\"\n\nVersion 2 (effective 2024-09-01): \"The standard warranty is 12 months from the purchase date and covers parts only; labor is billed to the customer.\" Version 2 adds a transition clause: \"Warranty terms are fixed by the policy version in effect on the product's purchase date. Products purchased before September 1, 2024 carry the 24-month parts-and-labor warranty. A warranty is not renewed or extended by a repair; a covered repair is warranted only for the remainder of the original warranty period.\"\n\nThe order history and support systems show unit U-6612 (customer: Rimrock Transit): Purchase Date 2024-08-15, Product hardware unit, Failure Reported 2026-02-10, Requested Service parts and labor. The unit had no prior repairs, and the order history confirms a single purchase transaction dated 2024-08-15 with no extended-warranty add-on and no separate service contract. The support system shows the failure as a covered hardware fault, not customer-caused damage.\n\nA support agent messages the warranty desk on 2026-02-11: \"Rimrock's unit U-6612 failed February 10, 2026. It was bought August 15, 2024. Our current warranty is 12 months, parts only, and this is well past a year, so I was going to tell them it's out of warranty and quote them for parts and labor. Is that right, or is any of this covered?\"\n\nUsing the policy history, the transition clause, and the order and support records, determine whether U-6612's failure is covered and to what extent.",
+  "question": "Is U-6612's failure covered, and to what extent?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Miriam Osei",
+    "title": "Customer Support Lead",
+    "organization": "Kenya Mobility",
+    "years_experience": 9,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Yes, parts and labor are covered: v1's 24-month parts-and-labor warranty governs by the 2024-08-15 purchase date and runs through 2026-08-15, and the 2026-02-10 failure is inside that window.",
+    "No, the unit is out of warranty: v2's 12-month window expired on 2025-08-15.",
+    "Parts are covered but labor is billed, because v2's parts-only terms apply to any service performed now.",
+    "Covered for parts and labor, but only until this repair, after which the unit falls under v2's 12-month parts-only terms.",
+    "No coverage, because the failure was reported more than 12 months after purchase regardless of version."
+  ]
+}

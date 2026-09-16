@@ -1,0 +1,26 @@
+{
+  "title": "SLA Credit on a First Breach Against a Halved Cap",
+  "category": "precedent_exception",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "You run SLA remediation at Sif Telecom, a managed-connectivity provider. A CSM wants to grant a large outage credit at their own level and cites a prior credit.\n\nActive policy: SLA Credit Policy SLC v4, effective 2025-04-01. Outage credits accrue against the monthly recurring charge (MRC) and are capped at 15% MRC when granted at the CSM level; any credit above 15% requires VP of Operations approval. Exception: when a customer experiences a second qualifying breach within the same calendar quarter, the CSM-level cap rises to 30% MRC for that quarter. SLC v4 lowered the base CSM cap to 15% from the prior SLC v3, under which the CSM could grant up to 30% MRC for any single qualifying breach.\n\nThe precedent cited: 2024-10-30, customer Aurvandil Networks received a 25% MRC credit granted directly by a CSM; log note 'single breach, within CSM cap (<= 30%),' policy version at decision SLC v3.\n\nCurrent facts: customer Gymir Networks suffered one qualifying outage this quarter; it is their first and only breach of the quarter, confirmed in the incident log, with no earlier qualifying incident in the same quarter that could pair with it. The raw accrual computes to 22% MRC on the affected service. The CSM writes: 'Aurvandil got 25% from a CSM directly, and Gymir's 22% is smaller. Let's grant the full 22% at my level so we resolve it fast without pulling in the VP.' The account team wants the credit confirmed before the customer's monthly business review tomorrow.",
+  "question": "How should the Gymir Networks SLA credit be handled?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Neema Osei",
+    "title": "SLA Remediation Manager",
+    "organization": "Sif Telecom",
+    "years_experience": 9,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Grant the full 22% MRC at the CSM level, mirroring the Aurvandil 25% CSM-level credit.",
+    "Grant the full 22% MRC at the CSM level under the repeat-breach exception, since multi-hour outages justify the higher cap.",
+    "Grant up to 15% MRC at the CSM level and escalate the remainder to the VP of Operations, because this is a first breach so the 30% repeat-breach cap does not apply and SLC v4 caps CSM credits at 15%; the 25% precedent was under superseded SLC v3.",
+    "Grant no credit at the CSM level, since 22% exceeds CSM authority entirely and the whole matter must go to the VP.",
+    "Grant 30% MRC at the CSM level, applying the higher cap as a goodwill gesture for the disruption."
+  ]
+}

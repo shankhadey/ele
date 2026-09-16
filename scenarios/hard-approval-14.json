@@ -1,0 +1,19 @@
+{
+  "title": "One Integrated System Split Across Two Requisitions",
+  "category": "approval_chain",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "A procurement-audit agent at Allspice Networks is reconstructing the governing value of an infrastructure purchase split across two requisitions.\n\n**Procurement Authority Matrix**\n- Up to $100,000: Department Manager.\n- $100,001-$150,000: Procurement Manager + 3 competitive quotes.\n- $150,001-$500,000: Procurement Director + Finance review.\n- Above $500,000: VP + Finance review.\n- Anti-splitting rule: 'Purchase orders that together fund one deliverable, system, or project must be aggregated even when they cite different requisitions; the combined value sets the required approval tier. Whether the components can function independently is the test for whether they form one deliverable.'\n\n**Coupa Purchase Orders**\n- PO-7001: Vendor 'RackForge', $88,000, requisition REQ-3001, line 'Compute nodes for the trading-analytics cluster'. Approved by Department Manager (Ivo S.), 2026-08-04.\n- PO-7002: Vendor 'RackForge', $76,000, requisition REQ-3002, line 'Mandatory interconnect fabric + integration for the trading-analytics cluster (non-functional without the compute nodes)'. Approved by Department Manager (Ivo S.), 2026-08-04.\n\n**Slack #infra-procurement (reconstructed)**\n- Buyer: 'RackForge quoted $164K for the analytics cluster - compute nodes plus the interconnect fabric they only work with.'\n- Ivo S. (Department Manager): 'Raise it as two reqs - nodes on one, fabric on the other - so each PO stays under my $100K. One req and it goes to Procurement with quotes.'\n- Buyer: 'Cut PO-7001 and PO-7002, both approved by you.'\n\nThe interconnect fabric is non-functional without the compute nodes; together they form one commissioned analytics cluster. Compute the governing aggregate value.",
+  "question": "Applying the anti-splitting rule, what is the governing aggregate value that determines the required approval tier?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Ivo Sokolov",
+    "title": "Procurement Controls Analyst",
+    "organization": "Allspice Networks",
+    "years_experience": 9,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

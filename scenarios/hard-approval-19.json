@@ -1,0 +1,26 @@
+{
+  "title": "Goodwill Credits Fragmented Across a Rolling Window to One Account",
+  "category": "approval_chain",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "A customer-success audit agent at Vanilla Software is reviewing goodwill credits issued to a single account.\n\n**Goodwill Credit Authority Matrix**\n- Up to $1,000 per account per rolling 90 days: CS Agent (self-service).\n- $1,001-$5,000 per account per rolling 90 days: CS Manager approval.\n- Above $5,000 per account per rolling 90 days: CS Director AND Finance review.\n- Anti-fragmentation rule: multiple goodwill credits issued to the SAME account within any rolling 90-day window are aggregated; the cumulative total in the window determines the required approval tier. Credits may not be split into separate transactions to keep each under a threshold.\n\n**Billing System Record (account 'Northwind Retail')**\n- CR-1: $800 goodwill credit, issued 2026-04-03 by CS Agent (Mia R.).\n- CR-2: $750 goodwill credit, issued 2026-04-28 by CS Agent (Mia R.).\n- CR-3: $900 goodwill credit, issued 2026-05-20 by CS Agent (Mia R.).\n- All three cite 'service disruption goodwill, Northwind Retail'. No CS Manager or Director approval appears on any of them.\n\n**Slack #cx-credits (reconstructed)**\n- Mia R.: 'Northwind's had a rough quarter. I've done $800 and $750 already; adding $900 now.'\n- Teammate: 'That's over $2K to one account in six weeks - doesn't that need the manager?'\n- Mia R.: 'Each one's under my $1K self-service limit, so I can just issue them.'\n\nThe three credits to Northwind Retail fall within a single rolling 90-day window (2026-04-03 to 2026-05-20). Each is individually under $1,000, but they were all self-issued by the same agent.",
+  "question": "What should the audit conclude about the authorization of these credits?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Mia Robinson",
+    "title": "Customer Success Operations Manager",
+    "organization": "Vanilla Software",
+    "years_experience": 8,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Valid - each credit is under the $1,000 CS Agent self-service limit and was issued by an authorized agent.",
+    "Valid, but a documentation cleanup is needed - link the three credits in the account file; each was within the agent's limit, so no additional approval is needed.",
+    "Invalid - the anti-fragmentation rule aggregates the three credits to one account within the rolling 90-day window to $2,450, which falls in the $1,001-$5,000 tier requiring CS Manager approval; that approval is missing, so the credits are under-authorized and must be re-approved at the manager tier.",
+    "Invalid - the cumulative credits require CS Director approval plus Finance review, so the credits must be escalated to the Director.",
+    "Invalid - goodwill credits to a retail account are prohibited without Finance review regardless of amount, so all three must be reversed."
+  ]
+}

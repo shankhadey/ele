@@ -1,0 +1,19 @@
+{
+  "title": "Computing the Break-Glass Retrospective Review Deadline Across a Weekend",
+  "category": "approval_chain",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "A change-management audit agent at Coriander Labs must determine the deadline for the retrospective security review of a break-glass production access event.\n\n**Break-Glass Access Authority Matrix**\n- Routine production access: requested via ticket, approved by the service owner.\n- Break-glass (emergency elevated) access: the on-call engineer MAY self-grant emergency admin access during an active Sev-1/Sev-2 incident with a logged justification, provided a retrospective security review of everything done under the access is completed within 5 business days of the grant. Business days are Monday-Friday; weekends are excluded. The grant is out of compliance if the review is not completed by the deadline.\n\n**Access / Incident Record**\n- BG-3021: break-glass admin access self-granted by on-call engineer during Sev-1 INC-9002 (database failover).\n- Access granted: 2026-05-29 (Friday) at 23:10.\n- Retrospective security review: (not yet completed as of the audit date, 2026-06-10).\n\n**Slack #incident-db (reconstructed)**\n- On-call: 'Primary DB is down, promoting the replica. Self-granting break-glass admin now, justification logged.'\n- IC: 'Understood. Log the retro security review before the deadline.'\n- On-call (2026-06-08): 'Incident's long closed, I'll get the retro review scheduled.'\n\nCount 5 business days from the grant date, excluding weekends, to determine the date by which the retrospective security review must be completed.",
+  "question": "By what calendar date must the retrospective security review be completed?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Devon Rhodes",
+    "title": "Security Operations Change Lead",
+    "organization": "Coriander Labs",
+    "years_experience": 9,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

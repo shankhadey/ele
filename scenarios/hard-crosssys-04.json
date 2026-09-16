@@ -1,0 +1,25 @@
+{
+  "title": "Geneva Analytics export 'cosmetic bug' versus a column-shift corrupting SOX reconciliations",
+  "category": "cross_system_synthesis",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "Geneva Analytics runs a financial-reporting SaaS. Several enterprise customers report that a CSV export 'looks off' after last week's release. In the #support-esc Slack channel the CSM writes: 'Confirmed with the account - it's the known cosmetic formatting bug in the export header. Numbers are all there, just the header row spacing looks weird. Engineering has it slated for next sprint. Marking these tickets low priority.' Posted Wednesday.\n\nOther systems tell a harder story. In the release-management system, last week's deploy included a schema migration that reordered two columns in the export builder. In the app logs, the export writer is emitting values in the old column order but the new header labels - so 'Net Revenue' now sits above what are actually 'Gross' figures. In Zendesk, a ticket from an enterprise customer's controller, opened yesterday, reads: 'Our month-end reconciliation is off by exactly the tax-withholding column - are your export columns aligned?' In the customer-usage telemetry, four of the affected accounts pull this export directly into their SOX-controlled close process. And a QA record shows the export's automated column-order test was disabled during the migration and never re-enabled.\n\nEach signal is individually dismissible: header spacing is cosmetic, one controller's reconciliation could be their own error, and a disabled test is a minor gap. But together - a migration that reordered columns, values emitted under mislabeled headers, a controller seeing a column-specific discrepancy, regulated close processes consuming the file, and the guardrail test switched off - they describe a data-integrity defect feeding wrong numbers into customers' financial close, not a cosmetic glitch. The CSM's 'cosmetic' read predates the controller ticket and the log finding. You lead support escalations. What should you do?",
+  "question": "How should the support escalation lead handle these tickets?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Priya Nadkarni",
+    "title": "Support Escalation Lead",
+    "organization": "Geneva Analytics",
+    "years_experience": 10,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Keep the tickets low priority and let engineering fix the header spacing next sprint, as the CSM assessed.",
+    "Raise a SEV incident now, notify affected accounts to stop relying on the export, and pull the release: the column-reorder migration, values under mislabeled headers, the controller's column-specific discrepancy, and SOX-process consumption show a data-integrity defect feeding wrong figures into financial close, not a cosmetic bug.",
+    "Prioritize a fix for the one enterprise controller who complained and leave the other tickets as low priority.",
+    "Ask customers to reformat the header row on their end as a workaround until the next scheduled release."
+  ]
+}

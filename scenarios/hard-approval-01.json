@@ -1,0 +1,26 @@
+{
+  "title": "Deep Discount Approved at the Right Tier but Below the Margin Floor",
+  "category": "approval_chain",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "A deal-desk audit agent at Saffron Analytics is validating authorization on a closed-won enterprise deal.\n\n**Discount Approval Authority Matrix**\n- Up to 15% off list: Account Executive (CRM note).\n- 15.01%-30% off list: Sales Director + margin worksheet.\n- 30.01%-50% off list: VP Sales + margin worksheet.\n- Above 50% off list: VP Sales AND CFO.\n- Corporate margin floor (override): ANY deal whose resulting gross margin falls below 35% requires CFO notification (email logged) regardless of the discount tier, before booking.\n\n**CRM Opportunity Record**\n- OPP-9002, 'Helios platform, 3-year'. List price: $1,000,000. Contracted ACV: $660,000.\n- Fully burdened cost to serve on the contract: $442,000.\n- Stage: Closed Won. Booked: 2026-02-27. Approved by (field): 'VP Sales - Dana R.' Margin worksheet: attached.\n\n**Slack #deal-desk (reconstructed)**\n- Rep: 'Customer signs at $660K. That's 34% off. Dana, can you bless it?'\n- Dana R. (VP Sales): 'Reviewed the worksheet. 34% is in my authority. Approved, book it.'\n- Analyst: 'The margin worksheet shows gross margin lands at 33%. Do we need to loop the CFO on the floor?'\n- Dana R.: 'I've approved the discount; that's what the matrix needs from me. Book it.'\n\nThe discount is $340,000 off $1,000,000 list, or 34%. The resulting gross margin is ($660,000 - $442,000) / $660,000 = 33.0%. No CFO notification appears in the CRM, Slack, or email.",
+  "question": "What should the audit conclude about the authorization of this deal?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Dana Reyes",
+    "title": "Deal Desk Director",
+    "organization": "Saffron Analytics",
+    "years_experience": 12,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Valid - 34% off list falls in the 30.01%-50% tier, and VP Sales approved with the margin worksheet attached, so authority is satisfied.",
+    "Valid, but the file needs a documentation cleanup - re-attach an updated margin worksheet; the approval itself stands.",
+    "Invalid - the resulting 33.0% gross margin is below the 35% corporate floor, which requires a logged CFO notification regardless of the discount tier; that notification is absent, so the booking is incompletely authorized even though the VP holds the correct discount authority.",
+    "Invalid - a discount this deep requires both VP Sales and the CFO to co-approve, so the deal must be escalated to the CFO for co-approval before it can stand.",
+    "Invalid - 34% exceeds the Sales Director ceiling, so the deal should have been approved one tier lower by the Sales Director with a margin worksheet."
+  ]
+}

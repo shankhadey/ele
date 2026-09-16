@@ -1,0 +1,26 @@
+{
+  "title": "Payment-Flow Deploy With AppSec Signed but PCI and DBA Gates Missed",
+  "category": "approval_chain",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "A change-management audit agent at Marjoram Commerce is reviewing a production deploy that touches payment handling.\n\n**Production Deploy Authority Matrix**\n- Standard change (no auth/PII/payment surface): peer review + Release Manager approval.\n- Change touching cardholder data or payment flows: peer review + Release Manager approval + AppSec sign-off + PCI compliance sign-off recorded in the ticket.\n- Any change that includes a database schema migration: add DBA approval.\n- These requirements stack: a payment-flow change that also migrates schema needs peer review, Release Manager, AppSec, PCI, AND DBA.\n\n**Jira Change Record**\n- CHG-8802: 'Re-tokenize stored card numbers and migrate the card_vault table to the new column layout.'\n- Deployed: 2026-10-07. Type: Normal.\n- Peer review: approved (2 reviewers). Release Manager: approved (Tara B.). AppSec sign-off: recorded (2026-10-06). PCI compliance sign-off: (empty). DBA approval: (empty).\n- Files: 'payments/tokenizer.go, payments/card_vault_schema.sql (ALTER TABLE), payments/vault_reader.go'.\n\n**Slack #eng-releases (reconstructed)**\n- Engineer: 'Re-tokenization is reviewed, AppSec signed off. Tara, ship it - it also alters the card_vault table layout.'\n- Tara B. (Release Manager): 'AppSec is on it and code review's green. Approved, ship.'\n- Engineer: 'Do we need PCI sign-off and a DBA on the card_vault migration?'\n- Tara B.: 'AppSec covers the security angle. Go.'\n\nThe change modifies payment tokenization AND alters the card_vault table schema. AppSec sign-off is present; PCI compliance sign-off and DBA approval are both blank.",
+  "question": "What should the audit conclude about the authorization of this deploy?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Tara Bianchi",
+    "title": "Release Engineering & Compliance Lead",
+    "organization": "Marjoram Commerce",
+    "years_experience": 12,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Valid - peer review, Release Manager approval, and AppSec sign-off are all present, which covers a security-sensitive change.",
+    "Invalid - the only missing control is the DBA approval for the schema migration; obtain it and the deploy is compliant.",
+    "Invalid - because this change touches payment flows and also migrates schema, it requires PCI compliance sign-off AND DBA approval in addition to the controls present; both are missing, so the deploy shipped under-authorized on two stacked gates.",
+    "Invalid - AppSec sign-off does not count for payment changes; the deploy needed a separate CISO approval instead, which is missing.",
+    "Invalid - any change to cardholder data must be approved by the full Change Advisory Board and the CFO before deploy."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "title": "API Sunset Date for an Endpoint Deprecated Just Before the Window Shrank",
+  "category": "policy_version",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "Baker Payments governs removal of deprecated API endpoints under its API Lifecycle Policy.\n\nVersion 1 (in effect through 2024-11-30): \"A deprecated endpoint must remain supported for 12 months after its deprecation-announcement date before it may be removed.\"\n\nVersion 2 (effective 2024-12-01): \"A deprecated endpoint must remain supported for 6 months after its deprecation-announcement date. Customers on the Enterprise tier receive an additional 3 months of support beyond the base window.\" Version 2 adds a transition clause: \"The sunset window for an endpoint is fixed by the policy version in effect on the endpoint's deprecation-announcement date. Endpoints announced before December 1, 2024 retain the 12-month window for all tiers.\"\n\nThe API registry shows endpoint /v2/ledger: Deprecation Announced 2024-11-20, Status deprecated, Affected customers include Foothill Bank (Standard tier). A partner-facing engineer needs the earliest date the endpoint can be shut off for Standard-tier consumers. The registry records no tier upgrades for the affected customers and no extension requests, and the deprecation notice was published to all consumers on the announcement date with the 12-month commitment stated.\n\nThe API program manager posts in #api-lifecycle on 2025-01-10: \"Planning the /v2/ledger shutdown. It was announced November 20. We're operating under the new lifecycle policy now, so I read that as a 6-month base window, meaning we can pull it around late May. Foothill is only Standard tier, so no Enterprise extension. What's the earliest date we can remove /v2/ledger?\"\n\nUsing the policy history, the transition clause, and the API registry, determine the earliest date /v2/ledger can be removed for Standard-tier consumers.",
+  "question": "What is the earliest date /v2/ledger can be removed for Standard-tier consumers?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Sana Qureshi",
+    "title": "API Program Manager",
+    "organization": "Baker Payments",
+    "years_experience": 9,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "2025-11-20, because the endpoint was announced 2024-11-20 under v1, whose 12-month window governs for all tiers.",
+    "2025-05-20, because v2's 6-month base window applies and the endpoint was announced 2024-11-20.",
+    "2025-08-20, because v2's 6-month base window plus the 3-month Enterprise extension applies from the 2024-11-20 announcement.",
+    "2025-06-01, because the sunset window runs 6 months from v2's December 1 effective date.",
+    "2025-02-20, because only the 3-month tier grace period remains after the policy change."
+  ]
+}

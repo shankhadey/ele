@@ -1,0 +1,26 @@
+{
+  "title": "Volume Rebate for a Rebate Year That Began Under the Old Program",
+  "category": "policy_version",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "Kosciuszko Materials offers channel partners an annual volume rebate under its Rebate Program Policy.\n\nVersion 1 (in effect through 2024-06-30): \"When a partner's total annual purchases exceed $1,000,000 in a rebate year, the partner earns a rebate of 3% of total annual purchases, paid as a single lump sum after the close of the rebate year.\"\n\nVersion 2 (effective 2024-07-01): \"When total annual purchases exceed $1,500,000 in a rebate year, the partner earns a rebate of 2% of total annual purchases, paid quarterly in arrears.\" Version 2 adds a transition clause: \"A partner's rebate program for a given rebate year is governed by the version in effect on the first day of that rebate year. Each partner's rebate year runs from its contract anniversary date.\"\n\nThe partner system shows distributor Basalt Supply: Contract Anniversary May 1, current rebate year 2024-05-01 through 2025-04-30, total purchases recorded for the year $1,400,000, Status active. The partner system shows all $1,400,000 posted within the 2024-05-01 to 2025-04-30 window, no mid-year contract amendment, and no interim rebate payments issued during the year. Basalt Supply's prior rebate year had fallen just short of the old $1,000,000 threshold and earned nothing.\n\nA channel finance analyst writes in #rebates on 2025-05-05: \"Closing Basalt Supply's rebate year that ended April 30. They bought $1.4M for the year. That's under the $1.5M threshold in the current program, so I don't think they earn anything \u2014 but their year started back in May 2024. What rebate, if any, is owed, and how is it paid?\"\n\nUsing the policy history, the transition clause, and the partner record, determine the rebate owed to Basalt Supply and its payment form.",
+  "question": "What rebate is owed to Basalt Supply for the rebate year, and how is it paid?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Tomas Iversen",
+    "title": "Channel Finance Lead",
+    "organization": "Kosciuszko Materials",
+    "years_experience": 10,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "$42,000, paid as a single lump sum after the rebate year closes: v1 governs because the rebate year began 2024-05-01, and 3% of the $1,400,000 total applies since it exceeds the $1,000,000 threshold.",
+    "No rebate is owed, because $1,400,000 is below v2's $1,500,000 threshold and v2 is the current program.",
+    "$28,000, paid quarterly in arrears, applying v2's 2% rate to the $1,400,000 total.",
+    "$12,000, paid as a lump sum, applying v1's 3% only to the $400,000 above the $1,000,000 threshold.",
+    "$21,000, paid quarterly, applying v2's 2% only to the amount above $1,000,000."
+  ]
+}

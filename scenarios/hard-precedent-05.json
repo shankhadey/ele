@@ -1,0 +1,26 @@
+{
+  "title": "Freeze Deploy for an Incident Quietly Downgraded to Sev-3",
+  "category": "precedent_exception",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "You are the release manager at Njord Cloud, an infrastructure provider, during an active change freeze. An engineering team wants to deploy a fix and points to a prior freeze-period deploy.\n\nActive policy: Change Freeze Policy CFP v3, in force for this freeze. During the freeze, only changes that remediate an active Sev-1 or Sev-2 incident may deploy, and each such change requires a Director sign-off recorded in the change ticket before it ships. Sev-3 and lower changes are blocked until the freeze lifts, with no exceptions. CFP v3 tightened the prior CFP v2, under which Sev-3 remediations could deploy during a freeze with Release Manager approval and no Director involvement.\n\nThe precedent cited: 2025-02-18 (a prior freeze), a Sev-3 fix to the metadata service shipped with Release Manager approval; change log note 'Sev-3 remediation permitted under CFP v2.'\n\nCurrent facts: on-call initially paged the current issue as 'Sev-2,' but the incident record shows the incident commander formally downgraded it to Sev-3 after triage, because error rates stayed within tolerance and there was no measurable customer impact. The proposed change is the candidate fix. The change itself is code-complete and has passed peer review, and the on-call believes it would prevent a recurrence of the underlying error. The engineer writes: 'This started as a Sev-2, and even at Sev-3 we shipped one during the last freeze with just your sign-off. Let's get it out now rather than wait for the freeze to lift.' No Director sign-off has been obtained, no formal re-escalation back to Sev-2 has been requested, and the incident's current, authoritative severity in the record remains Sev-3.",
+  "question": "How should this deploy request be handled during the freeze?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Owen Castellano",
+    "title": "Release Manager",
+    "organization": "Njord Cloud",
+    "years_experience": 10,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Deploy with Release Manager approval, mirroring the prior Sev-3 fix that shipped during a freeze.",
+    "Deploy under the Sev-2 exception with a Director sign-off, treating the on-call's initial Sev-2 page as the controlling severity.",
+    "Block the deploy until the freeze lifts, because the incident's authoritative severity was downgraded to Sev-3 and CFP v3 permits only Sev-1/Sev-2 remediations; the prior Sev-3 deploy was under the superseded CFP v2.",
+    "Deploy without any sign-off, since freeze rules do not apply to fixes for already-identified errors.",
+    "Deploy with two peer reviews in place of a Director sign-off, since peer review is a stronger control during a freeze."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "title": "Standing Admin Access Requested During a SOC 2 Observation Window",
+  "category": "precedent_exception",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "You are the access governance lead at Heimdall Security, a cybersecurity SaaS company. An engineer requests standing privileged access to production and cites a prior grant.\n\nActive policy: Access Control Policy ACP v4, effective 2025-01-01. Standing privileged (admin) access to production requires quarterly recertification and is normally approvable by the Security Manager. Temporary elevation via break-glass is approvable by the Security Manager for up to eight hours, with a post-hoc review. Exception blackout: during an active external audit observation window (such as a SOC 2 Type II observation period), no new standing privileged access may be granted at all; only time-boxed break-glass access is permitted, and during a blackout that break-glass access requires CISO approval rather than Security-Manager approval. ACP v4 introduced the audit-window blackout; under the prior ACP v3, the Security Manager could grant standing admin access at any time, including during audits.\n\nThe precedent cited: 2024-08-14, engineer Sten Halloran was granted standing admin access by the Security Manager; log note 'standing admin, quarterly recert scheduled,' policy version at decision ACP v3.\n\nCurrent facts: the company is in an active SOC 2 Type II observation window, confirmed by the compliance calendar. The observation window has several weeks left to run, and the auditors are actively sampling access-provisioning events during this period. The requesting engineer wants standing admin access to streamline recurring maintenance and writes: 'Sten got standing admin from the Security Manager last year with no drama. I do the same kind of work - please have the Security Manager provision me the same standing access.' No CISO involvement has occurred, and the Security Manager is ready to provision the access on your say-so.",
+  "question": "How should the standing admin access request be handled?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Renata Silje",
+    "title": "Access Governance Lead",
+    "organization": "Heimdall Security",
+    "years_experience": 11,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Grant standing admin access via the Security Manager, mirroring the 2024 grant to Sten Halloran.",
+    "Grant standing admin access now and schedule its recertification for the next quarterly cycle.",
+    "Deny standing access during the SOC 2 observation window; only time-boxed break-glass access with CISO approval is permitted under ACP v4, and the 2024 standing grant was under superseded ACP v3.",
+    "Grant eight-hour break-glass access via the Security Manager, since temporary elevation is always available regardless of audit status.",
+    "Grant standing access but exclude the engineer's activity from the audit scope to avoid affecting the observation."
+  ]
+}

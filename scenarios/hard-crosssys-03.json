@@ -1,0 +1,25 @@
+{
+  "title": "Tahoe Systems expansion order: 'standard list-price add-on' versus a triggered MFN clause",
+  "category": "cross_system_synthesis",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "Tahoe Systems' deal desk is booking a $2.1M expansion for an enterprise customer, Braylon Corp, adding three SKUs to an existing subscription. In the #deal-desk Slack channel the account exec writes: 'Simple expansion - just add the new modules at list. Braylon's happy, they're not asking for a discount, and we need this booked before quarter close. No approvals needed since there's no discount involved.' Posted Thursday.\n\nOther systems complicate the booking. In the CLM (contract-lifecycle) system, Braylon's master agreement contains a most-favored-nation pricing clause: Braylon is entitled to the lowest per-unit price Tahoe grants any customer of comparable size for the same SKU during the term. In CPQ, the new SKUs are being quoted at published list. In the CRM, a deal closed 40 days ago sold two of those same three SKUs to a similarly sized customer, Odell Industries, at a 34% discount. In the billing system, Braylon is Tahoe's second-largest account by seat count, squarely 'comparable size.' And a legal-review ticket opened this morning flags: 'MFN obligation may be live on Braylon term - confirm pricing parity before any new order on covered SKUs.'\n\nEach fact is individually benign: booking at list needs no discount approval, one prior deal is routine, an MFN clause is boilerplate, and a legal ticket is just a checklist item. But together - an active MFN clause, a recent deeper discount to a comparable customer on the same SKUs, and Braylon's comparable size - they mean booking Braylon at list does not protect margin; it creates a contractual obligation to extend the 34% price and exposes Tahoe to retroactive credits and breach. The AE's 'no approvals needed' read predates the legal ticket and ignores the Odell deal. You run deal desk and the order is in your queue to release. What should you do?",
+  "question": "What should the deal desk do with the Braylon expansion order?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Sondra Keil",
+    "title": "Deal Desk Manager",
+    "organization": "Tahoe Systems",
+    "years_experience": 9,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Book the order at list price before quarter close; no discount is being given, so no approval or review is required.",
+    "Apply a small loyalty discount to keep Braylon satisfied and book the order this quarter.",
+    "Hold the order and route to legal and pricing to apply MFN parity: the active most-favored-nation clause plus the recent 34% discount to a comparable-size customer on the same SKUs obligates Tahoe to match that price, so booking at list creates breach and retroactive-credit exposure.",
+    "Escalate for a standard discount-exception approval since the deal exceeds $2M, then book at the approved discount."
+  ]
+}

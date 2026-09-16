@@ -1,0 +1,26 @@
+{
+  "title": "$800 Fee Reversal Without a Hardship Determination",
+  "category": "precedent_exception",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "You oversee fee adjustments at Tyr Bank, a retail bank. A branch is asking to reverse an $800 fee at the Branch Manager level and cites two prior reversals.\n\nActive policy: Fee Reversal Policy FRP v3, effective 2025-01-01. Overdraft and late fees may be reversed as follows: a Personal Banker may reverse up to $100 per incident; a Branch Manager may reverse $100 to $500; anything above $500 requires Regional approval. Exception: a documented financial-hardship determination lets a Branch Manager reverse up to $1,000. FRP v3 lowered the Branch-Manager cap to $500 from the prior FRP v2, under which a Branch Manager could reverse up to $1,000 in the ordinary course.\n\nThe branch forwards two records. First, the one cited: 2024-05-14, an $800 fee reversed by a Branch Manager; log note 'within BM authority (<= $1,000),' policy version at decision FRP v2. Second: 2025-02-09, a $600 reversal whose note reads verbatim 'one-time goodwill reversal to retain a long-tenured customer; non-binding and non-precedential.'\n\nCurrent facts: customer Surt Holdings is disputing an $800 overdraft fee. No financial-hardship determination has been filed, and the customer's stated reason is that they 'lost track of the balance.' The customer is in good standing but has not filed any hardship application, and the branch has not gathered any income or expense documentation that a hardship determination would require. The Branch Manager writes: 'We reversed $800 at the branch level last May, and we did a $600 goodwill reversal in February. An $800 reversal here is squarely something I can sign - let's just process it and keep the customer happy.' The Regional approver is reachable the same day, and the customer has asked for a decision by end of day.",
+  "question": "How should the $800 fee reversal be handled?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Georgia Halloran",
+    "title": "Fee Adjustment Supervisor",
+    "organization": "Tyr Bank",
+    "years_experience": 10,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Reverse the $800 at the Branch Manager level, mirroring the May 2024 $800 reversal.",
+    "Reverse the $800 at the Branch Manager level under the financial-hardship exception, given the customer's difficulty tracking the balance.",
+    "Route the reversal to Regional approval, because $800 exceeds the $500 Branch-Manager cap under FRP v3 and no financial-hardship determination is on file; the 2024 $800 reversal was under superseded FRP v2.",
+    "Reverse up to $500 at the Branch Manager level and write off the remaining $300 automatically as a courtesy.",
+    "Reverse the $800 at the Branch Manager level, citing the February goodwill reversal as an established precedent for discretionary reversals."
+  ]
+}

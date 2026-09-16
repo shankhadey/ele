@@ -1,0 +1,25 @@
+{
+  "title": "The Price Match That Failed a New Deal-Size Floor by $2K",
+  "category": "temporal_consistency",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "A deal desk analyst at Morganite Cloud must decide how to respond to a competitive price-match request, given how a comparable request was handled earlier this year.\n\n**Price-Match Policy \u2014 version history**\n- Old policy (in force through 2024-04-30): Deal Desk may match a competitor's price with a written competitor quote, up to a 30% discount. There is no minimum deal size.\n- New policy (effective 2024-05-01, in force now): a competitive price-match requires both a written competitor quote AND a total contract value (TCV) of at least $250,000. Deals below that TCV are ineligible for a price-match and are capped at the standard 10% discount. Eligible price-matches are capped at 20%.\n\n**Prior decision A (2024-03-12)**\nCustomer 'Brightwater Systems' received a 27% price-match on a $180,000 TCV deal with a written competitor quote. Approved under the policy then in force.\n\n**Current request C (2024-09-25)**\nCustomer 'Fenwick Retail' requests a 27% price-match. Fenwick has a valid written competitor quote. The deal's TCV is $248,000.\n\n**Slack \u2014 #deal-desk**\nAE: 'We gave Brightwater a 27% match in March on a smaller deal than Fenwick's, with a quote just like Fenwick's. Fenwick should get the same treatment.'\nAnalyst: 'March was under the old price-match rule. Let me check Fenwick's TCV against the current floor before I match anything.'\n\nFenwick's TCV is $248,000, and the request falls under the current policy. The competitor quote Fenwick attached is current and verifiable, so the only open question is whether the deal itself qualifies for a price-match at all. The AE is pressing for a same-day answer to close the deal before the quarter-end cutoff.",
+  "question": "How should the analyst respond to Fenwick Retail's price-match request?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Owen Bradley",
+    "title": "Deal Desk Analyst",
+    "organization": "Morganite Cloud",
+    "years_experience": 8,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Grant a 27% price-match, consistent with Brightwater's March match on a smaller deal with a comparable quote.",
+    "Grant a 20% price-match, the maximum the current policy allows for an eligible match.",
+    "Decline the price-match and cap the deal at the standard 10% discount, because at $248,000 TCV it falls below the current $250,000 price-match floor.",
+    "Grant a price-match at the standard cap of 15% as a compromise given the strong competitor quote."
+  ]
+}

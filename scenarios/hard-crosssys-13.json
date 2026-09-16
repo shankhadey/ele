@@ -1,0 +1,25 @@
+{
+  "title": "Maggiore Cloud renewal 'flat and happy' versus an expiring ramp discount and unbilled overage",
+  "category": "cross_system_synthesis",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "Maggiore Cloud's deal desk is preparing a renewal quote for a customer, Halverson Group. In the #deal-desk Slack channel the account exec writes: 'Halverson's a happy customer - let's just renew them flat at their current rate. Low-risk renewal, no need to complicate it. They've been paying the same monthly for two years, keep it simple.' Posted Monday.\n\nOther systems complicate 'flat.' In the CPQ and original order form, Halverson's 'current rate' reflects a one-time 35% ramp incentive that the order form explicitly states applies to the initial term only and reverts to standard pricing at renewal. In the usage-metering system, Halverson has been consuming 140% of their committed capacity for the last six months. In the billing system, no overage has been invoiced because their contract's overage-billing flag was left off during onboarding. In the CRM, the account's committed-tier is two sizes below actual usage. And a finance note flags that renewing 'flat' would carry the temporary ramp discount into a permanent term and continue not billing overage - understating contract value by a large margin.\n\nEach signal is individually explainable: happy customers do renew, ramp incentives are common, and metering can run hot temporarily. But together - a ramp discount contractually limited to the initial term, sustained 140% overconsumption, overage never billed due to a misconfigured flag, and a committed tier far below real usage - they mean 'renewing flat' bakes in a temporary discount and forgoes substantial owed revenue, not a clean low-risk renewal. The AE's 'keep it simple' read ignores the ramp-term language and the metering data. You run deal desk. What should you recommend?",
+  "question": "What should the deal desk recommend for the Halverson renewal?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Giulia Ferraro",
+    "title": "Senior Deal Desk Analyst",
+    "organization": "Maggiore Cloud",
+    "years_experience": 8,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Renew flat at the current rate to keep the happy customer simple and low-risk, as the AE suggests.",
+    "Renew flat but add a small annual uplift to cover inflation, leaving the tier and overage settings unchanged.",
+    "Reprice the renewal to standard rates with a right-sized committed tier and enable overage billing, phasing the increase with the customer: the ramp discount was contractually initial-term only, usage runs at 140% of commit, and overage went unbilled due to a misconfigured flag, so 'flat' forfeits owed revenue.",
+    "Escalate the account to customer success as a churn risk before quoting any renewal."
+  ]
+}

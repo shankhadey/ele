@@ -1,0 +1,19 @@
+{
+  "title": "Sev-1 First-Response Deadline Under a Contract That Predates the SLA Rewrite",
+  "category": "policy_version",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "Jungfrau Systems commits to first-response times on severity-1 incidents under its Support SLA Policy, which is versioned into each customer contract. All SLA clocks run on US Eastern Time (ET).\n\nVersion 1 (in effect through 2025-05-31): \"For a severity-1 (Sev-1) incident, the first response is due within 4 hours of ticket creation, measured continuously 24 hours a day, 7 days a week.\"\n\nVersion 2 (effective 2025-06-01): \"For a Sev-1 incident, the first response is due within 1 hour of ticket creation. For customers below the Premium tier, the response clock runs only during business hours (08:00-20:00 ET) and pauses outside them.\" Version 2 adds a transition clause: \"The first-response SLA governing a contract is the version in effect on the contract's start date. Contracts started before June 1, 2025 use v1 (4-hour, 24/7) for their full term, regardless of when an incident occurs.\"\n\nThe CRM and ticketing systems show customer Talus Freight: Contract Start Date 2025-03-01, Tier Standard (below Premium). Ticket INC-7015: Severity 1, Created 2025-06-15 22:00 ET (a Sunday), First response not yet sent.\n\nThe support duty manager writes in #sev1 on 2025-06-15 at 22:10 ET: \"Talus just opened a Sev-1 at 22:00 on a Sunday. They're Standard tier, so under our current SLA the 1-hour clock is paused until business hours Monday. Should be fine to respond in the morning. What is the actual first-response deadline for INC-7015?\"\n\nUsing the policy history, the transition clause, and the CRM and ticketing records, determine the first-response deadline for INC-7015 in ET.",
+  "question": "What is the first-response deadline for INC-7015, in ET?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Elena Sokolova",
+    "title": "Support Operations Manager",
+    "organization": "Jungfrau Systems",
+    "years_experience": 10,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

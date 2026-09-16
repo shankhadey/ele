@@ -1,0 +1,25 @@
+{
+  "title": "The Commission Clawback Set by the Deal's Close Date",
+  "category": "temporal_consistency",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "A revenue-operations analyst at Zircon Software must decide how much sales commission to claw back after a customer churned, given how a comparable churn was handled earlier this year.\n\n**Commission Clawback Policy \u2014 version history**\n- Old policy (for deals closed through 2024-03-31): if a customer churns within 6 months of the deal closing, 100% of the commission is clawed back; after 6 months, no clawback.\n- New policy (for deals closed on or after 2024-04-01): the clawback window extends to 12 months, but the clawback is 50% of the commission, not 100%. The policy states that clawback terms are set by the deal's close date.\n\n**Prior decision A (2024-02)**\nA deal that closed in January 2024 churned in month 4 and had 100% of its commission clawed back. Note: 'Within 6 months; full clawback under the terms for that deal's close date.'\n\n**Current case C**\nA deal for customer 'Pelham Retail' closed on 2024-05-20. The customer churned in month 8, on 2025-01-20. The rep's commission on the deal was $12,000.\n\n**Slack \u2014 #revops**\nManager: 'We always claw back the full commission on a churn. This one churned, so claw back the whole $12K.'\nAnalyst 2: 'Month 8 is past six months anyway \u2014 shouldn't there be no clawback at all?'\nAnalyst: 'The clawback terms depend on the deal's close date. Let me check which policy this deal falls under.'\n\nThe deal closed on 2024-05-20 and churned in month 8. The churn is confirmed in the system as a full cancellation rather than a downgrade, and the rep's $12,000 commission was paid out in full at the original close. The analyst must determine the clawback amount for the finance adjustment this period.",
+  "question": "How much commission should be clawed back on the Pelham Retail deal?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Laila Hassan",
+    "title": "Revenue Operations Analyst",
+    "organization": "Zircon Software",
+    "years_experience": 7,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "$12,000 \u2014 the full commission, because commission is always clawed back on churn.",
+    "$0 \u2014 no clawback, because the customer churned in month 8, past the 6-month window.",
+    "$6,000 \u2014 50% of the commission, because the deal closed under the current policy, which applies a 12-month window and a 50% clawback, and month 8 falls inside 12 months.",
+    "$12,000 \u2014 full clawback, because month 8 falls within the current 12-month window."
+  ]
+}

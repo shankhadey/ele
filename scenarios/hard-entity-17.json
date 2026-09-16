@@ -1,0 +1,25 @@
+{
+  "title": "One Officer, Two Companies, No Common Control",
+  "category": "entity_resolution",
+  "domain": "sales_deal_desk",
+  "difficulty": "expert",
+  "scenario_text": "Babbitt Analytics runs an account-relationship check before extending a volume discount tied to a single corporate family, and must decide whether two customers are under common control. Account A-1 is \"Monel Robotics Inc.\" (EIN 27-1120445, D-U-N-S 08-551-2200), where Dr. Lena Frost serves as CEO. Account A-2 is \"Invar Diagnostics Inc.\" (EIN 45-8890762, DUNS 08-551-2277), where Dr. Lena Frost serves as a non-executive board director. A sales analyst proposes treating A-1 and A-2 as one controlled family, aggregating their spend to unlock the top discount tier, because \"the same person, Dr. Frost, is on both companies.\" The ownership records tell a different story: Monel Robotics is 70% owned by a venture fund and 30% by its founders (Frost holds 6%); Invar Diagnostics is 100% owned by an unrelated holding company, and Frost holds NO equity there, sitting only as an independent outside director appointed for domain expertise. There is no shareholder agreement, no voting arrangement, and no management overlap beyond one shared individual serving in different capacities. Common control for the discount program requires a controlling ownership or voting relationship between the accounts, not merely a shared individual. The two companies operate in different industries, file separately, and have distinct EINs and DUNS. The discount approval routes through deal desk today, and granting the top tier on aggregated spend that does not qualify would set a precedent finance cannot claw back at renewal. The analyst's draft groups the two accounts on the strength of Dr. Frost's name appearing in both companies' leadership pages, and even points to the shared \"08-551\" DUNS prefix as supporting evidence. Deal desk must determine whether any genuine ownership or voting control links the two accounts before deciding whether their spend may be combined for the tier.",
+  "question": "Are the two accounts under common control such that their spend should be aggregated?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Ariel Nakamura",
+    "title": "Deal Strategy Manager",
+    "organization": "Babbitt Analytics",
+    "years_experience": 9,
+    "domain_expertise": "sales_deal_desk"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Yes; a shared senior individual (Dr. Frost) on both companies establishes common control, so their spend aggregates.",
+    "No; a shared individual serving as CEO of one and outside director of the other does not create a controlling ownership or voting link, and the divergent ownership shows two independent companies.",
+    "Yes; because both DUNS numbers begin with the same 08-551 prefix, they belong to one corporate family.",
+    "Undeterminable; common control cannot be assessed unless both companies waive confidentiality on their cap tables."
+  ]
+}

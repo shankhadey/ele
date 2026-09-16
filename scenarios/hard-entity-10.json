@@ -1,0 +1,19 @@
+{
+  "title": "How Many Distinct Suppliers Are Really in This Spend File",
+  "category": "entity_resolution",
+  "domain": "procurement_vendor",
+  "difficulty": "expert",
+  "scenario_text": "Waspaloy Industrial is running supplier rationalization and must count how many DISTINCT legal entities are behind six vendor records in Coupa. The records: (1) \"Kovar Seals Inc.\" EIN 34-1120987. (2) \"Kovar Seals Incorporated\" EIN 34-1120987 (identical EIN; a spelling variant created by a different buyer). (3) \"Kovar Sealing Solutions LLC\" EIN 90-6612300 (different EIN; a genuinely separate company that licenses the Kovar brand under a trademark agreement, no ownership overlap). (4) \"Elgiloy Gaskets Ltd.\" UK Companies House 07781200, VAT GB771. (5) \"Elgiloy Gaskets Ltd.\" UK Companies House 07781200 (duplicate record, same company number, set up for a second remit-to address). (6) \"Elgiloy Gaskets GmbH\" German HRB 220145 (a separate German subsidiary of the UK company, distinct legal entity with its own registration). D&B confirms: records 1 and 2 are one entity (same EIN); record 3 is independent (brand licensee, not affiliated by ownership); records 4 and 5 are one UK entity (same company number); record 6 is a separate German legal entity though owned by the UK company. The analyst must report the count of distinct legal entities for the master-data cleanup, where duplicates collapse but separately registered entities (even affiliated ones) count individually. The rationalization program will automatically deactivate every vendor record beyond the confirmed distinct-entity set, so an inaccurate tally risks either paying a live supplier through a deactivated record or leaving redundant payees open to duplicate-payment fraud. The analyst's working sheet mixes spelling variants, a brand licensee, a second remit-to duplicate, and a foreign subsidiary, and the naive record count is six. Master-data governance requires the exact number of separate legal entities, with true duplicates merged and affiliated-but-separately-registered entities retained as distinct.",
+  "question": "How many distinct legal entities are represented across the six vendor records?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Owen Marsh",
+    "title": "Master Data Governance Lead",
+    "organization": "Waspaloy Industrial",
+    "years_experience": 11,
+    "domain_expertise": "procurement_vendor"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

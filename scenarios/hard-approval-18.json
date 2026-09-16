@@ -1,0 +1,26 @@
+{
+  "title": "Comparative Ad Claim Signed by a Lapsed Delegate With No Regulatory Review",
+  "category": "approval_chain",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "A marketing-compliance audit agent at Sorrel Nutrition is validating approval to publish an external advertising claim.\n\n**Advertising Claim Approval Authority Matrix**\n- Non-comparative, qualitative claim (no performance data): Brand Manager approval.\n- Any performance or efficacy claim: Legal review AND a substantiation file on record.\n- Any COMPARATIVE claim (naming or referencing a competitor's product): Legal review AND Regulatory Affairs review, in addition to the substantiation file.\n- Delegation rule: Legal review may be performed by an Associate Counsel only under a written delegation from the General Counsel with an explicit effective window; a review signed outside that window does not count as Legal review.\n\n**Claim Approval Record**\n- AD-2091: 'Clinically shown to lower fasting glucose 30% more than BrandX' (names competitor BrandX; cites a clinical endpoint).\n- Substantiation file: attached. Legal review: 'Associate Counsel - Ben H., signed 2026-05-20.' Regulatory Affairs review: (empty).\n\n**Delegation on file**\n- 'The General Counsel delegates Legal advertising-review authority to Associate Counsel Ben H., effective 2026-03-01 through 2026-04-30, inclusive.'\n\n**Email (reconstructed)**\n- Brand lead -> Ben H. (2026-05-19): 'Need Legal sign-off on the BrandX comparison claim to launch this week.'\n- Ben H. (2026-05-20): 'Reviewed, I'm comfortable, signing under my delegation.'\n- (no Regulatory Affairs review appears; the delegation window ended 2026-04-30)\n\nThe claim is comparative and cites a clinical endpoint. The Associate Counsel signed 2026-05-20, after his delegation window closed on 2026-04-30, and no Regulatory Affairs review exists.",
+  "question": "What should the audit conclude about the authorization of this advertising claim?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Ben Hartmann",
+    "title": "Marketing Regulatory Compliance Counsel",
+    "organization": "Sorrel Nutrition",
+    "years_experience": 10,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Valid - the substantiation file is attached and Associate Counsel provided Legal review under his delegation, which covers the claim.",
+    "Valid, but a documentation cleanup is needed - simply add a Regulatory Affairs note to the file; the Legal review already stands.",
+    "Invalid on two grounds - the comparative claim requires Regulatory Affairs review, which is entirely missing, AND the Associate Counsel's Legal review was signed 2026-05-20, after his delegation lapsed on 2026-04-30, so it does not count as a valid Legal review either; the claim must be re-reviewed by an authorized Legal signer and by Regulatory Affairs.",
+    "Invalid - only the Regulatory Affairs review is missing; the Associate Counsel's Legal sign-off is valid, so obtaining Regulatory review alone completes the approval.",
+    "Invalid - comparative claims require CEO approval before publication, so the claim must be escalated to the CEO."
+  ]
+}

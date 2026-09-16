@@ -1,0 +1,25 @@
+{
+  "title": "The DBA That Points to the Wrong Parent",
+  "category": "entity_resolution",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "Duralumin SaaS is resolving an entitlement dispute where a trade name maps to the wrong legal entity in the CRM. A ticket arrives from ops@northgate-clinic.com claiming an Enterprise SLA under the trade name \"Northgate Clinic.\" The CRM has a note linking \"Northgate Clinic\" as a d/b/a of \"Vitallium Health Systems Inc.\" (EIN 45-2200761), which holds an Enterprise contract. But the state DBA registry, pulled fresh, shows \"Northgate Clinic\" is a registered fictitious name of \"Nimonic Medical Group LLC\" (EIN 88-6612044), NOT Vitallium Health Systems. The CRM note was entered two years ago and is stale: Northgate Clinic was originally operated by Vitallium under that DBA, but in 2023 the clinic was sold to Nimonic Medical Group LLC, which re-registered the \"Northgate Clinic\" fictitious name under its own entity effective 2023-06-01 and now operates it. Nimonic Medical Group holds only a STANDARD support plan. Vitallium Health Systems retained the Enterprise contract but no longer operates Northgate Clinic; its Enterprise entitlement now covers its OTHER facilities, not Northgate. The email domain northgate-clinic.com transferred to Nimonic in the sale. An agent, trusting the stale CRM note, is about to grant Enterprise support to the Northgate ticket by linking it to Vitallium's contract. The SLA clock on the ticket is already running at Enterprise priority because the agent trusted the two-year-old CRM linkage, while finance separately shows only Standard-tier billing associated with the northgate-clinic.com domain this year. Support operations must reconcile the stale CRM d/b/a note against the freshly pulled state fictitious-name registry, which now maps the trade name to a different operating entity, before either honoring the Enterprise SLA or downgrading the ticket to the plan the current owner actually holds.",
+  "question": "What support entitlement applies to the Northgate Clinic ticket, and which legal entity currently owns that trade name?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Sasha Belova",
+    "title": "Customer Success Operations Manager",
+    "organization": "Duralumin SaaS",
+    "years_experience": 8,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Enterprise support via Vitallium Health Systems Inc., since the CRM links 'Northgate Clinic' as its d/b/a and Vitallium holds the Enterprise contract.",
+    "Standard support; 'Northgate Clinic' is now a registered fictitious name of Nimonic Medical Group LLC (EIN 88-6612044), which owns the clinic and holds only a Standard plan.",
+    "Enterprise support, because the trade name 'Northgate Clinic' has always carried the Enterprise SLA regardless of which entity operates it.",
+    "No entitlement; a d/b/a cannot hold any support plan, so the ticket must be rejected."
+  ]
+}

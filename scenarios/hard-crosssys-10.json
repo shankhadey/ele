@@ -1,0 +1,25 @@
+{
+  "title": "Victoria Data migration 'transient retry' versus a non-idempotent double-apply",
+  "category": "cross_system_synthesis",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "Victoria Data ran an overnight backfill migration to recompute account balances. In the #data-platform Slack channel the on-call engineer writes: 'The migration job failed once on a timeout, then the orchestrator auto-retried and it completed green. Classic transient infra blip - the retry succeeded, balances look populated. Closing this out, nothing to see.' Posted 06:10.\n\nOther systems tell a harder story. In the job orchestrator, the first run failed after processing roughly 40% of partitions, and the retry restarted the whole job from the beginning rather than resuming - and the transform is an additive UPDATE (balance = balance + delta), not idempotent. In the database, row-level audit shows the first 40% of accounts have a delta applied twice. In the reconciliation service, aggregate total balance now exceeds the source-of-truth ledger by an amount equal to the deltas for exactly that 40% slice. In the BI dashboard, the balances 'look fine' because it reads a cached daily snapshot from before the migration. And a support ticket from finance notes 'a handful of customers report their balance is higher than expected.'\n\nEach signal is individually explainable: retries usually are transient, dashboards lag, and a few balance complaints could be user error. But together - a whole-job restart of a non-idempotent additive transform, an audit showing the first 40% double-applied, a reconciliation overage matching exactly that slice, a dashboard masked by a stale cache, and customer reports of inflated balances - they describe data corruption from a double-apply, not a benign transient retry. The engineer's 'transient blip' read ignores that the retry reran completed work. You are the incident commander. What is the correct action?",
+  "question": "What should the incident commander do about the migration result?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Nadia Coleman",
+    "title": "Staff Data Reliability Engineer",
+    "organization": "Victoria Data",
+    "years_experience": 11,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Accept the green retry and close the incident; the job completed successfully and balances are populated.",
+    "Re-run the migration once more to be safe, since reruns have been succeeding on retry.",
+    "Freeze writes to the affected balances and reverse the duplicate delta on the first 40% of partitions (or restore that slice from pre-migration backup): the whole-job restart of a non-idempotent additive transform double-applied those accounts, matching the reconciliation overage, so the data is corrupted despite the green status.",
+    "Clear the BI cache so the dashboard refreshes, then monitor customer balance complaints before deciding."
+  ]
+}

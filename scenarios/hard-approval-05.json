@@ -1,0 +1,19 @@
+{
+  "title": "Executive Offer Package Whose Aggregate Value Crosses the Board Threshold",
+  "category": "approval_chain",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "A compensation-governance audit agent at Anise Biosciences is validating approval on a senior new-hire package.\n\n**New-Hire Compensation Authority Matrix**\n- Total first-year compensation value up to $150,000: VP of the hiring function + HRBP.\n- $150,001-$400,000: CHRO + Compensation Committee of the Board.\n- Above $400,000 (any non-officer), OR any hire who is a Section 16 executive officer: Compensation Committee AND full Board of Directors.\n- 'Total first-year compensation value' aggregates base salary, target cash bonus, sign-on bonus, and the first-year grant-date value of any equity award.\n\n**HRIS Offer Record**\n- OFR-2231: 'VP, Clinical Data' (a non-officer role).\n- Base salary: $265,000. Target cash bonus: $53,000. Sign-on bonus: $50,000. First-year equity grant-date value: $70,000.\n- Approved by (field): 'CHRO - Marisol A.; Compensation Committee - minute ref CC-2026-04.'\n\n**Email / minutes (reconstructed)**\n- Recruiter -> CHRO: 'Candidate accepts at $265K base, $53K target bonus, $50K sign-on, $70K first-year equity. Need sign-off.'\n- Marisol A. (CHRO): 'Base plus bonus is $318K - inside the Comp Committee band. I'll take it to Committee.'\n- Comp Committee minute CC-2026-04: 'Approved the $318,000 base-plus-bonus package for the VP, Clinical Data hire.'\n- (no full Board approval appears in the HRIS or minutes; the sign-on and equity are not itemized in the minute)\n\nThe role is not a Section 16 officer position. The CHRO and Committee reasoned from a $318,000 figure that excluded the sign-on bonus and first-year equity.",
+  "question": "Which approving body's sign-off is required for this package but is absent from the record?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Marisol Acosta",
+    "title": "Head of Total Rewards",
+    "organization": "Anise Biosciences",
+    "years_experience": 14,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

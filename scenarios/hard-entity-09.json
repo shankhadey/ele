@@ -1,0 +1,25 @@
+{
+  "title": "One VAT Number, Two Members of a Group",
+  "category": "entity_resolution",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "Inconel Trading UK is reconciling counterparties for an intercompany credit review and finds two vendors sharing a VAT registration number. Vendor V-210 is \"Monel Bakeries Ltd.\" (Companies House 05512300, EIN/UTR distinct, registered Leeds). Vendor V-260 is \"Monel Distribution Ltd.\" (Companies House 06690145, registered Sheffield). Both invoices display the identical VAT number GB 442 8890 33. An analyst concludes they must be the same legal entity because \"you cannot have two companies on one VAT number.\" The finance director's file, however, documents that both companies are members of a single UK VAT group registration, with \"Monel Group Holdings Ltd.\" (Companies House 04410022) as the representative member; a VAT group shares one VAT number across multiple distinct legal entities for VAT accounting, while each member remains a separate company with its own Companies House registration, own statutory accounts, and own board. The two subsidiaries have different company numbers, different registered offices, different bank accounts, and file separate annual accounts. For the credit review, exposure and contracting must be assessed per legal entity, even though VAT is reported jointly. The analyst is about to collapse V-210 and V-260 into a single counterparty on the strength of the shared VAT number, which would misstate the credit limit and hide that two distinct debtors exist. The credit committee meets tomorrow morning and expects one exposure figure per obligor. The analyst's draft has already collapsed the two records into a single counterparty on the strength of the shared VAT number, which halves the apparent number of debtors and doubts the per-name limit utilization. Companies House data shows two separate registrations and the finance director's file documents a group VAT registration, but the surface signal keeps pointing toward a merge. The director must decide how many legal entities exist before the committee sets a ceiling.",
+  "question": "How should the two vendors be treated given the shared VAT number?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Claire Fenwick",
+    "title": "Credit Risk Analyst",
+    "organization": "Inconel Trading UK",
+    "years_experience": 9,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Merge V-210 and V-260 into one counterparty, because a shared VAT number means they are legally the same company.",
+    "Keep them as two distinct legal entities that happen to share a group VAT registration; assess credit and contracts per company using their separate Companies House numbers.",
+    "Reassign both to Monel Group Holdings Ltd., since the representative member of a VAT group owns all the members' contracts.",
+    "Treat V-210 as the parent of V-260 because it has the lower company number, and consolidate the exposure upward."
+  ]
+}

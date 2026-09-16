@@ -1,0 +1,19 @@
+{
+  "title": "Commission Clawback on a Deal Closed Before the Window Shortened",
+  "category": "policy_version",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "Rainier Software administers sales commissions and clawbacks under its Incentive Compensation Policy.\n\nPolicy v1 (in effect through 2024-12-31): \"If a customer churns within 6 months of the deal-close date, 100% of the commission paid on that deal is clawed back. No proration applies.\"\n\nPolicy v2 (effective 2025-01-01): \"If a customer churns within 4 months of the deal-close date, 50% of the commission paid is clawed back.\" v2 adds a transition clause: \"Commissions on deals closed before January 1, 2025 remain subject to the v1 clawback terms (6-month window, 100%, no proration). Deals closed on or after January 1, 2025 follow v2. The deal-close date is the contract signature date, not the invoice or payment date.\"\n\nThe commissions ledger shows deal D-4410 (rep: T. Okafor, customer: Summit Freight): Contract Signature Date 2024-11-15, Invoice Date 2024-12-05, Commission Paid $40,000. The churn management system records that Summit Freight gave notice and fully terminated on 2025-03-10, citing a budget freeze rather than any service failure. The rep's payout on D-4410 was disbursed in the December 2024 commission run, and no retention exception or credit was logged against the account.\n\nA compensation analyst emails the RevOps controller on 2025-03-12: \"Processing the Summit Freight clawback. The deal signed in November 2024, but the churn happened in March 2025, which is only about four months out. Under the new rule that's a 50% clawback, but the deal is old. How much do we claw back from Okafor?\"\n\nUsing the policy history, the transition clause, and the ledger, determine the clawback amount on D-4410.",
+  "question": "What is the clawback amount on deal D-4410?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Devin Marsh",
+    "title": "Sales Compensation Manager",
+    "organization": "Rainier Software",
+    "years_experience": 9,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Garda Devices termination: 'documented performance' versus post-leave-request timing",
+  "category": "cross_system_synthesis",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "Garda Devices is about to terminate a mid-level engineer for performance. In the #hr-approvals Slack channel the HR business partner writes: 'This one's clean - there's a documented PIP, the manager has been clear about the gaps, and the employee acknowledged the plan. Performance-based, well-papered. Approving the termination for Friday.' Posted Tuesday.\n\nOther systems complicate the timeline. In the HRIS, the employee submitted a request for intermittent medical leave (an FMLA-qualifying condition) 11 weeks ago. In the performance system, the PIP was opened nine weeks ago - two weeks after the leave request - and the employee's two prior annual reviews were rated 'exceeds.' In the leave-management system, the intermittent leave was approved and the employee has used it sporadically since. In email, the manager wrote to the HRBP eight weeks ago: 'Ever since the leave thing started, the team can't count on him being here. We need to manage him out.' In the ticketing system, the employee's actual delivery metrics are near team median, not clearly deficient. And the employee is 58, within a protected age band.\n\nEach signal is individually explainable: PIPs are legitimate tools, performance can genuinely dip, and one manager comment can be clumsy wording. But together - a leave request immediately preceding a first-ever PIP, two prior 'exceeds' reviews, a manager email tying the action to the leave, median (not deficient) metrics, and protected age - they describe a termination with serious FMLA-retaliation and discrimination risk, not a clean performance case. The HRBP's 'clean' read predates the leave-timeline and manager-email review. You lead HR. What should you do?",
+  "question": "What should the HR lead do about the pending termination?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Marcia Devlin",
+    "title": "VP of Human Resources",
+    "organization": "Garda Devices",
+    "years_experience": 14,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

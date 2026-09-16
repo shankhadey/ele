@@ -1,0 +1,26 @@
+{
+  "title": "A Bad-Debt Write-Off That Only Looks Like It Is Missing a Control",
+  "category": "approval_chain",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "A financial-controls audit agent at Turmeric Industrial is validating authorization on a bad-debt write-off.\n\n**Bad-Debt Write-Off Authority Matrix**\n- Up to $100,000: Controller.\n- $100,001-$500,000: Controller AND VP Finance.\n- Above $500,000: Controller AND VP Finance AND CFO.\n- Related-party override: ANY write-off of a receivable owed by a related party (an affiliate, officer, or entity under common control) requires Audit Committee notification regardless of amount.\n\n**ERP Write-Off Record**\n- WO-8890: Write off receivable from 'Delta Freight Co.', $280,000.\n- Counterparty classification (per vendor master): third-party customer; not an affiliate, officer, or entity under common control.\n- Posted: 2026-06-30. Approved by (field): 'Controller - Grace H.; VP Finance - Tomas R.'\n\n**Email (reconstructed)**\n- Grace H. (Controller) -> VP Finance: 'Delta Freight went into liquidation; $280K is uncollectible. I'll approve the write-off - co-sign?'\n- Tomas R. (VP Finance): 'Reviewed the aging and the liquidation notice. Co-signed.'\n- Analyst: 'Delta isn't one of our affiliates, right? Just checking the related-party rule.'\n- Grace H.: 'Correct - arm's-length customer, no common ownership. Standard write-off.'\n\nThe amount is $280,000, and the counterparty is an unrelated third-party customer confirmed in the vendor master. Both the Controller and VP Finance approvals are recorded.",
+  "question": "What should the audit conclude about the authorization of this write-off?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Grace Hollis",
+    "title": "Corporate Controller",
+    "organization": "Turmeric Industrial",
+    "years_experience": 15,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Valid and complete - $280,000 falls in the $100,001-$500,000 tier, which requires the Controller and VP Finance, and both approvals are recorded; the related-party override does not apply because Delta is an unrelated third party.",
+    "Invalid - a write-off of this size requires Audit Committee notification, which is missing from the record.",
+    "Invalid - the CFO must also sign off on a write-off of this magnitude, so the approval is incomplete.",
+    "Valid, but a documentation cleanup is needed - re-confirm Delta's related-party status in writing and re-file the liquidation notice before the approval can be relied upon.",
+    "Invalid - bad-debt write-offs above $250,000 must be escalated to the full Board, so this must be re-approved by the Board."
+  ]
+}

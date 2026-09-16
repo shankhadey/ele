@@ -1,0 +1,19 @@
+{
+  "title": "PTO Carryover at the Year-End Boundary When the Cap Just Dropped",
+  "category": "policy_version",
+  "domain": "hr_people_ops",
+  "difficulty": "expert",
+  "scenario_text": "Hood Logistics governs unused paid time off (PTO) under its Leave Policy, which sets both an annual carryover cap and a deadline to use carried hours.\n\nVersion 1 (in effect through 2024-12-31): \"Employees may carry over up to 120 hours of unused PTO into the next calendar year; hours above the cap are forfeited at year end. Carried-over hours must be used by March 31 of the following year or they are forfeited.\"\n\nVersion 2 (effective 2025-01-01): \"The carryover cap is 80 hours; excess is forfeited at year end. Carried-over hours must be used by February 28 of the following year.\" Version 2 adds a transition clause: \"The carryover cap and the use-by deadline applied at a given year-end boundary are those of the policy version in effect on December 31 of the year being closed. Hours carried from the 2024 balance into 2025 are governed by the version in effect on December 31, 2024.\"\n\nThe HRIS shows employee R. Delgado with an unused PTO balance of 145 hours as of 2024-12-31. No leave was scheduled between the year-end close and the messages below.\n\nDelgado's manager writes to HR shared services on 2025-01-06: \"Closing out Delgado's PTO. They ended the year with 145 hours. With the new 80-hour cap that just kicked in, I assume only 80 rolls over and it has to be used by the end of February. How many hours actually carry into 2025, and what's the real use-by date?\"\n\nUsing the policy history, the transition clause, and the HRIS balance, determine the hours that carry into 2025 and the deadline to use them.",
+  "question": "How many PTO hours carry into 2025 for R. Delgado, and by what date must they be used?",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Corinne Vasquez",
+    "title": "Senior HR Business Partner",
+    "organization": "Hood Logistics",
+    "years_experience": 10,
+    "domain_expertise": "hr_people_ops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

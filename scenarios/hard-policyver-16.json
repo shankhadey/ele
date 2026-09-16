@@ -1,0 +1,26 @@
+{
+  "title": "Fiscal Period and FX Rate for a Sale Shipping Across the Year-End",
+  "category": "policy_version",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "Eiger Trading recognizes foreign-currency product revenue under its Revenue and FX Policy. The fiscal year is the calendar year.\n\nVersion 1 (in effect for FY2024, through 2024-12-31): \"Foreign-currency revenue is recorded at the spot rate on the transaction date, and the transaction is recognized in the fiscal period containing the transaction date.\"\n\nVersion 2 (effective FY2025, 2025-01-01): \"Foreign-currency revenue is recorded at the shipment month's average rate, and the transaction is recognized in the fiscal period containing the shipment date.\" Version 2 adds a transition clause: \"The governing version, the applicable FX method, and the fiscal-period assignment are all determined by the shipment date. Transactions with a shipment date in FY2024 use v1; transactions with a shipment date in FY2025 use v2. The order date does not affect period assignment.\"\n\nThe order and logistics systems show sale S-3390 (customer: Ridgecrest GmbH, currency EUR): Order Date 2024-12-28, Ship Date 2025-01-03, Invoice Date 2025-01-05, Amount EUR 400,000, Incoterms delivered-at-port. The logistics system confirms the goods physically departed on 2025-01-03, and the treasury system holds both a 2024-12-28 EUR spot rate and a published January 2025 EUR monthly average rate. No revenue was accrued for this sale in the December 2024 close.\n\nA revenue accountant emails the controller on 2025-01-06: \"Booking the Ridgecrest sale. The order came in December 28, so I was going to land it in FY2024 at the December 28 spot rate. But it shipped January 3 and invoiced January 5. Which fiscal year does the revenue belong in, and which FX rate do I use?\"\n\nUsing the policy history, the transition clause, and the order and logistics records, determine the fiscal-period assignment and FX method for S-3390.",
+  "question": "In which fiscal period is S-3390 recognized, and at what FX rate?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Anders Holm",
+    "title": "Revenue Controller",
+    "organization": "Eiger Trading",
+    "years_experience": 13,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "FY2025 (January), at the January 2025 monthly average rate, because v2 governs by the 2025-01-03 shipment date.",
+    "FY2024, at the 2024-12-28 spot rate, because the order date determines the period under v1.",
+    "FY2025, at the 2025-01-03 spot rate, recognizing in the shipment period but using v1's spot-rate method.",
+    "FY2024, at the December 2024 monthly average rate, combining the prior fiscal year with the new averaging method.",
+    "FY2025, at the 2025-01-05 invoice-date spot rate, because the invoice date drives recognition."
+  ]
+}

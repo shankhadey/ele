@@ -1,0 +1,25 @@
+{
+  "title": "The Correspondent Bank on the Wire Instructions",
+  "category": "entity_resolution",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "scenario_text": "Stellite Capital is validating two international payees and its fraud rule flags them as the same entity because their wire instructions share a SWIFT/BIC and an intermediary account. Payee V-40 is \"Nimonic Textiles Pvt Ltd\" (India, CIN L17110MH..., beneficiary account at a Mumbai branch, IFSC HDFC0001234). Payee V-55 is \"Duralumin Apparel Ltd\" (Bangladesh, distinct registration, beneficiary account at a Dhaka bank). Both sets of USD wire instructions route through the SAME correspondent/intermediary bank in New York (BIC CITIUS33, intermediary account 36xxxxx1) before crediting the respective beneficiary accounts. The analyst reads the shared intermediary BIC and account as proof the two payees are one company hiding behind two names. Treasury explains that a correspondent (intermediary) bank is a shared USD-clearing conduit used by countless unrelated beneficiaries in emerging markets; the intermediary BIC and account belong to the correspondent, not to either beneficiary. The BENEFICIARY details differ entirely: different countries, different company registrations, different beneficiary banks (HDFC Mumbai vs a Dhaka bank), different beneficiary account numbers, different tax IDs. There is no ownership link in D&B. The analyst is about to merge the two payees and freeze payments as suspected structuring. The compliance case must be dispositioned before the weekly payment file transmits tonight, and a false \"structuring\" finding would trigger a suspicious-activity report and freeze legitimate trade payments to two suppliers on different continents. The analyst's draft memo already recommends merging the records and holding both wires, while treasury pushes back that the overlap is only at the correspondent-bank layer. The compliance officer must determine whether the shared intermediary details reflect one hidden entity or a routine shared USD-clearing conduit before releasing the file.",
+  "question": "Do the shared correspondent-bank details indicate the two payees are the same entity?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Ishaan Kapoor",
+    "title": "Treasury Operations Manager",
+    "organization": "Stellite Capital",
+    "years_experience": 10,
+    "domain_expertise": "finance_revops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Yes; a shared intermediary BIC and intermediary account prove the two payees are one company using two names.",
+    "No; the shared details belong to a common USD correspondent bank, and the divergent beneficiary banks, accounts, registrations, and countries show two unrelated payees.",
+    "Yes; because emerging-market payees are high risk, a shared correspondent bank is sufficient to treat them as one and freeze both.",
+    "Undeterminable without seeing whether both companies share a director, since correspondent banks are irrelevant to identity."
+  ]
+}

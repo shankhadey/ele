@@ -1,0 +1,25 @@
+{
+  "title": "Peipus Securities surveillance alert: 'market-making false positive' versus pre-announcement MNPI trading",
+  "category": "cross_system_synthesis",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "Peipus Securities' trade-surveillance system flags a cluster of trades by an employee in the shares of Corveth Inc. In the #trade-surv Slack channel the surveillance analyst writes: 'This is a wash-trade/pattern false positive from the market-making desk - they quote both sides in this name constantly and the model over-flags them. I've cleared these before for this desk. Dispositioning as false positive.' Posted Monday.\n\nOther systems complicate the disposition. In the order-management system, the flagged trades are in a personal/employee account, not the market-making book, and are one-directional accumulation of calls, not two-sided quoting. In the deal-management system, Peipus's advisory arm is on a wall-crossed engagement for a pending Corveth acquisition, announced publicly this morning - after the trades. In the information-barrier access logs, the employee accessed the Corveth deal data room six days ago, before the accumulation began. In the communications-surveillance system, a flagged personal-device message reads: 'load up on CVH before end of month, trust me.' And the position was closed for a large gain minutes after the announcement.\n\nEach signal is individually explainable: market-making does over-trigger models, employees hold personal accounts, and data-room access can be incidental. But together - trades in a personal account rather than the MM book, one-directional call accumulation, deal-room access preceding the buying, an M&A announcement after the trades, an incriminating personal-device message, and a same-day close for a large gain - they describe likely insider trading on material non-public information, not a market-making false positive. The analyst's 'MM desk' read misidentifies the account and predates linking the deal timeline. You lead surveillance/compliance. What should you do?",
+  "question": "What should the surveillance/compliance lead do about the flagged trades?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Gregor Tammick",
+    "title": "Head of Trade Surveillance and Compliance",
+    "organization": "Peipus Securities",
+    "years_experience": 13,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Disposition the alert as a market-making false positive, consistent with prior clearances for that desk.",
+    "Clear the alert but add the employee's account to an enhanced-monitoring watch list for future activity.",
+    "Escalate to a formal insider-trading investigation with legal, preserve communications and access logs, and consider trading restrictions and regulatory reporting: personal-account one-directional accumulation, pre-announcement deal-room access, an incriminating message, and a same-day close for gain around a wall-crossed deal indicate likely MNPI trading, not a market-making artifact.",
+    "Refer the matter to the market-making desk supervisor to review the desk's quoting behavior in the name."
+  ]
+}

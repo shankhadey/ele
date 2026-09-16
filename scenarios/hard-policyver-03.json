@@ -1,0 +1,26 @@
+{
+  "title": "SLA Credit During the Initial Term After the Credit Table Changed",
+  "category": "policy_version",
+  "domain": "customer_success_support",
+  "difficulty": "expert",
+  "scenario_text": "Shasta Networks issues service credits under its SLA Credit Policy, which is incorporated into customer contracts by reference.\n\nVersion 1 (in effect through 2025-03-31): \"For any calendar month, if monthly uptime is below 99.9%, the customer receives a service credit of 10% of that month's fee; if below 99.0%, 25% of that month's fee.\"\n\nVersion 2 (effective 2025-04-01): \"Below 99.9%: 5% credit. Below 99.0%: 15% credit. Below 95.0%: 30% credit.\" Version 2 adds a transition clause: \"The SLA credit table applicable to a contract is the version incorporated at contract signing, and it governs for the entire initial term. Upon any renewal, the then-current SLA version applies to the renewal term.\"\n\nThe CRM shows customer Glacier Media: Contract Signed 2024-10-01, Initial Term 12 months (through 2025-09-30), Monthly Fee $50,000, Status active, not yet renewed, with the renewal quote still in drafting. The monitoring system reports Glacier Media's April 2025 uptime at 98.7%, driven by a multi-hour regional outage on April 12, and confirms no other qualifying downtime that month. The billing system shows the April invoice already issued at the full $50,000 monthly fee.\n\nA customer success manager messages the SLA desk on 2025-05-02: \"Calculating Glacier Media's April credit. April uptime came in at 98.7%. The new credit table went live April 1, so I think this is a 15% credit month. But their contract started last October. What's the correct credit amount for April?\"\n\nUsing the policy history, the transition clause, and the CRM and monitoring records, determine the service credit owed for April 2025.",
+  "question": "What service credit is owed to Glacier Media for April 2025?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Helena Brandt",
+    "title": "Director of Customer Success",
+    "organization": "Shasta Networks",
+    "years_experience": 13,
+    "domain_expertise": "customer_success_support"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "$12,500, applying v1's 25% tier for uptime below 99.0%, because v1 was incorporated at the 2024-10-01 signing and governs the full initial term through 2025-09-30.",
+    "$7,500, applying v2's 15% tier for uptime below 99.0%, because the April 2025 outage occurred after v2 took effect on April 1.",
+    "$2,500, applying v2's 5% tier for uptime below 99.9%, because the month began after the v2 effective date.",
+    "$5,000, applying v1's 10% tier for uptime below 99.9%, because v1 was incorporated at signing.",
+    "$15,000, applying v2's 30% tier because uptime fell into the lowest published band."
+  ]
+}

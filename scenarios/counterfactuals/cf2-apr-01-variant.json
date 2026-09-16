@@ -1,0 +1,27 @@
+{
+  "title": "Capex Approved Just Over the CFO Ceiling",
+  "category": "approval_chain",
+  "domain": "finance_revops",
+  "difficulty": "expert",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf2-apr-01",
+  "counterfactual_role": "variant",
+  "scenario_text": "A finance-controls audit agent at Caspian Analytics is validating authorization on a capital expenditure before it posts to the fixed-asset ledger.\n\n**Capital Expenditure Authority Matrix**\n- Up to $100,000: VP Finance (capex memo).\n- $100,001-$500,000: CFO (capex memo + business-case attachment).\n- Above $500,000: Board of Directors (capex memo + business case + board minutes).\n\n**ERP Capex Record**\n- CAPX-7714: 'Data-center GPU cluster expansion.'\n- Amount: $525,000. Posted: 2026-05-04.\n- Approved by (field): 'CFO - Renata V.'\n- Capex memo: attached. Business case: attached. Board minutes: none.\n\n**Email thread (reconstructed)**\n- Infra lead -> CFO: 'The GPU cluster build comes to $525K all-in. Requesting approval.'\n- Renata V. (CFO): 'Reviewed the business case and payback. Approved, post it before month-end.'\n- Infra lead: 'Posted as CAPX-7714, memo and business case attached.'\n\nThe expenditure is $525,000 all-in, which sits above the top of the CFO's $100,001-$500,000 band. It was approved by the CFO, and both the capex memo and the business-case attachment are present in the ERP. The project is a single indivisible cluster build, not a set of separate purchases split across records, so $525,000 is the full governing amount. No board minutes appear anywhere in the ERP or email, and the audit must decide whether Board approval is required at this level or whether the recorded CFO approval is sufficient on its own.",
+  "question": "What should the audit conclude about the authorization of this expenditure?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": [],
+  "changed_fact": "In the base the capital expenditure is exactly $500,000, the top of the CFO's approval band, which the CFO may approve alone. In the variant it is $525,000, which crosses into the above-$500,000 tier requiring full Board of Directors approval.",
+  "choices": [
+    "Valid - the expenditure falls within the $100,001-$500,000 band, which the CFO is authorized to approve, and the required memo and business case are attached.",
+    "Invalid - the expenditure falls in the above-$500,000 tier requiring Board of Directors approval; the CFO's authority caps at $500,000, so it must be re-approved by the Board.",
+    "Valid, but a documentation cleanup is needed - obtain board minutes after the fact; the CFO's approval itself stands.",
+    "Invalid - any capex above $100,000 requires Board co-approval before posting, so the item must be escalated to the Board."
+  ]
+}

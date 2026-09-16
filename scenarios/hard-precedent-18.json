@@ -1,0 +1,26 @@
+{
+  "title": "Hot-Work Permit During an Active Flammable-Release Advisory",
+  "category": "precedent_exception",
+  "domain": "other",
+  "difficulty": "expert",
+  "scenario_text": "You are the site safety authority at Hodr Energy, a refining operator. A maintenance crew wants a hot-work permit to weld in a classified area and cites a prior advisory-period permit.\n\nActive policy: Hot Work Permit Policy HWP v4, effective 2025-03-01. Hot work in a classified area requires an Area Supervisor permit plus a gas test. In a designated high-hazard zone, it additionally requires Safety Manager approval and a dedicated fire watch. Blackout exception: while a flammable-release advisory is active for the facility, no hot-work permit may be issued at all, regardless of which approvals are in hand. HWP v4 introduced the advisory blackout; under the prior HWP v3, the Safety Manager could authorize hot work during a release advisory provided extra continuous gas monitoring was in place.\n\nThe precedent cited: 2024-06-03, a welding permit was issued during a release advisory with Safety Manager approval and continuous monitoring; permit note 'advisory-period hot work approved with enhanced monitoring,' policy version at decision HWP v3.\n\nCurrent facts: a flammable-release advisory is currently active for the facility, confirmed by the control room. The crew needs to weld a bracket in a high-hazard zone and has arranged a gas test and a fire watch, and the Safety Manager is available. The crew lead writes: 'We welded during an advisory back in June with the Safety Manager's sign-off and extra monitoring. We have the gas test, the fire watch, and the Safety Manager ready - let's pull the permit and get this bracket done today.'",
+  "question": "How should the hot-work permit request be handled?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Marcus Thorvald",
+    "title": "Site Safety Authority",
+    "organization": "Hodr Energy",
+    "years_experience": 14,
+    "domain_expertise": "other"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Issue the permit with Safety Manager approval and continuous monitoring, mirroring the June 2024 advisory-period permit.",
+    "Issue the permit with the Area Supervisor sign-off, gas test, and fire watch, since all high-hazard-zone controls are satisfied.",
+    "Do not issue any hot-work permit while the flammable-release advisory is active, because HWP v4 imposes a blackout regardless of approvals; the June 2024 advisory-period permit was under superseded HWP v3.",
+    "Issue a conditional permit that becomes valid the moment the gas test passes, treating the advisory as informational.",
+    "Issue the permit but require two fire watches instead of one to compensate for the advisory conditions."
+  ]
+}

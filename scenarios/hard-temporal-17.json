@@ -1,0 +1,19 @@
+{
+  "title": "The Over-Entitlement Bill That Rounded Up to a Ten-Seat Block",
+  "category": "temporal_consistency",
+  "domain": "other",
+  "difficulty": "expert",
+  "scenario_text": "A licensing operations analyst at Rhodolite Energy must compute the overage charge on a software true-up, given how a comparable true-up was billed earlier this year.\n\n**Overage Billing Policy \u2014 version history**\n- Old policy (in force through 2024-06-30): peak concurrent users above the licensed entitlement are billed at $200 per seat per month, charged for the exact number of seats over.\n- New policy (effective 2024-07-01, in force now): overage seats are billed at $150 per seat per month, but overage is billed in blocks of 10 seats, rounded up. Any overage, however small, is billed as at least one 10-seat block. The billing rate and block rule are set by the month being trued up.\n\n**Prior decision A (2024-05)**\nA customer whose entitlement was 100 seats peaked at 105 seats in May and was billed for 5 seats at $200, for $1,000. Note: 'Exact seats over, at the rate then in effect.'\n\n**Current case C**\nCustomer 'Vanterra Utilities' has a licensed entitlement of 100 concurrent seats. In August 2024, its peak concurrent usage was 107 seats. The analyst is computing the August overage charge.\n\n**Slack \u2014 #licensing-ops**\nAnalyst A: 'In May we billed exact seats over at $200. Vanterra is 7 seats over in August, so that's 7 x $200 = $1,400.'\nAnalyst B: 'August is under the new policy. Let me apply the current rate and the block rule.'\n\nVanterra peaked at 107 seats against a 100-seat entitlement in August 2024. The metering data for August is finalized and undisputed, so the only question is how to price the seven-seat overage under the terms that apply to that month. The analyst is preparing the true-up invoice now and needs the exact charge.",
+  "question": "What is the August overage charge for Vanterra Utilities? Give the dollar amount.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Meera Krishnan",
+    "title": "Licensing Operations Analyst",
+    "organization": "Rhodolite Energy",
+    "years_experience": 8,
+    "domain_expertise": "other"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

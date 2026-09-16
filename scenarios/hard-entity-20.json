@@ -1,0 +1,19 @@
+{
+  "title": "Which Team Actually Owns Production After the Service Split",
+  "category": "entity_resolution",
+  "domain": "engineering_devops",
+  "difficulty": "expert",
+  "scenario_text": "Brightray Cloud's platform team is fixing on-call routing after an acqui-hire and must resolve which team owns the production service \"payments-gateway.\" Three systems disagree. The Backstage service catalog entry payments-gateway lists owner \"team:orbit-core\" and links a GitHub repo brightray/payments-gateway. PagerDuty has two escalation policies whose services both reference the string \"payments-gateway\": one routes to orbit-core, the other to a squad named \"meridian-pay.\" The AWS account 4455-2210-9088 hosts the running production containers and is tagged owner=orbit-core. History: Brightray acqui-hired \"Fernico Payments\" on 2024-02-01; Fernico's engineers, formerly the orbit-core team, were folded into Brightray. On 2024-04-15 Brightray performed a monorepo split: the live production code for payments-gateway was extracted into a NEW repo brightray/payments-gateway-svc owned by team meridian-pay (confirmed by CODEOWNERS in that repo and the deploy pipeline that pushes to account 4455-2210-9088). The OLD repo brightray/payments-gateway was archived read-only on 2024-04-16; its CODEOWNERS still names orbit-core, and the Backstage catalog entry was never updated to point at the new repo. The AWS account tag owner=orbit-core is stale, left from before the split. The deploy pipeline in the new repo, however, is what actually ships every production release, and its pipeline config lists meridian-pay as the owning team. A reliability engineer, reading the Backstage owner field and the AWS tag, is about to route production pages for payments-gateway to orbit-core. A P1 outage is active right now, the on-call rotation must be corrected before the next page fires, and routing to a team that can no longer merge or deploy to the archived repo would only delay recovery. The reliability engineer must decide which team genuinely owns the running production service so incident pages reach the engineers who can actually ship a fix, weighing the catalog and tag against the live deploy pipeline.",
+  "question": "Which team owns the production payments-gateway service and should receive its incident pages? Give the team name.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "Devin Osei",
+    "title": "Staff Reliability Engineer",
+    "organization": "Brightray Cloud",
+    "years_experience": 11,
+    "domain_expertise": "engineering_devops"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge"
+}

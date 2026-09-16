@@ -1,0 +1,25 @@
+{
+  "title": "The Reinstated Shell With the Old Ticker",
+  "category": "entity_resolution",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "Elgiloy Research subscribes to an equities data feed and must resolve whether a newly reinstated public shell is the same reporting company as a defunct issuer. Two records reference the ticker \"BRTX.\" The historical record is \"Brightray Therapeutics Inc.\" (SEC CIK 0001554400, Delaware, an operating biotech that filed for Chapter 7, delisted 2021, charter administratively voided). The current record is \"Brightray Acquisition Corp.\" (SEC CIK 0001889210, Delaware, incorporated 2022, a blank-check SPAC), which acquired the now-available ticker symbol \"BRTX\" when it listed in 2023. An analyst, matching on ticker, links the SPAC's filings to the biotech's historical financials and clinical-trial history, producing a report that shows \"BRTX\" with a drug pipeline and a decade of R&D. In truth these are two entirely different companies: different CIKs (the SEC's persistent issuer identifier), different incorporation dates, different business (defunct biotech vs blank-check SPAC), no successor relationship, and the ticker \"BRTX\" was merely recycled by the exchange after the biotech's delisting. The analyst is about to publish combined fundamentals under the shared ticker, which would attribute the dead biotech's pipeline and losses to the unrelated SPAC. The enriched report feeds a screening model that classifies issuers by pipeline and clinical risk, and publishing merged fundamentals would route the blank-check SPAC into a biotech risk bucket where it does not belong. The analyst's draft already stitches a decade of clinical filings and accumulated losses onto the 2023 shell purely on the matching ticker. The data-quality reviewer must decide, before distribution, whether the two BRTX records are one continuing issuer or two unrelated registrants that happen to share a recycled symbol.",
+  "question": "Are the two BRTX records the same reporting entity, and how should the data be linked?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Hannah Voss",
+    "title": "Reference Data Manager",
+    "organization": "Elgiloy Research",
+    "years_experience": 9,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Yes; the shared ticker BRTX means it is one continuing company, so the SPAC inherits the biotech's financial and clinical history.",
+    "No; the ticker was recycled, and the distinct SEC CIKs identify two unrelated issuers whose filings must not be combined.",
+    "Yes; because both are Delaware companies trading under BRTX, the SPAC is the legal successor to the biotech.",
+    "Undeterminable from SEC data; only the exchange can say whether two issuers under one ticker are the same company."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "General Partner or the Partnership Itself",
+  "category": "entity_resolution",
+  "domain": "compliance_legal",
+  "difficulty": "expert",
+  "scenario_text": "Hastelloy Advisory is booking a contract counterparty for a German limited partnership and must pick the right legal entity. The deal documents reference three names: \"Vitallium Logistik GmbH & Co. KG\" (the operating limited partnership, HRA 55120, the entity that runs the business and holds the contract), \"Vitallium Verwaltungs GmbH\" (HRB 33210, the general partner / Komplement\u00e4r that manages the KG but is often a shell with minimal assets), and \"Vitallium Beteiligungs GmbH\" (HRB 33988, a limited partner / Kommanditist providing capital). The master services agreement is signed \"Vitallium Logistik GmbH & Co. KG, vertreten durch ihre Komplement\u00e4rin Vitallium Verwaltungs GmbH\" (represented by its general partner). A junior analyst wants to book the counterparty as \"Vitallium Verwaltungs GmbH\" (HRB 33210) because that GmbH is the entity that physically signed and, in the analyst's words, \"a GmbH is a real company but a KG is just a partnership.\" German law: the GmbH & Co. KG is itself the contracting legal entity and the bearer of rights and obligations; the general-partner GmbH merely acts as its representative organ and is liable secondarily, and the limited partner is only a capital provider. Booking the representative GmbH as the counterparty would attach the obligation to a thinly capitalized shell rather than the operating partnership that actually holds the contract. The counterparty must be booked before the agreement goes live in the CLM system tonight, and the credit team will set the exposure limit against whichever entity is named. The analyst's draft names the signing GmbH, which would peg the limit to a management shell with near-zero net assets, while the operating partnership that actually performs and bears the obligations would carry no recorded exposure at all. The analyst must resolve the correct legal entity from the German register entries before the record is finalized.",
+  "question": "Which entity is the correct contracting counterparty on the MSA?",
+  "answer_format": "multiple_choice",
+  "contributor": {
+    "name": "Lukas Brenner",
+    "title": "Legal Operations Counsel",
+    "organization": "Hastelloy Advisory",
+    "years_experience": 13,
+    "domain_expertise": "compliance_legal"
+  },
+  "tools_available": [],
+  "source_batch": "hard.json",
+  "split": "challenge",
+  "choices": [
+    "Vitallium Verwaltungs GmbH (HRB 33210), the general partner that signed the agreement.",
+    "Vitallium Logistik GmbH & Co. KG (HRA 55120), the limited partnership that is the contracting entity, represented by its general-partner GmbH.",
+    "Vitallium Beteiligungs GmbH (HRB 33988), the limited partner that provides the capital backing the deal.",
+    "Both GmbHs jointly, since a partnership cannot itself be a counterparty and needs corporate entities to hold the contract."
+  ]
+}

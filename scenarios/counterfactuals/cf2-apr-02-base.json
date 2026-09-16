@@ -1,0 +1,20 @@
+{
+  "title": "Who Must Sign the Subscription Contract?",
+  "category": "approval_chain",
+  "domain": "procurement_vendor",
+  "difficulty": "hard",
+  "split": "counterfactual",
+  "counterfactual_pair_id": "cf2-apr-02",
+  "counterfactual_role": "base",
+  "scenario_text": "A procurement-audit agent at Coral Freight Systems is verifying who was authorized to sign a SaaS subscription agreement.\n\n**Signature Authority Matrix (by total contract value over the committed term)**\n- Up to $50,000: Procurement Manager.\n- $50,001-$250,000: Procurement Director.\n- Above $250,000: VP Procurement.\n- Rule: total contract value is the committed spend across the full non-cancellable term, not the annual figure.\n\n**Contract Record (Ironclad)**\n- CTR-5290: Vendor 'FleetSignal Telematics.' Product: fleet-tracking SaaS.\n- Annual fee: $125,000. Committed term: 2 years, non-cancellable. Total contract value: $250,000.\n- Signed by: 'Procurement Director - Owen L.', 2026-04-15.\n\n**Email thread (reconstructed)**\n- Buyer -> Procurement Director: 'FleetSignal is $125K/year on a 2-year committed term, so $250K TCV. Can you sign?'\n- Owen L. (Procurement Director): 'TCV is $250K, within my band. Signed.'\n\nThe subscription commits Coral Freight to $125,000 per year for a 2-year non-cancellable term, so the total contract value governing signature authority is $250,000. The contract was signed by the Procurement Director. There are no separate line items or sibling contracts that would aggregate into a larger commitment; CTR-5290 is the whole deal. The audit must determine the minimum role required to sign this contract given its total contract value, and whether the recorded signature satisfies that requirement.",
+  "question": "What is the minimum signing role required for this contract? Answer with the exact role title from the matrix.",
+  "answer_format": "exact_match",
+  "contributor": {
+    "name": "ELE Editorial Team",
+    "title": "Benchmark Authors",
+    "organization": "Enterprise's Last Exam",
+    "years_experience": 10,
+    "domain_expertise": "cross-functional enterprise operations"
+  },
+  "tools_available": []
+}
