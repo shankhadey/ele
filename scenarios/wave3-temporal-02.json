@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Cap Calder at 15%, consistent with the March denial of a similar 28% request for Piedmont.",
     "Approve the 28% discount: Calder has a verified, countersigned expansion order worth $900K incremental ARR, which satisfies the exact condition Piedmont lacked, so the deeper discount is authorized under the unchanged policy.",

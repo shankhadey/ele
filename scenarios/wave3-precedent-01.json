@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "VP Finance approval alone, mirroring the Carrick Freight precedent for identical Net 90 terms on a comparable deal.",
     "CFO approval plus a written cash-flow impact memo, because DAF v4 requires CFO sign-off for any terms beyond Net 75; the Carrick precedent was decided under the superseded v3.",

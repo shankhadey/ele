@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Ship with peer review, Release Manager, and DBA approval, mirroring the October 2024 migration.",
     "Ship with Release Manager approval alone, since a schema reshape is not a feature change.",

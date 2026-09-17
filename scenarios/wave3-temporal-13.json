@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Deny the uplift, consistent with the March denial of an identical 5,000 rpm request for GridPoint.",
     "Approve the uplift to 5,000 rpm: Meridian provided measured production traffic and a passing capacity-impact assessment, which satisfy the exact requirement GridPoint failed, so the difference in outcome is justified under the unchanged policy.",

@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "CR-7788 must be re-approved by the CAB before deployment, because the v1 grandfather permitted deployment only up to the next scheduled CAB review (2025-06-02), which has already passed.",
     "CR-7788 may be deployed under v1's single-approver authorization, because it was approved 2025-05-28, before v2's June 1 effective date.",

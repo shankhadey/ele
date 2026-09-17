@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Valid - the Treasury Manager delegated approval authority to Jordan in writing before the release, so Jordan held the authority to approve WIRE-5567.",
     "Valid, but a documentation cleanup is needed - record the delegation memo in the wire file; the dual approval already stands.",

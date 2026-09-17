@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Deny the refund because it falls outside the standard 30-day refund window.",
     "Approve the $410 refund at the agent level: the defect is confirmed, day 45 is within the 60-day defective-goods window, and $410 is under the $500 ceiling, so the June approval is valid precedent under the unchanged policy.",

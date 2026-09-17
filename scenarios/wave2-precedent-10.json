@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "A team Director sign-off with no DPA, following the Selwyn AI internal-tooling precedent for equivalent support-ticket processing.",
     "The full VDP-3 path: a completed data-protection assessment, an executed DPA, and CPO sign-off, because VDP-3 removed the internal-tooling fast-track the Selwyn approval relied on.",

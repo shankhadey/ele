@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Treat the renewal as low-risk and leave it in Commit; the CSM's QBR and the green health score are the most reliable read of the relationship.",
     "Open a support-priority escalation focused on the SSO migration tickets, since technical friction is the primary risk to the account.",

@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Yes; a shared senior individual (Dr. Frost) on both companies establishes common control, so their spend aggregates.",
     "No; a shared individual serving as CEO of one and outside director of the other does not create a controlling ownership or voting link, and the divergent ownership shows two independent companies.",

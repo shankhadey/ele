@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Deny the refund to stay consistent with the January refund denial for a similar request.",
     "Approve the refund: it is within the 30-day window and the item is not final-sale, so the January denial \u2014 which turned entirely on final-sale status \u2014 does not apply here.",

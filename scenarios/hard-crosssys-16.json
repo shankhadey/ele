@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Stand down and let the autoscaler manage the load; the campaign-driven traffic surge is being handled.",
     "Raise the autoscaling maximum and add capacity headroom so the fleet can absorb the elevated CPU.",

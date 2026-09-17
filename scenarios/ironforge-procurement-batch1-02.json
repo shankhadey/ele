@@ -21,5 +21,5 @@
     "Category Manager can approve \u2014 the original PO was issued before Oct 1, 2025 under the $100K threshold, and renewals of pre-existing POs are governed by the policy version in effect at original issuance",
     "The renewal cannot proceed at $92K \u2014 Rick's quote shows the actual value is $95.7K which changes the approval tier and requires a new PO rather than a renewal"
   ],
-  "split": "core_test"
+  "split": "challenge"
 }

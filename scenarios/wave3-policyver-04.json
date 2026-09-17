@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "The renewal must be re-provisioned under v2 (90-day term, hardware key, JIT), because it was submitted 2025-06-30 and v2 governs any renewal or extension executed on or after January 1, 2025.",
     "The renewal may extend the grant for another 12 months under v1 password terms, because the original grant was issued 2024-08-10 and is grandfathered.",

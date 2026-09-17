@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Accept the green retry and close the incident; the job completed successfully and balances are populated.",
     "Re-run the migration once more to be safe, since reruns have been succeeding on retry.",

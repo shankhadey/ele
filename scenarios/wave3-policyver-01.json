@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Sales Director approval is sufficient, because OF-2214 was signed 2024-05-28 under v1.0, whose 30% Sales Director threshold governs the order, and 26% falls below it.",
     "VP of Sales approval is required, because v2.0 caps Sales Director authority at 20% off list and 26% exceeds that limit.",

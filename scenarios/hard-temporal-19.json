@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "The hiring manager may approve it directly, consistent with the July backfill of the mechanical technician.",
     "VP approval and Finance exception approval are required, because the freeze is in effect and the role is not formally revenue-critical.",

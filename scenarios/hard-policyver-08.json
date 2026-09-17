@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "$42,000, paid as a single lump sum after the rebate year closes: v1 governs because the rebate year began 2024-05-01, and 3% of the $1,400,000 total applies since it exceeds the $1,000,000 threshold.",
     "No rebate is owed, because $1,400,000 is below v2's $1,500,000 threshold and v2 is the current program.",

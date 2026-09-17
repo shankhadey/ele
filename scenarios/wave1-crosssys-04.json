@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Leave the Jira ticket at Low priority and patch on the normal cadence next sprint; the senior engineer confirmed the vulnerable code path is not used.",
     "Schedule the library upgrade as routine dependency hygiene and monitor the scanner for any change in severity.",

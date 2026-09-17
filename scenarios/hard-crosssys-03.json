@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Book the order at list price before quarter close; no discount is being given, so no approval or review is required.",
     "Apply a small loyalty discount to keep Braylon satisfied and book the order this quarter.",

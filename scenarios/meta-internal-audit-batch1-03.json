@@ -21,5 +21,5 @@
     "No finding \u2014 the override was properly authorized via SoD exception SA-2025-041, the operational necessity is well-documented in email, and the Controller verbally confirmed the review was performed",
     "Material weakness \u2014 an executive bypassed all three procurement controls (requisition, PO, GR) and the only compensating control also failed, representing a complete breakdown in the management override control environment"
   ],
-  "split": "core_test"
+  "split": "challenge"
 }

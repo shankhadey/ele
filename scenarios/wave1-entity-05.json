@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Rename vendor V-3301 to Fleet Sensors Holdings LLC and route both PO-9912 and PO-9945 to the new account ending 3387, since the supplier changed hands.",
     "Create a new vendor for Fleet Sensors Holdings LLC (EIN 88-4402219) and route only the telematics PO-9912 to it; keep PO-9945 on Tenpoint Systems (V-3301, EIN 82-1140556) with its existing remit-to.",

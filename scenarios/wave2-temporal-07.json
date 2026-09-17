@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Deny the refund to stay consistent with the June denial of a comparable out-of-window request.",
     "Approve the goodwill refund at the team level: Rowan's $3,450 lifetime spend clears the $2,000 threshold that the June denial fell below, so support can issue it without manager approval.",

@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "RVP approval is sufficient, because OPP-4471 reached Proposal stage on 2024-05-20 (before June 30, 2024), so v1.0's 25% RVP threshold governs the deal through close.",
     "CFO approval is required, because the current policy v2.0 caps RVP authority at 15% and 22% exceeds that limit.",

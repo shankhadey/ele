@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Purge the cohort, mirroring the June 2024 batch purge, since the records exceed the seven-year retention window.",
     "Retain the cohort and do not purge, because the records are under an active legal hold that RRP v4 requires be honored regardless of age; the 2024 purge predated the mandatory hold check under RRP v3.",

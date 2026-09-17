@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Valid and complete - the SVP Finance approved the write-off and a written notification was sent to a board-level committee, satisfying the F-22 notification requirement.",
     "Valid, but a documentation cleanup is needed - forward the same notice to the Audit Committee as a courtesy copy; the control was already met by the subcommittee notice.",

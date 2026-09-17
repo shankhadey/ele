@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Up to 5% approved by the manager and HRBP, mirroring the Owen Radley retention increase for a comparable flight-risk situation.",
     "A retention exception of up to 15% (covering the requested 14%) requiring VP of People approval, because Priya has a documented written competing external offer on file.",

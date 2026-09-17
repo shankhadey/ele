@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Valid and complete - the emergency change was authorized by the on-call IC with logged VP approval, and the retrospective review and writeup were filed within 5 business days, so no further action is needed.",
     "Valid, but a minor documentation cleanup is needed - note the break-glass grant in the change ticket; the access itself can stay as-is.",

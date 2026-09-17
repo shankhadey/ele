@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Pay the GBP invoice to the England & Wales entity (V-330), since the invoice name matches the contract name exactly.",
     "The counterparty is the Hong Kong entity (V-331, CR 2210987); reject the Manchester GBP invoice as issued by a different same-named company and request a correct invoice from the Hong Kong entity.",

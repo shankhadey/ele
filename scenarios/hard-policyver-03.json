@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "$12,500, applying v1's 25% tier for uptime below 99.0%, because v1 was incorporated at the 2024-10-01 signing and governs the full initial term through 2025-09-30.",
     "$7,500, applying v2's 15% tier for uptime below 99.0%, because the April 2025 outage occurred after v2 took effect on April 1.",

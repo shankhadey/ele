@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Renew flat at the current rate to keep the happy customer simple and low-risk, as the AE suggests.",
     "Renew flat but add a small annual uplift to cover inflation, leaving the tier and overage settings unchanged.",

@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "$50,000, applying v1's 10% rate, because OPP-7731 was booked 2024-12-18, before the January 1, 2025 cutover, so v1 governs regardless of the 2025 invoice-payment date.",
     "$40,000, applying v2's 8% base rate, because the invoice was paid 2025-02-10 and the commission lands in the 2025 payroll cycle.",

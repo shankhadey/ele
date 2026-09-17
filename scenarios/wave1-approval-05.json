@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Invalid - the onboarding is missing General Counsel approval, which is required whenever a sub-processor processes customer PII.",
     "Valid and complete - the sub-processor processes PII in an existing approved region, and both required controls for that tier are satisfied: DPO approval is recorded and the Security review with a completed SIG questionnaire is on file, so authorization is proper.",

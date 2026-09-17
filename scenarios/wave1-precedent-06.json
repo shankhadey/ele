@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Procurement Director approval alone with a written sole-source justification, mirroring the $180K Vireo Compute purchase.",
     "Procurement Director plus CFO approval with a competitive-market analysis, because PS-7 requires both for sole-source purchases over $100K.",

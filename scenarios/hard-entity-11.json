@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Yes; a shared intermediary BIC and intermediary account prove the two payees are one company using two names.",
     "No; the shared details belong to a common USD correspondent bank, and the divergent beneficiary banks, accounts, registrations, and countries show two unrelated payees.",

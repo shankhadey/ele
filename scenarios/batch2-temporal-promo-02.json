@@ -3,14 +3,14 @@
   "category": "temporal_consistency",
   "domain": "hr_people_ops",
   "difficulty": "hard",
-  "scenario_text": "An HR business-partner agent at Tessera Robotics must decide whether to advance an off-cycle promotion request and whether it is consistent with recent decisions.\n\n**Decision A (2025-07, under Promotion Guidelines v1)**\nEmployee 'R. Nguyen' promoted off-cycle to Senior Engineer. Justification: 'Retention risk (competing offer) + exceeds-expectations rating. Off-cycle promotions allowed with Director approval.'\n\n**Decision B (2026-01, under Promotion Guidelines v2, effective 2025-11-01)**\nEmployee 'T. Alvarez' off-cycle promotion request DENIED. Note: 'Under v2, off-cycle promotions require (a) a documented retention risk (competing offer on file) AND (b) the employee's last review at exceeds-expectations, AND (c) VP approval. Alvarez had a strong review but no documented competing offer. Denied.'\n\n**Promotion Guidelines v2 (current)**\nOff-cycle promotions require ALL of: documented competing offer, last review = exceeds-expectations, and VP approval. Annual-cycle promotions follow the standard calibration process.\n\n**Current request (today, 2026-06)**\nEmployee 'K. Bauer'. Manager requests off-cycle promotion to Senior Analyst. In Workday: last review = 'meets-expectations'. Attached: a competing written offer from another firm. No VP approval yet.\n\n**Slack — #people-ops**\nManager: 'Nguyen got promoted off-cycle for a retention risk, and Bauer has a real competing offer, so this should go through.'\nAgent: 'Nguyen was under the old guidelines. Under v2, let me check all three conditions for Bauer.'",
+  "scenario_text": "An HR business-partner agent at Tessera Robotics must decide whether to advance an off-cycle promotion request and whether it is consistent with recent decisions.\n\n**Decision A (2025-07, under Promotion Guidelines v1)**\nEmployee 'R. Nguyen' promoted off-cycle to Senior Engineer. Justification: 'Retention risk (competing offer) + exceeds-expectations rating. Off-cycle promotions allowed with Director approval.'\n\n**Decision B (2026-01, under Promotion Guidelines v2, effective 2025-11-01)**\nEmployee 'T. Alvarez' off-cycle promotion request DENIED. Note: 'Under v2, off-cycle promotions require (a) a documented retention risk (competing offer on file) AND (b) the employee's last review at exceeds-expectations, AND (c) VP approval. Alvarez had a strong review but no documented competing offer. Denied.'\n\n**Promotion Guidelines v2 (current)**\nOff-cycle promotions require ALL of: documented competing offer, last review = exceeds-expectations, and VP approval. Annual-cycle promotions follow the standard calibration process.\n\n**Current request (today, 2026-06)**\nEmployee 'K. Bauer'. Manager requests off-cycle promotion to Senior Analyst. In Workday: last review = 'meets-expectations'. Attached: a competing written offer from another firm. No VP approval yet.\n\n**Slack \u2014 #people-ops**\nManager: 'Nguyen got promoted off-cycle for a retention risk, and Bauer has a real competing offer, so this should go through.'\nAgent: 'Nguyen was under the old guidelines. Under v2, let me check all three conditions for Bauer.'",
   "question": "How should the agent handle K. Bauer's off-cycle promotion request?",
   "answer_format": "multiple_choice",
   "choices": [
-    "Advance it for VP approval — Bauer has a documented competing offer, matching the retention-risk basis used for Nguyen in Decision A",
-    "Do not advance it — under the current v2 guidelines, off-cycle promotion requires a last review of exceeds-expectations, and Bauer's is only meets-expectations, so a required condition is not met regardless of the competing offer",
-    "Approve it directly — the competing offer creates urgency that overrides the review-rating requirement",
-    "Deny it for the same reason as Decision B — the employee lacks a documented competing offer"
+    "Advance it for VP approval \u2014 Bauer has a documented competing offer, matching the retention-risk basis used for Nguyen in Decision A",
+    "Do not advance it \u2014 under the current v2 guidelines, off-cycle promotion requires a last review of exceeds-expectations, and Bauer's is only meets-expectations, so a required condition is not met regardless of the competing offer",
+    "Approve it directly \u2014 the competing offer creates urgency that overrides the review-rating requirement",
+    "Deny it for the same reason as Decision B \u2014 the employee lacks a documented competing offer"
   ],
   "contributor": {
     "name": "Isabel Moreno",
@@ -21,5 +21,5 @@
   },
   "tools_available": [],
   "source_batch": "batch2.json",
-  "split": "challenge"
+  "split": "core_test"
 }

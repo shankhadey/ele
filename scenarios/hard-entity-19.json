@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Enterprise support via Vitallium Health Systems Inc., since the CRM links 'Northgate Clinic' as its d/b/a and Vitallium holds the Enterprise contract.",
     "Standard support; 'Northgate Clinic' is now a registered fictitious name of Nimonic Medical Group LLC (EIN 88-6612044), which owns the clinic and holds only a Standard plan.",

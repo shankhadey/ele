@@ -15,5 +15,5 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge"
+  "split": "core_test"
 }

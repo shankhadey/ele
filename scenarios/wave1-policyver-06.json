@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "R-118204 becomes eligible for purge on June 1, 2026, applying v1's 7-year period, the version in effect at the record's 2019-06-01 creation.",
     "R-118204 must be retained until June 1, 2029, because v2's 10-year period now applies to all records regardless of creation date.",

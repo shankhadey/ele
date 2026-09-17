@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Renew directly with Category Manager approval, consistent with the April renewal of the $80K Copperfield contract.",
     "Renew directly, because at $80,000 the contract is under the $100,000 Category Manager threshold.",

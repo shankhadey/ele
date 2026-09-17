@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Deploy with Release Manager approval, mirroring the prior Sev-3 fix that shipped during a freeze.",
     "Deploy under the Sev-2 exception with a Director sign-off, treating the on-call's initial Sev-2 page as the controlling severity.",

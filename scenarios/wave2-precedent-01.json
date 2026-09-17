@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "VP Finance approval alone, mirroring the Thornbury Outfitters precedent for identical Net 75 terms on a comparable deal.",
     "CFO approval plus a written cash-flow impact note, because DAM v6.0 requires CFO sign-off for any terms beyond Net 60; the Thornbury precedent was decided under the superseded v5.0.",

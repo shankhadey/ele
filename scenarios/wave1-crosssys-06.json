@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Keep the deal in Commit for this quarter; a verbal yes from the sponsor plus a contract already in DocuSign means it is effectively closed.",
     "Escalate to legal and sales ops to expedite the DocuSign signature and get the contract executed before quarter end.",

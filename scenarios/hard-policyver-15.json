@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "$60,000, applying the 2024 plan's 12% accelerated rate: the booking is credited by its 2024-12-30 signature date and sits entirely above 100% of the 2024 quota.",
     "$30,000, applying the 2025 plan's 6% base rate, because the deal invoiced 2025-01-08.",

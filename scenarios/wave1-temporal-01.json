@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Grant Net-90 under the Sales Director's authority, citing the Halden Freight approval as established precedent for strategic logos.",
     "Route the Net-90 request to the CFO for exception review with a documented business justification, because the Halden approval predates the January 1, 2024 policy that retired director discretion for terms beyond Net-45.",

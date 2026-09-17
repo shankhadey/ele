@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Valid - each purchase order is below the $25,000 Plant Manager limit and was approved by the correct role.",
     "Valid, but a documentation cleanup is needed - obtain three quotes retroactively and note both POs in the file; the approvals stand.",

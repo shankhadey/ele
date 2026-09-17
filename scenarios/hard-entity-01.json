@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Kovar Holdings, Inc. (EIN 82-6640190), because it is now the domestic ultimate parent and the AP portal directs invoices to it.",
     "Kovar Analytics, Inc. (EIN 45-2210881), which survived the reverse triangular merger, retained its EIN, and remains the contracting party with no assignment executed.",

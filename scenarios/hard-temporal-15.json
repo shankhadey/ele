@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Deal Desk may approve it alone, consistent with the 2x cap approved for Sterling in June.",
     "Deal Desk approval plus Legal approval are required, because a 2x cap exceeds the current 1x threshold for solo Deal Desk authority.",

@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Valid - peer review, Release Manager approval, and AppSec sign-off are all present, which covers a security-sensitive change.",
     "Invalid - the only missing control is the DBA approval for the schema migration; obtain it and the deploy is compliant.",

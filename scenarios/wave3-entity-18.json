@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Both MSA-A and MSA-B are now with Helvik Therapeutics, Inc. (EIN 45-7781200) by operation of the merger; update MSA-B's counterparty to Helvik, since a statutory merger by absorption vests the non-survivor's contracts in the survivor automatically.",
     "MSA-B remains with Osland Biosciences, Inc. (EIN 82-3390147) until a separate novation agreement is signed, because contracts never transfer without an explicit assignment.",

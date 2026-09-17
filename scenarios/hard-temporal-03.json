@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Deny the award, consistent with the March denial of a similarly sized sole-source request.",
     "Approve the award on the Category Manager's own authority, as was permitted for qualifying sole-source awards before June.",

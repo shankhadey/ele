@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Valid - the Regional Sales Manager holds discount-approval authority and recorded her approval in the CRM before booking.",
     "Valid, but the file needs a documentation cleanup - attach the margin worksheet and deal-desk memo retroactively; the approval itself stands.",

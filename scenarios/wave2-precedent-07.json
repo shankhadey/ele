@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Approve it with a single Engineering Manager sign-off, mirroring the 2024 expedited-deploy precedent for a customer commitment.",
     "Do not deploy under the emergency path (no Sev1/Sev2 exists); the only route is a VP of Engineering freeze-exception waiver with a documented business justification, otherwise it waits until the freeze lifts.",

@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Route the prepayment request to Finance for approval, consistent with the March decision on a similar request.",
     "Approve the annual prepayment directly at the Procurement level, because Brenton's $185K annual spend clears the $150K threshold that grants Procurement authority \u2014 a path the March vendor never qualified for.",

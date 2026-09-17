@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "The standard formula only, mirroring the Martin Vey precedent to keep RIF separations consistent.",
     "The enhanced severance - formula plus additional weeks and extended benefits - via Compensation Committee approval, because Halloran will sign a full release resolving a bona fide legal claim, which is the factor that unlocks the enhancement.",

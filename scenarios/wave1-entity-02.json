@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "The invoice is invalid and should be written off, because \"Green Valley Grocers\" no longer exists as a customer and cannot be billed.",
     "Green Valley Grocers and Sierra Fresh Markets are separate customers; the invoice is correctly billed to Account A and collections should proceed against it.",

@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "The certificate remains valid through its 2025-07-01 expiry because it was issued 2024-07-01 under v1 and v2 is not applied retroactively; at renewal on or after 2025-07-01 it must be reissued to meet v2 (ECDSA P-256 or RSA-3072+).",
     "The certificate must be reissued immediately with an ECDSA P-256 key, because v2 took effect January 1, 2025 and prohibits RSA-2048 certificates in production.",

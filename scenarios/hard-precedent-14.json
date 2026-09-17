@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Grant the full 22% MRC at the CSM level, mirroring the Aurvandil 25% CSM-level credit.",
     "Grant the full 22% MRC at the CSM level under the repeat-breach exception, since multi-hour outages justify the higher cap.",

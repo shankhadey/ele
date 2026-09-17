@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Three competitive quotes are required, but VP of Operations approval is not, because the PR was created 2025-03-28 under v3, whose VP threshold is $50,000.",
     "Three competitive quotes and VP of Operations approval are both required, because $30,000 exceeds v4's $25,000 VP threshold.",

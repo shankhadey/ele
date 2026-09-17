@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "FY2025 (January), at the January 2025 monthly average rate, because v2 governs by the 2025-01-03 shipment date.",
     "FY2024, at the 2024-12-28 spot rate, because the order date determines the period under v1.",

@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "12% off list under v2, because the renewal is being executed 2025-01-20 (on or after January 1, 2025); the expiring contract's 22% does not carry into the renewal.",
     "22% off list, because the original contract was signed 2023-02-01 under v1's 25% cap and that discount carries into the renewal.",

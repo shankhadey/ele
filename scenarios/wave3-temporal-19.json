@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Hold the ticket at Tier-2, consistent with the April handling of a similar outage escalation.",
     "Escalate to Tier-1: Calderwood provided verified evidence of a full outage and $14K/hour revenue impact, satisfying the exact criteria the April ticket lacked, so the difference in handling is justified under the unchanged policy.",

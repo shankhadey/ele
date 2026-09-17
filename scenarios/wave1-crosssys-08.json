@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Close the tickets as not-a-bug and network-related, since the workflow was successfully reproduced as fast internally.",
     "Ask the customer to switch off their VPN and retest from a different network, then monitor for further complaints before taking any other action.",

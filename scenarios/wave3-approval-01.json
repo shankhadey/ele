@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Valid - the General Counsel is the top legal signatory and attached the required risk memo, so her signature binds the company.",
     "Valid, but the file needs a documentation cleanup - obtain the CEO's countersignature as a formality afterward; the executed agreement already stands on the GC's signature.",

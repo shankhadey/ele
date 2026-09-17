@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "2025-11-20, because the endpoint was announced 2024-11-20 under v1, whose 12-month window governs for all tiers.",
     "2025-05-20, because v2's 6-month base window applies and the endpoint was announced 2024-11-20.",

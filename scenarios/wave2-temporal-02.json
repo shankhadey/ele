@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Escalate the waiver to VP Sales for approval, since uplift waivers are sensitive and warrant senior sign-off.",
     "Approve the uplift waiver at Deal Desk: the policy is unchanged since Hartwell and Prowse's $455K ARR clears the $300K threshold, so the prior decision is valid precedent that governs here.",

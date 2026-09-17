@@ -21,5 +21,5 @@
     "The gap is a de minimis technical issue \u2014 the regulation took effect March 1 but Cascade's policy correctly set the $3,000 threshold and the 3-day implementation delay was within acceptable tolerance; the legacy engine issue is a vendor defect, not a compliance failure",
     "The gap represents a genuine compliance deficiency \u2014 the regulation was effective March 1, 2024, Cascade's policy was updated to reflect the $3,000 threshold, but implementation was incomplete because the legacy Piedmont rule engine was not included in the system change; the institution's control environment failed to ensure the policy was operationalized across all platforms"
   ],
-  "split": "core_test"
+  "split": "challenge"
 }

@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Deny the price adjustment to stay consistent with the April denial of a similar request.",
     "Approve the price adjustment: Leo's purchase was full price and within the 14-day window, so the April denial \u2014 which turned entirely on a promotional-code purchase \u2014 does not apply here.",

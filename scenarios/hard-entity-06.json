@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Treat Brightray as a continuation of Chromel and inherit Chromel's AS9100 qualification and performance history, since they share DUNS 09-882-3341 and the same address.",
     "Treat Brightray Precision LLC as a distinct, unrelated new supplier requiring its own qualification; the shared DUNS is a recycled-identifier data error and the shared address is coincidental co-location.",

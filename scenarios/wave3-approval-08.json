@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Valid - Owen approved under the VP delegation DEL-118, which granted him VP-level discount authority for this deal.",
     "Valid, but needs a documentation cleanup - just update the delegation record's end date to cover the booking; the approval was made in good faith and stands.",

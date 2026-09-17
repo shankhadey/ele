@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "No additional approval or competitive bid is required: PR-3320 was approved 2025-02-25 under v1, where Category Manager authority reaches $250,000 and bids are required only above $500,000, and the PO inherits that version.",
     "Director approval is required, because PO-3320 issued 2025-03-06 under v2, where Category Manager authority caps at $100,000 and the PO date controls.",

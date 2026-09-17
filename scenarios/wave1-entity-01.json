@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Keep both records separate and issue two 1099-NEC forms ($214,000 and $128,500), because the differing legal names indicate two distinct LLCs.",
     "Consolidate the records as one payee and issue a single 1099-NEC for $342,500, because the shared EIN, bank account, and W-9 show one legal entity operating under a DBA.",

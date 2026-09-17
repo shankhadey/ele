@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Valid - the Director and HRBP both approved the change in Workday, which covers a retention adjustment for an individual contributor.",
     "Valid, but a documentation cleanup is needed - record the RSUs in the cap table and note the grant in the file; the Director and HRBP approvals are sufficient.",

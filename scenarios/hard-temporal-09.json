@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Grant a 27% price-match, consistent with Brightwater's March match on a smaller deal with a comparable quote.",
     "Grant a 20% price-match, the maximum the current policy allows for an eligible match.",

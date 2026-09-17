@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Valid - each credit is under the $1,000 CS Agent self-service limit and was issued by an authorized agent.",
     "Valid, but a documentation cleanup is needed - link the three credits in the account file; each was within the agent's limit, so no additional approval is needed.",

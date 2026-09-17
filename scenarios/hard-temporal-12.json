@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Approve the claim, because the unit is 16 months old and the current 24-month warranty covers it.",
     "Deny the claim, because the unit was purchased on 2023-05-10 under the 12-month terms and is now 16 months old, past its warranty period.",

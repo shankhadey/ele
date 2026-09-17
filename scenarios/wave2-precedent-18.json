@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "The standard Security Analyst review, mirroring the Marden Analytics precedent for a comparable analytics vendor.",
     "The elevated review \u2014 full security assessment, executed PCI attestation/agreement, and CISO sign-off \u2014 because Tolliver will process regulated cardholder data, which mandates the elevated path.",

@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Valid - 12% off list is within the Sales Director's authority and the margin worksheet is attached, so the deal is properly approved.",
     "Valid, but a documentation cleanup is needed - note the uncapped-SLA rider in the file; the Sales Director's approval stands.",

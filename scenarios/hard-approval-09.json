@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Valid and complete - $280,000 falls in the $100,001-$500,000 tier, which requires the Controller and VP Finance, and both approvals are recorded; the related-party override does not apply because Delta is an unrelated third party.",
     "Invalid - a write-off of this size requires Audit Committee notification, which is missing from the record.",

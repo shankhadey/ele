@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Expense the $7,500 in the period incurred: v2 governs by the 2024-10-05 in-service date, and $7,500 is below v2's $10,000 capitalization threshold.",
     "Capitalize the $7,500 and depreciate it straight-line over 5 years, because the 2024-09-28 invoice date falls under v1's $5,000 threshold.",

@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Up to 20 complimentary PS hours approved by the CS Manager, mirroring the Pinehill Foods precedent for a comparable botched migration.",
     "Up to 60 complimentary PS hours plus a dedicated technical account manager under the enhanced tier, because Sable is a countersigned reference account and the incident materially disrupted operations.",

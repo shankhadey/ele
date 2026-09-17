@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Valid - 34% off list falls in the 30.01%-50% tier, and VP Sales approved with the margin worksheet attached, so authority is satisfied.",
     "Valid, but the file needs a documentation cleanup - re-attach an updated margin worksheet; the approval itself stands.",

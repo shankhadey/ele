@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "A 20% offer, mirroring the Andlang retention credit, to stay consistent with prior treatment of at-risk accounts.",
     "A 20% offer under the loyalty tier, since Vanaheim is a long-standing at-risk account worth retaining.",

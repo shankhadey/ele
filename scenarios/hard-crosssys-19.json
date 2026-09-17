@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Disposition the alert as a market-making false positive, consistent with prior clearances for that desk.",
     "Clear the alert but add the employee's account to an enhanced-monitoring watch list for future activity.",

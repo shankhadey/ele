@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "$12,000 \u2014 the full commission, because commission is always clawed back on churn.",
     "$0 \u2014 no clawback, because the customer churned in month 8, past the 6-month window.",

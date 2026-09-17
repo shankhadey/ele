@@ -21,5 +21,5 @@
     "No \u2014 the Slack message and CRM activity log confirm organizational awareness of the exception; even without a formal amendment, Atlas cannot claim ignorance and should honor the 5-mile radius",
     "Yes \u2014 the signed franchise agreement governs and it specifies a 3-mile radius; the email from a departed VP is not a binding amendment, so 2.8 miles is outside the protected territory"
   ],
-  "split": "core_test"
+  "split": "challenge"
 }

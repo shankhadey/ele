@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Keep the account green and leave the renewal on track; the CSM's executive relationship and the refreshed health score are the most reliable indicators.",
     "Open a support escalation to clear the six Zendesk tickets and the breached SLAs, since response-time friction is the core problem driving the account's frustration.",

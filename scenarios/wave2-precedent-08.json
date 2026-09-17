@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "The AE may self-extend to 80 days, mirroring the Waypoint Cargo self-extension for a comparable length.",
     "It requires VP Sales approval plus the documented technical-validation blocker (already logged), following the Ironvale Shipping precedent under PG-2, because the extension exceeds 60 days.",
