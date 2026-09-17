@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Deploy the Sev-3 fix with engineering director approval, exactly as was done during the December freeze.",
     "Hold the Sev-3 fix until the freeze lifts, because the February update removed the Sev-3-with-director-approval exception and no approval level can unlock a Sev-3 deploy during the freeze.",

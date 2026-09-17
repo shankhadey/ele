@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Approve the standing 3% at the Procurement Manager level, mirroring the Ormr Shipping 3% approval.",
     "Approve the standing 3% at the Procurement Manager level under the strategic-supplier exception, since 3% is exactly the exception ceiling.",

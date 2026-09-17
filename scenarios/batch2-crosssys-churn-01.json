@@ -3,14 +3,14 @@
   "category": "cross_system_synthesis",
   "domain": "customer_success_support",
   "difficulty": "expert",
-  "scenario_text": "An account-health agent at Solstice Analytics must recommend the correct escalation for a strategic account by synthesizing signals across systems.\n\n**Salesforce (CRM)**\nAccount: 'Copperline Freight' | Tier: Enterprise | ARR: $1.4M | Renewal: 45 days | Health score: 68 (Yellow) | Strategic: Yes | Exec sponsor: CFO.\n\n**Zendesk (Support)**\n3 open tickets. #7781 (High): 'Reporting API latency spikes for 5 business days.' Opened by Copperline's data team. Customer comment: 'This is affecting our month-end close.'\n\n**Billing**\nPayment status: current. Auto-renew was silently switched from opt-in to opt-out 10 days ago. Seat count reduced 12% at last true-up.\n\n**Slack — #strategic-accounts**\nCSM (6 days ago): 'Copperline's analytics lead hinted they're piloting a competing BI tool for month-end reporting.'\nSales Director (reply): 'They floated that last year too and renewed at full value. I wouldn't over-rotate.'\n\n**PagerDuty (Engineering)**\n2 SEV-2 incidents on the reporting pipeline in 60 days. Latest RCA: 'Query planner regression; permanent fix shipping in ~3 weeks. Interim mitigation available now.'\n\n**Product usage (Amplitude)**\nWeekly active users in the reporting module down 34% over 6 weeks; export-to-CSV usage up 3x (a known workaround pattern before customers offboard reporting).\n\nThe Sales Director's read is that the competitive signal is routine. The agent must decide the escalation.",
+  "scenario_text": "An account-health agent at Solstice Analytics must recommend the correct escalation for a strategic account by synthesizing signals across systems.\n\n**Salesforce (CRM)**\nAccount: 'Copperline Freight' | Tier: Enterprise | ARR: $1.4M | Renewal: 45 days | Health score: 68 (Yellow) | Strategic: Yes | Exec sponsor: CFO.\n\n**Zendesk (Support)**\n3 open tickets. #7781 (High): 'Reporting API latency spikes for 5 business days.' Opened by Copperline's data team. Customer comment: 'This is affecting our month-end close.'\n\n**Billing**\nPayment status: current. Auto-renew was silently switched from opt-in to opt-out 10 days ago. Seat count reduced 12% at last true-up.\n\n**Slack \u2014 #strategic-accounts**\nCSM (6 days ago): 'Copperline's analytics lead hinted they're piloting a competing BI tool for month-end reporting.'\nSales Director (reply): 'They floated that last year too and renewed at full value. I wouldn't over-rotate.'\n\n**PagerDuty (Engineering)**\n2 SEV-2 incidents on the reporting pipeline in 60 days. Latest RCA: 'Query planner regression; permanent fix shipping in ~3 weeks. Interim mitigation available now.'\n\n**Product usage (Amplitude)**\nWeekly active users in the reporting module down 34% over 6 weeks; export-to-CSV usage up 3x (a known workaround pattern before customers offboard reporting).\n\nThe Sales Director's read is that the competitive signal is routine. The agent must decide the escalation.",
   "question": "What escalation action should the agent recommend for Copperline Freight?",
   "answer_format": "multiple_choice",
   "choices": [
-    "Standard support handling — the reporting issue has an interim mitigation and a permanent fix in ~3 weeks; no broader escalation is warranted",
-    "CSM-led QBR only — schedule a business review to walk through the roadmap; the competitive mention is routine per the Sales Director",
-    "Executive escalation to the CFO sponsor with a combined briefing covering the reporting incidents, the auto-renew opt-out and seat reduction, the usage decline, and the competitive pilot — with proactive outreach before month-end and the renewal date",
-    "Technical escalation only — expedite the query-planner fix and notify the customer of the timeline; the churn signals are premature to act on"
+    "Standard support handling \u2014 the reporting issue has an interim mitigation and a permanent fix in ~3 weeks; no broader escalation is warranted",
+    "CSM-led QBR only \u2014 schedule a business review to walk through the roadmap; the competitive mention is routine per the Sales Director",
+    "Executive escalation to the CFO sponsor with a combined briefing covering the reporting incidents, the auto-renew opt-out and seat reduction, the usage decline, and the competitive pilot \u2014 with proactive outreach before month-end and the renewal date",
+    "Technical escalation only \u2014 expedite the query-planner fix and notify the customer of the timeline; the churn signals are premature to act on"
   ],
   "contributor": {
     "name": "Reza Habib",
@@ -21,5 +21,5 @@
   },
   "tools_available": [],
   "source_batch": "batch2.json",
-  "split": "challenge"
+  "split": "core_test"
 }

@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Yes; the shared registered agent and registered office at 1209 Orange Street prove they belong to one corporate family under common control.",
     "No; the shared registered agent is a commercial service used by many unrelated entities, and the divergent beneficial owners, EINs, DUNS, and NAICS show two independent companies.",

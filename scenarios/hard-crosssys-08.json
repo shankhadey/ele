@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Add door greeters and more security tags to address seasonal shoplifting, as the ops manager suggested.",
     "Write the shrink off to seasonal loss in the Q4 accruals and revisit inventory controls after the holidays.",

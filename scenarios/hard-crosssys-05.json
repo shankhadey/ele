@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Approve a market pay adjustment for the team to stem comp-driven attrition, as the HRBP recommended.",
     "Run stay interviews and a broader engagement survey for the team before taking any other action.",

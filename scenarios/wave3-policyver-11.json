@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "The v1 72-hour window applies because the breach occurred 2024-06-25 (on or before June 30, 2024); the report is due within 72 hours of the 2024-07-10 discovery, i.e., by 2024-07-13, with no separate 30-day individual-notice requirement.",
     "The v2 48-hour window applies because the breach was discovered 2024-07-10, after v2 took effect, so the report is due by 2024-07-12, plus a 30-day individual notice.",

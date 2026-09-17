@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Kestrel remains Tier 2 (v1) until its next scheduled annual reassessment on 2025-03-15, at which point it is re-tiered to Tier 1 under v2 and must provide a SOC 2 Type II report and an annual penetration test.",
     "Kestrel must provide a SOC 2 Type II report and penetration test immediately, because v2 took effect September 1, 2024 and reclassifies all PII-handling vendors as Tier 1.",

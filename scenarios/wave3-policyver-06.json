@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "On 2025-11-20, five years after its 2020-11-20 creation date, because files created before January 1, 2024 retain the v2 5-year period and v3 does not retroactively extend it.",
     "On 2028-11-20, eight years after creation, because v3's 8-year retention took effect January 1, 2024 and applies to all clinical raw-data files.",

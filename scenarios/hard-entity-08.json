@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Both tickets get premium support, since Babbitt is one enterprise customer and SLAs apply at the account level.",
     "Neither ticket gets premium support, since Babbitt's portal record shows only a Standard plan.",

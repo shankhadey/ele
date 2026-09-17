@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Keep the tickets low priority and let engineering fix the header spacing next sprint, as the CSM assessed.",
     "Raise a SEV incident now, notify affected accounts to stop relying on the export, and pull the release: the column-reorder migration, values under mislabeled headers, the controller's column-specific discrepancy, and SOX-process consumption show a data-integrity defect feeding wrong figures into financial close, not a cosmetic bug.",

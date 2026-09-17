@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Valid and complete - the Procurement Director invoked the sole-source emergency provision and filed the justification, which is all the provision requires.",
     "Valid, but a documentation cleanup is needed - the VP can ratify the bid waiver whenever convenient; the purchase's compliance is unaffected.",

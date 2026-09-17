@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "VP Sales approval alone, mirroring the Skirnir Corp precedent where the same VP approved an identical 38% discount.",
     "VP Sales approval under the strategic-account exception, since 38% is comfortably within the 50% strategic ceiling that the Bilskirnir deal used.",

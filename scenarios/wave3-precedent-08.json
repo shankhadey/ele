@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Approve the negative balance, mirroring Dana Pell's grant, to avoid the appearance of favoritism.",
     "Deny the request because a discretionary vacation is non-qualifying under LP-5, and Dana Pell's grant was a documented non-binding, non-precedential one-time goodwill approval tied to a family medical emergency.",

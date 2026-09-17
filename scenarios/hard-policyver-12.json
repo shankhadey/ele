@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "No. The 7-year schedule is met, but the active litigation hold suspends destruction; CR-9001 may be destroyed only after the hold is released.",
     "Yes. CR-9001 was created 2019-03-15 under v1's 7-year schedule, which expired 2026-03-15, so it is eligible for destruction.",

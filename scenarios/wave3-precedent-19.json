@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "18% via VP Sales approval, mirroring the Verrick Labs precedent for a comparable renewal.",
     "10% standard discount, self-approved by the AE, because Corland is a single-year renewal with no qualifying factor - matching the governing Munroe Assays precedent.",

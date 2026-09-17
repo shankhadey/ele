@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Monel Stores, Inc. (EIN 52-1180773), the renamed surviving entity that D&B still links to the original customer record.",
     "Elgiloy Commerce Holdings, the parent that acquired Monel in 2023 and therefore controls all of Monel's subscriptions.",

@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "RSM approval is sufficient: Q-5501 was issued 2024-08-20 under v1.0, whose 60-day window runs through 2024-10-19, so the 2024-10-15 signature is valid, and 22% is within the RSM's 25% authority.",
     "VP of Sales approval is required, because 22% exceeds v2.0's 15% RSM ceiling that is in force on the 2024-10-15 signature date.",

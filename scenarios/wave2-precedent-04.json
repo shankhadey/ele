@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Process the deletion now via the Support Lead, mirroring the Prewitt precedent, since it is an equivalent inactive account.",
     "Suspend the erasure because the account is under an active litigation legal hold, inform the requester of the lawful basis for delay, and have the DPO document the suspension, following the Delacroix precedent under DSR-3.",

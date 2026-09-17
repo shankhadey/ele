@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Deny the 30% discount, consistent with the February denial of a similar 30% request.",
     "Approve the 30% discount at Deal Desk, because Calderwood's $620K ARR clears the $500K threshold that lets Deal Desk approve up to 40% \u2014 a path the February deal never qualified for.",

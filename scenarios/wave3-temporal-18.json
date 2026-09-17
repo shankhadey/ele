@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Deny the waiver, consistent with the January denial of Ordell's waiver over a service-credit incident.",
     "Approve the waiver, because the current rule grants a waiver to any 3-year-or-longer contract regardless of service history \u2014 so the August Pell approval, not the pre-July Ordell denial, is the governing precedent.",

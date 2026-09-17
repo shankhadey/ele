@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Yes, parts and labor are covered: v1's 24-month parts-and-labor warranty governs by the 2024-08-15 purchase date and runs through 2026-08-15, and the 2026-02-10 failure is inside that window.",
     "No, the unit is out of warranty: v2's 12-month window expired on 2025-08-15.",

@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Merge V-210 and V-260 into one counterparty, because a shared VAT number means they are legally the same company.",
     "Keep them as two distinct legal entities that happen to share a group VAT registration; assess credit and contracts per company using their separate Companies House numbers.",

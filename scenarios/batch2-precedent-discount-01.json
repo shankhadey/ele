@@ -3,14 +3,14 @@
   "category": "precedent_exception",
   "domain": "sales_deal_desk",
   "difficulty": "expert",
-  "scenario_text": "**Current situation (deal desk queue, today)**\nCustomer 'Brightloom Retail' is renewing a $480K/year contract. The AE requests a 22% renewal discount. Justification: Brightloom is mid-migration to a competitor's platform (documented POC in the CRM), and they absorbed a 9-day billing outage caused by our defect last quarter (one SEV-1, confirmed in the incident tracker).\n\n**Active policy — Renewal Discount Policy v5.0 (effective 2026-01-01)**\n- Standard: up to 6%, AE authority.\n- Service-impact exception: up to 15%, Director approval, requires documented SEV-1/SEV-2 incidents.\n- Strategic-retention exception: up to 25%, VP approval, requires BOTH documented competitive evaluation AND a customer LTV analysis attached.\n\n**Precedent A (2025-09, under prior policy v4.2)**\nCustomer 'Tanager Foods' ($450K) received 24% renewal discount. Two SEV-1 incidents, no competitive evaluation on file. Approved by Director. Note: 'Granted under v4.2 service-impact tier (then capped at 25%).'\n\n**Precedent B (2026-02, under current v5.0)**\nCustomer 'Wexler Group' ($510K) requested 20% citing one SEV-1 plus an active competitor POC. VP approved 18% under strategic-retention after an LTV analysis was attached. Note: 'Service impact alone would cap at 15%; competitive threat + LTV justified strategic tier.'\n\nThe deal desk analyst must recommend a discount ceiling and the correct approval path for Brightloom.",
+  "scenario_text": "**Current situation (deal desk queue, today)**\nCustomer 'Brightloom Retail' is renewing a $480K/year contract. The AE requests a 22% renewal discount. Justification: Brightloom is mid-migration to a competitor's platform (documented POC in the CRM), and they absorbed a 9-day billing outage caused by our defect last quarter (one SEV-1, confirmed in the incident tracker).\n\n**Active policy \u2014 Renewal Discount Policy v5.0 (effective 2026-01-01)**\n- Standard: up to 6%, AE authority.\n- Service-impact exception: up to 15%, Director approval, requires documented SEV-1/SEV-2 incidents.\n- Strategic-retention exception: up to 25%, VP approval, requires BOTH documented competitive evaluation AND a customer LTV analysis attached.\n\n**Precedent A (2025-09, under prior policy v4.2)**\nCustomer 'Tanager Foods' ($450K) received 24% renewal discount. Two SEV-1 incidents, no competitive evaluation on file. Approved by Director. Note: 'Granted under v4.2 service-impact tier (then capped at 25%).'\n\n**Precedent B (2026-02, under current v5.0)**\nCustomer 'Wexler Group' ($510K) requested 20% citing one SEV-1 plus an active competitor POC. VP approved 18% under strategic-retention after an LTV analysis was attached. Note: 'Service impact alone would cap at 15%; competitive threat + LTV justified strategic tier.'\n\nThe deal desk analyst must recommend a discount ceiling and the correct approval path for Brightloom.",
   "question": "What discount ceiling and approval path should the analyst recommend for Brightloom, and on which precedent should it rely?",
   "answer_format": "multiple_choice",
   "choices": [
-    "Up to 24%, Director approval — follow Precedent A directly since Brightloom's facts (SEV-1 + high ARR) closely match Tanager Foods",
-    "Up to 15%, Director approval under the service-impact tier only — the single SEV-1 qualifies, and the competitive POC is not sufficient grounds to escalate",
-    "Up to 25% via the strategic-retention tier, VP approval, contingent on attaching an LTV analysis — Brightloom has both a documented competitive evaluation and a SEV-1; Precedent B (same policy version) governs, and Precedent A is void because it applied a superseded v4.2 cap",
-    "Up to 6%, AE authority — neither exception applies because a single SEV-1 and an informal POC do not meet the documentation bar"
+    "Up to 24%, Director approval \u2014 follow Precedent A directly since Brightloom's facts (SEV-1 + high ARR) closely match Tanager Foods",
+    "Up to 15%, Director approval under the service-impact tier only \u2014 the single SEV-1 qualifies, and the competitive POC is not sufficient grounds to escalate",
+    "Up to 25% via the strategic-retention tier, VP approval, contingent on attaching an LTV analysis \u2014 Brightloom has both a documented competitive evaluation and a SEV-1; Precedent B (same policy version) governs, and Precedent A is void because it applied a superseded v4.2 cap",
+    "Up to 6%, AE authority \u2014 neither exception applies because a single SEV-1 and an informal POC do not meet the documentation bar"
   ],
   "contributor": {
     "name": "Marcus Feld",
@@ -21,5 +21,5 @@
   },
   "tools_available": [],
   "source_batch": "batch2.json",
-  "split": "challenge"
+  "split": "core_test"
 }

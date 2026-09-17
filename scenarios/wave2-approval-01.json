@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Valid - each purchase order sits below the $20,000 Depot Manager limit and was approved by the correct role.",
     "Valid, but a documentation cleanup is needed - obtain three quotes retroactively and cross-reference the two POs in the file; the approvals themselves stand.",

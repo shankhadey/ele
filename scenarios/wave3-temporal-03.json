@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Let the manager approve the 12% raise at their own discretion, consistent with the October 2023 raise of the same size.",
     "Route the 12% raise for VP approval and Compensation Committee review, because the July 2024 policy removed the manager-discretion ceiling and now requires both for any raise above 8%.",

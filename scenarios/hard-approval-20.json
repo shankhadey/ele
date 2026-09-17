@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Valid - the lease TCV of $1,800,000 is within the Facilities VP's $2,000,000 authority, and build-out capital is a separate line the VP need not aggregate.",
     "Valid, but a documentation cleanup is needed - note the build-out capex in the lease file; the VP's approval of the lease stands.",

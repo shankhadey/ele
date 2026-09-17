@@ -21,5 +21,5 @@
     "Immediately reinstate the $500K limit in S/4HANA based on the ECC text field reference \u2014 the legacy system is the authoritative record and overrides should be honored without additional approval",
     "Reject the escalation because the credit migration rules (v3.1 Section 4.2) explicitly state that overrides outside FD32 do not migrate unless in Appendix B \u2014 the customer was not listed, so the $150K limit is correct per policy"
   ],
-  "split": "core_test"
+  "split": "challenge"
 }

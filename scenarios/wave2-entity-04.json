@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Merge them into one vendor, because the identical Wilmington address and near-identical names show they are the same supplier onboarded twice.",
     "Keep them as two separate vendors; the shared address is only a registered-agent office, and the distinct EINs, bank accounts, W-9s, and DUNS confirm two different legal entities.",

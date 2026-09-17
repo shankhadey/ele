@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Accept the fuel-index-reset explanation and release the exceptions; monthly surcharge recalculation routinely bumps carrier spend.",
     "Hold the affected Ternwood invoices and reprocess them against the new Tier 3 amendment now: flat fuel, a base-charge rise where a deeper discount was due, 71 invoices at default tariff, and a failed contract upload show the rate engine is overpaying list rate, not a fuel reset.",

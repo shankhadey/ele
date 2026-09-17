@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Reimburse the claim to stay consistent with the March approval of Aster's comparable post-hoc MDF claim.",
     "Deny the reimbursement: the March approval predates the June MDF policy change, and under the current rule a claim with no documented pre-approval is not payable regardless of amount.",

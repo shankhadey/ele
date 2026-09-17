@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Valid - the substantiation file is attached and Associate Counsel provided Legal review under his delegation, which covers the claim.",
     "Valid, but a documentation cleanup is needed - simply add a Regulatory Affairs note to the file; the Legal review already stands.",

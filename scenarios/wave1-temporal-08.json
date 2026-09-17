@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Deny the raise, consistent with the January denial of an above-band raise for a Senior Analyst.",
     "Approve the $105,000 raise with manager justification, because it falls within the new $110,000 Senior Analyst band effective July 1, 2024 \u2014 so the January denial, made under the old $95,000 max, no longer governs.",

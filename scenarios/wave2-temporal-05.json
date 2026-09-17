@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Deny stacking, consistent with the February denial of a similar-TCV stacking request for Ravenscar.",
     "Approve stacking, because under the current rule a 3-year renewal qualifies regardless of TCV \u2014 so the June Saltby approval, not the pre-May Ravenscar denial, is the governing precedent.",

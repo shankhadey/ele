@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Valid - the Deputy General Counsel held delegated signing authority and executed the agreement with a risk memo attached, which is what the $500,001-$2,000,000 tier requires.",
     "Valid, but a documentation cleanup is needed - amend the delegation to cover the signing date; the executed agreement stands.",

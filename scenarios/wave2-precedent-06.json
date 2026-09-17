@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Procurement Director approval with a written justification alone, mirroring the Corliss Optics renewal for a comparable amount.",
     "Procurement Director approval plus a written sole-source justification AND a documented market scan of alternatives, because SP-5 requires a market scan for renewals in the $75K-$150K band.",

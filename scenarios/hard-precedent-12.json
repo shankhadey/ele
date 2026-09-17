@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Director approval, mirroring the 2024 $35,000 Director-approved signing bonus.",
     "Director approval under the critical-skills exception, since $35,000 is within the $40,000 critical-skills ceiling.",

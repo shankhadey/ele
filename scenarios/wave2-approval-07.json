@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Valid - the Deal Desk Manager holds terms-approval authority and recorded her approval in the CRM before booking.",
     "Valid, but the file needs a documentation cleanup - attach the terms worksheet retroactively; the approval itself stands.",

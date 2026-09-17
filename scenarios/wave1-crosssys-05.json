@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Let the contract auto-renew and countersign the 3-year term now to capture the loyalty discount; the A security rating shows the vendor remains low-risk.",
     "Focus on renegotiating the price down before signing, since $1.2M per year is a significant spend to lock in for three years.",

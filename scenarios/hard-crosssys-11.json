@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Send the completion confirmation; deleting the record from the production database satisfies the erasure request.",
     "Confirm completion but add a note that analytics and backups may retain copies, leaving those for a later cleanup.",

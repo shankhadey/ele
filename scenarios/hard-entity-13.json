@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Vitallium Verwaltungs GmbH (HRB 33210), the general partner that signed the agreement.",
     "Vitallium Logistik GmbH & Co. KG (HRA 55120), the limited partnership that is the contracting entity, represented by its general-partner GmbH.",

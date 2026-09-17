@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Chromel Fitness Franchising LLC (EIN 30-1120876), the franchisor that owns the 'Chromel Fitness' brand on the signage.",
     "Redline Wellness LLC d/b/a Chromel Fitness (EIN 82-9900321), the independent franchisee that owns and operates the gym where the injury occurred.",

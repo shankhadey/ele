@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Valid - the manager held the Director's authority by delegation while the Director was on leave, so the acting-Director approval satisfies the skip-level requirement.",
     "Valid, but a documentation cleanup is needed - obtain the HRBP's signature after the fact; the manager's acting-Director approval already covers the Director requirement.",

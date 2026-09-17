@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Prepay the full year now to capture the discount and lock the rate; the vendor's rep confirmed they are stable and hiring.",
     "Renew on the vendor's proposed prepayment terms but negotiate a slightly larger discount to compensate for the sector slowdown.",

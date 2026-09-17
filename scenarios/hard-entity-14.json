@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Yes; the shared ticker BRTX means it is one continuing company, so the SPAC inherits the biotech's financial and clinical history.",
     "No; the ticker was recycled, and the distinct SEC CIKs identify two unrelated issuers whose filings must not be combined.",

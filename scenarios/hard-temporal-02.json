@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Expense the $180,000 in full, consistent with the November treatment of the similarly sized $180K tooling project.",
     "Capitalize the $180,000, because the costs were incurred in FY2024 when the $100,000 threshold was in force, and $180K exceeds it.",

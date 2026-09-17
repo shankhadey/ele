@@ -21,5 +21,5 @@
     "The make-good must be denied because there is no entry in Monday.com's Make-Good Tracker and Prism cannot verify the Slack DM since Derek is no longer an employee",
     "The make-good should be honored \u2014 Derek's Slack DM constitutes a binding commitment made before the new policy took effect, and the 12.8% underdelivery exceeds the 10% threshold confirming it was warranted"
   ],
-  "split": "core_test"
+  "split": "challenge"
 }

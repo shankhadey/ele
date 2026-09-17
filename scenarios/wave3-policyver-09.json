@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "The 1.5x legacy accelerator (v1) applies to OPP-5501, because Alvarez has not yet signed the 2025 plan-year acceptance (scheduled 2025-02-01), and the legacy accelerator persists until that attestation.",
     "The 1.2x accelerator on ACV above 120% of quota (v2) applies, because v2 took effect January 1, 2025 and supersedes the legacy accelerator for all deals booked in 2025.",

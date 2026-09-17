@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Yes, merge them, because a shared email domain plus a common name stem reliably indicates one company operating two divisions.",
     "No, keep them separate; the shared domain is a managed-IT vanity domain, and the distinct EINs, DUNS, industries, and contracts show two unrelated legal entities.",

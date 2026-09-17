@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Yes, business class is reimbursable, because the trip was booked 2024-12-20 under v4, which permits business class on segments longer than 6 hours (the flight was 7h10m).",
     "No, business class is not reimbursable, because the 2025-01-15 travel date falls under v5, which requires segments longer than 8 hours.",

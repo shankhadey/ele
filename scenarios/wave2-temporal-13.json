@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Grant the 35% price-match under the Sales Director's authority, citing the Harlow Group approval as established precedent.",
     "Route the 35% price-match to VP Sales for approval with the verified competitor quote on file, because the Harlow approval predates the April 1, 2024 policy that retired director discretion above 20%.",

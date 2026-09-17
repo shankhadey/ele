@@ -3,14 +3,14 @@
   "category": "entity_resolution",
   "domain": "hr_people_ops",
   "difficulty": "hard",
-  "scenario_text": "A security-access recertification at Kestrel Bioworks requires linking every active system identity to exactly one person of record in the HRIS. An auditor is untangling records that may all belong to a single employee.\n\n**Workday (HRIS) — Person of Record**\n- Employee: 'Jonathan A. Whitfield' | Employee ID: E-10442 | Status: Active | Dept: R&D | Work email: j.whitfield@kestrelbio.com | Start date: 2019-03-04\n- Note in profile: 'Legal name change filed 2024-06 (marriage); preferred name Jonathan Whitfield-Cho.'\n\n**Okta (Identity Provider) — Accounts**\n- Login: jwhitfield@kestrelbio.com | Status: Active | Last login: yesterday | Groups: R&D-Engineers, VPN-Users\n- Login: jwhitfieldcho@kestrelbio.com | Status: Active | Last login: 2 days ago | Groups: R&D-Engineers, Lab-LIMS-Admin\n- Login: contractor-jwhitfield@kestrelbio.com | Status: Deactivated | Last login: 2019-02-20 | Groups: (none)\n\n**ADP (Payroll)**\n- Payee: 'Jonathan Whitfield-Cho' | Payroll ID: P-88231 | Bank direct deposit: acct ending 5567 | Tax W-4 on file matching SSN ***-**-4419\n- Payee: 'J. Whitfield' | Payroll ID: P-42188 | Status: Terminated 2019-03-01 | Classification: 1099 contractor\n\n**ServiceNow (IT ticket, last week)**\n'User reports two SSO logins both work; one has LIMS admin, the other doesn't. Wants them merged.'\n\nThe auditor must determine how many real people these records represent and which access must be reconciled to the single person of record before recertification sign-off.",
+  "scenario_text": "A security-access recertification at Kestrel Bioworks requires linking every active system identity to exactly one person of record in the HRIS. An auditor is untangling records that may all belong to a single employee.\n\n**Workday (HRIS) \u2014 Person of Record**\n- Employee: 'Jonathan A. Whitfield' | Employee ID: E-10442 | Status: Active | Dept: R&D | Work email: j.whitfield@kestrelbio.com | Start date: 2019-03-04\n- Note in profile: 'Legal name change filed 2024-06 (marriage); preferred name Jonathan Whitfield-Cho.'\n\n**Okta (Identity Provider) \u2014 Accounts**\n- Login: jwhitfield@kestrelbio.com | Status: Active | Last login: yesterday | Groups: R&D-Engineers, VPN-Users\n- Login: jwhitfieldcho@kestrelbio.com | Status: Active | Last login: 2 days ago | Groups: R&D-Engineers, Lab-LIMS-Admin\n- Login: contractor-jwhitfield@kestrelbio.com | Status: Deactivated | Last login: 2019-02-20 | Groups: (none)\n\n**ADP (Payroll)**\n- Payee: 'Jonathan Whitfield-Cho' | Payroll ID: P-88231 | Bank direct deposit: acct ending 5567 | Tax W-4 on file matching SSN ***-**-4419\n- Payee: 'J. Whitfield' | Payroll ID: P-42188 | Status: Terminated 2019-03-01 | Classification: 1099 contractor\n\n**ServiceNow (IT ticket, last week)**\n'User reports two SSO logins both work; one has LIMS admin, the other doesn't. Wants them merged.'\n\nThe auditor must determine how many real people these records represent and which access must be reconciled to the single person of record before recertification sign-off.",
   "question": "How many distinct people do these records represent, and what is the correct recertification action?",
   "answer_format": "multiple_choice",
   "choices": [
-    "Two people — the 1099 contractor 'J. Whitfield' and the employee 'Jonathan Whitfield-Cho'; both remain active and are recertified separately",
-    "One person — the pre-hire contractor identity and the employee identities are the same individual; consolidate all active access under E-10442, and the duplicate active Okta login must be reconciled (retaining LIMS-Admin only if authorized) rather than left as a second standing identity",
-    "Three people — each distinct name variant (Jonathan A. Whitfield, Jonathan Whitfield-Cho, J. Whitfield) is a separate person of record",
-    "One person — but no action is needed because both active logins already belong to the same employee and the terminated contractor record is historical"
+    "Two people \u2014 the 1099 contractor 'J. Whitfield' and the employee 'Jonathan Whitfield-Cho'; both remain active and are recertified separately",
+    "One person \u2014 the pre-hire contractor identity and the employee identities are the same individual; consolidate all active access under E-10442, and the duplicate active Okta login must be reconciled (retaining LIMS-Admin only if authorized) rather than left as a second standing identity",
+    "Three people \u2014 each distinct name variant (Jonathan A. Whitfield, Jonathan Whitfield-Cho, J. Whitfield) is a separate person of record",
+    "One person \u2014 but no action is needed because both active logins already belong to the same employee and the terminated contractor record is historical"
   ],
   "contributor": {
     "name": "Danielle Okafor",
@@ -21,5 +21,5 @@
   },
   "tools_available": [],
   "source_batch": "batch2.json",
-  "split": "challenge"
+  "split": "core_test"
 }

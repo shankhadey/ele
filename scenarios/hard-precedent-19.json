@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Write off the $80,000 at the Finance Director level, mirroring the September 2024 write-off of the same amount.",
     "Write off the $80,000 at the Finance Director level with a committee memo, since $80,000 sits squarely in the $25,000-$100,000 band.",

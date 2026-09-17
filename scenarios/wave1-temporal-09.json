@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave1.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Deny stacking, consistent with the January denial of stacking on a similar sub-$1M renewal.",
     "Approve stacking: as a 3-year renewal, Caldicott auto-qualifies under the March 1, 2024 rule regardless of TCV \u2014 matching the April approval \u2014 and the January 2-year denial predates that rule, so it does not govern.",

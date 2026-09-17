@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Deny the request, because the current 7-year retention means a 2019 record cannot be deleted until 2026.",
     "Deny the request, consistent with the May denial of a comparable deletion request.",

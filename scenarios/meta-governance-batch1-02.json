@@ -21,5 +21,5 @@
     "The lease must be executed by NT Lakeshore B LLC (not A LLC) since Suite 201 is in Building B, and Midwest Realty Partners' consent is not required because the annual rent is under $500K",
     "The lease can be executed by NT Lakeshore A LLC as a master lease covering both buildings since NovaTerra is the Managing Member of both entities"
   ],
-  "split": "core_test"
+  "split": "challenge"
 }

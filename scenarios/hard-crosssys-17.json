@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Record the margin dip as an FX translation artifact and take no operational action, per the analyst's commentary.",
     "Initiate an FX hedging program to protect reported margin against further euro weakness.",

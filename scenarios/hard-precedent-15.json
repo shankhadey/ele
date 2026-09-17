@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Reverse the $800 at the Branch Manager level, mirroring the May 2024 $800 reversal.",
     "Reverse the $800 at the Branch Manager level under the financial-hardship exception, given the customer's difficulty tracking the balance.",

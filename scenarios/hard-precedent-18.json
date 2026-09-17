@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Issue the permit with Safety Manager approval and continuous monitoring, mirroring the June 2024 advisory-period permit.",
     "Issue the permit with the Area Supervisor sign-off, gas test, and fire watch, since all high-hazard-zone controls are satisfied.",

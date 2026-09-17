@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Approve the transfer and grant the admin access now; the candidate's strong performance history and the manager's long-standing trust are the most reliable indicators of integrity.",
     "Approve the transfer but ask the manager to keep an informal eye on the candidate's expenses, since the Concur flags are likely just clerical rounding.",

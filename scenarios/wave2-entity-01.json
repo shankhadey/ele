@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave2.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Keep the two opportunities on legacy accounts A-3310 and A-4890 with their original EINs, since pipeline history and the original MSAs still govern the renewals.",
     "Reparent both opportunities to the new VantageSignal Media, Inc. record (C-9007, EIN 88-3391045, DUNS 11-902-3345), because the novation agreement makes the merged entity the authoritative successor for all prior contracts.",

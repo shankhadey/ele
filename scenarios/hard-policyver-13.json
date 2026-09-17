@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "12 weeks: v2 governs because the last day worked (2025-04-04) is on or after April 1, giving 8 weeks (1 week x 8 years, meeting the 8-week minimum) plus 4 weeks for hire before 2020.",
     "16 weeks: v1 governs because notice was issued 2025-03-25, giving 2 weeks x 8 years of service.",

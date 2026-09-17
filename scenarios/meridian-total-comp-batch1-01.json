@@ -21,5 +21,5 @@
     "No \u2014 the offer cannot proceed because VP Eng declined the comp committee meeting, and VP-level approval is required for any above-band offer.",
     "Yes \u2014 the $275K base is within market range per Pave data (75th pctile = $272K) and only $7K above band ceiling, making it a de minimis exception the hiring manager can approve."
   ],
-  "split": "core_test"
+  "split": "challenge"
 }

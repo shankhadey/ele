@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Leave it as P3 in the normal queue; the agent identified it as a customer-side eligibility configuration error.",
     "Bump it to P2 and ask the customer to correct their mapping, revisiting if the error rate keeps climbing.",

@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Place the 50,000-unit buy now from the distributor to secure supply ahead of further market tightening.",
     "Negotiate a lower price with the distributor and place a slightly smaller buy to reduce cost exposure.",

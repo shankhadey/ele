@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "hard.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Let the auto-renewal proceed; SLA credits were issued and availability has recovered, so the outage is resolved.",
     "Renew but negotiate additional SLA credits and a stronger uptime commitment to compensate for the disruption.",

@@ -21,5 +21,5 @@
     "Revised methodology \u2014 the loan sat in an early-adoption portfolio at the time the attestation was filed (March 15), so early adoption follows the loan regardless of subsequent transfer",
     "Legacy methodology \u2014 the loan originated before the final rule effective date and is grandfathered"
   ],
-  "split": "core_test"
+  "split": "challenge"
 }

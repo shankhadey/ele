@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Waive the review via analyst self-attestation, mirroring the Pallett Integrations precedent, since Kestrel's spend is below the threshold.",
     "Require a full security review before contract signature, because TSR v3 mandates it for any PHI-handling vendor; the self-attestation shortcut was removed with v2, and Kestrel qualifies for no waiver path.",

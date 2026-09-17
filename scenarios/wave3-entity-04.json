@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Delete the Tindra Analytics, Inc. record as a duplicate and keep billing under Tindra Analytics LLC (EIN 45-1120987) to preserve the original contract linkage.",
     "Treat them as two unrelated customers because the EINs differ, and require a brand-new order form before any invoice can be issued to either.",

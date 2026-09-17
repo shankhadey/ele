@@ -15,7 +15,7 @@
   },
   "tools_available": [],
   "source_batch": "wave3.json",
-  "split": "challenge",
+  "split": "core_test",
   "choices": [
     "Valid - each claim is under the $5,000 Manager limit and was approved by the correct role.",
     "Valid, but needs a documentation cleanup - attach the business justification retroactively and note that the two claims relate; the manager approvals stand.",
