@@ -199,10 +199,16 @@ class BedrockAdapter(ModelInterface):
         model_id: str = "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
         region: str = "us-west-2",
         api_config: Optional[APIConfig] = None,
+        system_prompt: Optional[str] = None,
     ) -> None:
         self.model_id = model_id
         self.region = region
         self.api_config = api_config or APIConfig()
+        # Optional system prompt. Default None preserves the original
+        # no-system-prompt behavior for all standard runs. Used only to
+        # neutralize spurious platform content-filtering that blocks a
+        # model's response on benign synthetic scenarios.
+        self.system_prompt = system_prompt
         self._client: Any = None
 
     def _get_client(self) -> Any:
@@ -227,22 +233,26 @@ class BedrockAdapter(ModelInterface):
             "maxTokens": cfg.get("max_tokens", 2048),
             "temperature": cfg.get("temperature", 0.0),
         }
-        try:
-            response = client.converse(
+        extra: Dict[str, Any] = {}
+        if self.system_prompt:
+            extra["system"] = [{"text": self.system_prompt}]
+
+        def _converse(inf: Dict[str, Any]):
+            return client.converse(
                 modelId=self.model_id,
                 messages=messages,
-                inferenceConfig=inference_config,
+                inferenceConfig=inf,
+                **extra,
             )
+
+        try:
+            response = _converse(inference_config)
         except Exception as exc:
             # Some newer models (e.g. Claude Sonnet 5 / Opus 5) deprecate
             # temperature — retry without it.
             if "temperature" in str(exc).lower():
                 inference_config.pop("temperature", None)
-                response = client.converse(
-                    modelId=self.model_id,
-                    messages=messages,
-                    inferenceConfig=inference_config,
-                )
+                response = _converse(inference_config)
             else:
                 raise
         # Extract text from the response content blocks
