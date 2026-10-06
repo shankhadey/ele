@@ -15,6 +15,7 @@ import logging
 from pathlib import Path
 from typing import Dict, Optional
 
+from ele.core import paths
 from ele.core.models import AnswerKey
 
 logger = logging.getLogger(__name__)
@@ -24,8 +25,9 @@ class AnswerKeyStore:
     """Loads answer keys from a directory and serves them by scenario filename."""
 
     def __init__(self, answers_dir: Optional[Path] = None) -> None:
-        # Default: answers/ sibling of the scenarios/ directory
-        self._dir = answers_dir or (Path(__file__).parent.parent / "answers")
+        # Default: the configured answers/ directory (private repo when
+        # ELE_PRIVATE_DIR / ele_private_dir is set; local answers/ otherwise).
+        self._dir = answers_dir or paths.answers_dir()
         self._keys: Dict[str, AnswerKey] = {}
         self._load_all()
 

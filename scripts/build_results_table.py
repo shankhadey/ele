@@ -28,7 +28,11 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 _ROOT = Path(__file__).resolve().parent.parent
-_RESULTS_DIR = _ROOT / "results"
+import sys as _sys
+_sys.path.insert(0, str(_ROOT.parent))  # make `ele` importable
+from ele.core import paths  # noqa: E402
+
+_RESULTS_DIR = paths.results_dir()
 _MODELS_CONFIG = _ROOT / "config" / "models.json"
 
 CATEGORIES = [

@@ -28,8 +28,11 @@ from pathlib import Path
 from typing import Dict, Iterable, List, Tuple
 
 _ROOT = Path(__file__).resolve().parent.parent
-_DEFAULT_CANARIES = _ROOT / "answers" / "CANARIES.json"
-_DEFAULT_SCAN = [_ROOT / "logs", _ROOT / "results"]
+sys.path.insert(0, str(_ROOT.parent))  # make `ele` importable
+from ele.core import paths  # noqa: E402
+
+_DEFAULT_CANARIES = paths.answers_dir() / "CANARIES.json"
+_DEFAULT_SCAN = [paths.logs_dir(), paths.results_dir()]
 
 # Canary format is fixed by the answers/ generator: 'ELE-CANARY-<12 hex chars>'.
 _CANARY_RE = re.compile(r"ELE-CANARY-[0-9A-F]{12}")
